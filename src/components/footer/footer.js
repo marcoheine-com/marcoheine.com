@@ -1,5 +1,6 @@
 import React from 'react';
 import * as ui from './ui';
+
 const Footer = () => {
   const year = new Date().getFullYear();
   return (

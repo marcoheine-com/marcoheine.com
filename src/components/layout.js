@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 
 import Header from "./header/header";
 import Footer from './footer/footer';
+import Main from './main/main';
 import "./layout.css";
 
 const Layout = ({ children }) => (
   <>
     <Header />
-    <main>{children}</main>
+    <Main>{children}</Main>
     <Footer />
   </>
 )
