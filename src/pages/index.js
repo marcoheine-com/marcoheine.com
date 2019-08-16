@@ -1,27 +1,21 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 import { ThemeProvider } from 'styled-components';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const theme = {
-  primaryColorOne: '#111',
-  primaryColorTwo:  '#e86b49'
-};
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+import theme from '../styles/theme';
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link>
+      <h1>Hi! My name is Marco and I'm a Frontend Web Developer.</h1>
+      <p>I like to build responsive, accessible and fast websites and frontend experiences for every device and every browser.</p>
+      <Link to='/about'>Learn more about me </Link> 
+      or 
+      <Link to='/blog'> read my blog</Link>
     </Layout>
   </ThemeProvider>
 )
