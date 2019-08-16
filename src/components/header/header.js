@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
-import Navigation from '../navigation/navigation';
+import Navigation from '../navigation';
 import * as ui from './ui';
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <ui.HeaderWrapper>
@@ -25,13 +25,13 @@ const Header = () => {
           >
             {data.site.siteMetadata.author}
           </Link>
-          <ui.Blink class="blink">_</ui.Blink>
+          <ui.Blink />
         </ui.Headline>
-
+  
         <Navigation />
       </ui.Header>
     </ui.HeaderWrapper>
-  )
+  );
 }
 
 Header.propTypes = {

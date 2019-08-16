@@ -90,8 +90,8 @@ const Footer = () => {
         </ul>
       </nav>
       <p>This site is hosted on and deployed with
-        <ui.Link href="https://www.netlify.com/" class="special-links--footer" target="_blank" rel="noopener noreferrer"> Netlify</ui.Link>.
-        The source code ist hosted on <ui.Link href="https://bitbucket.org/" class="special-links--footer" target="_blank" rel="noopener noreferrer">GitHub</ui.Link>.
+        <ui.Link href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer"> Netlify</ui.Link>.
+        The source code ist hosted on <ui.Link href="https://bitbucket.org/" target="_blank" rel="noopener noreferrer">GitHub</ui.Link>.
       </p>
       <p>© {year} Marco K&uuml;hbauch. Made in Germany with
         <ui.Heart viewBox="0 0 32 29.6">
