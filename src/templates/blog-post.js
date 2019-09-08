@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 
-export default function Template({ data }) {
+const Template = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
@@ -25,6 +26,20 @@ export default function Template({ data }) {
     </ThemeProvider>
   )
 }
+
+Template.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        date: PropTypes.string
+      }),
+      html: PropTypes.string
+    })
+  })
+}
+
+export default Template;
 
 export const pageQuery = graphql`
   query($path: String!) {
