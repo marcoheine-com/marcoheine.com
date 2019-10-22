@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "gatsby";
 import * as ui from './ui';
 const Navigation = () => {
-  const [ isToggled, setIsToggled ] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
   const handleOnClick = () => setIsToggled(!isToggled);
 
   return (
@@ -23,7 +23,7 @@ const Navigation = () => {
             <Link to="/blog">Blog</Link>
           </ui.ListItem>
           <ui.ListItem>
-            <Link to="/TIL">TIL</Link>
+            <Link to="/til">TIL</Link>
           </ui.ListItem>
           <ui.ListItem>
             <Link to="/contact">Contact me</Link>

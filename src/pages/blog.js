@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Card from '../components/card';
+import { blog } from '../constants/cardData';
 import theme from '../styles/theme';
 
 const Blog = ({ data }) => {
@@ -14,20 +16,23 @@ const Blog = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Blog" />
-        <h1>Blog page</h1>
+        <Card
+          h1={blog.h1}
+          textContent={blog.textContent}
+        />
         {edges.map(edge => (
-            <article key={edge.node.id}>
-              <Link to={edge.node.frontmatter.path}>
-                <h2>{edge.node.frontmatter.title}</h2>
+          <article key={edge.node.id}>
+            <Link to={edge.node.frontmatter.path}>
+              <h2>{edge.node.frontmatter.title}</h2>
+            </Link>
+            <time dateTime={edge.node.frontmatter.date}>
+              {edge.node.frontmatter.date}
+            </time>
+            <p>{edge.node.excerpt}</p>
+            <Link to={edge.node.frontmatter.path}>
+              Read more
               </Link>
-              <time dateTime={edge.node.frontmatter.date}>
-                {edge.node.frontmatter.date}
-              </time>
-              <p>{edge.node.excerpt}</p>
-              <Link to={edge.node.frontmatter.path}>
-                Read more
-              </Link>
-            </article>
+          </article>
         ))}
       </Layout>
     </ThemeProvider>
