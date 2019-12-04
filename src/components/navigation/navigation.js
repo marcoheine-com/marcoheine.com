@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "gatsby";
 import * as ui from './ui';
+
 const Navigation = () => {
   const [isToggled, setIsToggled] = useState(false);
   const handleOnClick = () => setIsToggled(!isToggled);

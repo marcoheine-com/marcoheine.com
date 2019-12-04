@@ -29,6 +29,8 @@ const Template = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
+        <p>Greetings Marco</p>
+        <Link to="/blog">Go back to other Blog Posts</Link>
       </Layout>
     </ThemeProvider>
   )
