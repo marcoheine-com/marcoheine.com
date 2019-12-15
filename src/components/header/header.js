@@ -25,7 +25,7 @@ const Header = () => {
           >
             {data.site.siteMetadata.author}
           </Link>
-          <ui.Blink />
+          <ui.Blink>_</ui.Blink>
         </ui.Headline>
   
         <Navigation />

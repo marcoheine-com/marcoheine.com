@@ -17,16 +17,16 @@ const Navigation = () => {
       </ui.NavIcon>
       <ui.Nav isToggled={isToggled}>
         <ui.List>
-          <ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
             <Link to="/about">About</Link>
           </ui.ListItem>
-          <ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
             <Link to="/blog">Blog</Link>
           </ui.ListItem>
-          <ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
             <Link to="/til">TIL</Link>
           </ui.ListItem>
-          <ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
             <Link to="/contact">Contact me</Link>
           </ui.ListItem>
         </ui.List>

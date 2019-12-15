@@ -8,12 +8,12 @@ export const NavIcon = styled.button`
   right: 5%;
   outline: 0;
   position: absolute;
-  top: 32px;
+  top: 26px;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   width: 35px;
   @media (min-width: 560px) {
-    top: 35px;
+    top: 32px;
   }
 
   @media (min-width: 710px) {
@@ -89,8 +89,13 @@ export const List = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
+  list-style-type: none;
+  margin-left: 0;
+  padding-bottom: 40px;
   @media (min-width: 710px) {
     flex-direction: row;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 `;
 
@@ -104,17 +109,20 @@ export const ListItem = styled.li`
     }
   `};
 
-  &::nth-last-child(1) {
-    padding-bottom: 100px;
-    @media (min-width: 710px) {
-      padding-bottom: 0;
-      padding-right: 0;
+  a {
+    display: block;
+    padding: 8px;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.primaryColorTwo};
+      color: #fff;
     }
   }
   @media (min-width: 710px) {
     display: inline;
     font-size: 16px;
     text-transform: none;
+    margin-bottom: 0;
   }
 
   @media (min-width: 710px) {

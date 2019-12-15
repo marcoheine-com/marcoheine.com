@@ -24,17 +24,22 @@ export const Header = styled.div`
 
 export const Headline = styled.h1`
   font-size: 20px;
-  padding-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   @media (min-width: 560px) {
     font-size: 28px;
-    padding-top: 5px;
   }
   @media (min-width: 860px) {
     font-size: 32px;
   }
-  a:hover {
-    border-bottom: none;
+  a {
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: none;
+    }
   }
+  
 `;
 
 export const Blink = styled.span`

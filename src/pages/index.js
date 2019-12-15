@@ -40,33 +40,37 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Home" />
-        <ui.Home>
-          <h1>Hi! My name is Marco and I&apos;m a Frontend Web Developer.</h1>
-          <p>I like to build responsive, accessible and fast websites and frontend experiences for every device and every browser.</p>
+        <ui.Headline>
+          Hi! My name is Marco and I&apos;m a Frontend Web Developer.
+        </ui.Headline>
 
-          <ui.ImgWrapper>
+        <ui.Hometext>
+          I like to build responsive, accessible and fast websites and frontend experiences for every device and every browser.
+        </ui.Hometext>
+
+        <ui.ImgWrapper>
+          <Link to='/about'>
             <Image 
               alt="a picture of Marco Kühbauch"
               fluid={data.personalImg.childImageSharp.fluid}
               fadeIn
             />
-          </ui.ImgWrapper>
+          </Link>
+        </ui.ImgWrapper>
 
-          <Link to='/about'>Learn more about me </Link> 
-            or 
-          <Link to='/blog'> read my blog</Link>
+        <Link to='/about'>Learn more about me </Link> 
+          or 
+        <Link to='/blog'> read my blog</Link>
 
-          <div>
-            <h2>Latest blog posts:</h2>
-            {latestBlogPosts.map(post => (
-              <article key={post.node.id}>
-                <Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
-                <p>Published on {post.node.frontmatter.date}</p>
-              </article>
-            ))}
-          </div>
-
-        </ui.Home>
+        <div>
+          <h2>Latest blog posts:</h2>
+          {latestBlogPosts.map(post => (
+            <article key={post.node.id}>
+              <Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+              <p>Published on {post.node.frontmatter.date}</p>
+            </article>
+          ))}
+        </div>
       </Layout>
     </ThemeProvider>            
   )
