@@ -62,3 +62,8 @@ export const BlogLink = styled.span`
   color: ${({ theme }) => theme.primaryColorTwo};
   text-decoration: underline;
 `;
+
+export const PageContent = styled.section`
+  margin: 0 auto;
+  max-width: 650px;
+`;

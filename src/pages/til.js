@@ -1,22 +1,23 @@
 import React from "react";
-import { ThemeProvider } from 'styled-components';
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Card from '../components/card';
-import { til } from '../constants/cardData';
-import theme from '../styles/theme';
+import { ThemeProvider } from "styled-components";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Card from "../components/card";
+import { til } from "../constants/cardData";
+import theme from "../styles/theme";
+import * as ui from "../styles/index/ui";
 
 const TIL = () => {
   const data = [
     {
       id: 1,
-      title: 'Today I learned about HTTP Desync Attacks',
-      content: 'A collegue of mine teached us about her insights from the '
+      title: "Today I learned about HTTP Desync Attacks",
+      content: "A collegue of mine teached us about her insights from the ",
     },
     {
       id: 2,
-      title: 'second',
-    }
+      title: "Today I leared about not using NULL as your car licence",
+    },
   ];
 
   const reversedData = [...data].reverse();
@@ -25,28 +26,21 @@ const TIL = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Today I learned" />
-        <Card
-          h1={til.h1}
-          textContent={til.textContent}
-        />
-        {reversedData.map(item => (
-          <section key={item.id}>
-            <aside>
-              #TIL {item.id}
-            </aside>
-            <main>
-              <h3>
-                {item.title}
-              </h3>
-              <p>
-                {item.content}
-              </p>
-            </main>
-          </section>
-        ))}
+        <Card h1={til.h1} textContent={til.textContent} />
+        <ui.PageContent>
+          {reversedData.map(item => (
+            <section key={item.id}>
+              <aside>#TIL {item.id}</aside>
+              <main>
+                <h3>{item.title}</h3>
+                <p>{item.content}</p>
+              </main>
+            </section>
+          ))}
+        </ui.PageContent>
       </Layout>
     </ThemeProvider>
-  )
+  );
 };
 
 export default TIL;

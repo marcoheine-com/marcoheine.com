@@ -25,6 +25,7 @@ summary {
   display: block;
 }
 a,
+li,
 span {
   font-family: "Lato", sans-serif;
 }
