@@ -1,13 +1,12 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from "styled-components";
 import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import theme from '../styles/theme';
-import * as ui from '../styles/index/ui';
-
+import theme from "../styles/theme";
+import * as ui from "../styles/index/ui";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -32,7 +31,7 @@ const IndexPage = () => {
         }
       }
     }
-  `)
+  `);
 
   const latestBlogPosts = data.allMarkdownRemark.edges.slice(0, 3);
 
@@ -40,17 +39,19 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Home" />
+
         <ui.Headline>
           Hi! My name is Marco and I&apos;m a Frontend Web Developer.
         </ui.Headline>
 
         <ui.Hometext>
-          I like to build responsive, accessible and fast websites and frontend experiences for every device and every browser.
+          I like to build responsive, accessible and fast websites and frontend
+          experiences for every device and every browser.
         </ui.Hometext>
 
         <ui.ImgWrapper>
-          <Link to='/about'>
-            <Image 
+          <Link to="/about">
+            <Image
               alt="a picture of Marco Kühbauch"
               fluid={data.personalImg.childImageSharp.fluid}
               fadeIn
@@ -58,23 +59,34 @@ const IndexPage = () => {
           </Link>
         </ui.ImgWrapper>
 
-        <Link to='/about'>Learn more about me </Link> 
-          or 
-        <Link to='/blog'> read my blog</Link>
+        <ui.LinkWrapper>
+          <ui.HomeLinks>
+            <Link to="/about">Learn more about me</Link>
+          </ui.HomeLinks>
+
+          <ui.HomeLinks>or</ui.HomeLinks>
+
+          <ui.HomeLinks>
+            <Link to="/blog">read my blog</Link>
+          </ui.HomeLinks>
+        </ui.LinkWrapper>
 
         <div>
           <h2>Latest blog posts:</h2>
           {latestBlogPosts.map(post => (
             <article key={post.node.id}>
-              <Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+              <ui.BlogLink>
+                <Link to={post.node.frontmatter.path}>
+                  {post.node.frontmatter.title}
+                </Link>
+              </ui.BlogLink>
               <p>Published on {post.node.frontmatter.date}</p>
             </article>
           ))}
         </div>
       </Layout>
-    </ThemeProvider>            
-  )
-}
+    </ThemeProvider>
+  );
+};
 
-      
-export default IndexPage
+export default IndexPage;

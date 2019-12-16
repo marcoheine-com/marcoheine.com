@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -21,6 +23,10 @@ nav,
 section,
 summary {
   display: block;
+}
+a,
+span {
+  font-family: "Lato", sans-serif;
 }
 audio,
 canvas,
@@ -48,7 +54,10 @@ a:active,
 a:hover {
   outline-width: 0;
 }
-a, a:visited, a:hover, a:active {
+a,
+a:visited,
+a:hover,
+a:active {
   color: inherit;
 }
 abbr[title] {
@@ -381,6 +390,7 @@ dd {
   margin-bottom: 1.45rem;
 }
 p {
+  font-family: "Lato", sans-serif;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
