@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import * as ui from './ui';
+import * as ui from "./ui";
 
-const Card = ({
-  h1,
-  h2,
-  textContent
-}) => {
+const Card = ({ h1, h2, textContent }) => {
   if (h1) {
     return (
       <ui.CardContainer>
@@ -14,7 +10,7 @@ const Card = ({
         <h2>{h2}</h2>
         <ui.Text>{textContent}</ui.Text>
       </ui.CardContainer>
-    )
+    );
   } else {
     return null;
   }
@@ -23,7 +19,7 @@ const Card = ({
 Card.propTypes = {
   h1: PropTypes.string.isRequired,
   h2: PropTypes.string,
-  textContent: PropTypes.string.isRequired
+  textContent: PropTypes.object.isRequired,
 };
 
 export default Card;

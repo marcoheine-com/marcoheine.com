@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
         <ui.PageContent>
           {edges.map(edge => (
             <article key={edge.node.id}>
-              <Link to={edge.node.frontmatter.path}>
+              <Link to={`/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
               <time dateTime={edge.node.frontmatter.date}>
@@ -53,6 +53,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
+          fields {
+            slug
+          }
           id
           excerpt(pruneLength: 150)
           frontmatter {

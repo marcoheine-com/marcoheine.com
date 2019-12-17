@@ -21,6 +21,9 @@ const IndexPage = () => {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
+            fields {
+              slug
+            }
             id
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
@@ -76,7 +79,7 @@ const IndexPage = () => {
           {latestBlogPosts.map(post => (
             <article key={post.node.id}>
               <ui.BlogLink>
-                <Link to={post.node.frontmatter.path}>
+                <Link to={`/${post.node.fields.slug}`}>
                   {post.node.frontmatter.title}
                 </Link>
               </ui.BlogLink>
