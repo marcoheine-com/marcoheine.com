@@ -33,7 +33,14 @@ export const about = {
 
 export const blog = {
   h1: "Blog",
-  textContent: `Sometimes I write about new things I learned, things I'm interested in and things that bother me in my everyday life. Mostly about Frontend, mostly for myself as a learning process and always my own thoughts and my own opinion.`,
+  textContent: (
+    <p>
+      Sometimes I write about new things I learned, things I&apos;m interested
+      in and things that bother me in my everyday life. Mostly about Frontend,
+      mostly for myself as a learning process and always my own thoughts and my
+      own opinion.
+    </p>
+  ),
 };
 
 export const contact = {

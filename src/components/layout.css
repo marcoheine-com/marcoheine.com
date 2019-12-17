@@ -26,7 +26,8 @@ summary {
 }
 a,
 li,
-span {
+span,
+time {
   font-family: "Lato", sans-serif;
 }
 audio,

@@ -21,7 +21,7 @@ const Blog = ({ data }) => {
 
         <ui.PageContent>
           {edges.map(edge => (
-            <article key={edge.node.id}>
+            <ui.Article key={edge.node.id}>
               <Link to={`/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
@@ -30,7 +30,7 @@ const Blog = ({ data }) => {
               </time>
               <p>{edge.node.excerpt}</p>
               <Link to={edge.node.frontmatter.path}>Read more</Link>
-            </article>
+            </ui.Article>
           ))}
         </ui.PageContent>
       </Layout>

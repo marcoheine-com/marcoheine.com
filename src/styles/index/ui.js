@@ -67,3 +67,9 @@ export const PageContent = styled.section`
   margin: 0 auto;
   max-width: 650px;
 `;
+
+export const Article = styled.article`
+  &:not(:last-of-type) {
+    margin-bottom: 60px;
+  }
+`;
