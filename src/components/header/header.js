@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
-import Navigation from '../navigation';
-import * as ui from './ui';
+import Navigation from "../navigation";
+import * as ui from "./ui";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -19,27 +19,25 @@ const Header = () => {
   return (
     <ui.HeaderWrapper>
       <ui.Header>
-        <ui.Headline>
-          <Link
-            to="/"
-          >
+        <Link to="/">
+          <ui.Headline>
             {data.site.siteMetadata.author}
-          </Link>
-          <ui.Blink>_</ui.Blink>
-        </ui.Headline>
-  
+            <ui.Blink>_</ui.Blink>
+          </ui.Headline>
+        </Link>
+
         <Navigation />
       </ui.Header>
     </ui.HeaderWrapper>
   );
-}
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

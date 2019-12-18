@@ -61,6 +61,9 @@ export const HomeLinks = styled.span`
 export const BlogLink = styled.span`
   color: ${({ theme }) => theme.primaryColorTwo};
   text-decoration: underline;
+  &:hover {
+    text-decoration: underline dotted;
+  }
 `;
 
 export const PageContent = styled.section`
@@ -72,4 +75,16 @@ export const Article = styled.article`
   &:not(:last-of-type) {
     margin-bottom: 60px;
   }
+`;
+
+export const ArticleLink = styled.span`
+  text-decoration: underline;
+  &:hover {
+    color: ${({ theme }) => theme.primaryColorTwo};
+    text-decoration: underline dotted;
+  }
+`;
+
+export const Time = styled.time`
+  font-style: italic;
 `;

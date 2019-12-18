@@ -22,14 +22,18 @@ const Blog = ({ data }) => {
         <ui.PageContent>
           {edges.map(edge => (
             <ui.Article key={edge.node.id}>
-              <Link to={`/${edge.node.fields.slug}`}>
-                <h2>{edge.node.frontmatter.title}</h2>
-              </Link>
-              <time dateTime={edge.node.frontmatter.date}>
+              <ui.ArticleLink>
+                <Link to={`/${edge.node.fields.slug}`}>
+                  <h2>{edge.node.frontmatter.title}</h2>
+                </Link>
+              </ui.ArticleLink>
+              <ui.Time dateTime={edge.node.frontmatter.date}>
                 {edge.node.frontmatter.date}
-              </time>
+              </ui.Time>
               <p>{edge.node.excerpt}</p>
-              <Link to={edge.node.frontmatter.path}>Read more</Link>
+              <ui.ArticleLink>
+                <Link to={`/${edge.node.fields.slug}`}>Read more</Link>
+              </ui.ArticleLink>
             </ui.Article>
           ))}
         </ui.PageContent>

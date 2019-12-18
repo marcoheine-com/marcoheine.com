@@ -20,14 +20,10 @@ const Template = ({ data }) => {
         <Card h1={blog.h1} textContent={blog.textContent} />
         <ui.PageContent>
           <Link to="/blog">Go back to other Blog Posts</Link>
-          <div className="blog-post">
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.date}</h2>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </div>
+
+          <h3>{frontmatter.date}</h3>
+          <h2>{frontmatter.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
           <p>Greetings Marco</p>
           <Link to="/blog">Go back to other Blog Posts</Link>
         </ui.PageContent>
