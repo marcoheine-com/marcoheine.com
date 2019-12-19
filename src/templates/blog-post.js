@@ -19,13 +19,17 @@ const Template = ({ data }) => {
         <SEO title="Blog-Post" />
         <Card h1={blog.h1} textContent={blog.textContent} />
         <ui.PageContent>
-          <Link to="/blog">Go back to other Blog Posts</Link>
+          <ui.GoBackSpan>
+            <Link to="/blog">Go back to other Blog Posts</Link>
+          </ui.GoBackSpan>
 
-          <h3>{frontmatter.date}</h3>
+          <h4>{frontmatter.date}</h4>
           <h2>{frontmatter.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <p>Greetings Marco</p>
-          <Link to="/blog">Go back to other Blog Posts</Link>
+          <ui.GoBackSpan>
+            <Link to="/blog">Go back to other Blog Posts</Link>
+          </ui.GoBackSpan>
         </ui.PageContent>
       </Layout>
     </ThemeProvider>

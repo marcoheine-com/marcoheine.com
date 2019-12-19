@@ -18,6 +18,11 @@ const TIL = () => {
       id: 2,
       title: "Today I leared about not using NULL as your car licence",
     },
+    {
+      id: 3,
+      title: "Today I leared about ",
+      content: ""
+    },
   ];
 
   const reversedData = [...data].reverse();

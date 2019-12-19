@@ -15,10 +15,10 @@ export const Hometext = styled.p`
 export const ImgWrapper = styled.div`
   max-width: 300px;
   margin: 0 auto 40px auto;
-  transition: all 0.2s linear;
+  transition: all 0.4s linear;
 
   &:hover {
-    transform: scale(1.2) rotate(7deg);
+    transform: scale(1.03);
   }
 `;
 
@@ -87,4 +87,15 @@ export const ArticleLink = styled.span`
 
 export const Time = styled.time`
   font-style: italic;
+`;
+
+export const GoBackSpan = styled.span`
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: underline;
+
+  &:hover {
+    color: ${({ theme }) => theme.primaryColorTwo};
+    text-decoration: underline dotted;
+  }
 `;
