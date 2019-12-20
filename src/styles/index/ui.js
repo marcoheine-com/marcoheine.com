@@ -88,14 +88,3 @@ export const ArticleLink = styled.span`
 export const Time = styled.time`
   font-style: italic;
 `;
-
-export const GoBackSpan = styled.span`
-  display: inline-block;
-  margin-bottom: 10px;
-  text-decoration: underline;
-
-  &:hover {
-    color: ${({ theme }) => theme.primaryColorTwo};
-    text-decoration: underline dotted;
-  }
-`;
