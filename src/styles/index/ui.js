@@ -69,6 +69,11 @@ export const BlogLink = styled.span`
 export const PageContent = styled.section`
   margin: 0 auto;
   max-width: 650px;
+
+  p {
+    font-size: 20px;
+    line-height: 1.7;
+  }
 `;
 
 export const Article = styled.article`
