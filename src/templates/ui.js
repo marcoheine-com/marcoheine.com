@@ -20,13 +20,18 @@ export const PageContent = styled.section`
     text-decoration: none;
     &:hover {
       color: inherit;
-      text-decoration: none
+      text-decoration: none;
     }
   }
 
   p {
-    font-size: 20px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.5;
+
+    @media (min-width: 600px) {
+      font-size: 20px;
+      line-height: 1.7;
+    }
   }
 `;
 
@@ -41,6 +46,6 @@ export const GoBackSpan = styled.span`
   }
 
   a {
-    display: block
+    display: block;
   }
 `;

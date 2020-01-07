@@ -3,3 +3,17 @@ title: JavaScript30
 date: 2017-02-05
 path: /javascript30
 ---
+
+I just started the [JavaScript30 Challenge](https://javascript30.com/) by [Wes Bos](https://twitter.com/wesbos) where you get to code **30 different projects** and ideas with **plain JavaScript**.
+
+No frameworks - no compilers - no libraries - no boilerplates.
+
+The idea of JavaScript30 is either to code along as this is a video series or to build it by yourself and compare it with Wes' solution at the end.
+
+I think this is a great idea if you are like me, lacking of ideas for JS projects, want to learn ES6 and level up your JS skills in general. The perfect challenge for your daily dose of JavaScript.
+
+To learn to most from it, I coded along or tried to solve it at my own and put all of it on **CodePen**. You can check it out [here](https://codepen.io/collection/DapjRG).
+
+If you also like to take the JavaScript30 challenge there you go: https://javascript30.com/
+
+It's free so enjoy it, have fun and don't forget to thank Wes Bos! You can also find a list of other peoples experiences and solutions on the GitHub repo: https://github.com/wesbos/JavaScript30

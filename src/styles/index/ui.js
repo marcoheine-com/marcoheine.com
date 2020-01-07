@@ -18,6 +18,7 @@ export const ImgWrapper = styled.div`
   transition: all 0.4s linear;
 
   &:hover {
+    opacity: 0.7;
     transform: scale(1.03);
   }
 `;
@@ -70,9 +71,22 @@ export const PageContent = styled.section`
   margin: 0 auto;
   max-width: 650px;
 
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: ${({ theme }) => theme.primaryColorTwo};
+      text-decoration: underline dotted;
+    }
+  }
+
   p {
-    font-size: 20px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.5;
+
+    @media (min-width: 600px) {
+      font-size: 20px;
+      line-height: 1.7;
+    }
   }
 `;
 

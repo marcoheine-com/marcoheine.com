@@ -7,7 +7,6 @@ export const about = {
   textContent: (
     <>
       <span>80809 München</span>
-      <Link to="/">marcokuehbauch.com</Link>
       <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
       <p>
         <Link to="/blog">my blog</Link> -

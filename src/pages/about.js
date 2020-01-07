@@ -20,6 +20,11 @@ const About = () => {
             to build responsive, accessible and fast websites and frontend
             experiences for every device and every browser.
           </p>
+          <p>
+            I like to work on complex problems, find solutions which will help
+            every human being and achieve that while working with the latest web
+            technologies.
+          </p>
           <h2>My Skills</h2>
           <ul>
             <li>HTML & CSS</li>
@@ -29,26 +34,41 @@ const About = () => {
             <li>Testing with the react-testing-library</li>
           </ul>
           <p>
-            I am proficient and experienced in writing semantic HTML and
-            maintainable CSS with methodologies like BEM.
+            I am proficient and experienced in writing{" "}
+            <strong>semantic HTML</strong> and <strong>maintainable CSS</strong>{" "}
+            with methodologies like BEM.
           </p>
           <p>
-            I am used to work with the principles of Responsive Webdesign since
-            I wrote my bachelor thesis about this topic in 2014 and I can&apos;t
-            imagine building a website without them in mind.
+            I am used to work with the principles of{" "}
+            <strong>Responsive Webdesign</strong> since I wrote my bachelor
+            thesis about this topic in 2014 and I can&apos;t imagine building a
+            website without them in mind.
           </p>
           <p>
-            JavaScript is the language I am most interested in and where I try
-            to improve the most everyday.
+            <strong>JavaScript</strong> is the language I am most interested in
+            and where I try to improve the most everyday.
           </p>
           <p>
-            In 2018 I started to work with ReactJS and I really like the way how
-            React makes it so enjoyable and fun to build Single Page
-            Applications.
+            In 2018 I started to work with <strong>ReactJS</strong> and I really
+            like the way how React makes it so enjoyable, easy and fun to build
+            Single Page Applications.
           </p>
           <p>
-            Working with Git in large teams is something I really like and
-            I&apos;m most used to the feature branch workflow.
+            I also got used to work with the principles of{" "}
+            <strong>Redux</strong> and the main concepts and advantages of using
+            a global state container.
+          </p>
+          <p>
+            Working with <strong>Git</strong> in large teams is something I
+            really like and I&apos;m most used to the{" "}
+            <a
+              href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              feature branch workflow
+            </a>
+            .
           </p>
           <p>My preferred editor right now is VS Code.</p>
           <p>
