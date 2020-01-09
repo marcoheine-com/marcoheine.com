@@ -27,6 +27,8 @@ I would be very happy if other beginners can learn something or find a place to 
 - [What are higher-order-components](#hoc)
 - [What is Redux?](#redux)
 
+---
+
 ### <a name="how-does-react-work"></a> How does React work?
 
 With React you can build **interactive** user interfaces, which get easily updated when the data changes. Dealing with data changes and DOM manipulation can be slow and unnecessary.

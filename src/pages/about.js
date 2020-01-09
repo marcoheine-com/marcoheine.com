@@ -26,16 +26,14 @@ const About = () => {
             technologies.
           </p>
           <h2>My Skills</h2>
-          <p>
-            My current stack contains:
-            <ul>
-              <li>HTML & CSS</li>
-              <li>JavaScript</li>
-              <li>ReactJS</li>
-              <li>Redux</li>
-              <li>Testing with the react-testing-library</li>
-            </ul>
-          </p>
+          <h3>My current stack contains:</h3>
+          <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>ReactJS</li>
+            <li>Redux</li>
+            <li>Testing with the react-testing-library</li>
+          </ul>
           <p>
             I am proficient and experienced in writing{" "}
             <strong>semantic HTML</strong> and <strong>maintainable CSS</strong>{" "}

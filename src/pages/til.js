@@ -5,7 +5,7 @@ import SEO from "../components/seo";
 import Card from "../components/card";
 import { til } from "../constants/cardData";
 import theme from "../styles/theme";
-import * as ui from "../styles/index/ui";
+import * as ui from "../styles/til/ui";
 
 const TIL = () => {
   const data = [
@@ -16,12 +16,12 @@ const TIL = () => {
     },
     {
       id: 2,
-      title: "Today I leared about not using NULL as your car licence",
+      title: "Today I learned about not using NULL as your car licence",
     },
     {
       id: 3,
-      title: "Today I leared about ",
-      content: ""
+      title: "Today I learned about ",
+      content: "",
     },
   ];
 
@@ -35,11 +35,11 @@ const TIL = () => {
         <ui.PageContent>
           {reversedData.map(item => (
             <section key={item.id}>
-              <aside>#TIL {item.id}</aside>
-              <main>
+              <ui.Aside>TIL #{item.id}</ui.Aside>
+              <section>
                 <h3>{item.title}</h3>
                 <p>{item.content}</p>
-              </main>
+              </section>
             </section>
           ))}
         </ui.PageContent>

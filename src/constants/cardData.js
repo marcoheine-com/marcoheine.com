@@ -55,5 +55,12 @@ export const contact = {
 
 export const til = {
   h1: "Today I learned",
-  textContent: "This is a short description about this page.",
+  textContent: (
+    <>
+      <p>
+        This page is a place where I will share short information about things I
+        learned in my day to day life.
+      </p>
+    </>
+  ),
 };

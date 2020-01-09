@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
-  border-top: 6px solid ${({ theme }) => theme.primaryColorTwo};
-  transition: .2s all ease-out;
+  transition: 0.2s all ease-out;
   &:hover {
     box-shadow: -2px 2px 5px #ccc;
   }
@@ -39,7 +38,6 @@ export const Headline = styled.h1`
       border-bottom: none;
     }
   }
-  
 `;
 
 export const Blink = styled.span`
