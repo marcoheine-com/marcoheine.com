@@ -34,15 +34,16 @@ If you notice that your React App is **slow** or takes a long time to load, you 
 
 First of all you can measure your performance score with the **Chrome Lighthouse Audit** which is available in the Chrome DevTools.
 
-![a screenshot of the chrome lighthouse audit settings]()
-
 You can choose between measuring the performance on mobile or desktop. If you just want to get your performance score, you can check off the other audits, like Progressive Web App or SEO.
+
+![a screenshot of the chrome lighthouse audit settings](../images/chrome-lighthouse-audit-settings.jpeg)
 
 You should also activate **throtteling**, because not everyone is on the newest MacBook Pro with 64GB of RAM and i9 processor while browsing on a 5G network. I usually use Applied Slow 4G, 4x CPU Slowdown.
 
-![a screenshot of the chrome lighthouse audit results]()
 
 After the audit is finished, you get a nice **overview** over the scores, the metrics and how they are calculated. You also get opportunities and diagnostics which can tell you why your app is slow and how to solve common problems.
+
+![a screenshot of the chrome lighthouse audit results](../images/chrome-lighthouse-audit.jpeg)
 
 ### <a name="webpagetest"></a> webpagetest
 
@@ -96,7 +97,7 @@ The code coverage tab is located in the Chrome DevTools. You can find it in the 
 
 It can track a whole reload of your application and is still tracking and updating the code coverage when you're interacting with your application.
 
-![a screenshot of the chrome coverage tool]()
+![a screenshot of the chrome coverage tool](../images/coverage.jpeg)
 
 This is another super easy quick win, which can help you to improve your performance by removing **unused code**.
 
@@ -117,8 +118,6 @@ One of these clever tools is **React.lazy**. You can read and learn more about i
 The [React Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) is another useful tool to gain more insight about what your React app is doing and why. It is part of the React Browser Plugin and can be located in the DevTools.
 
 When you **profile** your app it collects timing information about each component that is rendered. It also shows how long a specific component took to render, if it needed to be updated and so on.
-
-![a screenshot of the React Profiler]()
 
 So you can either see if a component took way to long to render or identify unecessary rerenders. Both are ways which can help you to identify performance bottlenecks.
 
