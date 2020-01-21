@@ -23,13 +23,19 @@ export const PageContent = styled.section`
   }
 `;
 
+export const Section = styled.section`
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+`;
+
 export const Aside = styled.aside`
   background-color: #000;
   color: #fff;
   display: inline-block;
   font-family: "Lato", sans-serif;
   font-weight: bold;
-  transform: rotate(10deg);
+  transform: rotate(7deg);
   padding: 10px;
   transition: transform 0.3s linear;
 

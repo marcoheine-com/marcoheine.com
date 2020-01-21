@@ -58,8 +58,8 @@ export const til = {
   textContent: (
     <>
       <p>
-        This page is a place where I will share short information about things I
-        learned in my day to day life.
+        This page is a place where I will share short pieces of information about things I
+        learn in my day to day life.
       </p>
     </>
   ),
