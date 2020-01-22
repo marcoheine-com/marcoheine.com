@@ -30,7 +30,7 @@ const About = () => {
           <ul>
             <li>HTML & CSS</li>
             <li>JavaScript</li>
-            <li>ReactJS</li>
+            <li>React</li>
             <li>Redux</li>
             <li>Testing with the react-testing-library</li>
           </ul>
@@ -58,14 +58,17 @@ const About = () => {
             and where I try to improve the most everyday.
           </p>
           <p>
-            In 2018 I started to work with <strong>ReactJS</strong> and I really
+            In 2018 I started to work with <strong>React</strong> and I really
             like the way how React makes it so enjoyable, easy and fun to build
             Single Page Applications.
           </p>
           <p>
             I also got used to work with the principles of{" "}
-            <strong>Redux</strong> and the main concepts and advantages of using
+            <strong>Redux</strong> and the main concepts of using
             a global state container.
+          </p>
+          <p>
+            Currently I'm interested in getting more of a full grasp of how web applications works. This means I'm learning more about NodeJS, Express, databases and GraphQL to gain a better understanding of the full stack.
           </p>
           <p>
             Working with <strong>Git</strong> in large teams is something I

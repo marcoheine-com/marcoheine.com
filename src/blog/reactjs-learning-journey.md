@@ -1,14 +1,14 @@
 ---
-title: ReactJS - my learning journey
+title: React - my learning journey
 date: 2019-08-15
-path: /reactjs-learning-journey
+path: /react-learning-journey
 ---
 
-In June of 2018 I started learning and working with [ReactJS](https://reactjs.org/). In this blog post I will share some things I learned in the beginning and came across or find worth noting.
+In June of 2018 I started learning and working with [React](https://reactjs.org/). In this blog post I will share some things I learned in the beginning and came across or find worth noting.
 
-I would be very happy if other beginners can learn something or find a place to start their ReactJS learning journey right here.
+I would be very happy if other beginners can learn something or find a place to start their React learning journey right here.
 
-**Please note:** In web development a lot of things change really quickly, especially in the JavaScript and React scene. So it can be possible that some information in here is not that relevant anymore. But it was as of the time when my ReactJS learning journey started.
+**Please note:** In web development a lot of things change really quickly, especially in the JavaScript and React scene. So it can be possible that some information in here is not that relevant anymore. But it was as of the time when my React learning journey started.
 
 ---
 
@@ -42,7 +42,7 @@ In React for every DOM object there is a **virtual** DOM object (like a lightwei
 
 ### <a name="jsx"></a> What is JSX?
 
-JSX is a **syntax extension** for JavaScript and was written to be used in ReactJS to describe what the UI should look like. It is **not valid** JavaScript, Web browsers can't read it. It needs to be **compiled** (with Babel). Every HTML in a JavaScript file is called a JSX element.
+JSX is a **syntax extension** for JavaScript and was written to be used in React to describe what the UI should look like. It is **not valid** JavaScript, Web browsers can't read it. It needs to be **compiled** (with Babel). Every HTML in a JavaScript file is called a JSX element.
 JSX elements are like JS expressions, they can be:
 
 - saved in a variable
@@ -69,13 +69,13 @@ A Component can not change their props. Props do not have to just be data. Callb
 
 State is data which is **changing over time**. State is reserved for **interactivity** and is **private** and fully controlled by a component. State can be updated asynchronously. A parent component can pass its state **down** to a child as props. As soon as the state changes a **rerender** is triggered.
 
-### <a name="conditional-rendering"></a> How does conditional rendering in ReactJS work?
+### <a name="conditional-rendering"></a> How does conditional rendering in React work?
 
 Conditional rendering in React works the same way as ins Vanilla JavaScript, so it is possible to use JS operators to create elements representing the current state and let React update the UI to match them. This means you can render only some items depending of the state of your application.
 
 ### <a name="events"></a> How are events handled in React?
 
-To handle events in ReactJS, you have to add an event listener to an element. (difference to HTML: must be in lowerCamelCase e.g. onClick instead of onclick)
+To handle events in React, you have to add an event listener to an element. (difference to HTML: must be in lowerCamelCase e.g. onClick instead of onclick)
 
 Event listeners are provided when the element is initially rendered, so there is no need to call `addEventListener`. The event listener gets passed in an event handler as props. Naming convention: start with handle, e.g. handleClick.
 
@@ -115,7 +115,7 @@ A higher-order component is a **function** that takes a component and **returns*
 
 ### <a name="redux"></a> What is Redux?
 
-Redux is an **advanced** topic and not part of ReactJS. It is an **additional** library which comes in handy for problems, React does not solve properly for some developers.
+Redux is an **advanced** topic and not part of React. It is an **additional** library which comes in handy for problems, React does not solve properly for some developers.
 
 Redux give you a **global state container**, the store. So you have one global state for your whole application and every component can access and update it by using **actions** and **reducers**.
 
@@ -125,4 +125,4 @@ You can trigger an action inside of your component. The reducer always **listen*
 
 React has one of the best documentations I have ever used. I regularly head over to there, to fresh up my knowledge. It is written very well and has a lot of useful examples in it.
 
-- [The official ReactJS Docs](https://reactjs.org/docs/getting-started.html)
+- [The official React Docs](https://reactjs.org/docs/getting-started.html)
