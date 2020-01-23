@@ -1,12 +1,12 @@
-import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import { ThemeProvider } from "styled-components";
-import Image from "gatsby-image";
+import React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
+import Image from 'gatsby-image';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import theme from "../styles/theme";
-import * as ui from "../styles/index/ui";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import theme from '../styles/theme';
+import * as ui from '../styles/index/ui';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`

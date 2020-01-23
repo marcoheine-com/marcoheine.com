@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
 export const about = {
-  h1: "Marco Kühbauch",
-  h2: "Frontend Web Developer",
+  h1: 'Marco Kühbauch',
+  h2: 'Frontend Web Developer',
   textContent: (
     <>
       <span>80809 München</span>
@@ -31,7 +31,7 @@ export const about = {
 };
 
 export const blog = {
-  h1: "Blog",
+  h1: 'Blog',
   textContent: (
     <p>
       Sometimes I write about new things I learned, things I&apos;m interested
@@ -43,7 +43,7 @@ export const blog = {
 };
 
 export const contact = {
-  h1: "Contact",
+  h1: 'Contact',
   textContent: (
     <>
       <span>Marco Kühbauch</span>
@@ -54,12 +54,12 @@ export const contact = {
 };
 
 export const til = {
-  h1: "Today I learned",
+  h1: 'Today I learned',
   textContent: (
     <>
       <p>
-        This page is a place where I will share short pieces of information about things I
-        learn in my day to day life.
+        This page is a place where I will share short pieces of information
+        about things I learn in my day to day life.
       </p>
     </>
   ),

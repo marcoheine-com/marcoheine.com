@@ -1,9 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
-import { Link } from "gatsby";
-import Navigation from "../navigation";
-import * as ui from "./ui";
+import React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import Navigation from '../navigation';
+import * as ui from './ui';
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -30,14 +28,6 @@ const Header = () => {
       </ui.Header>
     </ui.HeaderWrapper>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;

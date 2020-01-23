@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
 import * as ui from './ui';
 
 const Navigation = () => {
@@ -8,9 +8,7 @@ const Navigation = () => {
 
   return (
     <>
-      <ui.NavIcon
-        onClick={handleOnClick}
-      >
+      <ui.NavIcon onClick={handleOnClick}>
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
