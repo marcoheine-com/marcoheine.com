@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   transition: 0.2s all ease-out;
@@ -22,6 +22,7 @@ export const Header = styled.div`
 `;
 
 export const Headline = styled.h1`
+  display: inline-block;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -32,6 +33,7 @@ export const Headline = styled.h1`
     font-size: 32px;
   }
   a {
+    font-family: inherit;
     text-decoration: none;
 
     &:hover {

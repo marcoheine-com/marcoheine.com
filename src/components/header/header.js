@@ -17,12 +17,12 @@ const Header = () => {
   return (
     <ui.HeaderWrapper>
       <ui.Header>
-        <Link to="/">
-          <ui.Headline>
+        <ui.Headline>
+          <Link to="/">
             {data.site.siteMetadata.author}
             <ui.Blink>_</ui.Blink>
-          </ui.Headline>
-        </Link>
+          </Link>
+        </ui.Headline>
 
         <Navigation />
       </ui.Header>
