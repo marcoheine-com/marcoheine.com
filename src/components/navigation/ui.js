@@ -10,7 +10,7 @@ export const NavIcon = styled.button`
   position: absolute;
   top: 26px;
   transform: rotate(0deg);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   width: 35px;
   @media (min-width: 560px) {
     top: 32px;
@@ -28,13 +28,15 @@ export const NavIconSpan = styled.span`
   outline: 0;
   position: absolute;
   transform: rotate(0deg);
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   width: 100%;
 
   &:nth-child(1) {
     top: 0px;
     transform-origin: left center;
-    ${({ isToggled }) => isToggled &&`
+    ${({ isToggled }) =>
+      isToggled &&
+      `
       transform: rotate(45deg);
       top: 0px;
       left: 0px;
@@ -44,7 +46,9 @@ export const NavIconSpan = styled.span`
   &:nth-child(2) {
     top: 10px;
     transform-origin: left center;
-    ${({ isToggled }) => isToggled &&`
+    ${({ isToggled }) =>
+      isToggled &&
+      `
       opacity: 0;
       transform: translateX(-20px);
       width: 0%;
@@ -54,7 +58,9 @@ export const NavIconSpan = styled.span`
   &:nth-child(3) {
     top: 20px;
     transform-origin: left center;
-    ${({ isToggled }) => isToggled &&`
+    ${({ isToggled }) =>
+      isToggled &&
+      `
       transform: rotate(-45deg);
       top: 25px;
       left: 0px;
@@ -66,9 +72,11 @@ export const Nav = styled.nav`
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   text-align: center;
-  ${({ isToggled }) => isToggled &&`
+  ${({ isToggled }) =>
+    isToggled &&
+    `
     max-height: 600px;
     opacity: 1;
     overflow: hidden;
@@ -82,7 +90,6 @@ export const Nav = styled.nav`
     text-align: right;
     transform: translate(0);
   }
-
 `;
 
 export const List = styled.ul`
@@ -102,7 +109,9 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   font-size: 22px;
   text-transform: uppercase;
-  ${({ isToggled }) => isToggled &&`
+  ${({ isToggled }) =>
+    isToggled &&
+    `
     width: 100%;
     @media (min-width: 710px) {
       width: auto;

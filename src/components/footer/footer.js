@@ -30,8 +30,9 @@ const Footer = () => {
           <ui.ListItem>
             <a
               href="https://www.linkedin.com/in/marco-k%C3%BChbauch/"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
+              title="Link to linkedin profile of Marco Kuehbauch"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

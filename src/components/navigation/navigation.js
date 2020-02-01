@@ -8,7 +8,7 @@ const Navigation = () => {
 
   return (
     <>
-      <ui.NavIcon onClick={handleOnClick}>
+      <ui.NavIcon aria-label="toggle menu" onClick={handleOnClick}>
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
