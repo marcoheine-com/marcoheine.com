@@ -13,6 +13,7 @@ const Navigation = () => {
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
       </ui.NavIcon>
+
       <ui.Nav isToggled={isToggled}>
         <ui.List>
           <ui.ListItem isToggled={isToggled}>

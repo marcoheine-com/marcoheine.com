@@ -4,22 +4,24 @@ import Navigation from '../navigation';
 import * as ui from './ui';
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          author
+  const { site } = useStaticQuery(
+    graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            author
+          }
         }
       }
-    }
-  `);
+    `
+  );
 
   return (
     <ui.HeaderWrapper>
       <ui.Header>
         <ui.Headline>
           <Link to="/">
-            {data.site.siteMetadata.author}
+            {site.siteMetadata.author}
             <ui.Blink>_</ui.Blink>
           </Link>
         </ui.Headline>

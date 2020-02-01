@@ -3,6 +3,7 @@ import * as ui from './ui';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+
   return (
     <ui.Footer>
       <ui.BackToTop>
@@ -160,7 +161,7 @@ const Footer = () => {
         </ui.Link>
         . The source code ist hosted on{' '}
         <ui.Link
-          href="https://bitbucket.org/"
+          href="https://github.com/mkuehb/marcokuehbauch.com"
           target="_blank"
           rel="noopener noreferrer"
         >

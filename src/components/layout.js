@@ -7,6 +7,12 @@ import Footer from './footer';
 import Main from './main';
 import './layout.css';
 
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const HorizontalLine = styled.hr`
   border-top: 6px solid ${({ theme }) => theme.primaryColorTwo};
   margin: 0;
@@ -16,12 +22,12 @@ const HorizontalLine = styled.hr`
 `;
 
 const Layout = ({ children }) => (
-  <>
+  <Page>
     <HorizontalLine />
     <Header />
     <Main>{children}</Main>
     <Footer />
-  </>
+  </Page>
 );
 
 Layout.propTypes = {
