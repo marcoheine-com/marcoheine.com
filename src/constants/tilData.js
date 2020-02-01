@@ -31,4 +31,10 @@ export default [
       'A few days ago a new babel version was released, which means you can use the latest ECMASCRIPT 2020 features without any additional plugins, besides babel. Nullish Coalescing and optional chaining in production, whoop whoop!',
     url: 'https://babeljs.io/blog/2020/01/11/7.8.0',
   },
+  {
+    id: 6,
+    content:
+      'Today I learned, once again, how well done the react-testing-library is. It is purely focused on testing if your code works for your users instead of testing implementation details. We refactored a lot of old tests last week and found some, which tested if a click on a button calls a specific function. 🙄 Not really helpful! Refactoring it to "this should happen to the user if he clicks it" felt so much better.',
+    url: 'https://testing-library.com/docs/intro',
+  },
 ];
