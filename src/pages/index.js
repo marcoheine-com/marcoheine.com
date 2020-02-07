@@ -78,7 +78,7 @@ const IndexPage = () => {
           </ui.InnerWrapper>
         </ui.OuterWrapper>
 
-        <div>
+        <>
           <h2>Latest blog posts:</h2>
           {latestBlogPosts.map(post => (
             <article key={post.node.id}>
@@ -90,7 +90,7 @@ const IndexPage = () => {
               <p>Published on {post.node.frontmatter.date}</p>
             </article>
           ))}
-        </div>
+        </>
       </Layout>
     </ThemeProvider>
   );

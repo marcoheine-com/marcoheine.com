@@ -31,7 +31,7 @@ export const ListItem = styled.li`
 `;
 
 export const Svg = styled.svg`
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   &:hover {
     fill: ${({ theme }) => theme.primaryColorOne};
   }
@@ -39,7 +39,7 @@ export const Svg = styled.svg`
 
 export const Link = styled.a`
   border-bottom: 3px solid #fff;
-  transition: .2s all ease-out;
+  transition: 0.2s all ease-out;
   padding: 0 1px 0 1px;
   &:hover {
     background-color: #fff;
@@ -55,18 +55,18 @@ export const Heart = styled.svg`
   width: 18px;
   @keyframes move {
     0% {
-     -webkit-transform: translateY(4px);
-             transform: translateY(4px);
-   }
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);
+    }
     50% {
       -webkit-transform: translateY(-1px);
-              transform: translateY(-1px);
+      transform: translateY(-1px);
       -webkit-transform: scale(1.3);
-              transform: scale(1.3);
+      transform: scale(1.3);
     }
     100% {
       -webkit-transform: translateY(4px);
-              transform: translateY(4px);
+      transform: translateY(4px);
     }
   }
 `;

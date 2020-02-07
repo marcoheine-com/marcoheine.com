@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageContent = styled.section`
   margin: 0 auto;
@@ -24,8 +24,17 @@ export const PageContent = styled.section`
 `;
 
 export const Section = styled.section`
+  box-shadow: 2px 2px 12px #d9d9d9;
+  border-radius: 30px;
+  padding: 30px;
   &:not(:last-of-type) {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+  }
+
+  &:hover {
+    aside {
+      transform: rotate(0);
+    }
   }
 `;
 
@@ -33,10 +42,10 @@ export const Aside = styled.aside`
   background-color: #000;
   color: #fff;
   display: inline-block;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
-  transform: rotate(7deg);
-  padding: 10px;
+  transform: rotate(10deg);
+  padding: 10px 20px;
   transition: transform 0.3s linear;
 
   &:hover {

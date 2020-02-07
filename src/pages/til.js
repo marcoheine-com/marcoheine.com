@@ -22,7 +22,12 @@ const TIL = () => {
               <ui.Aside>TIL #{id}</ui.Aside>
               <section>
                 <p>{content}</p>
-                {url && <a href={url}>Learn more</a>}
+                {url && (
+                  <>
+                    <span>Learn more: </span>
+                    <a href={url}>{url}</a>
+                  </>
+                )}
               </section>
             </ui.Section>
           ))}
