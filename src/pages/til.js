@@ -17,11 +17,12 @@ const TIL = () => {
         <SEO title="Today I learned" />
         <Card h1={til.h1} textContent={til.textContent} />
         <ui.PageContent>
-          {reversedData.map(({ id, content, url }) => (
+          {reversedData.map(({ id, firstParagraph, secondParagraph, url }) => (
             <ui.Section key={id}>
               <ui.Aside>TIL #{id}</ui.Aside>
               <section>
-                <p>{content}</p>
+                <p>{firstParagraph}</p>
+                {secondParagraph && <p>{secondParagraph}</p>}
                 {url && (
                   <>
                     <span>Learn more: </span>

@@ -40,7 +40,6 @@ You can choose between measuring the performance on mobile or desktop. If you ju
 
 You should also activate **throtteling**, because not everyone is on the newest MacBook Pro with 64GB of RAM and i9 processor while browsing on a 5G network. I usually use Applied Slow 4G, 4x CPU Slowdown.
 
-
 After the audit is finished, you get a nice **overview** over the scores, the metrics and how they are calculated. You also get opportunities and diagnostics which can tell you why your app is slow and how to solve common problems.
 
 ![a screenshot of the chrome lighthouse audit results](../images/chrome-lighthouse-audit.jpeg)
@@ -111,7 +110,7 @@ Imagine having a Landingpage and a page where you show some articles, let's call
 
 So you can use clever tools, who are capable of detecting where your code is actually needed and split it up. That's code-splitting.
 
-One of these clever tools is **React.lazy**. You can read and learn more about it [here](https://reactjs.org/docs/code-splitting.html#reactlazy). Please note that React.lazy is not available for server-side-rendering. Code-splitting in a server rendered app can be achieved with [Loadable Components](https://loadable-components.com/docs/server-side-rendering/).
+One of these clever tools is **React.lazy**. You can read and learn more about it in the [React docs code splitting section](https://reactjs.org/docs/code-splitting.html#reactlazy). Please note that React.lazy is not available for server-side-rendering. Code-splitting in a server rendered app can be achieved with [Loadable Components](https://loadable-components.com/docs/server-side-rendering/).
 
 ### <a name="react-profiler"></a> React Profiler
 
@@ -125,15 +124,13 @@ So you can either see if a component took way to long to render or identify unec
 
 Another way to collect information about your performance is the Chrome Performance Analyzer. It's also located in the Chrome DevTools and lets you record the load performance of your app. This is the place where you analyze your loading time in to the deepest. It just has so many options.
 
-Take your time to read through the documentation [here](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
+Take your time to read through the [documentation of this performance evaluation tool](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
 
 It makes sense to spent more time to fully understand what this tool is capable of. It can totally help you boost your performance because it shows you everything that's happening with your JavaScript.
 
 ### <a name="bundle-analyzer"></a> Bundle-Analyzer
 
-The Webpack Bundle Analyzer is a npm package which "visualizes the size of webpack output files with an interactive zoomable treemap". To use this package your application has to use webpack for the bundling of course.
-
-You can read [here](https://www.npmjs.com/package/webpack-bundle-analyzer) how you can add it to your project.
+The [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) is a npm package which "visualizes the size of webpack output files with an interactive zoomable treemap". To use this package your application has to use webpack for the bundling of course.
 
 This Analyzer is such a great tool. It shows you exactly what files you give out to your users, how big they are and also which files should absolutely not be in your bundle.
 
