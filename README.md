@@ -1,5 +1,5 @@
 ## marcokuehbauch.com
 
-This is the repository with the source code for [marcokuehbauch.com](marcokuehbauch.com).
+This is the repository for my personal blog and website [marcokuehbauch.com](marcokuehbauch.com).
 
-It is build with the statis site generator GatsbyJS.
+It is build with the static site generator [GatsbyJS](https://www.gatsbyjs.org/).
