@@ -45,4 +45,13 @@ export default [
       'Alt tags are necessary for visual impaired users, who can not see an image but the screenreader can read the alt tag to them. So if you leave it out, they have no chance to get any information from it.',
     url: 'https://twitter.com/addyosmani/status/1223873759213314050',
   },
+  {
+    id: 8,
+    firstParagraph:
+      'Today I learned how to build Landingpages with GatsbyJS and Contentful. This is an absolutely powerful combination. Both projects themselves are already doing a pretty good job, but combining them seems like a no-brainer.',
+    secondParagraph:
+      'GatsbyJS makes it really easy to query your Content from Contentful with GraphQL. It server-side-renders your content and returns just static HTML pages.',
+    url:
+      'https://www.contentful.com/r/knowledgebase/gatsbyjs-and-contentful-in-five-minutes/',
+  },
 ];
