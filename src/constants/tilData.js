@@ -54,4 +54,18 @@ export default [
     url:
       'https://www.contentful.com/r/knowledgebase/gatsbyjs-and-contentful-in-five-minutes/',
   },
+  {
+    id: 9,
+    firstParagraph:
+      'React-Router introduced new hooks with its release of version 5: useHistory, useLocation, useParams and useRouteMatch.',
+    secondParagraph:
+      'In my opinion, these new hooks make working with react-router even more convient and maintainable, so if you have not updated to using them yet, give it a try!',
+    url: 'https://css-tricks.com/the-hooks-of-react-router/',
+  },
+  {
+    id: 10,
+    firstParagraph:
+      'The React Hook useMemo ist not the solution for all your performance problems. In most cases memoizing costs more CPU power than not doing it.',
+    url: 'https://kentcdodds.com/blog/usememo-and-usecallback',
+  },
 ];
