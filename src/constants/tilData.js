@@ -68,4 +68,11 @@ export default [
       'The React Hook useMemo ist not the solution for all your performance problems. In most cases memoizing costs more CPU power than not doing it.',
     url: 'https://kentcdodds.com/blog/usememo-and-usecallback',
   },
+  {
+    id: 11,
+    firstParagraph:
+      'Today I learned from Dan Abramov how to persist the redux state to the local storage.',
+    url:
+      'https://egghead.io/lessons/javascript-redux-persisting-the-state-to-the-local-storage',
+  },
 ];
