@@ -6,7 +6,7 @@
   "author": "Marco Kühbauch <marcokuehbauch@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.64",
+    "gatsby": "^2.20.2",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-offline": "^2.2.6",
@@ -16,7 +16,7 @@
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-remark-images": "^3.1.42",
     "gatsby-remark-prismjs": "^3.3.27",
-    "gatsby-source-filesystem": "^2.1.9",
+    "gatsby-source-filesystem": "^2.2.1",
     "gatsby-transformer-remark": "^2.6.44",
     "gatsby-transformer-sharp": "^2.2.6",
     "prismjs": "^1.17.1",
