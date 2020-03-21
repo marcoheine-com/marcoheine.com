@@ -6,7 +6,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
-  const result = await graphql(`
+  const blogPosts = await graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -26,20 +26,51 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
-  if (result.errors) {
-    console.log(result.errors);
+  if (blogPosts.errors) {
+    console.log(blogPosts.errors);
     throw new Error("Things broke, see console output above");
   }
 
-  const posts = result.data.allMarkdownRemark.edges;
-
-  posts.forEach(({ node }) => {
+  blogPosts.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
       component: blogPostTemplate,
       context: {
         slug: node.fields.slug,
       },
+      path: node.fields.slug,
+    });
+  });
+
+  const tilData = await graphql(`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "today-I-learned" } }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (tilData.errors) {
+    console.log(blogPosts.errors);
+    throw new Error("Things broke, see console output above");
+  }
+
+  tilData.data.allFile.edges.forEach(({ node }) => {
+    const { slug } = node.childMarkdownRemark.fields;
+
+    actions.createPage({
+      component: path.resolve(`src/templates/blog-post.js`),
+      context: {
+        slug,
+      },
+      path: slug,
     });
   });
 };
@@ -54,5 +85,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: `blog${value}`,
     });
+  }
+
+  const parent = getNode(node.parent);
+
+  if (parent) {
+    if (parent.sourceInstanceName === 'today-I-learned') {
+      const value = createFilePath({ node, getNode });
+      createNodeField({
+        name: `slug`,
+        node,
+        value: `today-I-learned${value}`,
+      });
+    }
   }
 };
