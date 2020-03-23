@@ -5,4 +5,5 @@ path: /http-desync-attacks
 ---
 
 A collegue of mine teached us about her insights from a web security conference. A major part was, how much bad stuff HTTP desync attacks can do.
-You can learn mrore about it here: [https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn](https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn)
+
+You can learn more about it here: [https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn](https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn)

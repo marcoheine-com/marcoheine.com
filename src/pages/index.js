@@ -33,10 +33,29 @@ const IndexPage = () => {
           }
         }
       }
+      allFile(filter: { sourceInstanceName: { eq: "today-I-learned" } }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                title
+                date(formatString: "MMMM DD, YYYY")
+                path
+              }
+              excerpt
+              fields {
+                slug
+              }
+            }
+            id
+          }
+        }
+      }
     }
   `);
 
   const latestBlogPosts = data.allMarkdownRemark.edges.slice(0, 3);
+  const latestTILPosts = data.allFile.edges.slice(0, 3);
 
   return (
     <ThemeProvider theme={theme}>
@@ -88,6 +107,20 @@ const IndexPage = () => {
                 </Link>
               </ui.BlogLink>
               <p>Published on {post.node.frontmatter.date}</p>
+            </article>
+          ))}
+
+          <h2>Latest today-I-learned posts:</h2>
+          {latestTILPosts.map(post => (
+            <article key={post.node.id}>
+              <ui.BlogLink>
+                <Link to={`/${post.node.childMarkdownRemark.fields.slug}`}>
+                  {post.node.childMarkdownRemark.frontmatter.title}
+                </Link>
+              </ui.BlogLink>
+              <p>
+                Published on {post.node.childMarkdownRemark.frontmatter.date}
+              </p>
             </article>
           ))}
         </>

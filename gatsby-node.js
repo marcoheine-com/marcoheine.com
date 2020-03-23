@@ -66,7 +66,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const { slug } = node.childMarkdownRemark.fields;
 
     actions.createPage({
-      component: path.resolve(`src/templates/blog-post.js`),
+      component: path.resolve(`src/templates/today-I-learned-post.js`),
       context: {
         slug,
       },

@@ -10,8 +10,9 @@ import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
 const Blog = ({ data }) => {
-  const { allMarkdownRemark } = data;
+  const { allMarkdownRemark, allFile } = data;
   const { edges } = allMarkdownRemark;
+  console.log(allFile);
 
   return (
     <ThemeProvider theme={theme}>
@@ -67,6 +68,24 @@ export const pageQuery = graphql`
             path
             title
           }
+        }
+      }
+    }
+    allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              date
+              path
+            }
+            excerpt
+            fields {
+              slug
+            }
+          }
+          id
         }
       }
     }

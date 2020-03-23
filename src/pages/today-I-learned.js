@@ -11,7 +11,12 @@ import theme from '../styles/theme';
 import * as ui from '../styles/til/ui';
 
 const TIL = ({ data }) => {
-  const reversedData = tilData && [...tilData].reverse();
+  const { allFile } = data;
+  const { edges } = allFile;
+
+  const randomNumber = Math.floor(Math.random() * Math.floor(13999));
+
+  const reversedData = edges && [...edges].reverse();
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,42 +25,24 @@ const TIL = ({ data }) => {
         <Card h1={til.h1} textContent={til.textContent} />
 
         <ui.PageContent>
-          {data.allFile.edges.map(({ node }, index) => {
+          {reversedData.map(({ node }, index) => {
             const { childMarkdownRemark } = node;
             const { frontmatter, excerpt, fields } = childMarkdownRemark;
 
             return (
               <ui.Section key={node.id}>
-                <ui.Aside>TIL #{index}</ui.Aside>
+                <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
                 <Link to={`/${fields.slug}`}>
                   <h3>{frontmatter.title}</h3>
                 </Link>
 
                 <section>
-                  <p>
-                    {excerpt}
-                    <Link to={`/${fields.slug}`}>more</Link>
-                  </p>
+                  <p>{excerpt}</p>
+                  <Link to={`/${fields.slug}`}>Read more</Link>
                 </section>
               </ui.Section>
             );
           })}
-
-          {reversedData.map(({ id, firstParagraph, secondParagraph, url }) => (
-            <ui.Section key={id}>
-              <ui.Aside>TIL #{id}</ui.Aside>
-              <section>
-                <p>{firstParagraph}</p>
-                {secondParagraph && <p>{secondParagraph}</p>}
-                {url && (
-                  <>
-                    <span>Learn more: </span>
-                    <a href={url}>{url}</a>
-                  </>
-                )}
-              </section>
-            </ui.Section>
-          ))}
         </ui.PageContent>
       </Layout>
     </ThemeProvider>
