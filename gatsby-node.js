@@ -9,6 +9,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const blogPosts = await graphql(`
     {
       allMarkdownRemark(
+        filter: { fields: { type: { eq: "blog-post" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -85,6 +86,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: `blog${value}`,
     });
+
+    createNodeField({
+      node,
+      name: `type`,
+      value: `blog-post`,
+    });
   }
 
   const parent = getNode(node.parent);
@@ -96,6 +103,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: `slug`,
         node,
         value: `today-I-learned${value}`,
+      });
+
+      createNodeField({
+        node,
+        name: `type`,
+        value: `today-I-learned-post`,
       });
     }
   }

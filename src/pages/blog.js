@@ -10,9 +10,8 @@ import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
 const Blog = ({ data }) => {
-  const { allMarkdownRemark, allFile } = data;
+  const { allMarkdownRemark } = data;
   const { edges } = allMarkdownRemark;
-  console.log(allFile);
 
   return (
     <ThemeProvider theme={theme}>
@@ -55,7 +54,9 @@ export default Blog;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      filter: { fields: { type: { eq: "blog-post" }} }
+      sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           fields {
@@ -68,24 +69,6 @@ export const pageQuery = graphql`
             path
             title
           }
-        }
-      }
-    }
-    allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              title
-              date
-              path
-            }
-            excerpt
-            fields {
-              slug
-            }
-          }
-          id
         }
       }
     }
