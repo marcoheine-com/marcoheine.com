@@ -44,6 +44,7 @@ export const Aside = styled.aside`
   display: inline-block;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
+  margin-bottom: 10px;
   transform: rotate(10deg);
   padding: 10px 20px;
   transition: transform 0.3s linear;

@@ -1,0 +1,11 @@
+---
+title: Hooks in React Router
+date: 2020-02-16
+path: /hooks-in-react-router
+---
+
+React-Router introduced new hooks with its release of version 5: useHistory, useLocation, useParams and useRouteMatch.
+
+In my opinion, these new hooks make working with react-router even more convient and maintainable, so if you have not updated to using them yet, give it a try!
+
+Learn more: https://css-tricks.com/the-hooks-of-react-router/

@@ -6,17 +6,14 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Card from '../components/card';
 import { til } from '../constants/cardData';
-import tilData from '../constants/tilData';
 import theme from '../styles/theme';
 import * as ui from '../styles/til/ui';
 
 const TIL = ({ data }) => {
-  const { allFile } = data;
-  const { edges } = allFile;
+  const { allMarkdownRemark } = data;
+  const { edges } = allMarkdownRemark;
 
   const randomNumber = Math.floor(Math.random() * Math.floor(13999));
-
-  const reversedData = edges && [...edges].reverse();
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,12 +22,11 @@ const TIL = ({ data }) => {
         <Card h1={til.h1} textContent={til.textContent} />
 
         <ui.PageContent>
-          {reversedData.map(({ node }, index) => {
-            const { childMarkdownRemark } = node;
-            const { frontmatter, excerpt, fields } = childMarkdownRemark;
+          {edges.map(({ node }, index) => {
+            const { excerpt, fields, frontmatter, id } = node;
 
             return (
-              <ui.Section key={node.id}>
+              <ui.Section key={id}>
                 <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
                 <Link to={`/${fields.slug}`}>
                   <h3>{frontmatter.title}</h3>
@@ -51,7 +47,7 @@ const TIL = ({ data }) => {
 
 TIL.propTypes = {
   data: PropTypes.shape({
-    allFile: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
@@ -61,21 +57,19 @@ export default TIL;
 
 export const pageQuery = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "today-I-learned" } }) {
+    allMarkdownRemark(
+      filter: { fields: { type: { eq: "today-I-learned-post" }} }
+      sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          childMarkdownRemark {
-            frontmatter {
-              title
-              date
-              path
-            }
-            excerpt
-            fields {
-              slug
-            }
+          fields {
+            slug
           }
           id
+          excerpt
+          frontmatter {
+            title
+          }
         }
       }
     }

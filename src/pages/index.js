@@ -18,7 +18,9 @@ const IndexPage = () => {
           }
         }
       }
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      blogData: allMarkdownRemark(
+        filter: { fields: { type: { eq: "blog-post" }} }
+        sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             fields {
@@ -33,29 +35,28 @@ const IndexPage = () => {
           }
         }
       }
-      allFile(filter: { sourceInstanceName: { eq: "today-I-learned" } }) {
+      tilData: allMarkdownRemark(
+        filter: { fields: { type: { eq: "today-I-learned-post" }} }
+        sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            childMarkdownRemark {
-              frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
-                path
-              }
-              excerpt
-              fields {
-                slug
-              }
+            fields {
+              slug
             }
             id
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              path
+              title
+            }
           }
         }
       }
     }
   `);
 
-  const latestBlogPosts = data.allMarkdownRemark.edges.slice(0, 3);
-  const latestTILPosts = data.allFile.edges.slice(0, 3);
+  const latestBlogPosts = data.blogData.edges.slice(0, 3);
+  const latestTILPosts = data.tilData.edges.slice(0, 3);
 
   return (
     <ThemeProvider theme={theme}>
@@ -114,13 +115,11 @@ const IndexPage = () => {
           {latestTILPosts.map(post => (
             <article key={post.node.id}>
               <ui.BlogLink>
-                <Link to={`/${post.node.childMarkdownRemark.fields.slug}`}>
-                  {post.node.childMarkdownRemark.frontmatter.title}
+                <Link to={`/${post.node.fields.slug}`}>
+                  {post.node.frontmatter.title}
                 </Link>
               </ui.BlogLink>
-              <p>
-                Published on {post.node.childMarkdownRemark.frontmatter.date}
-              </p>
+              <p>Published on {post.node.frontmatter.date}</p>
             </article>
           ))}
         </>

@@ -19,16 +19,12 @@ const TilPost = ({ data }) => {
         <SEO title={frontmatter.title} />
         <Card h1={til.h1} textContent={til.textContent} />
         <ui.PageContent>
-          <ui.GoBackSpan>
-            <Link to="/today-I-learned">
-              Go back to other today-I-learned posts
-            </Link>
-          </ui.GoBackSpan>
-
           <h4>{frontmatter.date}</h4>
           <h2>{frontmatter.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-          <p>Greetings Marco</p>
+          <p>
+            <i>Greetings Marco</i>
+          </p>
           <ui.GoBackSpan>
             <Link to="/today-I-learned">
               Go back to other today-I-learned posts
