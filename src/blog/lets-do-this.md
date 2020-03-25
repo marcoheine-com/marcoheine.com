@@ -6,7 +6,7 @@ path: /lets-to-this
 
 It's finally (a)live! My own website and my own domain are now part of this big thing called WWW. I welcome you and I'm glad you found your way through the web to visit my online appearance.
 
-![](https://media.giphy.com/media/YEL7FJP6ed008/source.gif)
+![a gif of Dr. Frankenstein, yelling: "It's alive!"](https://media.giphy.com/media/YEL7FJP6ed008/source.gif)
 
 You may ask yourself who I am and whats the purpose of this website. At first it's a place for people to get to know me, learn more about me and to get in touch with me. 
 
