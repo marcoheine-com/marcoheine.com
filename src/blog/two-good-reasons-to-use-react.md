@@ -14,9 +14,7 @@ No, it was already defined that React would be the weapon of choice and there wa
 
 No not really. Of course not. It's true that I had no choice back then but I never stopped thinking about how we would build this feature or solve that problem without React or with VanillaJS or even without any JavaScript at all!
 
-If you google "Reasons to use React" you get a lot clever points and different opinions.
-
-I even read about advantages of React I never heard about before. I really have to get into this [Concurrent Mode stuff(https://reactjs.org/docs/concurrent-mode-intro.html). 
+If you google "Reasons to use React" you get a lot clever points and different opinions. I even read about advantages of React I never heard about before. I really have to get into this [Concurrent Mode stuff](https://reactjs.org/docs/concurrent-mode-intro.html). 
 
 Anyway, after this research my list of reasons grew bigger and bigger but I noticed despite all this points being true and reasonable arguments there was no real point where I could put my heart into. 
 
@@ -52,7 +50,7 @@ React is not a full framework. Instead it focuses on the **view layer,** on buil
 
 For me, this meant that I did not have that steep of a **learning curve** and it was very **straightforward** to use. Because the great thing is: if you know **JavaScript** you're good to go! And that is something, which I think, is really cool.
 
-React comes into action when you have a static website and want to switch to a website where to focus is on the user interactions and updates of the user interface. 
+React comes into action when you have a static website and want to switch to a website where the focus is on the user interactions and updates of the user interface. 
 
 You just want to build a view that **reacts** on the user input and is clever enough to only **update** what should be updated. It enables you to take that step without shipping you overly complex extra stuff you don't need. That's why React is your best bet and why I like it so much.
 
