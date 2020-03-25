@@ -98,31 +98,39 @@ const IndexPage = () => {
           </ui.InnerWrapper>
         </ui.OuterWrapper>
 
-        <>
-          <h2>Latest blog posts:</h2>
-          {latestBlogPosts.map(post => (
-            <article key={post.node.id}>
-              <ui.BlogLink>
-                <Link to={`/${post.node.fields.slug}`}>
-                  {post.node.frontmatter.title}
-                </Link>
-              </ui.BlogLink>
-              <p>Published on {post.node.frontmatter.date}</p>
-            </article>
-          ))}
+        <ui.PostWrapper>
+          <section>
+            <h2>Latest blog posts:</h2>
+            <ui.BlogPostWrapper>
+              {latestBlogPosts.map(post => (
+                <article key={post.node.id}>
+                  <ui.BlogLink>
+                    <Link to={`/${post.node.fields.slug}`}>
+                      {post.node.frontmatter.title}
+                    </Link>
+                  </ui.BlogLink>
+                  <p>Published on {post.node.frontmatter.date}</p>
+                </article>
+              ))}
+            </ui.BlogPostWrapper>
+          </section>
 
-          <h2>Latest today-I-learned posts:</h2>
-          {latestTILPosts.map(post => (
-            <article key={post.node.id}>
-              <ui.BlogLink>
-                <Link to={`/${post.node.fields.slug}`}>
-                  {post.node.frontmatter.title}
-                </Link>
-              </ui.BlogLink>
-              <p>Published on {post.node.frontmatter.date}</p>
-            </article>
-          ))}
-        </>
+          <section>
+            <h2>Latest today-I-learned posts:</h2>
+            <ui.BlogPostWrapper>
+              {latestTILPosts.map(post => (
+                <article key={post.node.id}>
+                  <ui.BlogLink>
+                    <Link to={`/${post.node.fields.slug}`}>
+                      {post.node.frontmatter.title}
+                    </Link>
+                  </ui.BlogLink>
+                  <p>Published on {post.node.frontmatter.date}</p>
+                </article>
+              ))}
+            </ui.BlogPostWrapper>
+          </section>
+        </ui.PostWrapper>
       </Layout>
     </ThemeProvider>
   );

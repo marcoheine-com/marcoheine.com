@@ -31,7 +31,8 @@ const About = () => (
           <li>JavaScript</li>
           <li>React</li>
           <li>Redux</li>
-          <li>Testing with the react-testing-library</li>
+          <li>Testing with the Jest and the React Testing Library</li>
+          <li>GraphQL</li>
         </ul>
         <p>
           I am proficient and experienced in writing{' '}
@@ -69,7 +70,7 @@ const About = () => (
           Currently I&apos;m interested in getting more of a full grasp of how
           web applications works. This means I&apos;m learning more about
           NodeJS, Express, databases and GraphQL to gain a better understanding
-          of the full stack.
+          of the <strong>full stack</strong>.
         </p>
         <p>
           Working with <strong>Git</strong> in large teams is something I really

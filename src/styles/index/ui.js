@@ -156,3 +156,22 @@ export const ArticleLink = styled.span`
 export const Time = styled.time`
   font-style: italic;
 `;
+
+export const PostWrapper = styled.section`
+  @media (min-width: 680px) {
+    display: flex;
+    justify-content: space-around;
+  }
+  @media (min-width: 900px) {
+    flex-direction: column;
+  }
+`;
+
+export const BlogPostWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+`;
