@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PageContent = styled.section`
   margin: 0 auto;
@@ -52,4 +52,10 @@ export const Aside = styled.aside`
   &:hover {
     transform: rotate(0);
   }
+`;
+
+export const Slot = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 `;

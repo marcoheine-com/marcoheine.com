@@ -10,7 +10,7 @@ export const OuterWrapper = styled.section`
   @media (min-width: 1050px) {
     align-items: normal;
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -157,7 +157,7 @@ export const Time = styled.time`
   font-style: italic;
 `;
 
-export const PostWrapper = styled.section`
+export const PostOuterWrapper = styled.section`
   @media (min-width: 680px) {
     display: flex;
     justify-content: space-around;
@@ -168,6 +168,12 @@ export const PostWrapper = styled.section`
 `;
 
 export const BlogPostWrapper = styled.section`
+  @media (min-width: 900px) {
+    margin-bottom: 60px;
+  }
+`;
+
+export const PostInnerWrapper = styled.section`
   display: flex;
   flex-direction: column;
   @media (min-width: 900px) {

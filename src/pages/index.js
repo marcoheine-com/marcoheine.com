@@ -19,8 +19,9 @@ const IndexPage = () => {
         }
       }
       blogData: allMarkdownRemark(
-        filter: { fields: { type: { eq: "blog-post" }} }
-        sort: { order: DESC, fields: [frontmatter___date] }) {
+        filter: { fields: { type: { eq: "blog-post" } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
         edges {
           node {
             fields {
@@ -36,8 +37,9 @@ const IndexPage = () => {
         }
       }
       tilData: allMarkdownRemark(
-        filter: { fields: { type: { eq: "today-I-learned-post" }} }
-        sort: { order: DESC, fields: [frontmatter___date] }) {
+        filter: { fields: { type: { eq: "today-I-learned-post" } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
         edges {
           node {
             fields {
@@ -98,10 +100,10 @@ const IndexPage = () => {
           </ui.InnerWrapper>
         </ui.OuterWrapper>
 
-        <ui.PostWrapper>
-          <section>
+        <ui.PostOuterWrapper>
+          <ui.BlogPostWrapper>
             <h2>Latest blog posts:</h2>
-            <ui.BlogPostWrapper>
+            <ui.PostInnerWrapper>
               {latestBlogPosts.map(post => (
                 <article key={post.node.id}>
                   <ui.BlogLink>
@@ -112,12 +114,12 @@ const IndexPage = () => {
                   <p>Published on {post.node.frontmatter.date}</p>
                 </article>
               ))}
-            </ui.BlogPostWrapper>
-          </section>
+            </ui.PostInnerWrapper>
+          </ui.BlogPostWrapper>
 
           <section>
             <h2>Latest today-I-learned posts:</h2>
-            <ui.BlogPostWrapper>
+            <ui.PostInnerWrapper>
               {latestTILPosts.map(post => (
                 <article key={post.node.id}>
                   <ui.BlogLink>
@@ -128,9 +130,9 @@ const IndexPage = () => {
                   <p>Published on {post.node.frontmatter.date}</p>
                 </article>
               ))}
-            </ui.BlogPostWrapper>
+            </ui.PostInnerWrapper>
           </section>
-        </ui.PostWrapper>
+        </ui.PostOuterWrapper>
       </Layout>
     </ThemeProvider>
   );
