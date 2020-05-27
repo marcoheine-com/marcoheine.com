@@ -177,10 +177,37 @@ const About = () => (
           </a>
           .
         </p>
+        <hr />
+        <h2>Everything else</h2>
         <p>
-          In my spare time I like to do sports like bodyweightfitness and yoga,
-          reading books, cheering for Borussia Dortmund, playing videogames, and
-          listening to hiphop. I&apos;m originally from southwest germany.
+          In my spare time I like to do sports like bodyweightfitness and yoga.
+        </p>
+        <p>
+          I read a lot, mostly one fictional and one non fictional book at the
+          same time. I also work on a small side project which is all about
+          reading and books. You can check it out here:{' '}
+          <a
+            href="https://myreadingtime.digital"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            myreadingtime.digital
+          </a>
+        </p>
+        <p>
+          Playing videogames is something I like to do aswell, most of the time
+          it&apos;s on my Nintendo Switch.
+        </p>
+        <p>
+          I also love to write. From blog posts, to short stories, sometimes
+          even poems, or just simple notes. I&apos;m not really good at it but I
+          enjoy it a lot.
+        </p>
+        <p>
+          {' '}
+          Sometimes I still like to cheer for Borussia Dortmund. When I&apos;m
+          listening to music it&apos;s most of the time the genre hiphop.
+          I&apos;m originally from southwest germany.
         </p>
       </ui.PageContent>
     </Layout>
