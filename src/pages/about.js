@@ -13,15 +13,14 @@ const About = () => (
       <SEO title="About" />
       <Card h1={about.h1} h2={about.h2} textContent={about.textContent} />
       <ui.PageContent>
-        <h2>About</h2>
         <p>
-          Hi, my name is Marco and I&apos;m a Frontend Web Developer. I like to
-          build responsive, accessible and fast websites and frontend
-          experiences for every device and every browser.
+          Hi, my name is Marco and I&apos;m a Web Developer. I like to build
+          responsive, accessible and fast websites and web experiences for every
+          device and every browser.
         </p>
         <p>
-          I like to work on complex problems, find solutions which will help
-          every human being and achieve that while working with the latest web
+          I like to find solutions to complex problems, which will help every
+          human being and achieve that while working with the latest web
           technologies.
         </p>
         <h2>My Skills</h2>
@@ -29,10 +28,12 @@ const About = () => (
         <ul>
           <li>HTML & CSS</li>
           <li>JavaScript</li>
+          <li>TypeScript</li>
           <li>React</li>
           <li>Redux</li>
-          <li>Testing with the Jest and the React Testing Library</li>
-          <li>GraphQL</li>
+          <li>Testing with Jest and the React Testing Library</li>
+          <li>NodeJS/Express</li>
+          <li>MongoDB</li>
         </ul>
         <p>
           I am proficient and experienced in writing{' '}
@@ -68,9 +69,9 @@ const About = () => (
         </p>
         <p>
           Currently I&apos;m interested in getting more of a full grasp of how
-          web applications works. This means I&apos;m learning more about
-          NodeJS, Express, databases and GraphQL to gain a better understanding
-          of the <strong>full stack</strong>.
+          web applications works from front to back. This means I&apos;m
+          learning more about NodeJS, Express and Databases like MongoDB to gain
+          a better understanding of the <strong>full stack</strong>.
         </p>
         <p>
           Working with <strong>Git</strong> in large teams is something I really
@@ -202,12 +203,6 @@ const About = () => (
           I also love to write. From blog posts, to short stories, sometimes
           even poems, or just simple notes. I&apos;m not really good at it but I
           enjoy it a lot.
-        </p>
-        <p>
-          {' '}
-          Sometimes I still like to cheer for Borussia Dortmund. When I&apos;m
-          listening to music it&apos;s most of the time the genre hiphop.
-          I&apos;m originally from southwest germany.
         </p>
       </ui.PageContent>
     </Layout>

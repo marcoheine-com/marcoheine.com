@@ -67,7 +67,7 @@ const IndexPage = () => {
 
         <ui.OuterWrapper>
           <ui.Headline>
-            Hi! My name is Marco and I&apos;m a Frontend Web Developer.
+            Hi! My name is Marco and I&apos;m a Web Developer.
           </ui.Headline>
 
           <ui.ImgWrapper>
@@ -82,8 +82,8 @@ const IndexPage = () => {
 
           <ui.InnerWrapper>
             <ui.Hometext>
-              I like to build responsive, accessible and fast websites and
-              frontend experiences for every device and every browser.
+              I like to build responsive, accessible and fast websites and web
+              experiences for every device and every browser.
             </ui.Hometext>
 
             <ui.LinkWrapper>
@@ -118,7 +118,7 @@ const IndexPage = () => {
           </ui.BlogPostWrapper>
 
           <section>
-            <h2>Latest today-I-learned posts:</h2>
+            <h2>Today I learned:</h2>
             <ui.PostInnerWrapper>
               {latestTILPosts.map(post => (
                 <article key={post.node.id}>

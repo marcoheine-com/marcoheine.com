@@ -1,31 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 export const about = {
-  h1: 'Marco Kühbauch',
-  h2: 'Frontend Web Developer',
+  h1: 'About',
   textContent: (
     <>
-      <span>80809 München</span>
+      <span>Marco Kühbauch</span>
+      <span>70180 Stuttgart</span>
       <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
-      <p>
-        <Link to="/blog">my blog</Link> -
-        <a
-          href="https://twitter.com/Mkuehb"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-        -
-        <a
-          href="https://github.com/mkuehb"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-      </p>
     </>
   ),
 };
@@ -35,9 +16,9 @@ export const blog = {
   textContent: (
     <p>
       Sometimes I write about new things I learned, things I&apos;m interested
-      in and things that bother me in my everyday life. Mostly about Frontend,
-      mostly for myself as a learning process and always my own thoughts and my
-      own opinion.
+      in and things that bother me in my everyday life. Mostly about Web
+      Development, for myself as a learning process and always my own thoughts
+      and my own opinion.
     </p>
   ),
 };
@@ -47,7 +28,7 @@ export const contact = {
   textContent: (
     <>
       <span>Marco Kühbauch</span>
-      <span>80809 München</span>
+      <span>70180 Stuttgart</span>
       <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
     </>
   ),
@@ -59,7 +40,7 @@ export const til = {
     <>
       <p>
         This page is a place where I will share short pieces of information
-        about things I learn in my day to day life.
+        about things I learn in my day to day web developer life.
       </p>
     </>
   ),

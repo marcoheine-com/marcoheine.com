@@ -12,14 +12,14 @@ const Footer = () => {
       <nav>
         <ul>
           <ui.ListItem>
-            <a href="mailto:hello@marcokuehbauch.com">
+            <a href="mailto:marco@marcokuehbauch.com">
               <ui.Svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
                 viewBox="0 0 512 512"
               >
-                <title>hello@marcokuehbauch.com</title>
+                <title>marco@marcokuehbauch.com</title>
                 <path
                   fill="#fff"
                   d="M420.02455 354.77865l-99.60115-98.53796 99.59726-98.53797v197.07593zm-311.06513 18.71317l99.78039-98.44549 4.26255 4.03225c23.56094 22.20628 61.0005 22.20628 83.55619 0l4.29373-4.21326 100.24015 98.6265H108.95942zm-17.89961-215.7891l99.44921 98.53797-99.62844 98.53796.17923-197.07593zm309.84949-18.80563L278.3862 259.91094c-12.44868 12.39715-34.73163 12.12371-47.54657-.48141L109.14255 138.89709H400.9093zM64 112v288h384V112H64z"

@@ -7,7 +7,7 @@ export const OuterWrapper = styled.section`
   @media (min-width: 500px) {
     position: relative;
   }
-  @media (min-width: 1050px) {
+  @media (min-width: 970px) {
     align-items: normal;
     flex-direction: row;
     margin-bottom: 80px;
@@ -15,7 +15,7 @@ export const OuterWrapper = styled.section`
 `;
 
 export const InnerWrapper = styled.section`
-  @media (min-width: 1050px) {
+  @media (min-width: 970px) {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -40,7 +40,7 @@ export const Hometext = styled.p`
   margin-bottom: 40px;
   line-height: 1.5;
   text-align: center;
-  @media (min-width: 1050px) {
+  @media (min-width: 970px) {
     text-align: left;
   }
 `;
@@ -63,7 +63,7 @@ export const ImgWrapper = styled.div`
     align-self: flex-start;
   }
 
-  @media (min-width: 1050px) {
+  @media (min-width: 970px) {
     margin-bottom: 0;
   }
 `;
@@ -77,7 +77,7 @@ export const LinkWrapper = styled.section`
     flex-direction: row;
     justify-content: center;
   }
-  @media (min-width: 1050px) {
+  @media (min-width: 970px) {
     margin-bottom: 0;
     justify-content: flex-start;
   }
@@ -158,13 +158,9 @@ export const Time = styled.time`
 `;
 
 export const PostOuterWrapper = styled.section`
-  @media (min-width: 680px) {
-    display: flex;
-    justify-content: space-around;
-  }
-  @media (min-width: 900px) {
-    flex-direction: column;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 80px;
 `;
 
 export const BlogPostWrapper = styled.section`
@@ -174,10 +170,7 @@ export const BlogPostWrapper = styled.section`
 `;
 
 export const PostInnerWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 900px) {
-    flex-direction: row;
-    justify-content: space-around;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
 `;

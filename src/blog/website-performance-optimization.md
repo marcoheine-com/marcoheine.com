@@ -73,11 +73,11 @@ After having multiple ways of testing your websites performance, there are a few
 There are multiple online tools who are able to do that. But as I recently started using Gulp, it does the job for me. The Gulp Plugin [clean-css](https://github.com/scniro/gulp-clean-css) just needs the original folder of your CSS file and the final destination and all the minify stuff is done in the background.
 
 ```javascript
-gulp.task("minify-css", function() {
+gulp.task('minify-css', function() {
   return gulp
-    .src("assets/css/**/*.css")
-    .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("assets/css"));
+    .src('assets/css/**/*.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(gulp.dest('assets/css'));
 });
 ```
 
@@ -86,15 +86,15 @@ gulp.task("minify-css", function() {
 The same goes with compressing Images. Images take the most space on a websites weight so compressing them is usually a good idea. I also used a Gulp Plugin to solve this task, [imagemin](https://github.com/sindresorhus/gulp-imagemin), and saved a lot of space.
 
 ```javascript
-gulp.task("imagemin", function() {
+gulp.task('imagemin', function() {
   return gulp
-    .src("assets/img/**.*")
+    .src('assets/img/**.*')
     .pipe(
       imagemin({
         progressive: true,
       })
     )
-    .pipe(gulp.dest("assets/img"));
+    .pipe(gulp.dest('assets/img'));
 });
 ```
 
@@ -124,7 +124,7 @@ Another useful tip is to enable Gzip. Gzip makes it possible to recude the size 
 
 So that was my experience with website performance optimization so far. I know I'm just at the beginning of the topic and there are a lot more ways to improve performance so the learning never stops.
 
-If you have got more tips or advices I would really appreciate it, if you share them with me. Just send me an email to hello@marcokuehbauch.com or reach out to me on Twitter!
+If you have got more tips or advices I would really appreciate it, if you share them with me. Just send me an email to marco@marcokuehbauch.com or reach out to me on Twitter!
 
 ### <a name="sources/further-reading"></a>Sources & Further Reading
 

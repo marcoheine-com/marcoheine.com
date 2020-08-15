@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Marco Kühbauch - Frontend Developer`,
-    description: `Hi! My name is Marco and I'm a Frontend Web Developer. I like to build responsive, accessible and fast websites and frontend experiences for every device and every browser.`,
+    title: `Marco Kühbauch - Web Developer`,
+    description: `Hi! My name is Marco and I'm a Web Developer. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.`,
     author: `Marco Kühbauch`,
   },
   plugins: [
@@ -34,7 +34,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: '>',
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
