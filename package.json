@@ -6,7 +6,7 @@
   "author": "Marco Kühbauch <marcokuehbauch@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.20.2",
+    "gatsby": "^2.24.53",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-manifest": "^2.2.5",
