@@ -1,19 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageContent = styled.section`
-  margin: 0 auto;
+  margin: 80px auto 0;
   max-width: 650px;
 
   h3 {
     padding-top: 12px;
-  }
-
-  a {
-    text-decoration: underline;
-    &:hover {
-      color: ${({ theme }) => theme.primaryColorTwo};
-      text-decoration: underline dotted;
-    }
   }
 
   h3 > a {
@@ -36,16 +28,15 @@ export const PageContent = styled.section`
 `;
 
 export const GoBackSpan = styled.span`
-  display: inline-block;
-  margin-bottom: 10px;
-  text-decoration: underline;
-
-  &:hover {
-    color: ${({ theme }) => theme.primaryColorTwo};
-    text-decoration: underline dotted;
+  display: block;
+  margin-bottom: 16px;
+  &::before {
+    content: '← ';
   }
+`;
 
-  a {
-    display: block;
-  }
+export const PageHeader = styled.h1`
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
 `;

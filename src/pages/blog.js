@@ -4,8 +4,6 @@ import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Card from '../components/card';
-import { blog } from '../constants/cardData';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
@@ -17,24 +15,24 @@ const Blog = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Blog" />
-        <Card h1={blog.h1} textContent={blog.textContent} />
+        <ui.PageHeader>Blog</ui.PageHeader>
 
         <ui.PageContent>
           {edges.map(edge => (
-            <ui.Article key={edge.node.id}>
-              <ui.ArticleLink>
-                <Link to={`/${edge.node.fields.slug}`}>
-                  <h2>{edge.node.frontmatter.title}</h2>
-                </Link>
-              </ui.ArticleLink>
-              <ui.Time dateTime={edge.node.frontmatter.date}>
-                {edge.node.frontmatter.date}
-              </ui.Time>
-              <p>{edge.node.excerpt}</p>
-              <ui.ArticleLink>
-                <Link to={`/${edge.node.fields.slug}`}>Read more</Link>
-              </ui.ArticleLink>
-            </ui.Article>
+            <Link to={`/${edge.node.fields.slug}`}>
+              <ui.BlogArticle key={edge.node.id}>
+                <h3>{edge.node.frontmatter.title}</h3>
+
+                <ui.Time dateTime={edge.node.frontmatter.date}>
+                  {edge.node.frontmatter.date}
+                </ui.Time>
+                <p>{edge.node.excerpt}</p>
+
+                <ui.Readmore>
+                  <Link to={`/${edge.node.fields.slug}`}> Read article</Link>
+                </ui.Readmore>
+              </ui.BlogArticle>
+            </Link>
           ))}
         </ui.PageContent>
       </Layout>
@@ -55,8 +53,9 @@ export default Blog;
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { fields: { type: { eq: "blog-post" }} }
-      sort: { order: DESC, fields: [frontmatter___date] }) {
+      filter: { fields: { type: { eq: "blog-post" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           fields {

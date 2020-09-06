@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const PageContent = styled.section`
-  margin: 100px auto 0;
+  margin: 80px auto 0;
   max-width: 650px;
 
   a {
-    text-decoration: underline;
-    &:hover {
-      color: ${({ theme }) => theme.primaryColorTwo};
-      text-decoration: underline dotted;
+    display: inline-block;
+    &:not(:last-of-type) {
+      margin-bottom: 60px;
     }
   }
 
@@ -26,10 +25,8 @@ export const PageContent = styled.section`
 export const Section = styled.section`
   box-shadow: 2px 2px 12px #d9d9d9;
   border-radius: 30px;
+  color: ${({ theme }) => theme.primaryColorOne};
   padding: 30px;
-  &:not(:last-of-type) {
-    margin-bottom: 60px;
-  }
 
   &:hover {
     aside {
@@ -58,4 +55,10 @@ export const Slot = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
+`;
+
+export const PageHeader = styled.h1`
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import * as ui from './ui';
 
 const Footer = () => {
@@ -178,7 +179,7 @@ const Footer = () => {
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
           />
         </ui.Heart>
-        . <a href="/impressum">Impressum.</a>
+        . <Link to="/legal-notice">Legal notice.</Link>
       </p>
     </ui.Footer>
   );

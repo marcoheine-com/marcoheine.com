@@ -2,8 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Card from '../components/card';
-import { contact } from '../constants/cardData';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
@@ -11,8 +9,13 @@ const Contact = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <SEO title="Contact" />
-      <Card h1={contact.h1} textContent={contact.textContent} />
+      <ui.PageHeader>Contact</ui.PageHeader>
       <ui.PageContent>
+        <p>Thanks for your interest in getting in touch!</p>
+        <p>
+          If you have a question about one of my blog posts or one of my
+          today-I-learned posts feel free to send me an email.{' '}
+        </p>
         <p>
           You can reach out to me via email at{' '}
           <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>

@@ -2,8 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Card from '../components/card';
-import { about } from '../constants/cardData';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
@@ -11,7 +9,7 @@ const About = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <SEO title="About" />
-      <Card h1={about.h1} h2={about.h2} textContent={about.textContent} />
+      <ui.PageHeader>About</ui.PageHeader>
       <ui.PageContent>
         <p>
           Hi, my name is Marco and I&apos;m a Web Developer. I like to build
@@ -69,44 +67,11 @@ const About = () => (
         </p>
         <p>
           Currently I&apos;m interested in getting more of a full grasp of how
-          web applications works from front to back. This means I&apos;m
-          learning more about NodeJS, Express and Databases like MongoDB to gain
-          a better understanding of the <strong>full stack</strong>.
+          web applications work from front to back. This means I&apos;m learning
+          more about NodeJS, Express and Databases like MongoDB to gain a better
+          understanding of the <strong>full stack</strong>.
         </p>
-        <p>
-          Working with <strong>Git</strong> in large teams is something I really
-          like and I&apos;m most used to the{' '}
-          <a
-            href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            feature branch workflow
-          </a>
-          .
-        </p>
-        <p>
-          My preferred editor right now is <strong>VS Code</strong>.
-        </p>
-        <p>
-          I always try to keep the{' '}
-          <a
-            href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            DRY
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://en.wikipedia.org/wiki/KISS_principle"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            KISS
-          </a>{' '}
-          principles in mind. I&apos;m also an expert in the Rubber Duck Method.
-        </p>
+
         <hr />
         <h2>Former Education</h2>
         <p>

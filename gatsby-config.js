@@ -67,6 +67,9 @@ module.exports = {
           {
             family: `Lato`,
           },
+          {
+            family: `Merriweather`,
+          },
         ],
       },
     },
@@ -79,7 +82,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/marco_kuehbauch.jpeg`, // This path is relative to the root of the site.
+        icon: `src/images/marco_kuehbauch_square.jpeg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

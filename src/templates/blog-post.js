@@ -1,13 +1,11 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
-import { ThemeProvider } from "styled-components";
-import PropTypes from "prop-types";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Card from "../components/card";
-import { blog } from "../constants/cardData";
-import theme from "../styles/theme";
-import * as ui from "./ui";
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import theme from '../styles/theme';
+import * as ui from './ui';
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
@@ -17,7 +15,7 @@ const Template = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title={frontmatter.title} />
-        <Card h1={blog.h1} textContent={blog.textContent} />
+        <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>
           <ui.GoBackSpan>
             <Link to="/blog">Go back to other Blog Posts</Link>

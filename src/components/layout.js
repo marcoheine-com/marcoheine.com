@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Header from './header';
 import Footer from './footer';
 import Main from './main';
+import GlobalStylesheet from './GlobalStylesheet';
 import './layout.css';
 
 const Page = styled.div`
@@ -23,6 +24,7 @@ const HorizontalLine = styled.hr`
 
 const Layout = ({ children }) => (
   <Page>
+    <GlobalStylesheet />
     <HorizontalLine />
     <Header />
     <Main>{children}</Main>

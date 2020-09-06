@@ -26,6 +26,8 @@ I learned a ton while improving the performance of a large and complex web appli
 - [Conclusion](#conclusion)
 - [Sources](#sources)
 
+---
+
 ## <a name="where-to-start"></a> Where to start
 
 If you notice that your React App is **slow** or takes a long time to load, you have a few options to verify that and get an insight into where the biggest problems are.

@@ -119,6 +119,7 @@ export const ListItem = styled.li`
   `};
 
   a {
+    color: ${({ theme }) => theme.primaryColorOne};
     display: block;
     padding: 8px;
 

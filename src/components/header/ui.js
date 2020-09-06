@@ -33,6 +33,7 @@ export const Headline = styled.h1`
     font-size: 32px;
   }
   a {
+    color: ${({ theme }) => theme.primaryColorOne};
     font-family: inherit;
     text-decoration: none;
 

@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Button from '../components/Button';
-import Card from '../components/card';
-import { til } from '../constants/cardData';
 import theme from '../styles/theme';
 import * as ui from '../styles/til/ui';
 
@@ -29,24 +27,24 @@ const TIL = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title="Today I learned" />
-        <Card h1={til.h1} textContent={til.textContent} />
+        <ui.PageHeader>Today I learned</ui.PageHeader>
 
         <ui.PageContent>
           {items.map(({ node }, index) => {
             const { excerpt, fields, frontmatter, id } = node;
 
             return (
-              <ui.Section key={id}>
-                <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
-                <Link to={`/${fields.slug}`}>
+              <Link to={`/${fields.slug}`}>
+                <ui.Section key={id}>
+                  <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
                   <h3>{frontmatter.title}</h3>
-                </Link>
 
-                <section>
-                  <p>{excerpt}</p>
-                  <Link to={`/${fields.slug}`}>Read more</Link>
-                </section>
-              </ui.Section>
+                  <section>
+                    <p>{excerpt}</p>
+                    <Link to={`/${fields.slug}`}>Read more</Link>
+                  </section>
+                </ui.Section>
+              </Link>
             );
           })}
 
