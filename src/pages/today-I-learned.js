@@ -34,8 +34,8 @@ const TIL = ({ data }) => {
             const { excerpt, fields, frontmatter, id } = node;
 
             return (
-              <Link to={`/${fields.slug}`}>
-                <ui.Section key={id}>
+              <Link key={id} to={`/${fields.slug}`}>
+                <ui.Section>
                   <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
                   <h3>{frontmatter.title}</h3>
 
