@@ -104,11 +104,7 @@ const IndexPage = () => {
                       <ui.Time>
                         Published on {post.node.frontmatter.date}
                       </ui.Time>
-                      <ui.BlogLink>
-                        <Link to={`/${post.node.fields.slug}`}>
-                          Read article
-                        </Link>
-                      </ui.BlogLink>
+                      <ui.BlogLink>Read article</ui.BlogLink>
                     </ui.Article>
                   </Link>
                 ))}
@@ -121,11 +117,7 @@ const IndexPage = () => {
                 {latestTILPosts.map(post => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.TILCard>
-                      <ui.BlogLink>
-                        <Link to={`/${post.node.fields.slug}`}>
-                          {post.node.frontmatter.title}
-                        </Link>
-                      </ui.BlogLink>
+                      <ui.BlogLink>{post.node.frontmatter.title}</ui.BlogLink>
                       <ui.Time>
                         Published on {post.node.frontmatter.date}
                       </ui.Time>

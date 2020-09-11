@@ -41,7 +41,7 @@ const TIL = ({ data }) => {
 
                   <section>
                     <p>{excerpt}</p>
-                    <Link to={`/${fields.slug}`}>Read more</Link>
+                    <ui.Readmore>Read more</ui.Readmore>
                   </section>
                 </ui.Section>
               </Link>

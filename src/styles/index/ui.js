@@ -90,12 +90,26 @@ export const Article = styled.article`
 
 export const BlogArticle = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
+
+  p {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Readmore = styled.span`
-  display: flex;
+  color: ${({ theme }) => theme.primaryColorTwo};
   &::before {
     content: '→ ';
+    color: ${({ theme }) => theme.primaryColorOne};
+    margin-right: 4px;
+    transition: margin linear 0.2s;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.linkHover};
+    &:before {
+      margin-right: 0px;
+      margin-left: 4px;
+    }
   }
 `;
 
@@ -112,9 +126,21 @@ export const TILCard = styled.article`
 `;
 
 export const BlogLink = styled.span`
+  align-self: flex-start;
+  color: ${({ theme }) => theme.primaryColorTwo};
   margin-top: auto;
   &::before {
     content: '→ ';
+    color: ${({ theme }) => theme.primaryColorOne};
+    margin-right: 4px;
+    transition: margin linear 0.2s;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.linkHover};
+    &:before {
+      margin-right: 0px;
+      margin-left: 4px;
+    }
   }
 `;
 

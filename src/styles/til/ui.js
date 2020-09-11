@@ -31,24 +31,23 @@ export const Section = styled.section`
   &:hover {
     aside {
       transform: rotate(0);
+      color: #fff;
+      background-color: ${({ theme }) => theme.primaryColorOne};
     }
   }
 `;
 
 export const Aside = styled.aside`
-  background-color: #000;
-  color: #fff;
+  border: 3px dotted ${({ theme }) => theme.primaryColorOne};
+  color: ${({ theme }) => theme.primaryColorOne};
+  background-color: white;
   display: inline-block;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   margin-bottom: 10px;
   transform: rotate(10deg);
-  padding: 10px 20px;
-  transition: transform 0.3s linear;
-
-  &:hover {
-    transform: rotate(0);
-  }
+  padding: 5px 15px;
+  transition: all 0.2s linear;
 `;
 
 export const Slot = styled.div`
@@ -61,4 +60,21 @@ export const PageHeader = styled.h1`
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
+`;
+
+export const Readmore = styled.span`
+  color: ${({ theme }) => theme.primaryColorTwo};
+  &::before {
+    content: '→ ';
+    color: ${({ theme }) => theme.primaryColorOne};
+    margin-right: 4px;
+    transition: margin linear 0.2s;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.linkHover};
+    &:before {
+      margin-right: 0px;
+      margin-left: 4px;
+    }
+  }
 `;
