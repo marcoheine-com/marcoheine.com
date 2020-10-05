@@ -2,6 +2,7 @@
 title: Replace axios with fetch
 date: 2020-03-31
 path: /replace-axios-with-fetch
+tags: ['JavaScript']
 ---
 
 [Axios](https://github.com/axios/axios) is a npm package which makes `http requests` easier. At the time axios came out, making http requests in the browser was not really fun and axios made the life of a lot of developers easier.

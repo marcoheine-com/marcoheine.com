@@ -2,6 +2,7 @@
 title: The cost of JavaScript frameworks
 date: 2020-04-22
 path: /the-cost-of-js-frameworks
+tags: ['JavaScript']
 ---
 
 Tim Kadlec did an in depth analysis of the most common JavaScript frameworks right now and their performance.

@@ -9,6 +9,7 @@ module.exports = {
     author: `Marco Kühbauch`,
   },
   plugins: [
+    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -79,6 +80,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-instagram-embed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

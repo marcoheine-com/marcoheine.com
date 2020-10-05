@@ -56,7 +56,7 @@ export const PageContent = styled.section`
   a {
     display: inline-block;
     &:not(:last-of-type) {
-      margin-bottom: 60px;
+      margin-bottom: 100px;
     }
   }
 

@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const tagTemplate = path.resolve('src/templates/tags.js');
 
   const blogPosts = await graphql(`
     {
@@ -29,7 +30,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   if (blogPosts.errors) {
     console.log(blogPosts.errors);
-    throw new Error("Things broke, see console output above");
+    throw new Error('Things broke, see console output above');
   }
 
   blogPosts.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -44,27 +45,39 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const tilData = await graphql(`
     {
-      allFile(filter: { sourceInstanceName: { eq: "today-I-learned" } }) {
+      postsRemark: allMarkdownRemark(
+        filter: { fields: { type: { eq: "today-I-learned-post" } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 2000
+      ) {
         edges {
           node {
-            childMarkdownRemark {
-              fields {
-                slug
-              }
+            fields {
+              slug
+            }
+            id
+            excerpt
+            frontmatter {
+              title
             }
           }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
   `);
 
   if (tilData.errors) {
-    console.log(blogPosts.errors);
-    throw new Error("Things broke, see console output above");
+    console.log(tilData.errors);
+    throw new Error('Things broke, see console output above');
   }
 
-  tilData.data.allFile.edges.forEach(({ node }) => {
-    const { slug } = node.childMarkdownRemark.fields;
+  tilData.data.postsRemark.edges.forEach(({ node }) => {
+    const { slug } = node.fields;
 
     actions.createPage({
       component: path.resolve(`src/templates/today-I-learned-post.js`),
@@ -72,6 +85,18 @@ exports.createPages = async ({ actions, graphql }) => {
         slug,
       },
       path: slug,
+    });
+  });
+
+  const tags = tilData.data.tagsGroup.group;
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/today-I-learned/${tag.fieldValue}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     });
   });
 };

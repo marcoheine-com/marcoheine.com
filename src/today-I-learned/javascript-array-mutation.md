@@ -2,6 +2,7 @@
 title: JavaScript Array Mutation
 date: 2020-08-07
 path: /javascript-array-mutation
+tags: ['JavaScript']
 ---
 
 Today I ~~learned~~ forgot, that the JavaScript array method

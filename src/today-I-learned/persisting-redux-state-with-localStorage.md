@@ -2,6 +2,7 @@
 title: Persisting redux state with localStorage
 date: 2020-02-27
 path: /persisting-redux-state-with-localStorage
+tags: ['React', 'Redux']
 ---
 
 Today I learned from Dan Abramov how to persist the redux state to the local storage.

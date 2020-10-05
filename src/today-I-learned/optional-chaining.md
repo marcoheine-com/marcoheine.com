@@ -2,6 +2,7 @@
 title: Optional Chaining
 date: 2020-07-08
 path: /optional-chaining
+tags: ['JavaScript']
 ---
 
 The optional chaining operator can now be used in production! Hurray!

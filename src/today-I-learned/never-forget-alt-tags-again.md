@@ -2,9 +2,10 @@
 title: Never forget alt tags again
 date: 2020-02-03
 path: /never-forget-alt-tags-again
+tags: ['Accessibility']
 ---
 
-To make sure you added an alt tag to all your images, you can set a specific CSS rule, which highlights the images missing an alt tag. 
+To make sure you added an alt tag to all your images, you can set a specific CSS rule, which highlights the images missing an alt tag.
 
 ```css
 img:not([alt]) {

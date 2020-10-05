@@ -40,3 +40,9 @@ export const PageHeader = styled.h1`
   margin-top: 20px;
   margin-bottom: 0;
 `;
+
+export const SocialLinks = styled.span`
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+`;

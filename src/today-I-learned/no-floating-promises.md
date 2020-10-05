@@ -2,6 +2,7 @@
 title: No floating promises
 date: 2020-08-06
 path: /no-floating-promises
+tags: ['JavaScript']
 ---
 
 If you have worked with Promises in JavaScript, you know that Promises returned by functions must be handled appropriatly.

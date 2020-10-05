@@ -78,3 +78,34 @@ export const Readmore = styled.span`
     }
   }
 `;
+
+export const Categories = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 40px 0 0;
+
+  li {
+    margin: 0;
+    &:not(:first-of-type) {
+      margin-left: 16px;
+    }
+  }
+`;
+
+export const Category = styled.li`
+  font-family: 'Consolas';
+`;
+
+export const tags = styled.section`
+  display: flex;
+  margin-bottom: 14px;
+`;
+
+export const tag = styled.span`
+  font-size: 14x;
+  font-weight: bold;
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
+`;

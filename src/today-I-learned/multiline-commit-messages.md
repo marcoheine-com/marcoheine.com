@@ -2,6 +2,7 @@
 title: Multiline commit messages
 date: 2020-06-07
 path: /multiline-commit-messages
+tags: ['Git']
 ---
 
 Stefan Judis showed [in this tweet](https://www.notion.so/TIL-343c02e617b140f695757ac1cba75d2e#23d3991930124966aa8b8440f827d1bb) how to write multiline git commit messages.

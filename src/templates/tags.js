@@ -13,8 +13,10 @@ const TIL = ({ data }) => {
 
   const { allMarkdownRemark } = data;
   const { edges, group } = allMarkdownRemark;
+  const hasNumberOfEdges = edges && edges.length > 9;
 
-  const items = edges && (!allItemsLoaded ? edges.slice(0, 10) : edges);
+  const items =
+    edges && (!allItemsLoaded && hasNumberOfEdges ? edges.slice(0, 10) : edges);
   const additionalItems = edges.slice(10);
 
   const randomNumber = Math.floor(Math.random() * Math.floor(13999));
@@ -30,6 +32,9 @@ const TIL = ({ data }) => {
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
         <ui.Categories>
+          <ui.Category>
+            <Link to="/today-I-learned">All tags</Link>
+          </ui.Category>
           {group.map(tag => (
             <ui.Category key={tag.fieldValue} category={tag.fieldValue}>
               <Link to={`/today-I-learned/${tag.fieldValue}/`}>
@@ -66,7 +71,7 @@ const TIL = ({ data }) => {
             );
           })}
 
-          {!allItemsLoaded && (
+          {hasNumberOfEdges && !allItemsLoaded && (
             <ui.Slot>
               <Button onClick={handleOnClick}>
                 Load {additionalItems.length} more
@@ -90,11 +95,17 @@ TIL.propTypes = {
 export default TIL;
 
 export const pageQuery = graphql`
-  query {
+  query($tag: String!) {
     allMarkdownRemark(
-      filter: { fields: { type: { eq: "today-I-learned-post" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+      totalCount
       edges {
         node {
           fields {
@@ -107,10 +118,6 @@ export const pageQuery = graphql`
             tags
           }
         }
-      }
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
       }
     }
   }

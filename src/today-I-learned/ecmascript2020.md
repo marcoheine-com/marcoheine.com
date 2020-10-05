@@ -2,6 +2,7 @@
 title: ECMAScript 2020
 date: 2020-04-06
 path: /ecmascript2020
+tags: ['JavaScript']
 ---
 
 ECMAScript 2020 was released recently which a brings a lot of cool new features into the JavaScript language.

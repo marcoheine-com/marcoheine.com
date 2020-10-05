@@ -2,6 +2,7 @@
 title: What the heck is the event loop anyway?
 date: 2020-05-21
 path: /what-the-heck-is-the-event-loop-anyway
+tags: ['JavaScript']
 ---
 
 When I started learning NodeJS and researched a lot on this topic, I stumbled across this video from [Philip Roberts](https://twitter.com/philip_roberts?lang=en):
