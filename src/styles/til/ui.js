@@ -81,6 +81,7 @@ export const Readmore = styled.span`
 
 export const Categories = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style-type: none;
   margin: 40px 0 0;
