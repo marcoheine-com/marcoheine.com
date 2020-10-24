@@ -127,7 +127,27 @@ const Footer = () => {
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
           />
         </ui.Heart>
-        . <Link to="/legal-notice">Legal notice.</Link>
+        <ui.Link>
+          <Link to="/legal-notice">Legal notice</Link>
+        </ui.Link>
+        <ui.Link>
+          <a
+            href="https://www.iubenda.com/privacy-policy/65252238"
+            className="iubenda-white iubenda-embed"
+            title="Privacy Policy "
+          >
+            Privacy Policy
+          </a>
+        </ui.Link>
+        <ui.Link>
+          <a
+            href="https://www.iubenda.com/privacy-policy/65252238/cookie-policy"
+            className="iubenda-white iubenda-embed"
+            title="Cookie Policy "
+          >
+            Cookie Policy
+          </a>
+        </ui.Link>
       </p>
     </ui.Footer>
   );
