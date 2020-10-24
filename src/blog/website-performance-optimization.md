@@ -124,7 +124,7 @@ Another useful tip is to enable Gzip. Gzip makes it possible to recude the size 
 
 So that was my experience with website performance optimization so far. I know I'm just at the beginning of the topic and there are a lot more ways to improve performance so the learning never stops.
 
-If you have got more tips or advices I would really appreciate it, if you share them with me. Just send me an email to marco@marcokuehbauch.com or reach out to me on Twitter!
+If you have got more tips or advices I would really appreciate it, if you share them with me. Just send me an [email](mailto:marcokuehbauch@gmail.com) or reach out to me on Twitter!
 
 ### <a name="sources/further-reading"></a>Sources & Further Reading
 

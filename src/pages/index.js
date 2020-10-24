@@ -80,16 +80,19 @@ const IndexPage = () => {
               Hi and welcome! My name is Marco and I&apos;m a Web Developer.
             </ui.Headline>
             <ui.Hometext>
-              I like to build responsive, accessible and fast websites and web
-              experiences for every device and every browser. Learn more
-              <ui.LinkSpan>
-                <Link to="/about"> about me</Link>
-              </ui.LinkSpan>
-              <span> or </span>{' '}
-              <ui.LinkSpan>
-                <Link to="/blog">read my blog</Link>
-              </ui.LinkSpan>
-              .
+              <p>
+                I like to build responsive, accessible and fast websites and web
+                experiences for every device and every browser.
+              </p>
+
+              <p>
+                I love to write about Web Development and my life as a
+                developer.
+                <ui.LinkSpan>
+                  <Link to="/blog"> Read my blog</Link>
+                </ui.LinkSpan>
+                .
+              </p>
             </ui.Hometext>
           </ui.Wrapper>
 

@@ -962,6 +962,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.4.3":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
+  integrity sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.11.6":
   version "7.11.6"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.11.6.tgz#2ea3c9463c8b1d04ee2dacc5ac4b81674cec2967"
@@ -6571,6 +6578,13 @@ gatsby-plugin-instagram-embed@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-instagram-embed/-/gatsby-plugin-instagram-embed-2.0.1.tgz#bb619961783631cd9216f4baccab30280d78e8f5"
   integrity sha512-CdzezDgYz73dLArWEs/eZtIZEMgytBtHqNDYfFSSOn9SM5aQvhsJGwNNg54zlPlOrDqVLc7a4DEDJWFIWk496A==
+
+gatsby-plugin-iubenda-cookie-footer@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-iubenda-cookie-footer/-/gatsby-plugin-iubenda-cookie-footer-1.2.0.tgz#84590ff6c56ea308b176d0b10c1c507628a5ccb8"
+  integrity sha512-yanVuch/PPIE+VNZH3VyNE6kZWjuL+g8BLW0EDQxvuEGaJ8qdBbmS656FnuBa0JKtda7cTeAXHVjpSzphYGlzQ==
+  dependencies:
+    "@babel/runtime" "^7.4.3"
 
 gatsby-plugin-manifest@^2.2.5:
   version "2.4.33"

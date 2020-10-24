@@ -15,7 +15,7 @@ const LegalNotice = () => (
         <p>Strohberg 26</p>
         <p>70180 Stuttgart </p>
         <p>Germany</p>
-        <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
+        <a href="mailto:marcokuehbauch@gmail.com">marcokuehbauch@gmail.com</a>
       </ui.PageContent>
     </Layout>
   </ThemeProvider>

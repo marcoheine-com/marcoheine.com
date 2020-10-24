@@ -18,7 +18,7 @@ const Contact = () => (
         </p>
         <p>
           You can reach out to me via email at{' '}
-          <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
+          <a href="mailto:marcokuehbauch@gmail.com">marcokuehbauch@gmail.com</a>
           .
         </p>
         <p>

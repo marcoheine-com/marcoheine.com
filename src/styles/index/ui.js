@@ -12,7 +12,6 @@ export const Wrapper = styled.section`
     align-items: center;
     margin-bottom: 80px;
     max-width: 500px;
-    text-align: center;
   }
 `;
 

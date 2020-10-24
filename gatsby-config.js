@@ -93,6 +93,25 @@ module.exports = {
         icon: `src/images/marco_kuehbauch_square.jpeg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      options: {
+        iubendaOptions: {
+          consentOnContinuedBrowsing: false,
+          whitelabel: false,
+          lang: 'en',
+          siteId: 2043684,
+          countryDetection: true,
+          cookiePolicyId: 65252238,
+          banner: {
+            position: 'float-bottom-center',
+            closeButtonDisplay: false,
+            acceptButtonDisplay: true,
+            customizeButtonDisplay: true,
+          },
+        },
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

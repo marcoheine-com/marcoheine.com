@@ -5,6 +5,6 @@ export const Main = styled.main`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 20px 70px 20px;
+  padding: 50px 20px 160px 20px;
   width: 100%;
 `;
