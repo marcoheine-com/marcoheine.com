@@ -53,7 +53,7 @@ So these tracks are called **implicit** because they are created by the browser 
 
 The same applies if you have four items and define two rows. If you now add two more items, a new row is implicitly created by the browser. With `grid-auto-rows` and `grid-auto-columns` you can style any implicitely created row or column.
 
-<iframe height="422" style="width: 100%;" scrolling="no" title="CSS Grid - Implicit vs. Explicit Tracks" src="https://codepen.io/Mkuehb/embed/rJoXxY?height=422&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="422" style="width: 100%;" scrolling="no" title="CSS Grid - Implicit vs. Explicit Tracks" src="https://codepen.io/Mkuehb/embed/preview/rJoXxY?height=422&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/rJoXxY'>CSS Grid - Implicit vs. Explicit Tracks</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -64,7 +64,7 @@ If you have two items, define two columns using `grid-template-columns: 200px 40
 
 This means `grid-auto-flow` is set to row by default. If yout set `grid-auto-row` to `column` the third item will be put next to the already available items into a new column automatically.
 
-<iframe height="356" style="width: 100%;" scrolling="no" title="CSS Grid - grid-auto-flow" src="https://codepen.io/Mkuehb/embed/wyNjJK?height=356&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="356" style="width: 100%;" scrolling="no" title="CSS Grid - grid-auto-flow" src="https://codepen.io/Mkuehb/embed/preview/wyNjJK?height=356&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/wyNjJK'>CSS Grid - grid-auto-flow</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -79,7 +79,7 @@ If you define three columns with `grid-template-columns: 200px 200px 1fr` , the 
 
 It is also possible to use the auto keyword. Then an item will be sized according to the content it contains.
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - sizing tracks" src="https://codepen.io/Mkuehb/embed/ddaKbb?height=265&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - sizing tracks" src="https://codepen.io/Mkuehb/embed/preview/ddaKbb?height=265&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/ddaKbb'>CSS Grid - sizing tracks</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -98,7 +98,7 @@ you can simply use the CSS Grid repeat function and write:
 grid-template-columns: repeat(4, 1fr);
 ```
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - repeat function" src="https://codepen.io/Mkuehb/embed/vdbVeX?height=265&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - repeat function" src="https://codepen.io/Mkuehb/embed/preview/vdbVeX?height=265&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/vdbVeX'>CSS Grid - repeat function</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -109,7 +109,7 @@ By default grid items just flow one after another and as there is space for each
 
 There is also a way to size grid items inside a parent grid container more precisely. The instruction `grid-column: span 2` tells the browser to size the specific child element with the space and width of two columns. The same goes for `grid-row: span 2`.
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Sizing Grid Items" src="https://codepen.io/Mkuehb/embed/zWOYge?height=265&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Sizing Grid Items" src="https://codepen.io/Mkuehb/embed/preview/zWOYge?height=265&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/zWOYge'>CSS Grid - Sizing Grid Items</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -122,14 +122,14 @@ You can also define that the grid item should start at the first column and span
 
 If you want your grid item to start at the first column and span over the last, but you don't know how many columns you have, just use `grid-column: 1 / -1`.
 
-<iframe height="353" style="width: 100%;" scrolling="no" title="CSS Grid - Placing Grid Items" src="https://codepen.io/Mkuehb/embed/BrByaZ?height=353&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="353" style="width: 100%;" scrolling="no" title="CSS Grid - Placing Grid Items" src="https://codepen.io/Mkuehb/embed/preview/BrByaZ?height=353&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/BrByaZ'>CSS Grid - Placing Grid Items</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 The second CodePen example below shows all the different ways to place grid items inside a grid container. Have a look into the CSS to check how it is done.
 
-<iframe height="409" style="width: 100%;" scrolling="no" title="CSS Grid - Spanning and Placing Cardio" src="https://codepen.io/Mkuehb/embed/oqvjOv?height=409&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="409" style="width: 100%;" scrolling="no" title="CSS Grid - Spanning and Placing Cardio" src="https://codepen.io/Mkuehb/embed/preview/oqvjOv?height=409&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/oqvjOv'>CSS Grid - Spanning and Placing Cardio</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -146,7 +146,7 @@ With `auto-fill` the grid will create es many columns as possible altough you do
 
 In the CodePen example below open the firefox dev tools, enable the grid view in the layout window and you will see the difference between `auto-fit` and `auto-fill`.
 
-<iframe height="228" style="width: 100%;" scrolling="no" title="CSS Grid - auto-fill &amp; auto-fit" src="https://codepen.io/Mkuehb/embed/BrayPm?height=228&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="228" style="width: 100%;" scrolling="no" title="CSS Grid - auto-fill &amp; auto-fit" src="https://codepen.io/Mkuehb/embed/preview/BrayPm?height=228&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/BrayPm'>CSS Grid - auto-fill &amp; auto-fit</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -161,7 +161,7 @@ When the grid items have already the minimum width declared with `minmax()` and 
 
 The CodePen example below also shows the difference between `auto-fit` and `auto-fill` in combination with `minmax()`.
 
-<iframe height="235" style="width: 100%;" scrolling="no" title="CSS Grid - Using minmax() for Responsive Layouts" src="https://codepen.io/Mkuehb/embed/jzOPzg?height=235&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="235" style="width: 100%;" scrolling="no" title="CSS Grid - Using minmax() for Responsive Layouts" src="https://codepen.io/Mkuehb/embed/preview/jzOPzg?height=235&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/jzOPzg'>CSS Grid - Using minmax() for Responsive Layouts</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -176,7 +176,7 @@ On the grid items, meaning the child items of the parent, you then tell each ite
 
 The firefox dev tools also offer the possibility to display your grid area names so you can quickly check, if your layout is displayed as you wish it to be.
 
-<iframe height="380" style="width: 100%;" scrolling="no" title="CSS Grid - Grid Template Areas" src="https://codepen.io/Mkuehb/embed/GxRjdW?height=380&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="380" style="width: 100%;" scrolling="no" title="CSS Grid - Grid Template Areas" src="https://codepen.io/Mkuehb/embed/preview/GxRjdW?height=380&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/GxRjdW'>CSS Grid - Grid Template Areas</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -208,7 +208,7 @@ grid-template-rows:
   [content-top] repeat(10, auto) [content-bottom]
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="CSS - Grid - Naming Lines in CSS Grid" src="https://codepen.io/Mkuehb/embed/mxdQQN?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="CSS - Grid - Naming Lines in CSS Grid" src="https://codepen.io/Mkuehb/embed/preview/mxdQQN?height=300&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/mxdQQN'>CSS - Grid - Naming Lines in CSS Grid</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -227,7 +227,7 @@ Dense
 
 Go ahead and turn the `grid-auto-flow: dense` instruction on and off in the CodePen example below to see the difference.
 
-<iframe height="446" style="width: 100%;" scrolling="no" title="CSS Grid - grid-auto-flow block formatting" src="https://codepen.io/Mkuehb/embed/wmMKxY?height=446&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="446" style="width: 100%;" scrolling="no" title="CSS Grid - grid-auto-flow block formatting" src="https://codepen.io/Mkuehb/embed/preview/wmMKxY?height=446&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/wmMKxY'>CSS Grid - grid-auto-flow block formatting</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -244,7 +244,7 @@ If your grid items don't fill up your whole grid you can use `justify-content` a
 
 Finally with `justify-self` and `align-self` you can overwrite the alignment settings on the container and specify them on a single grid item.
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Alignment and Centering" src="https://codepen.io/Mkuehb/embed/GxoqOy?height=265&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Alignment and Centering" src="https://codepen.io/Mkuehb/embed/preview/GxoqOy?height=265&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/GxoqOy'>CSS Grid - Alignment and Centering</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -259,7 +259,7 @@ By default every item has the value of 0 on the order property. So giving the na
 
 It is important to mention that this technique will goof up the order a screenreader will read it so it is kind of bad practice concerning accessibility if you use this on a bunch of paragraphs for example. But for a nav and a logo it does not matter that much.
 
-<iframe height="238" style="width: 100%;" scrolling="no" title="CSS Grid - Re-ordering Grid items" src="https://codepen.io/Mkuehb/embed/GxojJY?height=238&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="238" style="width: 100%;" scrolling="no" title="CSS Grid - Re-ordering Grid items" src="https://codepen.io/Mkuehb/embed/preview/GxojJY?height=238&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/GxojJY'>CSS Grid - Re-ordering Grid items</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -288,7 +288,7 @@ display: grid;
 grid-template-columns: 150px 1fr;
 ```
 
-<iframe height="484" style="width: 100%;" scrolling="no" title="CSS Grid - Nesting grid with album layouts" src="https://codepen.io/Mkuehb/embed/jzqXVo?height=484&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="484" style="width: 100%;" scrolling="no" title="CSS Grid - Nesting grid with album layouts" src="https://codepen.io/Mkuehb/embed/preview/jzqXVo?height=484&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/jzqXVo'>CSS Grid - Nesting grid with album layouts</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -311,7 +311,7 @@ In general CSS Grid can do everything Flexbox can do. Some people say that Flexb
 
 In this example, Wes shows how things solved previously with flexbox can be done with CSS Grid and in what scenarios Flexbox is still the winner. You can find all the examples in the CodePen below.
 
-<iframe height="381" style="width: 100%;" scrolling="no" title="Flexbox vs. CSS Grid " src="https://codepen.io/Mkuehb/embed/wmoVjp?height=381&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="381" style="width: 100%;" scrolling="no" title="Flexbox vs. CSS Grid " src="https://codepen.io/Mkuehb/embed/preview/wmoVjp?height=381&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/wmoVjp'>Flexbox vs. CSS Grid </a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -322,7 +322,7 @@ In this example you are recreating CodePen, the tool I have used to display all 
 
 This example is a good practice to learn to layout different sections of a page with CSS Grid. Basically it is all about grids inside other grids.
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Recreating CodePen" src="https://codepen.io/Mkuehb/embed/MVmwpZ?height=265&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Grid - Recreating CodePen" src="https://codepen.io/Mkuehb/embed/preview/MVmwpZ?height=265&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/MVmwpZ'>CSS Grid - Recreating CodePen</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -335,7 +335,7 @@ So a div with the class of col-sm-4 would span over 4 columns on a viewport that
 
 In this example Wes shows how to achieve the Bootstrap principle with CSS Grid.
 
-<iframe height="270" style="width: 100%;" scrolling="no" title="Bootstrappy Grid with CSS Variables" src="https://codepen.io/Mkuehb/embed/RMVPdj?height=270&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="270" style="width: 100%;" scrolling="no" title="Bootstrappy Grid with CSS Variables" src="https://codepen.io/Mkuehb/embed/preview/RMVPdj?height=270&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/RMVPdj'>Bootstrappy Grid with CSS Variables</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -352,7 +352,7 @@ Additionally it has the aria attribute `aria-controls="menu-list"` which indicat
 
 By changing the values of this attributes with JavaScript, you can toggle the menu easily.
 
-<iframe height="427" style="width: 100%;" scrolling="no" title="CSS Grid - Responsive Website" src="https://codepen.io/Mkuehb/embed/LdyMJa?height=427&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="427" style="width: 100%;" scrolling="no" title="CSS Grid - Responsive Website" src="https://codepen.io/Mkuehb/embed/preview/LdyMJa?height=427&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/LdyMJa'>CSS Grid - Responsive Website</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -361,7 +361,7 @@ By changing the values of this attributes with JavaScript, you can toggle the me
 
 The last example is about building a blog layout with sections of different width and elements.
 
-<iframe height="394" style="width: 100%;" scrolling="no" title="CSS Grid - Full bleed blog layout" src="https://codepen.io/Mkuehb/embed/eMWwQd?height=394&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="394" style="width: 100%;" scrolling="no" title="CSS Grid - Full bleed blog layout" src="https://codepen.io/Mkuehb/embed/preview/eMWwQd?height=394&theme-id=default&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/Mkuehb/pen/eMWwQd'>CSS Grid - Full bleed blog layout</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>

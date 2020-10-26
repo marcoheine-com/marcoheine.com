@@ -11,8 +11,8 @@ import * as ui from '../styles/til/ui';
 const TIL = ({ data }) => {
   const [allItemsLoaded, setAllItemsLoaded] = useState(false);
 
-  const { allMarkdownRemark } = data;
-  const { edges, group } = allMarkdownRemark;
+  const { allMdx } = data;
+  const { edges, group } = allMdx;
 
   const items = edges && (!allItemsLoaded ? edges.slice(0, 10) : edges);
   const additionalItems = edges.slice(10);
@@ -81,8 +81,9 @@ const TIL = ({ data }) => {
 
 TIL.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object),
+      group: PropTypes.arrayOf(PropTypes.string),
     }),
   }).isRequired,
 };
@@ -91,7 +92,7 @@ export default TIL;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { type: { eq: "today-I-learned-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

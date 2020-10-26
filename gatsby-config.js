@@ -15,6 +15,7 @@ module.exports = {
       options: {
         // The property ID; the tracking code won't be generated without it
         trackingId: process.env.GA_TRACKING_ID,
+        anonymize: true,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -49,9 +50,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -73,6 +75,7 @@ module.exports = {
         fonts: [
           {
             family: `Lato`,
+            variants: ['400', '700'],
           },
           {
             family: `Merriweather`,
@@ -80,7 +83,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-instagram-embed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -97,17 +99,16 @@ module.exports = {
       resolve: 'gatsby-plugin-iubenda-cookie-footer',
       options: {
         iubendaOptions: {
-          consentOnContinuedBrowsing: false,
+          countryDetection: true,
           whitelabel: false,
           lang: 'en',
           siteId: 2043684,
-          countryDetection: true,
           cookiePolicyId: 65252238,
           banner: {
-            position: 'float-bottom-center',
-            closeButtonDisplay: false,
             acceptButtonDisplay: true,
             customizeButtonDisplay: true,
+            rejectButtonDisplay: true,
+            position: 'float-bottom-center',
           },
         },
       },

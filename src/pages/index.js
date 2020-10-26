@@ -18,7 +18,7 @@ const IndexPage = () => {
           }
         }
       }
-      blogData: allMarkdownRemark(
+      blogData: allMdx(
         filter: { fields: { type: { eq: "blog-post" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
@@ -36,7 +36,7 @@ const IndexPage = () => {
           }
         }
       }
-      tilData: allMarkdownRemark(
+      tilData: allMdx(
         filter: { fields: { type: { eq: "today-I-learned-post" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
@@ -80,19 +80,15 @@ const IndexPage = () => {
               Hi and welcome! My name is Marco and I&apos;m a Web Developer.
             </ui.Headline>
             <ui.Hometext>
-              <p>
-                I like to build responsive, accessible and fast websites and web
-                experiences for every device and every browser.
-              </p>
-
-              <p>
-                I love to write about Web Development and my life as a
-                developer.
-                <ui.LinkSpan>
-                  <Link to="/blog"> Read my blog</Link>
-                </ui.LinkSpan>
-                .
-              </p>
+              I like to build responsive, accessible and fast websites and web
+              experiences for every device and every browser.
+            </ui.Hometext>
+            <ui.Hometext>
+              I love to write about Web Development and my life as a developer.
+              <ui.LinkSpan>
+                <Link to="/blog"> Read my blog</Link>
+              </ui.LinkSpan>
+              .
             </ui.Hometext>
           </ui.Wrapper>
 

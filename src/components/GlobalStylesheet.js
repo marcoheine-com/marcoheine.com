@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.linkHover};
     }
   }
+
+  p {
+    color: ${({ theme }) => theme.text}
+  }
 `;
 
 export default GlobalStyle;

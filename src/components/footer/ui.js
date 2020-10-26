@@ -12,6 +12,10 @@ export const Footer = styled.footer`
     color: #fff;
     border-bottom: none;
   }
+
+  p {
+    color: #fff;
+  }
 `;
 
 export const BackToTop = styled.p`
@@ -38,6 +42,17 @@ export const Svg = styled.svg`
 `;
 
 export const Link = styled.a`
+  border-bottom: 3px solid #fff;
+  transition: 0.2s all ease-out;
+  padding: 0 1px 0 1px;
+  &:hover {
+    background-color: #fff;
+    border-bottom: 3px solid #fff;
+    color: ${({ theme }) => theme.primaryColorTwo};
+  }
+`;
+
+export const LinkStyles = styled.span`
   border-bottom: 3px solid #fff;
   transition: 0.2s all ease-out;
   padding: 0 1px 0 1px;

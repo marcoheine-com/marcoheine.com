@@ -28,6 +28,17 @@ const Navigation = () => {
           <ui.ListItem isToggled={isToggled}>
             <Link to="/contact">Contact me</Link>
           </ui.ListItem>
+          <ui.ListItem>
+            <a
+              href="https://www.buymeacoffee.com/marcokuehbauch"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span role="img" aria-label="coffee emoji">
+                ☕️
+              </span>{' '}
+            </a>
+          </ui.ListItem>
         </ui.List>
       </ui.Nav>
     </>

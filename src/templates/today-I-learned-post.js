@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
@@ -8,8 +9,8 @@ import theme from '../styles/theme';
 import * as ui from './ui';
 
 const TilPost = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { mdx } = data;
+  const { frontmatter, body } = mdx;
 
   return (
     <ThemeProvider theme={theme}>
@@ -19,7 +20,7 @@ const TilPost = ({ data }) => {
         <ui.PageContent>
           <h4>{frontmatter.date}</h4>
           <h2>{frontmatter.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <MDXRenderer>{body}</MDXRenderer>
           <p>
             <i>Greetings Marco</i>
           </p>
@@ -50,8 +51,8 @@ export default TilPost;
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

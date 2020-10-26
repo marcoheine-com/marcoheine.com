@@ -9,7 +9,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogPosts = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         filter: { fields: { type: { eq: "blog-post" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -33,7 +33,7 @@ exports.createPages = async ({ actions, graphql }) => {
     throw new Error('Things broke, see console output above');
   }
 
-  blogPosts.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  blogPosts.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       component: blogPostTemplate,
       context: {
@@ -45,7 +45,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const tilData = await graphql(`
     {
-      postsRemark: allMarkdownRemark(
+      postsRemark: allMdx(
         filter: { fields: { type: { eq: "today-I-learned-post" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 2000
@@ -63,7 +63,7 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
+      tagsGroup: allMdx(limit: 2000) {
         group(field: frontmatter___tags) {
           fieldValue
         }
@@ -104,7 +104,7 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,

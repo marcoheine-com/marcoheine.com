@@ -1,15 +1,21 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
+import CoffeeHint from '../components/coffeehint';
+import CoffeeLink from '../components/coffeehint/CoffeeLink';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from './ui';
 
+const shortcodes = { CoffeeHint };
+
 const Template = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter, html, timeToRead } = markdownRemark;
+  const { mdx } = data;
+  const { frontmatter, timeToRead, body } = mdx;
 
   return (
     <ThemeProvider theme={theme}>
@@ -40,8 +46,13 @@ const Template = ({ data }) => {
             </a>
           </ui.SocialLinks>
 
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <p>Greetings Marco</p>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+          <hr />
+          <p>I wish you a wonderful day! Marco</p>
+          <p>Enjoy my writings?</p>
+          <CoffeeLink />
           <ui.GoBackSpan>
             <Link to="/blog">Go back to other Blog Posts</Link>
           </ui.GoBackSpan>
@@ -53,22 +64,23 @@ const Template = ({ data }) => {
 
 Template.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        date: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
       }),
-      html: PropTypes.string,
+      body: PropTypes.string.isRequired,
+      timeToRead: PropTypes.string.isRequired,
     }),
-  }),
+  }).isRequired,
 };
 
 export default Template;
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

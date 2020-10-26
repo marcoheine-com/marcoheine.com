@@ -21,7 +21,6 @@ export const Headline = styled.h1`
 
 export const Hometext = styled.p`
   font-size: 24px;
-  margin-bottom: 40px;
   line-height: 1.5;
 `;
 

@@ -8,8 +8,8 @@ import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
 const Blog = ({ data }) => {
-  const { allMarkdownRemark } = data;
-  const { edges } = allMarkdownRemark;
+  const { allMdx } = data;
+  const { edges } = allMdx;
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +38,7 @@ const Blog = ({ data }) => {
 
 Blog.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
@@ -48,7 +48,7 @@ export default Blog;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { type: { eq: "blog-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
