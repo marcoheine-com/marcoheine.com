@@ -7,8 +7,10 @@ module.exports = {
     title: `Marco Kühbauch - Web Developer`,
     description: `Hi! My name is Marco and I'm a Web Developer. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.`,
     author: `Marco Kühbauch`,
+    siteUrl: `https://marcokuehbauch.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -56,9 +58,7 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: '>',
-            },
+            options: {},
           },
           {
             resolve: `gatsby-remark-images`,
@@ -103,6 +103,8 @@ module.exports = {
           whitelabel: false,
           lang: 'en',
           siteId: 2043684,
+          consentOnScroll: false,
+          perPurposeConsent: true,
           cookiePolicyId: 65252238,
           banner: {
             acceptButtonDisplay: true,

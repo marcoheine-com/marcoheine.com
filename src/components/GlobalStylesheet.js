@@ -10,7 +10,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.text};
+
   }
 `;
 

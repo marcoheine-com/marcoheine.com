@@ -34,7 +34,7 @@ console.log(animals); // ['dog', 'cat', 'bird', 'alpaca']
 console.log(lastAnimal); // whale
 ```
 
-Oh no! The pop() method also changed our original array animals and kicked the last element out of it. That's not what we wanted!
+Oh no! The `pop()` method also changed our original array animals and kicked the last element out of it. That's not what we wanted!
 
 A better way to do this is to copy the original array with the spread operator and work on the copy from that on. This prevents mutating the original array.
 

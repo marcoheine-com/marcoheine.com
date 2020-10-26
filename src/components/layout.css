@@ -612,7 +612,7 @@ code:after,
 tt:before,
 tt:after {
   letter-spacing: -0.2em;
-  content: ' ';
+  font-size: 12px;
 }
 pre code:before,
 pre code:after,
