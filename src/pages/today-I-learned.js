@@ -52,7 +52,7 @@ const TIL = ({ data }) => {
                   {frontmatter.tags && (
                     <ui.tags>
                       {frontmatter.tags.map(tag => (
-                        <ui.tag>#{tag}</ui.tag>
+                        <ui.tag key={tag}>#{tag}</ui.tag>
                       ))}
                     </ui.tags>
                   )}
@@ -83,7 +83,7 @@ TIL.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object),
-      group: PropTypes.arrayOf(PropTypes.string),
+      group: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
 };

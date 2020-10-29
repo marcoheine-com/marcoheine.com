@@ -18,7 +18,7 @@ export const CoffeeLink = styled.a`
   margin-bottom: 20px;
   padding: 10px;
   background-color: #79d6b5;
-  color: white;
+  color: black;
   font-weight: bold;
   border-radius: 5px;
 

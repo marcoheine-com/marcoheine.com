@@ -53,7 +53,6 @@ export const Link = styled.a`
 `;
 
 export const LinkStyles = styled.span`
-  border-bottom: 3px solid #fff;
   transition: 0.2s all ease-out;
   padding: 0 1px 0 1px;
   &:hover {

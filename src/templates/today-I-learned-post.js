@@ -37,12 +37,12 @@ const TilPost = ({ data }) => {
 
 TilPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
       }),
-      html: PropTypes.string,
+      body: PropTypes.string,
     }),
   }).isRequired,
 };
