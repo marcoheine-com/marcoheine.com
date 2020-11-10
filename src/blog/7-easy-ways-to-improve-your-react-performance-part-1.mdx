@@ -1,0 +1,251 @@
+---
+title: 🚀 React performance quick wins 🚀 - 7 easy ways to improve your React performance - part 1
+date: 2020-11-10
+path: /7-easy-ways-to-improve-your-react-performance-part-1
+---
+
+import { Link } from 'gatsby';
+
+At the beginning of the year I wrote a blog post about <Link to='/blog/react-performance-improvements/'>React performance improvements</Link>. It‘s one of my favourite blog posts I ever wrote. It’s a great example of **documenting everything while you learn it**.
+
+It’s a very in depth analysis. It shows you how to **test and measure** the performance of your React application and a lot of ways how to improve it.
+
+In the contrary this blog post has the goal to give you a lot of **quick wins** for your performance. Things you can change and adjust, without too much effort.
+
+So you can see it as an **addition** to my original react performance blog post. The first one builds the foundation. This one adds the cherry on top.
+
+This post is **part 1** of a **series**.
+
+Part 2: _Coming Soon_
+
+**What you can learn from this blog post:**
+
+---
+
+- [Always use a key when mapping (and not index)](#keys)
+- [Use React.Fragments instead of divs as parent element](#fragments)
+- [One useState hook instead of multiple for connected data](#useState)
+
+---
+
+## <a name='keys'></a> Always use a key when mapping (and not an index)
+
+When mapping over an array and rendering a list of items, make sure you **always use keys** for every item.
+
+Keys help React identify which items have **changed, are added, or are removed**. Keys should be strings that identify a list item, such as an ID.
+
+Here is a quick example of the usage of keys. Check the return method of this component. There we use the id of every animal as a key.
+
+```javascript
+import * as React from 'react';
+import { AnimalCard } from './animal-card';
+
+const animals = [
+  {
+    id: 1,
+    name: 'dog',
+  },
+  {
+    id: 2,
+    name: 'cat',
+  },
+  {
+    id: 3,
+    name: 'unicorn',
+  },
+];
+
+const Animals = () => {
+  return animals.map(animal => {
+    return <AnimalCard key={animal.id}>{animal.name}</AnimalCard>;
+  });
+};
+
+export default Animals;
+```
+
+If you're not using keys, React has to a hard time to figure out which items to update. This can lead to updating every item although only one changed.
+
+This can be a massive performance impact! 😫
+
+If you don't have access to unique identifiers, indexes can be used as a last resort. It is **not recommended** to use them as keys but it's better than not using any keys at all.
+
+If the order of items changes, the index changes as well so React has to update every item anyway.
+
+You can learn more about why keys are important in this [article about reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children).
+
+So that's it for quickwin number one: **always use a key when mapping!**
+
+## <a name='fragments'></a> Use React.Fragments instead of divs as JSX parent element
+
+Next up: quickwin number two.
+
+When you return multiple elements from a component, JSX needs a parent element to wrap them. A quick way to do this, is to put a `<div>` around them.
+
+I admit it, I've done this too, way too many times.
+
+```javascript
+import * as React from 'react';
+
+const MyComponent = () => {
+  return (
+    <div>
+      <span>Hi!</span>
+      <span>Hope you can learn a lot from my blog posts</span>
+    </div>
+  );
+};
+
+export default MyComponent;
+```
+
+But the next time you need a JSX wrapping element, think again! You can use a **React.Fragment** for that!
+
+```javascript
+import * as React from 'react';
+
+const MyComponent = () => {
+  return (
+    <React.Fragment>
+      <span>Hi!</span>
+      <span>Hope you can learn a lot from my blog posts</span>
+    </React.Fragment>
+  );
+};
+
+export default MyComponent;
+```
+
+And the best thing is, there is even a **short syntax** for this.
+
+```javascript
+import * as React from 'react';
+
+const MyComponent = () => {
+  return (
+    <>
+      <span>Hi!</span>
+      <span>Hope you can learn a lot from my blog posts</span>
+    </>
+  );
+};
+
+export default MyComponent;
+```
+
+But wait, why does this boost my performance? Good question! Here's the thing. The more DOM elements your React application has, the **longer** the render process takes.
+
+Google's performance tool lighthouse recommends **not more than 1500 DOM nodes** in total.
+
+So by removing every unnecessary `div`, like the one we've used way too often as a JSX parent element wrapper, we already get closer to that goal. And we can boost our performance!
+
+You can read more about why you should avoid too many DOM nodes in this article: [https://web.dev/dom-size/](https://web.dev/dom-size/)
+
+<CoffeeHint />
+
+## <a name='useState'></a> One useState hook instead of multiple for connected data
+
+Another performance quickwin you can achieve easy, is using one `useState` hook instead of multiple ones for connected data.
+
+Imagine a developer built a form with several `input` elements. Therefore they added four individual `useState` hooks.
+
+That could look something like this:
+
+```javascript
+import * as React from 'react';
+
+const MyBigForm = () => {
+  const [username, setUsername] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [nickname, setNickName] = React.useState('');
+
+  const handleUserNameChange = event => {
+    setUsername(event.target.value);
+  };
+
+  const handleEmailChange = event => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = event => {
+    setPassword(event.target.value);
+  };
+
+  const handleNicknameChange = event => {
+    setNickName(event.target.value);
+  };
+
+  return (
+    <form>
+      <label>Username:</label>
+      <input value={username} name="username" onChange={handleUserNameChange} />
+
+      <label>Email:</label>
+      <input value={email} name="email" onChange={handleEmailChange} />
+
+      <label>Password:</label>
+      <input value={password} name="password" onChange={handlePasswordChange} />
+
+      <label>Nickname:</label>
+      <input value={nickname} name="nickname" onChange={handleNicknameChange} />
+    </form>
+  );
+};
+```
+
+There is a lot of `useState` and `onChange` going on here, right? Phew. We can optimize for the better here!
+
+By **removing** the individual `useState` hooks and implementing a combined one, we're making sure to **reduce** the size of the component and therefore improve the performance.
+
+And we can also get rid of all the `handleChange` functions, which all seem to do the same.
+
+```javascript
+import * as React from 'react';
+
+const MyBigForm = () => {
+  const [formdata, setFormdata] = React.useState({
+    username: '',
+    email: '',
+    password: '',
+    nickname: '',
+  });
+
+  const handleOnChange = event => {
+    setFormdata({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  return (
+    <form>
+      <label>Username:</label>
+      <input value={username} name="username" onChange={handleOnChange} />
+
+      <label>Email:</label>
+      <input value={email} name="email" onChange={handleOnChange} />
+
+      <label>Password:</label>
+      <input value={password} name="password" onChange={handleOnChange} />
+
+      <label>Nickname:</label>
+      <input value={nickname} name="nickname" onChange={handleOnChange} />
+    </form>
+  );
+};
+```
+
+Wow a lot less code and a lot more **readable**, don't you think? It's always a good idea to keep your state in an object, if you're dealing with **connected data**.
+
+Don't get me wrong: using and calling multiple `useState` hooks is not a bad thing! React has no problem with that.
+
+But in this example it's also about **removing duplicate code** and **rethinking** your components.
+
+And if JavaScript has to allocate the memory for only one function instead of four, that's also a **performance quickwin**! And that's what we're here for, right?
+
+That's it for **part 1** of this **React performance quickwins series**! Hope you could already apply some of them and make your React app even faster.
+
+Let me know if these tips helped or you have other tips, you'd like to share.
+
+Just send me an [email](mailto:marcokuehbauch@gmail.com) or message me on [Twitter](https://twitter.com/Mkuehb).
