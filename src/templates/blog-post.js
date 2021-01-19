@@ -70,7 +70,7 @@ Template.propTypes = {
         date: PropTypes.string.isRequired,
       }),
       body: PropTypes.string.isRequired,
-      timeToRead: PropTypes.string.isRequired,
+      timeToRead: PropTypes.number.isRequired,
     }),
   }).isRequired,
 };

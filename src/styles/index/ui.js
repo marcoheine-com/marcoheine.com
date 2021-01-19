@@ -10,8 +10,12 @@ export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
     max-width: 500px;
+
+    @media(min-width: 650px) {
+      margin-top: 140px;
+    }
   }
 `;
 
@@ -29,6 +33,40 @@ export const LinkSpan = styled.span`
 
   &:hover {
     color: ${({ theme }) => theme.linkHover};
+  }
+`;
+
+export const Container = styled.div`
+  justify-items: center;
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: 460px) {
+    grid-template-columns: auto auto;
+  }
+`;
+
+export const SkillsList = styled.ul`
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+  }
+
+  button {
+    background: none;
+    margin: 0;
+    padding: 14px;
+    border: 2px dashed;
+    cursor: pointer;
+    &:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid black;
+    }
   }
 `;
 

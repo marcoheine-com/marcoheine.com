@@ -67,22 +67,12 @@ const IndexPage = () => {
 
         <ui.IndexWrapper>
           <ui.Wrapper>
-            <ui.ImgWrapper>
-              <Link to="/about">
-                <Image
-                  alt="a picture of Marco Kühbauch"
-                  fluid={data.personalImg.childImageSharp.fluid}
-                  fadeIn
-                />
-              </Link>
-            </ui.ImgWrapper>
+            <ui.Headline>Hi and welcome!</ui.Headline>
+
             <ui.Headline>
-              Hi and welcome! My name is Marco and I&apos;m a Web Developer.
+              My name is Marco and I&apos;m a Web Developer.
             </ui.Headline>
-            <ui.Hometext>
-              I like to build responsive, accessible and fast websites and web
-              experiences for every device and every browser.
-            </ui.Hometext>
+
             <ui.Hometext>
               I love to write about Web Development and my life as a developer.
               <ui.LinkSpan>
