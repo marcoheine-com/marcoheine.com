@@ -10,12 +10,15 @@ import CoffeeLink from '../components/coffeehint/CoffeeLink';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from './ui';
+import { formatDate } from '../utils/formatDate';
 
 const shortcodes = { CoffeeHint };
 
 const Template = ({ data }) => {
   const { mdx } = data;
-  const { frontmatter, timeToRead, body } = mdx;
+  const { frontmatter, timeToRead, body, parent } = mdx;
+
+  const lastUpdated = formatDate(parent.fields.gitLogLatestDate);
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,7 +28,7 @@ const Template = ({ data }) => {
         <ui.PageContent>
           <h2>{frontmatter.title}</h2>
           <section>
-            <h5>Published at: {frontmatter.date}</h5>
+            <h5>Last updated: {lastUpdated}</h5>
             <h5>Reading time: {timeToRead}min</h5>
           </section>
           <ui.SocialLinks>
@@ -49,6 +52,11 @@ const Template = ({ data }) => {
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
+          <p>
+            <i>
+              This blog post was originally published on {frontmatter.date}.
+            </i>
+          </p>
           <hr />
           <p>I wish you a wonderful day! Marco</p>
           <p>Enjoy my writings?</p>
@@ -71,6 +79,11 @@ Template.propTypes = {
       }),
       body: PropTypes.string.isRequired,
       timeToRead: PropTypes.number.isRequired,
+      parent: PropTypes.shape({
+        fields: PropTypes.shape({
+          gitLogLatestDate: PropTypes.string.isRequired,
+        }),
+      }),
     }),
   }).isRequired,
 };
@@ -86,6 +99,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
       }
       timeToRead
+      parent {
+        ... on File {
+          fields {
+            gitLogLatestDate
+          }
+        }
+      }
     }
   }
 `;

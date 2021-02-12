@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
+import { formatDate } from '../utils/formatDate';
 
 const Blog = ({ data }) => {
   const { allMdx } = data;
@@ -22,8 +23,9 @@ const Blog = ({ data }) => {
             <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
               <ui.BlogArticle>
                 <h3>{edge.node.frontmatter.title}</h3>
-                <ui.Time dateTime={edge.node.frontmatter.date}>
-                  {edge.node.frontmatter.date}
+                <ui.Time dateTime={edge.node.parent.fields.gitLogLatestDate}>
+                  Last updated:{' '}
+                  {formatDate(edge.node.parent.fields.gitLogLatestDate)}
                 </ui.Time>
                 <p>{edge.node.excerpt}</p>
                 <ui.Readmore>Read article</ui.Readmore>
@@ -63,6 +65,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+          }
+          parent {
+            ... on File {
+              fields {
+                gitLogLatestDate
+              }
+            }
           }
         }
       }
