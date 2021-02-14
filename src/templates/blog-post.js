@@ -62,7 +62,7 @@ const Template = ({ data }) => {
           <p>Enjoy my writings?</p>
           <CoffeeLink />
           <ui.GoBackSpan>
-            <Link to="/blog">Go back to other Blog Posts</Link>
+            <Link to="/blog/">Go back to other Blog Posts</Link>
           </ui.GoBackSpan>
         </ui.PageContent>
       </Layout>

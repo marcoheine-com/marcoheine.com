@@ -33,7 +33,7 @@ const TIL = ({ data }) => {
 
         <ui.Categories>
           <ui.Category>
-            <Link to="/today-I-learned">All tags</Link>
+            <Link to="/today-I-learned/">All tags</Link>
           </ui.Category>
           {group.map(tag => (
             <ui.Category key={tag.fieldValue} category={tag.fieldValue}>

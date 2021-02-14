@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import Image from 'gatsby-image';
+import { formatDate } from '../utils/formatDate';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -32,6 +32,13 @@ const IndexPage = () => {
               date(formatString: "MMMM DD, YYYY")
               path
               title
+            }
+            parent {
+              ... on File {
+                fields {
+                  gitLogLatestDate
+                }
+              }
             }
           }
         }
@@ -76,7 +83,7 @@ const IndexPage = () => {
             <ui.Hometext>
               I love to write about Web Development and my life as a developer.
               <ui.LinkSpan>
-                <Link to="/blog"> Read my blog</Link>
+                <Link to="/blog/"> Read my blog</Link>
               </ui.LinkSpan>
               .
             </ui.Hometext>
@@ -91,7 +98,8 @@ const IndexPage = () => {
                     <ui.Article>
                       <h4>{post.node.frontmatter.title}</h4>
                       <ui.Time>
-                        Published on {post.node.frontmatter.date}
+                        Last updated:{' '}
+                        {formatDate(post.node.parent.fields.gitLogLatestDate)}
                       </ui.Time>
                       <ui.BlogLink>Read article</ui.BlogLink>
                     </ui.Article>
