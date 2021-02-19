@@ -203,3 +203,28 @@ export const PageHeader = styled.h1`
   margin-top: 20px;
   margin-bottom: 0;
 `;
+
+export const WaveHand = styled.span`
+  display: inline-block;
+  transition: transform;
+  transform: rotate(-20deg);
+  animation: wave 0.7s linear 1;
+
+  @keyframes wave {
+    0% {
+      transform: rotate(-20deg);
+    }
+    25% {
+      transform: rotate(60deg) scale(2);
+    }
+    50% {
+      transform: rotate(-20deg) scale(2);
+    }
+    75% {
+      transform: rotate(60deg) scale(2);
+    }
+    100% {
+      transform: rotate(-20deg) scale(1);
+    }
+  }
+`;

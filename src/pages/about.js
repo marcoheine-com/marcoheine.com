@@ -1,16 +1,162 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
 
+const skills = [
+  {
+    skill: 'HTML & CSS',
+    text: (
+      <>
+        I am proficient and experienced in writing{' '}
+        <strong>semantic HTML</strong> and <strong>maintainable CSS</strong>{' '}
+        with methodologies like{' '}
+        <a
+          href="http://getbem.com/introduction/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          BEM
+        </a>
+        .
+      </>
+    ),
+  },
+  {
+    skill: 'Response Webdesign',
+    text: (
+      <>
+        I am used to work with the principles of{' '}
+        <strong>Responsive Webdesign</strong> since I wrote my bachelor thesis
+        about this topic in 2014 and I can&apos;t imagine building a website
+        without them in mind.
+      </>
+    ),
+  },
+  {
+    skill: 'JavaScript',
+    text: (
+      <>
+        <strong>JavaScript</strong> is the language I am most interested in, I'm
+        programming the most in, where I feel the most comfortable with and
+        where I try to improve the most everyday.
+      </>
+    ),
+  },
+  {
+    skill: 'TypeScript',
+    text: (
+      <>
+        In 2020 I started to work with <strong>TypeScript</strong> and I just
+        became a person who can't write normal JavaScript anymore without
+        feeling scared a little. I love how typing makes working on a large
+        codebase with a lot of other developers much more comfortable and
+        productive.
+      </>
+    ),
+  },
+  {
+    skill: 'React',
+    text: (
+      <>
+        {' '}
+        In 2018 I started to work with <strong>React</strong> and I really like
+        the way how React makes it so enjoyable, easy and fun to build Single
+        Page Applications. Since then I build a lot of user interfaces with it
+        and am experienced in the best practices of it.
+      </>
+    ),
+  },
+  {
+    skill: 'Redux',
+    text: (
+      <>
+        {' '}
+        When I first got to work with React I also got used to work with the
+        principles of <strong>Redux</strong> and the main concepts of using a
+        global state container.
+      </>
+    ),
+  },
+  {
+    skill: 'Testing with Jest and the React Testing Library',
+    text: (
+      <>
+        <strong>Jest</strong> in combination with the{' '}
+        <strong>React Testing Library</strong> is my favourite combination for
+        writing frontend unit tests right know.
+      </>
+    ),
+  },
+  {
+    skill: 'NodeJS/Express',
+    text: (
+      <>
+        I had the opportunity to work on several <strong>NodeJS/Express</strong>{' '}
+        backends and I like the fact, that I can be productive immediately
+        because of knowing TypeScript from a Frontend developer perspective.
+      </>
+    ),
+  },
+  {
+    skill: 'GoLang',
+    text: (
+      <>
+        <strong>GoLang</strong> is the programming language I'm curently
+        learning and it's a lot of fun. I already worked in a production
+        backend, writing api endpoints in combination with PostgreSQL.{' '}
+      </>
+    ),
+  },
+  {
+    skill: 'MongoDB',
+    text: (
+      <>
+        While working with <strong>MongoDB</strong> I learned about the
+        advantages of document based databases and when they are better suited
+        then databases which use SQL.
+      </>
+    ),
+  },
+  {
+    skill: 'PostgreSQL',
+    text: (
+      <>
+        <strong>PostgreSQL</strong> is my current choice when I have the need
+        for relational databases.
+      </>
+    ),
+  },
+];
+
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   const [shouldRender, setShouldRender] = useState(false);
+  const [skillText, setSkillText] = useState('');
 
   const handleOnClick = () => {
     setShouldRender(!shouldRender);
   };
+
+  const handleSkillItemClick = (skill, index) =>
+    skills[index].skill === skill
+      ? setSkillText(skills[index].text)
+      : setSkillText('');
 
   return (
     <ThemeProvider theme={theme}>
@@ -18,67 +164,55 @@ const About = () => {
         <SEO title="About" />
         <ui.PageHeader>About</ui.PageHeader>
         <ui.PageContent>
-          <p>
-            Hi, my name is Marco and I&apos;m a Web Developer. I like to build
-            responsive, accessible and fast websites and web experiences for
-            every device and every browser.
-          </p>
+          <ui.Container>
+            <ui.ImgWrapper>
+              <Image
+                alt="a picture of Marco Kühbauch"
+                fluid={data.personalImg.childImageSharp.fluid}
+                fadeIn
+              />
+            </ui.ImgWrapper>
+            <div>
+              <p>
+                Hi!{' '}
+                <ui.WaveHand role="img" aria-label="waving hand emojo">
+                  👋🏻
+                </ui.WaveHand>{' '}
+                My name is Marco and I&apos;m a <strong>Web Developer.</strong>
+              </p>
+              <p>
+                I like to build <strong>responsive</strong>,{' '}
+                <strong>accessible</strong> and <strong>fast</strong> websites
+                and web experiences for every device and every browser.
+              </p>
+            </div>
+          </ui.Container>
           <p>
             I like to find solutions to complex problems, which will help every
             human being and achieve that while working with the latest web
             technologies.
           </p>
+          <p>
+            I had the chance to work on a lot of different projects and learn
+            and use a lot of different technologies.
+          </p>
           <h2>My Skills</h2>
-          <h3>My current stack contains:</h3>
-          <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>Testing with Jest and the React Testing Library</li>
-            <li>NodeJS/Express</li>
-            <li>MongoDB</li>
-          </ul>
-          <p>
-            I am proficient and experienced in writing{' '}
-            <strong>semantic HTML</strong> and <strong>maintainable CSS</strong>{' '}
-            with methodologies like{' '}
-            <a
-              href="http://getbem.com/introduction/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              BEM
-            </a>
-            .
-          </p>
-          <p>
-            I am used to work with the principles of{' '}
-            <strong>Responsive Webdesign</strong> since I wrote my bachelor
-            thesis about this topic in 2014 and I can&apos;t imagine building a
-            website without them in mind.
-          </p>
-          <p>
-            <strong>JavaScript</strong> is the language I am most interested in
-            and where I try to improve the most everyday.
-          </p>
-          <p>
-            In 2018 I started to work with <strong>React</strong> and I really
-            like the way how React makes it so enjoyable, easy and fun to build
-            Single Page Applications.
-          </p>
-          <p>
-            I also got used to work with the principles of{' '}
-            <strong>Redux</strong> and the main concepts of using a global state
-            container.
-          </p>
-          <p>
-            Currently I&apos;m interested in getting more of a full grasp of how
-            web applications work from front to back. This means I&apos;m
-            learning more about NodeJS, Express and Databases like MongoDB to
-            gain a better understanding of the <strong>full stack</strong>.
-          </p>
+
+          <ui.SkillsList>
+            {skills.map((skill, index) => (
+              <>
+                <li key={`${skill.skill}-0`}>
+                  <button
+                    type="button"
+                    onClick={() => handleSkillItemClick(skill.skill, index)}
+                  >
+                    {skill.skill}
+                  </button>
+                </li>
+              </>
+            ))}
+            <p>{skillText}</p>
+          </ui.SkillsList>
 
           <hr />
 
