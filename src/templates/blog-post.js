@@ -18,7 +18,7 @@ const Template = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, timeToRead, body, parent } = mdx;
 
-  const lastUpdated = formatDate(parent.fields.gitLogLatestDate);
+  const lastUpdated = parent.fields && formatDate(parent.fields.gitLogLatestDate);
 
   return (
     <ThemeProvider theme={theme}>

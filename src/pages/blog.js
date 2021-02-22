@@ -23,10 +23,12 @@ const Blog = ({ data }) => {
             <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
               <ui.BlogArticle>
                 <h3>{edge.node.frontmatter.title}</h3>
-                <ui.Time dateTime={edge.node.parent.fields.gitLogLatestDate}>
-                  Last updated:{' '}
-                  {formatDate(edge.node.parent.fields.gitLogLatestDate)}
-                </ui.Time>
+                {edge.node.parent.fields && (
+                  <ui.Time dateTime={edge.node.parent.fields.gitLogLatestDate}>
+                    Last updated:{' '}
+                    {formatDate(edge.node.parent.fields.gitLogLatestDate)}
+                  </ui.Time>
+                )}
                 <p>{edge.node.excerpt}</p>
                 <ui.Readmore>Read article</ui.Readmore>
               </ui.BlogArticle>

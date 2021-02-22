@@ -97,10 +97,12 @@ const IndexPage = () => {
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.Article>
                       <h4>{post.node.frontmatter.title}</h4>
-                      <ui.Time>
-                        Last updated:{' '}
-                        {formatDate(post.node.parent.fields.gitLogLatestDate)}
-                      </ui.Time>
+                      {post.node.parent.fields && (
+                        <ui.Time>
+                          Last updated:{' '}
+                          {formatDate(post.node.parent.fields.gitLogLatestDate)}
+                        </ui.Time>
+                      )}
                       <ui.BlogLink>Read article</ui.BlogLink>
                     </ui.Article>
                   </Link>
