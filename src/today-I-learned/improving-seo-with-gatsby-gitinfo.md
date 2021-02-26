@@ -41,7 +41,7 @@ This returns the following results:
             "parent": {
               "fields": {
                 "gitLogLatestDate": "2020-03-25 17:17:56 +0100",
-                "gitLogLatestAuthorEmail": "marco.kuehbauch@jameda.de",
+                "gitLogLatestAuthorEmail": "marcokuehbauch@gmail.com",
                 "gitLogLatestAuthorName": "Marco Kühbauch"
               }
             }
