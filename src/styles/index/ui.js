@@ -89,13 +89,6 @@ export const PageContent = styled.section`
   margin: 80px auto 0;
   max-width: 650px;
 
-  a {
-    display: inline-block;
-    &:not(:last-of-type) {
-      margin-bottom: 100px;
-    }
-  }
-
   p {
     font-size: 18px;
     line-height: 1.5;
@@ -104,6 +97,12 @@ export const PageContent = styled.section`
       font-size: 20px;
       line-height: 1.7;
     }
+  }
+`;
+
+export const Newlinks = styled.span`
+  display: inline-block;
+    margin-bottom: 100px;
   }
 `;
 

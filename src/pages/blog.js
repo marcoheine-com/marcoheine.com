@@ -12,6 +12,9 @@ const Blog = ({ data }) => {
   const { allMdx } = data;
   const { edges } = allMdx;
 
+  const newestPosts = edges.slice(0, 5);
+  const olderPosts = edges.slice(5);
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
@@ -19,18 +22,41 @@ const Blog = ({ data }) => {
         <ui.PageHeader>Blog</ui.PageHeader>
 
         <ui.PageContent>
-          {edges.map(edge => (
+          <h2>Newest blog posts:</h2>
+          {newestPosts.map(edge => (
+            <ui.Newlinks>
+              <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
+                <ui.BlogArticle>
+                  <h3>{edge.node.frontmatter.title}</h3>
+                  {edge.node.parent.fields && (
+                    <ui.Time
+                      dateTime={edge.node.parent.fields.gitLogLatestDate}
+                    >
+                      Last updated:{' '}
+                      {formatDate(edge.node.parent.fields.gitLogLatestDate)}
+                    </ui.Time>
+                  )}
+                  <p>{edge.node.excerpt}</p>
+                  <ui.Readmore>Read article</ui.Readmore>
+                </ui.BlogArticle>
+              </Link>
+            </ui.Newlinks>
+          ))}
+          <h2>Other blog posts:</h2>
+          {olderPosts.map(edge => (
             <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
               <ui.BlogArticle>
-                <h3>{edge.node.frontmatter.title}</h3>
-                {edge.node.parent.fields && (
-                  <ui.Time dateTime={edge.node.parent.fields.gitLogLatestDate}>
-                    Last updated:{' '}
-                    {formatDate(edge.node.parent.fields.gitLogLatestDate)}
-                  </ui.Time>
-                )}
-                <p>{edge.node.excerpt}</p>
-                <ui.Readmore>Read article</ui.Readmore>
+                <h4>
+                  {edge.node.frontmatter.title} -
+                  {edge.node.parent.fields && (
+                    <ui.Time
+                      dateTime={edge.node.parent.fields.gitLogLatestDate}
+                    >
+                      Last updated:{' '}
+                      {formatDate(edge.node.parent.fields.gitLogLatestDate)}
+                    </ui.Time>
+                  )}
+                </h4>
               </ui.BlogArticle>
             </Link>
           ))}
