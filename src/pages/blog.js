@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
         <ui.PageHeader>Blog</ui.PageHeader>
 
         <ui.PageContent>
-          <h2>Newest blog posts:</h2>
+          <ui.BlogHeadline>Newest blog posts:</ui.BlogHeadline>
           {newestPosts.map(edge => (
             <ui.Newlinks>
               <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>

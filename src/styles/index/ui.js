@@ -100,6 +100,11 @@ export const PageContent = styled.section`
   }
 `;
 
+export const BlogHeadline = styled.h2`
+  border-bottom: 6px solid ${({ theme }) => theme.primaryColorTwo};
+  display: inline-block;
+`;
+
 export const Newlinks = styled.span`
   display: inline-block;
     margin-bottom: 100px;

@@ -22,18 +22,19 @@ const HorizontalLine = styled.hr`
   z-index: 2;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, maxWidth }) => (
   <Page>
     <GlobalStylesheet />
     <HorizontalLine />
     <Header />
-    <Main>{children}</Main>
+    <Main maxWidth={maxWidth}>{children}</Main>
     <Footer />
   </Page>
 );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  maxWidth: PropTypes.string.isRequired,
 };
 
 export default Layout;

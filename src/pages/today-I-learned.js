@@ -14,8 +14,8 @@ const TIL = ({ data }) => {
   const { allMdx } = data;
   const { edges, group } = allMdx;
 
-  const items = edges && (!allItemsLoaded ? edges.slice(0, 10) : edges);
-  const additionalItems = edges.slice(10);
+  const items = edges && (!allItemsLoaded ? edges.slice(0, 20) : edges);
+  const additionalItems = edges.slice(20);
 
   const randomNumber = Math.floor(Math.random() * Math.floor(13999));
 
@@ -25,7 +25,7 @@ const TIL = ({ data }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout maxWidth="1400px">
         <SEO title="Today I learned" />
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
@@ -65,15 +65,14 @@ const TIL = ({ data }) => {
               </Link>
             );
           })}
-
-          {!allItemsLoaded && (
-            <ui.Slot>
-              <Button onClick={handleOnClick}>
-                Load {additionalItems.length} more
-              </Button>
-            </ui.Slot>
-          )}
         </ui.PageContent>
+        {!allItemsLoaded && (
+          <ui.Slot>
+            <Button onClick={handleOnClick}>
+              Load {additionalItems.length} more
+            </Button>
+          </ui.Slot>
+        )}
       </Layout>
     </ThemeProvider>
   );

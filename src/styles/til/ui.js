@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const PageContent = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+
   margin: 80px auto 0;
-  max-width: 650px;
 
   a {
     display: inline-block;
-    &:not(:last-of-type) {
-      margin-bottom: 60px;
-    }
   }
 
   p {
@@ -100,6 +100,7 @@ export const Category = styled.li`
 
 export const tags = styled.section`
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 14px;
 `;
 
