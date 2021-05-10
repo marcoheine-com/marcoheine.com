@@ -13,11 +13,11 @@ const TIL = ({ data }) => {
 
   const { allMdx } = data;
   const { edges, group } = allMdx;
-  const hasNumberOfEdges = edges && edges.length > 9;
+  const hasNumberOfEdges = edges && edges.length > 19;
 
   const items =
-    edges && (!allItemsLoaded && hasNumberOfEdges ? edges.slice(0, 10) : edges);
-  const additionalItems = edges.slice(10);
+    edges && (!allItemsLoaded && hasNumberOfEdges ? edges.slice(0, 20) : edges);
+  const additionalItems = edges.slice(20);
 
   const randomNumber = Math.floor(Math.random() * Math.floor(13999));
 
@@ -27,7 +27,7 @@ const TIL = ({ data }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout maxWidth="1400px">
         <SEO title="Today I learned" />
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
@@ -70,15 +70,14 @@ const TIL = ({ data }) => {
               </Link>
             );
           })}
-
-          {hasNumberOfEdges && !allItemsLoaded && (
-            <ui.Slot>
-              <Button onClick={handleOnClick}>
-                Load {additionalItems.length} more
-              </Button>
-            </ui.Slot>
-          )}
         </ui.PageContent>
+        {hasNumberOfEdges && !allItemsLoaded && (
+          <ui.Slot>
+            <Button onClick={handleOnClick}>
+              Load {additionalItems.length} more
+            </Button>
+          </ui.Slot>
+        )}
       </Layout>
     </ThemeProvider>
   );
@@ -88,6 +87,7 @@ TIL.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object),
+      group: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
 };
