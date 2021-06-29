@@ -96,7 +96,7 @@ const IndexPage = () => {
                 {latestBlogPosts.map(post => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.Article>
-                      <h4>{post.node.frontmatter.title}</h4>
+                      <h3>{post.node.frontmatter.title}</h3>
                       {post.node.parent.fields && (
                         <ui.Time>
                           Last updated:{' '}
