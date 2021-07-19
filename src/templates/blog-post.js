@@ -18,7 +18,8 @@ const Template = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, timeToRead, body, parent } = mdx;
 
-  const lastUpdated = parent.fields && formatDate(parent.fields.gitLogLatestDate);
+  const lastUpdated =
+    parent.fields && formatDate(parent.fields.gitLogLatestDate);
 
   return (
     <ThemeProvider theme={theme}>
@@ -31,23 +32,6 @@ const Template = ({ data }) => {
             <h5>Last updated: {lastUpdated}</h5>
             <h5>Reading time: {timeToRead}min</h5>
           </section>
-          <ui.SocialLinks>
-            <a
-              className="twitter-share-button"
-              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Share this post on Twitter
-            </a>
-            <a
-              className="twitter-follow-button"
-              href="https://twitter.com/mkuehb"
-              data-show-count="false"
-            >
-              Follow @mkuehb
-            </a>
-          </ui.SocialLinks>
 
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>

@@ -130,22 +130,6 @@ const Footer = () => {
         <ui.LinkStyles>
           <Link to="/legal-notice">Legal notice</Link>
         </ui.LinkStyles>
-        -
-        <ui.Link
-          href="https://www.iubenda.com/privacy-policy/65252238"
-          className="iubenda-white iubenda-embed"
-          title="Privacy Policy "
-        >
-          Privacy Policy
-        </ui.Link>
-        -
-        <ui.Link
-          href="https://www.iubenda.com/privacy-policy/65252238/cookie-policy"
-          className="iubenda-white iubenda-embed"
-          title="Cookie Policy "
-        >
-          Cookie Policy
-        </ui.Link>
       </p>
     </ui.Footer>
   );

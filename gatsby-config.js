@@ -11,16 +11,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-twitter`,
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-plausible`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: process.env.GA_TRACKING_ID,
-        anonymize: true,
+        domain: `marcokuehbauch.com`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
@@ -94,27 +91,6 @@ module.exports = {
         icon: `src/images/marco_kuehbauch_square.jpeg`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-iubenda-cookie-footer',
-      options: {
-        iubendaOptions: {
-          countryDetection: true,
-          whitelabel: false,
-          lang: 'en',
-          siteId: 2043684,
-          consentOnScroll: false,
-          perPurposeConsent: true,
-          cookiePolicyId: 65252238,
-          banner: {
-            acceptButtonDisplay: true,
-            customizeButtonDisplay: true,
-            rejectButtonDisplay: true,
-            position: 'float-bottom-center',
-          },
-        },
-      },
-    },
-
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

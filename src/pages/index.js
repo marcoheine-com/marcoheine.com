@@ -92,7 +92,7 @@ const IndexPage = () => {
           <ui.PostOuterWrapper>
             <ui.BlogPostWrapper>
               <h2>Latest blog posts:</h2>
-              <ui.PostInnerWrapper>
+              <>
                 {latestBlogPosts.map(post => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.Article>
@@ -107,12 +107,12 @@ const IndexPage = () => {
                     </ui.Article>
                   </Link>
                 ))}
-              </ui.PostInnerWrapper>
+              </>
             </ui.BlogPostWrapper>
 
             <section>
               <h2>Today I learned:</h2>
-              <ui.PostInnerWrapper>
+              <ui.TILInnerWrapper>
                 {latestTILPosts.map(post => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.TILCard>
@@ -123,7 +123,7 @@ const IndexPage = () => {
                     </ui.TILCard>
                   </Link>
                 ))}
-              </ui.PostInnerWrapper>
+              </ui.TILInnerWrapper>
             </section>
           </ui.PostOuterWrapper>
         </ui.IndexWrapper>

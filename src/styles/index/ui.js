@@ -196,7 +196,7 @@ export const BlogPostWrapper = styled.section`
   margin-bottom: 60px;
 `;
 
-export const PostInnerWrapper = styled.section`
+export const TILInnerWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 40px;

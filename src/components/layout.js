@@ -34,7 +34,11 @@ const Layout = ({ children, maxWidth }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  maxWidth: PropTypes.string.isRequired,
+  maxWidth: PropTypes.string,
+};
+
+Layout.defaultProps = {
+  maxWidth: '960px',
 };
 
 export default Layout;
