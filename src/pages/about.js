@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
+import * as aboutUI from '../styles/about/ui';
 
 const skills = [
   {
@@ -147,185 +148,178 @@ const About = () => {
   `);
 
   const [shouldRender, setShouldRender] = useState(false);
-  const [skillText, setSkillText] = useState('');
 
   const handleOnClick = () => {
     setShouldRender(!shouldRender);
   };
 
-  const handleSkillItemClick = (skill, index) =>
-    skills[index].skill === skill
-      ? setSkillText(skills[index].text)
-      : setSkillText('');
-
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout maxWidth="1400px">
         <SEO title="About" />
         <ui.PageHeader>About</ui.PageHeader>
-        <ui.PageContent>
-          <ui.Container>
-            <ui.ImgWrapper>
-              <Image
-                alt="a picture of Marco Kühbauch"
-                fluid={data.personalImg.childImageSharp.fluid}
-                fadeIn
-              />
-            </ui.ImgWrapper>
-            <div>
-              <p>
-                Hi!{' '}
-                <ui.WaveHand role="img" aria-label="waving hand emojo">
-                  👋🏻
-                </ui.WaveHand>{' '}
-                My name is Marco and I&apos;m a <strong>Web Developer.</strong>
-              </p>
-              <p>
-                I like to build <strong>responsive</strong>,{' '}
-                <strong>accessible</strong> and <strong>fast</strong> websites
-                and web experiences for every device and every browser.
-              </p>
-            </div>
-          </ui.Container>
-          <p>
-            I like to find solutions to complex problems, which will help every
-            human being and achieve that while working with the latest web
-            technologies.
-          </p>
-          <p>
-            I had the chance to work on a lot of different projects and learn
-            and use a lot of different technologies.
-          </p>
-          <h2>My Skills</h2>
+        <aboutUI.PageContent>
+          <aboutUI.Container>
+            <aboutUI.TwoColumnGrid>
+              <ui.ImgWrapper>
+                <Image
+                  alt="a picture of Marco Kühbauch"
+                  fluid={data.personalImg.childImageSharp.fluid}
+                  fadeIn
+                />
+              </ui.ImgWrapper>
+              <div>
+                <p>
+                  Hi!{' '}
+                  <ui.WaveHand role="img" aria-label="waving hand emojo">
+                    👋🏻
+                  </ui.WaveHand>{' '}
+                  My name is Marco and I&apos;m a{' '}
+                  <strong>Web Developer.</strong>
+                </p>
+                <p>
+                  I like to build <strong>responsive</strong>,{' '}
+                  <strong>accessible</strong> and <strong>fast</strong> websites
+                  and web experiences for every device and every browser.
+                </p>
+              </div>
+            </aboutUI.TwoColumnGrid>
+            <p>
+              I like to find solutions to complex problems, which will help
+              every human being and achieve that while working with the latest
+              web technologies.
+            </p>
+            <p>
+              I had the chance to work on a lot of different projects and learn
+              and use a lot of different technologies.
+            </p>
+          </aboutUI.Container>
 
-          <ui.SkillsList>
-            {skills.map((skill, index) => (
-              <>
+          <aboutUI.CenteredText>My Skills</aboutUI.CenteredText>
+          <aboutUI.SkillsList>
+            {skills.map(skill => {
+              return (
                 <li key={`${skill.skill}-0`}>
-                  <button
-                    type="button"
-                    onClick={() => handleSkillItemClick(skill.skill, index)}
-                  >
-                    {skill.skill}
-                  </button>
+                  <h3>{skill.skill}</h3>
+
+                  <p>{skill.text}</p>
                 </li>
+              );
+            })}
+          </aboutUI.SkillsList>
+
+          <aboutUI.Container>
+            <h2>Everything else</h2>
+            <p>
+              In my spare time I like to do sports like bodyweightfitness and
+              yoga.
+            </p>
+            <p>
+              I read a lot, mostly one fictional and one non fictional book at
+              the same time. I also work on a small side project which is all
+              about reading and books. You can check it out here:{' '}
+              <a
+                href="https://myreadingtime.digital"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                myreadingtime.digital
+              </a>
+            </p>
+            <p>
+              Playing videogames is something I like to do aswell, most of the
+              time it&apos;s on my Nintendo Switch.
+            </p>
+            <p>
+              I also love to write. From blog posts, to short stories, sometimes
+              even poems, or just simple notes. I&apos;m not really good at it
+              but I enjoy it a lot.
+            </p>
+
+            <h2>Former Education</h2>
+            <button type="button" onClick={handleOnClick}>
+              {!shouldRender ? 'Show' : 'Hide'}
+            </button>
+
+            {shouldRender ? (
+              <>
+                <p>
+                  I did my <strong>bachelors degree</strong> in{' '}
+                  <a
+                    href="http://www.md-phw.de/2013/studium/bachelor/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    media & educational management
+                  </a>{' '}
+                  where I learned a lot about the main concepts of computer
+                  sience, web design & development, e-learning, psychology and
+                  communication. I improved my web development skills in group
+                  projects where we developed apps and websites for real
+                  clients.
+                </p>
+                <p>
+                  In this projects we designed and developed a new website for a
+                  big concert hall in Germany, we developed a power saving app
+                  for an energy company and the result of our final project was
+                  an{' '}
+                  <a
+                    href="http://www.md-phw.de/2013/index.php?id=12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Augmented Reality app
+                  </a>{' '}
+                  for our university to teach new students about the campus, its
+                  buildings and everything they need to know about them while
+                  they had so solve a murder at the same time.
+                </p>
+                <p>
+                  I wrote my bachelor thesis about{' '}
+                  <strong>responsive information visualization</strong> where I
+                  developed approaches to transfer the principles of Responsive
+                  Web Design into the field of Information Visualization.
+                </p>
+                <p>
+                  In my <strong>masters degree</strong> in{' '}
+                  <a
+                    href="http://www.uni-passau.de/en/ma-mediacomm/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    media and communication
+                  </a>{' '}
+                  I focused on media computer science and media education and
+                  learned more about digital learning & teaching, database
+                  systems, information visualization and information retrieval.
+                </p>
+                <p>
+                  In my <strong>master thesis</strong> I developed an
+                  information- and communication concept for an institute of the
+                  university of Passau to improve the dissemination of their
+                  scientific publications. Therefore I analyzed all
+                  communication channels of the institute to check to what
+                  extent they are used to disseminate the publications.
+                </p>
+                <p>
+                  Additionally I developed a prototype which automatically
+                  gathers all scientific publications from social networks for
+                  scientists, deploys them on the institutes website and
+                  anounces them via Twitter and web notifications. The code for
+                  the prototype can be found{' '}
+                  <a
+                    href="https://github.com/mkuehb/disseminationapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    here
+                  </a>
+                  .
+                </p>
               </>
-            ))}
-            <p>{skillText}</p>
-          </ui.SkillsList>
-
-          <hr />
-
-          <h2>Everything else</h2>
-          <p>
-            In my spare time I like to do sports like bodyweightfitness and
-            yoga.
-          </p>
-          <p>
-            I read a lot, mostly one fictional and one non fictional book at the
-            same time. I also work on a small side project which is all about
-            reading and books. You can check it out here:{' '}
-            <a
-              href="https://myreadingtime.digital"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              myreadingtime.digital
-            </a>
-          </p>
-          <p>
-            Playing videogames is something I like to do aswell, most of the
-            time it&apos;s on my Nintendo Switch.
-          </p>
-          <p>
-            I also love to write. From blog posts, to short stories, sometimes
-            even poems, or just simple notes. I&apos;m not really good at it but
-            I enjoy it a lot.
-          </p>
-
-          <hr />
-
-          <h2>Former Education</h2>
-          <button type="button" onClick={handleOnClick}>
-            {!shouldRender ? 'Show' : 'Hide'}
-          </button>
-
-          {shouldRender ? (
-            <>
-              <p>
-                I did my <strong>bachelors degree</strong> in{' '}
-                <a
-                  href="http://www.md-phw.de/2013/studium/bachelor/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  media & educational management
-                </a>{' '}
-                where I learned a lot about the main concepts of computer
-                sience, web design & development, e-learning, psychology and
-                communication. I improved my web development skills in group
-                projects where we developed apps and websites for real clients.
-              </p>
-              <p>
-                In this projects we designed and developed a new website for a
-                big concert hall in Germany, we developed a power saving app for
-                an energy company and the result of our final project was an{' '}
-                <a
-                  href="http://www.md-phw.de/2013/index.php?id=12"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Augmented Reality app
-                </a>{' '}
-                for our university to teach new students about the campus, its
-                buildings and everything they need to know about them while they
-                had so solve a murder at the same time.
-              </p>
-              <p>
-                I wrote my bachelor thesis about{' '}
-                <strong>responsive information visualization</strong> where I
-                developed approaches to transfer the principles of Responsive
-                Web Design into the field of Information Visualization.
-              </p>
-              <p>
-                In my <strong>masters degree</strong> in{' '}
-                <a
-                  href="http://www.uni-passau.de/en/ma-mediacomm/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  media and communication
-                </a>{' '}
-                I focused on media computer science and media education and
-                learned more about digital learning & teaching, database
-                systems, information visualization and information retrieval.
-              </p>
-              <p>
-                In my <strong>master thesis</strong> I developed an information-
-                and communication concept for an institute of the university of
-                Passau to improve the dissemination of their scientific
-                publications. Therefore I analyzed all communication channels of
-                the institute to check to what extent they are used to
-                disseminate the publications.
-              </p>
-              <p>
-                Additionally I developed a prototype which automatically gathers
-                all scientific publications from social networks for scientists,
-                deploys them on the institutes website and anounces them via
-                Twitter and web notifications. The code for the prototype can be
-                found{' '}
-                <a
-                  href="https://github.com/mkuehb/disseminationapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>
-                .
-              </p>
-            </>
-          ) : null}
-        </ui.PageContent>
+            ) : null}
+          </aboutUI.Container>
+        </aboutUI.PageContent>
       </Layout>
     </ThemeProvider>
   );

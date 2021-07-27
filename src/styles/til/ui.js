@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const PageContent = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
   gap: 40px;
+  justify-content: center;
 
   margin: 80px auto 0;
 
@@ -96,6 +97,7 @@ export const Categories = styled.ul`
 
 export const Category = styled.li`
   font-family: 'Consolas';
+  background-color: ${({ bgColor }) => bgColor}};
 `;
 
 export const tags = styled.section`

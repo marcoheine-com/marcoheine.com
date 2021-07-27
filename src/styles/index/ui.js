@@ -46,30 +46,6 @@ export const Container = styled.div`
   }
 `;
 
-export const SkillsList = styled.ul`
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin: 0;
-
-  li {
-    list-style-type: none;
-  }
-
-  button {
-    background: none;
-    margin: 0;
-    padding: 14px;
-    border: 2px dashed;
-    cursor: pointer;
-    &:hover {
-      background-color: black;
-      color: white;
-      border: 2px solid black;
-    }
-  }
-`;
-
 export const ImgWrapper = styled.div`
   max-width: 300px;
   transition: all 0.4s linear;
