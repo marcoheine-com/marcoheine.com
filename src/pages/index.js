@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import { formatDate } from '../utils/formatDate';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,9 +12,7 @@ const IndexPage = () => {
     query {
       personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 300)
         }
       }
       blogData: allMdx(
@@ -32,13 +29,6 @@ const IndexPage = () => {
               date(formatString: "MMMM DD, YYYY")
               path
               title
-            }
-            parent {
-              ... on File {
-                fields {
-                  gitLogLatestDate
-                }
-              }
             }
           }
         }
@@ -97,12 +87,9 @@ const IndexPage = () => {
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.Article>
                       <h3>{post.node.frontmatter.title}</h3>
-                      {post.node.parent.fields && (
-                        <ui.Time>
-                          Last updated:{' '}
-                          {formatDate(post.node.parent.fields.gitLogLatestDate)}
-                        </ui.Time>
-                      )}
+                      <ui.Time>
+                        Published on: {post.node.frontmatter.date}
+                      </ui.Time>
                       <ui.BlogLink>Read article</ui.BlogLink>
                     </ui.Article>
                   </Link>
@@ -118,7 +105,7 @@ const IndexPage = () => {
                     <ui.TILCard>
                       <ui.BlogLink>{post.node.frontmatter.title}</ui.BlogLink>
                       <ui.Time>
-                        Published on {post.node.frontmatter.date}
+                        Published on: {post.node.frontmatter.date}
                       </ui.Time>
                     </ui.TILCard>
                   </Link>

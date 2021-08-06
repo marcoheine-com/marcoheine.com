@@ -6,7 +6,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
-import { formatDate } from '../utils/formatDate';
 
 const Blog = ({ data }) => {
   const { allMdx } = data;
@@ -24,18 +23,14 @@ const Blog = ({ data }) => {
         <ui.PageContent>
           <ui.BlogHeadline>Newest blog posts:</ui.BlogHeadline>
           {newestPosts.map(edge => (
-            <ui.Newlinks>
-              <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
+            <ui.Newlinks key={edge.node.id}>
+              <Link to={`/${edge.node.fields.slug}`}>
                 <ui.BlogArticle>
                   <h3>{edge.node.frontmatter.title}</h3>
-                  {edge.node.parent.fields && (
-                    <ui.Time
-                      dateTime={edge.node.parent.fields.gitLogLatestDate}
-                    >
-                      Last updated:{' '}
-                      {formatDate(edge.node.parent.fields.gitLogLatestDate)}
-                    </ui.Time>
-                  )}
+                  <ui.Time dateTime={edge.node.frontmatter.date}>
+                    Published on: {edge.node.frontmatter.date}
+                  </ui.Time>
+
                   <p>{edge.node.excerpt}</p>
                   <ui.Readmore>Read article</ui.Readmore>
                 </ui.BlogArticle>
@@ -48,14 +43,9 @@ const Blog = ({ data }) => {
               <ui.BlogArticle>
                 <h4>
                   {edge.node.frontmatter.title} -
-                  {edge.node.parent.fields && (
-                    <ui.Time
-                      dateTime={edge.node.parent.fields.gitLogLatestDate}
-                    >
-                      Last updated:{' '}
-                      {formatDate(edge.node.parent.fields.gitLogLatestDate)}
-                    </ui.Time>
-                  )}
+                  <ui.Time dateTime={edge.node.frontmatter.date}>
+                    Published on: {edge.node.frontmatter.date}
+                  </ui.Time>
                 </h4>
               </ui.BlogArticle>
             </Link>
@@ -93,13 +83,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
-          }
-          parent {
-            ... on File {
-              fields {
-                gitLogLatestDate
-              }
-            }
           }
         }
       }

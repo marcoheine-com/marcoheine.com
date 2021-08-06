@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
@@ -139,9 +139,7 @@ const About = () => {
     query {
       personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 300)
         }
       }
     }
@@ -162,10 +160,9 @@ const About = () => {
           <aboutUI.Container>
             <aboutUI.TwoColumnGrid>
               <ui.ImgWrapper>
-                <Image
+                <GatsbyImage
                   alt="a picture of Marco Kühbauch"
-                  fluid={data.personalImg.childImageSharp.fluid}
-                  fadeIn
+                  image={data.personalImg.childImageSharp.gatsbyImageData}
                 />
               </ui.ImgWrapper>
               <div>

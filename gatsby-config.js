@@ -10,7 +10,9 @@ module.exports = {
     siteUrl: `https://marcokuehbauch.com`,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-plausible`,
@@ -52,7 +54,6 @@ module.exports = {
         path: `./src/`,
       },
     },
-    `gatsby-transformer-gitinfo`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
