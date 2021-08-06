@@ -110,7 +110,7 @@ But remembering that every single file is one HTTP request, having a lot of diff
 
 You can still use different CSS files in the development process as there are several techniques to combine them for production like the sass `@import` which, in contrast to the CSS `@import` rule, doesn't create an additional HTTP request.
 
-Another way to reduce HTTP requests is to use Image sprites. This technique includes to create one single image out of all your background images and leads to, you guessed it, just one HTTP request instead of many. Than you just position it so that only the preferred image is displayed and the rest is hidden. [Hugo Giraudel](https://twitter.com/HugoGiraudel) created a little script called [spritesh](http://dev.edenspiekermann.com/2016/02/10/introducing-spritesh/) which takes all of your SVG files and creates one sprite automatically. Very helpful!
+Another way to reduce HTTP requests is to use Image sprites. This technique includes to create one single image out of all your background images and leads to, you guessed it, just one HTTP request instead of many. Than you just position it so that only the preferred image is displayed and the rest is hidden. [Kitty Giraudel](https://twitter.com/KittyGiraudel) created a little script called [spritesh](http://dev.edenspiekermann.com/2016/02/10/introducing-spritesh/) which takes all of your SVG files and creates one sprite automatically. Very helpful!
 
 ### <a name="additional-advice"></a>Additional Advice
 
