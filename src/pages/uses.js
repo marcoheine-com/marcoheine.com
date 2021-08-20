@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
-import desksetup from '../images/desk-setup.jpg';
 
 const NotFoundPage = () => (
   <ThemeProvider theme={theme}>
@@ -13,7 +12,15 @@ const NotFoundPage = () => (
       <ui.PageContent>
         <h1>Uses</h1>
         <p>
-          Inspired by the massive <a href="https://uses.tech/"> uses </a>
+          Inspired by the massive{' '}
+          <a
+            href="https://uses.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {' '}
+            uses{' '}
+          </a>
           collection initiated by @wesbos, I decided to partizipate and share my
           own uses collection.
         </p>
@@ -35,7 +42,11 @@ const NotFoundPage = () => (
             <p>
               I use zsh as my <strong>terminal</strong> with oh-my-zsh to manage
               the configuration. Currently I'm using the{' '}
-              <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit">
+              <a
+                href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 avit theme
               </a>
               .
@@ -73,14 +84,24 @@ const NotFoundPage = () => (
           <li>
             <p>
               For purchasing new <strong>domains</strong> I use{' '}
-              <a href="namecheap.com">Namecheap</a>.
+              <a href="namecheap.com" target="_blank" rel="noopener noreferrer">
+                Namecheap
+              </a>
+              .
             </p>
           </li>
         </ul>
         <h2>Hardware</h2>
         <p>
-          Here is a picture of my desk setup:{' '}
-          <img src={desksetup} alt="image of my desk setup" />
+          Here is a{' '}
+          <a
+            href="https://twitter.com/Mkuehb/status/1420799028757999623"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            photo of my desk setup
+          </a>
+          .
         </p>
         <ul>
           <li>
@@ -88,7 +109,11 @@ const NotFoundPage = () => (
               At the end of 2020 and a lot of time in the home office, I deciced
               it's time to upgrade to a <strong>standing desk</strong>. I bought
               the{' '}
-              <a href="https://www.fully.com/en-eu/jarvis-adjustable-height-desk-bamboo.html">
+              <a
+                href="https://www.fully.com/en-eu/jarvis-adjustable-height-desk-bamboo.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Fully Jarvis Bamboo standing desk
               </a>{' '}
               and never looked back.
@@ -106,7 +131,11 @@ const NotFoundPage = () => (
               deciced to get a "real" <strong>chair</strong>. As I'm using this
               chair almost everyday for 8 hours I decided to invest a little
               more and bought the{' '}
-              <a href="https://www.steelcase.com/products/office-chairs/gesture/">
+              <a
+                href="https://www.steelcase.com/products/office-chairs/gesture/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Steelcase gesture.
               </a>
             </p>
