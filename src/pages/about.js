@@ -194,7 +194,7 @@ const About = () => {
 
           <aboutUI.CenteredText>My Skills</aboutUI.CenteredText>
           <aboutUI.SkillsList>
-            {skills.map(skill => {
+            {skills.map((skill) => {
               return (
                 <li key={`${skill.skill}-0`}>
                   <h3>{skill.skill}</h3>

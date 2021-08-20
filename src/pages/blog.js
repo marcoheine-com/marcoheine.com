@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import theme from '../styles/theme';
 import * as ui from '../styles/index/ui';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Blog = ({ data }) => {
   const { allMdx } = data;
@@ -22,23 +23,39 @@ const Blog = ({ data }) => {
 
         <ui.PageContent>
           <ui.BlogHeadline>Newest blog posts:</ui.BlogHeadline>
-          {newestPosts.map(edge => (
-            <ui.Newlinks key={edge.node.id}>
-              <Link to={`/${edge.node.fields.slug}`}>
-                <ui.BlogArticle>
-                  <h3>{edge.node.frontmatter.title}</h3>
-                  <ui.Time dateTime={edge.node.frontmatter.date}>
-                    Published on: {edge.node.frontmatter.date}
-                  </ui.Time>
+          {newestPosts.map((edge) => {
+            const { node } = edge;
+            const {
+              fields: { slug },
+              id,
+              frontmatter,
+            } = node;
+            const { date, title, excerpt } = frontmatter;
+            return (
+              <ui.Newlinks key={id}>
+                <Link to={`/${slug}`}>
+                  <ui.BlogArticle>
+                    <h3>{title}</h3>
+                    {frontmatter.featuredImage && (
+                      <GatsbyImage
+                        alt={frontmatter.featuredImageAlt}
+                        image={
+                          frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
+                      />
+                    )}
+                    <ui.Time dateTime={date}>Published on: {date}</ui.Time>
 
-                  <p>{edge.node.excerpt}</p>
-                  <ui.Readmore>Read article</ui.Readmore>
-                </ui.BlogArticle>
-              </Link>
-            </ui.Newlinks>
-          ))}
+                    <p>{excerpt}</p>
+                    <ui.Readmore>Read article</ui.Readmore>
+                  </ui.BlogArticle>
+                </Link>
+              </ui.Newlinks>
+            );
+          })}
           <h2>Other blog posts:</h2>
-          {olderPosts.map(edge => (
+          {olderPosts.map((edge) => (
             <Link key={edge.node.id} to={`/${edge.node.fields.slug}`}>
               <ui.BlogArticle>
                 <h4>
@@ -83,6 +100,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            featuredImage {
+              id
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            featuredImageAlt
           }
         }
       }
