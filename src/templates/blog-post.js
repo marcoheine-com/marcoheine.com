@@ -1,21 +1,21 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import PropTypes from 'prop-types';
-import Layout from '../components/layout';
-import CoffeeHint from '../components/coffeehint';
-import CoffeeLink from '../components/coffeehint/CoffeeLink';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
-import * as ui from './ui';
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
+import CoffeeHint from '../components/coffeehint'
+import CoffeeLink from '../components/coffeehint/CoffeeLink'
+import SEO from '../components/seo'
+import theme from '../styles/theme'
+import * as ui from './ui'
 
-const shortcodes = { CoffeeHint };
+const shortcodes = { CoffeeHint }
 
 const Template = ({ data }) => {
-  const { mdx } = data;
-  const { frontmatter, timeToRead, body } = mdx;
+  const { mdx } = data
+  const { frontmatter, timeToRead, body } = mdx
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,8 +25,8 @@ const Template = ({ data }) => {
         <ui.PageContent>
           <h2>{frontmatter.title}</h2>
           <section>
-            <h5>Published on: {frontmatter.date}</h5>
-            <h5>Reading time: {timeToRead}min</h5>
+            <p>Published on: {frontmatter.date}</p>
+            <p>Reading time: {timeToRead}min</p>
           </section>
 
           <MDXProvider components={shortcodes}>
@@ -47,8 +47,8 @@ const Template = ({ data }) => {
         </ui.PageContent>
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 Template.propTypes = {
   data: PropTypes.shape({
@@ -61,12 +61,12 @@ Template.propTypes = {
       timeToRead: PropTypes.number.isRequired,
     }),
   }).isRequired,
-};
+}
 
-export default Template;
+export default Template
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
@@ -76,4 +76,4 @@ export const pageQuery = graphql`
       timeToRead
     }
   }
-`;
+`

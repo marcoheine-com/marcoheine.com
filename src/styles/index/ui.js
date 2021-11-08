@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const IndexWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 export const Wrapper = styled.section`
     display: flex;
@@ -17,16 +17,16 @@ export const Wrapper = styled.section`
       margin-top: 140px;
     }
   }
-`;
+`
 
 export const Headline = styled.h1`
   margin-bottom: 40px;
-`;
+`
 
 export const Hometext = styled.p`
   font-size: 24px;
   line-height: 1.5;
-`;
+`
 
 export const LinkSpan = styled.span`
   color: ${({ theme }) => theme.primaryColorTwo};
@@ -34,7 +34,7 @@ export const LinkSpan = styled.span`
   &:hover {
     color: ${({ theme }) => theme.linkHover};
   }
-`;
+`
 
 export const Container = styled.div`
   justify-items: center;
@@ -44,7 +44,7 @@ export const Container = styled.div`
   @media (min-width: 460px) {
     grid-template-columns: auto auto;
   }
-`;
+`
 
 export const ImgWrapper = styled.div`
   max-width: 300px;
@@ -59,7 +59,7 @@ export const ImgWrapper = styled.div`
   .gatsby-image-wrapper {
     width: 200px;
   }
-`;
+`
 
 export const PageContent = styled.section`
   margin: 80px auto 0;
@@ -74,18 +74,17 @@ export const PageContent = styled.section`
       line-height: 1.7;
     }
   }
-`;
+`
 
 export const BlogHeadline = styled.h2`
   border-bottom: 6px solid ${({ theme }) => theme.primaryColorTwo};
   display: inline-block;
-`;
+`
 
 export const Newlinks = styled.span`
   display: inline-block;
-    margin-bottom: 100px;
-  }
-`;
+  margin-bottom: 100px;
+`
 
 export const Article = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
@@ -102,7 +101,15 @@ export const Article = styled.article`
   h4 {
     margin-bottom: 8px;
   }
-`;
+`
+
+export const YearlySection = styled.section`
+  margin-bottom: 60px;
+`
+
+export const NewArticleSlot = styled.section`
+  margin-bottom: 60px;
+`
 
 export const BlogArticle = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
@@ -110,7 +117,7 @@ export const BlogArticle = styled.article`
   p {
     margin-bottom: 10px;
   }
-`;
+`
 
 export const Readmore = styled.span`
   color: ${({ theme }) => theme.primaryColorTwo};
@@ -127,7 +134,7 @@ export const Readmore = styled.span`
       margin-left: 4px;
     }
   }
-`;
+`
 
 export const TILCard = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
@@ -139,7 +146,7 @@ export const TILCard = styled.article`
     box-shadow: 2px 2px 12px #d9d9d9;
     border-radius: 10px;
   }
-`;
+`
 
 export const BlogLink = styled.span`
   align-self: flex-start;
@@ -158,31 +165,31 @@ export const BlogLink = styled.span`
       margin-left: 4px;
     }
   }
-`;
+`
 
 export const Time = styled.time`
   font-size: 16px;
-`;
+`
 
 export const PostOuterWrapper = styled.section`
   width: 100%;
-`;
+`
 
 export const BlogPostWrapper = styled.section`
   margin-bottom: 60px;
-`;
+`
 
 export const TILInnerWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 40px;
-`;
+`
 
 export const PageHeader = styled.h1`
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
-`;
+`
 
 export const WaveHand = styled.span`
   display: inline-block;
@@ -207,4 +214,4 @@ export const WaveHand = styled.span`
       transform: rotate(-20deg) scale(1);
     }
   }
-`;
+`

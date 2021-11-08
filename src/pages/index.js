@@ -1,11 +1,11 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
-import * as ui from '../styles/index/ui';
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import theme from '../styles/theme'
+import * as ui from '../styles/index/ui'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -52,10 +52,10 @@ const IndexPage = () => {
         }
       }
     }
-  `);
+  `)
 
-  const latestBlogPosts = data.blogData.edges.slice(0, 3);
-  const latestTILPosts = data.tilData.edges.slice(0, 3);
+  const latestBlogPosts = data.blogData.edges.slice(0, 3)
+  const latestTILPosts = data.tilData.edges.slice(0, 3)
 
   return (
     <ThemeProvider theme={theme}>
@@ -83,7 +83,7 @@ const IndexPage = () => {
             <ui.BlogPostWrapper>
               <h2>Latest blog posts:</h2>
               <>
-                {latestBlogPosts.map(post => (
+                {latestBlogPosts.map((post) => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.Article>
                       <h3>{post.node.frontmatter.title}</h3>
@@ -100,7 +100,7 @@ const IndexPage = () => {
             <section>
               <h2>Today I learned:</h2>
               <ui.TILInnerWrapper>
-                {latestTILPosts.map(post => (
+                {latestTILPosts.map((post) => (
                   <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
                     <ui.TILCard>
                       <ui.BlogLink>{post.node.frontmatter.title}</ui.BlogLink>
@@ -116,7 +116,7 @@ const IndexPage = () => {
         </ui.IndexWrapper>
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
