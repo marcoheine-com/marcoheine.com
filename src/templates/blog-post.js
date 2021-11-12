@@ -17,25 +17,28 @@ const Template = ({ data }) => {
   const { mdx } = data
   const { frontmatter, timeToRead, body } = mdx
 
+  const { title, date } = frontmatter
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO title={frontmatter.title} />
         <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>
-          <h2>{frontmatter.title}</h2>
+          <ui.GoBackSpan>
+            <Link to="/blog/">Go back to other Blog Posts</Link>
+          </ui.GoBackSpan>
+          <h2>{title}</h2>
           <section>
-            <p>Published on: {frontmatter.date}</p>
-            <p>Reading time: {timeToRead}min</p>
+            <p>🗓 Published on: {date}</p>
+            <p>⏱ Reading time: {timeToRead} min</p>
           </section>
 
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
           <p>
-            <i>
-              This blog post was originally published on {frontmatter.date}.
-            </i>
+            <i>This blog post was originally published on {date}.</i>
           </p>
           <hr />
           <p>I wish you a wonderful day! Marco</p>

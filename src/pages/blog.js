@@ -68,13 +68,14 @@ const Blog = ({ data }) => {
               fields: { slug },
               id,
               frontmatter,
+              excerpt,
             } = node
-            const { date, title, excerpt } = frontmatter
+            const { date, title } = frontmatter
 
             return (
               <Link to={`/${slug}`} key={id}>
                 <ui.NewArticleSlot>
-                  <ui.BlogArticle>
+                  <ui.NewArticle>
                     <h3>{title}</h3>
                     {frontmatter.featuredImage && (
                       <GatsbyImage
@@ -89,7 +90,7 @@ const Blog = ({ data }) => {
 
                     <p>{excerpt}</p>
                     <ui.Readmore>Read article</ui.Readmore>
-                  </ui.BlogArticle>
+                  </ui.NewArticle>
                 </ui.NewArticleSlot>
               </Link>
             )

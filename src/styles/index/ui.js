@@ -111,11 +111,19 @@ export const NewArticleSlot = styled.section`
   margin-bottom: 60px;
 `
 
-export const BlogArticle = styled.article`
+export const NewArticle = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
 
   p {
     margin-bottom: 10px;
+  }
+`
+
+export const BlogArticle = styled.article`
+  color: ${({ theme }) => theme.primaryColorOne};
+
+  time {
+    font-weight: normal;
   }
 `
 
