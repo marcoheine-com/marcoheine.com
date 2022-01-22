@@ -29,10 +29,10 @@ const Template = ({ data }) => {
             <Link to="/blog/">Go back to other Blog Posts</Link>
           </ui.GoBackSpan>
           <h2>{title}</h2>
-          <section>
+          <ui.BlogPostHeader>
             <p>🗓 Published on: {date}</p>
             <p>⏱ Reading time: {timeToRead} min</p>
-          </section>
+          </ui.BlogPostHeader>
 
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>

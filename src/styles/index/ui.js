@@ -63,7 +63,7 @@ export const ImgWrapper = styled.div`
 
 export const PageContent = styled.section`
   margin: 80px auto 0;
-  max-width: 650px;
+  max-width: 960px;
 
   p {
     font-size: 18px;
@@ -79,6 +79,7 @@ export const PageContent = styled.section`
 export const BlogHeadline = styled.h2`
   border-bottom: 6px solid ${({ theme }) => theme.primaryColorTwo};
   display: inline-block;
+  margin-bottom: 76px;
 `
 
 export const Newlinks = styled.span`
@@ -108,14 +109,40 @@ export const YearlySection = styled.section`
 `
 
 export const NewArticleSlot = styled.section`
-  margin-bottom: 60px;
+  margin-bottom: 76px;
 `
 
 export const NewArticle = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
 
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, min-content);
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+  }
+
   p {
     margin-bottom: 10px;
+
+    @media (min-width: 700px) {
+      grid-column: 1 / 2;
+    }
+  }
+`
+
+export const ArticleHeadline = styled.h3`
+  @media (min-width: 700px) {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+`
+
+export const ArticleImageWrapper = styled.div`
+  @media (min-width: 700px) {
+    grid-column: 2 / 2;
+    grid-row: 1 / -1;
   }
 `
 
@@ -141,6 +168,10 @@ export const Readmore = styled.span`
       margin-right: 0px;
       margin-left: 4px;
     }
+  }
+
+  @media (min-width: 700px) {
+    grid-column: 1 / 2;
   }
 `
 
@@ -177,6 +208,11 @@ export const BlogLink = styled.span`
 
 export const Time = styled.time`
   font-size: 16px;
+  color: ${({ theme }) => theme.grey};
+
+  @media (min-width: 700px) {
+    grid-column: 1 / 2;
+  }
 `
 
 export const PostOuterWrapper = styled.section`

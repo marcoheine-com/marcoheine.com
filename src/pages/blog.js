@@ -76,15 +76,17 @@ const Blog = ({ data }) => {
               <Link to={`/${slug}`} key={id}>
                 <ui.NewArticleSlot>
                   <ui.NewArticle>
-                    <h3>{title}</h3>
+                    <ui.ArticleHeadline>{title}</ui.ArticleHeadline>
                     {frontmatter.featuredImage && (
-                      <GatsbyImage
-                        alt={frontmatter.featuredImageAlt}
-                        image={
-                          frontmatter.featuredImage.childImageSharp
-                            .gatsbyImageData
-                        }
-                      />
+                      <ui.ArticleImageWrapper>
+                        <GatsbyImage
+                          alt={frontmatter.featuredImageAlt}
+                          image={
+                            frontmatter.featuredImage.childImageSharp
+                              .gatsbyImageData
+                          }
+                        />
+                      </ui.ArticleImageWrapper>
                     )}
                     <ui.Time dateTime={date}>Published on: {date}</ui.Time>
 
@@ -96,7 +98,7 @@ const Blog = ({ data }) => {
             )
           })}
 
-          <h2>Other blog posts:</h2>
+          <ui.BlogHeadline>Other blog posts:</ui.BlogHeadline>
           {createYearlySection(groupedByYear)}
         </ui.PageContent>
       </Layout>

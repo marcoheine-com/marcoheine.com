@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import * as ui from './ui';
+import React from 'react'
+import { Link } from 'gatsby'
+import * as ui from './ui'
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear()
 
   return (
     <ui.Footer>
@@ -13,7 +13,7 @@ const Footer = () => {
       <nav>
         <ul>
           <ui.ListItem>
-            <a href="mailto:marcokuehbauch@gmail.com">
+            <a href="mailto:hello@marcokuehbauch.com">
               <ui.Svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -132,7 +132,7 @@ const Footer = () => {
         </ui.LinkStyles>
       </p>
     </ui.Footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
