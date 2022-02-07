@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://marcokuehbauch.com`,
   },
   plugins: [
+    'gatsby-plugin-postcss',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
@@ -96,4 +97,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}

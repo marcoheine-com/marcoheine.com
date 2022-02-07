@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import * as ui from './ui';
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import * as ui from './ui'
 
 const Navigation = () => {
-  const [isToggled, setIsToggled] = useState(false);
-  const handleOnClick = () => setIsToggled(!isToggled);
+  const [isToggled, setIsToggled] = useState(false)
+  const handleOnClick = () => setIsToggled(!isToggled)
 
   return (
     <>
@@ -17,13 +17,13 @@ const Navigation = () => {
       <ui.Nav isToggled={isToggled}>
         <ui.List>
           <ui.ListItem isToggled={isToggled}>
-            <Link to="/blog/">Blog</Link>
-          </ui.ListItem>
-          <ui.ListItem isToggled={isToggled}>
-            <Link to="/today-I-learned/">Today I learned</Link>
+            <Link to="/work-with-me/">Work</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
             <Link to="/about/">About</Link>
+          </ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
+            <Link to="/blog/">Blog</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
             <Link to="/contact/">Contact me</Link>
@@ -42,7 +42,7 @@ const Navigation = () => {
         </ui.List>
       </ui.Nav>
     </>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

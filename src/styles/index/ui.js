@@ -231,7 +231,6 @@ export const TILInnerWrapper = styled.section`
 
 export const PageHeader = styled.h1`
   text-align: center;
-  margin-top: 20px;
   margin-bottom: 0;
 `
 

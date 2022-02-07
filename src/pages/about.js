@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
-import * as ui from '../styles/index/ui';
-import * as aboutUI from '../styles/about/ui';
+import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import theme from '../styles/theme'
+import * as ui from '../styles/index/ui'
+import * as aboutUI from '../styles/about/ui'
 
 const skills = [
   {
@@ -132,7 +132,7 @@ const skills = [
       </>
     ),
   },
-];
+]
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -143,13 +143,13 @@ const About = () => {
         }
       }
     }
-  `);
+  `)
 
-  const [shouldRender, setShouldRender] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false)
 
   const handleOnClick = () => {
-    setShouldRender(!shouldRender);
-  };
+    setShouldRender(!shouldRender)
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -201,7 +201,7 @@ const About = () => {
 
                   <p>{skill.text}</p>
                 </li>
-              );
+              )
             })}
           </aboutUI.SkillsList>
 
@@ -319,7 +319,7 @@ const About = () => {
         </aboutUI.PageContent>
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default About;
+export default About

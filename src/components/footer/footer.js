@@ -8,10 +8,12 @@ const Footer = () => {
   return (
     <ui.Footer>
       <ui.BackToTop>
-        <a href="#">&uarr; Go back to top of the page? &uarr;</a>
+        <a href="#" className="hover:text-white">
+          &uarr; Go back to top of the page? &uarr;
+        </a>
       </ui.BackToTop>
       <nav>
-        <ul>
+        <ul className="mb-8">
           <ui.ListItem>
             <a href="mailto:hello@marcokuehbauch.com">
               <ui.Svg
@@ -99,6 +101,12 @@ const Footer = () => {
           </ui.ListItem>
         </ul>
       </nav>
+      <Link
+        className="mb-6 inline-block uppercase transition-all p-1 hover:bg-white"
+        to="/today-I-learned"
+      >
+        &rarr; Today I learned
+      </Link>
       <p>
         This site is hosted on and deployed with
         <ui.Link
@@ -107,9 +115,11 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           {' '}
-          Netlify
+          Netlify.
         </ui.Link>
-        . The source code ist hosted on{' '}
+      </p>
+      <p>
+        The source code ist hosted on{' '}
         <ui.Link
           href="https://github.com/mkuehb/marcokuehbauch.com"
           target="_blank"

@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Footer = styled.footer`
   background-color: ${({ theme }) => theme.primaryColorTwo};
   color: #fff;
   font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
 
   a {
@@ -16,13 +16,12 @@ export const Footer = styled.footer`
   p {
     color: #fff;
   }
-`;
+`
 
 export const BackToTop = styled.p`
-  font-size: 12px;
   margin: 0;
   padding-bottom: 30px;
-`;
+`
 
 export const ListItem = styled.li`
   display: inline;
@@ -32,14 +31,14 @@ export const ListItem = styled.li`
   nth-last-child(1) {
     padding-right: 0px;
   }
-`;
+`
 
 export const Svg = styled.svg`
   transition: all 0.2s linear;
   &:hover {
     fill: ${({ theme }) => theme.primaryColorOne};
   }
-`;
+`
 
 export const Link = styled.a`
   border-bottom: 3px solid #fff;
@@ -50,7 +49,7 @@ export const Link = styled.a`
     border-bottom: 3px solid #fff;
     color: ${({ theme }) => theme.primaryColorTwo};
   }
-`;
+`
 
 export const LinkStyles = styled.span`
   transition: 0.2s all ease-out;
@@ -60,7 +59,7 @@ export const LinkStyles = styled.span`
     border-bottom: 3px solid #fff;
     color: ${({ theme }) => theme.primaryColorTwo};
   }
-`;
+`
 
 export const Heart = styled.svg`
   animation: move 4s ease-in-out infinite;
@@ -83,4 +82,4 @@ export const Heart = styled.svg`
       transform: translateY(4px);
     }
   }
-`;
+`
