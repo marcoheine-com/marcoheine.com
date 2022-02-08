@@ -66,8 +66,10 @@ const WorkWithMe = () => {
                 something new everyday is what makes it so much fun for me.
               </p>
               <p>
-                I strive for high quality code and lovable digital products. My
-                focus is on Acessibility, Responsiveness and fast websites.
+                I strive for <strong>high quality code</strong> and lovable
+                digital products. My focus is on <strong>Acessibility</strong>,{' '}
+                <strong>Responsiveness</strong> and <strong>high speed</strong>{' '}
+                websites.
               </p>
               <a
                 className="inline-block bg-primaryColorTwo py-3 px-4 text-white mt-6 hover:text-white hover:bg-linkHover"
@@ -81,65 +83,117 @@ const WorkWithMe = () => {
               <section className="mb-10">
                 <h3>🛠 Web Development</h3>
                 <p>
-                  I am able to develop landing pages, blogs, CMS integrations,
-                  online shops and more complex fullstack web applications.
+                  I am able to develop:
+                  <ul className="list-disc ml-8 flex flex-col gap-2 pt-2">
+                    <li>Landing Pages</li>
+                    <li>Blogs</li>
+                    <li>CMS integrations</li>
+                    <li>Multilanguage Pages</li>
+                    <li>Online Shops</li>
+                    <li>more complex Fullstack Web Applications</li>
+                  </ul>
                 </p>
                 <p>
-                  I can help you with support, adding changes and improvements
-                  to your existing websites by improving the User Experience,
-                  speed, responsiveness, accessibility and SEO.
+                  I can help you with your existing website by implementing
+                  changes and improvements to get a better User Experience, more
+                  Speed, Responsiveness, improved Accessibility and SEO.
                 </p>
               </section>
               <section className="mb-10">
                 <h3>Tech Stack</h3>
                 <p>
                   Currentliy I’m the most comfortable when working with the so
-                  called Jamstack. I’m an expert in the following technologies,
-                  frameworks and platforms:
-                </p>
-                <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xl ml-0">
-                  <li className="mb-0">HTML & CSS</li>
+                  called{' '}
                   <a
-                    href="https://www.typescriptlang.org/"
+                    href="https://jamstack.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <li className="mb-0">TypeScript</li>
+                    Jamstack
                   </a>
-                  <li className="mb-0">React</li>
-                  <li className="mb-0">Gatsby</li>
-                  <li className="mb-0">NextJS</li>
-                  <li className="mb-0">TailwindCSS</li>
-                  <li className="mb-0">Headless CMS (Prismic)</li>
-                  <li className="mb-0">Netlify</li>
-                  <li className="mb-0">Vercel</li>
+                  . I’m an expert in the following technologies, frameworks and
+                  platforms:
+                </p>
+                <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xl ml-0">
+                  <li className="mb-0">HTML & CSS</li>
+                  <li>JavaScript</li>
+                  <li className="mb-0">TypeScript</li>
+                  <a
+                    href="https://reactjs.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">React</li>
+                  </a>
+                  <a
+                    href="https://www.gatsbyjs.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">Gatsby</li>
+                  </a>
+                  <a
+                    href="https://nextjs.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">NextJS</li>
+                  </a>
+                  <a
+                    href="https://tailwindcss.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">TailwindCSS</li>
+                  </a>
+                  <a
+                    href="https://prismic.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">Headless CMS (Prismic)</li>
+                  </a>
+                  <a
+                    href="https://www.netlify.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">Netlify</li>
+                  </a>
+                  <a
+                    href="https://vercel.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <li className="mb-0">Vercel</li>
+                  </a>
                 </ul>
               </section>
               <section className="mb-10">
                 <h3>🎨 Web Design</h3>
                 <p>
-                  With a keen eye for UX-Design I am able to create clickable
-                  prototypes or a full design for your website.
+                  With a keen eye for <strong>UX Design</strong> I am able to
+                  create clickable prototypes or a full design for your website.
                 </p>
                 <p>
                   {' '}
                   Either based on your existing Corporate Design and Identity or
                   starting from scratch by choosing fonts, colors and design
-                  elements matching your{' '}
+                  elements matching your business and brand.{' '}
                 </p>
               </section>
               <section>
                 <h3>📄 Technical Writing</h3>
                 <p>
-                  I love to write. From documenation, to blog posts to
-                  newsletters. Do you need to update the technical documenation
-                  of your product? Are you looking for a blog post, exploring
-                  your new technology?
+                  I love to <strong>write</strong>. From documenation, to blog
+                  posts to newsletters. Do you need to update the technical
+                  documenation of your product? Are you looking for a blog post,
+                  exploring your new technology?
                 </p>
                 <p>
-                  I am someone who learns more from reading so I know exactly
-                  how to structure the information and write about your tool to
-                  teach your users the most.
+                  I am someone who learns better by reading so I know exactly
+                  how to <strong>structure</strong> the information and write
+                  about your tool to teach your users the most.
                 </p>
                 <a
                   className="inline-block bg-primaryColorTwo py-3 px-4 text-white mt-6 hover:text-white hover:bg-linkHover"
