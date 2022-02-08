@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PageContent = styled.section`
   margin: 80px auto 0;
@@ -12,12 +12,12 @@ export const PageContent = styled.section`
       line-height: 1.7;
     }
   }
-`;
+`
 
 export const Container = styled.div`
-  max-width: 650px;
+  max-width: 672px;
   margin: 0 auto 80px;
-`;
+`
 
 export const TwoColumnGrid = styled.div`
   justify-content: center;
@@ -27,21 +27,8 @@ export const TwoColumnGrid = styled.div`
   @media (min-width: 460px) {
     grid-template-columns: auto auto;
   }
-`;
-
-export const SkillsList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
-  grid-gap: 60px;
-  margin: 0 0 80px;
-  max-width: 1400px;
-  justify-content: center;
-
-  li {
-    list-style-type: none;
-  }
-`;
+`
 
 export const CenteredText = styled.h2`
   text-align: center;
-`;
+`

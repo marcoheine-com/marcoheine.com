@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PageContent = styled.section`
   display: grid;
@@ -21,7 +21,7 @@ export const PageContent = styled.section`
       line-height: 1.7;
     }
   }
-`;
+`
 
 export const Section = styled.section`
   box-shadow: 2px 2px 12px #d9d9d9;
@@ -36,7 +36,7 @@ export const Section = styled.section`
       background-color: ${({ theme }) => theme.primaryColorOne};
     }
   }
-`;
+`
 
 export const Aside = styled.aside`
   border: 3px dotted ${({ theme }) => theme.primaryColorOne};
@@ -49,19 +49,19 @@ export const Aside = styled.aside`
   transform: rotate(10deg);
   padding: 5px 15px;
   transition: all 0.2s linear;
-`;
+`
 
 export const Slot = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
-`;
+`
 
 export const PageHeader = styled.h1`
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
-`;
+`
 
 export const Readmore = styled.span`
   color: ${({ theme }) => theme.primaryColorTwo};
@@ -78,7 +78,7 @@ export const Readmore = styled.span`
       margin-left: 4px;
     }
   }
-`;
+`
 
 export const Categories = styled.ul`
   display: flex;
@@ -93,18 +93,17 @@ export const Categories = styled.ul`
       margin-left: 16px;
     }
   }
-`;
+`
 
 export const Category = styled.li`
-  font-family: 'Consolas';
   background-color: ${({ bgColor }) => bgColor}};
-`;
+`
 
 export const tags = styled.section`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 14px;
-`;
+`
 
 export const tag = styled.span`
   font-size: 14x;
@@ -112,4 +111,4 @@ export const tag = styled.span`
   &:not(:first-child) {
     margin-left: 10px;
   }
-`;
+`

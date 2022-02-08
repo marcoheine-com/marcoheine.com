@@ -9,6 +9,10 @@ module.exports = {
         text: '#3e3a3a',
         grey: '#808080',
       },
+      boxShadow: {
+        custom: '2px 2px 12px #d9d9d9;',
+        customDark: '10px 10px 12px #d9d9d9;',
+      },
     },
   },
   plugins: [],

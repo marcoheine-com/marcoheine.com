@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavIcon = styled.button`
   background-color: #fff;
@@ -19,7 +19,7 @@ export const NavIcon = styled.button`
   @media (min-width: 710px) {
     display: none;
   }
-`;
+`
 export const NavIconSpan = styled.span`
   background: ${({ theme }) => theme.primaryColorTwo};
   height: 3px;
@@ -66,7 +66,7 @@ export const NavIconSpan = styled.span`
       left: 0px;
     `};
   }
-`;
+`
 
 export const Nav = styled.nav`
   max-height: 0;
@@ -90,7 +90,7 @@ export const Nav = styled.nav`
     text-align: right;
     transform: translate(0);
   }
-`;
+`
 
 export const List = styled.ul`
   display: flex;
@@ -104,7 +104,7 @@ export const List = styled.ul`
     margin-bottom: 0;
     padding-bottom: 0;
   }
-`;
+`
 
 export const ListItem = styled.li`
   font-size: 22px;
@@ -121,7 +121,7 @@ export const ListItem = styled.li`
   a {
     color: ${({ theme }) => theme.primaryColorOne};
     display: block;
-    padding: 8px;
+    padding: 8px 16px;
 
     &:hover {
       background-color: ${({ theme }) => theme.primaryColorTwo};
@@ -138,4 +138,4 @@ export const ListItem = styled.li`
   @media (min-width: 710px) {
     font-size: 20px;
   }
-`;
+`

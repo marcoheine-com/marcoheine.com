@@ -17,7 +17,7 @@ const Navigation = () => {
       <ui.Nav isToggled={isToggled}>
         <ui.List>
           <ui.ListItem isToggled={isToggled}>
-            <Link to="/work-with-me/">Work</Link>
+            <Link to="/work/">Work</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
             <Link to="/about/">About</Link>

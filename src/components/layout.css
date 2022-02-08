@@ -40,3 +40,20 @@
     @apply text-primaryColorTwo hover:text-linkHover;
   }
 }
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Merriweather', serif;
+  }
+  .hover-target {
+    @apply transition-all;
+  }
+
+  .hover-trigger:hover > div {
+    @apply shadow-customDark scale-95;
+  }
+
+  .hover-trigger:hover .hover-target {
+    @apply right-4 top-24;
+  }
+}

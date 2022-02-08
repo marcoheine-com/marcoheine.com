@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { CallToAction } from '../components/call-to-action'
 import Layout from '../components/layout'
 import PageHeader from '../components/pageheader'
 import SEO from '../components/seo'
@@ -37,7 +38,7 @@ const testimonials = [
   //   },
 ]
 
-const WorkWithMe = () => {
+const Work = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1920px">
@@ -71,28 +72,23 @@ const WorkWithMe = () => {
                 <strong>Responsiveness</strong> and <strong>high speed</strong>{' '}
                 websites.
               </p>
-              <a
-                className="inline-block bg-primaryColorTwo py-3 px-4 text-white mt-6 hover:text-white hover:bg-linkHover"
-                href="mailto:hello@marcokuehbauch.com"
-              >
+              <CallToAction href="mailto:hello@marcokuehbauch.com">
                 Work with me
-              </a>
+              </CallToAction>
             </article>
             <article className="max-w-2xl">
               <h2 className="text-primaryColorTwo mb-12">Services</h2>
               <section className="mb-10">
                 <h3>🛠 Web Development</h3>
-                <p>
-                  I am able to develop:
-                  <ul className="list-disc ml-8 flex flex-col gap-2 pt-2">
-                    <li>Landing Pages</li>
-                    <li>Blogs</li>
-                    <li>CMS integrations</li>
-                    <li>Multilanguage Pages</li>
-                    <li>Online Shops</li>
-                    <li>more complex Fullstack Web Applications</li>
-                  </ul>
-                </p>
+                <p>I am able to develop:</p>
+                <ul className="list-disc ml-8 mb-4 flex flex-col gap-2">
+                  <li>Landing Pages</li>
+                  <li>Blogs</li>
+                  <li>CMS integrations</li>
+                  <li>Multilanguage Pages</li>
+                  <li>Online Shops</li>
+                  <li>more complex Fullstack Web Applications</li>
+                </ul>
                 <p>
                   I can help you with your existing website by implementing
                   changes and improvements to get a better User Experience, more
@@ -195,12 +191,9 @@ const WorkWithMe = () => {
                   how to <strong>structure</strong> the information and write
                   about your tool to teach your users the most.
                 </p>
-                <a
-                  className="inline-block bg-primaryColorTwo py-3 px-4 text-white mt-6 hover:text-white hover:bg-linkHover"
-                  href="mailto:hello@marcokuehbauch.com"
-                >
+                <CallToAction href="mailto:marcokuehbauch.com">
                   Learn more
-                </a>
+                </CallToAction>
               </section>
             </article>
             {testimonials.length ? (
@@ -225,4 +218,4 @@ const WorkWithMe = () => {
   )
 }
 
-export default WorkWithMe
+export default Work

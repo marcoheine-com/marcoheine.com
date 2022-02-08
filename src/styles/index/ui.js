@@ -6,19 +6,6 @@ export const IndexWrapper = styled.section`
   align-items: center;
 `
 
-export const Wrapper = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 120px;
-    max-width: 500px;
-
-    @media(min-width: 650px) {
-      margin-top: 140px;
-    }
-  }
-`
-
 export const Headline = styled.h1`
   margin-bottom: 40px;
 `
@@ -50,11 +37,6 @@ export const ImgWrapper = styled.div`
   max-width: 300px;
   transition: all 0.4s linear;
   margin-bottom: 40px;
-
-  &:hover {
-    opacity: 0.7;
-    transform: scale(1.03);
-  }
 
   .gatsby-image-wrapper {
     width: 200px;
