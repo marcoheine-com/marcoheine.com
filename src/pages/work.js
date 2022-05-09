@@ -85,7 +85,7 @@ const Work = () => {
                   </a>
                   . {t('work.tech-stack-text-two')}
                 </p>
-                <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xl ml-0">
+                <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xl list-none">
                   <li className="mb-0">HTML & CSS</li>
                   <li>JavaScript</li>
                   <li className="mb-0">TypeScript</li>
