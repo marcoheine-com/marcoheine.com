@@ -69,7 +69,16 @@ Template.propTypes = {
 export default Template
 
 export const pageQuery = graphql`
-  query ($slug: String!) {
+  query ($language: String!, $slug: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import * as React from 'react'
+import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import * as ui from './ui'
 
 const Navigation = () => {
-  const [isToggled, setIsToggled] = useState(false)
+  const [isToggled, setIsToggled] = React.useState(false)
   const handleOnClick = () => setIsToggled(!isToggled)
+  const { languages, originalPath, language } = useI18next()
 
   return (
     <>
@@ -28,17 +29,23 @@ const Navigation = () => {
           <ui.ListItem isToggled={isToggled}>
             <Link to="/contact/">Contact me</Link>
           </ui.ListItem>
-          <ui.ListItem>
-            <a
-              href="https://www.buymeacoffee.com/marcokuehbauch"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span role="img" aria-label="coffee emoji">
-                ☕️
-              </span>{' '}
-            </a>
-          </ui.ListItem>
+          <li>
+            <ul className="flex gap-4 list-none m-0">
+              |
+              {languages.map((lng) => (
+                <li
+                  key={lng}
+                  className={`${
+                    lng === language ? 'font-bold' : 'font-normal'
+                  } lang-link m-0`}
+                >
+                  <Link to={originalPath} language={lng}>
+                    {lng}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
         </ui.List>
       </ui.Nav>
     </>

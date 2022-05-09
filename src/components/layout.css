@@ -39,6 +39,18 @@
   a {
     @apply text-primaryColorTwo hover:text-linkHover;
   }
+
+  ul {
+    @apply ml-6 mb-4 list-disc;
+  }
+
+  ul li {
+    @apply mb-4 last:mb-0;
+  }
+
+  hr {
+    @apply mb-4;
+  }
 }
 
 @layer utilities {
@@ -55,5 +67,9 @@
 
   .hover-trigger:hover .hover-target {
     @apply right-4 top-24;
+  }
+
+  .lang-link a {
+    @apply text-primaryColorOne hover:text-linkHover;
   }
 }

@@ -1,9 +1,10 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
-import * as ui from '../styles/index/ui';
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import theme from '../styles/theme'
+import * as ui from '../styles/index/ui'
+import { graphql } from 'gatsby'
 
 const NotFoundPage = () => (
   <ThemeProvider theme={theme}>
@@ -170,6 +171,20 @@ const NotFoundPage = () => (
       </ui.PageContent>
     </Layout>
   </ThemeProvider>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

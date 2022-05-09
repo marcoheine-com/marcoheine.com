@@ -1,0 +1,76 @@
+{
+  "home": {
+    "intro": "I'm Marco - a Freelance Web Developer and I make websites.",
+    "welcome": "Hi, and welcome!",
+    "welcome-one": "I love to help people to get ",
+    "welcome-two": "fast, accessible and great looking websites.",
+    "welcome-three": " Have an interesting project or idea?",
+    "welcome-four": "Have a look at my skills and how I work and let’s see how I can help you!",
+    "work": "Work with me",
+    "blog-posts": "Latest blog posts",
+    "til-posts": "Latest TIL posts"
+  },
+
+  "footer": {
+    "top": "Go back to top of the page?",
+    "hosting": "This site is hosted on and deployed with ",
+    "code": "The source code is hosted on "
+  },
+
+  "work": {
+    "headline-one": "What I do",
+    "what-i-do": {
+      "one": "I’m a Front-end Developer who <strong>loves</strong> to makes websites!",
+      "two": " I have more than <strong>6 years</strong> of expierence and worked on numerious projects, at web agencies, in product development and at software development companies.",
+      "three": " With a keen eye for <strong>UX Design</strong> I understand user needs and problems and know how to solve them. Enabling a clear and good communication is always my priority.",
+      "four": "I still love the web and it’s technologies and learning something new everyday is what makes it so much fun for me.",
+      "five": "I strive for <strong>high quality code</strong> and lovable digital products. My focus is on <strong>Acessibility</strong>, <strong>Responsiveness</strong> and <strong>high speed</strong> websites."
+    },
+    "call-to-action": "Work with me",
+    "headline-two": "Services",
+    "subline-one": "Web Development",
+    "text-one": "I am able to develop",
+    "text-two": "I can help you with your existing website by implementing changes and improvements to get a better User Experience, more Speed, Responsiveness, improved Accessibility and SEO.",
+    "tech-stack": "Tech Stack",
+    "tech-stack-text-one": "Currently I’m the most comfortable when working with the so called ",
+    "tech-stack-text-two": "I’m an expert in the following technologies, frameworks and platforms:",
+    "subline-two": "Web Design",
+    "web-design-one": "With a keen eye for <strong>UX Design</strong> I am able to create clickable prototypes or a full design for your website.",
+    "web-design-two": "  Either based on your existing Corporate Design and Identity or starting from scratch by choosing fonts, colors and design elements matching your business and brand.",
+    "subline-three": "Technical Writing",
+    "technical-writing-one": "I love to <strong>write</strong>. From documenation, to blog posts to newsletters. Do you need to update the technical documenation of your product? Are you looking for a blog post, exploring your new technology?",
+    "technical-writing-two": " I am someone who learns better by reading so I know exactly how to <strong>structure</strong> the information and write about your tool to teach your users the most.",
+    "technical-writing-cta": "Learn more",
+    "headline-three": "What others are saying about me",
+    "testimonials": {
+      "one": "Looorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+      "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
+    }
+  },
+
+  "about": {
+    "headline": "About",
+    "text-one": "My name is Marco and I'm a <strong>Web Developer.</strong>",
+    "text-two": "I like to build <strong>responsive</strong>, <strong>accessible</strong> and <strong>fast</strong> websites and web experiences for every device and every browser.",
+    "text-three": "I found my love for the web and its technologies at the age of 14, when I build my first website. I teached myself a lot about HTML and CSS and loved to be able to craft something digital.",
+    "text-four": "During my university education and when getting into the basics of computer science, I got hooked again and learned all about HTML, CSS, JavaScript and Front-end Development.",
+    "subline-one": "Everything else",
+    "text-five": "In my spare time I like to do sports like bodyweightfitness and yoga.",
+    "text-six": "I try to read a lot, mostly one fictional and one non fictional book at the same time. Check out my",
+    "text-seven": " goodreads profile",
+    "text-eight": "Playing videogames is something I like to do aswell, most of the time it's on my Nintendo Switch.",
+    "text-nine": " I also love to write. From blog posts, to short stories, sometimes even poems, or just simple notes. I&apos;m not really good at it but I enjoy it a lot. Head over to my blog to see the latest posts:",
+    "subline-two": "Former Education"
+  },
+
+  "contact": {
+    "headline": "Contact",
+    "subline": "Thanks for your interest in getting in touch!",
+    "text-one": "If you're interested in <strong>working with me</strong>, head over to my work page. There you will find all the information about how I work and how I can help you: ",
+    "text-two": " If you have a question about one of my blog posts or one of my today-I-learned posts feel free to send me an email.",
+    "text-three": "You can reach out to me via email at ",
+    "text-four": "You can also find me on Twitter at ",
+    "text-five": " A few samples of my work as well as the source code of this website are available on "
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "home": {
+    "intro": "Ich bin Marco - Freelance Web Developer aus Stuttgart.",
+    "welcome": "Hi und willkommen!",
+    "welcome-one": "Mir macht es großen Spaß, anderen dabei zu helfen ",
+    "welcome-two": "schnelle, barrierefreie und schöne Websites zu bekommen.",
+    "welcome-three": " Haben Sie ein interessantes Projekt oder eine Idee und brauchen Unterstützung?",
+    "welcome-four": "Auf meiner 'Work' Seite beschreibe ich meine Leistungen und wie ich arbeite.",
+    "work": "Mehr erfahren",
+    "blog-posts": "Neueste Blog Posts",
+    "til-posts": "Neueste Today-I-learned Posts"
+  },
+
+  "footer": {
+    "top": "Zurück zum Anfang der Seite?",
+    "hosting": "Diese Seite ist gehosted auf und wird deployed mit ",
+    "code": "Der source code ist gehosted auf "
+  },
+
+  "work": {
+    "headline-one": "Was Ich mache",
+    "what-i-do": {
+      "one": "Ich bin ein Front-end Developer, der leidenschaftlich gerne Websites entwickelt.",
+      "two": "Ich habe mehr als <strong>6 Jahre</strong> Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Software-Entwicklungs Unternehmen gerarbeitet habe.",
+      "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann. Eine sehr gute und klare Kommunikation zu ermöglichen, ist immer meine oberste Priorität.",
+      "four": "Ich habe immer noch große Freude an der Web-Entwicklung und den relevanten Technologien. Jeden Tag etwas Neues zu lernen, ist das, was es für mich so besonders macht.",
+      "five": "Ich strebe nach <strong>high quality code</strong> und digitalen Produkten, die man gerne nutzt. Mein Fokus liegt auf <strong>barrierefreien</strong> und <strong>schnellen</strong> Websites."
+    },
+    "call-to-action": "Anfrage starten",
+    "headline-two": "Leistungen",
+    "subline-one": "Web Entwicklung",
+    "text-one": "Ich bin in der Lage, folgende Arten von Websites zu entwickeln:",
+    "text-two": "Ich helfe außerdem sehr gerne, bereits bestehende Websites in den Bereichen User Experience, Geschwindigkeit, Responsiveness, Barrierefreiheit und SEO zu optimieren und zu verbessern.",
+    "tech-stack": "Technologien",
+    "tech-stack-text-one": "Aktuell arbeite ich am liebsten mit dem sogenannten ",
+    "tech-stack-text-two": "Dabei bin ich Experte in den folgenden Technologien, Frameworks und Platformen:",
+    "subline-two": "Web Design",
+    "web-design-one": "Mit einem guten Auge für <strong>UX Design</strong> bin ich in der Lage, klickbare Prototypen oder ein komplettes Design einer neuen Website zu erstellen.",
+    "web-design-two": "Dies kann entweder auf der Basis eines bestehenden CI/CDs geschehen oder wir starten von Null, mit der Auswahl von Farben, Schriftarten und Design Elementen die die jeweilige Marke oder Unternehmen perfekt beschreiben.",
+    "subline-three": "Technical Writing",
+    "technical-writing-one": "Mir macht das <strong>Schreiben</strong> sehr großen Spaß. Angefangen bei Dokumentationen, über Blog Posts bis zu Newslettern. Ich kann bei der technischen Dokumenation von Produkten unterstützen oder auch Blog Posts verfassen, die neue Technologien oder Software erklären.",
+    "technical-writing-two": "Ich bin jemand, der durch das Lesen mehr lernt als bspw. durch Videoformate. Daher weiß ich genau, wie man Informationen <strong>strukturiert</strong>, so dass sie für Leser:innen am besten aufzunehmen sind.",
+    "technical-writing-cta": "Mehr erfahren",
+    "headline-three": "Was andere über mich sagen",
+    "testimonials": {
+      "one": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+      "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
+    }
+  },
+
+  "about": {
+    "headline": "About",
+    "text-one": "Ich bin Marco und ich bin <strong>Web Entwickler.</strong>",
+    "text-two": "Ich bin sehr gut darin, <strong>schnelle</strong> und <strong>barrierfreie</strong> Websites und Web-Apps für jedes Gerät und jeden Browser zu entwickeln.",
+    "text-three": "Ich habe meine Begeisterung für das Web und seine Technologien bereits mit 14 gefunden, als ich meine erste eigene Website entwickelt habe. Ich habe mir dabei HTML und CSS selbst beigebracht und gemerkt, wieviel Spaß es macht etwas Digitales zu erschaffen.",
+    "text-four": "Während ich meines Studiums mehr über die Grundlagen der Informatik gelernt habe, wurde meine Begeisterung erneut geweckt und ich habe alles über HTML, CSS, JavaScript und die Front-end Entwicklung aufgesaugt.",
+    "subline-one": "Alles andere, wichtige",
+    "text-five": "In meiner Freizeit mache ich gerne Sport, wie z.B. Bodyweightfitness und Yoga.",
+    "text-six": "Ich lese sehr gerne, meistens zwei Bücher gleichzeitig. Was ich gerade lese oder als nächstes lesen möchte, findet sich auf meinem",
+    "text-seven": " goodreads Profil",
+    "text-eight": "Videospiele begeistern mich genauso sehr. Dabei bin ich die meiste Zeit auf der Nintendo Switch unterwegs.",
+    "text-nine": "Schreiben ist ein weiteres Hobby von mir. Angefangen bei blog posts, über Kurzgeschichten bis zu Gedichten oder einfachen Notizen des Alltags. Ich bin nicht wirklich gut darin, aber es macht mir großen Spaß. Auf meinem blog gibt es die neuesten Ergebnisse davon:",
+    "subline-two": "Ausbildung"
+  },
+
+  "contact": {
+    "headline": "Contact",
+    "subline": "Let's connect!",
+    "text-one": "Wenn Sie Interesse daran, haben, mit mir zu arbeiten, finden Sie auf meiner work Seite viele Informationen dazu: ",
+    "text-two": "Wenn Sie Fragen oder Anregungen zu einem meiner blog posts oder today-I-learned posts haben, freue ich mich über eine kurze Mail dazu.",
+    "text-three": "Sie erreichen mich unter ",
+    "text-four": "Ich bin außerdem auch auf Twitter unterwegs: ",
+    "text-five": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
+  }
+}

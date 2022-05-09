@@ -1,5 +1,5 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
+import { Link } from 'gatsby-plugin-react-i18next'
 
 const CLASS_NAMES =
   'inline-block bg-primaryColorTwo py-3 px-4 text-white mt-6 hover:text-white hover:bg-linkHover'

@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { graphql, Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Button from '../components/Button';
-import theme from '../styles/theme';
-import * as ui from '../styles/til/ui';
+import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Button from '../components/Button'
+import theme from '../styles/theme'
+import * as ui from '../styles/til/ui'
 
 const TIL = ({ data }) => {
-  const [allItemsLoaded, setAllItemsLoaded] = useState(false);
+  const [allItemsLoaded, setAllItemsLoaded] = useState(false)
 
-  const { allMdx } = data;
-  const { edges, group } = allMdx;
+  const { allMdx } = data
+  const { edges, group } = allMdx
 
-  const items = edges && (!allItemsLoaded ? edges.slice(0, 20) : edges);
-  const additionalItems = edges.slice(20);
+  const items = edges && (!allItemsLoaded ? edges.slice(0, 20) : edges)
+  const additionalItems = edges.slice(20)
 
-  const randomNumber = Math.floor(Math.random() * Math.floor(13999));
+  const randomNumber = Math.floor(Math.random() * Math.floor(13999))
 
   const handleOnClick = () => {
-    setAllItemsLoaded(!allItemsLoaded);
-  };
+    setAllItemsLoaded(!allItemsLoaded)
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -30,7 +30,7 @@ const TIL = ({ data }) => {
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
         <ui.Categories>
-          {group.map(tag => (
+          {group.map((tag) => (
             <ui.Category key={tag.fieldValue} category={tag.fieldValue}>
               <Link to={`/today-I-learned/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
@@ -41,7 +41,7 @@ const TIL = ({ data }) => {
 
         <ui.PageContent>
           {items.map(({ node }, index) => {
-            const { excerpt, fields, frontmatter, id } = node;
+            const { excerpt, fields, frontmatter, id } = node
 
             return (
               <Link key={id} to={`/${fields.slug}`}>
@@ -51,7 +51,7 @@ const TIL = ({ data }) => {
 
                   {frontmatter.tags && (
                     <ui.tags>
-                      {frontmatter.tags.map(tag => (
+                      {frontmatter.tags.map((tag) => (
                         <ui.tag key={tag}>#{tag}</ui.tag>
                       ))}
                     </ui.tags>
@@ -63,7 +63,7 @@ const TIL = ({ data }) => {
                   </section>
                 </ui.Section>
               </Link>
-            );
+            )
           })}
         </ui.PageContent>
         {!allItemsLoaded && (
@@ -75,8 +75,8 @@ const TIL = ({ data }) => {
         )}
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 TIL.propTypes = {
   data: PropTypes.shape({
@@ -85,12 +85,21 @@ TIL.propTypes = {
       group: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
-};
+}
 
-export default TIL;
+export default TIL
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMdx(
       filter: { fields: { type: { eq: "today-I-learned-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
@@ -114,4 +123,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

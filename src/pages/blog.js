@@ -117,7 +117,16 @@ Blog.propTypes = {
 export default Blog
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMdx(
       filter: { fields: { type: { eq: "blog-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }

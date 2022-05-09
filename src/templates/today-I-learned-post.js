@@ -1,16 +1,16 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { ThemeProvider } from 'styled-components';
-import PropTypes from 'prop-types';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
-import * as ui from './ui';
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { ThemeProvider } from 'styled-components'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import theme from '../styles/theme'
+import * as ui from './ui'
 
 const TilPost = ({ data }) => {
-  const { mdx } = data;
-  const { frontmatter, body } = mdx;
+  const { mdx } = data
+  const { frontmatter, body } = mdx
 
   return (
     <ThemeProvider theme={theme}>
@@ -32,8 +32,8 @@ const TilPost = ({ data }) => {
         </ui.PageContent>
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 TilPost.propTypes = {
   data: PropTypes.shape({
@@ -45,12 +45,21 @@ TilPost.propTypes = {
       body: PropTypes.string,
     }),
   }).isRequired,
-};
+}
 
-export default TilPost;
+export default TilPost
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($language: String!, $slug: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
@@ -59,4 +68,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,4 +1,6 @@
+import { graphql } from 'gatsby'
 import * as React from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import { ThemeProvider } from 'styled-components'
 import { CallToAction } from '../components/call-to-action'
 import Layout from '../components/layout'
@@ -6,39 +8,23 @@ import PageHeader from '../components/pageheader'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 
-const testimonials = [
-  //   {
-  //     text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-  //     diam nonumy eirmod tempor invidunt ut labore et dolore magna
-  //     aliquyam erat, sed diam voluptua. At vero eos et accusam et
-  //     justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-  //     sea takimata sanctus est Lorem ipsum dolor sit amet.`,
-  //     author: 'Dom Habersack - fn teach',
-  //   },
-  //   {
-  //     text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-  //     diam nonumy eirmod tempor invidunt ut labore et dolore magna
-  //     aliquyam erat, sed diam voluptua. At vero eos et accusam et
-  //     justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-  //     sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-  //     ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-  //     nonumy eirmod tempor invidunt ut labore et dolore magna
-  //     aliquyam erat, sed diam voluptua. At vero eos et accusam et
-  //     justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-  //     sea takimata sanctus est Lorem ipsum dolor sit amet.`,
-  //     author: 'Dom Habersack - fn teach',
-  //   },
-  //   {
-  //     text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-  //     diam nonumy eirmod tempor invidunt ut labore et dolore magna
-  //     aliquyam erat, sed diam voluptua. At vero eos et accusam et
-  //     justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-  //     sea takimata sanctus est Lorem ipsum dolor sit amet.`,
-  //     author: 'Dom Habersack - fn teach',
-  //   },
-]
-
 const Work = () => {
+  const { t } = useTranslation()
+  const testimonials = [
+    // {
+    //   text: t('work.testimonials.one'),
+    //   author: 'Dom Habersack - fn teach',
+    // },
+    // {
+    //   text: t('work.testimonials.two'),
+    //   author: 'Dom Habersack - fn teach',
+    // },
+    // {
+    //   text: t('work.testimonials.three'),
+    //   author: 'Dom Habersack - fn teach',
+    // },
+  ]
+
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1920px">
@@ -47,40 +33,35 @@ const Work = () => {
           <PageHeader title="Work with me" />
           <section className="flex flex-col items-center gap-24">
             <article className="max-w-2xl">
-              <h2 className="text-primaryColorTwo mb-12">What I do</h2>
+              <h2 className="text-primaryColorTwo mb-12">
+                {t('work.headline-one')}
+              </h2>
               <p>
-                I’m a Front-end Developer who <strong>loves</strong> to makes
-                websites!
+                <Trans i18nKey={'work.what-i-do.one'} />
               </p>
               <p>
-                I have more than <strong>6 years</strong> of expierence and
-                worked on numerious projects, at web agencies, in product
-                development and at software development companies.
+                <Trans i18nKey={'work.what-i-do.two'} />
               </p>
               <p>
-                With a keen eye for <strong>UX Design</strong> I understand user
-                needs and problems and know how to solve them. Enabling a clear
-                and good communication is always my priority.
+                <Trans i18nKey={'work.what-i-do.three'} />
               </p>
               <p>
-                I still love the web and it’s technologies and learning
-                something new everyday is what makes it so much fun for me.
+                <Trans i18nKey={'work.what-i-do.four'} />
               </p>
               <p>
-                I strive for <strong>high quality code</strong> and lovable
-                digital products. My focus is on <strong>Acessibility</strong>,{' '}
-                <strong>Responsiveness</strong> and <strong>high speed</strong>{' '}
-                websites.
+                <Trans i18nKey={'work.what-i-do.five'} />
               </p>
               <CallToAction href="mailto:hello@marcokuehbauch.com">
-                Work with me
+                {t('work.call-to-action')}
               </CallToAction>
             </article>
             <article className="max-w-2xl">
-              <h2 className="text-primaryColorTwo mb-12">Services</h2>
+              <h2 className="text-primaryColorTwo mb-12">
+                {t('work.headline-two')}
+              </h2>
               <section className="mb-10">
-                <h3>🛠 Web Development</h3>
-                <p>I am able to develop:</p>
+                <h3>🛠 {t('work.subline-one')}</h3>
+                <p>{t('work.text-one')}</p>
                 <ul className="list-disc ml-8 mb-4 flex flex-col gap-2">
                   <li>Landing Pages</li>
                   <li>Blogs</li>
@@ -89,17 +70,12 @@ const Work = () => {
                   <li>Online Shops</li>
                   <li>more complex Fullstack Web Applications</li>
                 </ul>
-                <p>
-                  I can help you with your existing website by implementing
-                  changes and improvements to get a better User Experience, more
-                  Speed, Responsiveness, improved Accessibility and SEO.
-                </p>
+                <p>{t('work.text-two')}</p>
               </section>
               <section className="mb-10">
-                <h3>Tech Stack</h3>
+                <h3>{t('work.tech-stack')}</h3>
                 <p>
-                  Currentliy I’m the most comfortable when working with the so
-                  called{' '}
+                  {t('work.tech-stack-text-one')}
                   <a
                     href="https://jamstack.org/"
                     target="_blank"
@@ -107,99 +83,103 @@ const Work = () => {
                   >
                     Jamstack
                   </a>
-                  . I’m an expert in the following technologies, frameworks and
-                  platforms:
+                  . {t('work.tech-stack-text-two')}
                 </p>
                 <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xl ml-0">
                   <li className="mb-0">HTML & CSS</li>
                   <li>JavaScript</li>
                   <li className="mb-0">TypeScript</li>
-                  <a
-                    href="https://reactjs.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">React</li>
-                  </a>
-                  <a
-                    href="https://www.gatsbyjs.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">Gatsby</li>
-                  </a>
-                  <a
-                    href="https://nextjs.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">NextJS</li>
-                  </a>
-                  <a
-                    href="https://tailwindcss.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">TailwindCSS</li>
-                  </a>
-                  <a
-                    href="https://prismic.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">Headless CMS (Prismic)</li>
-                  </a>
-                  <a
-                    href="https://www.netlify.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">Netlify</li>
-                  </a>
-                  <a
-                    href="https://vercel.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <li className="mb-0">Vercel</li>
-                  </a>
+                  <li className="mb-0">
+                    <a
+                      href="https://reactjs.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      React
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://www.gatsbyjs.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Gatsby
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://nextjs.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      NextJS
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://tailwindcss.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      TailwindCSS
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://prismic.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Headless CMS (Prismic)
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://www.netlify.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Netlify
+                    </a>
+                  </li>
+                  <li className="mb-0">
+                    <a
+                      href="https://vercel.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Vercel
+                    </a>
+                  </li>
                 </ul>
               </section>
               <section className="mb-10">
-                <h3>🎨 Web Design</h3>
+                <h3>🎨 {t('work.subline-two')}</h3>
                 <p>
-                  With a keen eye for <strong>UX Design</strong> I am able to
-                  create clickable prototypes or a full design for your website.
+                  <Trans i18nKey={'work.web-design-one'} />
                 </p>
                 <p>
-                  {' '}
-                  Either based on your existing Corporate Design and Identity or
-                  starting from scratch by choosing fonts, colors and design
-                  elements matching your business and brand.{' '}
+                  <Trans i18nKey={'work.web-design-two'} />
                 </p>
               </section>
               <section>
                 <h3>📄 Technical Writing</h3>
                 <p>
-                  I love to <strong>write</strong>. From documenation, to blog
-                  posts to newsletters. Do you need to update the technical
-                  documenation of your product? Are you looking for a blog post,
-                  exploring your new technology?
+                  <Trans i18nKey={'work.technical-writing-one'} />
                 </p>
                 <p>
-                  I am someone who learns better by reading so I know exactly
-                  how to <strong>structure</strong> the information and write
-                  about your tool to teach your users the most.
+                  <Trans i18nKey={'work.technical-writing-two'} />
                 </p>
                 <CallToAction href="mailto:marcokuehbauch.com">
-                  Learn more
+                  {t('work.technical-writing-cta')}
                 </CallToAction>
               </section>
             </article>
             {testimonials.length ? (
               <article className="max-w-7xl">
                 <h2 className="text-primaryColorTwo mb-12 text-center">
-                  What others are saying about me
+                  {t('work.headline-three')}
                 </h2>
                 <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
                   {testimonials?.map((testimonial, index) => (
@@ -219,3 +199,17 @@ const Work = () => {
 }
 
 export default Work
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

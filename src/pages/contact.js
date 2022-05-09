@@ -4,41 +4,57 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import { Trans, useTranslation } from 'react-i18next'
 
-const Contact = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <SEO title="Contact" />
-      <ui.PageHeader>Contact</ui.PageHeader>
+const Contact = () => {
+  const { t } = useTranslation()
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <SEO title="Contact" />
+        <ui.PageHeader>{t('contact.headline')}</ui.PageHeader>
 
-      <section className="mt-20 mx-auto mb-0 max-w-2xl">
-        <h3>Thanks for your interest in getting in touch!</h3>
-        <p>
-          If you're interested in <strong>working with me</strong>, head over to
-          my <Link to="/work/">work</Link> page. There you will find all the
-          information about how I work and how I can help you.
-        </p>
-        <p>
-          If you have a question about one of my blog posts or one of my
-          today-I-learned posts feel free to send me an email.{' '}
-        </p>
-        <p>
-          You can reach out to me via email at{' '}
-          <a href="mailto:hello@marcokuehbauch.com">hello@marcokuehbauch.com</a>
-          .
-        </p>
-        <p>
-          You can also find me on Twitter at{' '}
-          <a href="https://twitter.com/Mkuehb">@mkuehb.</a>
-        </p>
-        <p>
-          A few samples of my work as well as the source code of this website
-          are available on <a href="https://github.com/mkuehb">GitHub</a>.
-        </p>
-      </section>
-    </Layout>
-  </ThemeProvider>
-)
+        <section className="mt-20 mx-auto mb-0 max-w-2xl">
+          <h3>{t('contact.subline')}</h3>
+          <p>
+            <Trans i18nKey={'contact.text-one'} />
+            <Link to="/work/">work</Link>
+          </p>
+          <p>{t('contact.text-two')}</p>
+          <p>
+            {t('contact.text-three')}
+            <a href="mailto:hello@marcokuehbauch.com">
+              hello@marcokuehbauch.com
+            </a>
+            .
+          </p>
+          <p>
+            {t('contact.text-four')}
+            <a href="https://twitter.com/Mkuehb">@mkuehb.</a>
+          </p>
+          <p>
+            {t('contact.text-five')}
+            <a href="https://github.com/mkuehb">GitHub</a>.
+          </p>
+        </section>
+      </Layout>
+    </ThemeProvider>
+  )
+}
 
 export default Contact
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

@@ -1,29 +1,21 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
 import * as aboutUI from '../styles/about/ui'
+import { Trans, useTranslation } from 'react-i18next'
 
-const About = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300)
-        }
-      }
-    }
-  `)
-
+const About = ({ data }) => {
+  const { t } = useTranslation()
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
         <SEO title="About" />
-        <ui.PageHeader>About</ui.PageHeader>
+        <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
         <aboutUI.PageContent>
           <aboutUI.Container>
             <aboutUI.TwoColumnGrid>
@@ -39,61 +31,40 @@ const About = () => {
                   <ui.WaveHand role="img" aria-label="waving hand emojo">
                     👋🏻
                   </ui.WaveHand>{' '}
-                  My name is Marco and I&apos;m a{' '}
-                  <strong>Web Developer.</strong>
+                  <Trans i18nKey={'about.text-one'} />
                 </p>
                 <p>
-                  I like to build <strong>responsive</strong>,{' '}
-                  <strong>accessible</strong> and <strong>fast</strong> websites
-                  and web experiences for every device and every browser.
+                  <Trans i18nKey={'about.text-two'} />
                 </p>
               </div>
             </aboutUI.TwoColumnGrid>
-            <p>
-              I found my love for the web and its technologies at the age of 14,
-              when I build my first website. I teached myself a lot about HTML
-              and CSS and loved to be able to craft something digital.
-            </p>
-            <p>
-              During my university education and when getting into the basics of
-              computer science, I got hooked again and learned all about HTML,
-              CSS, JavaScript and Front-end Development.
-            </p>
+            <p>{t('about.text-three')}</p>
+            <p>{t('about.text-four')}</p>
           </aboutUI.Container>
 
           <aboutUI.Container>
-            <h2>Everything else</h2>
+            <h2>{t('about.subline-one')}</h2>
+            <p>{t('about.text-five')}</p>
             <p>
-              In my spare time I like to do sports like bodyweightfitness and
-              yoga.
-            </p>
-            <p>
-              I try to read a lot, mostly one fictional and one non fictional
-              book at the same time. Check out my{' '}
+              {t('about.text-six')}
               <a
                 href="https://www.goodreads.com/user/show/145214426-marco-k-hbauch"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                goodreads profile
+                {t('about.text-seven')}
               </a>
               .
             </p>
+            <p>{t('about.text-eight')}</p>
             <p>
-              Playing videogames is something I like to do aswell, most of the
-              time it&apos;s on my Nintendo Switch.
-            </p>
-            <p>
-              I also love to write. From blog posts, to short stories, sometimes
-              even poems, or just simple notes. I&apos;m not really good at it
-              but I enjoy it a lot. Head over to my <Link to="/blog">blog</Link>{' '}
-              to see the latest posts.
+              {t('about.text-nine')} <Link to="/blog">blog</Link>{' '}
             </p>
           </aboutUI.Container>
           <aboutUI.Container>
             <details>
               <summary className="text-3xl font-serif cursor-pointer">
-                Former Education
+                {t('about.subline-two')}
               </summary>
               <>
                 <p>
@@ -179,3 +150,22 @@ const About = () => {
 }
 
 export default About
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 300)
+      }
+    }
+  }
+`

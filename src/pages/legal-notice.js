@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
+import { graphql } from 'gatsby'
 
 const LegalNotice = () => (
   <ThemeProvider theme={theme}>
@@ -22,3 +23,17 @@ const LegalNotice = () => (
 )
 
 export default LegalNotice
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

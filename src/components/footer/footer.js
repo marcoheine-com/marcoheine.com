@@ -1,15 +1,17 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-react-i18next'
 import * as ui from './ui'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
   const year = new Date().getFullYear()
+  const { t } = useTranslation()
 
   return (
     <ui.Footer>
       <ui.BackToTop>
         <a href="#" className="hover:text-white">
-          &uarr; Go back to top of the page? &uarr;
+          &uarr; {t('footer.top')} &uarr;
         </a>
       </ui.BackToTop>
       <nav>
@@ -108,7 +110,7 @@ const Footer = () => {
         &rarr; Today I learned
       </Link>
       <p>
-        This site is hosted on and deployed with
+        {t('footer.hosting')}
         <ui.Link
           href="https://www.netlify.com/"
           target="_blank"
@@ -119,7 +121,7 @@ const Footer = () => {
         </ui.Link>
       </p>
       <p>
-        The source code ist hosted on{' '}
+        {t('footer.code')}
         <ui.Link
           href="https://github.com/mkuehb/marcokuehbauch.com"
           target="_blank"

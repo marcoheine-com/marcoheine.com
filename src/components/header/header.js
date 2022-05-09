@@ -1,7 +1,8 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Navigation from '../navigation';
-import * as ui from './ui';
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-react-i18next'
+import Navigation from '../navigation'
+import * as ui from './ui'
 
 const Header = () => {
   const { site } = useStaticQuery(
@@ -14,7 +15,7 @@ const Header = () => {
         }
       }
     `
-  );
+  )
 
   return (
     <ui.HeaderWrapper>
@@ -29,7 +30,7 @@ const Header = () => {
         <Navigation />
       </ui.Header>
     </ui.HeaderWrapper>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
