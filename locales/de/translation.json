@@ -2,9 +2,9 @@
   "home": {
     "intro": "Ich bin Marco - Freelance Web Developer aus Stuttgart.",
     "welcome": "Hi und willkommen!",
-    "welcome-one": "Mir macht es großen Spaß, anderen dabei zu helfen ",
+    "welcome-one": "Ich helfe Menschen ",
     "welcome-two": "schnelle, barrierefreie und schöne Websites zu bekommen.",
-    "welcome-three": " Haben Sie ein interessantes Projekt oder eine Idee und brauchen Unterstützung?",
+    "welcome-three": " Hast Du ein interessantes Projekt oder eine Idee und brauchst Unterstützung?",
     "welcome-four": "Auf meiner 'Work' Seite beschreibe ich meine Leistungen und wie ich arbeite.",
     "work": "Mehr erfahren",
     "blog-posts": "Neueste Blog Posts",
@@ -30,7 +30,13 @@
     "headline-two": "Leistungen",
     "subline-one": "Web Entwicklung",
     "text-one": "Ich bin in der Lage, folgende Arten von Websites zu entwickeln:",
-    "text-two": "Ich helfe außerdem sehr gerne, bereits bestehende Websites in den Bereichen User Experience, Geschwindigkeit, Responsiveness, Barrierefreiheit und SEO zu optimieren und zu verbessern.",
+    "service-one": "One-Pager und Landing Pages",
+    "service-two": "Blogs",
+    "service-three": "Websites mit vielen Unterseiten und Integration in ein headless CMS (Prismic)",
+    "service-four": "Mehrsprachige Websites",
+    "service-five": "E-Commerce Websites und Online Shops (z.B. mit Shopify)",
+    "service-six": "Komplexere, full-stack Web Applications mit Datenbankanbindung",
+    "text-two": "Ich helfe außerdem sehr gerne dabei, bereits bestehende Websites in den Bereichen User Experience, Geschwindigkeit, Responsiveness, Barrierefreiheit und SEO zu optimieren und zu verbessern.",
     "tech-stack": "Technologien",
     "tech-stack-text-one": "Aktuell arbeite ich am liebsten mit dem sogenannten ",
     "tech-stack-text-two": "Dabei bin ich Experte in den folgenden Technologien, Frameworks und Platformen:",
@@ -47,6 +53,10 @@
       "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
       "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
     }
+  },
+
+  "blog": {
+    "headline-two": "Andere blog posts:"
   },
 
   "about": {

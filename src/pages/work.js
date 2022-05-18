@@ -63,12 +63,12 @@ const Work = () => {
                 <h3>🛠 {t('work.subline-one')}</h3>
                 <p>{t('work.text-one')}</p>
                 <ul className="list-disc ml-8 mb-4 flex flex-col gap-2">
-                  <li>Landing Pages</li>
-                  <li>Blogs</li>
-                  <li>CMS integrations</li>
-                  <li>Multilanguage Pages</li>
-                  <li>Online Shops</li>
-                  <li>more complex Fullstack Web Applications</li>
+                  <li><Trans i18nKey={'work.service-one'} /></li>
+                  <li><Trans i18nKey={'work.service-two'} /></li>
+                  <li><Trans i18nKey={'work.service-three'} /></li>
+                  <li><Trans i18nKey={'work.service-four'} /></li>
+                  <li><Trans i18nKey={'work.service-five'} /></li>
+                  <li><Trans i18nKey={'work.service-six'} /></li>
                 </ul>
                 <p>{t('work.text-two')}</p>
               </section>

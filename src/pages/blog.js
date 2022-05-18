@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-react-i18next'
 import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
@@ -7,10 +8,12 @@ import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { useTranslation } from 'react-i18next'
 
 const Blog = ({ data }) => {
   const { allMdx } = data
   const { edges } = allMdx
+  const { t } = useTranslation()
 
   const newestPosts = edges.slice(0, 3)
   const olderPosts = edges.slice(3)
@@ -40,7 +43,10 @@ const Blog = ({ data }) => {
         <ui.YearlySection key={key}>
           <h3>{key}</h3>
           {value.map((post) => (
-            <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
+            <Link
+              key={post.node.id}
+              to={`/${post.node.fields.slug}`}
+            >
               <ui.BlogArticle>
                 <h4>
                   {post.node.frontmatter.title} -
@@ -61,7 +67,7 @@ const Blog = ({ data }) => {
         <ui.PageHeader>Blog</ui.PageHeader>
 
         <ui.PageContent>
-          <ui.BlogHeadline>Newest blog posts:</ui.BlogHeadline>
+          <ui.BlogHeadline>{t('home.blog-posts')}</ui.BlogHeadline>
           {newestPosts.map((edge) => {
             const { node } = edge
             const {
@@ -73,7 +79,10 @@ const Blog = ({ data }) => {
             const { date, title } = frontmatter
 
             return (
-              <Link to={`/${slug}`} key={id}>
+              <Link
+                to={`/${slug}`}
+                key={id}
+              >
                 <ui.NewArticleSlot>
                   <ui.NewArticle>
                     <ui.ArticleHeadline>{title}</ui.ArticleHeadline>
@@ -98,7 +107,7 @@ const Blog = ({ data }) => {
             )
           })}
 
-          <ui.BlogHeadline>Other blog posts:</ui.BlogHeadline>
+          <ui.BlogHeadline>{t('blog.headline-two')}</ui.BlogHeadline>
           {createYearlySection(groupedByYear)}
         </ui.PageContent>
       </Layout>

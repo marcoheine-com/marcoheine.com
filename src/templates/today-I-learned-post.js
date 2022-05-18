@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'

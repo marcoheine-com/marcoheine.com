@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const PageContent = styled.section`
   margin: 80px auto 0;
-  max-width: 650px;
+  max-width: 768px;
 
   h3 {
     padding-top: 12px;

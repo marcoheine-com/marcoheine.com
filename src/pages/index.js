@@ -24,7 +24,10 @@ const IndexPage = ({ data }) => {
 
         <ui.IndexWrapper>
           <div className="flex flex-col items-start mb-32 max-w-lg relative md:mt-18 md:max-w-3xl">
-            <Link to="/work/" className="hover-trigger">
+            <Link
+              to="/work/"
+              className="hover-trigger"
+            >
               <GatsbyImage
                 alt="a picture of Marco Kühbauch"
                 image={data.personalImg.childImageSharp.gatsbyImageData}
@@ -44,7 +47,10 @@ const IndexPage = ({ data }) => {
                 {t('home.welcome-three')}
               </p>
               <p>{t('home.welcome-four')}</p>
-              <CallToAction href="/work/" isInternalLink>
+              <CallToAction
+                href="/work/"
+                isInternalLink
+              >
                 {t('home.work')}
               </CallToAction>
             </div>
@@ -55,7 +61,10 @@ const IndexPage = ({ data }) => {
               <h2>{t('home.blog-posts')}</h2>
               <>
                 {latestBlogPosts.map((post) => (
-                  <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
+                  <Link
+                    key={post.node.id}
+                    to={`/${post.node.fields.slug}`}
+                  >
                     <article className="grid md:grid-cols-[350px_1fr] md:grid-rows-[200px] gap-5 p-5 transition-all hover:shadow-custom hover:rounded-xl mb-2">
                       <GatsbyImage
                         alt={post.node.frontmatter.featuredImageAlt}
@@ -83,7 +92,10 @@ const IndexPage = ({ data }) => {
               <h2>{t('home.til-posts')}</h2>
               <ui.TILInnerWrapper>
                 {latestTILPosts.map((post) => (
-                  <Link key={post.node.id} to={`/${post.node.fields.slug}`}>
+                  <Link
+                    key={post.node.id}
+                    to={`/${post.node.fields.slug}`}
+                  >
                     <ui.TILCard>
                       <ui.BlogLink>{post.node.frontmatter.title}</ui.BlogLink>
                       <ui.Time>

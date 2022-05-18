@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -31,7 +31,10 @@ const TIL = ({ data }) => {
 
         <ui.Categories>
           {group.map((tag) => (
-            <ui.Category key={tag.fieldValue} category={tag.fieldValue}>
+            <ui.Category
+              key={tag.fieldValue}
+              category={tag.fieldValue}
+            >
               <Link to={`/today-I-learned/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
@@ -44,7 +47,10 @@ const TIL = ({ data }) => {
             const { excerpt, fields, frontmatter, id } = node
 
             return (
-              <Link key={id} to={`/${fields.slug}`}>
+              <Link
+                key={id}
+                to={`/${fields.slug}`}
+              >
                 <ui.Section>
                   <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
                   <h3>{frontmatter.title}</h3>

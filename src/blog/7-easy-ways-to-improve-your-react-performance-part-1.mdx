@@ -9,9 +9,14 @@ path: /7-easy-ways-to-improve-your-react-performance-part-1
 import { Link } from 'gatsby-plugin-react-i18next'
 
 At the beginning of the year I wrote a blog post about
-<Link to='/blog/react-performance-improvements/'>React performance
-improvements</Link>. It‘s one of my favourite blog posts I ever wrote. It’s a
-great example of **documenting everything while you learn it**.
+
+<Link to="/blog/react-performance-improvements/">
+  React performance improvements
+</Link>
+. It‘s one of my favourite blog posts I ever wrote. It’s a great example of <strong>
+  documenting everything while you learn it
+</strong>
+.
 
 It’s a very in depth analysis. It shows you how to **test and measure** the
 performance of your React application and a lot of ways how to improve it.
@@ -206,16 +211,32 @@ const MyBigForm = () => {
   return (
     <form>
       <label>Username:</label>
-      <input value={username} name="username" onChange={handleUserNameChange} />
+      <input
+        value={username}
+        name="username"
+        onChange={handleUserNameChange}
+      />
 
       <label>Email:</label>
-      <input value={email} name="email" onChange={handleEmailChange} />
+      <input
+        value={email}
+        name="email"
+        onChange={handleEmailChange}
+      />
 
       <label>Password:</label>
-      <input value={password} name="password" onChange={handlePasswordChange} />
+      <input
+        value={password}
+        name="password"
+        onChange={handlePasswordChange}
+      />
 
       <label>Nickname:</label>
-      <input value={nickname} name="nickname" onChange={handleNicknameChange} />
+      <input
+        value={nickname}
+        name="nickname"
+        onChange={handleNicknameChange}
+      />
     </form>
   )
 }
@@ -252,16 +273,32 @@ const MyBigForm = () => {
   return (
     <form>
       <label>Username:</label>
-      <input value={username} name="username" onChange={handleOnChange} />
+      <input
+        value={username}
+        name="username"
+        onChange={handleOnChange}
+      />
 
       <label>Email:</label>
-      <input value={email} name="email" onChange={handleOnChange} />
+      <input
+        value={email}
+        name="email"
+        onChange={handleOnChange}
+      />
 
       <label>Password:</label>
-      <input value={password} name="password" onChange={handleOnChange} />
+      <input
+        value={password}
+        name="password"
+        onChange={handleOnChange}
+      />
 
       <label>Nickname:</label>
-      <input value={nickname} name="nickname" onChange={handleOnChange} />
+      <input
+        value={nickname}
+        name="nickname"
+        onChange={handleOnChange}
+      />
     </form>
   )
 }

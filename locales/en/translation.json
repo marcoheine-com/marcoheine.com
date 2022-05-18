@@ -29,7 +29,13 @@
     "call-to-action": "Work with me",
     "headline-two": "Services",
     "subline-one": "Web Development",
-    "text-one": "I am able to develop",
+    "text-one": "I am able to develop:",
+    "service-one": "Landing Pages",
+    "service-two": "Blogs",
+    "service-three": "Websites with multiple subpages and headless CMS integration (Prismic)",
+    "service-four": "Multilanguage Websites",
+    "service-five": "E-Commerce websites and online shops (with Shopify)",
+    "service-six": "More complex full-stack web applications with database integration",
     "text-two": "I can help you with your existing website by implementing changes and improvements to get a better User Experience, more Speed, Responsiveness, improved Accessibility and SEO.",
     "tech-stack": "Tech Stack",
     "tech-stack-text-one": "Currently I’m the most comfortable when working with the so called ",
@@ -47,6 +53,10 @@
       "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
       "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
     }
+  },
+
+  "blog": {
+    "headline-two": "Other blog posts:"
   },
 
   "about": {

@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-react-i18next'
 import { Trans, useTranslation } from 'react-i18next'
 
 const Contact = () => {
