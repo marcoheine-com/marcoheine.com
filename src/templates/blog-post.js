@@ -30,7 +30,7 @@ const Template = ({ data }) => {
             <p className="text-center bg-blue-100 p-6 rounded-lg shadow-md">
               ⚠️ Dieser Blog Post wurde leider noch nicht übersetzt! Sorry
               dafür! Das wird sich nach und nach ändern. Falls du ihn nur auf
-              deutsch lesen möchtest, schaue einfachspäter nochmal vorbei.
+              deutsch lesen möchtest, schaue einfach später nochmal vorbei.
             </p>
           ) : null}
           <p></p>
