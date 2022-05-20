@@ -5,9 +5,9 @@ path: /post-vs-put
 tags: ['API']
 ---
 
-As I was recently part of developing a RESTful API, I stumbled a lot about the
-**differentiation** between POST and PUT. I really tried to find clear
-definitions for both of these CRUD Operations.
+As I was recently part of a team developing a RESTful API, I stumbled a lot
+about the **differentiation** between POST and PUT requests. I really tried to
+find clear definitions for both of these CRUD Operations.
 
 After searching the whole Internet, my **conclusion** was:
 

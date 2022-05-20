@@ -6,7 +6,8 @@ tags: ['API', 'GatsbyJS']
 ---
 
 Today I learned about headless wordpress. Wordpress now offers a REST API which
-makes it possible to decouple the frontend completey from the wordpress backend.
+makes it possible to decouple the frontend completely from the wordpress
+backend.
 
 This is pretty cool, because I'm faster and more comfortable with JavaScript
 when developing the frontend compared to the wordpress way where you mix you're

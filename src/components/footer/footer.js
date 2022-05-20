@@ -10,7 +10,10 @@ const Footer = () => {
   return (
     <ui.Footer>
       <ui.BackToTop>
-        <a href="#" className="hover:text-white">
+        <a
+          href="#"
+          className="hover:text-white"
+        >
           &uarr; {t('footer.top')} &uarr;
         </a>
       </ui.BackToTop>
@@ -105,7 +108,7 @@ const Footer = () => {
       </nav>
       <Link
         className="mb-6 inline-block uppercase transition-all p-1 hover:bg-white"
-        to="/today-I-learned"
+        to="/today-I-learned/"
       >
         &rarr; Today I learned
       </Link>

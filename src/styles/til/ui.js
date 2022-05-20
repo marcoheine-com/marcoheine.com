@@ -28,8 +28,11 @@ export const Section = styled.section`
   border-radius: 30px;
   color: ${({ theme }) => theme.primaryColorOne};
   padding: 30px;
+  transition: all 0.1s linear;
 
   &:hover {
+    box-shadow: 6px 6px 12px #d9d9d9;
+    transform: translateY(-5px);
     aside {
       transform: rotate(0);
       color: #fff;
