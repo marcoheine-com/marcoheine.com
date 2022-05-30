@@ -47,12 +47,7 @@
     "technical-writing-one": "I love to <strong>write</strong>. From documenation, to blog posts to newsletters. Do you need to update the technical documenation of your product? Are you looking for a blog post, exploring your new technology?",
     "technical-writing-two": " I am someone who learns better by reading so I know exactly how to <strong>structure</strong> the information and write about your tool to teach your users the most.",
     "technical-writing-cta": "Learn more",
-    "headline-three": "What others are saying about me",
-    "testimonials": {
-      "one": "Looorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
-      "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
-    }
+    "headline-three": "What others are saying about me"
   },
 
   "blog": {
@@ -82,5 +77,26 @@
     "text-three": "You can reach out to me via email at ",
     "text-four": "You can also find me on Twitter at ",
     "text-five": " A few samples of my work as well as the source code of this website are available on "
+  },
+  "testimonials": {
+    "one": {
+      "text": {
+        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
+        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
+        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+      }
+    },
+    "two": {
+      "text": {
+        "a": "Working with Marco is a pleasure. Besides developing on a very high level he also contributes a lot to the planning phase of every project."
+      }
+    },
+    "three": {
+      "text": {
+        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
+        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
+        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+      }
+    }
   }
 }

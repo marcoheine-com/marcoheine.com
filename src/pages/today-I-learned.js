@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby-plugin-react-i18next'
@@ -10,15 +10,41 @@ import theme from '../styles/theme'
 import * as ui from '../styles/til/ui'
 
 const TIL = ({ data }) => {
-  const [allItemsLoaded, setAllItemsLoaded] = useState(false)
-
   const { allMdx } = data
   const { edges, group } = allMdx
 
-  const items = edges && (!allItemsLoaded ? edges.slice(0, 20) : edges)
+  const [items, setItems] = React.useState(edges?.slice(0, 20))
+  const [allItemsLoaded, setAllItemsLoaded] = React.useState(false)
+  const [filterValue, setFilterValue] = React.useState('')
+
   const additionalItems = edges.slice(20)
 
-  const randomNumber = Math.floor(Math.random() * Math.floor(13999))
+  React.useEffect(() => {
+    if (!allItemsLoaded) {
+      return
+    }
+
+    setItems(edges)
+  }, [allItemsLoaded])
+
+  React.useEffect(() => {
+    if (!filterValue) {
+      return setItems(edges?.slice(0, 20))
+    }
+
+    const filteredItems = edges.filter(
+      ({ node }) =>
+        node.frontmatter.title
+          .toLowerCase()
+          .includes(filterValue.toLowerCase()) ||
+        node.frontmatter?.tags
+          ?.map((tag) => tag.toLowerCase())
+          .includes(filterValue.toLowerCase()) ||
+        node.body.toLowerCase().includes(filterValue.toLowerCase())
+    )
+
+    setItems(filteredItems)
+  }, [filterValue])
 
   const handleOnClick = () => {
     setAllItemsLoaded(!allItemsLoaded)
@@ -29,6 +55,27 @@ const TIL = ({ data }) => {
       <Layout maxWidth="1400px">
         <SEO title="Today I learned" />
         <ui.PageHeader>Today I learned</ui.PageHeader>
+        <label
+          htmlFor="search"
+          className="flex gap-2 items-center justify-center mt-10"
+        >
+          <input
+            type="text"
+            id="search"
+            name="search"
+            value={filterValue}
+            placeholder="Search"
+            onChange={(e) => setFilterValue(e.target.value)}
+            className="border-2 border-blue-200 p-2"
+          />
+          <button
+            onClick={() => setFilterValue('')}
+            disabled={filterValue === ''}
+            className="disabled:opacity-50"
+          >
+            Clear
+          </button>
+        </label>
 
         <ui.Categories>
           {group.map((tag) => (
@@ -53,7 +100,9 @@ const TIL = ({ data }) => {
                 to={`/${fields.slug}`}
               >
                 <ui.Section>
-                  <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
+                  <ui.Aside>
+                    TIL #{frontmatter.number || edges?.length - index}
+                  </ui.Aside>
                   <h3>{frontmatter.title}</h3>
 
                   {frontmatter.tags && (
@@ -73,7 +122,7 @@ const TIL = ({ data }) => {
             )
           })}
         </ui.PageContent>
-        {!allItemsLoaded && (
+        {!allItemsLoaded && !filterValue && (
           <ui.Slot>
             <Button onClick={handleOnClick}>
               Load {additionalItems.length} more
@@ -113,12 +162,14 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          body
           fields {
             slug
           }
           id
           excerpt
           frontmatter {
+            number
             title
             tags
           }

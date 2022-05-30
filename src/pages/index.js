@@ -10,6 +10,7 @@ import * as ui from '../styles/index/ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { CallToAction } from '../components/call-to-action'
 import { useTranslation } from 'react-i18next'
+// import { Testimonials } from '../components/testimonials'
 
 const IndexPage = ({ data }) => {
   const { t } = useTranslation()
@@ -19,7 +20,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout maxWidth="100%">
         <SEO title="Home" />
 
         <ui.IndexWrapper>
@@ -56,8 +57,10 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
 
-          <ui.PostOuterWrapper>
-            <ui.BlogPostWrapper>
+          {/* <Testimonials /> */}
+
+          <section className="w-full max-w-4xl">
+            <section className="mb-16 grid">
               <h2>{t('home.blog-posts')}</h2>
               <>
                 {latestBlogPosts.map((post) => (
@@ -65,7 +68,7 @@ const IndexPage = ({ data }) => {
                     key={post.node.id}
                     to={`/${post.node.fields.slug}`}
                   >
-                    <article className="grid md:grid-cols-[350px_1fr] md:grid-rows-[200px] gap-5 p-5 transition-all hover:shadow-custom hover:rounded-xl mb-2">
+                    <article className="grid md:grid-cols-[350px_1fr] gap-5 p-5 transition-all hover:shadow-custom hover:rounded-xl mb-10">
                       <GatsbyImage
                         alt={post.node.frontmatter.featuredImageAlt}
                         image={
@@ -80,13 +83,20 @@ const IndexPage = ({ data }) => {
                         <ui.Time>
                           Published on: {post.node.frontmatter.date}
                         </ui.Time>
+                        <p>{post.node.excerpt}</p>
                         <ui.BlogLink>Read article</ui.BlogLink>
                       </section>
                     </article>
                   </Link>
                 ))}
               </>
-            </ui.BlogPostWrapper>
+              <Link
+                to="/blog/"
+                className="ml-auto"
+              >
+                → All blog posts
+              </Link>
+            </section>
 
             <section>
               <h2>{t('home.til-posts')}</h2>
@@ -106,7 +116,7 @@ const IndexPage = ({ data }) => {
                 ))}
               </ui.TILInnerWrapper>
             </section>
-          </ui.PostOuterWrapper>
+          </section>
         </ui.IndexWrapper>
       </Layout>
     </ThemeProvider>
@@ -141,6 +151,7 @@ export const query = graphql`
             slug
           }
           id
+          excerpt(pruneLength: 150)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path

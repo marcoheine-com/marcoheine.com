@@ -10,20 +10,6 @@ import theme from '../styles/theme'
 
 const Work = () => {
   const { t } = useTranslation()
-  const testimonials = [
-    // {
-    //   text: t('work.testimonials.one'),
-    //   author: 'Dom Habersack - fn teach',
-    // },
-    // {
-    //   text: t('work.testimonials.two'),
-    //   author: 'Dom Habersack - fn teach',
-    // },
-    // {
-    //   text: t('work.testimonials.three'),
-    //   author: 'Dom Habersack - fn teach',
-    // },
-  ]
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,12 +49,24 @@ const Work = () => {
                 <h3>🛠 {t('work.subline-one')}</h3>
                 <p>{t('work.text-one')}</p>
                 <ul className="list-disc ml-8 mb-4 flex flex-col gap-2">
-                  <li><Trans i18nKey={'work.service-one'} /></li>
-                  <li><Trans i18nKey={'work.service-two'} /></li>
-                  <li><Trans i18nKey={'work.service-three'} /></li>
-                  <li><Trans i18nKey={'work.service-four'} /></li>
-                  <li><Trans i18nKey={'work.service-five'} /></li>
-                  <li><Trans i18nKey={'work.service-six'} /></li>
+                  <li>
+                    <Trans i18nKey={'work.service-one'} />
+                  </li>
+                  <li>
+                    <Trans i18nKey={'work.service-two'} />
+                  </li>
+                  <li>
+                    <Trans i18nKey={'work.service-three'} />
+                  </li>
+                  <li>
+                    <Trans i18nKey={'work.service-four'} />
+                  </li>
+                  <li>
+                    <Trans i18nKey={'work.service-five'} />
+                  </li>
+                  <li>
+                    <Trans i18nKey={'work.service-six'} />
+                  </li>
                 </ul>
                 <p>{t('work.text-two')}</p>
               </section>
@@ -176,21 +174,6 @@ const Work = () => {
                 </CallToAction>
               </section>
             </article>
-            {testimonials.length ? (
-              <article className="max-w-7xl">
-                <h2 className="text-primaryColorTwo mb-12 text-center">
-                  {t('work.headline-three')}
-                </h2>
-                <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
-                  {testimonials?.map((testimonial, index) => (
-                    <article key={index}>
-                      <p>{testimonial.text}</p>
-                      <span className="italic">{testimonial.author}</span>
-                    </article>
-                  ))}
-                </section>
-              </article>
-            ) : null}
           </section>
         </section>
       </Layout>

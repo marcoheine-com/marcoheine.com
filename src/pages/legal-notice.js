@@ -11,13 +11,22 @@ const LegalNotice = () => (
     <Layout>
       <SEO title="Legal notice" />
       <ui.PageHeader>Legal Notice</ui.PageHeader>
-      <ui.PageContent>
+      <section className="max-w-3xl my-10 mx-auto">
         <p>Marco Kühbauch</p>
         <p>Strohberg 26</p>
         <p>70180 Stuttgart </p>
-        <p>Germany</p>
+        <p>Deutschland</p>
         <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
-      </ui.PageContent>
+      </section>
+      <section className="max-w-3xl mx-auto">
+        <p>Verantwortlich im Sinne von § 55 Abs. 2 RStV:</p>
+        <p>Marco Kühbauch</p>
+        <p>Strohberg 26</p>
+        <p>70180 Stuttgart </p>
+      </section>
+      {/* <section className="max-w-3xl mx-auto">
+        <p>Umsatzsteuer-Identifikationsnummer:</p>
+      </section> */}
     </Layout>
   </ThemeProvider>
 )

@@ -201,10 +201,6 @@ export const PostOuterWrapper = styled.section`
   width: 100%;
 `
 
-export const BlogPostWrapper = styled.section`
-  margin-bottom: 60px;
-`
-
 export const TILInnerWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

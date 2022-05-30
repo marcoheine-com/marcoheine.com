@@ -20,8 +20,6 @@ const TIL = ({ data }) => {
     edges && (!allItemsLoaded && hasNumberOfEdges ? edges.slice(0, 20) : edges)
   const additionalItems = edges.slice(20)
 
-  const randomNumber = Math.floor(Math.random() * Math.floor(13999))
-
   const handleOnClick = () => {
     setAllItemsLoaded(!allItemsLoaded)
   }
@@ -37,7 +35,10 @@ const TIL = ({ data }) => {
             <Link to="/today-I-learned/">All tags</Link>
           </ui.Category>
           {group.map((tag) => (
-            <ui.Category key={tag.fieldValue} category={tag.fieldValue}>
+            <ui.Category
+              key={tag.fieldValue}
+              category={tag.fieldValue}
+            >
               <Link to={`/today-I-learned/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
@@ -46,13 +47,16 @@ const TIL = ({ data }) => {
         </ui.Categories>
 
         <ui.PageContent>
-          {items.map(({ node }, index) => {
+          {items.map(({ node }) => {
             const { excerpt, fields, frontmatter, id } = node
 
             return (
-              <Link key={id} to={`/${fields.slug}`}>
+              <Link
+                key={id}
+                to={`/${fields.slug}`}
+              >
                 <ui.Section>
-                  <ui.Aside>TIL #{randomNumber - index}</ui.Aside>
+                  <ui.Aside>TIL #{frontmatter.number}</ui.Aside>
                   <h3>{frontmatter.title}</h3>
 
                   {frontmatter.tags && (
@@ -124,6 +128,7 @@ export const pageQuery = graphql`
           id
           excerpt
           frontmatter {
+            number
             title
             tags
           }

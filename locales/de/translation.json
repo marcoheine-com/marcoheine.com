@@ -47,12 +47,7 @@
     "technical-writing-one": "Mir macht das <strong>Schreiben</strong> sehr großen Spaß. Angefangen bei Dokumentationen, über Blog Posts bis zu Newslettern. Ich kann bei der technischen Dokumenation von Produkten unterstützen oder auch Blog Posts verfassen, die neue Technologien oder Software erklären.",
     "technical-writing-two": "Ich bin jemand, der durch das Lesen mehr lernt als bspw. durch Videoformate. Daher weiß ich genau, wie man Informationen <strong>strukturiert</strong>, so dass sie für Leser:innen am besten aufzunehmen sind.",
     "technical-writing-cta": "Mehr erfahren",
-    "headline-three": "Was andere über mich sagen",
-    "testimonials": {
-      "one": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
-      "two": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      "three": "`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`"
-    }
+    "headline-three": "Was andere über mich sagen"
   },
 
   "blog": {
@@ -82,5 +77,26 @@
     "text-three": "Per Mail unter ",
     "text-four": "Ich bin außerdem auch auf Twitter unterwegs: ",
     "text-five": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
+  },
+  "testimonials": {
+    "one": {
+      "text": {
+        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
+        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
+        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+      }
+    },
+    "two": {
+      "text": {
+        "a": "Working with Marco is a pleasure. Besides developing on a very high level he also contributes a lot to the planning phase of every project."
+      }
+    },
+    "three": {
+      "text": {
+        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
+        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
+        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+      }
+    }
   }
 }
