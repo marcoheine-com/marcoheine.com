@@ -26,22 +26,32 @@ const Template = ({ data }) => {
         <SEO title={frontmatter.title} />
         <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>
-          {data?.locales?.edges[0].node.language === 'de' ? (
-            <p className="text-center bg-blue-100 p-6 rounded-lg shadow-md">
-              ⚠️ Dieser Blog Post wurde leider noch nicht übersetzt! Sorry
-              dafür! Das wird sich nach und nach ändern. Falls du ihn nur auf
-              deutsch lesen möchtest, schaue einfach später nochmal vorbei.
-            </p>
-          ) : null}
-          <p></p>
           <ui.GoBackSpan>
             <Link to="/blog/">Go back to other Blog Posts</Link>
           </ui.GoBackSpan>
+          {data?.locales?.edges[0].node.language === 'de' ? (
+            <p className="text-center bg-blue-100 p-6 rounded-lg shadow-md mb-10">
+              ⚠️ Dieser Blog Post wurde leider noch nicht übersetzt. Falls du
+              ihn auf deutsch lesen möchtest, schaue einfach später nochmal
+              vorbei.
+            </p>
+          ) : null}
+          <p></p>
           <h2>{title}</h2>
-          <ui.BlogPostHeader>
-            <p>🗓 Published on: {date}</p>
-            <p>⏱ Reading time: {timeToRead} min</p>
-          </ui.BlogPostHeader>
+          <section className="flex gap-5 p-3 bg-slate-50 rounded-lg text-base mb-4">
+            <time
+              dateTime={date}
+              className="mb-0 font-bold"
+            >
+              🗓 Published on: {date}
+            </time>
+            <time
+              dateTime={timeToRead}
+              className="mb-0 font-bold"
+            >
+              ⏱ Reading time: {timeToRead} min
+            </time>
+          </section>
 
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>
