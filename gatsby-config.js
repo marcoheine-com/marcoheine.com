@@ -4,10 +4,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Marco Kühbauch - Web Developer`,
+    title: `Marco Heine - Web Developer`,
     description: `Hi! My name is Marco and I'm a Web Developer. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.`,
-    author: `Marco Kühbauch`,
-    siteUrl: `https://marcokuehbauch.com`,
+    author: `Marco Heine`,
+    siteUrl: `https://marcoheine.com`,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://marcokuehbauch.com`,
+        siteUrl: `https://marcoheine.com`,
       },
     },
     `gatsby-plugin-styled-components`,

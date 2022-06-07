@@ -22,14 +22,17 @@ const About = ({ data }) => {
             <aboutUI.TwoColumnGrid>
               <ui.ImgWrapper>
                 <GatsbyImage
-                  alt="a picture of Marco Kühbauch"
+                  alt="a picture of Marco Heine"
                   image={data.personalImg.childImageSharp.gatsbyImageData}
                 />
               </ui.ImgWrapper>
               <div>
                 <p>
                   Hi!{' '}
-                  <ui.WaveHand role="img" aria-label="waving hand emojo">
+                  <ui.WaveHand
+                    role="img"
+                    aria-label="waving hand emojo"
+                  >
                     👋🏻
                   </ui.WaveHand>{' '}
                   <Trans i18nKey={'about.text-one'} />

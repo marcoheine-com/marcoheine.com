@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
               className="hover-trigger"
             >
               <GatsbyImage
-                alt="a picture of Marco Kühbauch"
+                alt="a picture of Marco Heine"
                 image={data.personalImg.childImageSharp.gatsbyImageData}
                 className="mb-10 md:mr-64 transition-all hover-target-image"
               />

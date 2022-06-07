@@ -12,7 +12,7 @@ const LegalNotice = () => (
       <SEO title="Legal notice" />
       <ui.PageHeader>Legal Notice</ui.PageHeader>
       <section className="max-w-3xl my-10 mx-auto">
-        <p>Marco Kühbauch</p>
+        <p>Marco Heine</p>
         <p>Strohberg 26</p>
         <p>70180 Stuttgart </p>
         <p>Deutschland</p>
@@ -20,7 +20,7 @@ const LegalNotice = () => (
       </section>
       <section className="max-w-3xl mx-auto">
         <p>Verantwortlich im Sinne von § 55 Abs. 2 RStV:</p>
-        <p>Marco Kühbauch</p>
+        <p>Marco Heine</p>
         <p>Strohberg 26</p>
         <p>70180 Stuttgart </p>
       </section>

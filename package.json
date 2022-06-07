@@ -1,9 +1,9 @@
 {
-  "name": "marcokuehbauch.com",
+  "name": "marcoheine.com",
   "private": true,
-  "description": "Source code for marcokuehbauch.com",
+  "description": "Source code for marcoheine.com",
   "version": "1.0.0",
-  "author": "Marco Kühbauch <marcokuehbauch@gmail.com>",
+  "author": "Marco Heine <marcoheine08@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
