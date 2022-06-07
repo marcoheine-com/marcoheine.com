@@ -3,7 +3,7 @@ title: Confetti
 date: 2022-05-19
 path: /confetti
 tags: ['HTML', 'React']
-number: 38
+number: 37
 ---
 
 In a project I worked on recently someone mentioned it would be cool to have

@@ -6,7 +6,7 @@ tags: ['Accessibility', 'HTML']
 ---
 
 The web is **not accessible**. That’s not new, that’s not what I learned today.
-But the amount of accessibility errors did surprise.
+But the amount of accessibility errors did surprise me.
 
 The [WebAIM report](https://webaim.org/projects/million/) states over **50
 million errors** in the top one million websites.
@@ -19,5 +19,5 @@ issue**, you can fix so easy:
 - empty links and buttons,
 - missing form labels and missing languages.
 
-Hidde wrote a fantastic blog post https://hidde.blog/common-a11y-issues/ about
-it.
+Hidde wrote a fantastic blog post about it:
+https://hidde.blog/common-a11y-issues/

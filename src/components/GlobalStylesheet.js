@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   a {
@@ -9,10 +9,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p {
+  p, li {
     color: ${({ theme }) => theme.text};
 
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
