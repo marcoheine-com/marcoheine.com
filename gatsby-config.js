@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-plausible`,
       options: {
-        domain: `marcokuehbauch.com`,
+        domain: `marcoheine.com`,
       },
     },
     {
