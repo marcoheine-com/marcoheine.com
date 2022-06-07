@@ -1,34 +1,54 @@
 ---
-title: Getting started with golang - a beginners introduction to programming in go
+title:
+  Getting started with golang - a beginners introduction to programming in go
 date: 2021-02-22
 path: /getting-started-with-golang-a-beginners-introduction-to-programming-in-go
 ---
 
 ### How I got to know go
 
-> "Wait, what? What's happening here? Your previous blog posts were all about frontend development, CSS JavaScript, React. Now this..go? What is it? And why are you blogging about it?"
+> "Wait, what? What's happening here? Your previous blog posts were all about
+> frontend development, CSS JavaScript, React. Now this..go? What is it? And why
+> are you blogging about it?"
 
-If this new content on my blog confuses you a little, I'm sorry! A lot of new things happened to me in the last months and one of them is, that I'm **taking a closer look** on both (all?) sides of web development. Which includes working with and learning more about **backend technologies**.
+If this new content on my blog confuses you a little, I'm sorry! A lot of new
+things happened to me in the last months and one of them is, that I'm **taking a
+closer look** on both (all?) sides of web development. Which includes working
+with and learning more about **backend technologies**.
 
-My first contact with everything else than frontend was in a project were we worked with **NodeJS/Express** and **MongoDB**.
+My first contact with everything else than frontend was in a project were we
+worked with **NodeJS/Express** and **MongoDB**.
 
-This granted me a lof ot knowledge on how all parts of a web application work together. **From the frontend, to API Calls, middlewares, services, raw SQL and to the database**.
+This granted me a lof ot knowledge on how all parts of a web application work
+together. **From the frontend, to API Calls, middlewares, services, raw SQL and
+to the database**.
 
-In the project I'm working in right now, we're using **go** in the backend and therefore I'm learning go!
+In the project I'm working in right now, we're using **go** in the backend and
+therefore I'm learning go!
 
-And to make the most of it I will **document** everything I learn about go in this blog post. So I have a place to come back to and look at when I forget everything.
+And to make the most of it I will **document** everything I learn about go in
+this blog post. So I have a place to come back to and look at when I forget
+everything.
 
 And maybe you can learn something from it too!
 
 ## So...go. What is it?
 
-> Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+> Go is an open source programming language that makes it easy to build simple,
+> reliable, and efficient software.
 
-At least that's what it says about itself on its website. Let's see what wikipeda has to say about go:
+At least that's what it says about itself on its website. Let's see what
+wikipeda has to say about go:
 
-> Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency. The language is often referred to as Golang because of its domain name, [golang.org](http://golang.org/), but the proper name is Go.
+> Go is a statically typed, compiled programming language designed at Google by
+> Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to
+> C, but with memory safety, garbage collection, structural typing, and
+> CSP-style concurrency. The language is often referred to as Golang because of
+> its domain name, [golang.org](http://golang.org/), but the proper name is Go.
 
-Ah that tells a bit more about it. Interesting! Now that we are behind the get to know each other phase, let's see what **topics** I'll cover in this blog post. As the title says it will be an absolute beginner introduction.
+Ah that tells a bit more about it. Interesting! Now that we are behind the get
+to know each other phase, let's see what **topics** I'll cover in this blog
+post. As the title says it will be an absolute beginner introduction.
 
 If I'm wrong about something or made mistakes, please let me know!
 
@@ -58,9 +78,12 @@ If I'm wrong about something or made mistakes, please let me know!
 
 ## <a name='packages'></a>packages, import, export
 
-Every go program is made up of packages. You always have to have a **main package**, where your app starts. You can **import** your own packages or one of the hundreds of go packages.
+Every go program is made up of packages. You always have to have a **main
+package**, where your app starts. You can **import** your own packages or one of
+the hundreds of go packages.
 
-A name (of a function, struct etc) is **exported** and therefore can be imported if it begins with a capital letter.
+A name (of a function, struct etc) is **exported** and therefore can be imported
+if it begins with a capital letter.
 
 ```go
 package main
@@ -86,7 +109,10 @@ func PrintStr () {
 
 ## <a name='variables'></a> Variables
 
-There are several ways to declare variables in go. The classic `var` lets you declare one or more variables at once. The `const` lets you declare constant variables. The `:=` shorthand lets you declare and initialize a variable at once inside a function.
+There are several ways to declare variables in go. The classic `var` lets you
+declare one or more variables at once. The `const` lets you declare constant
+variables. The `:=` shorthand lets you declare and initialize a variable at once
+inside a function.
 
 ```go
 var a = 10
@@ -100,11 +126,14 @@ a := 10
 
 ## <a name='functions'></a> Functions
 
-A function in go can take **zero or more arguments**. The type of the input parameter comes after the variable name. When the parameters have the same type you can combine the type declaration.
+A function in go can take **zero or more arguments**. The type of the input
+parameter comes after the variable name. When the parameters have the same type
+you can combine the type declaration.
 
 The input parameters are followed by the return type.
 
-A function can return any number of results. In go explizit returns are required.
+A function can return any number of results. In go explizit returns are
+required.
 
 ```go
 func multiply (a, b int) int {
@@ -118,7 +147,8 @@ multiply(3, 6)
 
 ## <a name='data-types'></a> Data types
 
-Surprise, surprise go has values like boolean, strings and integer. Here's a list of all of them.
+Surprise, surprise go has values like boolean, strings and integer. Here's a
+list of all of them.
 
 ```go
 bool
@@ -148,13 +178,15 @@ Variables declared without an initial value are given their zero value:
 
 ## <a name='for'></a> for
 
-Coming from TypeScript, there is no such thing as the array methods map, reduce or filter in go. The for loop is all you have.
+Coming from TypeScript, there is no such thing as the array methods map, reduce
+or filter in go. The for loop is all you have.
 
 A for loop consists of the following:
 
 - an **init** statement; condition expression; **post** statement
 
-There is no need for **parenthesis** surrounding the three components. The init and post statements are **optional**.
+There is no need for **parenthesis** surrounding the three components. The init
+and post statements are **optional**.
 
 The for loop can also be used as while().
 
@@ -170,7 +202,8 @@ for i := 0; i < a; i++ {
 
 ## <a name='if-else'></a> if, else
 
-If, else is pretty straight forward in go. No parenthesis are needing surrounding the condition.
+If, else is pretty straight forward in go. No parenthesis are needing
+surrounding the condition.
 
 ```go
 var a = 10
@@ -184,7 +217,8 @@ if a > 9 {
 
 ## <a name='switch'></a> switch
 
-A switch in go only runs the selected case, not all cases that follow. The default case is **optional**.
+A switch in go only runs the selected case, not all cases that follow. The
+default case is **optional**.
 
 The break statement is provided automatically.
 
@@ -244,9 +278,12 @@ len(names) // 2
 
 ## <a name='slices'></a> slices
 
-Unlike arrays, slices have no specified length, so they are dynamically sized. They are build on arrays but are more powerful and therefore more used than arrays in go.
+Unlike arrays, slices have no specified length, so they are dynamically sized.
+They are build on arrays but are more powerful and therefore more used than
+arrays in go.
 
-To create **dynamically** sized arrays (slices), you can use the **make** function.
+To create **dynamically** sized arrays (slices), you can use the **make**
+function.
 
 ```go
 // slice of type in with length 5
@@ -256,7 +293,9 @@ a := make([]int, 5)
 s := make([]string, 3)
 ```
 
-Slices can also be build by slicing an existing array or slice. In the following example, a slice is formed on the numbers array by specifying two indices, a low and high bound.
+Slices can also be build by slicing an existing array or slice. In the following
+example, a slice is formed on the numbers array by specifying two indices, a low
+and high bound.
 
 ```go
 // array
@@ -276,7 +315,9 @@ board := [][]string{
 	}
 ```
 
-To enhance a slice, you can use the **append** function. This is one example of what makes slices more powerful than arrays. Append returns a slice with one or more new values.
+To enhance a slice, you can use the **append** function. This is one example of
+what makes slices more powerful than arrays. Append returns a slice with one or
+more new values.
 
 ```go
 var s []int
@@ -307,7 +348,8 @@ copy(c, s)
 
 ## <a name='map'></a> map
 
-A map is combination of key value pairs. In other languages it's often called dictionary.
+A map is combination of key value pairs. In other languages it's often called
+dictionary.
 
 ```go
 // creates an empty map of string - int key - value pairs
@@ -355,9 +397,11 @@ function (s Server) printServer() {
 }
 ```
 
-See that we pass the Server as s as a **receiver** argument to the `printServer` function before we the function name declaration?
+See that we pass the Server as s as a **receiver** argument to the `printServer`
+function before we the function name declaration?
 
-Everything inside the function body has now **access** to the members of the struct.
+Everything inside the function body has now **access** to the members of the
+struct.
 
 ---
 
@@ -400,13 +444,15 @@ function (s *Server) printServer() {
 }
 ```
 
-Pointers and pointer receivers are little bit more **advanced topic** but it's good to have heard of them as a beginner.
+Pointers and pointer receivers are little bit more **advanced topic** but it's
+good to have heard of them as a beginner.
 
 ---
 
 ## <a name='interfaces'></a> interfaces
 
-Interfaces are **named collections** of method signatures. To implement an interface you just need to implement all methods in the interface.
+Interfaces are **named collections** of method signatures. To implement an
+interface you just need to implement all methods in the interface.
 
 ```go
 type interface {
@@ -433,11 +479,15 @@ if err != nil {
 
 Calling code should handle errors by **testing** whether the error equals nil.
 
-And that is it, these are the **programming with go beginner topics** I came across the last weeks and months while learning and working with go. I hope you like it!
+And that is it, these are the **programming with go beginner topics** I came
+across the last weeks and months while learning and working with go. I hope you
+like it!
 
-Did you know everything already or did you learn something new? Do you have other great examples? Let me know!
+Did you know everything already or did you learn something new? Do you have
+other great examples? Let me know!
 
-You can send me an [email](mailto:marcokuehbauch@gmail.com) or message me on [Twitter](https://twitter.com/Mkuehb).
+You can send me an [email](mailto:marco@marcoheine.com) or message me on
+[Twitter](https://twitter.com/Mkuehb).
 
 ## Resources:
 

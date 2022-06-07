@@ -16,7 +16,7 @@ const LegalNotice = () => (
         <p>Strohberg 26</p>
         <p>70180 Stuttgart </p>
         <p>Deutschland</p>
-        <a href="mailto:marco@marcokuehbauch.com">marco@marcokuehbauch.com</a>
+        <a href="mailto:marco@marcoheine.com">marco@marcoheine.com</a>
       </section>
       <section className="max-w-3xl mx-auto">
         <p>Verantwortlich im Sinne von § 55 Abs. 2 RStV:</p>

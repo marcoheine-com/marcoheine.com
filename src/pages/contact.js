@@ -25,10 +25,7 @@ const Contact = () => {
           <p>{t('contact.text-two')}</p>
           <p>
             {t('contact.text-three')}
-            <a href="mailto:hello@marcokuehbauch.com">
-              hello@marcokuehbauch.com
-            </a>
-            .
+            <a href="mailto:hello@marcoheine.com">hello@marcoheine.com</a>.
           </p>
           <p>
             {t('contact.text-four')}

@@ -37,7 +37,7 @@ const Work = () => {
               <p>
                 <Trans i18nKey={'work.what-i-do.five'} />
               </p>
-              <CallToAction href="mailto:hello@marcokuehbauch.com">
+              <CallToAction href="mailto:hello@marcoheine.com">
                 {t('work.call-to-action')}
               </CallToAction>
             </article>
@@ -169,7 +169,7 @@ const Work = () => {
                 <p>
                   <Trans i18nKey={'work.technical-writing-two'} />
                 </p>
-                <CallToAction href="mailto:marcokuehbauch.com">
+                <CallToAction href="mailto:marco@marcoheine.com">
                   {t('work.technical-writing-cta')}
                 </CallToAction>
               </section>

@@ -20,14 +20,14 @@ const Footer = () => {
       <nav>
         <ul className="mb-8">
           <ui.ListItem>
-            <a href="mailto:hello@marcokuehbauch.com">
+            <a href="mailto:hello@marcoheine.com">
               <ui.Svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
                 viewBox="0 0 512 512"
               >
-                <title>marcokuehbauch@gmail.com</title>
+                <title>marco@marcoheine.com</title>
                 <path
                   fill="#fff"
                   d="M420.02455 354.77865l-99.60115-98.53796 99.59726-98.53797v197.07593zm-311.06513 18.71317l99.78039-98.44549 4.26255 4.03225c23.56094 22.20628 61.0005 22.20628 83.55619 0l4.29373-4.21326 100.24015 98.6265H108.95942zm-17.89961-215.7891l99.44921 98.53797-99.62844 98.53796.17923-197.07593zm309.84949-18.80563L278.3862 259.91094c-12.44868 12.39715-34.73163 12.12371-47.54657-.48141L109.14255 138.89709H400.9093zM64 112v288h384V112H64z"
@@ -68,7 +68,7 @@ const Footer = () => {
                 height="32"
                 viewBox="0 0 1024 1024"
               >
-                <title>Marco Kuehbauch on GitHub</title>
+                <title>Marco Heine on GitHub</title>
                 <path
                   fill="#fff"
                   d="M512,0C229.25,0,0,229.25,0,512c0,226.25,146.688,418.125,350.156,485.812c25.594,4.688,34.938-11.125,34.938-24.625
@@ -89,7 +89,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/marco-k%C3%BChbauch/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Link to linkedin profile of Marco Kuehbauch"
+              title="Link to linkedin profile of Marco Heine"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const Footer = () => {
       <p>
         {t('footer.code')}
         <ui.Link
-          href="https://github.com/mkuehb/marcokuehbauch.com"
+          href="https://github.com/mkuehb/marcoheine.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -135,7 +135,7 @@ const Footer = () => {
         .
       </p>
       <p>
-        © {year} Marco K&uuml;hbauch. Made in Germany with
+        © {year} Marco Heine. Made in Germany with
         <ui.Heart viewBox="0 0 32 29.6">
           <path
             d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
