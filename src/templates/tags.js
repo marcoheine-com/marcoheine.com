@@ -30,7 +30,7 @@ const TIL = ({ data }) => {
         <SEO title="Today I learned" />
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
-        <ui.Categories>
+        <section className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
           <ui.Category>
             <Link to="/today-I-learned/">All tags</Link>
           </ui.Category>
@@ -44,7 +44,7 @@ const TIL = ({ data }) => {
               </Link>
             </ui.Category>
           ))}
-        </ui.Categories>
+        </section>
 
         <ui.PageContent>
           {items.map(({ node }) => {

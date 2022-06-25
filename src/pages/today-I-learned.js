@@ -77,7 +77,7 @@ const TIL = ({ data }) => {
           </button>
         </label>
 
-        <ui.Categories>
+        <section className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
           {group.map((tag) => (
             <ui.Category
               key={tag.fieldValue}
@@ -88,7 +88,7 @@ const TIL = ({ data }) => {
               </Link>
             </ui.Category>
           ))}
-        </ui.Categories>
+        </section>
 
         <ui.PageContent>
           {items.map(({ node }, index) => {

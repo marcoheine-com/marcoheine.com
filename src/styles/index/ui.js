@@ -100,7 +100,7 @@ export const NewArticle = styled.article`
   @media (min-width: 700px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, min-content);
+    grid-template-rows: repeat(5, auto);
     grid-column-gap: 50px;
     grid-row-gap: 20px;
   }
@@ -154,6 +154,7 @@ export const Readmore = styled.span`
 
   @media (min-width: 700px) {
     grid-column: 1 / 2;
+    grid-row: 4 / 5;
   }
 `
 

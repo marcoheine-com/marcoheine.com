@@ -3,6 +3,7 @@ title: Headless Wordpress
 date: 2022-05-03
 path: /headless-wordpress
 tags: ['API', 'GatsbyJS']
+number: 35
 ---
 
 Today I learned about headless wordpress. Wordpress now offers a REST API which

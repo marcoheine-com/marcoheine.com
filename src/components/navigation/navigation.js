@@ -9,7 +9,10 @@ const Navigation = () => {
 
   return (
     <>
-      <ui.NavIcon aria-label="toggle menu" onClick={handleOnClick}>
+      <ui.NavIcon
+        aria-label="toggle menu"
+        onClick={handleOnClick}
+      >
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
         <ui.NavIconSpan isToggled={isToggled} />
@@ -27,11 +30,14 @@ const Navigation = () => {
             <Link to="/blog/">Blog</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
-            <Link to="/contact/">Contact me</Link>
+            <Link to="/today-I-learned/">Today I learned</Link>
+          </ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
+            <Link to="/contact/">Contact</Link>
           </ui.ListItem>
           <li>
             <ul className="flex gap-4 list-none m-0">
-              |
+              <span className="hidden m-0 md:block">|</span>
               {languages.map((lng) => (
                 <li
                   key={lng}
@@ -39,7 +45,10 @@ const Navigation = () => {
                     lng === language ? 'font-bold' : 'font-normal'
                   } lang-link m-0`}
                 >
-                  <Link to={originalPath} language={lng}>
+                  <Link
+                    to={originalPath}
+                    language={lng}
+                  >
                     {lng}
                   </Link>
                 </li>

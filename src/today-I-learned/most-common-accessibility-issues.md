@@ -3,6 +3,7 @@ title: Most common accessibility issues
 date: 2022-05-23
 path: /confetti
 tags: ['Accessibility', 'HTML']
+number: 38
 ---
 
 The web is **not accessible**. That’s not new, that’s not what I learned today.

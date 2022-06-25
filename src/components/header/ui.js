@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const HeaderWrapper = styled.header`
   transition: 0.2s all ease-out;
   &:hover {
     box-shadow: -2px 2px 5px #ccc;
   }
-`;
+`
 
 export const Header = styled.div`
   display: flex;
@@ -16,10 +16,10 @@ export const Header = styled.div`
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     flex-direction: row;
   }
-`;
+`
 
 export const Headline = styled.h1`
   display: inline-block;
@@ -41,7 +41,7 @@ export const Headline = styled.h1`
       border-bottom: none;
     }
   }
-`;
+`
 
 export const Blink = styled.span`
   animation: blink 1s infinite steps(1);
@@ -51,4 +51,4 @@ export const Blink = styled.span`
       opacity: 0;
     }
   }
-`;
+`

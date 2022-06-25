@@ -31,7 +31,7 @@ const About = ({ data }) => {
                   Hi!{' '}
                   <ui.WaveHand
                     role="img"
-                    aria-label="waving hand emojo"
+                    aria-label="waving hand emoji"
                   >
                     👋🏻
                   </ui.WaveHand>{' '}

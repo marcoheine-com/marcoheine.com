@@ -89,13 +89,6 @@ export const Categories = styled.ul`
   justify-content: center;
   list-style-type: none;
   margin: 40px 0 0;
-
-  li {
-    margin: 0;
-    &:not(:first-of-type) {
-      margin-left: 16px;
-    }
-  }
 `
 
 export const Category = styled.li`

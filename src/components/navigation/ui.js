@@ -16,7 +16,7 @@ export const NavIcon = styled.button`
     top: 32px;
   }
 
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     display: none;
   }
 `
@@ -82,7 +82,7 @@ export const Nav = styled.nav`
     overflow: hidden;
     transform: translateY(40px);
   `}
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     display: flex;
     max-height: 100px;
     opacity: 1;
@@ -99,7 +99,7 @@ export const List = styled.ul`
   list-style-type: none;
   margin-left: 0;
   padding-bottom: 40px;
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     flex-direction: row;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -113,7 +113,7 @@ export const ListItem = styled.li`
     isToggled &&
     `
     width: 100%;
-    @media (min-width: 710px) {
+    @media (min-width: 850px) {
       width: auto;
     }
   `};
@@ -128,14 +128,14 @@ export const ListItem = styled.li`
       color: #fff;
     }
   }
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     display: inline;
     font-size: 16px;
     text-transform: none;
     margin-bottom: 0;
   }
 
-  @media (min-width: 710px) {
+  @media (min-width: 850px) {
     font-size: 20px;
   }
 `
