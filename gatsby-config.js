@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Marco Heine - Web Developer`,
-    description: `Hi! My name is Marco and I'm a Web Developer. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.`,
+    title: `Marco Heine - Freelance Web Developer`,
+    description: `Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.`,
     author: `Marco Heine`,
     siteUrl: `https://marcoheine.com`,
   },
