@@ -80,7 +80,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const { slug } = node.fields
 
     actions.createPage({
-      component: path.resolve(`src/templates/today-i-learned-post.js`),
+      component: path.resolve(`src/templates/today-I-learned-post.js`),
       context: {
         slug,
       },
