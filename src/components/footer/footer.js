@@ -106,12 +106,6 @@ const Footer = () => {
           </ui.ListItem>
         </ul>
       </nav>
-      <Link
-        className="mb-6 inline-block uppercase transition-all p-1 hover:bg-white"
-        to="/today-I-learned/"
-      >
-        &rarr; Today I learned
-      </Link>
       <p>
         {t('footer.hosting')}
         <ui.Link

@@ -26,7 +26,7 @@ const TilPost = ({ data }) => {
             <i>Greetings Marco</i>
           </p>
           <ui.GoBackSpan>
-            <Link to="/today-I-learned/">
+            <Link to="/today-i-learned/">
               Go back to other today-I-learned posts
             </Link>
           </ui.GoBackSpan>

@@ -167,7 +167,7 @@ export const query = graphql`
       }
     }
     tilData: allMdx(
-      filter: { fields: { type: { eq: "today-I-learned-post" } } }
+      filter: { fields: { type: { eq: "today-i-learned-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

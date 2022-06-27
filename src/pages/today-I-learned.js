@@ -83,7 +83,7 @@ const TIL = ({ data }) => {
               key={tag.fieldValue}
               category={tag.fieldValue}
             >
-              <Link to={`/today-I-learned/${tag.fieldValue}/`}>
+              <Link to={`/today-i-learned/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </ui.Category>
@@ -157,7 +157,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: { fields: { type: { eq: "today-I-learned-post" } } }
+      filter: { fields: { type: { eq: "today-i-learned-post" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

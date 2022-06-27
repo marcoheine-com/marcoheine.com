@@ -32,14 +32,14 @@ const TIL = ({ data }) => {
 
         <section className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
           <ui.Category>
-            <Link to="/today-I-learned/">All tags</Link>
+            <Link to="/today-i-learned/">All tags</Link>
           </ui.Category>
           {group.map((tag) => (
             <ui.Category
               key={tag.fieldValue}
               category={tag.fieldValue}
             >
-              <Link to={`/today-I-learned/${tag.fieldValue}/`}>
+              <Link to={`/today-i-learned/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </ui.Category>
