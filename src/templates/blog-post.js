@@ -87,11 +87,11 @@ Template.propTypes = {
         featuredImage: PropTypes.shape({
           childImageSharp: PropTypes.shape({
             gatsbyImageData: PropTypes.shape({
-              src: PropTypes.string.isRequired,
-              srcSet: PropTypes.string.isRequired,
-              sizes: PropTypes.string.isRequired,
-            }).isRequired,
-          }).isRequired,
+              src: PropTypes.string,
+              srcSet: PropTypes.string,
+              sizes: PropTypes.string,
+            }),
+          }),
         }),
       }),
       body: PropTypes.string.isRequired,
