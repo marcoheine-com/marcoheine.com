@@ -18,7 +18,7 @@ const Template = ({ data }) => {
   const { mdx } = data
   const { frontmatter, timeToRead, body } = mdx
 
-  const { title, date, featuredImage } = frontmatter
+  const { title, date, featuredImage, featuredImageAlt } = frontmatter
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,6 +29,7 @@ const Template = ({ data }) => {
             featuredImage?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src
           }
+          ogImageAlt={featuredImageAlt}
         />
         <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>
