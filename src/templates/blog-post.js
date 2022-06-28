@@ -18,12 +18,17 @@ const Template = ({ data }) => {
   const { mdx } = data
   const { frontmatter, timeToRead, body } = mdx
 
-  const { title, date } = frontmatter
+  const { title, date, featuredImage } = frontmatter
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title={frontmatter.title} />
+        <SEO
+          title={frontmatter.title}
+          ogImage={
+            featuredImage.childImageSharp.gatsbyImageData.images.fallback.src
+          }
+        />
         <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>
           <ui.GoBackSpan>
@@ -78,6 +83,15 @@ Template.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
+        featuredImage: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            gatsbyImageData: PropTypes.shape({
+              src: PropTypes.string.isRequired,
+              srcSet: PropTypes.string.isRequired,
+              sizes: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+        }),
       }),
       body: PropTypes.string.isRequired,
       timeToRead: PropTypes.number.isRequired,
@@ -103,6 +117,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          id
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        featuredImageAlt
       }
       timeToRead
     }
