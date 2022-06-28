@@ -26,7 +26,8 @@ const Template = ({ data }) => {
         <SEO
           title={frontmatter.title}
           ogImage={
-            featuredImage.childImageSharp.gatsbyImageData.images.fallback.src
+            featuredImage?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
         />
         <ui.PageHeader>Blog</ui.PageHeader>
