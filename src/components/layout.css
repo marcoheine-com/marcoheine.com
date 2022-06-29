@@ -4,16 +4,19 @@
 
 @font-face {
   font-family: 'Lato-Regular';
+  font-display: swap;
   src: url('../fonts/Lato-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Lato-Bold';
+  font-display: swap;
   src: url('../fonts/Lato-Bold.ttf');
 }
 
 @font-face {
   font-family: 'Merriweather';
+  font-display: swap;
   src: url('../fonts/Merriweather-Regular.ttf');
 }
 
