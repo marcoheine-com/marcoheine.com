@@ -10,88 +10,111 @@ const NotFoundPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <SEO title="uses" />
+      <h1 className="text-center mb-0">Uses</h1>
       <ui.PageContent>
-        <h1>Uses</h1>
-        <p>
-          Inspired by the massive{' '}
-          <a
-            href="https://uses.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            uses{' '}
-          </a>
-          collection initiated by @wesbos, I decided to partizipate and share my
-          own uses collection.
-        </p>
+        <section className="mb-12">
+          <p>
+            Inspired by the massive{' '}
+            <a
+              href="https://uses.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {' '}
+              uses{' '}
+            </a>
+            collection initiated by{' '}
+            <a
+              href="https://twitter.com/wesbos"
+              target="_blank"
+              rel="nooper noreferrer"
+            >
+              @wesbos
+            </a>
+            , I decided to partizipate and share my own uses collection.
+          </p>
 
-        <p>
-          So on this page I'm gonna share{' '}
-          <strong>all the software and hardware I use almost everyday</strong>.
-        </p>
+          <p>
+            So on this page I'm gonna share{' '}
+            <strong>all the software and hardware I use almost everyday</strong>
+            .
+          </p>
+        </section>
 
-        <h2>Software</h2>
-        <ul>
-          <li>
-            <p>
-              My current <strong>editor</strong> is Visual Studio Code with the
-              Night Owl Theme. I use Menlo as my main <strong>font</strong>.
-            </p>
-          </li>
-          <li>
-            <p>
-              I use zsh as my <strong>terminal</strong> with oh-my-zsh to manage
-              the configuration. Currently I'm using the{' '}
-              <a
-                href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                avit theme
-              </a>
-              .
-            </p>
-          </li>
-          <li>
-            <p>
-              I was a long time Chrome user but switched to the Firefox
-              developer edition as my main <strong>browser</strong> a few years
-              ago and never regretted it. I like the dev tools way more. For
-              example showing CSS that has no effect is such a great feature.
-            </p>
-          </li>
-          <li>
-            <p>
-              I switch back to Chrome whenever I want to do a lighthouse audit.
-            </p>
-          </li>
-          <li>
-            <p>
-              I use <strong>postman</strong> to test my APIs.
-            </p>
-          </li>
-        </ul>
-        <h2>Services</h2>
-        <ul>
-          <li>
-            <p>
-              For <strong>Hosting</strong> and <strong>deployment</strong> I use{' '}
-              <a href="netlify.com">Netlify</a>. It's an amazing service that
-              takes away so much configuration and just helps me ship my code as
-              fast as possible.
-            </p>
-          </li>
-          <li>
-            <p>
-              For purchasing new <strong>domains</strong> I use{' '}
-              <a href="namecheap.com" target="_blank" rel="noopener noreferrer">
-                Namecheap
-              </a>
-              .
-            </p>
-          </li>
-        </ul>
+        <section className="mb-12">
+          <h2>Software</h2>
+          <ul>
+            <li>
+              <p>
+                My current <strong>editor</strong> is Visual Studio Code with
+                the Night Owl Theme. I use Menlo as my main{' '}
+                <strong>font</strong>.
+              </p>
+            </li>
+            <li>
+              <p>
+                I use zsh as my <strong>terminal</strong> with oh-my-zsh to
+                manage the configuration. Currently I'm using the{' '}
+                <a
+                  href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  avit theme
+                </a>
+                .
+              </p>
+            </li>
+            <li>
+              <p>
+                I was a long time Chrome user but switched to the Firefox
+                developer edition as my main <strong>browser</strong> a few
+                years ago and never regretted it. I like the dev tools way more.
+                For example showing CSS that has no effect is such a great
+                feature.
+              </p>
+            </li>
+            <li>
+              <p>
+                I switch back to Chrome whenever I want to do a lighthouse
+                audit.
+              </p>
+            </li>
+            <li>
+              <p>
+                I use <strong>postman</strong> to test my APIs.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2>Services</h2>
+          <ul>
+            <li>
+              <p>
+                For <strong>Hosting</strong> and <strong>deployment</strong> I
+                use <a href="https://netlify.com">Netlify</a> and{' '}
+                <a href="https://vercel.com">Vercel</a>. They are both amazing
+                services that takes away so much configuration and just help me
+                ship my code as fast as possible.
+              </p>
+            </li>
+            <li>
+              <p>
+                For purchasing new <strong>domains</strong> I use{' '}
+                <a
+                  href="namecheap.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Namecheap
+                </a>
+                .
+              </p>
+            </li>
+          </ul>
+        </section>
         <h2>Hardware</h2>
         <p>
           Here is a{' '}
@@ -160,11 +183,7 @@ const NotFoundPage = () => (
               can set the MacBook to the right side of my monitor.
             </p>
             <li>
-              <p>
-                For a mouse my current favourite is the Logitech MX 3 Master. If
-                you have any recommendations for a silent mechanical keyboard,
-                let me know!
-              </p>
+              <p>My current favourite mouse is the Logitech MX 3 Master.</p>
             </li>
           </li>
         </ul>
