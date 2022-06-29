@@ -93,6 +93,7 @@ export const Categories = styled.ul`
 
 export const Category = styled.li`
   background-color: ${({ bgColor }) => bgColor}};
+  margin: 0;
 `
 
 export const tags = styled.section`

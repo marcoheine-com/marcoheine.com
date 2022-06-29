@@ -77,20 +77,18 @@ const TIL = ({ data }) => {
           </button>
         </label>
 
-        <section className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
-          <ul>
-            {group.map((tag) => (
-              <ui.Category
-                key={tag.fieldValue}
-                category={tag.fieldValue}
-              >
-                <Link to={`/today-i-learned/${tag.fieldValue}/`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </ui.Category>
-            ))}
-          </ul>
-        </section>
+        <ul className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
+          {group.map((tag) => (
+            <ui.Category
+              key={tag.fieldValue}
+              category={tag.fieldValue}
+            >
+              <Link to={`/today-i-learned/${tag.fieldValue}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </ui.Category>
+          ))}
+        </ul>
 
         <ui.PageContent>
           {items.map(({ node }, index) => {
