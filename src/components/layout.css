@@ -2,10 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('../fonts/Lato-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather-Regular.ttf');
+}
+
 /* New overrides 2022 */
 @layer base {
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato-Regular', sans-serif;
     font-size: 20px;
   }
   h1,
