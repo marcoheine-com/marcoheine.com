@@ -1,20 +1,26 @@
-import React from 'react';
-import * as ui from './ui';
+import React from 'react'
+import * as ui from './ui'
 
 const CoffeeLink = () => (
   <ui.CoffeeLink
-    href="https://www.buymeacoffee.com/marcokuehbauch"
+    href="https://www.buymeacoffee.com/marcoheine"
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span role="img" aria-label="coffee emoji">
+    <span
+      role="img"
+      aria-label="coffee emoji"
+    >
       ☕️
     </span>{' '}
     Buy me a coffee{' '}
-    <span role="img" aria-label="coffee emoji">
+    <span
+      role="img"
+      aria-label="coffee emoji"
+    >
       ☕️
     </span>{' '}
   </ui.CoffeeLink>
-);
+)
 
-export default CoffeeLink;
+export default CoffeeLink

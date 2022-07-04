@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
                 image={data.personalImg.childImageSharp.gatsbyImageData}
                 className="mb-10 md:mr-64 transition-all hover-target-image"
               />
-              <h1 className="hover-target mb-12 text-primaryColorOne bg-white md:p-5 md:absolute md:right-0 md:top-16 md:w-[465px] md:border-4 md:border-t-0 md:border-l-white md:border-b-primaryColorTwo md:border-r-primaryColorTwo">
+              <h1 className="hover-target mb-12 text-primaryColorOne bg-white md:p-5 md:absolute md:right-0 md:top-16 md:w-[495px] md:border-4 md:border-t-0 md:border-l-white md:border-b-primaryColorTwo md:border-r-primaryColorTwo">
                 <div className="hidden md:block md:absolute top-6 -left-7 w-0 h-0 border-t-[30px] border-b-[30px] border-r-[30px] border-t-transparent border-b-transparent border-r-white"></div>
                 {t('home.intro')}
               </h1>

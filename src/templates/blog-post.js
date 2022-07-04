@@ -48,13 +48,13 @@ const Template = ({ data }) => {
           <section className="flex gap-5 p-3 bg-slate-50 rounded-lg text-base mb-4">
             <time
               dateTime={date}
-              className="mb-0 font-bold"
+              className="mb-0"
             >
               🗓 Published on: {date}
             </time>
             <time
               dateTime={timeToRead}
-              className="mb-0 font-bold"
+              className="mb-0"
             >
               ⏱ Reading time: {timeToRead} min
             </time>
