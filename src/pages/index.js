@@ -21,7 +21,15 @@ const IndexPage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="100%">
-        <SEO title="Home" />
+        <SEO
+          title="Home"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.index-description')}
+        />
 
         <ui.IndexWrapper>
           <div className="flex flex-col items-start mb-32 max-w-lg relative md:mt-18 md:max-w-3xl">

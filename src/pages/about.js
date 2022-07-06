@@ -12,10 +12,19 @@ import { Trans, useTranslation } from 'react-i18next'
 
 const About = ({ data }) => {
   const { t } = useTranslation()
+
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
-        <SEO title="About" />
+        <SEO
+          title="About"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.about-description')}
+        />
         <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
         <aboutUI.PageContent>
           <aboutUI.Container>

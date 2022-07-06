@@ -72,7 +72,7 @@
   "contact": {
     "headline": "Contact",
     "subline": "Let's connect!",
-    "text-one": "Wenn Du Interesse daran hast, mit mir zu arbeiten, findest DU auf meiner work Seite viele Informationen dazu: ",
+    "text-one": "Wenn Du Interesse daran hast, mit mir zu arbeiten, freue ich mich über eine kurze Mail dazu. Mehr Informationen, wie ich arbeite oder wie ich dir helfen kann, findest Du auf meiner work Seite:",
     "text-two": "Wenn Du Fragen oder Anregungen zu einem meiner blog posts oder today-I-learned posts hast, freue ich mich über eine kurze Mail dazu.",
     "text-three": "Per Mail unter ",
     "text-four": "Ich bin außerdem auch auf Twitter unterwegs: ",
@@ -98,5 +98,12 @@
         "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
       }
     }
+  },
+  "meta": {
+    "index-description": "Hi! Ich bin Marco Freelance Web Developer aus Stuttgart. Ich helfe Menschen dabei, schnelle, barrierefreie und moderne Websites zu bekommen.",
+    "about-description": "Hi! Ich bin Marco Freelance Web Developer aus Stuttgart. Ich helfe Menschen dabei, schnelle, barrierefreie und moderne Websites zu bekommen.",
+    "blog-description": "Ich schreibe gerne über alles, was ich lerne und aufschnappe in meiner täglichen Arbeit als Web Developer. Auf dieser Seite findest Du alle Blog Posts, die ich bisher verfasst habe. Über Web Technologien und mein leben als Web Developer.",
+    "til-description": "Meine Today-I-learned Seite ist eine große Sammlung von interessanten Artikeln, Code-Snippets und sonstigen Dingen, die ich kürzlich gelernt habe.",
+    "contact-description": "Wenn Du Interesse daran hast, mit mir zu arbeiten, freue ich mich über eine kurze Mail dazu. Auf meiner work seite findest Du mehr Informationen, wie ich arbeite oder wie ich dir helfen kann."
   }
 }

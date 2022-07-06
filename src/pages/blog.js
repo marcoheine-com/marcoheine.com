@@ -63,7 +63,15 @@ const Blog = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="Blog" />
+        <SEO
+          title="Blog"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.blog-description')}
+        />
         <ui.PageHeader>Blog</ui.PageHeader>
 
         <ui.PageContent>
@@ -134,6 +142,11 @@ export const pageQuery = graphql`
           data
           language
         }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData
       }
     }
     allMdx(

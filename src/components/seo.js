@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
   const { site } = useStaticQuery(
@@ -19,14 +20,12 @@ function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
     `
   )
 
+  const { language } = useI18next()
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -78,7 +77,10 @@ function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <html lang={language || lang} />
+      <title>{title}</title>
+    </Helmet>
   )
 }
 

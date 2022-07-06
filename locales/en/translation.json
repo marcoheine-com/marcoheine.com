@@ -98,5 +98,12 @@
         "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
       }
     }
+  },
+  "meta": {
+    "index-description": "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.",
+    "about-description": "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites and web experiences for every device and every browser.",
+    "blog-description": "I love to learn and write about it. On this page you can find all the blog posts I've written about web development, my life as a developer and the technologies I've learned and worked with.",
+    "til-description": "This Today-I-learned page is a huge collection of small code snippets, links or other interesting things I learned about web development, grouped by several tags to make it easy to find what you are looking for.",
+    "contact-description": "If you're interested in working with me, feel free to reach out via mail or twitter. On my work page you will find all the information about how I work and how I can help you."
   }
 }

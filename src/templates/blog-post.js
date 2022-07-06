@@ -16,15 +16,17 @@ const shortcodes = { CoffeeHint }
 
 const Template = ({ data }) => {
   const { mdx } = data
-  const { frontmatter, timeToRead, body } = mdx
+  const { frontmatter, timeToRead, body, excerpt } = mdx
 
-  const { title, date, featuredImage, featuredImageAlt } = frontmatter
+  const { title, date, featuredImage, featuredImageAlt, description } =
+    frontmatter
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title={frontmatter.title}
+          title={title}
+          description={description || excerpt}
           ogImage={
             featuredImage?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src
@@ -85,6 +87,8 @@ Template.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        excerpt: PropTypes.string,
         featuredImage: PropTypes.shape({
           childImageSharp: PropTypes.shape({
             gatsbyImageData: PropTypes.shape({
@@ -116,6 +120,7 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       body
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -126,6 +131,7 @@ export const pageQuery = graphql`
           }
         }
         featuredImageAlt
+        description
       }
       timeToRead
     }

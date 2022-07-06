@@ -8,13 +8,21 @@ import PageHeader from '../components/pageheader'
 import SEO from '../components/seo'
 import theme from '../styles/theme'
 
-const Work = () => {
+const Work = ({ data }) => {
   const { t } = useTranslation()
 
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1920px">
-        <SEO title="Work with me" />
+        <SEO
+          title="Work with me"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.work-description')}
+        />
         <section className="flex flex-col items-center">
           <PageHeader title="Work with me" />
           <section className="flex flex-col items-center gap-24">
@@ -192,6 +200,11 @@ export const query = graphql`
           data
           language
         }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 300)
       }
     }
   }

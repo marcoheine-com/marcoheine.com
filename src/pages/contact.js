@@ -8,12 +8,20 @@ import { graphql } from 'gatsby'
 import { Link } from 'gatsby-plugin-react-i18next'
 import { Trans, useTranslation } from 'react-i18next'
 
-const Contact = () => {
+const Contact = (data) => {
   const { t } = useTranslation()
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="Contact" />
+        <SEO
+          title="Contact"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.contact-description')}
+        />
         <ui.PageHeader>{t('contact.headline')}</ui.PageHeader>
 
         <section className="mt-20 mx-auto mb-0 max-w-2xl">
@@ -52,6 +60,11 @@ export const query = graphql`
           data
           language
         }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 300)
       }
     }
   }

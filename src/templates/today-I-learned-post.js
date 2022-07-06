@@ -16,7 +16,10 @@ const TilPost = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title={frontmatter.title} />
+        <SEO
+          title={frontmatter.title}
+          description={frontmatter.description}
+        />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <ui.PageContent>
           <h4>{frontmatter.date}</h4>
@@ -66,6 +69,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        description
       }
     }
   }

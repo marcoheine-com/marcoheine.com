@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import Button from '../components/Button'
 import theme from '../styles/theme'
 import * as ui from '../styles/til/ui'
+import { useTranslation } from 'react-i18next'
 
 const TIL = ({ data }) => {
   const { allMdx } = data
@@ -16,6 +17,8 @@ const TIL = ({ data }) => {
   const [items, setItems] = React.useState(edges?.slice(0, 20))
   const [allItemsLoaded, setAllItemsLoaded] = React.useState(false)
   const [filterValue, setFilterValue] = React.useState('')
+
+  const { t } = useTranslation()
 
   const additionalItems = edges.slice(20)
 
@@ -53,7 +56,15 @@ const TIL = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
-        <SEO title="Today I learned" />
+        <SEO
+          title="Today I learned"
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images
+              ?.sources[0]?.srcSet
+          }
+          ogImageAlt="a picture of me"
+          description={t('meta.til-description')}
+        />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <label
           htmlFor="search"
@@ -154,6 +165,11 @@ export const pageQuery = graphql`
           data
           language
         }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData
       }
     }
     allMdx(
