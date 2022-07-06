@@ -17,8 +17,8 @@ const Work = ({ data }) => {
         <SEO
           title="Work with me"
           ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images
-              ?.sources[0]?.srcSet
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
           ogImageAlt="a picture of me"
           description={t('meta.work-description')}

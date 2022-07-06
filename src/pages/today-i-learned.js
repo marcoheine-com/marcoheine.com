@@ -59,8 +59,8 @@ const TIL = ({ data }) => {
         <SEO
           title="Today I learned"
           ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images
-              ?.sources[0]?.srcSet
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
           ogImageAlt="a picture of me"
           description={t('meta.til-description')}

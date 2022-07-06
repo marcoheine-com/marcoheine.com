@@ -24,8 +24,8 @@ const IndexPage = ({ data }) => {
         <SEO
           title="Home"
           ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images
-              ?.sources[0]?.srcSet
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
           ogImageAlt="a picture of me"
           description={t('meta.index-description')}

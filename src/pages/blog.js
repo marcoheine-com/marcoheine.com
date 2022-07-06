@@ -66,8 +66,8 @@ const Blog = ({ data }) => {
         <SEO
           title="Blog"
           ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images
-              ?.sources[0]?.srcSet
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
           ogImageAlt="a picture of me"
           description={t('meta.blog-description')}

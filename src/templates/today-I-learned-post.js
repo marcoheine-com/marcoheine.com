@@ -19,6 +19,11 @@ const TilPost = ({ data }) => {
         <SEO
           title={frontmatter.title}
           description={frontmatter.description}
+          ogImage={
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
+          }
+          ogImageAlt="a picture of me"
         />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <ui.PageContent>
@@ -62,6 +67,11 @@ export const pageQuery = graphql`
           data
           language
         }
+      }
+    }
+    personalImg: file(relativePath: { eq: "marco-heine.webp" }) {
+      childImageSharp {
+        gatsbyImageData
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

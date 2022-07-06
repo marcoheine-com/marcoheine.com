@@ -16,8 +16,8 @@ const Contact = (data) => {
         <SEO
           title="Contact"
           ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images
-              ?.sources[0]?.srcSet
+            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+              ?.src
           }
           ogImageAlt="a picture of me"
           description={t('meta.contact-description')}
