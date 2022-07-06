@@ -4,7 +4,15 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
-function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+  ogImage,
+  ogImageAlt,
+  location,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -23,6 +31,10 @@ function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
   const { language } = useI18next()
 
   const metaDescription = description || site.siteMetadata.description
+
+  const url = location?.pathname || ''
+  const blogPostRegex = /\/blog\/[^/]+\/$/
+  const isBlogPost = blogPostRegex.test(url)
 
   return (
     <Helmet
@@ -54,7 +66,7 @@ function SEO({ description, lang, meta, title, ogImage, ogImageAlt }) {
         },
         {
           name: `twitter:card`,
-          content: `summary_large_image`,
+          content: `${isBlogPost ? 'summary_large_image' : 'summary'}`,
         },
         {
           name: `twitter:image`,

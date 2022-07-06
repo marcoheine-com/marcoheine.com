@@ -8,7 +8,7 @@ import { graphql } from 'gatsby'
 import { Link } from 'gatsby-plugin-react-i18next'
 import { Trans, useTranslation } from 'react-i18next'
 
-const Contact = (data) => {
+const Contact = ({ data, location }) => {
   const { t } = useTranslation()
   return (
     <ThemeProvider theme={theme}>
@@ -21,6 +21,7 @@ const Contact = (data) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.contact-description')}
+          location={location}
         />
         <ui.PageHeader>{t('contact.headline')}</ui.PageHeader>
 

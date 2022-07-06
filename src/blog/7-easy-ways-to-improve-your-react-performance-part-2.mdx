@@ -40,6 +40,8 @@ Part 1:
   performance - part 1
 </Link>
 
+<br />
+
 **What you can learn from Part 2 of this React performance quick wins series:**
 
 ---
@@ -50,6 +52,8 @@ Part 1:
 - [Virtualized lists](#virtualized-lists)
 
 ---
+
+<br />
 
 ## <a name='avoid-anonymous-funcs'></a>Avoid anonymous functions
 
@@ -67,6 +71,8 @@ const MyComponent = () => {
 
 export default MyComponent
 ```
+
+<br />
 
 But if you're on the lookout for a quick performance win, that's something you
 can avoid.
@@ -95,7 +101,11 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
+<br />
+
 That's it for quickwin number 4: avoid anonymous functions!
+
+<br />
 
 ## <a name='defining-objects'></a>Define objects outside of your component
 
@@ -119,6 +129,8 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
+<br />
+
 Instead define your object outside of the component. Now it is created once on
 the initial render and not being touched on every rerender.
 
@@ -136,6 +148,8 @@ const MyComponent = () => {
 
 export default MyComponent
 ```
+
+<br />
 
 Performance quickwin whoop whoop! 🚀
 
@@ -156,6 +170,8 @@ I wrote a whole Today-I-learned post about this topic, check it out here:
 
 That's also a great way to improve your react performance without too much
 effort.
+
+<br />
 
 ## <a name='virtualized-lists'></a>Virtualized lists
 

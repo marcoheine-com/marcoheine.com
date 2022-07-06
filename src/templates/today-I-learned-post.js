@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 import theme from '../styles/theme'
 import * as ui from './ui'
 
-const TilPost = ({ data }) => {
+const TilPost = ({ data, location }) => {
   const { mdx } = data
   const { frontmatter, body } = mdx
 
@@ -24,6 +24,7 @@ const TilPost = ({ data }) => {
               ?.src
           }
           ogImageAlt="a picture of me"
+          location={location}
         />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <ui.PageContent>

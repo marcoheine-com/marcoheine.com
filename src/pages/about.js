@@ -10,7 +10,7 @@ import * as ui from '../styles/index/ui'
 import * as aboutUI from '../styles/about/ui'
 import { Trans, useTranslation } from 'react-i18next'
 
-const About = ({ data }) => {
+const About = ({ data, location }) => {
   const { t } = useTranslation()
 
   return (
@@ -24,6 +24,7 @@ const About = ({ data }) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.about-description')}
+          location={location}
         />
         <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
         <aboutUI.PageContent>

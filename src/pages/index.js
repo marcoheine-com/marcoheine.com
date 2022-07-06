@@ -12,7 +12,7 @@ import { CallToAction } from '../components/call-to-action'
 import { useTranslation } from 'react-i18next'
 // import { Testimonials } from '../components/testimonials'
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const { t } = useTranslation()
 
   const latestBlogPosts = data.blogData.edges.slice(0, 3)
@@ -29,6 +29,7 @@ const IndexPage = ({ data }) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.index-description')}
+          location={location}
         />
 
         <ui.IndexWrapper>

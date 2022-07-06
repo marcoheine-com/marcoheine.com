@@ -9,20 +9,14 @@ path: /7-easy-ways-to-improve-your-react-performance-part-1
 import { Link } from 'gatsby-plugin-react-i18next'
 
 At the beginning of the year I wrote a blog post about
-
-<Link to="/blog/react-performance-improvements/">
-  React performance improvements
-</Link>
-. It‘s one of my favourite blog posts I ever wrote. It’s a great example of <strong>
-  documenting everything while you learn it
-</strong>
-.
+[React performance improvements](/blog/react-performance-improvements/). It‘s
+one of my favourite blog posts I ever wrote. It’s a great example of documenting
+everything while you learn it.
 
 It’s a very in depth analysis. It shows you how to **test and measure** the
-performance of your React application and a lot of ways how to improve it.
-
-In the contrary this blog post has the goal to give you a lot of **quick wins**
-for your performance. Things you can change and adjust, without too much effort.
+performance of your React application and a lot of ways how to improve it. In
+the contrary this blog post has the goal to give you a lot of **quick wins** for
+your performance. Things you can change and adjust, without too much effort.
 
 So you can see it as an **addition** to my original react performance blog post.
 The first one builds the foundation. This one adds the cherry on top.
@@ -31,6 +25,8 @@ This post is **part 1** of a **series**.
 
 Part 2: <Link to='/blog/7-easy-ways-to-improve-your-react-performance-part-2/'>7
 easy ways to improve your React performance - part 2</Link>
+
+<br />
 
 **What you can learn from this blog post:**
 
@@ -41,6 +37,8 @@ easy ways to improve your React performance - part 2</Link>
 - [One useState hook instead of multiple for connected data](#useState)
 
 ---
+
+<br />
 
 ## <a name='keys'></a> Always use a key when mapping (and not an index)
 
@@ -81,6 +79,8 @@ const Animals = () => {
 export default Animals
 ```
 
+<br />
+
 If you're not using keys, React has to a hard time to figure out which items to
 update. This can lead to updating every item although only one changed.
 
@@ -97,6 +97,8 @@ You can learn more about why keys are important in this
 [article about reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children).
 
 So that's it for quickwin number one: **always use a key when mapping!**
+
+<br />
 
 ## <a name='fragments'></a> Use React.Fragments instead of divs as JSX parent element
 
@@ -122,6 +124,8 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
+<br />
+
 But the next time you need a JSX wrapping element, think again! You can use a
 **React.Fragment** for that!
 
@@ -140,6 +144,8 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
+<br />
+
 And the best thing is, there is even a **short syntax** for this.
 
 ```javascript
@@ -156,6 +162,8 @@ const MyComponent = () => {
 
 export default MyComponent
 ```
+
+<br />
 
 But wait, why does this boost my performance? Good question! Here's the thing.
 The more DOM elements your React application has, the **longer** the render
@@ -242,6 +250,8 @@ const MyBigForm = () => {
 }
 ```
 
+<br />
+
 There is a lot of `useState` and `onChange` going on here, right? Phew. We can
 optimize for the better here!
 
@@ -303,6 +313,8 @@ const MyBigForm = () => {
   )
 }
 ```
+
+<br />
 
 Wow a lot less code and a lot more **readable**, don't you think? It's always a
 good idea to keep your state in an object, if you're dealing with **connected

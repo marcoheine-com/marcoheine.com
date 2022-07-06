@@ -10,7 +10,7 @@ import theme from '../styles/theme'
 import * as ui from '../styles/til/ui'
 import { useTranslation } from 'react-i18next'
 
-const TIL = ({ data }) => {
+const TIL = ({ data, location }) => {
   const { allMdx } = data
   const { edges, group } = allMdx
 
@@ -64,6 +64,7 @@ const TIL = ({ data }) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.til-description')}
+          location={location}
         />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <label

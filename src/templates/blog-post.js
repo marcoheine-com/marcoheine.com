@@ -14,7 +14,7 @@ import * as ui from './ui'
 
 const shortcodes = { CoffeeHint }
 
-const Template = ({ data }) => {
+const Template = ({ data, location }) => {
   const { mdx } = data
   const { frontmatter, timeToRead, body, excerpt } = mdx
 
@@ -32,6 +32,7 @@ const Template = ({ data }) => {
               ?.src
           }
           ogImageAlt={featuredImageAlt}
+          location={location}
         />
         <ui.PageHeader>Blog</ui.PageHeader>
         <ui.PageContent>

@@ -10,7 +10,7 @@ import * as ui from '../styles/index/ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { useTranslation } from 'react-i18next'
 
-const Blog = ({ data }) => {
+const Blog = ({ data, location }) => {
   const { allMdx } = data
   const { edges } = allMdx
   const { t } = useTranslation()
@@ -71,6 +71,7 @@ const Blog = ({ data }) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.blog-description')}
+          location={location}
         />
         <ui.PageHeader>Blog</ui.PageHeader>
 
