@@ -175,7 +175,7 @@ export const query = graphql`
         }
       }
     }
-    personalImg: file(relativePath: { eq: "marco_kuehbauch_square.jpeg" }) {
+    personalImg: file(relativePath: { eq: "marco-heine.webp" }) {
       childImageSharp {
         gatsbyImageData(width: 300)
       }
