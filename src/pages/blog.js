@@ -48,11 +48,14 @@ const Blog = ({ data, location }) => {
               to={`/${post.node.fields.slug}`}
             >
               <ui.BlogArticle>
-                <h4>
-                  {post.node.frontmatter.title} -
-                  <ui.Time dateTime={post.node.frontmatter.date}>
-                    Published on: {post.node.frontmatter.date}
+                <h4 className="flex flex-col md:flex-row md:gap-8">
+                  <ui.Time
+                    className="md:min-w-[160px]"
+                    dateTime={post.node.frontmatter.date}
+                  >
+                    {post.node.frontmatter.date}
                   </ui.Time>
+                  {post.node.frontmatter.title}
                 </h4>
               </ui.BlogArticle>
             </Link>
