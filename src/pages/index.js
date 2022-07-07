@@ -10,6 +10,7 @@ import * as ui from '../styles/index/ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { CallToAction } from '../components/call-to-action'
 import { useTranslation } from 'react-i18next'
+import { WebProjects } from '../components/web-projects'
 // import { Testimonials } from '../components/testimonials'
 
 const IndexPage = ({ data, location }) => {
@@ -65,6 +66,8 @@ const IndexPage = ({ data, location }) => {
               </CallToAction>
             </div>
           </div>
+
+          <WebProjects />
 
           {/* <Testimonials /> */}
 

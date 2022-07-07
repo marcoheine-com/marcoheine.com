@@ -105,5 +105,9 @@
     "blog-description": "Ich schreibe gerne über alles, was ich lerne und aufschnappe in meiner täglichen Arbeit als Web Developer. Auf dieser Seite findest Du alle Blog Posts, die ich bisher verfasst habe. Über Web Technologien und mein leben als Web Developer.",
     "til-description": "Meine Today-I-learned Seite ist eine große Sammlung von interessanten Artikeln, Code-Snippets und sonstigen Dingen, die ich kürzlich gelernt habe.",
     "contact-description": "Wenn Du Interesse daran hast, mit mir zu arbeiten, freue ich mich über eine kurze Mail dazu. Auf meiner work seite findest Du mehr Informationen, wie ich arbeite oder wie ich dir helfen kann."
+  },
+  "web-projects": {
+    "headline": "Web Projekte",
+    "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen. Hier ist eine kleine Auswahl vergangener Projekte:"
   }
 }

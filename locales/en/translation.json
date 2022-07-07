@@ -105,5 +105,9 @@
     "blog-description": "I love to learn and write about it. On this page you can find all the blog posts I've written about web development, my life as a developer and the technologies I've learned and worked with.",
     "til-description": "This Today-I-learned page is a huge collection of small code snippets, links or other interesting things I learned about web development, grouped by several tags to make it easy to find what you are looking for.",
     "contact-description": "If you're interested in working with me, feel free to reach out via mail or twitter. On my work page you will find all the information about how I work and how I can help you."
+  },
+  "web-projects": {
+    "headline": "Web projects",
+    "text": "I had to chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web developmen skills. Below you can find a collection of some recent projects I've worked on."
   }
 }
