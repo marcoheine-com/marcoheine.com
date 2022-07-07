@@ -29,12 +29,19 @@ module.exports = {
           {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(({ node }) => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                return Object.assign({}, node, {
+                  description: node.frontmatter.description || node.excerpt,
                   date: node.frontmatter.date,
                   url: `${site.siteMetadata.siteUrl}/${node.fields.slug}`,
                   guid: `${site.siteMetadata.siteUrl}/${node.fields.slug}`,
-                  custom_elements: [{ 'content:encoded': node.html }],
+                  custom_elements: [
+                    { 'content:encoded': node.html },
+                    {
+                      featuredImage:
+                        node.frontmatter.featuredImage?.childImageSharp?.fixed
+                          ?.src,
+                    },
+                  ],
                 })
               })
             },
@@ -47,13 +54,23 @@ module.exports = {
                 ) {
                   edges {
                     node {
+                      excerpt
+                      html
                       fields {
                         slug
                       }
                       frontmatter {
+                        description
                         title
+                        date(formatString: "MMMM DD, YYYY")
+                        featuredImage {
+                          childImageSharp {
+                            fixed {
+                              src
+                            }
+                          }
+                        }
                       }
-                      excerpt
                     }
                   }
                 }
