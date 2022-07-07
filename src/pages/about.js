@@ -75,7 +75,7 @@ const About = ({ data, location }) => {
               {t('about.text-nine')} <Link to="/blog">blog</Link>{' '}
             </p>
           </aboutUI.Container>
-          <aboutUI.Container>
+          {/* <aboutUI.Container>
             <details>
               <summary className="text-3xl font-serif cursor-pointer">
                 {t('about.subline-two')}
@@ -156,7 +156,7 @@ const About = ({ data, location }) => {
                 </p>
               </>
             </details>
-          </aboutUI.Container>
+          </aboutUI.Container> */}
         </aboutUI.PageContent>
       </Layout>
     </ThemeProvider>
