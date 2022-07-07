@@ -37,9 +37,7 @@ module.exports = {
                   custom_elements: [
                     { 'content:encoded': node.html },
                     {
-                      featuredImage:
-                        node.frontmatter.featuredImage?.childImageSharp?.fixed
-                          ?.src,
+                      featuredImage: `${site.siteMetadata.siteUrl}/${node.frontmatter.featuredImage?.childImageSharp?.fixed?.src}`,
                     },
                   ],
                 })
@@ -62,7 +60,7 @@ module.exports = {
                       frontmatter {
                         description
                         title
-                        date(formatString: "MMMM DD, YYYY")
+                        date
                         featuredImage {
                           childImageSharp {
                             fixed {
