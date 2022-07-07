@@ -84,7 +84,7 @@ export const WebProjects: React.FC = () => {
                       rel="
               noopener noreferrer"
                     >
-                      {project.url}
+                      {project.url} &#8599;
                     </a>
                   </span>
                 </article>

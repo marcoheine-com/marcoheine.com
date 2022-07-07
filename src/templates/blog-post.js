@@ -66,9 +66,6 @@ const Template = ({ data, location }) => {
           <MDXProvider components={shortcodes}>
             <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
-          <p>
-            <i>This blog post was originally published on {date}.</i>
-          </p>
           <hr />
           <p>I wish you a wonderful day! Marco</p>
           <p>Enjoy my writings?</p>
