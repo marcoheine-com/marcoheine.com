@@ -203,9 +203,9 @@ The page will render completely and the script tag loads after the DOM is loaded
 so there is no half loaded website or something like this.
 
 There are also a few other solutions to this like the attributes
-[async & defer](https://developer.mozilla.org/de/docs/Web/HTML/Element/script)
-but as they are not combatible with all browsers yet they won't work correctly
-in every browser.
+[async & defer](https://developer.mozilla.org/docs/Web/HTML/Element/script) but
+as they are not combatible with all browsers yet they won't work correctly in
+every browser.
 
 Another useful tip is to enable Gzip. Gzip makes it possible to recude the size
 of your complete website. Gzip works on the server and most hosting providers

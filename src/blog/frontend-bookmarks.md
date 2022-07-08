@@ -14,11 +14,12 @@ link-list (for me personally) of every category. Also the list itself will not
 be in any ranking, I'll just present them to you in a random order.
 
 You'll also be able to find my Frontend Bookmarks on
-[GitHub](https://github.com/mkuehb/frontend-bookmarks), so please feel free to
-make **suggestions** to this list with your own favorite bookmarks and links.
-One goal of this blog post will be to get my own list growing as I'm always
-looking forward to find new blogs or newsletters about Frontend Development.
-Enough with the introduction, let's take a look at my Frontend Bookmarks.
+[GitHub](https://github.com/marcoheine-com/frontend-bookmarks), so please feel
+free to make **suggestions** to this list with your own favorite bookmarks and
+links. One goal of this blog post will be to get my own list growing as I'm
+always looking forward to find new blogs or newsletters about Frontend
+Development. Enough with the introduction, let's take a look at my Frontend
+Bookmarks.
 
 ---
 
@@ -212,7 +213,7 @@ figure out a solution.
 So the JavaScript and Learn JavaScript Reddit pages are great places to get your
 **daily dose of JavaScript**. If you're interested in more JavaScript links,
 especially focused on learning I'd like to point you to my
-[JavaScript learning resources](https://github.com/mkuehb/javascript-learning-resources)
+[JavaScript learning resources](https://github.com/marcoheine-com/javascript-learning-resources)
 GitHub repository at this point. I think it's a great collection of resources
 I've used and am using right now to dig deeper into JavaScript.
 
@@ -246,4 +247,4 @@ big list and I definitely want it to **grow**!
 So if you've got any link to a blog, tool, newsletter, project etc. concerning
 frontend development, I'd love to check it out and add it to my collection. Feel
 free to drop me an email or directly contribute on
-[GitHub](https://github.com/mkuehb/frontend-bookmarks).
+[GitHub](https://github.com/marcoheine-com/frontend-bookmarks).

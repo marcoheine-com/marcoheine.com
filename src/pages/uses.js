@@ -119,7 +119,7 @@ const NotFoundPage = () => (
         <p>
           Here is a{' '}
           <a
-            href="https://twitter.com/Mkuehb/status/1420799028757999623"
+            href="https://twitter.com/marcoheine_com/status/1420799028757999623"
             target="_blank"
             rel="noopener noreferrer"
           >

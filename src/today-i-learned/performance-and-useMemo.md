@@ -1,7 +1,7 @@
 ---
 title: Performance and useMemo
 date: 2020-02-23
-path: /performance-and-useMemo
+path: /performance-and-usememo
 tags: ['React', 'Performance']
 number: 10
 ---

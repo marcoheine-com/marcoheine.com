@@ -103,5 +103,5 @@ cases you won't need these and you're good to go with what you get from the
 beginning.
 
 So that's it, these are my two good reasons to use React. What are yours? Hit me
-up on [Twitter](https://twitter.com/mkuehb) or send me an
+up on [Twitter](https://twitter.com/marcoheine-com) or send me an
 [email](mailto:marco@marcoheine.com).

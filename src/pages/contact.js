@@ -38,11 +38,11 @@ const Contact = ({ data, location }) => {
           </p>
           <p>
             {t('contact.text-four')}
-            <a href="https://twitter.com/Mkuehb">@mkuehb.</a>
+            <a href="https://twitter.com/marcoheine_com">@marcoheine_com.</a>
           </p>
           <p>
             {t('contact.text-five')}
-            <a href="https://github.com/mkuehb">GitHub</a>.
+            <a href="https://github.com/marcoheine-com">GitHub</a>.
           </p>
         </section>
       </Layout>

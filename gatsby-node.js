@@ -91,8 +91,10 @@ exports.createPages = async ({ actions, graphql }) => {
   const tags = tilData.data.tagsGroup.group
   // Make tag pages
   tags.forEach((tag) => {
+    const tagLowercase = tag.fieldValue.toLowerCase()
+
     createPage({
-      path: `/today-i-learned/${tag.fieldValue}/`,
+      path: `/today-i-learned/${tagLowercase}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,

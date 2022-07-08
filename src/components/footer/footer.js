@@ -37,7 +37,7 @@ const Footer = () => {
           </ui.ListItem>
           <ui.ListItem>
             <a
-              href="https://twitter.com/Mkuehb"
+              href="https://twitter.com/marcoheine_com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,7 +47,7 @@ const Footer = () => {
                 height="32"
                 viewBox="0 0 512 512"
               >
-                <title>@Mkuehb on Twitter</title>
+                <title>@marcoheine_com on Twitter</title>
                 <path
                   fill="#fff"
                   d="M492.25513 109.45554c-17.3837 7.71137-36.06909 12.9208-55.67589 15.26445 20.0108-11.99704 35.3839-30.99434 42.6228-53.63232-18.7327 11.11108-39.4783 19.17684-61.5611 23.52394C399.95964 75.77025 374.76533 64 346.88243 64c-53.5354 0-96.94214 43.40248-96.94214 96.93794 0 7.59797.85714 14.99749 2.51021 22.09224-80.56685-4.04233-151.99913-42.63701-199.810355-101.2874-8.34549 14.31707-13.12595 30.97071-13.12595 48.73712 0 33.63331 17.1137 63.30462 43.12683 80.68829-15.891-.50323-30.83959-4.8645-43.9085-12.12463-.009.404-.009.808-.009 1.21908 0 46.96827 33.4162 86.14696 77.762265 95.05546-8.13333 2.2149-16.697575 3.4009-25.538725 3.4009-6.24683 0-12.31954-.6091-18.23962-1.7398 12.33607 38.5115 48.137025 66.5411 90.557625 67.32-33.1771 26.0028-74.975875 41.5006-120.395075 41.5006-7.82503 0-15.54208-.4604-23.12533-1.3556C62.645325 431.9485 113.60183 448 168.34645 448c178.30949 0 275.81908-147.7158 275.81908-275.82103 0-4.20299-.097-8.38234-.2835-12.54044 18.943-13.66973 35.3769-30.74154 48.3733-50.183"
@@ -58,7 +58,7 @@ const Footer = () => {
 
           <ui.ListItem>
             <a
-              href="https://github.com/mkuehb"
+              href="https://github.com/marcoheine-com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -180,7 +180,7 @@ const Footer = () => {
       <p>
         {t('footer.code')}
         <ui.Link
-          href="https://github.com/mkuehb/marcoheine.com"
+          href="https://github.com/marcoheine-com/marcokuehbauch.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -197,7 +197,7 @@ const Footer = () => {
           />
         </ui.Heart>
         <ui.LinkStyles>
-          <Link to="/legal-notice">Legal notice</Link>
+          <Link to="/legal-notice/">Legal notice</Link>
         </ui.LinkStyles>
       </p>
     </ui.Footer>

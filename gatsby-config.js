@@ -138,6 +138,7 @@ module.exports = {
         localeJsonSourceName: `locale`,
         languages: [`en`, `de`],
         defaultLanguage: `en`,
+        redirect: false,
         siteUrl: `https://marcoheine.com/`,
         i18nextOptions: {
           interpolation: {
