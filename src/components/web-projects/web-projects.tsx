@@ -14,6 +14,9 @@ const projects = [
   {
     title: 'Dieda',
     description: 'Website Relaunch, technische Umsetzung, CMS Integration',
+    partners: [
+      { partnerName: 'Werk8', partnerLink: 'https://www.werk8.design/' },
+    ],
     tools:
       'React, Typescript, Next.js, TailwindCSS, Vercel, Algolia, Prismic, FormSpree',
     linkLabel: 'dieda.de',
@@ -33,6 +36,12 @@ const projects = [
   {
     title: 'Aerosol Alliance',
     description: 'Technische Umsetzung',
+    partners: [
+      {
+        partnerName: 'Studio Vierkant',
+        partnerLink: 'https://studiovierkant.de/',
+      },
+    ],
     tools: 'React, Typescript, Next.js, TailwindCSS, Firebase, Vercel, Prismic',
     linkLabel: 'aerosolalliance.com',
     link: 'https://aerosolalliance.com',
@@ -61,37 +70,48 @@ export const WebProjects: React.FC = () => {
           <p className="mb-10 text-center mx-auto max-w-2xl">
             {t('web-projects.text')}
           </p>
-          <section className="grid md:grid-cols-2 gap-y-8 gap-x-12 md:gap-y-16">
+          <section className="grid md:grid-cols-1 gap-y-16">
             {projects.map((project) => (
               <React.Fragment key={project.title}>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="
-            noopener noreferrer"
-                >
+                <section className="grid md:grid-cols-2 gap-y-8 gap-x-12 md:gap-y-16">
                   <img
                     alt={project.imageAlt}
                     src={project.image}
                     className="md:mb-10 shadow-custom rounded-lg transition-all hover:-translate-y-1 hover:shadow-customDark"
                     placeholder="blurred"
                   />
-                </a>
-                <article className="flex flex-col justify-center">
-                  <h3>{project.title}</h3>
-                  <p>Tools: {project.tools}</p>
-                  <span className="flex gap-2">
-                    Link:
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="
-              noopener noreferrer"
-                    >
-                      {project.linkLabel} &#8599;
-                    </a>
-                  </span>
-                </article>
+
+                  <article className="flex flex-col justify-center">
+                    <h3 className="text-primaryColorOne">{project.title}</h3>
+                    {project?.partners && project.partners.length > 0 ? (
+                      <p>
+                        <span className="mr-2">{t('home.cooperation')}</span>
+                        {project.partners?.map((partner) => (
+                          <a
+                            key={partner.partnerName}
+                            href={partner.partnerLink}
+                            target="_blank"
+                            rel="
+                noopener noreferrer"
+                          >
+                            {partner.partnerName}
+                          </a>
+                        ))}
+                      </p>
+                    ) : null}
+                    <p>Tools: {project.tools}</p>
+                    <p className="flex gap-2">
+                      <span>Link:</span>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.linkLabel} &#8599;
+                      </a>
+                    </p>
+                  </article>
+                </section>
               </React.Fragment>
             ))}
           </section>

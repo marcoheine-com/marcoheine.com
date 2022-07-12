@@ -24,13 +24,13 @@ const Navigation = () => {
             <Link to="/work/">Work</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
-            <Link to="/about/">About</Link>
-          </ui.ListItem>
-          <ui.ListItem isToggled={isToggled}>
             <Link to="/blog/">Blog</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
             <Link to="/today-i-learned/">Today I learned</Link>
+          </ui.ListItem>
+          <ui.ListItem isToggled={isToggled}>
+            <Link to="/about/">About</Link>
           </ui.ListItem>
           <ui.ListItem isToggled={isToggled}>
             <Link to="/contact/">Contact</Link>

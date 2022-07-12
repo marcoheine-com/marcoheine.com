@@ -39,7 +39,7 @@ const TIL = ({ data }) => {
               key={tag.fieldValue}
               category={tag.fieldValue}
             >
-              <Link to={`/today-i-learned/${tag.fieldValue}/`}>
+              <Link to={`/today-i-learned/${tag.fieldValue.toLowerCase()}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </ui.Category>
