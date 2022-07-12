@@ -53,7 +53,10 @@ const Work = ({ data }) => {
               <h2 className="text-primaryColorTwo mb-12">
                 {t('work.headline-two')}
               </h2>
-              <section className="mb-10">
+              <section
+                className="mb-10"
+                id="web-development"
+              >
                 <h3>🛠 {t('work.subline-one')}</h3>
                 <p>{t('work.text-one')}</p>
                 <ul className="list-disc ml-8 mb-4 flex flex-col gap-2">
@@ -79,7 +82,7 @@ const Work = ({ data }) => {
                 <p>{t('work.text-two')}</p>
               </section>
               <section className="mb-10">
-                <h3>{t('work.tech-stack')}</h3>
+                <h4>{t('work.tech-stack')}</h4>
                 <p>
                   {t('work.tech-stack-text-one')}
                   <a
@@ -160,6 +163,23 @@ const Work = ({ data }) => {
                   </li>
                 </ul>
               </section>
+              <section
+                className="mb-10"
+                id="seo"
+              >
+                <h3>🔎 SEO</h3>
+                <p>
+                  <Trans i18nKey={'work.seo-one'} />
+                </p>
+                <h4>On-Site Check</h4>
+                <p>
+                  <Trans i18nKey={'work.seo-two'} />
+                </p>
+                <h4>Content Check</h4>
+                <p>
+                  <Trans i18nKey={'work.seo-three'} />
+                </p>
+              </section>
               <section className="mb-10">
                 <h3>🎨 {t('work.subline-two')}</h3>
                 <p>
@@ -177,7 +197,7 @@ const Work = ({ data }) => {
                 <p>
                   <Trans i18nKey={'work.technical-writing-two'} />
                 </p>
-                <CallToAction href="mailto:marco@marcoheine.com">
+                <CallToAction href="mailto:hello@marcoheine.com">
                   {t('work.technical-writing-cta')}
                 </CallToAction>
               </section>

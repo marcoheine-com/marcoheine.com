@@ -40,6 +40,9 @@
     "tech-stack": "Technologien",
     "tech-stack-text-one": "Aktuell arbeite ich am liebsten mit dem sogenannten ",
     "tech-stack-text-two": "Dabei bin ich Experte in den folgenden Technologien, Frameworks und Platformen:",
+    "seo-one": "Ich helfe gerne dabei, Websites so zu optimieren, dass sie von anderen besser in Suchmaschinen gefunden werden. Dabei ist der erste Schritt eine umfassende Analyse der bestehenden Website.",
+    "seo-two": "Bei einem On-Site Check zeigen sich schnell verschiedene Aspekte, die verbessert werden können. Viele davon sind technischer Natur, aber auch aus User Perspektive gibt es oft Baustellen, wie z.B. eine schlechte user-experience oder Einschränken der Barrierefreiheit.",
+    "seo-three": "In einem weiteren Schritt schaue ich mir dann die Inhalte der Website an, analysiere die Zielgruppe, suche nach den besten Keywords und helfe dabei die Inhalte so zu verbessern, dass andere das finden was sie suchen und die Website so auch in Suchmaschinen besser geranked wird.",
     "subline-two": "Web Design",
     "web-design-one": "Mit einem guten Auge für <strong>UX Design</strong> bin ich in der Lage, klickbare Prototypen oder ein komplettes Design einer neuen Website zu erstellen.",
     "web-design-two": "Dies kann entweder auf der Basis eines bestehenden CI/CDs geschehen oder wir starten von Null, mit der Auswahl von Farben, Schriftarten und Design Elementen die die jeweilige Marke oder Unternehmen perfekt beschreiben.",
@@ -66,7 +69,15 @@
     "text-seven": " goodreads Profil",
     "text-eight": "Videospiele begeistern mich genauso sehr. Dabei bin ich die meiste Zeit auf der Nintendo Switch unterwegs.",
     "text-nine": "Schreiben ist ein weiteres Hobby von mir. Angefangen bei blog posts, über Kurzgeschichten bis zu Gedichten oder einfachen Notizen des Alltags. Ich bin nicht wirklich gut darin, aber es macht mir großen Spaß. Auf meinem blog gibt es die neuesten Ergebnisse davon:",
-    "subline-two": "Ausbildung"
+    "subline-two": "Ausbildung",
+    "subline-three": "Meine Werte und Prinzipien",
+    "value-one": "Ehrlichkeit - ist für mich die Basis jeder guten Beziehung.",
+    "value-two": "Humor - ich lache gerne und viel. Es ist ein großer Teil von mir und meiner Arbeit.",
+    "value-three": "Lernen - neue Dinge zu lernen ist eines der wertvollsten Dinge für mich im Leben und etwas das mich immerzu motiviert.",
+    "value-four": "Nachhaltigkeit - ich versuche ein nachhaltiges Leben zu leben und das auch auf meine Arbeit zu übertragen. Im bevorzuge es immer nachhaltige Lösungen zu entwicklen, anstelle von schnellen und unsauberen Lösungen.",
+    "value-five": "Empathie - ich bin ein sehr empathischer Mensch und bin gut darin andere Menschen zu verstehen. Das versuche ich stets in meine Arbeit miteinzubringen.",
+    "value-six": "Geduld - in einer Welt in der sich immer alles schneller dreht, Deadlines Deadlines haben, tut es gut, oft einen Schritt zurückzutreten, sich Zeit zu nehmen und Geduld zu haben.",
+    "value-seven": "Selbstbestimmung - ich weiß am Besten, was ich brauche, um meine beste Arbeit zu erledigen. Viel Freiheit und Flexibilität sind ein großer Teil davon."
   },
 
   "contact": {

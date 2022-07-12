@@ -40,6 +40,9 @@
     "tech-stack": "Tech Stack",
     "tech-stack-text-one": "Currently I’m the most comfortable when working with the so called ",
     "tech-stack-text-two": "I’m an expert in the following technologies, frameworks and platforms:",
+    "seo-one": "I can help you optimize your website to make it easier for people to find you in search engines. The first step to achieve this, is an extensive analysis of your website.",
+    "seo-two": "This often shows several aspects that can be improved. Mostly from a technical perspective, but also from a user perspective, like bad UX and accessibility issues.",
+    "seo-three": "Another step is the analysis and optimization of your content. I am experienced in researching your target group, finding the best keywords and improving your content in a way your users will benefit and therefore your content gets better ranked in search engines.",
     "subline-two": "Web Design",
     "web-design-one": "With a keen eye for <strong>UX Design</strong> I am able to create clickable prototypes or a full design for your website.",
     "web-design-two": "  Either based on your existing Corporate Design and Identity or starting from scratch by choosing fonts, colors and design elements matching your business and brand.",
@@ -66,7 +69,15 @@
     "text-seven": " goodreads profile",
     "text-eight": "Playing videogames is something I like to do aswell, most of the time it's on my Nintendo Switch.",
     "text-nine": " I also love to write. From blog posts, to short stories, sometimes even poems, or just simple notes. I'm not really good at it but I enjoy it a lot. Head over to my blog to see the latest posts:",
-    "subline-two": "Former Education"
+    "subline-two": "Former Education",
+    "subline-three": "My values and principles",
+    "value-one": "Honesty - I think it's the basis of every good relationshop.",
+    "value-two": "Humor - I joke a lot and like to have fun, this is part of who I am and also how I work.",
+    "value-three": "Learn - learning new things is some of the most precious things in life to me and what motivates me to keep going.",
+    "value-four": "Sustainability - I try to live a sustainable life and I also try to apply this to my work. Developing solutions with sustainability in mind is always my prefered way, compared to quick and dirty solutions.",
+    "value-five": "Empathy - I'm a very empathic person. I'm good at understanding other people and I bring that into my work.",
+    "value-six": "Patience - In a world where everything runs faster everyday, where deadlines have deadlines, it's good to take a step back, give it some more time and show patience.",
+    "value-seven": "Self-determination - I know what I need to do my best work. Part of that is a lot of freedom and flexibility."
   },
 
   "contact": {
