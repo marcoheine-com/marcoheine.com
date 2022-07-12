@@ -16,7 +16,8 @@ const projects = [
     description: 'Website Relaunch, technische Umsetzung, CMS Integration',
     tools:
       'React, Typescript, Next.js, TailwindCSS, Vercel, Algolia, Prismic, FormSpree',
-    url: 'dieda.de',
+    linkLabel: 'dieda.de',
+    link: 'https://www.dieda.de',
     image: DiedaWebsite,
     imageAlt: 'screenshot of dieda website',
   },
@@ -24,7 +25,8 @@ const projects = [
     title: 'Andersontour',
     description: 'Technische Umsetzung und Integration in CMS',
     tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
-    url: 'andersontour.de',
+    linkLabel: 'andersontour.de',
+    link: 'https://www.andersontour.de',
     image: AndersontourWebsite,
     imageAlt: 'screenshot of andersontour website',
   },
@@ -32,7 +34,8 @@ const projects = [
     title: 'Aerosol Alliance',
     description: 'Technische Umsetzung',
     tools: 'React, Typescript, Next.js, TailwindCSS, Firebase, Vercel, Prismic',
-    url: 'aerosolalliance.com',
+    linkLabel: 'aerosolalliance.com',
+    link: 'https://aerosolalliance.com',
     image: AerosolallianceWebsite,
     imageAlt: 'screenshot of aerosol alliance website',
   },
@@ -40,7 +43,8 @@ const projects = [
     title: 'finding the little things illustrations',
     description: 'Technische Umsetzung',
     tools: 'React, Typescript, Gatsby, TailwindCSS, Netlify, Prismic',
-    url: 'lauraheine.com',
+    linkLabel: 'lauraheine.com',
+    link: 'https://lauraheine.com',
     image: LauraheineWebsite,
     imageAlt: 'screenshot of findingthelittlethings illustrations website',
   },
@@ -61,7 +65,7 @@ export const WebProjects: React.FC = () => {
             {projects.map((project) => (
               <React.Fragment key={project.title}>
                 <a
-                  href={`https://${project.url}`}
+                  href={project.link}
                   target="_blank"
                   rel="
             noopener noreferrer"
@@ -79,12 +83,12 @@ export const WebProjects: React.FC = () => {
                   <span className="flex gap-2">
                     Link:
                     <a
-                      href={`https://${project.url}`}
+                      href={project.link}
                       target="_blank"
                       rel="
               noopener noreferrer"
                     >
-                      {project.url} &#8599;
+                      {project.linkLabel} &#8599;
                     </a>
                   </span>
                 </article>

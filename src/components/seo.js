@@ -45,6 +45,10 @@ function SEO({
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: `${site.siteMetadata.siteUrl}${url}`,
+        },
+        {
           property: `og:title`,
           content: title,
         },

@@ -6,9 +6,8 @@ tags: ['Git']
 number: 21
 ---
 
-Stefan Judis showed
-[in this tweet](https://www.notion.so/TIL-343c02e617b140f695757ac1cba75d2e#23d3991930124966aa8b8440f827d1bb)
-how to write multiline git commit messages.
+Stefan Judis showed in a recent tweet how to write multiline git commit
+messages.
 
 Instead of writing one very looong commit message:
 

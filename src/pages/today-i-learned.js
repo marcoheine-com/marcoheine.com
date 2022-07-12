@@ -115,7 +115,7 @@ const TIL = ({ data, location }) => {
                   <ui.Aside>
                     TIL #{frontmatter.number || edges?.length - index}
                   </ui.Aside>
-                  <h3>{frontmatter.title}</h3>
+                  <h2>{frontmatter.title}</h2>
 
                   {frontmatter.tags && (
                     <ui.tags>

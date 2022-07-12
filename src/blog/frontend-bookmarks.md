@@ -186,7 +186,7 @@ articles are published.
 Compared to other blogs its articles are not short posts or tutorials - they
 usually dig a lot **deeper** and explain further contexts. Next to their well
 researched articles Smashing Mag also publishes the
-[Smashing Book](https://shop.smashingmagazine.com/products/smashing-book-5-real-life-responsive-web-design).
+[Smashing Book](https://www.smashingmagazine.com/printed-books/smashing-book-5/).
 
 The latest published book, Smashing Book 5, is about "Real-Life Responsive Web
 Design" and I highly recommend it. It covers various topics concerning

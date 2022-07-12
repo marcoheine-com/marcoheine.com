@@ -1,9 +1,12 @@
 ---
 title: Missusing useEffect
 date: 2022-06-07
-path: /missuing-use-effect
+path: /missusing-use-effect
 tags: ['React']
 number: 39
+description:
+  Today I learned that Reacts useEffect is not meant for data fetching and is
+  not a state setter either!
 ---
 
 Today I learned that Reacts `useEffect` is not meant for data fetching and is
