@@ -4,6 +4,9 @@ title:
   performance - part 1
 date: 2020-11-10
 path: /7-easy-ways-to-improve-your-react-performance-part-1
+description:
+  In part 1 of this series, we'll look some easy way to improve your React
+  performance.
 ---
 
 import { Link } from 'gatsby-plugin-react-i18next'
@@ -40,7 +43,7 @@ easy ways to improve your React performance - part 2</Link>
 
 <br />
 
-## <a name='keys'></a> Always use a key when mapping (and not an index)
+### <a name='keys'></a> Always use a key when mapping (and not an index)
 
 When mapping over an array and rendering a list of items, make sure you **always
 use keys** for every item.
@@ -100,7 +103,7 @@ So that's it for quickwin number one: **always use a key when mapping!**
 
 <br />
 
-## <a name='fragments'></a> Use React.Fragments instead of divs as JSX parent element
+### <a name='fragments'></a> Use React.Fragments instead of divs as JSX parent element
 
 Next up: quickwin number two.
 
@@ -181,7 +184,7 @@ You can read more about why you should avoid too many DOM nodes in this article:
 
 <CoffeeHint />
 
-## <a name='useState'></a> One useState hook instead of multiple for connected data
+### <a name='useState'></a> One useState hook instead of multiple for connected data
 
 Another performance quickwin you can achieve easy, is using one `useState` hook
 instead of multiple ones for connected data.

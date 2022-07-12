@@ -47,17 +47,29 @@ const Blog = ({ data, location }) => {
               key={post.node.id}
               to={`/${post.node.fields.slug}`}
             >
-              <ui.BlogArticle>
-                <h4 className="flex flex-col md:flex-row md:gap-8">
-                  <ui.Time
-                    className="md:min-w-[160px]"
-                    dateTime={post.node.frontmatter.date}
-                  >
-                    {post.node.frontmatter.date}
-                  </ui.Time>
-                  {post.node.frontmatter.title}
-                </h4>
-              </ui.BlogArticle>
+              <article className="flex flex-col md:flex-row md:gap-8">
+                <time
+                  className="mb-2 md:mb-0 sm:min-w-[160px] text-base text-grey inline-block"
+                  dateTime={post.node.frontmatter.date}
+                >
+                  {post.node.frontmatter.date}
+                </time>
+                <span className="flex flex-col sm:flex-row gap-4 sm:items-center">
+                  {post.node.frontmatter.featuredImage ? (
+                    <GatsbyImage
+                      className="max-w-[100px] rounded-lg md:w-full"
+                      alt={post.node.frontmatter.featuredImageAlt}
+                      image={
+                        post.node.frontmatter.featuredImage.childImageSharp
+                          .gatsbyImageData
+                      }
+                    />
+                  ) : null}
+                  <h4 className="text-primaryColorOne">
+                    {post.node.frontmatter.title}
+                  </h4>
+                </span>
+              </article>
             </Link>
           ))}
         </ui.YearlySection>
