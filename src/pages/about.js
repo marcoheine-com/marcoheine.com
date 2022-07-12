@@ -56,6 +56,19 @@ const About = ({ data, location }) => {
             <p>{t('about.text-four')}</p>
           </aboutUI.Container>
 
+          <section className="max-w-2xl mx-auto mb-20">
+            <h2>{t('about.subline-three')}</h2>
+            <ul>
+              <li>{t('about.value-one')}</li>
+              <li>{t('about.value-two')}</li>
+              <li>{t('about.value-three')}</li>
+              <li>{t('about.value-four')}</li>
+              <li>{t('about.value-five')}</li>
+              <li>{t('about.value-six')}</li>
+              <li>{t('about.value-seven')}</li>
+            </ul>
+          </section>
+
           <aboutUI.Container>
             <h2>{t('about.subline-one')}</h2>
             <p>{t('about.text-five')}</p>
