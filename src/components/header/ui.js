@@ -21,11 +21,12 @@ export const Header = styled.div`
   }
 `
 
-export const Headline = styled.h1`
+export const Headline = styled.span`
   display: inline-block;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: 'Merriweather', sans-serif;
   @media (min-width: 560px) {
     font-size: 28px;
   }

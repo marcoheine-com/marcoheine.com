@@ -34,7 +34,7 @@ const Template = ({ data, location }) => {
           ogImageAlt={featuredImageAlt}
           location={location}
         />
-        <ui.PageHeader>Blog</ui.PageHeader>
+        <h1 className="text-center mb-0">Blog</h1>
         <ui.PageContent>
           <ui.GoBackSpan>
             <Link to="/blog/">Go back to other Blog Posts</Link>
