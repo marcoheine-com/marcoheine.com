@@ -1,9 +1,21 @@
 ---
-title:
-  Getting started with golang - a beginners introduction to programming in go
+title: Getting started with golang
 date: 2021-02-22
-path: /getting-started-with-golang-a-beginners-introduction-to-programming-in-go
+path: /getting-started-with-golang
+description:
+featuredImage: ../images/will-o-GtYFwFrFbMA-unsplash.webp
+featuredImageAlt: 'a hot air ballon getting ready to fly'
 ---
+
+<a
+  href="https://unsplash.com/@blnk_kanvas"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Picture by Will O
+</a>
+
+![a hot air ballon getting ready to fly](../images/will-o-GtYFwFrFbMA-unsplash.webp)
 
 ### How I got to know go
 
@@ -34,7 +46,7 @@ And maybe you can learn something from it too!
 
 <br />
 
-## So...go. What is it?
+### So...go. What is it?
 
 > Go is an open source programming language that makes it easy to build simple,
 > reliable, and efficient software.
@@ -56,7 +68,7 @@ If I'm wrong about something or made mistakes, please let me know!
 
 <br />
 
-## What you can learn from this blog post:
+### What you can learn from this blog post:
 
 ---
 
@@ -82,7 +94,7 @@ If I'm wrong about something or made mistakes, please let me know!
 
 <br />
 
-## <a name='packages'></a>packages, import, export
+### <a name='packages'></a>packages, import, export
 
 Every go program is made up of packages. You always have to have a **main
 package**, where your app starts. You can **import** your own packages or one of
@@ -113,7 +125,7 @@ func PrintStr () {
 
 <br />
 
-## <a name='variables'></a> Variables
+### <a name='variables'></a> Variables
 
 There are several ways to declare variables in go. The classic `var` lets you
 declare one or more variables at once. The `const` lets you declare constant
@@ -130,7 +142,7 @@ a := 10
 
 <br />
 
-## <a name='functions'></a> Functions
+### <a name='functions'></a> Functions
 
 A function in go can take **zero or more arguments**. The type of the input
 parameter comes after the variable name. When the parameters have the same type
@@ -151,7 +163,7 @@ multiply(3, 6)
 
 <br />
 
-## <a name='data-types'></a> Data types
+### <a name='data-types'></a> Data types
 
 Surprise, surprise go has values like boolean, strings and integer. Here's a
 list of all of them.
@@ -182,7 +194,7 @@ Variables declared without an initial value are given their zero value:
 
 <br />
 
-## <a name='for'></a> for
+### <a name='for'></a> for
 
 Coming from TypeScript, there is no such thing as the array methods map, reduce
 or filter in go. The for loop is all you have.
@@ -206,7 +218,7 @@ for i := 0; i < a; i++ {
 
 <br />
 
-## <a name='if-else'></a> if, else
+### <a name='if-else'></a> if, else
 
 If, else is pretty straight forward in go. No parenthesis are needing
 surrounding the condition.
@@ -221,7 +233,7 @@ if a > 9 {
 
 <br />
 
-## <a name='switch'></a> switch
+### <a name='switch'></a> switch
 
 A switch in go only runs the selected case, not all cases that follow. The
 default case is **optional**.
@@ -241,7 +253,7 @@ switch time.Now().Weekday() {
 
 <br />
 
-## <a name='struct'></a> struct
+### <a name='struct'></a> struct
 
 A struct is a typed collection of fields. Structs are **mutable**.
 
@@ -261,7 +273,7 @@ person{name: "Marco", age: 29}
 
 <br />
 
-## <a name='arrays'></a> arrays
+### <a name='arrays'></a> arrays
 
 Arrays are numbered sequences of elements of a specific length.
 
@@ -282,7 +294,7 @@ len(names) // 2
 
 <br />
 
-## <a name='slices'></a> slices
+### <a name='slices'></a> slices
 
 Unlike arrays, slices have no specified length, so they are dynamically sized.
 They are build on arrays but are more powerful and therefore more used than
@@ -352,7 +364,7 @@ copy(c, s)
 
 <br />
 
-## <a name='map'></a> map
+### <a name='map'></a> map
 
 A map is combination of key value pairs. In other languages it's often called
 dictionary.
@@ -370,7 +382,7 @@ delete(m, "age")
 
 <br />
 
-## <a name='range'></a> range
+### <a name='range'></a> range
 
 To iterate over a map or a slice you can use **range**.
 
@@ -388,7 +400,7 @@ for i, num := range numbers {
 
 <br />
 
-## <a name='method'></a> method
+### <a name='method'></a> method
 
 A method is a function with a special **receiver argument**.
 
@@ -411,7 +423,7 @@ struct.
 
 <br />
 
-## <a name='pointers'></a> pointers
+### <a name='pointers'></a> pointers
 
 Pointers hold the **memory address** of a value.
 
@@ -427,7 +439,7 @@ fmt.Prinln(*p)
 
 <br />
 
-## <a name='pointer-receivers'></a> pointer receivers
+### <a name='pointer-receivers'></a> pointer receivers
 
 Methods can be declared with pointer receivers.
 
@@ -455,7 +467,7 @@ good to have heard of them as a beginner.
 
 <br />
 
-## <a name='interfaces'></a> interfaces
+### <a name='interfaces'></a> interfaces
 
 Interfaces are **named collections** of method signatures. To implement an
 interface you just need to implement all methods in the interface.
@@ -473,7 +485,7 @@ func methodTwo() int {}
 
 <br />
 
-## <a name='errors'></a> errors
+### <a name='errors'></a> errors
 
 A **nil** value in the error position indicates that there was no error.
 
@@ -495,7 +507,7 @@ other great examples? Let me know!
 You can send me an [email](mailto:marco@marcoheine.com) or message me on
 [Twitter](https://twitter.com/marcoheine_com).
 
-## Resources:
+### Resources:
 
 - [https://gobyexample.com/](https://gobyexample.com/)
 - [https://blog.golang.org/slices-intro](https://blog.golang.org/slices-intro)
