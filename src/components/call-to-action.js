@@ -6,11 +6,17 @@ const CLASS_NAMES =
 
 export const CallToAction = ({ children, isInternalLink = false, href }) => {
   return isInternalLink ? (
-    <Link to={href} className={CLASS_NAMES}>
+    <Link
+      to={href}
+      className={CLASS_NAMES}
+    >
       {children}
     </Link>
   ) : (
-    <a className={CLASS_NAMES} href={href}>
+    <a
+      className={CLASS_NAMES}
+      href={href}
+    >
       {children}
     </a>
   )

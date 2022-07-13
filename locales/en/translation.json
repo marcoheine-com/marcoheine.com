@@ -9,7 +9,9 @@
     "work": "Work with me",
     "cooperation": "In cooperation with:",
     "blog-posts": "Latest blog posts",
-    "til-posts": "Latest TIL posts"
+    "til-posts": "Latest TIL posts",
+    "all-blog-posts": "All blog posts",
+    "all-projects": "All projects"
   },
 
   "footer": {
@@ -51,7 +53,8 @@
     "technical-writing-one": "I love to <strong>write</strong>. From documenation, to blog posts to newsletters. Do you need to update the technical documenation of your product? Are you looking for a blog post, exploring your new technology?",
     "technical-writing-two": " I am someone who learns better by reading so I know exactly how to <strong>structure</strong> the information and write about your tool to teach your users the most.",
     "technical-writing-cta": "Learn more",
-    "headline-three": "What others are saying about me"
+    "headline-three": "What others are saying about me",
+    "call-to-action-2": "Like what you see?"
   },
 
   "blog": {

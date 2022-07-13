@@ -104,9 +104,9 @@ const IndexPage = ({ data, location }) => {
               </>
               <Link
                 to="/blog/"
-                className="ml-auto"
+                className="mx-auto"
               >
-                → All blog posts
+                → {t('home.all-blog-posts')}
               </Link>
             </section>
 

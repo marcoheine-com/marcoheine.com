@@ -9,7 +9,9 @@
     "work": "Mehr erfahren",
     "cooperation": "In Kooperation mit:",
     "blog-posts": "Neueste Blog Posts",
-    "til-posts": "Neueste Today-I-learned Posts"
+    "til-posts": "Neueste Today-I-learned Posts",
+    "all-blog-posts": "Alle Blog Posts",
+    "all-projects": "Alle Projekte"
   },
 
   "footer": {
@@ -51,7 +53,8 @@
     "technical-writing-one": "Mir macht das <strong>Schreiben</strong> sehr großen Spaß. Angefangen bei Dokumentationen, über Blog Posts bis zu Newslettern. Ich kann bei der technischen Dokumenation von Produkten unterstützen oder auch Blog Posts verfassen, die neue Technologien oder Software erklären.",
     "technical-writing-two": "Ich bin jemand, der durch das Lesen mehr lernt als bspw. durch Videoformate. Daher weiß ich genau, wie man Informationen <strong>strukturiert</strong>, so dass sie für Leser:innen am besten aufzunehmen sind.",
     "technical-writing-cta": "Mehr erfahren",
-    "headline-three": "Was andere über mich sagen"
+    "headline-three": "Was andere über mich sagen",
+    "call-to-action-2": "Interesse geweckt?"
   },
 
   "blog": {

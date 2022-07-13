@@ -6,6 +6,7 @@ import { CallToAction } from '../components/call-to-action'
 import Layout from '../components/layout'
 import PageHeader from '../components/pageheader'
 import SEO from '../components/seo'
+import { WebProjects } from '../components/web-projects'
 import theme from '../styles/theme'
 
 const Work = ({ data }) => {
@@ -23,9 +24,9 @@ const Work = ({ data }) => {
           ogImageAlt="a picture of me"
           description={t('meta.work-description')}
         />
-        <section className="flex flex-col items-center">
+        <section className="flex flex-col items-center w-full">
           <PageHeader title="Work with me" />
-          <section className="flex flex-col items-center gap-24">
+          <section className="flex flex-col items-center gap-24 w-full">
             <article className="max-w-2xl">
               <h2 className="text-primaryColorTwo mb-12">
                 {t('work.headline-one')}
@@ -202,6 +203,8 @@ const Work = ({ data }) => {
                 </CallToAction>
               </section>
             </article>
+
+            <WebProjects showAll />
           </section>
         </section>
       </Layout>
