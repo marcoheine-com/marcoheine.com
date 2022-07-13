@@ -180,7 +180,7 @@ const Footer = () => {
       <p>
         {t('footer.code')}
         <ui.Link
-          href="https://github.com/marcoheine-com/marcokuehbauch.com"
+          href="https://github.com/marcoheine-com/marcoheine.com"
           target="_blank"
           rel="noopener noreferrer"
         >
