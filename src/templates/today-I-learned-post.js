@@ -28,7 +28,11 @@ const TilPost = ({ data, location }) => {
         />
         <ui.PageHeader>Today I learned</ui.PageHeader>
         <ui.PageContent>
-          <h4>{frontmatter.date}</h4>
+          <section className="p-3 bg-slate-50 rounded-lg text-base mb-4">
+            <time dateTime={frontmatter.date}>
+              🗓 Published on: {frontmatter.date}
+            </time>
+          </section>
           <h2>{frontmatter.title}</h2>
           <MDXRenderer>{body}</MDXRenderer>
           <p>
