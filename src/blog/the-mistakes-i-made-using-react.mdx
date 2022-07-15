@@ -27,26 +27,27 @@ Today-I-learned posts
 The React team published a brand new documention on using React, which is
 fantastic. It’s still in beta but I could already refresh a lot of my knowledge.
 The best part of the documentation is the following section:
-[you might not need an effect](<[https://beta.reactjs.org/learn/you-might-not-need-an-effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)>).
+[you might not need an effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect).
 
 It’s a whole page on when to not use useEffect and how to use useEffect. It has
 so many great real-world examples. I noticed immediately that I use a lot of
 patterns which were not the best way to solve things.
 
 This summed up which made me realize I need to
-[adjust my best practices for react](<[https://twitter.com/Mkuehb/status/1542426932448567296](https://twitter.com/Mkuehb/status/1542426932448567296)>).
+[adjust my best practices for react](https://twitter.com/Mkuehb/status/1542426932448567296).
 In this blog post I’m gonna share everything I thought I did right when using
-React. But noticed now, it can solve them in a better way, according to the new
+React. But noticed now, I can solve them in a better way, according to the new
 react docs.
 
 ---
 
-**What you will learn**
+**Table of Contents:**
 
 - [Updating state based on props or state](#updating-state-based-on-props-or-state)
 - [Don’t use useEffect for expensive caching](#dont-use-useeffect-for-expensive-caching)
 - [Use a cleanup function when doing a fetch in useEffect](#use-a-cleanup-function)
 - [Avoid passing data to the parent](#avoid-passing-data-to-the-parent)
+- [Conclusion](#conclusion)
 
 ---
 
@@ -113,7 +114,7 @@ const MyProfile = ({ name, lastname, hobbies }) => {
 
 This is, again, unecessary and inefficient. We shouldn’t use useEffect to cache
 something like that. We don’t need to! We can remove the state, the whole
-useEffect and once more calucalte this value during render!
+useEffect and once more calculate this value during render!
 
 Do ✅:
 
@@ -264,7 +265,7 @@ arguments for the child data fetching, it’s always better to lift it up.
 
 <br />
 
-### Conclusion
+### <a name="conclusion"></a>Conclusion
 
 There are a lot of key take aways from this article. The main thing, that got
 stuck in my head is, to think twice whenever I write useEffect in the future. In
@@ -278,10 +279,12 @@ most cases I don’t need to! The other key take aways are:
   this state, lift it up
 - if you want to fetch data in an useEffect, add a cleanup function
 
-The new react docs have a lot more example of situations where you might not
-need an effect, with better examples and even some challenges for you. It’s
-awesome that they took the time to write something so detailed and helpful. I’m
-glad I could rethink some patterns which I thought were the best practices.
+The new react docs talk about a lot more situations where you might not need an
+effect, with better examples and even some challenges for you. It’s awesome that
+they took the time to write something so detailed and helpful. I’m glad I could
+rethink some patterns which I thought were the best practices.
 
-Grab a cup of coffee (or your favorit beverage) and take your time to read
-through it. It’s so worth it and I learned a lot.
+Grab a cup of coffee (or your favorite beverage) and take your time to read
+through it:
+[you might not need an effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect).
+It’s so worth it and I learned a lot.
