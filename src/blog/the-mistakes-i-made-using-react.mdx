@@ -1,0 +1,287 @@
+---
+title: The mistakes I made using React
+date: 2022-07-14
+path: /the-mistakes-i-made-using-react
+featuredImage: ../images/tai-bui-iPsOfXA79U4-unsplash.webp
+featuredImageAlt: 'a cat sitting on a laptop keyboard'
+description:
+  'In this blog post I’m gonna share all the mistakes I made, using React.'
+---
+
+<a
+  href="https://unsplash.com/@agforl24"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Picture by Tai Bui
+</a>
+
+![a cat sitting on a laptop keyboard](../images/tai-bui-iPsOfXA79U4-unsplash.webp)
+
+In this blog post I’m gonna share all the mistakes I made, using React. Lately
+there is a lot of dicussions going on around using Reacts useEffect. See my
+Today-I-learned posts
+[missusing useEffect](/today-i-learned/missusing-use-effect/) and
+[data fetching in React 18](/today-i-learned/data-fetching-in-react-18/).
+
+The React team published a brand new documention on using React, which is
+fantastic. It’s still in beta but I could already refresh a lot of my knowledge.
+The best part of the documentation is the following section:
+[you might not need an effect](<[https://beta.reactjs.org/learn/you-might-not-need-an-effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)>).
+
+It’s a whole page on when to not use useEffect and how to use useEffect. It has
+so many great real-world examples. I noticed immediately that I use a lot of
+patterns which were not the best way to solve things.
+
+This summed up which made me realize I need to
+[adjust my best practices for react](<[https://twitter.com/Mkuehb/status/1542426932448567296](https://twitter.com/Mkuehb/status/1542426932448567296)>).
+In this blog post I’m gonna share everything I thought I did right when using
+React. But noticed now, it can solve them in a better way, according to the new
+react docs.
+
+---
+
+**What you will learn**
+
+- [Updating state based on props or state](#updating-state-based-on-props-or-state)
+- [Don’t use useEffect for expensive caching](#dont-use-useeffect-for-expensive-caching)
+- [Use a cleanup function when doing a fetch in useEffect](#use-a-cleanup-function)
+- [Avoid passing data to the parent](#avoid-passing-data-to-the-parent)
+
+---
+
+<br />
+
+### <a name="updating-state-based-on-props-or-state"></a>Updating state based on props or state
+
+A common pattern I often used, was updating state when specific props changed. I
+almost always used an effect for this. Listen when this props change, fire the
+effect, update it. Guess what: You don’t need an effect for that! It’s
+unnecessary! And, as I learned now: inefficient! To quote the react docs:
+
+- **when something can be calculated from the existing props or state, don’t put
+  it in state. Instead calculate it during rendering.**
+
+Don’t ❌:
+
+```jsx
+// ...
+
+const [street, setStreet] = React.useState('main street')
+const [zipcode, setZipcode] = React.useState('70180')
+
+const [fullAdress, setFulladress] = React.usestate('')
+
+React.useEffect(() => {
+  setFulladress(`${street} ${zipcode}`)
+}, [street, zipcode])
+
+// ...
+```
+
+Do ✅:
+
+```jsx
+// ...
+
+const [street, setStreet] = React.useState('main street')
+const [zipcode, setZipcode] = React.useState('70180')
+
+const fullAdress = `${street} ${zipcode}`
+
+// ...
+```
+
+<br />
+
+### <a name="dont-use-useeffect-for-expensive-caching"></a>Don’t use useEffect for expensive caching
+
+In this example we get three values as props, and based on them run an effect.
+Inside this effect we run a function to sort our data and set it into state.
+
+Don’t ❌:
+
+```jsx
+const MyProfile = ({ name, lastname, hobbies }) => {
+	const [contactDetails, setContactDetails = useState(null)
+
+	useEffect(() => {
+		setContactDetails(getContactSortedByHobbiesAndName(name, lastname, hobbies)
+	}, [name, lastname, hobbies]
+}
+```
+
+This is, again, unecessary and inefficient. We shouldn’t use useEffect to cache
+something like that. We don’t need to! We can remove the state, the whole
+useEffect and once more calucalte this value during render!
+
+Do ✅:
+
+```jsx
+const MyProfile = ({ name, lastname, hobbies }) => {
+  const contactDetails = getContactSortedByHobbiesAndName(
+    name,
+    lastname,
+    hobbies
+  )
+}
+```
+
+As you may have already noticed, this is almost the same pattern as in the first
+example. But the React docs add another improvement to it. Imagine our function
+here is doing some expensive filtering by comparing thousands of rows. With a
+small adjustion we can add free caching to that, without using useEffect!
+
+Even better ✅✅:
+
+```jsx
+const MyProfile = ({ name, lastname, hobbies }) => {
+  const contactDetails = useMemo(() => {
+    return getContactSortedByHobbiesAndName(name, lastname, hobbies)
+  }, [name, lastname, hobbies])
+}
+```
+
+By adding useMemo we can cache this expensive filter or sort operation. It tells
+React that it does not need to re-run the inner function unless name, lastname
+or hobbies changes.
+
+<br />
+
+### <a name="use-a-cleanup-function"></a>Use a cleanup function when doing a fetch in useEffect
+
+I already talked a bit about how I used useEffect wrong in a today-i-learned
+post. The key takeaways from this were, that data fetching in react works, but
+you need a cleanup function. Otherwise you will face race conditions.
+
+A classic data fetching in useEffect example, which I’ve done a lot, could look
+like this:
+
+Don’t ❌:
+
+```jsx
+const Searchbar = ({ searchTerm }) => {
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    const response = fetchFromSearchAPI(searchTerm)
+    const data = response.json()
+    setData(data)
+  }, [searchTerm])
+}
+```
+
+There is one big problem here. If a user triggers this search a few times and
+kicks off separate fetches, there is nothing implemented to handle stale
+responses. This might result in “wrong” results, which is a race condition. As
+the react docs put it: two different requests “raced” against each other and
+came in a different order than you expected.
+
+The best way to fix this, is to add a cleanup function:
+
+Do ✅:
+
+```jsx
+const Searchbar = ({ searchTerm }) => {
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    let reset = false
+    const response = fetchFromSearchAPI(searchTerm)
+    const data = response.json()
+
+    if (!reset) {
+      setData(data)
+    }
+
+    return () => {
+      ignore = true
+    }
+  }, [searchTerm])
+}
+```
+
+This ensures, React will only take the last response from the API and your
+component will avoid race conditions.
+
+<br />
+
+### <a name="avoid-passing-data-to-the-parent"></a>Avoid passing data to the parent
+
+Another pattern I used almost every time when working in a React project is,
+passing data from the child to the parent. Imagine you have a child component,
+which fetches some data. You pass a callback function to it as props to get the
+data to the parent.
+
+Don’t ❌:
+
+```jsx
+const Header = () => {
+	const [data, setData] = useState(null)
+
+	return (
+		<SearchBar
+			onChange={setData}
+		/>
+	)
+}
+
+const Searchbar = ({ onChange }) => {
+
+	const data = fetchSearchResults()
+
+	useEffect(() => {
+		if (data) {
+			onChange(data)
+		}
+
+	}, [onChange, data]
+}
+
+```
+
+This pattern seems weird at first. But it helped me for several specific use
+case a lot, where it made sense to me to fetch the data in the child component.
+But the obvious improvement here is to lift state up.
+
+Do ✅:
+
+```jsx
+const Header = () => {
+  const data = fetchSearchResults()
+
+  return <Searchbar data={data} />
+}
+
+const Searchbar = ({ data }) => {
+  // ...
+}
+```
+
+Fetch the data in the parent pass it down, as in React, data flows best from top
+to bottom. Makes error tracing a lot easier. Even though there were some
+arguments for the child data fetching, it’s always better to lift it up.
+
+<br />
+
+### Conclusion
+
+There are a lot of key take aways from this article. The main thing, that got
+stuck in my head is, to think twice whenever I write useEffect in the future. In
+most cases I don’t need to! The other key take aways are:
+
+- if it’s possible, calculate something during render and not in an effect
+- you don’t need effects to transform data for rendering
+- if your code should run because it should be displayed to the user, use an
+  effect
+- if you fetch data deep down in your component tree, but the parent also needs
+  this state, lift it up
+- if you want to fetch data in an useEffect, add a cleanup function
+
+The new react docs have a lot more example of situations where you might not
+need an effect, with better examples and even some challenges for you. It’s
+awesome that they took the time to write something so detailed and helpful. I’m
+glad I could rethink some patterns which I thought were the best practices.
+
+Grab a cup of coffee (or your favorit beverage) and take your time to read
+through it. It’s so worth it and I learned a lot.
