@@ -33,10 +33,10 @@ It’s a whole page on when to not use useEffect and how to use useEffect. It ha
 so many great real-world examples. I noticed immediately that I use a lot of
 patterns which were not the best way to solve things.
 
-This summed up which made me realize I need to
+This made me realize I need to
 [adjust my best practices for react](https://twitter.com/Mkuehb/status/1542426932448567296).
 In this blog post I’m gonna share everything I thought I did right when using
-React. But noticed now, I can solve them in a better way, according to the new
+React. But noticed now, I can solve it in a better way, according to the new
 react docs.
 
 ---
@@ -60,8 +60,8 @@ almost always used an effect for this. Listen when this props change, fire the
 effect, update it. Guess what: You don’t need an effect for that! It’s
 unnecessary! And, as I learned now: inefficient! To quote the react docs:
 
-- **when something can be calculated from the existing props or state, don’t put
-  it in state. Instead calculate it during rendering.**
+> "When something can be calculated from the existing props or state, don’t put
+> it in state. Instead calculate it during rendering."
 
 Don’t ❌:
 
@@ -112,7 +112,7 @@ const MyProfile = ({ name, lastname, hobbies }) => {
 }
 ```
 
-This is, again, unecessary and inefficient. We shouldn’t use useEffect to cache
+This is, again, unnecessary and inefficient. We shouldn’t use useEffect to cache
 something like that. We don’t need to! We can remove the state, the whole
 useEffect and once more calculate this value during render!
 
@@ -209,7 +209,7 @@ component will avoid race conditions.
 
 ### <a name="avoid-passing-data-to-the-parent"></a>Avoid passing data to the parent
 
-Another pattern I used almost every time when working in a React project is,
+Another pattern I used almost every time when working in a React project is
 passing data from the child to the parent. Imagine you have a child component,
 which fetches some data. You pass a callback function to it as props to get the
 data to the parent.
@@ -259,9 +259,11 @@ const Searchbar = ({ data }) => {
 }
 ```
 
-Fetch the data in the parent pass it down, as in React, data flows best from top
-to bottom. Makes error tracing a lot easier. Even though there were some
-arguments for the child data fetching, it’s always better to lift it up.
+The data gets fetched in the parent component and then passed down to the child
+component. As the React docs put it: React is all about one-way data flow down
+the component hierarchy. [https://reactjs.org/docs/thinking-in-react.html] Makes
+error tracing a lot easier. Even though there were some arguments for the child
+data fetching, it’s always better to lift it up.
 
 <br />
 
