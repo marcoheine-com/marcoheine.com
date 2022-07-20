@@ -74,7 +74,7 @@
     @apply border-l-4 border-l-primaryColorTwo pl-4 mx-4 my-8;
   }
 
-  code {
+  pre > code {
     @apply py-4 !important;
   }
 }
