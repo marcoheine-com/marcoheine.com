@@ -2,13 +2,25 @@
 title: Learning CSS Grid
 date: 2018-03-23
 path: /website-performance-optimization
+description: CSS Grid changed the way how we can build modern website layouts. In this blog post I'm going to recap on everything I've learned about it.
+featuredImage: ../images/css-grid-course-screenshot.webp
+featuredImageAlt: 'a screenshot of the css grid course website by wes bos'
 ---
 
-I really liked the [JavaScript30](https://javascript30.com/) course by
-[Wes Bos](https://twitter.com/wesbos) where you get to code 30 different
+<a
+  href="https://cssgrid.io/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  CSS Grid Course Website by Wes Bos
+</a>
+
+![a screenshot of the css grid course website by wes bos](../images/css-grid-course-screenshot.webp)
+
+I really liked the <a href="https://javascript30.com/" target="blank">JavaScript30 &#8599;</a> course by <a href="https://twitter.com/wesbos" target="_blank">Wes Bos &#8599;</a> where you get to code 30 different
 projects with plain JavaScript. Now he published another course which is also
-available for free. This time it's all about learning
-[CSS Grid](https://cssgrid.io/). In this blogpost I will document everything I
+available for free. 
+This time it's all about learning <a href="https://cssgrid.io/" target="_blank">CSS Grid &#8599;</a>. In this blogpost I will document everything I
 learned about CSS Grid in the course.
 
 **What you can learn from this blog post:**
@@ -43,7 +55,7 @@ learned about CSS Grid in the course.
 ### <a name="setup"></a>General setup and basics of CSS Grid development
 
 In the first few videos Wes talks about the **tooling setup** for the course. He
-uses [browsersync](https://browsersync.io/) for the local development which is
+uses <a href="https://browsersync.io/" target="_blank">browsersync &#8599;</a> for the local development which is
 an npm package, that automatically updates your browsers once you change the
 HTML, CSS, images or other project files.
 
@@ -82,6 +94,8 @@ row or column.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="grid-auto-flow"></a> Grid-auto-flow
 
 If you have two items, define two columns using
@@ -97,6 +111,8 @@ available items into a new column automatically.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/wyNjJK'>CSS Grid - grid-auto-flow</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="sizing-tracks"></a> Sizing tracks
 
@@ -118,6 +134,8 @@ according to the content it contains.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="repeat-function"></a> Repeat function
 
 Instead of writing:
@@ -137,6 +155,8 @@ grid-template-columns: repeat(4, 1fr);
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="sizing-grid-items"></a> Sizing Grid Items
 
 By default grid items just flow one after another and as there is space for each
@@ -151,6 +171,8 @@ for `grid-row: span 2`.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/zWOYge'>CSS Grid - Sizing Grid Items</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="placing-grid-items"></a> Placing Grid Items
 
@@ -179,6 +201,8 @@ items inside a grid container. Have a look into the CSS to check how it is done.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="auto-fit-auto-fill"></a> auto-fit and auto-fill
 
 With the `auto-fill` expression inside the `grid-template-columns` declaration
@@ -204,6 +228,8 @@ the layout window and you will see the difference between `auto-fit` and
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="minmax"></a> Using minmax for responsive grids
 
 With `minmax()` you can tell the browser to make the items in a column a minimum
@@ -222,6 +248,8 @@ The CodePen example below also shows the difference between `auto-fit` and
   See the Pen <a href='https://codepen.io/Mkuehb/pen/jzOPzg'>CSS Grid - Using minmax() for Responsive Layouts</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="template-areas"></a> Grid template areas
 
@@ -243,6 +271,8 @@ so you can quickly check, if your layout is displayed as you wish it to be.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/GxRjdW'>CSS Grid - Grid Template Areas</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="naming-lines"></a> Naming lines in CSS Grid
 
@@ -282,6 +312,8 @@ grid-template-rows:
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="block-fitting"></a> Grid-auto-flow dense block fitting
 
 Grid-auto-flow is by default set to row so every item, that does not fit in the
@@ -312,6 +344,8 @@ CodePen example below to see the difference.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="alignment-and-centering"></a> CSS Grid alignment + centering
 
 Flexbox made centering items on a page really easy. CSS Grid also has its ways
@@ -336,6 +370,8 @@ settings on the container and specify them on a single grid item.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="re-ordering"></a> Re-ordering Grid items
 
 Imagine having a ten column wide grid with a logo on the left that spans over 2
@@ -358,6 +394,8 @@ it does not matter that much.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/GxojJY'>CSS Grid - Re-ordering Grid items</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ## Real World Examples
 
@@ -395,6 +433,8 @@ grid-template-columns: 150px 1fr;
   See the Pen <a href='https://codepen.io/Mkuehb/pen/jzqXVo'>CSS Grid - Nesting grid with album layouts</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="css-grid-image-gallery"></a> CSS Grid image gallery
 
@@ -436,6 +476,8 @@ all the examples in the CodePen below.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="recreating-codepen"></a> Recreating CodePen
 
 In this example you are recreating CodePen, the tool I have used to display all
@@ -449,6 +491,8 @@ with CSS Grid. Basically it is all about grids inside other grids.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/MVmwpZ'>CSS Grid - Recreating CodePen</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="bootstrappy-grid"></a> Bootstrappy Grid with CSS variables
 
@@ -466,6 +510,8 @@ In this example Wes shows how to achieve the Bootstrap principle with CSS Grid.
   See the Pen <a href='https://codepen.io/Mkuehb/pen/RMVPdj'>Bootstrappy Grid with CSS Variables</a> by Marco Kühbauch
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br />
 
 ### <a name="responsive-website"></a> Responsive Website
 
@@ -494,6 +540,8 @@ menu easily.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### <a name="blog-layout"></a> Full bleed blog layout
 
 The last example is about building a blog layout with sections of different
@@ -504,16 +552,13 @@ width and elements.
   (<a href='https://codepen.io/Mkuehb'>@Mkuehb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+<br />
+
 ### Sources & further reading
 
-- [The CSS Grid course](https://cssgrid.io/) by Wes Bos
-- [A complete guide for CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  by Chris Coyer
-- [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
-  by the Mozilla Developer Network
-- [A collection of examples, videos and other information](https://gridbyexample.com/)
-  to learn CSS Grid by Rachel Andrew
-- [Auto-Sizing Columns in CSS Grid: 'auto-fill' vs. 'auto-fit'](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/)
-  by Sara Soueidan
-- [Layout Land](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag) a
-  YouTube Channel by Jen Simmons all about CSS Grid
+- <a href="https://cssgrid.io/" target="_blank">The CSS Grid course &#8599;</a> by Wes Bos
+- <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">A complete guide for CSS Grid &#8599;</a> by Chris Coyier
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">CSS Grid Layout &#8599;</a> by the Mozilla Developer Network
+- <a href="https://gridbyexample.com/" target="_blank">A collection of examples, videos and other information &#8599;</a> to learn CSS Grid by Rachel Andrew
+- <a href="https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/" target="_blank">Auto-Sizing Columns in CSS Grid: 'auto-fill' vs. 'auto-fit' &#8599;</a> by Sara Soueidan
+- <a href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag" target="_blank">Layout Land &#8599;</a> a YouTube Channel by Jen Simmons all about CSS Grid

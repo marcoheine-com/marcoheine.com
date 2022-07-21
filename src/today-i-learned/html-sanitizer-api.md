@@ -1,7 +1,7 @@
 ---
 title: HTML Sanitizer API
 description:
-  Today I learned, how to use the HTML Sanitizer API to sanitize HTML.
+  Today I learned, that there is a new HTML Sanitizer API which makes it easy to sanitize HTML to prevent cross-site-scripting.
 date: 2022-07-21
 path: /html-sanitizer-api
 tags: ['HTML', 'Web Security']
