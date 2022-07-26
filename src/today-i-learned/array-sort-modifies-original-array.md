@@ -55,12 +55,12 @@ const FavoriteFood = ({ items }) => {
 
 ```
 
-What do you think happens here? Our intention is, to show the list of foods sorted alphebetically in the dropdown, but not sorted below.
-But that's not what is happening here. 
+What do you think happens here? Our intention is, to show the list of foods sorted alphabetically in the dropdown, but not sorted below.
+But that's not what is happening here:
 
 ![a screenshot of the example app with a select and a list of items](../images/screenshot-of-food-list.webp)
 
-As said before, the `sort()` method modifies the original array. This means whenever you apply the sorting on the
+As I said before, the `sort()` method modifies the original array. This means whenever you apply the sorting on the
 items array, the reference is also sorted. That's why our list of items below the dropdown is also sorted. 
 
 To fix this, there is an easy solution. Create a copy of the array you want to sort and sort that copy.
