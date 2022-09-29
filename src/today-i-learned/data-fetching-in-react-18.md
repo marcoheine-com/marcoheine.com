@@ -44,7 +44,7 @@ Here are the **key takeaways** from his post:
 
 **A final note:** these changes have nothing to do with the release of React 18.
 In fact, these issues have existing much longer. The react team just started
-documenting them now. The main issue here is, that me may have all used effects
+documenting them now. The main issue here is, that we may have all used effects
 like useEffect wrong the whole time.
 
 I've already wrote about that topic on other posts like my blog post [the mistakes I made using React](/blog/the-mistakes-i-made-using-react/) and my Today-I-learned post:
