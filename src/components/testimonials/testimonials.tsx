@@ -29,6 +29,12 @@ export const Testimonials: React.FC = () => {
       company: 'SprintEins',
       link: 'https://www.sprinteins.de/',
     },
+    {
+      textPartOne: t('testimonials.four.text.a'),
+      author: 'Tobi Saussele',
+      company: 'Werk8',
+      link: 'https://werk8.design/',
+    },
   ]
 
   return (

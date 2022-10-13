@@ -18,7 +18,7 @@ const Template = ({ data, location }) => {
   const { mdx } = data
   const { frontmatter, timeToRead, body, excerpt } = mdx
 
-  const { title, date, featuredImage, featuredImageAlt, description } =
+  const { title, date, updated, featuredImage, featuredImageAlt, description } =
     frontmatter
 
   return (
@@ -48,19 +48,28 @@ const Template = ({ data, location }) => {
           ) : null}
           <p></p>
           <h2>{title}</h2>
-          <section className="flex gap-5 p-3 bg-slate-50 rounded-lg text-base mb-4">
+          <section className="flex gap-5 p-3 text-base mb-4 bg-slate-50 rounded-lg">
             <time
               dateTime={date}
               className="mb-0"
             >
-              🗓 Published on: {date}
+              🗓 {date}
             </time>
             <time
               dateTime={timeToRead}
               className="mb-0"
             >
-              ⏱ Reading time: {timeToRead} min
+              ⏱ {timeToRead} min read
             </time>
+
+            {updated && (
+              <time
+                dateTime={date}
+                className="mb-0"
+              >
+                🔔 Last Updated: {updated}
+              </time>
+            )}
           </section>
 
           <MDXProvider components={shortcodes}>
@@ -122,6 +131,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         featuredImage {
           id
           childImageSharp {

@@ -11,7 +11,7 @@
     "blog-posts": "Latest blog posts",
     "til-posts": "Latest TIL posts",
     "all-blog-posts": "All blog posts",
-    "all-projects": "All projects"
+    "all-projects": "More projects"
   },
 
   "footer": {
@@ -108,9 +108,12 @@
     },
     "three": {
       "text": {
-        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
-        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
-        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+        "a": "I really enjoyed working with Marco because he listens and his profound knowledge in web technologies and his understanding of User Experience make him a great partner for developing sustainable, user friendly software. I find it very inspiring that he likes to learn and share his knowledge. To this day I enjoy reading his blog posts."
+      }
+    },
+    "four": {
+      "text": {
+        "a": "Marco is an expert in front- and backend development (Jamstack, Next.js, Headless CMS, Tailwind CSS etc.). He is an integral part of our freelance network. We have already realized some digital projects with Marco."
       }
     }
   },

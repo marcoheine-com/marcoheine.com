@@ -11,7 +11,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { CallToAction } from '../components/call-to-action'
 import { useTranslation } from 'react-i18next'
 import { WebProjects } from '../components/web-projects'
-// import { Testimonials } from '../components/testimonials'
+import { Testimonials } from '../components/testimonials'
 
 const IndexPage = ({ data, location }) => {
   const { t } = useTranslation()
@@ -69,7 +69,7 @@ const IndexPage = ({ data, location }) => {
 
           <WebProjects />
 
-          {/* <Testimonials /> */}
+          <Testimonials />
 
           <section className="w-full max-w-4xl">
             <section className="mb-16 grid">

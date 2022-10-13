@@ -37,6 +37,7 @@ export const PageContent = styled.section`
 export const GoBackSpan = styled.span`
   display: block;
   margin-bottom: 16px;
+  font-size: 1rem;
   &::before {
     content: '← ';
   }

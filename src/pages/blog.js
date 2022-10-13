@@ -54,21 +54,9 @@ const Blog = ({ data, location }) => {
                 >
                   {post.node.frontmatter.date}
                 </time>
-                <span className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                  {post.node.frontmatter.featuredImage ? (
-                    <GatsbyImage
-                      className="max-w-[100px] rounded-lg md:w-full"
-                      alt={post.node.frontmatter.featuredImageAlt}
-                      image={
-                        post.node.frontmatter.featuredImage.childImageSharp
-                          .gatsbyImageData
-                      }
-                    />
-                  ) : null}
-                  <h4 className="text-primaryColorOne">
-                    {post.node.frontmatter.title}
-                  </h4>
-                </span>
+                <h4 className="text-primaryColorOne">
+                  {post.node.frontmatter.title}
+                </h4>
               </article>
             </Link>
           ))}

@@ -96,21 +96,24 @@
   "testimonials": {
     "one": {
       "text": {
-        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
-        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
-        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+        "a": "In dem Jahr, in dem ich mit Marco gearbeitet habe, ist er mir nicht nur sehr ans Herz gewachsen, sondern ich habe auch seine Motivation schätzen und bewundern gelernt. Sein Antrieb ist der Wunsch, sowohl die Teams, mit denen er zusammenarbeitet, als auch die Produkte, an denen er arbeitet, zu verbessern. Er ist bestrebt, die bestmögliche Lösung für ein bestimmtes Problem zu finden, weiß aber auch, wann er pragmatisch sein und weitermachen muss. Er bleibt nicht bei Problemen hängen, und er scheut sich nicht, andere um Hilfe zu bitten.",
+        "b": "Marco ist zugänglich, sachkundig und pragmatisch. Er arbeitet ständig an seinen eigenen Fähigkeiten und ist bestrebt, immer größere Herausforderungen zu lösen.",
+        "c": "Ich hoffe, bald wieder mit Marco arbeiten zu können. Wenn Sie Unterstützung bei Ihrem Projekt suchen, ist Marco eine ausgezeichnete Wahl."
       }
     },
     "two": {
       "text": {
-        "a": "Working with Marco is a pleasure. Besides developing on a very high level he also contributes a lot to the planning phase of every project."
+        "a": "Die Zusammenarbeit mit Marco ist ein großes Vergnügen. Neben der Entwicklung auf sehr hohem Niveau trägt er auch viel zur Planungsphase jedes Projekts bei."
       }
     },
     "three": {
       "text": {
-        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't shv about asking others for help.",
-        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
-        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
+        "a": "Ich habe sehr gerne mit Marco zusammengearbeitet, weil er zuhört und mit seinen fundierten Kenntnissen in Webtechnologien und seinem Verständnis für User Experience ein großartiger Partner für das Entwickeln von nachhaltiger, NutzerInnen-freundlicher Software ist. Dass er gerne lernt und das Gelernte auch teilt, finde ich sehr inspirierend. Ich lese auch heute noch sehr gerne seine Blogposts."
+      }
+    },
+    "four": {
+      "text": {
+        "a": "Marco ist Experte im Bereich Front- und Backend Development (Jamstack, Next.js, Headless CMS, Tailwind CSS etc.). Er ist ein fester Bestandteil unseres Freelance Netzwerks. Wir haben mit Marco bereits einige digitale Projekte realisiert."
       }
     }
   },
