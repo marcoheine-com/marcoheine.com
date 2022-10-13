@@ -19,15 +19,15 @@ export const Testimonials: React.FC = () => {
     {
       textPartOne: t('testimonials.two.text.a'),
       author: 'Thomas Fischer',
-      company: 'EARZL GmbH',
-      link: 'https://earlz.de/',
+      company: '',
+      link: '',
       image: ThomasFischerImg,
     },
     {
       textPartOne: t('testimonials.three.text.a'),
       author: 'Natali Bopp',
       company: 'SprintEins',
-      link: 'https://www.sprinteins.de/',
+      link: 'https://www.sprinteins.com/',
     },
     {
       textPartOne: t('testimonials.four.text.a'),
