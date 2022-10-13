@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Marco Heine <marcoheine08@gmail.com>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/mdx": "^2.1.5",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^2.0.7",
     "dotenv": "^16.0.3",
@@ -13,7 +13,7 @@
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4.24.0",
-    "gatsby-plugin-mdx": "^3.20.0",
+    "gatsby-plugin-mdx": "^4.3.0",
     "gatsby-plugin-offline": "^5.24.0",
     "gatsby-plugin-plausible": "^0.0.7",
     "gatsby-plugin-react-helmet": "^5.24.0",
