@@ -39,7 +39,10 @@ export const Testimonials: React.FC = () => {
 
   return (
     <article className="max-w-7xl mb-20">
-      <h2 className="text-primaryColorTwo mb-12 text-center">
+      <h2
+        id="testimonials"
+        className="text-primaryColorTwo mb-12 text-center"
+      >
         {t('work.headline-three')}
       </h2>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
