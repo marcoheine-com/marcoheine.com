@@ -11,7 +11,7 @@
     "blog-posts": "Neueste Blog Posts",
     "til-posts": "Neueste Today-I-learned Posts",
     "all-blog-posts": "Alle Blog Posts",
-    "all-projects": "Alle Projekte"
+    "all-projects": "Mehr Projekte"
   },
 
   "footer": {
@@ -114,6 +114,11 @@
     "four": {
       "text": {
         "a": "Marco ist Experte im Bereich Front- und Backend Development (Jamstack, Next.js, Headless CMS, Tailwind CSS etc.). Er ist ein fester Bestandteil unseres Freelance Netzwerks. Wir haben mit Marco bereits einige digitale Projekte realisiert."
+      }
+    },
+    "christoph": {
+      "text": {
+        "a": "Marco ist ein großartiger Entwickler und ein großartiger Typ. In einer Phase großer Unsicherheit kam er an Bord, übernahm Verantwortung und sorgte für einen reibungslosen Übergang. Das hätte nicht besser laufen können. Wir werden ihn auf jeden Fall in unserem Netzwerk behalten, und Sie sollten es auch tun."
       }
     }
   },

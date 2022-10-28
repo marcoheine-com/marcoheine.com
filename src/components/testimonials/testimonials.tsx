@@ -3,34 +3,73 @@ import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 // @ts-ignore
 import ThomasFischerImg from '../../images/thomas-fischer.1024x1024(1).jpg'
+// @ts-ignore
+import ChristopImg from '../../images/christop-a-kolb.png'
+
+interface Testimonial {
+  author: string
+  company: string
+  link: string
+  image?: string
+  text: {
+    content: string
+  }[]
+}
 
 export const Testimonials: React.FC = () => {
   const { t } = useTranslation()
-  const testimonials = [
+
+  const testimonials: Testimonial[] = [
     {
-      textPartOne: t('testimonials.one.text.a'),
-      textPartTwo: t('testimonials.one.text.b'),
-      textPartThree: t('testimonials.one.text.c'),
+      author: 'Christoph A. Kolb',
+      company: 'Wahnsinn Design',
+      link: 'https://www.wahnsinn.design/',
+      image: ChristopImg,
+      text: [
+        {
+          content: t('testimonials.christoph.text.a'),
+        },
+      ],
+    },
+    {
+      text: [
+        { content: t('testimonials.one.text.a') },
+
+        { content: t('testimonials.one.text.b') },
+        { content: t('testimonials.one.text.c') },
+      ],
       author: 'Dom Habersack',
       company: 'fn teach GmbH',
       link: 'https://domhabersack.com/',
       image: 'https://domhabersack.com/dom.jpg',
     },
     {
-      textPartOne: t('testimonials.two.text.a'),
+      text: [
+        {
+          content: t('testimonials.two.text.a'),
+        },
+      ],
       author: 'Thomas Fischer',
-      company: '',
-      link: '',
+      company: 'tts GmbH',
+      link: 'https://www.tt-s.com/en/company',
       image: ThomasFischerImg,
     },
     {
-      textPartOne: t('testimonials.three.text.a'),
+      text: [
+        {
+          content: t('testimonials.three.text.a'),
+        },
+      ],
       author: 'Natali Bopp',
       company: 'SprintEins',
       link: 'https://www.sprinteins.com/',
     },
     {
-      textPartOne: t('testimonials.four.text.a'),
+      text: [
+        {
+          content: t('testimonials.four.text.a'),
+        },
+      ],
       author: 'Tobi Saussele',
       company: 'Werk8',
       link: 'https://werk8.design/',
@@ -48,26 +87,27 @@ export const Testimonials: React.FC = () => {
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
         {testimonials?.map((testimonial, index) => (
           <article key={index}>
-            <p>{testimonial.textPartOne}</p>
-            <p>{testimonial.textPartTwo}</p>
-            <p>{testimonial.textPartThree}</p>
+            {testimonial.text.map((text, index) => (
+              <p key={index}>{text.content}</p>
+            ))}
+
             <div className="flex items-center gap-4">
               {testimonial.image ? (
                 <img
                   src={testimonial.image}
-                  alt={testimonial.author}
+                  alt={`a picture of ${testimonial.author}`}
                   className="rounded-full h-16 w-16"
                 />
               ) : null}
               <span className="italic mb-0 flex flex-col gap-2">
                 {testimonial.author}
-                <Link
-                  to={testimonial.link}
+                <a
+                  href={testimonial.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {testimonial.company}
-                </Link>
+                </a>
               </span>
             </div>
           </article>
