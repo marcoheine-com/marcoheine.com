@@ -95,8 +95,8 @@ const Blog = ({ data, location }) => {
                 to={`/${slug}`}
                 key={id}
               >
-                <ui.NewArticleSlot>
-                  <ui.NewArticle>
+                <section className="mb-16">
+                  <ui.NewArticle hasImage={frontmatter.featuredImage}>
                     <ui.ArticleHeadline>{title}</ui.ArticleHeadline>
                     {frontmatter.featuredImage && (
                       <ui.ArticleImageWrapper>
@@ -114,7 +114,7 @@ const Blog = ({ data, location }) => {
                     <p>{excerpt}</p>
                     <ui.Readmore>Read article</ui.Readmore>
                   </ui.NewArticle>
-                </ui.NewArticleSlot>
+                </section>
               </Link>
             )
           })}

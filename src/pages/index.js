@@ -80,7 +80,13 @@ const IndexPage = ({ data, location }) => {
                     key={post.node.id}
                     to={`/${post.node.fields.slug}`}
                   >
-                    <article className="grid md:grid-cols-[350px_1fr] gap-5 p-5 transition-all hover:shadow-custom hover:rounded-xl mb-10">
+                    <article
+                      className={`grid ${
+                        post.node.frontmatter.featuredImage
+                          ? 'md:grid-cols-[350px_1fr]'
+                          : 'md:grid-cols-[620px]'
+                      } gap-5 p-5 transition-all hover:shadow-custom hover:rounded-xl mb-10`}
+                    >
                       <GatsbyImage
                         alt={post.node.frontmatter.featuredImageAlt}
                         image={

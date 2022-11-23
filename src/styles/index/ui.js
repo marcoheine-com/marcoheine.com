@@ -90,16 +90,13 @@ export const YearlySection = styled.section`
   margin-bottom: 60px;
 `
 
-export const NewArticleSlot = styled.section`
-  margin-bottom: 76px;
-`
-
 export const NewArticle = styled.article`
   color: ${({ theme }) => theme.primaryColorOne};
 
   @media (min-width: 700px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: ${({ hasImage }) =>
+      hasImage ? '1fr 1fr' : '620px'};
     grid-template-rows: repeat(5, auto);
     grid-column-gap: 50px;
     grid-row-gap: 20px;
