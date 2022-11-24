@@ -3,7 +3,7 @@ title:
   🚀 React performance quick wins 🚀 - 7 easy ways to improve your React
   performance - part 2
 date: 2021-01-18
-updated: 2022-06-08
+updated: 2022-11-24
 path: /7-easy-ways-to-improve-your-react-performance-part-2
 description:
   In part 2 of this series, we'll look at another four ways to improve your
@@ -12,12 +12,12 @@ description:
 
 import { Link } from 'gatsby-plugin-react-i18next'
 
-In part 1 of this react performance quickwins series, we already learned about:
+In part 1 of this react performance quick-wins series, we already learned about the following:
 
 <ul>
   <li>
     <Link to="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys">
-      Always use a key when mapping (and not index)
+      Always use a key when mapping (and no index)
     </Link>
   </li>
   <li>
@@ -32,7 +32,7 @@ In part 1 of this react performance quickwins series, we already learned about:
   </li>
 </ul>
 
-The second part of this series brings you another **4 great quickwins** you can
+The second part of this series brings you another **4 great quick-wins** you can
 apply directly to your code and improve your performance
 
 This Post is Part 2 of a series.
@@ -77,14 +77,14 @@ export default MyComponent
 But if you're on the lookout for a quick performance win, that's something you
 can avoid.
 
-Anonymous functions aren’t assigned an identifier like const/let/var. This means
+Anonymous functions aren't assigned an identifier like const/let/var. This means
 they **are not persistent** whenever this functional component gets rendered
-again. So JavaScript has to **create them again and again** on every re-render.
+again. So JavaScript has to **create them again and again,** on every rerender.
 
-This becomes a problem, if you're rendering a loooot of elements, like a lot of
+This becomes a problem if you're rendering a lot of elements, like a lot of
 table cells, which all make use of an anonymous function.
 
-There is an easy way to solve this. You can simply change it to a **named
+There is an easy way to solve this. You can change it to a **named
 function**.
 
 ```jsx
@@ -103,16 +103,16 @@ export default MyComponent
 
 <br />
 
-That's it for quickwin number 4: avoid anonymous functions!
+That's it for quick-win number 4: avoid anonymous functions!
 
 <br />
 
 ## <a name='defining-objects'></a>Define objects outside of your component
 
-Here comes quickwin number 5. Something similar as described above can be
+Here comes quick-win number 5. Something similar as described above can be
 applied to objects.
 
-If you define an object as a object literal and pass it in as props, this object
+If you define an object as an object literal and pass it in as props, this object
 will have to be recreated on every rerender.
 
 ```jsx
@@ -131,7 +131,7 @@ export default MyComponent
 
 <br />
 
-Instead define your object outside of the component. Now it is created once on
+Instead, define your object outside of the component. Now it is created once on
 the initial render and not being touched on every rerender.
 
 ```jsx
@@ -151,13 +151,13 @@ export default MyComponent
 
 <br />
 
-Performance quickwin whoop whoop! 🚀
+Performance quick-win, whoop whoop! 🚀
 
 <CoffeeHint />
 
 ## <a name='lazy-suspense'></a>React.lazy and React.Suspense
 
-With `React.lazy` you can "lazy load" your components. This means your component
+With `React.lazy`, you can "lazy load" your components. This means your component
 is only rendered when it is truly needed and not loaded unnecessarily.
 
 The less you need to load, the better your performance!
@@ -165,35 +165,35 @@ The less you need to load, the better your performance!
 This can easily be combined with React.Suspense for rendering some fallback
 content.
 
-I wrote a whole Today-I-learned post about this topic, check it out here:
-[Today I learned: React Suspense lazy-loading](/today-i-learned/react-suspense-lazy-loading)
+I wrote a whole Today-I-learned post about this topic; check it out here:
+[Today I learned: React Suspense lazy-loading](/today-i-learned/react-suspense-lazy-loading/)
 
-That's also a great way to improve your react performance without too much
+That's also a great way to improve your React performance without too much
 effort.
 
 <br />
 
 ## <a name='virtualized-lists'></a>Virtualized lists
 
-If you've ever worked with long lists or tables with a lot of rows in React you
-know how much this can impact your performance. You have to render a lot of
-content, usually a lot of divs.
+If you've worked with long lists or tables with many rows in React, you
+know how much this can impact your performance. This is because you have to render a lot of
+content, usually many divs.
 
-We already learned that too much DOM nodes is not a good idea. Also updates and
-rerenders can be really painful because they take just way too long.
+We already learned that too many DOM nodes are not a good idea. Also updates and
+rerenders can be painful because they take just way too long.
 
-With virtualized lists only the list items get rendered, that are actually in
-the viewport. That's pretty cool. But how does this work? Don't worry, you won't
-have to build this yourself. There are already amazing tools out there which do
+With virtualized lists, only the list items that are actually in
+the viewport are rendered. That's pretty cool. But how does this work? Don't worry; you won't
+have to build this yourself. There are already excellent tools out there that do
 the job for you.
 
-Check out [react-virtualized](https://github.com/bvaughn/react-virtualized) by
+Check out <a href="https://github.com/bvaughn/react-virtualized" target="_blank" rel="noopener noreferer">react-virtualized &#8599;</a> by
 Brian Vaughn.
 
-It's pretty easy to use and you don't need to worry about displaying long lists
+It's pretty easy to use, and you don't need to worry about displaying long lists
 and tables anymore.
 
-So that's it, these are my **7 easy ways to improve your React performance**.
+So that's it; these are my **7 easy ways to improve your React performance**.
 Did you already know all of them? Do you have any additional tips? Let me know!
 
 Just send me an [email](mailto:@marcoheine.com) or message me on
