@@ -11,9 +11,26 @@ import AerosolallianceWebsite from '../../images/aerosolalliance-website.webp'
 import LauraheineWebsite from '../../images/lauraheine-website.webp'
 // @ts-ignore
 import SenelektroWebsite from '../../images/senelektro-website.webp'
+// @ts-ignore
+import StuttgarterKickersWebsite from '../../images/stuttgarter-kickers-website.webp'
+
 import { CallToAction } from '../call-to-action'
 
 const projects = [
+  {
+    title: 'Stuttgarter Kickers',
+    partners: [
+      {
+        partnerName: 'Werk8',
+        partnerLink: 'https://www.werk8.design/',
+      },
+    ],
+    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
+    linkLabel: 'stuttgarter-kickers.de',
+    link: 'https://www.stuttgarter-kickers.de',
+    image: StuttgarterKickersWebsite,
+    imageAlt: 'screenshot of stuttgarter kickers website',
+  },
   {
     title: 'Dieda',
     description: 'Website Relaunch, technische Umsetzung, CMS Integration',
@@ -26,15 +43,6 @@ const projects = [
     link: 'https://www.dieda.de',
     image: DiedaWebsite,
     imageAlt: 'screenshot of dieda website',
-  },
-  {
-    title: 'Andersontour',
-    description: 'Technische Umsetzung und Integration in CMS',
-    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
-    linkLabel: 'andersontour.de',
-    link: 'https://www.andersontour.de',
-    image: AndersontourWebsite,
-    imageAlt: 'screenshot of andersontour website',
   },
   {
     title: 'Aerosol Alliance',
@@ -50,6 +58,15 @@ const projects = [
     link: 'https://aerosolalliance.com',
     image: AerosolallianceWebsite,
     imageAlt: 'screenshot of aerosol alliance website',
+  },
+  {
+    title: 'Andersontour',
+    description: 'Technische Umsetzung und Integration in CMS',
+    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
+    linkLabel: 'andersontour.de',
+    link: 'https://www.andersontour.de',
+    image: AndersontourWebsite,
+    imageAlt: 'screenshot of andersontour website',
   },
   {
     title: 'finding the little things illustrations',
