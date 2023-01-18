@@ -89,16 +89,17 @@ const TIL = ({ data, location }) => {
           </button>
         </label>
 
-        <ul className="flex justify-center flex-wrap gap-4 mx-auto my-10 list-none max-w-3xl">
+        <ul className="flex justify-start gap-4 mx-auto my-10 list-none max-w-3xl overflow-auto md:flex-wrap md:justify-center">
           {group.map((tag) => (
-            <ui.Category
+            <li
+              className="m-0 text-primaryColorTwo shrink-0 py-4"
               key={tag.fieldValue}
               category={tag.fieldValue}
             >
               <Link to={`/today-i-learned/${tag.fieldValue.toLowerCase()}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
-            </ui.Category>
+            </li>
           ))}
         </ul>
 

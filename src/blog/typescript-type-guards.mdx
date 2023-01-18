@@ -1,0 +1,94 @@
+---
+title: TypeScript Type Guards
+date: 2023-01-19
+path: /typescript-type-guards/
+description:
+  'TypeScript Type Guards are used when you only want to allow a specific type in a function. Learn how to write a great Type Guard with examples.'
+---
+
+In a recent project, I used TypeScript Type Guards so much that I wanted to write a blog post about them with great examples and why I like them. They've helped me prevent errors and make my code safer and more reliable.
+
+---
+**Table of Contents**
+
+- [What are TypeScript Type Guards](#what-are-typescript-type-guards)
+- [How to write a great Type Guard](#how-to-write-a-great-type-guard)
+- [Built-in Type Guards](#built-in-type-guards)
+- [Further reading](#further-reading)
+---
+
+<br />
+
+## What are TypeScript Type Guards <a name="what-are-typescript-type-guards"></a>
+
+TypeScript Type Guards are used when you only want to allow a specific type in a function, for example. The need for something like this derives from the fact that only this particular type has the values you can work with further.
+
+If you'd use a function that's manipulating data in some sort on a type that would be missing these values, you will run into errors.
+
+So TypeScript Type Guards are one of the first and best ways to ensure you only process further in your programming logic with relevant data.
+
+<br />
+
+## How to write a great Type Guard <a name="how-to-write-a-great-type-guard"></a>
+
+Let's learn more about Type Guards by looking at an example. To create one, you have to write a function whose return type is a **type predicate**. The predicate has the form: parameterName is Type.
+
+Imagine you are getting some data from an API of your headless CMS. In your CMS, users can set the fields of a link element there. The link element would translate into a TypeScript Interface which would look like this:
+
+```typescript
+interface FilledLink {
+	url: string
+	isExternal: boolean
+	isTargetBlank: boolean
+}
+```
+
+<br />
+
+But they can also leave it empty and not add it in. This would look something like that:
+
+```typescript
+interface EmptyLink {
+	url: undefined
+}
+```
+
+<br /> 
+
+When we consume this data via API, we want to ensure we only work with it if it's a filled link and not null. So we only want to go further when it has the type of FilledLink.
+
+Otherwise, if we didn't care and would render a link field in React, we would run into errors. We would access the URL field, which can be undefined, and our user interface would break.
+
+So here's what a TypeGuard for this scenario would look like:
+
+```tsx
+const isFilledLink = (link: EmptyLink | FilledLink): link is FilledLink => {
+	return link?.url !== undefined
+}
+```
+
+<br /> 
+
+This is called a custom type guard or a user-defined Type Guard. It's the most powerful because you can customize it all the way you want. There are also other Type Guards, which are built into TypeScript.
+
+<br />
+
+## Built-in Type Guards <a name="built-in-type-guards"></a>
+
+There are also built-in Type Guards in TypeScript. The following exist:
+
+- typeof
+- instanceof
+- in
+- equality narrowing
+I've linked them all to the official TypeScript documentation, so you can read more about them there.
+I will write a detailled blog post about these soon, so stay tuned!
+
+That's it about TypeScript Type Guards, in this case specifically about user-defined or custom TypeGuards!
+
+<br />
+
+## Further reading <a name="further-reading"></a>
+
+- <a href="https://www.robinwieruch.de/typescript-type-guard/" target="_blank" rel="noopener noreferrer">https://www.robinwieruch.de/typescript-type-guard/ &#8599;</a>
+- <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="noopener noreferrer">https://www.typescriptlang.org/docs/handbook/advanced-types.html &#8599;</a>

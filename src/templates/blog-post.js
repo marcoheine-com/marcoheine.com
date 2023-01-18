@@ -76,9 +76,24 @@ const Template = ({ data, location }) => {
             <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
           <hr />
-          <p>I wish you a wonderful day! Marco</p>
-          <p>Enjoy my writings?</p>
+          <p>
+            I hope you enjoyed this article and learned something new. If you
+            have any questions, feel free to reach out to me on{' '}
+            <a
+              href="https://twitter.com/marcoheine_com"
+              target="_blank"
+              rel="noopener"
+            >
+              Twitter &#8599;
+            </a>{' '}
+            or via <a href="mailto:hello@marcoheine.com">email &#8599;</a>.
+          </p>
+          <p>
+            If you want to support me, you can buy me a coffee. I would be very
+            happy about it!
+          </p>
           <CoffeeLink />
+          <p>I wish you a wonderful day! Marco</p>
           <ui.GoBackSpan>
             <Link to="/blog/">Go back to other Blog Posts</Link>
           </ui.GoBackSpan>
