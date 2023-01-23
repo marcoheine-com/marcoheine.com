@@ -1,6 +1,7 @@
 ---
 title: TypeScript Type Guards
 date: 2023-01-19
+updated: 2023-01-23
 path: /typescript-type-guards/
 description:
   'TypeScript Type Guards are used when you only want to allow a specific type in a function. Learn how to write a great Type Guard with examples.'
@@ -23,7 +24,7 @@ In a recent project, I used TypeScript Type Guards so much that I wanted to writ
 
 TypeScript Type Guards are used when you only want to allow a specific type in a function, for example. The need for something like this derives from the fact that only this particular type has the values you can work with further.
 
-If you'd use a function that's manipulating data in some sort on a type that would be missing these values, you will run into errors.
+If you'd use a function that's manipulating data in some sort on a type that would be **missing** these values, you will run into **errors**.
 
 So TypeScript Type Guards are one of the first and best ways to ensure you only process further in your programming logic with relevant data.
 
@@ -31,7 +32,7 @@ So TypeScript Type Guards are one of the first and best ways to ensure you only 
 
 ## How to write a great Type Guard <a name="how-to-write-a-great-type-guard"></a>
 
-Let's learn more about Type Guards by looking at an example. To create one, you have to write a function whose return type is a **type predicate**. The predicate has the form: parameterName is Type.
+Let's learn more about Type Guards by looking at an example. To create one, you have to write a function whose return type is a **type predicate**. The predicate has the form: `parameterName is Type`.
 
 Imagine you are getting some data from an API of your headless CMS. In your CMS, users can set the fields of a link element there. The link element would translate into a TypeScript Interface which would look like this:
 
@@ -55,11 +56,11 @@ interface EmptyLink {
 
 <br /> 
 
-When we consume this data via API, we want to ensure we only work with it if it's a filled link and not null. So we only want to go further when it has the type of FilledLink.
+When we consume this data via API, we want to ensure we only work with it if it's a filled link and not `null`. So we only want to go further when it has the type of `FilledLink`.
 
-Otherwise, if we didn't care and would render a link field in React, we would run into errors. We would access the URL field, which can be undefined, and our user interface would break.
+Otherwise, if we didn't care and would render a link field in React, we would run into errors. We would access the URL field, which can be `undefined`, and our user interface would break.
 
-So here's what a TypeGuard for this scenario would look like:
+So here's what a Type Guard for this scenario would look like:
 
 ```tsx
 const isFilledLink = (link: EmptyLink | FilledLink): link is FilledLink => {
@@ -69,7 +70,11 @@ const isFilledLink = (link: EmptyLink | FilledLink): link is FilledLink => {
 
 <br /> 
 
-This is called a custom type guard or a user-defined Type Guard. It's the most powerful because you can customize it all the way you want. There are also other Type Guards, which are built into TypeScript.
+Let's have a closer look on what happens here. We define a function who takes in a parameter of type `EmptyLink | FilledLink`. The return type is a type predicate, which is a function that returns a boolean. The boolean is used to determine if the type is `FilledLink` or not.
+
+This ensures, that we can work on with the url field, because we know it's not `undefined` anymore.
+
+This is called a **custom Type Guard** or a **user-defined Type Guard**. It's the most powerful because you can customize it all the way you want.
 
 <br />
 
@@ -77,18 +82,19 @@ This is called a custom type guard or a user-defined Type Guard. It's the most p
 
 There are also built-in Type Guards in TypeScript. The following exist:
 
-- typeof
-- instanceof
-- in
-- equality narrowing
+- <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#typeof-type-guards" target="_blank" rel="noopener noreferrer"> typeof &#8599;</a>
+- <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing" target="_blank" rel="noopener noreferrer">instanceof narrowing &#8599;</a>
+- <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing" target="_blank" rel="noopener noreferrer">in &#8599;</a>
+- <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#equality-narrowing" target="_blank" rel="noopener noreferrer">equality narrowing &#8599;</a>
+
 I've linked them all to the official TypeScript documentation, so you can read more about them there.
 I will write a detailled blog post about these soon, so stay tuned!
 
-That's it about TypeScript Type Guards, in this case specifically about user-defined or custom TypeGuards!
+That's it about TypeScript Type Guards, in this case specifically about user-defined or custom Type Guards!
 
 <br />
 
 ## Further reading <a name="further-reading"></a>
 
 - <a href="https://www.robinwieruch.de/typescript-type-guard/" target="_blank" rel="noopener noreferrer">https://www.robinwieruch.de/typescript-type-guard/ &#8599;</a>
-- <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="noopener noreferrer">https://www.typescriptlang.org/docs/handbook/advanced-types.html &#8599;</a>
+- <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html" target="_blank" rel="noopener noreferrer">https://www.typescriptlang.org/docs/handbook/2/narrowing.html &#8599;</a>
