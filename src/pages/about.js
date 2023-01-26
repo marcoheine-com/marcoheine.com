@@ -22,7 +22,7 @@ const About = ({ data, location }) => {
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src
           }
-          ogImageAlt="a picture of me"
+          ogImageAlt="a picture of Marco Heine"
           description={t('meta.about-description')}
           location={location}
         />
@@ -88,7 +88,7 @@ const About = ({ data, location }) => {
             </p>
             <p>{t('about.text-eight')}</p>
             <p>
-              {t('about.text-nine')} <Link to="/blog">blog</Link>{' '}
+              {t('about.text-nine')} <Link to="/blog/">blog</Link>{' '}
             </p>
           </aboutUI.Container>
           {/* <aboutUI.Container>

@@ -9,7 +9,7 @@ import Button from '../components/Button'
 import theme from '../styles/theme'
 import * as ui from '../styles/til/ui'
 
-const TIL = ({ data }) => {
+const TIL = ({ data, location }) => {
   const [allItemsLoaded, setAllItemsLoaded] = useState(false)
 
   const { allMdx } = data
@@ -27,7 +27,10 @@ const TIL = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
-        <SEO title="Today I learned" />
+        <SEO
+          title={`Today I learned - ${group[0].fieldValue}`}
+          location={location}
+        />
         <ui.PageHeader>Today I learned</ui.PageHeader>
 
         <section

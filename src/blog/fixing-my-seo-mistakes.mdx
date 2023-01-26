@@ -1,6 +1,7 @@
 ---
 title: Fixing my SEO mistakes
 date: 2022-10-21
+updated: 2023-01-26
 path: /fixing-my-seo-mistakes
 description: I had a lot of simple SEO mistakes on my own website that I didn't even know about. In this blog post I share how I fixed them.
 featuredImage: ../images/benjamin-dada-EDZTb2SQ6j0-unsplash.webp
@@ -75,9 +76,9 @@ I set up canonical links on my website and double-checked them on every page. I 
 
 ## Canonical points to redirect <a name="canonical-points-to-redirect"></a>
 
-I had a lot of canonical links that pointed to 301 redirects. This is a combination of the two problems I explained before. I had URLs that were **upperCase** in my code, like this one [https://marcoheine.com/today-i-learned/performance-and-useMemo](https://marcoheine.com/today-i-learned/performance-and-useMemo)/
+I had a lot of canonical links that pointed to 301 redirects. This is a combination of the two problems I explained before. I had URLs that were **upperCase** in my code, like this one https://marcoheine.com/today-i-learned/performance-and-useMemo/
 
-Once again the Netlify URL pretty print kicks in and tells the browser hey the actual URL is [https://marcoheine.com/today-i-learned/performance-and-usememo](https://marcoheine.com/today-i-learned/performance-and-usememo), so it’s not the same and we need a redirect! Oh no.
+Once again the Netlify URL pretty print kicks in and tells the browser hey the actual URL is https://marcoheine.com/today-i-learned/performance-and-usememo, so it’s not the same and we need a redirect! Oh no.
 
 The problem here is, that the canonical URL stays the same (with upperCase) and that’s bad for SEO because we get another unnecessary redirect.
 

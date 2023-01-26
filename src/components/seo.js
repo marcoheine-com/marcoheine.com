@@ -36,9 +36,11 @@ function SEO({
   const blogPostRegex = /\/blog\/[^/]+\/$/
   const isBlogPost = blogPostRegex.test(url)
 
+  console.log(location)
+
   return (
     <Helmet
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s`}
       meta={[
         {
           name: `description`,
@@ -58,7 +60,7 @@ function SEO({
         },
         {
           property: `og:image:alt`,
-          content: ogImageAlt,
+          content: ogImageAlt | 'picture of Marco Heine',
         },
         {
           property: `og:description`,

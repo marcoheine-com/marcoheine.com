@@ -6,10 +6,13 @@ import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
 import { graphql } from 'gatsby'
 
-const LegalNotice = () => (
+const LegalNotice = ({ location }) => (
   <ThemeProvider theme={theme}>
     <Layout>
-      <SEO title="Legal notice" />
+      <SEO
+        title="Legal notice"
+        location={location}
+      />
       <ui.PageHeader>Legal Notice</ui.PageHeader>
       <section className="max-w-3xl my-10 mx-auto">
         <p>Marco Heine</p>

@@ -72,7 +72,7 @@ export const Testimonials: React.FC = () => {
       ],
       author: 'Tobi Saussele',
       company: 'Werk8',
-      link: 'https://werk8.design/',
+      link: 'https://www.werk8.design/',
     },
   ]
 

@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 import { WebProjects } from '../components/web-projects'
 import theme from '../styles/theme'
 
-const Work = ({ data }) => {
+const Work = ({ data, location }) => {
   const { t } = useTranslation()
 
   return (
@@ -23,6 +23,7 @@ const Work = ({ data }) => {
           }
           ogImageAlt="a picture of me"
           description={t('meta.work-description')}
+          location={location}
         />
         <section className="flex flex-col items-center w-full">
           <PageHeader title="Work with me" />
