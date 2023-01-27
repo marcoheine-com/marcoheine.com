@@ -40,7 +40,7 @@ Here are the **key takeaways** from his post:
 * If you can, switch to server-side data fetching. Next.js and Remix both offer
   built-in solutions to deal with that, which are better suited than client-side
   data fetching in effects. If a server-side framework isn't an option, consider
-  using a client-side cache like <a href="https://react-query.tanstack.com/" target="_blank">React Query &#8599;</a> to fetch data.
+  using a client-side cache like <a href="https://tanstack.com/query/v4/" target="_blank">React Query &#8599;</a> to fetch data.
 
 **A final note:** these changes have nothing to do with the release of React 18.
 In fact, these issues have existing much longer. The react team just started

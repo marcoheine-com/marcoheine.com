@@ -17,7 +17,7 @@ const About = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
         <SEO
-          title="About"
+          title="About | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src
@@ -78,7 +78,7 @@ const About = ({ data, location }) => {
             <p>
               {t('about.text-six')}
               <a
-                href="https://www.goodreads.com/user/show/145214426-marco-k-hbauch"
+                href="https://www.goodreads.com/user/show/145214426-marco-heine"
                 target="_blank"
                 rel="noopener noreferrer"
               >

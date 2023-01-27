@@ -67,7 +67,7 @@ const Blog = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title="Blog"
+          title="Blog | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src

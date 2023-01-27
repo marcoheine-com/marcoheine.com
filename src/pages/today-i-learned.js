@@ -57,7 +57,7 @@ const TIL = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1400px">
         <SEO
-          title="Today I learned"
+          title="Today I learned | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src

@@ -25,7 +25,7 @@ const Template = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title={title}
+          title={`Blog | ${title}`}
           description={description || excerpt}
           ogImage={
             featuredImage?.childImageSharp?.gatsbyImageData?.images?.fallback

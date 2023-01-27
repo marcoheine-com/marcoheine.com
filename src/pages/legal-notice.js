@@ -10,7 +10,7 @@ const LegalNotice = ({ location }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <SEO
-        title="Legal notice"
+        title="Legal notice | Marco Heine - Freelance Web Developer"
         location={location}
       />
       <ui.PageHeader>Legal Notice</ui.PageHeader>

@@ -14,7 +14,7 @@ const Contact = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title="Contact"
+          title="Contact | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src

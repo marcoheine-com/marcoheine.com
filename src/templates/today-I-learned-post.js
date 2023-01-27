@@ -17,7 +17,7 @@ const TilPost = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title={frontmatter.title}
+          title={`Today I learned - ${frontmatter.title}`}
           description={frontmatter.description}
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback

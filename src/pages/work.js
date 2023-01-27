@@ -16,7 +16,7 @@ const Work = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout maxWidth="1920px">
         <SEO
-          title="Work with me"
+          title="Work with me | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src

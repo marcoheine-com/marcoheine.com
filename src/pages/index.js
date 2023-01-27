@@ -23,7 +23,7 @@ const IndexPage = ({ data, location }) => {
     <ThemeProvider theme={theme}>
       <Layout maxWidth="100%">
         <SEO
-          title="Home"
+          title="Home | Marco Heine - Freelance Web Developer"
           ogImage={
             data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
               ?.src

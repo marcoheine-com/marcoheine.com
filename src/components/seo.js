@@ -36,8 +36,6 @@ function SEO({
   const blogPostRegex = /\/blog\/[^/]+\/$/
   const isBlogPost = blogPostRegex.test(url)
 
-  console.log(location)
-
   return (
     <Helmet
       titleTemplate={`%s`}
