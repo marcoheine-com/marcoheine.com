@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import theme from '../../styles/theme'
-import * as ui from './ui'
+import * as ui from '../../styles/til-post/ui'
 
 const TilPost = ({ data, location }) => {
   if (!data) {

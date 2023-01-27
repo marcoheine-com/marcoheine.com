@@ -5,7 +5,7 @@ import CoffeeHint from '../../components/coffeehint'
 import CoffeeLink from '../../components/coffeehint/CoffeeLink'
 import SEO from '../../components/seo'
 import theme from '../../styles/theme'
-import * as ui from './ui'
+import * as ui from '../../styles/blog/ui'
 import Link from 'next/link'
 
 const shortcodes = { CoffeeHint }
