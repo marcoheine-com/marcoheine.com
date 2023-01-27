@@ -1,27 +1,33 @@
-import React from 'react'
-import * as ui from './ui'
+import * as React from 'react'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+
+const LI_STYLES_BASIC = 'inline border-b-0 pr-5'
+const SVG_BASIC_STYLES =
+  'transition-all ease-linear duration-200 fill-current text-white hover:text-primaryColorOne'
+const LINK_BASIC_STYLES =
+  'border-b-[3px] border-b-white transition-all ease-out duration-200 py-0 px-[1px] hover:text-primaryColorOne hover:bg-white'
 
 const Footer = () => {
   const year = new Date().getFullYear()
   const { t } = useTranslation()
 
   return (
-    <ui.Footer>
-      <ui.BackToTop>
+    <footer className="bg-primaryColorTwo py-8 text-center text-[14px] text-white">
+      <p className="m-0 pb-8 text-white">
         <a
           href="#"
           className="hover:text-white"
         >
           &uarr; {t('footer.top')} &uarr;
         </a>
-      </ui.BackToTop>
+      </p>
       <nav>
         <ul className="mb-8">
-          <ui.ListItem>
+          <li className={LI_STYLES_BASIC}>
             <a href="mailto:hello@marcoheine.com">
-              <ui.Svg
+              <svg
+                className={SVG_BASIC_STYLES}
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -32,10 +38,10 @@ const Footer = () => {
                   fill="#fff"
                   d="M420.02455 354.77865l-99.60115-98.53796 99.59726-98.53797v197.07593zm-311.06513 18.71317l99.78039-98.44549 4.26255 4.03225c23.56094 22.20628 61.0005 22.20628 83.55619 0l4.29373-4.21326 100.24015 98.6265H108.95942zm-17.89961-215.7891l99.44921 98.53797-99.62844 98.53796.17923-197.07593zm309.84949-18.80563L278.3862 259.91094c-12.44868 12.39715-34.73163 12.12371-47.54657-.48141L109.14255 138.89709H400.9093zM64 112v288h384V112H64z"
                 />
-              </ui.Svg>
+              </svg>
             </a>
-          </ui.ListItem>
-          <ui.ListItem>
+          </li>
+          <li className={LI_STYLES_BASIC}>
             <a
               href="https://twitter.com/marcoheine_com"
               target="_blank"
@@ -54,9 +60,9 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </ui.ListItem>
+          </li>
 
-          <ui.ListItem>
+          <li className={LI_STYLES_BASIC}>
             <a
               href="https://github.com/marcoheine-com"
               target="_blank"
@@ -83,8 +89,8 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </ui.ListItem>
-          <ui.ListItem>
+          </li>
+          <li className={LI_STYLES_BASIC}>
             <a
               href="https://www.linkedin.com/in/marco-k%C3%BChbauch/"
               rel="noopener noreferrer"
@@ -103,8 +109,8 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </ui.ListItem>
-          <ui.ListItem>
+          </li>
+          <li className={`${LI_STYLES_BASIC} pr-0`}>
             <a
               href="https://marcoheine.com/rss.xml"
               rel="noopener noreferrer"
@@ -163,44 +169,49 @@ const Footer = () => {
                 <g></g>
               </svg>
             </a>
-          </ui.ListItem>
+          </li>
         </ul>
       </nav>
       <p>
         {t('footer.hosting')}
-        <ui.Link
+        <a
+          className={LINK_BASIC_STYLES}
           href="https://www.netlify.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
           {' '}
           Netlify.
-        </ui.Link>
+        </a>
       </p>
       <p>
         {t('footer.code')}
-        <ui.Link
+        <a
+          className={LINK_BASIC_STYLES}
           href="https://github.com/marcoheine-com/marcoheine.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
-        </ui.Link>
+        </a>
         .
       </p>
       <p>
         © {year} Marco Heine. Made in Germany with
-        <ui.Heart viewBox="0 0 32 29.6">
+        <svg
+          className="w-[18px] animate-move fill-white p-[3px]"
+          viewBox="0 0 32 29.6"
+        >
           <path
             d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
           />
-        </ui.Heart>
-        <ui.LinkStyles>
+        </svg>
+        <span className={LINK_BASIC_STYLES}>
           <Link href="/legal-notice/">Legal notice</Link>
-        </ui.LinkStyles>
+        </span>
       </p>
-    </ui.Footer>
+    </footer>
   )
 }
 

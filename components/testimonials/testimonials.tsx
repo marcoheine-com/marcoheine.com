@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useTranslation } from 'next-i18next'
-// @ts-ignore
+import DomImg from '../../images/dom.jpg'
 import ThomasFischerImg from '../../images/thomas-fischer.1024x1024(1).jpg'
-// @ts-ignore
 import ChristopImg from '../../images/christop-a-kolb.png'
 import Image, { StaticImageData } from 'next/image'
 
@@ -41,7 +40,7 @@ export const Testimonials: React.FC = () => {
       author: 'Dom Habersack',
       company: 'fn teach GmbH',
       link: 'https://domhabersack.com/',
-      image: 'https://domhabersack.com/dom.jpg',
+      image: DomImg,
     },
     {
       text: [

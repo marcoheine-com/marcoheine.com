@@ -1,23 +1,25 @@
 import Link from 'next/link'
-import React from 'react'
+import * as React from 'react'
 import Navigation from '../navigation'
 import config from '../../config'
-import * as ui from './ui'
 
 const Header = () => {
   return (
-    <ui.HeaderWrapper>
-      <ui.Header>
-        <ui.Headline>
-          <Link href="/">
+    <header className="transition-all duration-200 ease-in-out hover:shadow-header">
+      <div className="mx-auto flex max-w-4xl flex-col justify-between pt-8 md:flex-row">
+        <span className="my-5 inline-block text-[20px] ">
+          <Link
+            href="/"
+            className="text-primaryColorTwo no-underline hover:border-b-0"
+          >
             {config.author}
-            <ui.Blink>_</ui.Blink>
+            <span className="animate-blink">_</span>
           </Link>
-        </ui.Headline>
+        </span>
 
         <Navigation />
-      </ui.Header>
-    </ui.HeaderWrapper>
+      </div>
+    </header>
   )
 }
 

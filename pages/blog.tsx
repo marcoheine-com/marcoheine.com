@@ -1,8 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
@@ -62,66 +60,64 @@ const Blog = ({ data, location }) => {
       ))
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <SEO
-          title="Blog | Marco Heine - Freelance Web Developer"
-          ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-              ?.src
-          }
-          ogImageAlt="a picture of me"
-          description={t('meta.blog-description')}
-          location={location}
-        />
-        <ui.PageHeader>Blog</ui.PageHeader>
+    <Layout>
+      <SEO
+        title="Blog | Marco Heine - Freelance Web Developer"
+        ogImage={
+          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+            ?.src
+        }
+        ogImageAlt="a picture of me"
+        description={t('meta.blog-description')}
+        location={location}
+      />
+      <ui.PageHeader>Blog</ui.PageHeader>
 
-        <ui.PageContent>
-          <ui.BlogHeadline>{t('home.blog-posts')}</ui.BlogHeadline>
-          {newestPosts.map((edge) => {
-            const { node } = edge
-            const {
-              fields: { slug },
-              id,
-              frontmatter,
-              excerpt,
-            } = node
-            const { date, title } = frontmatter
+      <ui.PageContent>
+        <ui.BlogHeadline>{t('home.blog-posts')}</ui.BlogHeadline>
+        {newestPosts.map((edge) => {
+          const { node } = edge
+          const {
+            fields: { slug },
+            id,
+            frontmatter,
+            excerpt,
+          } = node
+          const { date, title } = frontmatter
 
-            return (
-              <Link
-                href={`/${slug}`}
-                key={id}
-              >
-                <section className="mb-16">
-                  <ui.NewArticle hasImage={frontmatter.featuredImage}>
-                    <ui.ArticleHeadline>{title}</ui.ArticleHeadline>
-                    {frontmatter.featuredImage && (
-                      <ui.ArticleImageWrapper>
-                        <Image
-                          alt={frontmatter.featuredImageAlt}
-                          src={
-                            frontmatter.featuredImage.childImageSharp
-                              .gatsbyImageData
-                          }
-                        />
-                      </ui.ArticleImageWrapper>
-                    )}
-                    <ui.Time dateTime={date}>Published on: {date}</ui.Time>
+          return (
+            <Link
+              href={`/${slug}`}
+              key={id}
+            >
+              <section className="mb-16">
+                <ui.NewArticle hasImage={frontmatter.featuredImage}>
+                  <ui.ArticleHeadline>{title}</ui.ArticleHeadline>
+                  {frontmatter.featuredImage && (
+                    <ui.ArticleImageWrapper>
+                      <Image
+                        alt={frontmatter.featuredImageAlt}
+                        src={
+                          frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
+                      />
+                    </ui.ArticleImageWrapper>
+                  )}
+                  <ui.Time dateTime={date}>Published on: {date}</ui.Time>
 
-                    <p>{excerpt}</p>
-                    <ui.Readmore>Read article</ui.Readmore>
-                  </ui.NewArticle>
-                </section>
-              </Link>
-            )
-          })}
+                  <p>{excerpt}</p>
+                  <ui.Readmore>Read article</ui.Readmore>
+                </ui.NewArticle>
+              </section>
+            </Link>
+          )
+        })}
 
-          <ui.BlogHeadline>{t('blog.headline-two')}</ui.BlogHeadline>
-          {createYearlySection(groupedByYear)}
-        </ui.PageContent>
-      </Layout>
-    </ThemeProvider>
+        <ui.BlogHeadline>{t('blog.headline-two')}</ui.BlogHeadline>
+        {createYearlySection(groupedByYear)}
+      </ui.PageContent>
+    </Layout>
   )
 }
 

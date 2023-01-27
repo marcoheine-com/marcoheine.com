@@ -1,11 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
 import config from '../config'
+import { StaticImageData } from 'next/image'
 
 interface SEOProps {
   description?: string
   title?: string
-  ogImage?: string
+  ogImage?: string | StaticImageData
   ogImageAlt?: string
   location?: Location
 }

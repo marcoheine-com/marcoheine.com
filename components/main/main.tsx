@@ -1,5 +1,4 @@
 import React from 'react'
-import * as ui from './ui'
 
 interface MainProps {
   maxWidth?: string
@@ -7,7 +6,13 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ children, maxWidth = '960px' }) => (
-  <ui.Main maxWidth={maxWidth}>{children}</ui.Main>
+  <main
+    className={`mx-auto w-full grow px-5 pt-16 pb-40 ${
+      maxWidth ? maxWidth : 'max-w-4xl'
+    }`}
+  >
+    {children}
+  </main>
 )
 
 export default Main

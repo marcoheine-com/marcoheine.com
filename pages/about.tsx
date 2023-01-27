@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { ThemeProvider } from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import theme from '../styles/theme'
 import * as ui from '../styles/index/ui'
 import * as aboutUI from '../styles/about/ui'
-import { Trans, useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,84 +11,83 @@ const About = ({ data, location }) => {
   const { t } = useTranslation()
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout maxWidth="1400px">
-        <SEO
-          title="About | Marco Heine - Freelance Web Developer"
-          ogImage={
-            data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-              ?.src
-          }
-          ogImageAlt="a picture of Marco Heine"
-          description={t('meta.about-description')}
-          location={location}
-        />
-        <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
-        <aboutUI.PageContent>
-          <aboutUI.Container>
-            <aboutUI.TwoColumnGrid>
-              <ui.ImgWrapper>
-                <Image
-                  alt="a picture of Marco Heine"
-                  src={data.personalImg.childImageSharp.gatsbyImageData}
-                />
-              </ui.ImgWrapper>
-              <div>
-                <p>
-                  Hi!{' '}
-                  <ui.WaveHand
-                    role="img"
-                    aria-label="waving hand emoji"
-                  >
-                    👋🏻
-                  </ui.WaveHand>{' '}
-                  <Trans i18nKey={'about.text-one'} />
-                </p>
-                <p>
-                  <Trans i18nKey={'about.text-two'} />
-                </p>
-              </div>
-            </aboutUI.TwoColumnGrid>
-            <p>{t('about.text-three')}</p>
-            <p>{t('about.text-four')}</p>
-          </aboutUI.Container>
+    <Layout maxWidth="1400px">
+      <SEO
+        title="About | Marco Heine - Freelance Web Developer"
+        ogImage={
+          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
+            ?.src
+        }
+        ogImageAlt="a picture of Marco Heine"
+        description={t('meta.about-description')}
+        location={location}
+      />
+      <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
+      <aboutUI.PageContent>
+        <aboutUI.Container>
+          <aboutUI.TwoColumnGrid>
+            <ui.ImgWrapper>
+              <Image
+                alt="a picture of Marco Heine"
+                src={data.personalImg.childImageSharp.gatsbyImageData}
+              />
+            </ui.ImgWrapper>
+            <div>
+              <p>
+                Hi!{' '}
+                <ui.WaveHand
+                  role="img"
+                  aria-label="waving hand emoji"
+                >
+                  👋🏻
+                </ui.WaveHand>{' '}
+                <Trans i18nKey={'about.text-one'} />
+              </p>
+              <p>
+                <Trans i18nKey={'about.text-two'} />
+              </p>
+            </div>
+          </aboutUI.TwoColumnGrid>
+          <p>{t('about.text-three')}</p>
+          <p>{t('about.text-four')}</p>
+        </aboutUI.Container>
 
-          <section
-            className="mx-auto mb-20 max-w-2xl"
-            id="values"
-          >
-            <h2>{t('about.subline-three')}</h2>
-            <ul>
-              <li>{t('about.value-one')}</li>
-              <li>{t('about.value-two')}</li>
-              <li>{t('about.value-three')}</li>
-              <li>{t('about.value-four')}</li>
-              <li>{t('about.value-five')}</li>
-              <li>{t('about.value-six')}</li>
-              <li>{t('about.value-seven')}</li>
-            </ul>
-          </section>
+        <section
+          className="mx-auto mb-20 max-w-2xl"
+          id="values"
+        >
+          <h2>{t('about.subline-three')}</h2>
+          <ul>
+            <li>{t('about.value-one')}</li>
+            <li>{t('about.value-two')}</li>
+            <li>{t('about.value-three')}</li>
+            <li>{t('about.value-four')}</li>
+            <li>{t('about.value-five')}</li>
+            <li>{t('about.value-six')}</li>
+            <li>{t('about.value-seven')}</li>
+          </ul>
+        </section>
 
-          <aboutUI.Container>
-            <h2>{t('about.subline-one')}</h2>
-            <p>{t('about.text-five')}</p>
-            <p>
-              {t('about.text-six')}
-              <a
-                href="https://www.goodreads.com/user/show/145214426-marco-heine"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('about.text-seven')}
-              </a>
-              .
-            </p>
-            <p>{t('about.text-eight')}</p>
-            <p>
-              {t('about.text-nine')} <Link href="/blog/">blog</Link>{' '}
-            </p>
-          </aboutUI.Container>
-          {/* <aboutUI.Container>
+        <aboutUI.Container>
+          <h2>{t('about.subline-one')}</h2>
+          <p>{t('about.text-five')}</p>
+          <p>
+            {t('about.text-six')}
+            <a
+              href="https://www.goodreads.com/user/show/145214426-marco-heine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('about.text-seven')}
+            </a>
+            .
+          </p>
+          <p>{t('about.text-eight')}</p>
+          <p>
+            {t('about.text-nine')} <Link href="/blog/">blog</Link>{' '}
+          </p>
+        </aboutUI.Container>
+        {/* <aboutUI.Container>
             <details>
               <summary className="text-3xl font-serif cursor-pointer">
                 {t('about.subline-two')}
@@ -172,9 +169,8 @@ const About = ({ data, location }) => {
               </>
             </details>
           </aboutUI.Container> */}
-        </aboutUI.PageContent>
-      </Layout>
-    </ThemeProvider>
+      </aboutUI.PageContent>
+    </Layout>
   )
 }
 

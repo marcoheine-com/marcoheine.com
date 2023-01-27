@@ -1,32 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import * as React from 'react'
 import Header from './header'
 import Footer from './footer'
 import Main from './main'
-import GlobalStylesheet from './GlobalStylesheet'
-
-const Page = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
-
-const HorizontalLine = styled.hr`
-  border-top: 6px solid ${({ theme }) => theme.primaryColorTwo};
-  margin: 0;
-  position: sticky;
-  top: 0;
-  z-index: 2;
-`
 
 const Layout = ({ children, maxWidth = '960px' }) => (
-  <Page>
-    <GlobalStylesheet />
-    <HorizontalLine />
+  <div className="flex min-h-screen flex-col">
+    <hr className="sticky top-0 z-[2] border-t-[6px] border-t-primaryColorTwo" />
     <Header />
-    <Main maxWidth={maxWidth}>{children}</Main>
+    {/* <Main maxWidth={maxWidth}>{children}</Main> */}
     <Footer />
-  </Page>
+  </div>
 )
 export default Layout
