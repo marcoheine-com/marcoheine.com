@@ -6,11 +6,11 @@ import config from '../../config'
 const Header = () => {
   return (
     <header className="transition-all duration-200 ease-in-out hover:shadow-header">
-      <div className="mx-auto flex max-w-4xl flex-col justify-between pt-8 md:flex-row">
-        <span className="my-5 inline-block text-[20px] ">
+      <div className="mx-auto flex max-w-4xl flex-col items-start justify-between px-5 lg:flex-row lg:items-center">
+        <span className="font-merriweather my-5 inline-block text-[28px]">
           <Link
             href="/"
-            className="text-primaryColorTwo no-underline hover:border-b-0"
+            className="text-primaryColorOne no-underline hover:border-b-0"
           >
             {config.author}
             <span className="animate-blink">_</span>

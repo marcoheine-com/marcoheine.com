@@ -1,38 +1,5 @@
 import styled from 'styled-components'
 
-export const IndexWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const Headline = styled.h1`
-  margin-bottom: 40px;
-`
-
-export const Hometext = styled.p`
-  font-size: 24px;
-  line-height: 1.5;
-`
-
-export const LinkSpan = styled.span`
-  color: ${({ theme }) => theme.primaryColorTwo};
-
-  &:hover {
-    color: ${({ theme }) => theme.linkHover};
-  }
-`
-
-export const Container = styled.div`
-  justify-items: center;
-  display: grid;
-  gap: 20px;
-
-  @media (min-width: 460px) {
-    grid-template-columns: auto auto;
-  }
-`
-
 export const ImgWrapper = styled.div`
   max-width: 300px;
   transition: all 0.4s linear;
@@ -155,18 +122,6 @@ export const Readmore = styled.span`
   }
 `
 
-export const TILCard = styled.article`
-  color: ${({ theme }) => theme.primaryColorOne};
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  transition: box-shadow 0.2s linear;
-  &:hover {
-    box-shadow: 2px 2px 12px #d9d9d9;
-    border-radius: 10px;
-  }
-`
-
 export const BlogLink = styled.span`
   align-self: flex-start;
   color: ${({ theme }) => theme.primaryColorTwo};
@@ -197,12 +152,6 @@ export const Time = styled.time`
 
 export const PostOuterWrapper = styled.section`
   width: 100%;
-`
-
-export const TILInnerWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 40px;
 `
 
 export const PageHeader = styled.h1`

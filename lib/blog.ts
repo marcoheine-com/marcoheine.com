@@ -1,12 +1,11 @@
 import matter from 'gray-matter'
-import { parse, format } from 'date-fns'
+import { format } from 'date-fns'
 import fs from 'fs'
 import { join } from 'path'
 
-// Add markdown files in `src/content/blog`
 const postsDirectory = join(process.cwd(), 'blog')
 
-export function getPostBySlug(slug: string) {
+export function getBlogPostBySlug(slug: string) {
   let realSlug = ''
   let fullPath = ''
 
@@ -19,13 +18,19 @@ export function getPostBySlug(slug: string) {
   }
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
+
   const date = format(new Date(data.date), 'MMMM dd, yyyy')
-  return { slug: realSlug, frontmatter: { ...data, date }, content }
+  return { slug: `blog/${realSlug}`, frontmatter: { ...data, date }, content }
 }
 
 export function getAllPosts() {
   const slugs = fs.readdirSync(postsDirectory)
-  const posts = slugs.map((slug) => getPostBySlug(slug))
+  const posts = slugs.map((slug) => getBlogPostBySlug(slug))
 
-  return posts
+  // Sort posts by date in descending order
+  return posts.sort((post1, post2) => {
+    const date1 = new Date(post1.frontmatter.date)
+    const date2 = new Date(post2.frontmatter.date)
+    return date1 > date2 ? -1 : 1
+  })
 }

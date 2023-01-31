@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { useTranslation } from 'next-i18next'
-import DomImg from '../../images/dom.jpg'
-import ThomasFischerImg from '../../images/thomas-fischer.1024x1024(1).jpg'
-import ChristopImg from '../../images/christop-a-kolb.png'
+import DomImg from '../../public/images/dom.jpg'
+import ThomasFischerImg from '../../public/images/thomas-fischer.1024x1024(1).jpg'
+import ChristopImg from '../../public/images/christop-a-kolb.png'
 import Image, { StaticImageData } from 'next/image'
 
 interface Testimonial {

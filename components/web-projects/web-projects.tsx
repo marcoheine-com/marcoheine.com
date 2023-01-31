@@ -2,17 +2,17 @@ import * as React from 'react'
 import { useTranslation } from 'next-i18next'
 
 // @ts-ignore
-import AndersontourWebsite from '../../images/andersontour-website.webp'
+import AndersontourWebsite from '../../public/images/andersontour-website.webp'
 // @ts-ignore
-import DiedaWebsite from '../../images/dieda-website.webp'
+import DiedaWebsite from '../../public/images/dieda-website.webp'
 // @ts-ignore
-import AerosolallianceWebsite from '../../images/aerosolalliance-website.webp'
+import AerosolallianceWebsite from '../../public/images/aerosolalliance-website.webp'
 // @ts-ignore
-import LauraheineWebsite from '../../images/lauraheine-website.webp'
+import LauraheineWebsite from '../../public/images/lauraheine-website.webp'
 // @ts-ignore
-import SenelektroWebsite from '../../images/senelektro-website.webp'
+import SenelektroWebsite from '../../public/images/senelektro-website.webp'
 // @ts-ignore
-import StuttgarterKickersWebsite from '../../images/stuttgarter-kickers-website.webp'
+import StuttgarterKickersWebsite from '../../public/images/stuttgarter-kickers-website.webp'
 
 import { CallToAction } from '../call-to-action'
 import Link from 'next/link'

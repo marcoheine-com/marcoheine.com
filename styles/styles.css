@@ -49,7 +49,7 @@
   }
   p,
   span {
-    @apply text-xl mb-4;
+    @apply mb-4 text-xl;
   }
   svg {
     @apply inline-block;
@@ -71,7 +71,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-l-primaryColorTwo pl-4 mx-4 my-8;
+    @apply mx-4 my-8 border-l-4 border-l-primaryColorTwo pl-4;
   }
 
   pre > code {
@@ -84,18 +84,22 @@
     font-family: 'Merriweather', serif;
   }
   .hover-target {
-    @apply transition-all;
+    @apply transition-all duration-300;
   }
 
   .hover-trigger:hover > div {
-    @apply shadow-customDark scale-95;
+    @apply scale-95 shadow-customDark;
   }
 
   .hover-trigger:hover .hover-target {
-    @apply right-4 top-24;
+    @apply right-4 top-40;
   }
 
   .lang-link a {
     @apply text-primaryColorOne hover:text-linkHover;
+  }
+
+  .font-merriweather {
+    font-family: 'Merriweather', serif;
   }
 }

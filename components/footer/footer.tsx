@@ -14,16 +14,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-primaryColorTwo py-8 text-center text-[14px] text-white">
-      <p className="m-0 pb-8 text-white">
-        <a
-          href="#"
-          className="hover:text-white"
-        >
-          &uarr; {t('footer.top')} &uarr;
-        </a>
-      </p>
+      <a
+        href="#"
+        className="mb-8 text-white"
+      >
+        &uarr; {t('footer.top')} &uarr;
+      </a>
       <nav>
-        <ul className="mb-8">
+        <ul className="mb-8 flex list-none justify-center gap-4">
           <li className={LI_STYLES_BASIC}>
             <a href="mailto:hello@marcoheine.com">
               <svg

@@ -83,6 +83,14 @@ const SEO: React.FC<SEOProps> = ({
         name="twitter:description"
         content={metaDescription}
       />
+      <link
+        rel="canonical"
+        href={`${config.siteUrl}${url}`}
+      />
+      <link
+        rel="icon"
+        href="/favicon-32x32.png"
+      />
     </Head>
   )
 }
