@@ -18,14 +18,32 @@ export function getBlogPostBySlug(slug: string) {
   }
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
   const date = format(new Date(data.date), 'MMMM dd, yyyy')
-  return { slug: `blog/${realSlug}`, frontmatter: { ...data, date }, content }
+
+  if (data.updated) {
+    data.updated = format(new Date(data.updated), 'MMMM dd, yyyy')
+  }
+  return {
+    slug: realSlug,
+    frontmatter: { ...data, date },
+    content,
+  }
 }
 
-export function getAllPosts() {
+type Options = {
+  withPrefix?: boolean
+}
+
+export function getAllPosts({ withPrefix = false }: Options = {}) {
   const slugs = fs.readdirSync(postsDirectory)
   const posts = slugs.map((slug) => getBlogPostBySlug(slug))
+
+  // add blog as prefix to slugs
+  if (withPrefix) {
+    posts.forEach((post) => {
+      post.slug = `blog/${post.slug}`
+    })
+  }
 
   // Sort posts by date in descending order
   return posts.sort((post1, post2) => {

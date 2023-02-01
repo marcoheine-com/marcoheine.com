@@ -33,23 +33,3 @@ export const PageContent = styled.section`
       font-size: 20px;
   }
 `
-
-export const GoBackSpan = styled.span`
-  display: block;
-  margin-bottom: 16px;
-  font-size: 1rem;
-  &::before {
-    content: '← ';
-  }
-`
-
-export const PageHeader = styled.h1`
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 0;
-`
-
-export const BlogPostHeader = styled.section`
-  display: flex;
-  gap: 20px;
-`

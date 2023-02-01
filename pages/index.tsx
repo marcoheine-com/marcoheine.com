@@ -12,7 +12,7 @@ import { getAllPosts } from '../lib/blog'
 import MarcoHeineImg from '../public/images/marco-heine.webp'
 import { getAllTILPosts } from '../lib/til'
 
-export interface BlogPostProps {
+export interface BlogPost {
   slug: string
   frontmatter: {
     title: string
@@ -52,6 +52,7 @@ export async function getStaticProps({ locale }) {
     },
   }
 }
+
 const IndexPage = ({ blogPosts, tilData, location }) => {
   const { t } = useTranslation()
 
@@ -112,7 +113,7 @@ const IndexPage = ({ blogPosts, tilData, location }) => {
           <section className="mb-16 grid">
             <h2>{t('home.blog-posts')}</h2>
             <>
-              {latestBlogPosts.map((post: BlogPostProps) => (
+              {latestBlogPosts.map((post: BlogPost) => (
                 <Link
                   key={post.frontmatter.title}
                   href={`/${post.slug}`}

@@ -2,10 +2,11 @@ import React from 'react'
 import * as ui from './ui'
 
 const CoffeeLink = () => (
-  <ui.CoffeeLink
+  <a
     href="https://www.buymeacoffee.com/marcoheine"
     rel="noopener noreferrer"
     target="_blank"
+    className="inline-block self-center rounded-md bg-[#79d6b5] p-2 font-bold text-black hover:text-white"
   >
     <span
       role="img"
@@ -20,7 +21,7 @@ const CoffeeLink = () => (
     >
       ☕️
     </span>{' '}
-  </ui.CoffeeLink>
+  </a>
 )
 
 export default CoffeeLink

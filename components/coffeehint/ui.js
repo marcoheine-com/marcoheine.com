@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const CoffeeHint = styled.section`
   background-color: #edf6ff;
@@ -10,19 +10,4 @@ export const CoffeeHint = styled.section`
   @media (min-width: 600px) {
     margin-left: 30px;
   }
-`;
-
-export const CoffeeLink = styled.a`
-  align-self: center;
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #79d6b5;
-  color: black;
-  font-weight: bold;
-  border-radius: 5px;
-
-  &:hover {
-    color: white;
-  }
-`;
+`

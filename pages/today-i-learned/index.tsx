@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Button from '../components/Button'
-import * as ui from '../styles/til/ui'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import Button from '../../components/Button'
+import * as ui from '../../styles/til/ui'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 
