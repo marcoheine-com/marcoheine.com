@@ -87,8 +87,8 @@
     @apply transition-all duration-300;
   }
 
-  .hover-trigger:hover > div {
-    @apply scale-95 shadow-customDark;
+  .hover-trigger:hover > img {
+    @apply lg:-rotate-2 lg:scale-95 lg:rounded-xl lg:shadow-customDark;
   }
 
   .hover-trigger:hover .hover-target {

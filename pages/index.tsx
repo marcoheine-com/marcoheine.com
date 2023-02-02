@@ -1,16 +1,16 @@
 import * as React from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { CallToAction } from '../components/call-to-action'
+import Layout from 'components/layout'
 import { useTranslation } from 'next-i18next'
-import { WebProjects } from '../components/web-projects'
-import { Testimonials } from '../components/testimonials'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
-import { getAllPosts } from '../lib/blog'
-import MarcoHeineImg from '../public/images/marco-heine.webp'
-import { getAllTILPosts } from '../lib/til'
+import SEO from 'components/seo'
+import { getAllPosts } from 'lib/blog'
+import { getAllTILPosts } from 'lib/til'
+import MarcoHeineImg from 'public/images/marco-heine.webp'
+import { CallToAction } from 'components/call-to-action'
+import { WebProjects } from 'components/web-projects'
+import { Testimonials } from 'components/testimonials'
 
 export interface BlogPost {
   slug: string
@@ -78,7 +78,7 @@ const IndexPage = ({ blogPosts, tilData, location }) => {
             <Image
               alt="a picture of Marco Heine"
               src={MarcoHeineImg}
-              className="mb-10 transition-all duration-500 lg:mr-64 lg:hover:-rotate-2 lg:hover:rounded-3xl"
+              className="mb-10 duration-500 lg:mr-64"
               width={500}
               height={500}
             />

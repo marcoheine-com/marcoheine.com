@@ -1,10 +1,9 @@
-import React from 'react';
-import CoffeeLink from './CoffeeLink';
-import * as ui from './ui';
+import React from 'react'
+import CoffeeLink from './CoffeeLink'
 
-const CoffeeHint = () => {
+export const CoffeeHint = () => {
   return (
-    <ui.CoffeeHint>
+    <section className="my-10 flex flex-col bg-[#edf6ff] px-10 pt-5 pb-2 md:ml-6">
       <h3>Hi Friend!</h3>
       <p>
         If you enjoy my writings and learn something from them, you can consider
@@ -17,8 +16,6 @@ const CoffeeHint = () => {
         <strong>support my work</strong>.
       </p>
       <CoffeeLink />
-    </ui.CoffeeHint>
-  );
-};
-
-export default CoffeeHint;
+    </section>
+  )
+}

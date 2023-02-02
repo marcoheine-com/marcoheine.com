@@ -6,28 +6,30 @@ import Link from 'next/link'
 import { getAllPosts, getBlogPostBySlug } from '../../lib/blog'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextPage } from 'next'
-import MarcoHeineImg from '../../public/images/marco-heine.webp'
 import { BlogPost } from '..'
-import { remark } from 'remark'
-import html from 'remark-html'
-import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import rehypeHighlight from 'rehype-highlight'
 
 interface BlogPostProps {
   blogPost: BlogPost
   location: Location
-  content: string
+  blogPostMDX: MDXRemoteSerializeResult
 }
 
 export async function getStaticProps({ params, locale }) {
   const blogPost = getBlogPostBySlug(params.slug)
-  const markdown = await remark().use(html).process(blogPost.content)
-  const content = markdown.toString()
+  const blogPostMDX = await serialize(blogPost.content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight, {}],
+    },
+  })
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
       blogPost,
-      content,
+      blogPostMDX,
     },
   }
 }
@@ -44,7 +46,7 @@ export async function getStaticPaths() {
 const BlogPost: React.FC<NextPage & BlogPostProps> = ({
   blogPost,
   location,
-  content,
+  blogPostMDX,
 }) => {
   const { frontmatter } = blogPost
 
@@ -59,7 +61,7 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
       <SEO
         title={`Blog | ${title}`}
         description={description}
-        ogImage={MarcoHeineImg}
+        ogImage={featuredImage}
         ogImageAlt={featuredImageAlt}
         location={location}
       />
@@ -95,9 +97,9 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
         </section>
 
         <hr />
-        <MDXProvider>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </MDXProvider>
+
+        <MDXRemote {...blogPostMDX} />
+
         <p>
           I hope you enjoyed this article and learned something new. If you have
           any questions, feel free to reach out to me on{' '}

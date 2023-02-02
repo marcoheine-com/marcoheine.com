@@ -1,1 +1,1 @@
-export { default } from './CoffeeHint';
+export { CoffeeHint } from './CoffeeHint'
