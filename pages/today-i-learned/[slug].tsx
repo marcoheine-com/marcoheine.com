@@ -4,6 +4,47 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import * as ui from '../../styles/til-post/ui'
 
+interface TILPostProps {
+  tilPost: TILPost
+  location: Location
+  tilPostMDX: MDXRemoteSerializeResult
+}
+
+export async function getStaticProps({ params, locale }) {
+  const tilPost = getTILPostBySlug(params.slug)
+  const tilPostMDX = await serialize(tilPost.content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight, {}],
+    },
+  })
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      tilPost,
+      tilPostMDX,
+    },
+  }
+}
+
+export async function getStaticPaths({ locales }) {
+  const tilPosts = getAllTILPosts()
+
+  const pathsWithLocales = tilPosts.reduce((acc, blogPost) => {
+    const { slug } = blogPost
+    const paths = locales.map((locale) => ({
+      params: { slug },
+      locale,
+    }))
+    return [...acc, ...paths]
+  }, [])
+
+  return {
+    paths: pathsWithLocales,
+    fallback: false,
+  }
+}
+
 const TilPost = ({ data, location }) => {
   if (!data) {
     return null

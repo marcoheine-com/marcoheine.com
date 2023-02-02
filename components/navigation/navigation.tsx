@@ -12,7 +12,7 @@ const NAV_LINK_BASIC_STYLES =
 const Navigation = () => {
   const [isToggled, setIsToggled] = React.useState(false)
   const handleOnClick = () => setIsToggled(!isToggled)
-  const { locale, locales } = useRouter()
+  const { locale, locales, asPath } = useRouter()
 
   return (
     <>
@@ -108,7 +108,7 @@ const Navigation = () => {
                     } lang-link m-0`}
                   >
                     <Link
-                      href={'/'}
+                      href={asPath}
                       locale={lng}
                     >
                       {lng}

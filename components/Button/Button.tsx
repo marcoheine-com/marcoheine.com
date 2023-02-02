@@ -1,14 +1,14 @@
 import React from 'react'
-import * as ui from './ui'
 
 const Button = ({ children, onClick }) => {
   return (
-    <ui.Button
+    <button
+      className="cursor-pointer border-[2px] border-solid border-primaryColorTwo bg-none py-3 px-10 hover:bg-primaryColorTwo hover:text-white"
       onClick={onClick}
       type="button"
     >
       {children}
-    </ui.Button>
+    </button>
   )
 }
 

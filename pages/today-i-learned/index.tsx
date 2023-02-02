@@ -2,66 +2,87 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Button from '../../components/Button'
-import * as ui from '../../styles/til/ui'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { getAllTILPosts, getAllTILTags, Tag } from '../../lib/til'
+import { NextPage } from 'next'
+import { TILPost } from '..'
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
 
-const TIL = ({ data, location }) => {
-  const { allMdx } = data
-  const { edges, group } = allMdx
+interface TILPostProps {
+  tilPosts: TILPost[]
+  location: Location
+  allTags: Tag[]
+}
 
-  const [items, setItems] = React.useState(edges?.slice(0, 20))
+export async function getStaticProps({ locale }) {
+  const tilPosts = getAllTILPosts()
+  const allTags = getAllTILTags()
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      tilPosts: JSON.parse(JSON.stringify(tilPosts)),
+      allTags,
+    },
+  }
+}
+
+const TIL: React.FC<NextPage & TILPostProps> = ({
+  tilPosts,
+  allTags,
+  location,
+}) => {
+  const [items, setItems] = React.useState(tilPosts?.slice(0, 20))
   const [allItemsLoaded, setAllItemsLoaded] = React.useState(false)
   const [filterValue, setFilterValue] = React.useState('')
 
   const { t } = useTranslation()
 
-  const additionalItems = edges.slice(20)
+  const additionalItems = tilPosts.slice(20)
 
   React.useEffect(() => {
     if (!allItemsLoaded) {
       return
     }
 
-    setItems(edges)
-  }, [allItemsLoaded, edges])
+    setItems(tilPosts)
+  }, [allItemsLoaded, tilPosts])
 
   React.useEffect(() => {
     if (!filterValue) {
-      return setItems(edges?.slice(0, 20))
+      return setItems(tilPosts?.slice(0, 20))
     }
 
-    const filteredItems = edges.filter(
-      ({ node }) =>
-        node.frontmatter.title
+    const filteredItems = tilPosts.filter(
+      (post) =>
+        post.frontmatter.title
           .toLowerCase()
           .includes(filterValue.toLowerCase()) ||
-        node.frontmatter?.tags
+        post.frontmatter?.tags
           ?.map((tag) => tag.toLowerCase())
           .includes(filterValue.toLowerCase()) ||
-        node.body.toLowerCase().includes(filterValue.toLowerCase())
+        post.content.toLowerCase().includes(filterValue.toLowerCase())
     )
 
     setItems(filteredItems)
-  }, [filterValue, edges])
+  }, [filterValue, tilPosts])
 
   const handleOnClick = () => {
     setAllItemsLoaded(!allItemsLoaded)
   }
 
   return (
-    <Layout maxWidth="1400px">
+    <Layout maxWidth="max-w-[1400px]">
       <SEO
         title="Today I learned | Marco Heine - Freelance Web Developer"
-        ogImage={
-          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-            ?.src
-        }
+        ogImage={MarcoHeineImg}
         ogImageAlt="a picture of me"
         description={t('meta.til-description')}
         location={location}
       />
-      <ui.PageHeader>Today I learned</ui.PageHeader>
+      <h1 className="mt-5 mb-0 text-center">Today I learned</h1>
       <label
         htmlFor="search"
         className="mt-10 flex items-center justify-center gap-2"
@@ -85,56 +106,64 @@ const TIL = ({ data, location }) => {
       </label>
 
       <ul className="mx-auto my-10 flex max-w-3xl list-none justify-start gap-4 overflow-auto md:flex-wrap md:justify-center">
-        {group.map((tag) => (
+        {allTags?.map((tag: Tag) => (
           <li
-            className="m-0 shrink-0 py-4 text-primaryColorTwo"
-            key={tag.fieldValue}
+            className="m-0 shrink-0 text-primaryColorTwo"
+            key={tag.name}
           >
-            <Link href={`/today-i-learned/${tag.fieldValue.toLowerCase()}/`}>
-              {tag.fieldValue} ({tag.totalCount})
+            <Link href={`/today-i-learned/category/${tag.name.toLowerCase()}/`}>
+              {tag.name} ({tag.count})
             </Link>
           </li>
         ))}
       </ul>
 
-      <ui.PageContent>
-        {items.map(({ node }, index) => {
-          const { excerpt, fields, frontmatter, id } = node
+      <section className="mx-auto mt-20 mb-0 grid grid-cols-2 justify-center gap-10 lg:gap-14 xl:grid-cols-3 xl:gap-10">
+        {items.map((item, index) => {
+          const { frontmatter } = item
 
           return (
             <Link
-              key={id}
-              href={`/${fields.slug}`}
+              key={item.slug}
+              href={`/${item.slug}`}
             >
-              <ui.Section>
-                <ui.Aside>
-                  TIL #{frontmatter.number || edges?.length - index}
-                </ui.Aside>
+              <section className="rounded-3xl p-14 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customDark">
+                <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">
+                  TIL #{frontmatter.number || tilPosts?.length - index}
+                </aside>
                 <h2>{frontmatter.title}</h2>
 
                 {frontmatter.tags && (
-                  <ui.tags>
+                  <section className="mb-4 flex flex-wrap gap-3">
                     {frontmatter.tags.map((tag) => (
-                      <ui.tag key={tag}>#{tag}</ui.tag>
+                      <span
+                        className="font-bold"
+                        key={tag}
+                      >
+                        #{tag}
+                      </span>
                     ))}
-                  </ui.tags>
+                  </section>
                 )}
 
                 <section>
-                  <p>{excerpt}</p>
-                  <ui.Readmore>Read more</ui.Readmore>
+                  <p>{frontmatter.description}</p>
+
+                  <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
+                    Read more
+                  </span>
                 </section>
-              </ui.Section>
+              </section>
             </Link>
           )
         })}
-      </ui.PageContent>
+      </section>
       {!allItemsLoaded && !filterValue && (
-        <ui.Slot>
+        <div className="mt-10 flex justify-center">
           <Button onClick={handleOnClick}>
             Load {additionalItems.length} more
           </Button>
-        </ui.Slot>
+        </div>
       )}
     </Layout>
   )

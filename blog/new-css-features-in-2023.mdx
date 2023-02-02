@@ -25,7 +25,6 @@ To keep an overview of what's new and what has changed, I will explain in detail
 - [Sources](#sources)
 
 ---
-<br /> 
 
 ## <a name="container-queries"></a> Container Queries
 
@@ -62,7 +61,6 @@ Here's another example on CodePen. If the container on the right is larger than 
 
 [https://codepen.io/Mkuehb/pen/GRBxoZQ](https://codepen.io/Mkuehb/pen/GRBxoZQ)
 
-<br />
 
 Why do we need container queries when most of the layout changes can be done by listening to the viewport width? The answer is **context**. Container Queries are such a perfect tool for components from whom we don't know beforehand in which context they will be used.
 
@@ -74,9 +72,7 @@ I've already written about responsive typography using [clamp()](/today-i-learne
 
 This is typically done by listening to viewport widths. However, with the addition of container query units, we can replace this now by listening to the container's width, height, inline size, block size, or the smaller or larger value of these.
 
-Here's the spec for all the new units: <a href="https://drafts.csswg.org/css-contain-3/#container-lengths" target="_blank" rel="noopener">https://drafts.csswg.org/css-contain-3/#container-lengths) &#8599;</a>. It has yet to get full browser support, but container queries can be used in totally new ways if this lands.
-
-<br /> 
+Here's the spec for all the new units: [https://drafts.csswg.org/css-contain-3/#container-lengths](https://drafts.csswg.org/css-contain-3/#container-lengths). It has yet to get full browser support, but container queries can be used in totally new ways if this lands.
 
 ## <a name="focus-visible"></a> Focus-visible
 
@@ -101,9 +97,6 @@ This is an excellent addition to CSS, as it removes them for mouse users, who wo
 Try it out yourself:
 
 [https://codepen.io/Mkuehb/pen/GRBxoZQ](https://codepen.io/Mkuehb/pen/GRBxoZQ)
-
-<br />
-<br /> 
 
 ## <a name="has"></a> :has()
 
@@ -185,7 +178,7 @@ The examples above are from <a href="https://12daysofweb.dev/2022/css-has-select
 
 This means `:has()` is not solemnly a parent selector. It's a **relational selector**! As I said at the beginning, this new functional pseudo-class brings endless possibilities. It's awesome. I'm under the impression that I haven't even started to grasp the scope of what's possible now.
 
-<br />
+
 
 ## <a name="subgrid"></a> Subgrid
 
@@ -193,17 +186,14 @@ Before `subgrid` existed, a grid inside another grid couldn't be aligned along t
 
 [https://codepen.io/Mkuehb/pen/GRBxoZQ](https://codepen.io/Mkuehb/pen/GRBxoZQ)
 
-<br /> 
 
 Now with subgrid, you can tell the inner grid with `grid-template-columns: subgrid` that the columns should be aligned with the ones of the parent.
 
 [https://codepen.io/Mkuehb/pen/GRBxoZQ](https://codepen.io/Mkuehb/pen/GRBxoZQ)
 
-<br />
 
 Subgrids can be used without limitation downwards, so you can **nest** them endlessly as long as the parent has the grid property. This opens up many possibilities for defining grids; it's a beautiful addition!
 
-<br />
 
 ## <a name="accent-color"></a> Accent-Color
 
@@ -218,9 +208,7 @@ It's currently usable on `input type= "checkbox"`, `input type= "radio"`, `input
 Here's a **CodePen** to showcase its usage of it:
 
 [https://codepen.io/Mkuehb/pen/GRBxoZQ](https://codepen.io/Mkuehb/pen/GRBxoZQ)
-
-<br />
-<br /> 
+ 
 
 ## <a name="individual-transform-properties"></a> Individual Transform Properties
 
@@ -269,8 +257,6 @@ Here's our example from above with individual transform properties:
   }
 }
 ```
-
-<br /> 
 
 ## <a name="sources"></a> Sources
 

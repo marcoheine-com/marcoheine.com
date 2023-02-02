@@ -26,7 +26,7 @@ export interface BlogPost {
   content: string
 }
 
-export interface TILPostProps {
+export interface TILPost {
   slug: string
   frontmatter: {
     title: string
@@ -163,7 +163,7 @@ const IndexPage = ({ blogPosts, tilData, location }) => {
           <section>
             <h2>{t('home.til-posts')}</h2>
             <section className="grid grid-cols-auto-grid-200-1fr gap-10">
-              {latestTILPosts.map((post: TILPostProps) => (
+              {latestTILPosts.map((post: TILPost) => (
                 <Link
                   key={post.frontmatter.title}
                   href={`/${post.slug}`}

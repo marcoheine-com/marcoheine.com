@@ -34,11 +34,20 @@ export async function getStaticProps({ params, locale }) {
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const blogPosts = getAllPosts()
 
+  const pathsWithLocales = blogPosts.reduce((acc, blogPost) => {
+    const { slug } = blogPost
+    const paths = locales.map((locale) => ({
+      params: { slug },
+      locale,
+    }))
+    return [...acc, ...paths]
+  }, [])
+
   return {
-    paths: blogPosts.map((blogPost) => ({ params: { slug: blogPost.slug } })),
+    paths: pathsWithLocales,
     fallback: false,
   }
 }
@@ -96,9 +105,8 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
           )}
         </section>
 
-        <hr />
-
         <MDXRemote {...blogPostMDX} />
+        <hr className="mt-12 mb-10" />
 
         <p>
           I hope you enjoyed this article and learned something new. If you have
