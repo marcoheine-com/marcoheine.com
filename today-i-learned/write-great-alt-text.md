@@ -2,7 +2,7 @@
 title: How to write great alt text
 date: 2022-06-16
 path: /write-great-alt-text
-tags: ['Accessibility', 'HTML']
+tags: ['accessibility', 'html']
 number: 41
 description:
   In this post, I'll show how to write great alt text, according to Jake

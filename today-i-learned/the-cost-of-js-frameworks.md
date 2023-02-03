@@ -2,7 +2,7 @@
 title: The cost of JavaScript frameworks
 date: 2020-04-22
 path: /the-cost-of-js-frameworks
-tags: ['JavaScript']
+tags: ['javascript']
 number: 17
 ---
 

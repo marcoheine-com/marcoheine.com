@@ -2,7 +2,7 @@
 title: POST vs. PUT
 date: 2022-05-07
 path: /post-vs-put
-tags: ['API']
+tags: ['api']
 number: 36
 ---
 

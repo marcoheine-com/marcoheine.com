@@ -2,7 +2,7 @@
 title: The Set Object
 date: 2021-02-19
 path: /set-object
-tags: ['JavaScript']
+tags: ['javascript']
 number: 31
 ---
 

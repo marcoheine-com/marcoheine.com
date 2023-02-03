@@ -2,7 +2,7 @@
 title: Persisting redux state with localStorage
 date: 2020-02-27
 path: /persisting-redux-state-with-localstorage
-tags: ['React', 'Redux']
+tags: ['react', 'redux']
 number: 11
 ---
 

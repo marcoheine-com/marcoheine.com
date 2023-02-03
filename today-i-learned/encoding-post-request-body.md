@@ -2,7 +2,7 @@
 title: Encoding POST request body
 date: 2021-07-23
 path: /encoding-post-request-body
-tags: ['API']
+tags: ['api']
 number: 34
 ---
 

@@ -2,7 +2,7 @@
 title: Hooks in React Router
 date: 2020-02-16
 path: /hooks-in-react-router
-tags: ['React']
+tags: ['react']
 number: 9
 ---
 

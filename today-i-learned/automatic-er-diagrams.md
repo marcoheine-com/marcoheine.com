@@ -2,7 +2,7 @@
 title: Automatic ER diagrams
 date: 2022-06-10
 path: /automatic-er-diagrams
-tags: ['Backend', 'Prisma']
+tags: ['backend', 'prisma']
 number: 40
 description:
   Today I learned that there is an automatic ER diagram generator for prisma

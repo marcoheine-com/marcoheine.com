@@ -4,7 +4,7 @@ description: There exists a list with mistakes made in the design of CSS, that c
   
 date: 2022-08-24
 path: /incomplete-list-of-css-mistakes
-tags: ['CSS']
+tags: ['css']
 number: 48
 ---
 

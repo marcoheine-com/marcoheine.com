@@ -5,19 +5,19 @@ import Button from '../../components/Button'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { getAllTILPosts, getAllTILTags, Tag } from '../../lib/til'
+import { getAllTILPosts, getAllTILTags, Tag, TILPost } from 'lib/til'
 import { NextPage } from 'next'
-import { TILPost } from '..'
 import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import { useRouter } from 'next/router'
+import { TagValues } from 'constants/tagvalues'
 
 interface TILPostProps {
   tilPosts: TILPost[]
-  location: Location
   allTags: Tag[]
 }
 
 export async function getStaticProps({ locale }) {
-  const tilPosts = getAllTILPosts()
+  const tilPosts = getAllTILPosts({ withPrefix: true })
   const allTags = getAllTILTags()
 
   return {
@@ -29,16 +29,13 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-const TIL: React.FC<NextPage & TILPostProps> = ({
-  tilPosts,
-  allTags,
-  location,
-}) => {
+const TIL: React.FC<NextPage & TILPostProps> = ({ tilPosts, allTags }) => {
   const [items, setItems] = React.useState(tilPosts?.slice(0, 20))
   const [allItemsLoaded, setAllItemsLoaded] = React.useState(false)
   const [filterValue, setFilterValue] = React.useState('')
 
   const { t } = useTranslation()
+  const location = useRouter()
 
   const additionalItems = tilPosts.slice(20)
 
@@ -80,7 +77,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({
         ogImage={MarcoHeineImg}
         ogImageAlt="a picture of me"
         description={t('meta.til-description')}
-        location={location}
+        location={location.asPath}
       />
       <h1 className="mt-5 mb-0 text-center">Today I learned</h1>
       <label
@@ -112,7 +109,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({
             key={tag.name}
           >
             <Link href={`/today-i-learned/category/${tag.name.toLowerCase()}/`}>
-              {tag.name} ({tag.count})
+              {TagValues[tag.name]} ({tag.count})
             </Link>
           </li>
         ))}
@@ -127,7 +124,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({
               key={item.slug}
               href={`/${item.slug}`}
             >
-              <section className="rounded-3xl p-14 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customDark">
+              <section className="rounded-3xl p-14 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customHover">
                 <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">
                   TIL #{frontmatter.number || tilPosts?.length - index}
                 </aside>

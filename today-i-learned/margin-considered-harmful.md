@@ -2,7 +2,7 @@
 title: Margin considered harmful
 date: 2020-03-25
 path: /margin-considered-harmful
-tags: ['CSS']
+tags: ['css']
 number: 12
 ---
 

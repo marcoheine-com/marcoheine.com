@@ -4,7 +4,7 @@ description: Eary hints is a status code (103 Early Hints) that can help improve
   
 date: 2022-08-10
 path: /faster-page-loads-with-early-hints
-tags: ['Backend']
+tags: ['backend']
 number: 46
 ---
 

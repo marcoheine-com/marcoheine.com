@@ -2,7 +2,7 @@
 title: No floating promises
 date: 2020-08-06
 path: /no-floating-promises
-tags: ['JavaScript']
+tags: ['javascript']
 number: 26
 ---
 

@@ -3,7 +3,7 @@ title: Never use px for font-size
 description: Today I learned about the website TechPays which aims to remove the taboo on tech compensation in Europe
 date: 2022-11-30
 path: /never-use-px-for-font-size
-tags: ['CSS']
+tags: ['css']
 number: 55
 ---
 

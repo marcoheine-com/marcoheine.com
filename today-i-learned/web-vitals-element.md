@@ -3,7 +3,7 @@ title: Web Vitals Element
 description: Web Vitals Element ist a component that displays the Core Web Vitals metrics of your website.
 date: 2022-09-28
 path: /web-vitals-element
-tags: ['Performance']
+tags: ['performance']
 number: 50
 ---
 

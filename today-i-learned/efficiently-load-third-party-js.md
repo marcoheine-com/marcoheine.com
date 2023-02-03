@@ -5,7 +5,7 @@ description:
   on this post
 date: 2022-07-13
 path: /efficiently-load-third-party-js
-tags: ['JavaScript', 'Performance']
+tags: ['javascript', 'performance']
 number: 43
 ---
 

@@ -4,7 +4,7 @@ description:
   Today I learned, that when using the JavaScript sort() function on an array, it does not return a new array, but rather modifies the original one.
 date: 2022-07-25
 path: /array-sort-modifies-original-array
-tags: ['JavaScript']
+tags: ['javascript']
 number: 45
 ---
 

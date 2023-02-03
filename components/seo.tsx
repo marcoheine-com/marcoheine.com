@@ -8,7 +8,7 @@ interface SEOProps {
   title?: string
   ogImage?: string | StaticImageData
   ogImageAlt?: string
-  location?: Location
+  location?: string
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -20,7 +20,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const metaDescription = description || config.description
 
-  const url = location?.pathname || ''
+  const url = location || ''
   const blogPostRegex = /\/blog\/[^/]+\/$/
   const isBlogPost = blogPostRegex.test(url)
 

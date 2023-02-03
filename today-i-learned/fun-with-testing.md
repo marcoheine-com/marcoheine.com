@@ -2,7 +2,7 @@
 title: Fun with testing
 date: 2020-01-27
 path: /fun-with-testing
-tags: ['Testing']
+tags: ['testing']
 number: 6
 ---
 

@@ -3,7 +3,7 @@ title: Secure JavaScript URL validation
 description: Today I learned about a secure way to validate URLs in JavaScript
 date: 2022-10-26
 path: /secure-javascript-url-validation
-tags: ['JavaScript', 'Web Security']
+tags: ['javascript', 'web-security']
 number: 53
 ---
 

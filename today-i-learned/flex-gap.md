@@ -2,7 +2,7 @@
 title: Flex-gap
 date: 2020-07-30
 path: /flex-gap
-tags: ['CSS']
+tags: ['css']
 number: 25
 ---
 

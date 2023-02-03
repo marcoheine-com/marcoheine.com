@@ -10,10 +10,10 @@ import { BlogPost } from '..'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import rehypeHighlight from 'rehype-highlight'
+import { useRouter } from 'next/router'
 
 interface BlogPostProps {
   blogPost: BlogPost
-  location: Location
   blogPostMDX: MDXRemoteSerializeResult
 }
 
@@ -54,9 +54,9 @@ export async function getStaticPaths({ locales }) {
 
 const BlogPost: React.FC<NextPage & BlogPostProps> = ({
   blogPost,
-  location,
   blogPostMDX,
 }) => {
+  const location = useRouter()
   const { frontmatter } = blogPost
 
   const { title, date, updated, featuredImage, featuredImageAlt, description } =
@@ -70,9 +70,9 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
       <SEO
         title={`Blog | ${title}`}
         description={description}
-        ogImage={featuredImage}
-        ogImageAlt={featuredImageAlt}
-        location={location}
+        ogImage={featuredImage || '/images/marco-heine.webp'}
+        ogImageAlt={featuredImageAlt || 'a picture of Marco Heine'}
+        location={location.asPath}
       />
       <h1 className="mb-0 text-center">Blog</h1>
       <section className="mx-auto mt-20 mb-0">

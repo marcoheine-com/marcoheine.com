@@ -2,7 +2,7 @@
 title: Optional Chaining
 date: 2020-07-08
 path: /optional-chaining
-tags: ['JavaScript']
+tags: ['javascript']
 number: 23
 ---
 

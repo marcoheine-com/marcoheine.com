@@ -4,7 +4,7 @@ description: It's possible to set the theme color of your application without Ja
   
 date: 2022-08-17
 path: /setting-theme-without-javascript
-tags: ['CSS']
+tags: ['css']
 number: 47
 ---
 

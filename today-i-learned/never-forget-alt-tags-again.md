@@ -2,7 +2,7 @@
 title: Never forget alt tags again
 date: 2020-02-03
 path: /never-forget-alt-tags-again
-tags: ['Accessibility']
+tags: ['accessibility']
 number: 7
 ---
 

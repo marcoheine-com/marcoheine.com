@@ -2,7 +2,7 @@
 title: Headless Wordpress
 date: 2022-05-03
 path: /headless-wordpress
-tags: ['API', 'GatsbyJS']
+tags: ['api', 'gatsby']
 number: 35
 ---
 

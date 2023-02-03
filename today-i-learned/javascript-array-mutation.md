@@ -2,7 +2,7 @@
 title: JavaScript Array Mutation
 date: 2020-08-07
 path: /javascript-array-mutation
-tags: ['JavaScript']
+tags: ['javascript']
 number: 27
 ---
 

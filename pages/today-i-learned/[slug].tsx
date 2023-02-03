@@ -1,12 +1,18 @@
+import { NextPage } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { serialize } from 'next-mdx-remote/serialize'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
+import rehypeHighlight from 'rehype-highlight'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import * as ui from '../../styles/til-post/ui'
+import { getAllTILPosts, getTILPostBySlug, TILPost } from 'lib/til'
+import MarcoHeineImg from 'public/images/marco-heine.webp'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 interface TILPostProps {
   tilPost: TILPost
-  location: Location
   tilPostMDX: MDXRemoteSerializeResult
 }
 
@@ -45,44 +51,40 @@ export async function getStaticPaths({ locales }) {
   }
 }
 
-const TilPost = ({ data, location }) => {
-  if (!data) {
-    return null
-  }
-
-  const { mdx } = data
-  const { frontmatter, body } = mdx
+const TilPost: React.FC<NextPage & TILPostProps> = ({
+  tilPost,
+  tilPostMDX,
+}) => {
+  const location = useRouter()
+  const { frontmatter } = tilPost
 
   return (
     <Layout>
       <SEO
         title={`Today I learned - ${frontmatter.title}`}
         description={frontmatter.description}
-        ogImage={
-          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-            ?.src
-        }
-        ogImageAlt="a picture of me"
-        location={location}
+        ogImage={MarcoHeineImg}
+        ogImageAlt={'a picture of Marco Heine'}
+        location={location.asPath}
       />
-      <ui.PageHeader>Today I learned</ui.PageHeader>
-      <ui.PageContent>
-        <section className="mb-4 rounded-lg bg-slate-50 p-3 text-base">
+      <h1 className="mt-5 mb-0 text-center">Today I learned</h1>
+      <section className="mx-auto mt-20 mb-0">
+        <section className="mb-8 rounded-lg bg-slate-50 p-3 text-base">
           <time dateTime={frontmatter.date}>
             🗓 Published on: {frontmatter.date}
           </time>
         </section>
         <h2>{frontmatter.title}</h2>
-        {/* <MDXRenderer>{body}</MDXRenderer> */}
+        <MDXRemote {...tilPostMDX} />
         <p>
           <i>Greetings Marco</i>
         </p>
-        <ui.GoBackSpan>
+        <span className="mb-4 block text-base before:content-['←']">
           <Link href="/today-i-learned/">
             Go back to other today-i-learned posts
           </Link>
-        </ui.GoBackSpan>
-      </ui.PageContent>
+        </span>
+      </section>
     </Layout>
   )
 }

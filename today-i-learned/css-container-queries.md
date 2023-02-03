@@ -2,7 +2,7 @@
 title: CSS container queries
 date: 2021-02-24
 path: /css-container-queries
-tags: ['CSS']
+tags: ['css']
 number: 33
 ---
 

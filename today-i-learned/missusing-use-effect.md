@@ -2,7 +2,7 @@
 title: Missusing useEffect
 date: 2022-06-07
 path: /missusing-use-effect
-tags: ['React']
+tags: ['react']
 number: 39
 description:
   Today I learned that Reacts useEffect is not meant for data fetching and is

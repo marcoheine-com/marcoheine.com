@@ -2,7 +2,7 @@
 title: Multiline commit messages
 date: 2020-06-07
 path: /multiline-commit-messages
-tags: ['Git']
+tags: ['git']
 number: 21
 ---
 

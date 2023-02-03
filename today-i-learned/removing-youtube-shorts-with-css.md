@@ -3,7 +3,7 @@ title: Removing YouTube Shorts with CSS
 description: Today I learned how you can remove YouTube Shorts from your subscription feed with CSS!
 date: 2023-01-25
 path: /removing-youtube-shorts-with-css
-tags: ['CSS']
+tags: ['css']
 number: 59
 ---
 

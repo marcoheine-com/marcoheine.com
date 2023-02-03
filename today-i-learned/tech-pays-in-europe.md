@@ -3,7 +3,7 @@ title: Tech Pays in Europe
 description: Today I learned about the website TechPays which aims to remove the taboo on tech compensation in Europe
 date: 2022-11-29
 path: /tech-pays-in-europe
-tags: ['Software Development']
+tags: ['software-development']
 number: 54
 ---
 

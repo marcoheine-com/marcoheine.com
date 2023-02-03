@@ -3,7 +3,7 @@ title: State of Usability in 2023
 description: Today I learned about the State of Usability in 2023
 date: 2023-01-18
 path: /state-of-usability-in-2023
-tags: ['UX']
+tags: ['ux']
 number: 58
 ---
 

@@ -2,7 +2,7 @@
 title: Confetti
 date: 2022-05-19
 path: /confetti
-tags: ['HTML', 'React']
+tags: ['html', 'react']
 number: 37
 ---
 

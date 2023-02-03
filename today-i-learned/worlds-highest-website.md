@@ -3,7 +3,7 @@ title: Worlds highest website
 description: Today I learned about the worlds highest website
 date: 2022-10-20
 path: /world-highest-website
-tags: ['HTML', 'CSS']
+tags: ['html', 'css']
 number: 52
 ---
 

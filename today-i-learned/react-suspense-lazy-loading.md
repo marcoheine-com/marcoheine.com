@@ -2,7 +2,7 @@
 title: React Suspense Lazy Loading Components
 date: 2020-10-29
 path: /react-suspense-lazy-loading
-tags: ['React', 'JavaScript', 'Performance']
+tags: ['react', 'javascript', 'performance']
 number: 30
 ---
 

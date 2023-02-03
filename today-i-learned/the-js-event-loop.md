@@ -2,7 +2,7 @@
 title: What the heck is the event loop anyway?
 date: 2020-05-21
 path: /what-the-heck-is-the-event-loop-anyway
-tags: ['JavaScript']
+tags: ['javascript']
 number: 20
 ---
 

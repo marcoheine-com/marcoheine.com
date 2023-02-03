@@ -2,7 +2,7 @@
 title: JavaScript and Non-JavaScript experiences
 date: 2020-01-20
 path: /js-and-non-js-experiences
-tags: ['JavaScript']
+tags: ['javascript']
 number: 4
 ---
 

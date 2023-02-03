@@ -18,6 +18,7 @@ module.exports = {
       },
       boxShadow: {
         custom: '2px 2px 12px #d9d9d9;',
+        customHover: '6px 6px 12px #d9d9d9;',
         customDark: '10px 10px 12px #d9d9d9;',
         header: '-2px 2px 5px #ccc',
       },

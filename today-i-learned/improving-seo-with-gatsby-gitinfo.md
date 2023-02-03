@@ -2,7 +2,7 @@
 title: Improving SEO with Gatsby Gitinfo
 date: 2021-02-22
 path: /improving-seo-with-gatsby-gitinfo
-tags: ['Git', 'GatsbyJS']
+tags: ['git', 'gatsby']
 number: 32
 ---
 

@@ -3,7 +3,7 @@ title: CSS Gradient Text
 description: Today I learned how to create beautiful text gradients with CSS
 date: 2023-01-11
 path: /css-gradient-text
-tags: ['CSS']
+tags: ['css']
 number: 57
 ---
 

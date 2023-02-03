@@ -3,7 +3,7 @@ title: Clamp CSS function
 description: Today I learned about the clamp CSS function which enables fluid typography based on the viewport size without the need for media queries
 date: 2022-12-01
 path: /clamp-css-function
-tags: ['CSS']
+tags: ['css']
 number: 56
 ---
 

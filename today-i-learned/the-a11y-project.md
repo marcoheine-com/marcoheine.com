@@ -4,7 +4,7 @@ description: a11y stands for accessibility - the a11y project is a community-dri
   
 date: 2022-09-02
 path: /the-a11y-project
-tags: ['Accessibility']
+tags: ['accessibility']
 number: 49
 ---
 

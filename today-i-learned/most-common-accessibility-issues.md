@@ -2,7 +2,7 @@
 title: Most common accessibility issues
 date: 2022-05-23
 path: /confetti
-tags: ['Accessibility', 'HTML']
+tags: ['accessibility', 'html']
 number: 38
 ---
 

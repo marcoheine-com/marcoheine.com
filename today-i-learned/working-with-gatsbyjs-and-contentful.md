@@ -2,7 +2,7 @@
 title: Working with GatsbyJS and Contentful
 date: 2020-02-13
 path: /working-with-gatsbyjs-and-contentful
-tags: ['GatsbyJS']
+tags: ['gatsby']
 number: 8
 ---
 

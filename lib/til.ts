@@ -2,10 +2,28 @@ import matter from 'gray-matter'
 import { format } from 'date-fns'
 import fs from 'fs'
 import { join } from 'path'
-import { TILPost } from '../pages'
+
+export interface TILPost {
+  slug: string
+  frontmatter: {
+    title: string
+    date: string
+    description: string
+    updated?: string
+    path: string
+    tags: string[]
+    number: number
+  }
+  content: string
+}
+
 export interface Tag {
   name: string
   count: number
+}
+
+type Options = {
+  withPrefix?: boolean
 }
 
 const postsDirectory = join(process.cwd(), 'today-i-learned')
@@ -20,17 +38,30 @@ export function getTILPostBySlug(slug: string) {
   data.date = date
 
   return {
-    slug: `today-i-learned/${realSlug}`,
+    slug: `${realSlug}`,
     frontmatter: { ...data },
     content,
   }
 }
 
-export function getAllTILPosts() {
+export const getTILPostsByTag = (tag: string) => {
+  const posts = getAllTILPosts()
+
+  return posts.filter((post) => {
+    if (!post.frontmatter.tags) return false
+    return post.frontmatter.tags.includes(tag)
+  })
+}
+
+export function getAllTILPosts({ withPrefix = false }: Options = {}) {
   const slugs = fs.readdirSync(postsDirectory)
   const posts = slugs.map((slug) => getTILPostBySlug(slug))
 
-  // TODO: probably need withPrefix as in blog.ts
+  if (withPrefix) {
+    posts.forEach((post) => {
+      post.slug = `today-i-learned/${post.slug}`
+    })
+  }
 
   // sort posts by number in descending order
   return posts.sort((post1: TILPost, post2: TILPost) =>
@@ -57,4 +88,16 @@ export const getAllTILTags = () => {
 
   // sort tags by count in descending order
   return tags.sort((tag1, tag2) => (tag1.count > tag2.count ? -1 : 1))
+}
+
+export const getCountOfTag = (tag: string) => {
+  const posts = getAllTILPosts()
+
+  let count = 0
+  posts.forEach((post) => {
+    if (!post.frontmatter.tags) return
+    if (post.frontmatter.tags.includes(tag)) count++
+  })
+
+  return count
 }

@@ -4,7 +4,7 @@ description:
   Today I learned, about the best way to handle data fetching in React 18.
 date: 2022-07-07
 path: /data-fetching-in-react-18
-tags: ['React', 'API']
+tags: ['react', 'api']
 number: 42
 ---
 

@@ -9,6 +9,7 @@ import { getAllPosts } from '../../lib/blog'
 import { NextPage } from 'next'
 import { BlogPost } from '..'
 import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import { useRouter } from 'next/router'
 
 interface BlogPostProps {
   blogPosts: BlogPost[]
@@ -29,8 +30,9 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts, location }) => {
+const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
   const { t } = useTranslation()
+  const location = useRouter()
 
   const newestPosts = blogPosts.slice(0, 3)
   const olderPosts = blogPosts.slice(3)
@@ -90,7 +92,7 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts, location }) => {
         ogImage={MarcoHeineImg}
         ogImageAlt="a picture of Marco Heine"
         description={t('meta.blog-description')}
-        location={location}
+        location={location.asPath}
       />
       <h1 className="mb-20 text-center">Blog</h1>
 

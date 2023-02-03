@@ -3,7 +3,7 @@ title: Squoosh App
 description: The Squoosh App is a web app that allows you to compress images in a variety of formats.
 date: 2022-10-08
 path: /squoosh-app
-tags: ['Performance']
+tags: ['performance']
 number: 51
 ---
 

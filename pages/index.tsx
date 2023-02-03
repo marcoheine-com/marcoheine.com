@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
 import SEO from 'components/seo'
 import { getAllPosts } from 'lib/blog'
-import { getAllTILPosts } from 'lib/til'
+import { getAllTILPosts, TILPost } from 'lib/til'
 import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { CallToAction } from 'components/call-to-action'
 import { WebProjects } from 'components/web-projects'
@@ -22,20 +22,6 @@ export interface BlogPost {
     path: string
     featuredImage?: StaticImageData
     featuredImageAlt?: string
-  }
-  content: string
-}
-
-export interface TILPost {
-  slug: string
-  frontmatter: {
-    title: string
-    date: string
-    description: string
-    updated?: string
-    path: string
-    tags: string[]
-    number: number
   }
   content: string
 }

@@ -2,7 +2,7 @@
 title: Fetch API response.ok
 date: 2020-08-21
 path: /fetch-response-ok
-tags: ['JavaScript']
+tags: ['javascript']
 number: 29
 ---
 

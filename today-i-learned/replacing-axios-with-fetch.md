@@ -2,7 +2,7 @@
 title: Replace axios with fetch
 date: 2020-03-31
 path: /replace-axios-with-fetch
-tags: ['JavaScript']
+tags: ['javascript']
 number: 13
 ---
 

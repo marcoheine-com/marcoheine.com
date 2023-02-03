@@ -2,7 +2,7 @@
 title: ECMAScript 2020
 date: 2020-04-06
 path: /ecmascript2020
-tags: ['JavaScript']
+tags: ['javascript']
 number: 14
 ---
 
