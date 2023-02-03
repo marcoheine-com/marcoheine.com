@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import config from '../config'
 import { StaticImageData } from 'next/image'
+import { config } from 'config'
 
 interface SEOProps {
   description?: string

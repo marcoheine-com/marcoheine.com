@@ -1,7 +1,7 @@
+import { config } from 'config'
 import Link from 'next/link'
 import * as React from 'react'
 import Navigation from '../navigation'
-import config from '../../config'
 
 const Header = () => {
   return (
