@@ -8,6 +8,7 @@ module.exports = {
       animation: {
         blink: 'blink 1s infinite steps(1)',
         move: 'move 4s ease-in-out infinite',
+        wave: 'wave 0.7s linear 1',
       },
       colors: {
         primaryColorOne: '#111',
@@ -41,6 +42,23 @@ module.exports = {
           },
           '100%': {
             transform: 'translateY(4px)',
+          },
+        },
+        wave: {
+          '0%': {
+            transform: 'rotate(-20deg)',
+          },
+          '25%': {
+            transform: 'rotate(60deg) scale(2)',
+          },
+          '50%': {
+            transform: 'rotate(-20deg) scale(2)',
+          },
+          '75%': {
+            transform: 'rotate(60deg) scale(2)',
+          },
+          '100%': {
+            transform: 'rotate(-20deg) scale(1)',
           },
         },
       },

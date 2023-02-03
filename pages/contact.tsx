@@ -1,31 +1,40 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import * as ui from '../styles/index/ui'
 import { Trans, useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import MarcoHeineImg from '../public/images/marco-heine.webp'
+import { useRouter } from 'next/router'
 
-const Contact = ({ data, location }) => {
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
+
+const Contact = () => {
+  const location = useRouter()
   const { t } = useTranslation()
+
   return (
     <Layout>
       <SEO
         title="Contact | Marco Heine - Freelance Web Developer"
-        ogImage={
-          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-            ?.src
-        }
+        ogImage={MarcoHeineImg}
         ogImageAlt="a picture of me"
         description={t('meta.contact-description')}
-        location={location}
+        location={location.asPath}
       />
-      <ui.PageHeader>{t('contact.headline')}</ui.PageHeader>
+      <h1 className="mb-0 text-center">{t('contact.headline')}</h1>
 
       <section className="mx-auto mt-20 mb-0 max-w-2xl">
         <h3>{t('contact.subline')}</h3>
         <p>
           <Trans i18nKey={'contact.text-one'} />
-          <Link href="/work/">work</Link>
+          <Link href="/work/"> Work</Link>
         </p>
         <p>{t('contact.text-two')}</p>
         <p>

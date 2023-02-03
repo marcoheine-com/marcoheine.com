@@ -10,29 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
     "@next/mdx": "^13.1.6",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "babel-plugin-styled-components": "^2.0.7",
     "date-fns": "^2.29.3",
-    "dotenv": "^16.0.3",
     "gray-matter": "^4.0.3",
     "i18next": "^22.4.9",
     "next": "^13.1.5",
     "next-i18next": "^13.0.3",
     "next-mdx-remote": "^4.3.0",
-    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.4",
-    "reading-time": "^1.5.0",
-    "rehype-highlight": "^6.0.0",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
-    "shiki": "^0.14.0",
-    "styled-components": "^5.3.6"
+    "rehype-highlight": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "18.11.18",

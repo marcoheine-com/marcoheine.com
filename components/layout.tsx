@@ -5,7 +5,7 @@ import Main from './main'
 
 interface LayoutProps {
   children: React.ReactNode
-  maxWidth?: 'max-w-full' | 'max-w-4xl' | 'max-w-[1400px]'
+  maxWidth?: 'max-w-full' | 'max-w-4xl' | 'max-w-[1400px]' | 'max-w-[1920px]'
 }
 
 const Layout: React.FC<LayoutProps> = ({

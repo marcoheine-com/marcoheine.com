@@ -1,13 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import * as ui from '../styles/index/ui'
 
 const Uses = () => (
   <Layout>
     <SEO title="uses" />
     <h1 className="mb-0 text-center">Uses</h1>
-    <ui.PageContent>
+    <section className="mx-auto mb-0 mt-20">
       <section className="mb-12">
         <p>
           Inspired by the massive{' '}
@@ -179,7 +178,7 @@ const Uses = () => (
           </li>
         </li>
       </ul>
-    </ui.PageContent>
+    </section>
   </Layout>
 )
 

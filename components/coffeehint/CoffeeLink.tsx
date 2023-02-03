@@ -1,5 +1,4 @@
 import React from 'react'
-import * as ui from './ui'
 
 const CoffeeLink = () => (
   <a

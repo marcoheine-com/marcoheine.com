@@ -5,21 +5,27 @@ import Layout from '../components/layout'
 import PageHeader from '../components/pageheader'
 import SEO from '../components/seo'
 import { WebProjects } from '../components/web-projects'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
 
-const Work = ({ data, location }) => {
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
+
+const Work = () => {
   const { t } = useTranslation()
+  const location = useRouter()
 
   return (
-    <Layout maxWidth="1920px">
+    <Layout maxWidth="max-w-[1920px]">
       <SEO
         title="Work with me | Marco Heine - Freelance Web Developer"
-        ogImage={
-          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-            ?.src
-        }
+        ogImage={'/images/marco-heine.webp'}
         ogImageAlt="a picture of Marco Heine"
         description={t('meta.work-description')}
-        location={location}
+        location={location.asPath}
       />
       <section className="flex w-full flex-col items-center">
         <PageHeader title="Work with me" />

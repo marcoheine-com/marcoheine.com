@@ -1,56 +1,64 @@
 import * as React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import * as ui from '../styles/index/ui'
-import * as aboutUI from '../styles/about/ui'
+import { useRouter } from 'next/router'
 import { Trans, useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
+import MarcoHeineImg from 'public/images/marco-heine.webp'
 
-const About = ({ data, location }) => {
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
+
+const About = () => {
   const { t } = useTranslation()
+  const location = useRouter()
 
   return (
-    <Layout maxWidth="1400px">
+    <Layout maxWidth="max-w-[1400px]">
       <SEO
         title="About | Marco Heine - Freelance Web Developer"
-        ogImage={
-          data.personalImg?.childImageSharp?.gatsbyImageData?.images?.fallback
-            ?.src
-        }
+        ogImage={MarcoHeineImg}
         ogImageAlt="a picture of Marco Heine"
         description={t('meta.about-description')}
-        location={location}
+        location={location.asPath}
       />
-      <ui.PageHeader>{t('about.headline')}</ui.PageHeader>
-      <aboutUI.PageContent>
-        <aboutUI.Container>
-          <aboutUI.TwoColumnGrid>
-            <ui.ImgWrapper>
-              <Image
-                alt="a picture of Marco Heine"
-                src={data.personalImg.childImageSharp.gatsbyImageData}
-              />
-            </ui.ImgWrapper>
+      <h1 className="mb-0 text-center">{t('about.headline')}</h1>
+      <section className="mx-auto mt-20 mb-0">
+        <div className="mx-auto mt-0 mb-20 max-w-2xl">
+          <div className="grid justify-center gap-5 sm:grid-cols-[auto_auto]">
+            <Image
+              alt="a picture of Marco Heine"
+              src={MarcoHeineImg}
+              className="mb-10 max-w-[300px] sm:mb-20"
+            />
+
             <div>
               <p>
                 Hi!{' '}
-                <ui.WaveHand
+                <span
+                  className="inline-block rotate-[-20deg] animate-wave transition-transform"
                   role="img"
                   aria-label="waving hand emoji"
                 >
                   👋🏻
-                </ui.WaveHand>{' '}
+                </span>{' '}
                 <Trans i18nKey={'about.text-one'} />
               </p>
               <p>
                 <Trans i18nKey={'about.text-two'} />
               </p>
             </div>
-          </aboutUI.TwoColumnGrid>
+          </div>
           <p>{t('about.text-three')}</p>
           <p>{t('about.text-four')}</p>
-        </aboutUI.Container>
+        </div>
 
         <section
           className="mx-auto mb-20 max-w-2xl"
@@ -68,7 +76,7 @@ const About = ({ data, location }) => {
           </ul>
         </section>
 
-        <aboutUI.Container>
+        <div className="mx-auto mt-0 mb-20 max-w-2xl">
           <h2>{t('about.subline-one')}</h2>
           <p>{t('about.text-five')}</p>
           <p>
@@ -86,7 +94,7 @@ const About = ({ data, location }) => {
           <p>
             {t('about.text-nine')} <Link href="/blog/">blog</Link>{' '}
           </p>
-        </aboutUI.Container>
+        </div>
         {/* <aboutUI.Container>
             <details>
               <summary className="text-3xl font-serif cursor-pointer">
@@ -169,7 +177,7 @@ const About = ({ data, location }) => {
               </>
             </details>
           </aboutUI.Container> */}
-      </aboutUI.PageContent>
+      </section>
     </Layout>
   )
 }
