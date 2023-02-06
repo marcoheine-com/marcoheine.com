@@ -2,7 +2,7 @@
 title: The mistakes I made using React
 date: 2022-07-14
 path: /the-mistakes-i-made-using-react
-featuredImage: ../images/tai-bui-iPsOfXA79U4-unsplash.webp
+featuredImage: /images/tai-bui-iPsOfXA79U4-unsplash.webp
 featuredImageAlt: 'a cat sitting on a laptop keyboard'
 description:
   'In this blog post I’m gonna share all the mistakes I made, using React.'
@@ -16,7 +16,7 @@ description:
   Picture by Tai Bui
 </a>
 
-![a cat sitting on a laptop keyboard](../images/tai-bui-iPsOfXA79U4-unsplash.webp)
+![a cat sitting on a laptop keyboard](/images/tai-bui-iPsOfXA79U4-unsplash.webp)
 
 In this blog post I’m gonna share all the mistakes I made, using React. Lately
 there is a lot of dicussions going on around using Reacts useEffect. See my
@@ -26,14 +26,17 @@ Today-I-learned posts
 
 The React team published a brand new documention on using React, which is
 fantastic. It’s still in beta but I could already refresh a lot of my knowledge.
-The best part of the documentation is the following section: <a href="https://beta.reactjs.org/learn/you-might-not-need-an-effect" target="_blank">you might not need an effect &#8599;</a>.
+The best part of the documentation is the following section:
+[you might not need an effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
+.
 
 It’s a whole page on when to not use useEffect and how to use useEffect. It has
 so many great real-world examples. I noticed immediately that I use a lot of
 patterns which were not the best way to solve things.
 
-This made me realize I need to <a href="https://twitter.com/Mkuehb/status/1542426932448567296" target="_blank">adjust my best practices for react &#8599;</a>.
-In this blog post I’m gonna share everything I thought I did right when using
+This made me realize I need to
+[adjust my best practices for react](https://twitter.com/Mkuehb/status/1542426932448567296)
+. In this blog post I’m gonna share everything I thought I did right when using
 React. But noticed now, I can solve it in a better way, according to the new
 react docs.
 
@@ -48,8 +51,6 @@ react docs.
 - [Conclusion](#conclusion)
 
 ---
-
-<br />
 
 ### <a name="updating-state-based-on-props-or-state"></a>Updating state based on props or state
 
@@ -90,8 +91,6 @@ const fullAdress = `${street} ${zipcode}`
 
 // ...
 ```
-
-<br />
 
 ### <a name="dont-use-useeffect-for-expensive-caching"></a>Don’t use useEffect for expensive caching
 
@@ -144,8 +143,6 @@ const MyProfile = ({ name, lastname, hobbies }) => {
 By adding useMemo we can cache this expensive filter or sort operation. It tells
 React that it does not need to re-run the inner function unless name, lastname
 or hobbies changes.
-
-<br />
 
 ### <a name="use-a-cleanup-function"></a>Use a cleanup function when doing a fetch in useEffect
 
@@ -203,8 +200,6 @@ const Searchbar = ({ searchTerm }) => {
 This ensures, React will only take the last response from the API and your
 component will avoid race conditions.
 
-<br />
-
 ### <a name="avoid-passing-data-to-the-parent"></a>Avoid passing data to the parent
 
 Another pattern I used almost every time when working in a React project is
@@ -258,12 +253,10 @@ const Searchbar = ({ data }) => {
 ```
 
 The data gets fetched in the parent component and then passed down to the child
-component. As the <a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank">React docs &#8599;</a>
+component. As the [React docs](https://reactjs.org/docs/thinking-in-react.html)
 put it: React is all about one-way data flow down the component hierarchy. Makes
 error tracing a lot easier. Even though there were some arguments for the child
 data fetching, it’s always better to lift it up.
-
-<br />
 
 ### <a name="conclusion"></a>Conclusion
 
@@ -285,5 +278,6 @@ they took the time to write something so detailed and helpful. I’m glad I coul
 rethink some patterns which I thought were the best practices.
 
 Grab a cup of coffee (or your favorite beverage) and take your time to read
-through it: <a href="https://beta.reactjs.org/learn/you-might-not-need-an-effect" target="_blank">you might not need an effect &#8599;</a>.
-It’s so worth it and I learned a lot.
+through it:
+[you might not need an effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
+. It’s so worth it and I learned a lot.

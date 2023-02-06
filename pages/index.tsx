@@ -27,7 +27,7 @@ export interface BlogPost {
 }
 
 export async function getStaticProps({ locale }) {
-  const blogPosts = getAllPosts()
+  const blogPosts = getAllPosts({ withPrefix: true })
   const tilData = getAllTILPosts()
 
   return {

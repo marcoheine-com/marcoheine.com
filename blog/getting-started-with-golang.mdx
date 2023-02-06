@@ -17,7 +17,7 @@ featuredImageAlt: 'a hot air ballon getting ready to fly'
   Picture by Will O
 </a>
 
-![a hot air ballon getting ready to fly](../images/will-o-GtYFwFrFbMA-unsplash.webp)
+![a hot air ballon getting ready to fly](/images/will-o-GtYFwFrFbMA-unsplash.webp)
 
 ### How I got to know go
 
@@ -46,8 +46,6 @@ everything.
 
 And maybe you can learn something from it too!
 
-<br />
-
 ### So...go. What is it?
 
 > Go is an open source programming language that makes it easy to build simple,
@@ -67,8 +65,6 @@ to know each other phase, let's see what **topics** I'll cover in this blog
 post. As the title says it will be an absolute beginner introduction.
 
 If I'm wrong about something or made mistakes, please let me know!
-
-<br />
 
 ### What you can learn from this blog post:
 
@@ -93,8 +89,6 @@ If I'm wrong about something or made mistakes, please let me know!
 - [errors](#errors)
 
 ---
-
-<br />
 
 ### <a name='packages'></a>packages, import, export
 
@@ -125,8 +119,6 @@ func PrintStr () {
 }
 ```
 
-<br />
-
 ### <a name='variables'></a> Variables
 
 There are several ways to declare variables in go. The classic `var` lets you
@@ -141,8 +133,6 @@ const 1 = 10
 // shorthand for declaring and initializing a a variable inside a function
 a := 10
 ```
-
-<br />
 
 ### <a name='functions'></a> Functions
 
@@ -162,8 +152,6 @@ func multiply (a, b int) int {
 
 multiply(3, 6)
 ```
-
-<br />
 
 ### <a name='data-types'></a> Data types
 
@@ -194,8 +182,6 @@ Variables declared without an initial value are given their zero value:
 - `false` for the boolean type, and
 - `""` (the empty string) for strings
 
-<br />
-
 ### <a name='for'></a> for
 
 Coming from TypeScript, there is no such thing as the array methods map, reduce
@@ -218,8 +204,6 @@ for i := 0; i < a; i++ {
 }
 ```
 
-<br />
-
 ### <a name='if-else'></a> if, else
 
 If, else is pretty straight forward in go. No parenthesis are needing
@@ -232,8 +216,6 @@ if a > 9 {
 	fmt.Println(a)
 }
 ```
-
-<br />
 
 ### <a name='switch'></a> switch
 
@@ -253,8 +235,6 @@ switch time.Now().Weekday() {
 }
 ```
 
-<br />
-
 ### <a name='struct'></a> struct
 
 A struct is a typed collection of fields. Structs are **mutable**.
@@ -272,8 +252,6 @@ type person struct {
 }
 person{name: "Marco", age: 29}
 ```
-
-<br />
 
 ### <a name='arrays'></a> arrays
 
@@ -293,8 +271,6 @@ The built-in **len** method returns the length of an array.
 var names [3]string{"Tim", "Mandy", "Stefanie"}
 len(names) // 2
 ```
-
-<br />
 
 ### <a name='slices'></a> slices
 
@@ -364,8 +340,6 @@ copy(c, s)
 
 <CoffeeHint />
 
-<br />
-
 ### <a name='map'></a> map
 
 A map is combination of key value pairs. In other languages it's often called
@@ -382,8 +356,6 @@ m["age"] = 29
 delete(m, "age")
 ```
 
-<br />
-
 ### <a name='range'></a> range
 
 To iterate over a map or a slice you can use **range**.
@@ -399,8 +371,6 @@ for i, num := range numbers {
 	fmt.Printf(i, num)
 }
 ```
-
-<br />
 
 ### <a name='method'></a> method
 
@@ -423,8 +393,6 @@ function before we the function name declaration?
 Everything inside the function body has now **access** to the members of the
 struct.
 
-<br />
-
 ### <a name='pointers'></a> pointers
 
 Pointers hold the **memory address** of a value.
@@ -438,8 +406,6 @@ p = &i
 // read i through the pointer p
 fmt.Prinln(*p)
 ```
-
-<br />
 
 ### <a name='pointer-receivers'></a> pointer receivers
 
@@ -467,8 +433,6 @@ function (s *Server) printServer() {
 Pointers and pointer receivers are little bit more **advanced topic** but it's
 good to have heard of them as a beginner.
 
-<br />
-
 ### <a name='interfaces'></a> interfaces
 
 Interfaces are **named collections** of method signatures. To implement an
@@ -484,8 +448,6 @@ func methodOne() int {}
 
 func methodTwo() int {}
 ```
-
-<br />
 
 ### <a name='errors'></a> errors
 

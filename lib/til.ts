@@ -45,7 +45,7 @@ export function getTILPostBySlug(slug: string) {
 }
 
 export const getTILPostsByTag = (tag: string) => {
-  const posts = getAllTILPosts()
+  const posts = getAllTILPosts({ withPrefix: true })
 
   return posts.filter((post) => {
     if (!post.frontmatter.tags) return false

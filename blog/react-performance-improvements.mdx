@@ -49,7 +49,7 @@ You can choose between measuring the performance on mobile or desktop. If you
 just want to get your performance score, you can check off the other audits,
 like Progressive Web App or SEO.
 
-![a screenshot of the chrome lighthouse audit settings](../images/chrome-lighthouse-audit-settings.jpeg)
+![a screenshot of the chrome lighthouse audit settings](/images/chrome-lighthouse-audit-settings.jpeg)
 
 You should also activate **throtteling**, because not everyone is on the newest
 MacBook Pro with 64GB of RAM and i9 processor while browsing on a 5G network. I
@@ -59,7 +59,7 @@ After the audit is finished, you get a nice **overview** over the scores, the
 metrics and how they are calculated. You also get opportunities and diagnostics
 which can tell you why your app is slow and how to solve common problems.
 
-![a screenshot of the chrome lighthouse audit results](../images/chrome-lighthouse-audit.jpeg)
+![a screenshot of the chrome lighthouse audit results](/images/chrome-lighthouse-audit.jpeg)
 
 ### <a name="webpagetest"></a> webpagetest
 
@@ -67,8 +67,6 @@ Another tool to verify the perfomance of your React application is
 [webpagetest.org](https://webpagetest.org). After you enter a URL and start the
 test, it returns a test result and grades specific parts of your application. It
 is also pretty useful in finding problems and ways to improve the performance.
-
-<br />
 
 ## <a name="the-biggest-problems"></a> The Biggest Problems
 
@@ -100,8 +98,6 @@ at once in your code.
 
 Uff. This sounds a little exausting. We need solutions. Let's tackle the
 problems one by one.
-
-<br />
 
 ## <a name="how-to-solve-them"></a> And how to solve them
 
@@ -146,7 +142,7 @@ command menu when you type _coverage_.
 It can track a whole reload of your application and is still tracking and
 updating the code coverage when you're interacting with your application.
 
-![a screenshot of the chrome coverage tool](../images/coverage.jpeg)
+![a screenshot of the chrome coverage tool](/images/coverage.jpeg)
 
 This is another super easy quick win, which can help you to improve your
 performance by removing **unused code**.
@@ -221,8 +217,6 @@ analyzer we realized that some packages where depending on the whole `lodash`
 library which is a lot to include in to your bundle if you actually just need
 one functionality of it.
 
-<br />
-
 ## <a name="conclusion"></a> Conclusion
 
 All these steps are great and helpful ways to find out why your React
@@ -231,14 +225,12 @@ them, maybe already one of them will help you speed up things. I hope you could
 learn something here and if you know more ways to boost the performance let me
 know!
 
-<br />
-
 ## <a name="sources"></a> Sources:
 
-- https://developers.google.com/web/tools/lighthouse
-- https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive
-- https://www.robinwieruch.de/conditional-rendering-react
-- https://www.npmjs.com/package/react-lazyload
-- https://reactjs.org/docs/code-splitting.html
-- https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/
-- https://reactjs.org/docs/optimizing-performance.html
+- [https://developers.google.com/web/tools/lighthouse](https://developers.google.com/web/tools/lighthouse)
+- [https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
+- [https://www.robinwieruch.de/conditional-rendering-react](https://www.robinwieruch.de/conditional-rendering-react)
+- [https://www.npmjs.com/package/react-lazyload](https://www.npmjs.com/package/react-lazyload)
+- [https://reactjs.org/docs/code-splitting.html](https://reactjs.org/docs/code-splitting.html)
+- [https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/](https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/)
+- [https://reactjs.org/docs/optimizing-performance.html](https://reactjs.org/docs/optimizing-performance.html)

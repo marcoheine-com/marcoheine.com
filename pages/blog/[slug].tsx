@@ -81,7 +81,7 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
         </span>
         <p></p>
         <h2>{title}</h2>
-        <section className="mb-4 flex gap-5 rounded-lg bg-slate-50 p-3 text-base">
+        <section className="mb-8 flex flex-col gap-4 rounded-lg bg-slate-50 p-3 text-base sm:flex-row sm:gap-16">
           <time
             dateTime={date}
             className="mb-0"

@@ -12,23 +12,10 @@ description:
 
 In part 1 of this react performance quick-wins series, we already learned about the following:
 
-<ul>
-  <li>
-    <Link to="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys">
-      Always use a key when mapping (and no index)
-    </Link>
-  </li>
-  <li>
-    <Link to="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#fragments">
-      Use React.Fragments instead of divs as parent element
-    </Link>
-  </li>
-  <li>
-    <Link to="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#useState">
-      One useState hook instead of multiple for connected data
-    </Link>
-  </li>
-</ul>
+
+- [Always use a key when mapping and no index](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys)
+- [Use React.Fragments instead of divs as parent element](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#fragments)
+- [One useState hook instead of multiple for connected data](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#usestate)
 
 The second part of this series brings you another **4 great quick-wins** you can
 apply directly to your code and improve your performance
@@ -67,8 +54,6 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 But if you're on the lookout for a quick performance win, that's something you
 can avoid.
 
@@ -96,11 +81,7 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 That's it for quick-win number 4: avoid anonymous functions!
-
-<br />
 
 ## <a name='defining-objects'></a>Define objects outside of your component
 
@@ -124,8 +105,6 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 Instead, define your object outside of the component. Now it is created once on
 the initial render and not being touched on every rerender.
 
@@ -143,8 +122,6 @@ const MyComponent = () => {
 
 export default MyComponent
 ```
-
-<br />
 
 Performance quick-win, whoop whoop! 🚀
 
@@ -165,8 +142,6 @@ I wrote a whole Today-I-learned post about this topic; check it out here:
 
 That's also a great way to improve your React performance without too much
 effort.
-
-<br />
 
 ## <a name='virtualized-lists'></a>Virtualized lists
 

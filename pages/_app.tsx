@@ -14,6 +14,7 @@ const CustomLink = (props) => {
       <Link
         href={props.href}
         {...props}
+        className="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo"
       >
         {props.children}
       </Link>
@@ -23,9 +24,10 @@ const CustomLink = (props) => {
     <a
       target={'_blank'}
       rel={'noopener noreferrer'}
+      className="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo"
       {...props}
     >
-      {props.children} &#8599;
+      {props.children} <span> &#8599;</span>
     </a>
   )
 }

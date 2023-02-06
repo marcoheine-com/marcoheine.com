@@ -4,19 +4,26 @@ date: 2022-09-29
 path: /typescript-tooling-in-prismic
 featuredImage: /images/imattsmart-sm0Bkoj5bnA-unsplash.webp
 featuredImageAlt: 'a table with some tools on it'
-description: 
-  'Prismic launched some new features aroung TypeScript tooling. In this blog post I will take a look at what they are and how to use them.'
+description:
+  'Prismic launched some new features aroung TypeScript tooling. In this blog
+  post I will take a look at what they are and how to use them.'
 ---
 
-<span>Photo by <a href="https://unsplash.com/@imattsmart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">iMattSmart</a> on <a href="https://unsplash.com/s/photos/tool?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></span>
+[Photo by iMattSmart on Unsplash](https://unsplash.com/@imattsmart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-![a table with some tools on it](../images/imattsmart-sm0Bkoj5bnA-unsplash.webp)
+![a table with some tools on it](/images/imattsmart-sm0Bkoj5bnA-unsplash.webp)
 
-I researched a lot about Content Management Systems, before starting my freelance web developer career. I tried a few, disliked some and got stuck with Prismic. The mental model of shaping websites with custom types and slices just clicked for me.
+I researched a lot about Content Management Systems, before starting my
+freelance web developer career. I tried a few, disliked some and got stuck with
+Prismic. The mental model of shaping websites with custom types and slices just
+clicked for me.
 
-So far, Prismic offers everything I need from a headless CMS. A great user experience for authors, a lot of flexibility for developers and a great community where asking for help is easy.
+So far, Prismic offers everything I need from a headless CMS. A great user
+experience for authors, a lot of flexibility for developers and a great
+community where asking for help is easy.
 
 ---
+
 **Table of Contents**
 
 - [My problems with Prismic](#my-problems-with-prismic)
@@ -24,83 +31,108 @@ So far, Prismic offers everything I need from a headless CMS. A great user exper
 - [Improved TypeScript tooling](#improved-typescript-tooling)
 - [Conclusion](#conclusion)
 - [Resources](#resources)
----
 
-<br />
+---
 
 ## <a name='my-problems-with-prismic'></a>My problems with Prismic
 
-There is one thing I’ve missed though and that made my work harder.  It was to **manually create TypeScript Types and Interfaces** for my Prismic Custom Types and Slices.
+There is one thing I’ve missed though and that made my work harder. It was to
+**manually create TypeScript Types and Interfaces** for my Prismic Custom Types
+and Slices.
 
-My usual workflow with Prismic goes like this. Figure out which pages and what kind of repeatable elements we need and turn that into Custom Types and Slices. 
+My usual workflow with Prismic goes like this. Figure out which pages and what
+kind of repeatable elements we need and turn that into Custom Types and Slices.
 
-After that I head into my Next.js app and query for the data. The next hours are spent setting up Types and Interfaces for the Custom Types and Slices.
-
-<br />
+After that I head into my Next.js app and query for the data. The next hours are
+spent setting up Types and Interfaces for the Custom Types and Slices.
 
 ## <a name='typescript-is-a-no-brainer'></a>TypeScript is a no-brainer
 
-Working with TypeScript is one of the things I learned on my last job as an employed software developer. It is something I would **never like to miss anymore**. 
+Working with TypeScript is one of the things I learned on my last job as an
+employed software developer. It is something I would **never like to miss
+anymore**.
 
-This blog post won’t be about why you definitely need to use TypeScript. But I like to highlight a few points that make working with TypeScript in Prismic a lot of fun to me and **improve my workflow**.
+This blog post won’t be about why you definitely need to use TypeScript. But I
+like to highlight a few points that make working with TypeScript in Prismic a
+lot of fun to me and **improve my workflow**.
 
-It makes me faster because my code-editor tells me what kind of fields I have on a specific element and which fields I don’t have. It’s that simple. I think that’s always been the main selling point to me. 
+It makes me faster because my code-editor tells me what kind of fields I have on
+a specific element and which fields I don’t have. It’s that simple. I think
+that’s always been the main selling point to me.
 
-My code knows what’s there and what’s not. What exists and what does not so a mispelling of a key in a JavaScript object won’t cause the UI to break. This prevents bug and improves the developer workflow.
+My code knows what’s there and what’s not. What exists and what does not so a
+mispelling of a key in a JavaScript object won’t cause the UI to break. This
+prevents bug and improves the developer workflow.
 
-So setting up Types and Interfaces for my Prismic Custom Slices and Types was a lot of work but necessary. I would query for the data, look at the Prismic API response and write the Types. 
+So setting up Types and Interfaces for my Prismic Custom Slices and Types was a
+lot of work but necessary. I would query for the data, look at the Prismic API
+response and write the Types.
 
-At some point I had built my own types folder which I could reuse on projects or use it as a starting point. It still was a lot of repetitive work.
-
-<br />
+At some point I had built my own types folder which I could reuse on projects or
+use it as a starting point. It still was a lot of repetitive work.
 
 ## <a name='improved-typescript-tooling'></a>Improved TypeScript tooling
 
-But guess what: this is now work of the past! Prismic recently released a lot of awesome features around TypeScript tooling! There are two big improvements. **Prismic ts codegen** and **automatic types in Prismic Client**.
-
-<br />
+But guess what: this is now work of the past! Prismic recently released a lot of
+awesome features around TypeScript tooling! There are two big improvements.
+**Prismic ts codegen** and **automatic types in Prismic Client**.
 
 ### <a name='prismic-ts-codegen'></a>Prismic ts codegen
 
-Prismic ts codegen is a **new cli tool** that generates types for Custom Types and Slices. So everything I’ve done manually on my last projects will be taken care of. Awesome!
+Prismic ts codegen is a **new cli tool** that generates types for Custom Types
+and Slices. So everything I’ve done manually on my last projects will be taken
+care of. Awesome!
 
-It’s super easy to use and I encourage everyone to implement it in future (or even current) Prismic projects. First you have to install the package:
+It’s super easy to use and I encourage everyone to implement it in future (or
+even current) Prismic projects. First you have to install the package:
 
 ```bash
 npm install --save-dev prismic-ts-codegen @prismicio/types
 ```
 
 Next you have to create a config file in your root folder:
+
 ```bash
 npx prismic-ts-codegen init
 ```
 
-Finally you have to tell it where to find your models for whom types should be created. If you use the Slicemachine and thus have them in your local project folder it already should be filled in.
+Finally you have to tell it where to find your models for whom types should be
+created. If you use the Slicemachine and thus have them in your local project
+folder it already should be filled in.
 
-Now you are all set up! If you run `npx prismic-ts-codegen` Types for all your Slices and Custom Types get created in a single file. And if you need to update them, just run the command again. It’s so helpful and such a great thing to have. My prismic developer workflow improved a lot since using it!
-
-<br />
+Now you are all set up! If you run `npx prismic-ts-codegen` Types for all your
+Slices and Custom Types get created in a single file. And if you need to update
+them, just run the command again. It’s so helpful and such a great thing to
+have. My prismic developer workflow improved a lot since using it!
 
 ### <a name='prismic-client-automatic-types'></a>Prismic Client automatic types
 
-The Prismic Client was also updated to use these automatic types created by prismic-ts-codegen. This makes working with Prismic and TypeScript a love-love realationship.
+The Prismic Client was also updated to use these automatic types created by
+prismic-ts-codegen. This makes working with Prismic and TypeScript a love-love
+realationship.
 
-You automatically generate your Types and they are used throughout your app without needing to do anything. That’s awesome.
+You automatically generate your Types and they are used throughout your app
+without needing to do anything. That’s awesome.
 
-When I started working with it, I quickly discovered a case were I thought that I still would have to do some additional work to run everything smoothly. I’m talking about typing content relationships. Because querying for linked documents is not automatically typed in Prismic.
-But Prismic also got us covered here. In the <a href="https://prismic.io/docs/technical-reference/prismicio-client#typing-content-relationships" target="_blank">docs &#8599;</a> they share exactly how to solve this case. Great!
-
-<br />
+When I started working with it, I quickly discovered a case were I thought that
+I still would have to do some additional work to run everything smoothly. I’m
+talking about typing content relationships. Because querying for linked
+documents is not automatically typed in Prismic. But Prismic also got us covered
+here. In the
+[docs](https://prismic.io/docs/technical-reference/prismicio-client#typing-content-relationships)
+they share exactly how to solve this case. Great!
 
 ## <a name='conclusion'></a>Conclusion
 
-Working with TypeScript in Prismic just got so much better with the release of this huge improvement for TypeScript tooling. As I already said many times before, this improves my workflow a lot and I’m so glad about it!
+Working with TypeScript in Prismic just got so much better with the release of
+this huge improvement for TypeScript tooling. As I already said many times
+before, this improves my workflow a lot and I’m so glad about it!
 
-I’m curious what Prismic has planned for future releases and I’m happpy by choosing it as my main CMS.
-
-<br />
+I’m curious what Prismic has planned for future releases and I’m happpy by
+choosing it as my main CMS.
 
 ## <a name='resources'></a>Resources
-* <a href="https://prismic.io/blog/release-week-improved-developer-tooling" target="_blank">Prismic release week improved developer tooling &#8599;</a>
-* <a href="https://github.com/prismicio/prismic-ts-codegen" target="_blank">Prismic ts codegen on GitHub &#8599;</a>
-* <a href="https://prismic.io/docs/technical-reference/prismic-ts-codegen" target="_blank">Prismic ts codegen docs &#8599;</a>
+
+- [Prismic release week improved developer tooling](https://prismic.io/blog/release-week-improved-developer-tooling)
+- [Prismic ts codegen on GitHub](https://github.com/prismicio/prismic-ts-codegen)
+- [Prismic ts codegen docs](https://prismic.io/docs/technical-reference/prismic-ts-codegen)

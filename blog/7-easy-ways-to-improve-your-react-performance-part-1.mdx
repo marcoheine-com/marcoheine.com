@@ -27,7 +27,6 @@ This post is **part 1** of a **series**.
 
 Part 2: [7 easy ways to improve your React performance - part 2](/blog/7-easy-ways-to-improve-your-react-performance-part-2/)
 
-<br />
 
 **What you can learn from this blog post:**
 
@@ -35,11 +34,9 @@ Part 2: [7 easy ways to improve your React performance - part 2](/blog/7-easy-wa
 
 - [Always use a key when mapping (and not index)](#keys)
 - [Use React.Fragments instead of divs as parent element](#fragments)
-- [One useState hook instead of multiple for connected data](#useState)
+- [One useState hook instead of multiple for connected data](#usestate)
 
 ---
-
-<br />
 
 ### <a name='keys'></a> Always use a key when mapping (and not an index)
 
@@ -80,8 +77,6 @@ const Animals = () => {
 export default Animals
 ```
 
-<br />
-
 If you're not using keys, React has to a hard time to figure out which items to
 update. This can lead to updating every item although only one changed.
 
@@ -98,8 +93,6 @@ You can learn more about why keys are important in this
 [article about reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children).
 
 So that's it for quickwin number one: **always use a key when mapping!**
-
-<br />
 
 ### <a name='fragments'></a> Use React.Fragments instead of divs as JSX parent element
 
@@ -125,8 +118,6 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 But the next time you need a JSX wrapping element, think again! You can use a
 **React.Fragment** for that!
 
@@ -145,8 +136,6 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 And the best thing is, there is even a **short syntax** for this.
 
 ```javascript
@@ -164,8 +153,6 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-<br />
-
 But wait, why does this boost my performance? Good question! Here's the thing.
 The more DOM elements your React application has, the **longer** the render
 process takes.
@@ -182,7 +169,7 @@ You can read more about why you should avoid too many DOM nodes in this article:
 
 <CoffeeHint />
 
-### <a name='useState'></a> One useState hook instead of multiple for connected data
+### <a name='usestate'></a> One useState hook instead of multiple for connected data
 
 Another performance quickwin you can achieve easy, is using one `useState` hook
 instead of multiple ones for connected data.
@@ -251,8 +238,6 @@ const MyBigForm = () => {
 }
 ```
 
-<br />
-
 There is a lot of `useState` and `onChange` going on here, right? Phew. We can
 optimize for the better here!
 
@@ -314,8 +299,6 @@ const MyBigForm = () => {
   )
 }
 ```
-
-<br />
 
 Wow a lot less code and a lot more **readable**, don't you think? It's always a
 good idea to keep your state in an object, if you're dealing with **connected
