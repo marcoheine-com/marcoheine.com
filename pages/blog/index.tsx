@@ -10,6 +10,7 @@ import { NextPage } from 'next'
 import { BlogPost } from '..'
 import MarcoHeineImg from '../../public/images/marco-heine.webp'
 import { useRouter } from 'next/router'
+import { generateRSSFeed } from 'lib/generateRSSfeed'
 
 interface BlogPostProps {
   blogPosts: BlogPost[]
@@ -20,6 +21,7 @@ const HEADLINE2_STYLES =
   'mb-16 inline-block border-b-[6px] border-b-primaryColorTwo'
 
 export async function getStaticProps({ locale }) {
+  await generateRSSFeed()
   const blogPosts = getAllPosts({ withPrefix: true })
 
   return {
