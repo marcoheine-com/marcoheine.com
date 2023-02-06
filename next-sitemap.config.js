@@ -1,6 +1,4 @@
-import config from 'config'
-
 module.exports = {
-  siteUrl: config.siteUrl,
+  siteUrl: 'https://marcoheine.com',
   generateRobotsTxt: true,
 }
