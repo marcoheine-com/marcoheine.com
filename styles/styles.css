@@ -25,6 +25,7 @@
   body {
     font-family: 'Lato-Regular', sans-serif;
     font-size: 20px;
+    color: rgb(36, 34, 34);
   }
   h1,
   h2,
@@ -33,7 +34,7 @@
   h5,
   h6 {
     font-family: 'Merriweather', serif;
-    @apply mb-4;
+    @apply mb-4 text-black;
   }
   h1 {
     @apply text-4xl;
