@@ -7,10 +7,9 @@ import { getAllPosts, getBlogPostBySlug } from '../../lib/blog'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextPage } from 'next'
 import { BlogPost } from '..'
-import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import rehypeHighlight from 'rehype-highlight'
 import { useRouter } from 'next/router'
+import { getMDX } from 'lib/getMDX'
 
 interface BlogPostProps {
   blogPost: BlogPost
@@ -19,11 +18,7 @@ interface BlogPostProps {
 
 export async function getStaticProps({ params, locale }) {
   const blogPost = getBlogPostBySlug(params.slug)
-  const blogPostMDX = await serialize(blogPost.content, {
-    mdxOptions: {
-      rehypePlugins: [rehypeHighlight, {}],
-    },
-  })
+  const blogPostMDX = await getMDX(blogPost.content)
 
   return {
     props: {

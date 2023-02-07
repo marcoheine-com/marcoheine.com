@@ -91,6 +91,12 @@ const SEO: React.FC<SEOProps> = ({
         rel="icon"
         href="/favicon-32x32.png"
       />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${config.title} RSS Feed`}
+        href="/rss.xml"
+      />
     </Head>
   )
 }

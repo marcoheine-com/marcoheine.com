@@ -10,6 +10,7 @@ import SEO from '../../components/seo'
 import { getAllTILPosts, getTILPostBySlug, TILPost } from 'lib/til'
 import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { getMDX } from 'lib/getMDX'
 
 interface TILPostProps {
   tilPost: TILPost
@@ -18,11 +19,7 @@ interface TILPostProps {
 
 export async function getStaticProps({ params, locale }) {
   const tilPost = getTILPostBySlug(params.slug)
-  const tilPostMDX = await serialize(tilPost.content, {
-    mdxOptions: {
-      rehypePlugins: [rehypeHighlight, {}],
-    },
-  })
+  const tilPostMDX = await getMDX(tilPost.content)
 
   return {
     props: {
