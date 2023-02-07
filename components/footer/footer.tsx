@@ -6,7 +6,7 @@ const LI_STYLES_BASIC = 'inline border-b-0 pr-5'
 const SVG_BASIC_STYLES =
   'transition-all ease-linear duration-200 fill-current text-white hover:text-primaryColorOne'
 const LINK_BASIC_STYLES =
-  'border-b-[3px] border-b-white transition-all ease-out duration-200 py-0 px-[1px] hover:text-primaryColorOne hover:bg-white'
+  'py-0 px-[1px] text-white hover:border-b-4 hover:text-white hover:border-b-white hover:border-dotted'
 
 const Footer = () => {
   const year = new Date().getFullYear()
@@ -16,12 +16,12 @@ const Footer = () => {
     <footer className="bg-primaryColorTwo py-8 text-center text-[14px] text-white">
       <a
         href="#"
-        className="mb-8 text-white"
+        className="mb-8 text-white hover:border-b-2 hover:border-dotted hover:border-b-white hover:text-white"
       >
         &uarr; {t('footer.top')} &uarr;
       </a>
       <nav>
-        <ul className="mb-8 flex list-none justify-center gap-4">
+        <ul className="mt-8 flex list-none justify-center gap-4">
           <li className={LI_STYLES_BASIC}>
             <a href="mailto:hello@marcoheine.com">
               <svg
@@ -90,7 +90,7 @@ const Footer = () => {
           </li>
           <li className={LI_STYLES_BASIC}>
             <a
-              href="https://www.linkedin.com/in/marco-k%C3%BChbauch/"
+              href="https://www.linkedin.com/in/marcoheine/"
               rel="noopener noreferrer"
               target="_blank"
               title="Link to linkedin profile of Marco Heine"
@@ -109,8 +109,8 @@ const Footer = () => {
             </a>
           </li>
           <li className={`${LI_STYLES_BASIC} pr-0`}>
-            <a
-              href="https://marcoheine.com/rss.xml"
+            <Link
+              href="/rss.xml"
               rel="noopener noreferrer"
               target="_blank"
               title="Link to RSS Blog Feed of Marco Heine"
@@ -166,31 +166,31 @@ const Footer = () => {
                 <g></g>
                 <g></g>
               </svg>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <p>
         {t('footer.hosting')}
         <a
-          className={LINK_BASIC_STYLES}
+          className={`${LINK_BASIC_STYLES} outgoing-link-trigger`}
           href="https://www.netlify.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
           {' '}
-          Netlify.
+          Netlify. <span> &#8599;</span>
         </a>
       </p>
       <p>
         {t('footer.code')}
         <a
-          className={LINK_BASIC_STYLES}
+          className={`${LINK_BASIC_STYLES} outgoing-link-trigger`}
           href="https://github.com/marcoheine-com/marcoheine.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub
+          GitHub <span> &#8599;</span>
         </a>
         .
       </p>
