@@ -3,6 +3,29 @@ import { format } from 'date-fns'
 import fs from 'fs'
 import { join } from 'path'
 
+type TagName =
+  | 'javascript'
+  | 'react'
+  | 'typescript'
+  | 'css'
+  | 'html'
+  | 'nodejs'
+  | 'backend'
+  | 'frontend'
+  | 'graphql'
+  | 'redux'
+  | 'testing'
+  | 'web-security'
+  | 'api'
+  | 'accessibility'
+  | 'performance'
+  | 'software-development'
+  | 'ux'
+  | 'git'
+  | 'gatsby'
+  | 'prisma'
+  | 'nextjs'
+  | 'tailwindcss'
 export interface TILPost {
   slug: string
   frontmatter: {
@@ -11,14 +34,14 @@ export interface TILPost {
     description: string
     updated?: string
     path: string
-    tags: string[]
+    tags: TagName[]
     number: number
   }
   content: string
 }
 
 export interface Tag {
-  name: string
+  name: TagName
   count: number
 }
 
