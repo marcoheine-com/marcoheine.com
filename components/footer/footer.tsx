@@ -205,9 +205,12 @@ const Footer = () => {
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
           />
         </svg>
-        <span className={LINK_BASIC_STYLES}>
-          <Link href="/legal-notice/">Legal notice</Link>
-        </span>
+        <Link
+          className={LINK_BASIC_STYLES}
+          href="/legal-notice/"
+        >
+          Legal notice
+        </Link>
       </p>
     </footer>
   )
