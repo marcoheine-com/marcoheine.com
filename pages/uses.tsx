@@ -1,6 +1,15 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
 
 const Uses = () => (
   <Layout>

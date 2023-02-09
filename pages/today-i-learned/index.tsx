@@ -102,7 +102,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({ tilPosts, allTags }) => {
         </button>
       </label>
 
-      <ul className="mx-auto my-10 flex max-w-3xl list-none justify-start gap-4 overflow-auto md:flex-wrap md:justify-center">
+      <ul className="mx-auto my-10 flex max-w-3xl list-none justify-start gap-4 overflow-auto p-4 md:flex-wrap md:justify-center md:p-0">
         {allTags?.map((tag: Tag) => (
           <li
             className="m-0 shrink-0 text-primaryColorTwo"
@@ -115,7 +115,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({ tilPosts, allTags }) => {
         ))}
       </ul>
 
-      <section className="mx-auto mt-20 mb-0 grid grid-cols-2 justify-center gap-10 lg:gap-14 xl:grid-cols-3 xl:gap-10">
+      <section className="mx-auto mt-20 mb-0 grid justify-center gap-10 md:grid-cols-2 lg:gap-14 xl:grid-cols-3 xl:gap-10">
         {items.map((item, index) => {
           const { frontmatter } = item
 
