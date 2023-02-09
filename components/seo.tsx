@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { StaticImageData } from 'next/image'
 import { config } from 'config'
-import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 interface SEOProps {
   description?: string
@@ -19,13 +19,13 @@ const SEO: React.FC<SEOProps> = ({
   ogImageAlt,
   location,
 }) => {
-  const { i18n } = useTranslation()
   const metaDescription = description || config.description
 
   const url = location || ''
   const blogPostRegex = /\/blog\/[^/]+\/$/
   const isBlogPost = blogPostRegex.test(url)
-  const isDefaultLocale = i18n.language === 'en'
+  const lng = useRouter()
+  const isDefaultLocale = lng.locale === 'en'
 
   return (
     <Head>
@@ -91,7 +91,7 @@ const SEO: React.FC<SEOProps> = ({
         href={`${
           isDefaultLocale
             ? `${config.siteUrl}${url}`
-            : `${config.siteUrl}/${i18n.language}${url}`
+            : `${config.siteUrl}/${lng.locale}${url}`
         }`}
       />
       <link
