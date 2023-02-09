@@ -1,17 +1,11 @@
 import * as React from 'react'
 import { useTranslation } from 'next-i18next'
 
-// @ts-ignore
 import AndersontourWebsite from '../../public/images/andersontour-website.webp'
-// @ts-ignore
 import DiedaWebsite from '../../public/images/dieda-website.webp'
-// @ts-ignore
 import AerosolallianceWebsite from '../../public/images/aerosolalliance-website.webp'
-// @ts-ignore
 import LauraheineWebsite from '../../public/images/lauraheine-website.webp'
-// @ts-ignore
 import SenelektroWebsite from '../../public/images/senelektro-website.webp'
-// @ts-ignore
 import StuttgarterKickersWebsite from '../../public/images/stuttgarter-kickers-website.webp'
 
 import { CallToAction } from '../call-to-action'
@@ -124,6 +118,8 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
                     alt={project.imageAlt}
                     src={project.image}
                     className="rounded-lg shadow-custom transition-all hover:-translate-y-1 hover:shadow-customDark"
+                    width={600}
+                    height={400}
                   />
 
                   <article className="flex flex-col justify-center">

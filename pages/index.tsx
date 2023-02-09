@@ -151,7 +151,7 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
             </>
             <Link
               href="/blog/"
-              className="mx-auto"
+              className="mx-auto py-3"
             >
               → {t('home.all-blog-posts')}
             </Link>
