@@ -21,7 +21,6 @@ export const TILCard: React.FC<TILCardProps> = ({
     <Link
       key={slug}
       href={`/${slug}`}
-      replace
     >
       <section className="rounded-3xl p-8 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customHover md:p-10">
         <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">

@@ -36,9 +36,9 @@ export const mdxcomponents = {
   hr: () => <hr className="my-10" />,
   Image: (props) => (
     <Image
-      src={props.src}
       alt={props.alt}
-      sizes="(max-width: 600px) 100vw, 600px"
+      className="mt-8 mb-16"
+      {...props}
     />
   ),
 }
