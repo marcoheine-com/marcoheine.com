@@ -29,7 +29,7 @@ export const TILCard: React.FC<TILCardProps> = ({
         </aside>
         <h2>{title}</h2>
 
-        {tags.length > 0 && (
+        {tags?.length > 0 && (
           <section className="mb-4 flex flex-wrap gap-3">
             {tags.map((tag) => (
               <span

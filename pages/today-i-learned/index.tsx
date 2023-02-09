@@ -117,7 +117,7 @@ const TIL: React.FC<NextPage & TILPostProps> = ({ tilPosts, allTags }) => {
       </ul>
 
       <section className="mx-auto mt-20 mb-0 grid justify-center gap-10 md:grid-cols-2 lg:gap-14 xl:grid-cols-3 xl:gap-10">
-        {items.map((item, index) => {
+        {items?.map((item, index) => {
           const { frontmatter } = item
 
           return (
