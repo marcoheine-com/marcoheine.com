@@ -7,9 +7,15 @@ import { useRouter } from 'next/router'
 interface SEOProps {
   description?: string
   title?: string
-  ogImage?: StaticImageData
+  ogImage?: StaticImageData | string
   ogImageAlt?: string
   location?: string
+}
+
+const isStaticImage = (
+  image: StaticImageData | string
+): image is StaticImageData => {
+  return (image as StaticImageData)?.src !== undefined
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -26,6 +32,8 @@ const SEO: React.FC<SEOProps> = ({
   const isBlogPost = blogPostRegex.test(url)
   const lng = useRouter()
   const isDefaultLocale = lng.locale === 'en'
+
+  const validOgImage = isStaticImage(ogImage) ? ogImage.src : ogImage
 
   return (
     <Head>
@@ -60,7 +68,11 @@ const SEO: React.FC<SEOProps> = ({
       />
       <meta
         name="og:image"
-        content={`${config.siteUrl}${ogImage?.src}`}
+        content={`${
+          ogImage
+            ? `${config.siteUrl}${validOgImage}`
+            : `${config.siteUrl}/images/marco-heine.webp`
+        }`}
       />
       <meta
         name="og:imageAlt"
@@ -72,7 +84,11 @@ const SEO: React.FC<SEOProps> = ({
       />
       <meta
         name="twitter:image"
-        content={`${config.siteUrl}${ogImage?.src}`}
+        content={`${
+          ogImage
+            ? `${config.siteUrl}${validOgImage}`
+            : `${config.siteUrl}/images/marco-heine.webp`
+        }`}
       />
       <meta
         name="twitter:image:alt"
