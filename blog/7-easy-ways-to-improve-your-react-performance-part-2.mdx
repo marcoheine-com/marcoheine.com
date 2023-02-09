@@ -1,0 +1,170 @@
+---
+title:
+  🚀 React performance quick wins 🚀 - 7 easy ways to improve your React
+  performance - part 2
+date: 2021-01-18
+updated: 2022-11-24
+path: /7-easy-ways-to-improve-your-react-performance-part-2
+description:
+  In part 2 of this series, we'll look at another four ways to improve your
+  React performance.
+---
+
+In part 1 of this react performance quick-wins series, we already learned about the following:
+
+
+- [Always use a key when mapping and no index](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys)
+- [Use React.Fragments instead of divs as parent element](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#fragments)
+- [One useState hook instead of multiple for connected data](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#usestate)
+
+The second part of this series brings you another **4 great quick-wins** you can
+apply directly to your code and improve your performance
+
+This Post is Part 2 of a series.
+
+Part 1: [7 easy ways to improve your React performance - part 1](/blog/7-easy-ways-to-improve-your-react-performance-part-1/)
+
+
+**What you can learn from Part 2 of this React performance quick wins series:**
+
+---
+
+- [Avoid anonymous functions](#avoid-anonymous-funcs)
+- [Define objects outside of your component](#defining-objects)
+- [React.lazy and React.Suspense](#lazy-suspense)
+- [Virtualized lists](#virtualized-lists)
+
+---
+
+
+## <a name='avoid-anonymous-funcs'></a>Avoid anonymous functions
+
+It's easy to use an anonymous function when you want to add a quick callback
+function to a component.
+
+```jsx
+import * as React from 'react'
+
+const MyComponent = () => {
+  return (
+    <button onClick={() => console.log('Button clicked')}>Click me!</button>
+  )
+}
+
+export default MyComponent
+```
+
+But if you're on the lookout for a quick performance win, that's something you
+can avoid.
+
+Anonymous functions aren't assigned an identifier like const/let/var. This means
+they **are not persistent** whenever this functional component gets rendered
+again. So JavaScript has to **create them again and again,** on every rerender.
+
+This becomes a problem if you're rendering a lot of elements, like a lot of
+table cells, which all make use of an anonymous function.
+
+There is an easy way to solve this. You can change it to a **named
+function**.
+
+```jsx
+import * as React from 'react'
+
+const MyComponent = () => {
+  const handleClick = () => {
+    console.log('Button clicked')
+  }
+
+  return <button onClick={handleClick}>Click me!</button>
+}
+
+export default MyComponent
+```
+
+That's it for quick-win number 4: avoid anonymous functions!
+
+## <a name='defining-objects'></a>Define objects outside of your component
+
+Here comes quick-win number 5. Something similar as described above can be
+applied to objects.
+
+If you define an object as an object literal and pass it in as props, this object
+will have to be recreated on every rerender.
+
+```jsx
+import * as React from 'react'
+
+const MyComponent = () => {
+  return (
+    <div style={{ textAlign: 'center', fontSize: '14px' }}>
+      This is the text of my component.
+    </div>
+  )
+}
+
+export default MyComponent
+```
+
+Instead, define your object outside of the component. Now it is created once on
+the initial render and not being touched on every rerender.
+
+```jsx
+import * as React from 'react'
+
+const DIV_STYLES = {
+  fontSize: '14px',
+  textAlign: 'center',
+}
+
+const MyComponent = () => {
+  return <div style={DIV_STYLES}>This is the text of my component.</div>
+}
+
+export default MyComponent
+```
+
+Performance quick-win, whoop whoop! 🚀
+
+<CoffeeHint />
+
+## <a name='lazy-suspense'></a>React.lazy and React.Suspense
+
+With `React.lazy`, you can "lazy load" your components. This means your component
+is only rendered when it is truly needed and not loaded unnecessarily.
+
+The less you need to load, the better your performance!
+
+This can easily be combined with React.Suspense for rendering some fallback
+content.
+
+I wrote a whole Today-I-learned post about this topic; check it out here:
+[Today I learned: React Suspense lazy-loading](/today-i-learned/react-suspense-lazy-loading/)
+
+That's also a great way to improve your React performance without too much
+effort.
+
+## <a name='virtualized-lists'></a>Virtualized lists
+
+If you've worked with long lists or tables with many rows in React, you
+know how much this can impact your performance. This is because you have to render a lot of
+content, usually many divs.
+
+We already learned that too many DOM nodes are not a good idea. Also updates and
+rerenders can be painful because they take just way too long.
+
+With virtualized lists, only the list items that are actually in
+the viewport are rendered. That's pretty cool. But how does this work? Don't worry; you won't
+have to build this yourself. There are already excellent tools out there that do
+the job for you.
+
+Check out <a href="https://github.com/bvaughn/react-virtualized" target="_blank" rel="noopener noreferer">react-virtualized &#8599;</a> by
+Brian Vaughn.
+
+It's pretty easy to use, and you don't need to worry about displaying long lists
+and tables anymore.
+
+So that's it; these are my **7 easy ways to improve your React performance**.
+Did you already know all of them? Do you have any additional tips? Let me know!
+
+Just send me an [email](mailto:@marcoheine.com) or message me on
+[Twitter](https://twitter.com/marcoheine_com).

@@ -1,0 +1,156 @@
+import React from 'react'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
+import Image from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { getAllPosts } from '../../lib/blog'
+import { NextPage } from 'next'
+import { BlogPost } from '..'
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import { useRouter } from 'next/router'
+import { generateRSSFeed } from 'lib/generateRSSfeed'
+
+interface BlogPostProps {
+  blogPosts: BlogPost[]
+  location: Location
+}
+
+const HEADLINE2_STYLES =
+  'mb-16 inline-block border-b-[6px] border-b-primaryColorTwo'
+
+export async function getStaticProps({ locale }) {
+  await generateRSSFeed()
+  const blogPosts = getAllPosts({ withPrefix: true })
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      blogPosts: JSON.parse(JSON.stringify(blogPosts)),
+    },
+  }
+}
+
+const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
+  const { t } = useTranslation()
+  const location = useRouter()
+
+  const newestPosts = blogPosts.slice(0, 3)
+  const olderPosts = blogPosts.slice(3)
+
+  const groupByYear = (olderPosts: BlogPost[]) => {
+    let grouped = {}
+
+    olderPosts.map((post: BlogPost) => {
+      const { date } = post.frontmatter
+      const year = date.split(', ')[1]
+      const dateString = `${year}`
+
+      if (!grouped[dateString]) {
+        grouped[dateString] = []
+      }
+      grouped[dateString].push(post)
+    })
+    return grouped
+  }
+
+  const groupedByYear = groupByYear(olderPosts)
+
+  const createYearlySection = (groupedPosts) =>
+    Object.entries(groupedPosts)
+      .reverse()
+      .map(([key, value]: [key: string, value: any], index: number) => (
+        <section
+          className="mb-12"
+          key={`${key}_${index}`}
+        >
+          <h3>{key}</h3>
+          {value.map((post: BlogPost) => (
+            <Link
+              key={post.frontmatter.title}
+              href={`/${post.slug}`}
+            >
+              <article className="flex flex-col md:flex-row md:gap-8">
+                <time
+                  className="mb-2 inline-block text-base text-grey sm:min-w-[160px] md:mb-0"
+                  dateTime={post.frontmatter.date}
+                >
+                  {post.frontmatter.date}
+                </time>
+                <h4 className="inline-block border-b-2 border-b-transparent text-primaryColorOne hover:border-b-primaryColorTwo">
+                  {post.frontmatter.title}
+                </h4>
+              </article>
+            </Link>
+          ))}
+        </section>
+      ))
+
+  return (
+    <Layout>
+      <SEO
+        title="Blog | Marco Heine - Freelance Web Developer"
+        ogImage={MarcoHeineImg}
+        ogImageAlt="a picture of Marco Heine"
+        description={t('meta.blog-description')}
+        location={location.asPath}
+      />
+      <h1 className="mb-20 text-center">Blog</h1>
+
+      <section className="mx-auto w-full max-w-3xl">
+        <h2 className={HEADLINE2_STYLES}>{t('home.blog-posts')}</h2>
+        {newestPosts.map((post: BlogPost, index: number) => {
+          post
+          const { slug, frontmatter } = post
+          const { date, title, description } = frontmatter
+
+          return (
+            <Link
+              href={`${slug}`}
+              key={`${title}-${index}`}
+            >
+              <article
+                className={`p-5 text-primaryColorOne transition-all hover:rounded-xl hover:shadow-custom md:grid md:grid-rows-[auto_auto_auto_auto_auto] md:gap-x-[50px] md:gap-y-5 ${
+                  frontmatter.featuredImage
+                    ? 'md: grid-cols-[1fr_1fr]'
+                    : 'grid-cols-[620px]'
+                }`}
+              >
+                <h3 className="md:col-start-1 md:col-end-2 md:mb-0">{title}</h3>
+                {frontmatter.featuredImage && (
+                  <div className="md:col-span-2 md:row-start-1 md:row-end-[-1]">
+                    <Image
+                      alt={frontmatter.featuredImageAlt}
+                      src={frontmatter.featuredImage}
+                    />
+                  </div>
+                )}
+                <time
+                  className="mb-0 text-base md:col-start-1 md:col-end-2"
+                  dateTime={date}
+                >
+                  Published on: {date}
+                </time>
+
+                <p className="mb-2 md:col-start-1 md:col-end-2">
+                  {description}
+                </p>
+                <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1 md:col-start-1 md:col-end-2 md:row-start-4 md:row-end-5">
+                  Read article
+                </span>
+              </article>
+            </Link>
+          )
+        })}
+
+        <h2 className={`${HEADLINE2_STYLES} mt-16`}>
+          {t('blog.headline-two')}
+        </h2>
+        {createYearlySection(groupedByYear)}
+      </section>
+    </Layout>
+  )
+}
+
+export default Blog

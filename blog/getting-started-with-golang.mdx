@@ -1,0 +1,477 @@
+---
+title: Getting started with golang
+date: 2021-02-22
+path: /getting-started-with-golang
+description:
+  In this blog post I share all the things you need to know to get started with
+  golang.
+featuredImage: /images/will-o-GtYFwFrFbMA-unsplash.webp
+featuredImageAlt: 'a hot air ballon getting ready to fly'
+---
+
+<a
+  href="https://unsplash.com/@blnk_kanvas"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Picture by Will O
+</a>
+
+![a hot air ballon getting ready to fly](/images/will-o-GtYFwFrFbMA-unsplash.webp)
+
+### How I got to know go
+
+> "Wait, what? What's happening here? Your previous blog posts were all about
+> frontend development, CSS JavaScript, React. Now this..go? What is it? And why
+> are you blogging about it?"
+
+If this new content on my blog confuses you a little, I'm sorry! A lot of new
+things happened to me in the last months and one of them is, that I'm **taking a
+closer look** on both (all?) sides of web development. Which includes working
+with and learning more about **backend technologies**.
+
+My first contact with everything else than frontend was in a project were we
+worked with **NodeJS/Express** and **MongoDB**.
+
+This granted me a lof ot knowledge on how all parts of a web application work
+together. **From the frontend, to API Calls, middlewares, services, raw SQL and
+to the database**.
+
+In the project I'm working in right now, we're using **go** in the backend and
+therefore I'm learning go!
+
+And to make the most of it I will **document** everything I learn about go in
+this blog post. So I have a place to come back to and look at when I forget
+everything.
+
+And maybe you can learn something from it too!
+
+### So...go. What is it?
+
+> Go is an open source programming language that makes it easy to build simple,
+> reliable, and efficient software.
+
+At least that's what it says about itself on its website. Let's see what
+wikipeda has to say about go:
+
+> Go is a statically typed, compiled programming language designed at Google by
+> Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to
+> C, but with memory safety, garbage collection, structural typing, and
+> CSP-style concurrency. The language is often referred to as Golang because of
+> its domain name, [golang.org](http://golang.org/), but the proper name is Go.
+
+Ah that tells a bit more about it. Interesting! Now that we are behind the get
+to know each other phase, let's see what **topics** I'll cover in this blog
+post. As the title says it will be an absolute beginner introduction.
+
+If I'm wrong about something or made mistakes, please let me know!
+
+### What you can learn from this blog post:
+
+---
+
+- [packages, import, export](#packages)
+- [Variables](#variables)
+- [Functions](#functions)
+- [Data types](#data-types)
+- [for](#for)
+- [if, else](#if-else)
+- [switch](#switch)
+- [struct](#struct)
+- [arrays](#arrays)
+- [slices](#slices)
+- [range](#range)
+- [map](#map)
+- [method](#method)
+- [pointers](#pointers)
+- [pointer receivers](#pointer-receivers)
+- [interfaces](#interfaces)
+- [errors](#errors)
+
+---
+
+### <a name='packages'></a>packages, import, export
+
+Every go program is made up of packages. You always have to have a **main
+package**, where your app starts. You can **import** your own packages or one of
+the hundreds of go packages.
+
+A name (of a function, struct etc) is **exported** and therefore can be imported
+if it begins with a capital letter.
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+// is not exported
+func main () {
+	PrintStr()
+}
+
+// can be imported from other packages in your app
+func PrintStr () {
+	fmt.Printf("Hello World")
+	fmt.Println(math.Pi)
+}
+```
+
+### <a name='variables'></a> Variables
+
+There are several ways to declare variables in go. The classic `var` lets you
+declare one or more variables at once. The `const` lets you declare constant
+variables. The `:=` shorthand lets you declare and initialize a variable at once
+inside a function.
+
+```go
+var a = 10
+const 1 = 10
+
+// shorthand for declaring and initializing a a variable inside a function
+a := 10
+```
+
+### <a name='functions'></a> Functions
+
+A function in go can take **zero or more arguments**. The type of the input
+parameter comes after the variable name. When the parameters have the same type
+you can combine the type declaration.
+
+The input parameters are followed by the return type.
+
+A function can return any number of results. In go explizit returns are
+required.
+
+```go
+func multiply (a, b int) int {
+	return a * b
+}
+
+multiply(3, 6)
+```
+
+### <a name='data-types'></a> Data types
+
+Surprise, surprise go has values like boolean, strings and integer. Here's a
+list of all of them.
+
+```go
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // alias for uint8
+
+rune // alias for int32
+     // represents a Unicode code point
+
+float32 float64
+
+complex64 complex128
+```
+
+Variables declared without an initial value are given their zero value:
+
+- `0` for numeric types,
+- `false` for the boolean type, and
+- `""` (the empty string) for strings
+
+### <a name='for'></a> for
+
+Coming from TypeScript, there is no such thing as the array methods map, reduce
+or filter in go. The for loop is all you have.
+
+A for loop consists of the following:
+
+- an **init** statement; condition expression; **post** statement
+
+There is no need for **parenthesis** surrounding the three components. The init
+and post statements are **optional**.
+
+The for loop can also be used as while().
+
+```go
+var a = 10
+
+for i := 0; i < a; i++ {
+	a += i
+}
+```
+
+### <a name='if-else'></a> if, else
+
+If, else is pretty straight forward in go. No parenthesis are needing
+surrounding the condition.
+
+```go
+var a = 10
+
+if a > 9 {
+	fmt.Println(a)
+}
+```
+
+### <a name='switch'></a> switch
+
+A switch in go only runs the selected case, not all cases that follow. The
+default case is **optional**.
+
+The break statement is provided automatically.
+
+You can combine expressions in the same case by using comma separation.
+
+```go
+switch time.Now().Weekday() {
+    case time.Saturday, time.Sunday:
+        fmt.Println("It's the weekend")
+    default:
+        fmt.Println("It's a weekday")
+}
+```
+
+### <a name='struct'></a> struct
+
+A struct is a typed collection of fields. Structs are **mutable**.
+
+```go
+type server struct {
+	host          string
+	port          string
+}
+server{"localhost", "8080"}
+
+type person struct {
+	name string
+	age int
+}
+person{name: "Marco", age: 29}
+```
+
+### <a name='arrays'></a> arrays
+
+Arrays are numbered sequences of elements of a specific length.
+
+The following creates a variable a as an array of 10 integers.
+
+```go
+var a [10]int
+```
+
+In go arrays can not be resized, because the length is part of the type.
+
+The built-in **len** method returns the length of an array.
+
+```go
+var names [3]string{"Tim", "Mandy", "Stefanie"}
+len(names) // 2
+```
+
+### <a name='slices'></a> slices
+
+Unlike arrays, slices have no specified length, so they are dynamically sized.
+They are build on arrays but are more powerful and therefore more used than
+arrays in go.
+
+To create **dynamically** sized arrays (slices), you can use the **make**
+function.
+
+```go
+// slice of type in with length 5
+a := make([]int, 5)
+
+// slice of type string with length 3
+s := make([]string, 3)
+```
+
+Slices can also be build by slicing an existing array or slice. In the following
+example, a slice is formed on the numbers array by specifying two indices, a low
+and high bound.
+
+```go
+// array
+numbers := [5]int{1, 2, 3, 4, 5}
+
+// slice of numbers array
+specificNumbers := names[0:3]
+```
+
+Its also possible to create **slices of slices.**
+
+```go
+board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+```
+
+To enhance a slice, you can use the **append** function. This is one example of
+what makes slices more powerful than arrays. Append returns a slice with one or
+more new values.
+
+```go
+var s []int
+
+append(s, 1, 3, 4, 5)
+```
+
+Slices can also be **copied**.
+
+```go
+s := make([]string, 5)
+
+s[0] = "H"
+s[1] = "e"
+s[2] = "l"
+s[3] = "l"
+s[4] = "o"
+
+c := make([]string, 5)
+
+copy(c, s)
+
+```
+
+<CoffeeHint />
+
+### <a name='map'></a> map
+
+A map is combination of key value pairs. In other languages it's often called
+dictionary.
+
+```go
+// creates an empty map of string - int key - value pairs
+m := make(map[string]int)
+
+// sets an the key "age" with the value of 29
+m["age"] = 29
+
+// deletes an element of a map
+delete(m, "age")
+```
+
+### <a name='range'></a> range
+
+To iterate over a map or a slice you can use **range**.
+
+It returns two values: index and a copy of the element at that index.
+
+The index or value can be skipped by using `_`
+
+```go
+numbers := []int{1, 2, 3, 4, 5}
+
+for i, num := range numbers {
+	fmt.Printf(i, num)
+}
+```
+
+### <a name='method'></a> method
+
+A method is a function with a special **receiver argument**.
+
+```go
+type Server struct {
+	host          string
+	port          string
+}
+
+function (s Server) printServer() {
+	fmt.Printf(s)
+}
+```
+
+See that we pass the Server as s as a **receiver** argument to the `printServer`
+function before we the function name declaration?
+
+Everything inside the function body has now **access** to the members of the
+struct.
+
+### <a name='pointers'></a> pointers
+
+Pointers hold the **memory address** of a value.
+
+```go
+i := 42
+
+// generate a pointer to i
+p = &i
+
+// read i through the pointer p
+fmt.Prinln(*p)
+```
+
+### <a name='pointer-receivers'></a> pointer receivers
+
+Methods can be declared with pointer receivers.
+
+The differences between pointer receivers and value receivers are:
+
+- pointer receivers can modify the value to which the receiver points
+- with pointer receivers you can avoid copying the value on each method call
+- sending the value of the variable to the function, but not the variable itself
+- the value of the variable isn’t passed to the function, just its location
+- pointers are adresses to a particular place in memory
+
+```go
+type Server struct {
+	host          string
+	port          string
+}
+
+function (s *Server) printServer() {
+	fmt.Printf(s)
+}
+```
+
+Pointers and pointer receivers are little bit more **advanced topic** but it's
+good to have heard of them as a beginner.
+
+### <a name='interfaces'></a> interfaces
+
+Interfaces are **named collections** of method signatures. To implement an
+interface you just need to implement all methods in the interface.
+
+```go
+type interface {
+	methodOne() int
+	methodTwo() int
+}
+
+func methodOne() int {}
+
+func methodTwo() int {}
+```
+
+### <a name='errors'></a> errors
+
+A **nil** value in the error position indicates that there was no error.
+
+```jsx
+if err != nil {
+	// log the error
+}
+```
+
+Calling code should handle errors by **testing** whether the error equals nil.
+
+And that is it, these are the **programming with go beginner topics** I came
+across the last weeks and months while learning and working with go. I hope you
+like it!
+
+Did you know everything already or did you learn something new? Do you have
+other great examples? Let me know!
+
+You can send me an [email](mailto:marco@marcoheine.com) or message me on
+[Twitter](https://twitter.com/marcoheine_com).
+
+### Resources:
+
+- [https://gobyexample.com/](https://gobyexample.com/)
+- [https://blog.golang.org/slices-intro](https://blog.golang.org/slices-intro)

@@ -1,0 +1,75 @@
+---
+title: Setting a theme color without JavaScript
+description: It's possible to set the theme color of your application without JavaScript. It just works with plain CSS.
+  
+date: 2022-08-17
+path: /setting-theme-without-javascript
+tags: ['css']
+number: 47
+---
+
+Having the ability to set the color of a whole section is a pretty common usecase in modern websites. If you're working with React there are two ways who come across your mind, when you think about developing this feature.
+
+### Using the most basic approach in React: props
+
+Imagine you have a bunch of components who are styled based on the theme color. We achieve that by using one of the most basic React features: props.
+
+```jsx
+...
+
+// The component definition
+const App = ({ themeColor }) => (
+  <>
+    <Header color={themeColor} />
+    <Main color={themeColor} />
+    <Footer color={themeColor} />
+  </>
+)
+
+// Setting the theme color
+<App themeColor='#9D3215' />
+...
+```
+
+We just set the value of our themeColor on the root level, and this value is passed down to every child component. Than it's used to style the components.
+
+### Using React.Context
+Another well known approach is to use React.Context. You first define your context and wrapp your App component in a Context Provider.
+
+```jsx
+...
+
+const ThemeContext = React.createContext('#9D3215')
+
+const App = () => (
+  <ThemeContext.Provider value='#9D3215'>
+    <Header />
+    <Main />
+    <Footer />
+  </ThemeContext.Provider>
+)
+```
+
+Now every component is able to access this theme value by using the context hook.
+
+```jsx
+...
+
+const Header = () => {
+  const theme = useContext(ThemeContext)
+  return <h1 style={{ color: theme }}>Logo</h1>
+}
+
+...
+```
+
+### Without any JavaScript
+
+But wait! This is also possible without using any JavaScript. And with just plain CSS. The basic idea is to wrap your App with a section tag for example and set the color value on the section tag in specific css class.
+
+Now every child component can check in their stylesheet, if the specific css class is present, and if it is, it can use the color value.
+This is possible by setting the color value to currentColor! 
+
+I created a working example on <a href="https://codepen.io/Mkuehb/pen/PoRXqrW" target="_blank">CodePen &#8599;</a>, check it out and let me know what you think.
+
+And that's it! Setting the theme color for your whole app without any JavaScript! I think that's a pretty cool alternative approach. 

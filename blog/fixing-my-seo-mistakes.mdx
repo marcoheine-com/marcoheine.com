@@ -1,0 +1,171 @@
+---
+title: Fixing my SEO mistakes
+date: 2022-10-21
+updated: 2023-01-26
+path: /fixing-my-seo-mistakes
+description:
+  I had a lot of simple SEO mistakes on my own website that I didn't even know
+  about. In this blog post I share how I fixed them.
+featuredImage: /images/benjamin-dada-EDZTb2SQ6j0-unsplash.webp
+featuredImageAlt:
+  A person sitting on a desk searching on google on their MacBook
+---
+
+[Photo by Benjamin Dada on Unsplash](https://unsplash.com/@dadaben_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+![A person sitting on a desk searching on google on their MacBook](/images/benjamin-dada-EDZTb2SQ6j0-unsplash.webp)
+
+The optimization of websites for search engines has always been a mystery to me.
+There seemed to be so many factors that get used to calculate how a page gets
+ranked on a search engine like google. I even learned how page ranks get
+calculated during my master's degree.
+
+Still, it was always a bit hard for me to understand what to optimize for,
+concerning keywords and content.
+
+One thing though where SEO is very clear to me is from a technical point of
+view. I know that Google ranks websites better that are fast, accessible, and in
+great shape technology-wise.
+
+Thanks to different tools and my knowledge as a web developer I know what a
+website needs to have to succeed in this area. Still, I neglected that for too
+long on my website.
+
+Problems and mistakes I would never have on client websites popped up on my site
+and I needed to fix them. Here are all the SEO mistakes I had on my website and
+how I fixed them, so you can avoid these pitfalls.
+
+---
+
+**Table of Contents**
+
+- [Multiple h1](#multiple-h1)
+- [Trailing slashes](#trailing-slashes)
+- [Canonical links](#canonical-links)
+- [Canonical points to redirect](#canonical-points-to-redirect)
+- [404 - broken links](#broken-links)
+- [Missing meta tags (and other stuff in the head)](#missing-meta-tags)
+- [Conclusion](#conclusion)
+- [Resources](#resources)
+
+---
+
+## Multiple h1 <a name="multiple-h1"></a>
+
+I’ll start with the easiest one. I had several h1 on my pages! I don’t know how
+that happened, I guess I didn’t control it at all. Having a hierarchy ofƒ
+headings is crucial and I’m a little embarrassed that this happened on my site.
+
+### How I fixed it:
+
+I used different tools to check the order of my headings on all pages and fixed
+them. I learned that having correct headings is not that more of a factor in
+getting ranked in search engines. Still, it is mandatory to make your
+website **accessible**. People who use a **screen reader** are **dependent** on
+a correct heading order to grasp the content of your website. Wave is a great
+tool to improve on that.
+
+## Trailing slashes <a name="trailing-slashes"></a>
+
+My site is built with Gatsby and deployed and hosted with Netlify. Netlify has
+this option to **pretty print** URLs, which adds trailing slashes to every link.
+
+But I did not add them everywhere in my code in Gatsby. This resulted in a lot
+of **301 redirects** where links without trailing slashes were redirected to
+them with it. That’s unnecessary and bad for SEO.
+
+### How I fixed it:
+
+There were **two ways** to fix this problem. The first one would have been
+to **disable** the option in Netlify. This would have removed all the extra
+added trailing slashes. But it would have also left me with a great mixture of
+URLs with trailing slashes and without.
+
+Since the majority of my URLs have them and Google also indexed them with
+trailing slashes, I chose the second option to fix this problem. This meant
+adding trailing slashes to every link I set in my code. It was a bit tedious but
+necessary and now I try to be consistent with it.
+
+## Canonical links <a name="canonical-links"></a>
+
+I did not set up canonical links at all on my site which is a big mistake. I
+often try to spread my blog posts on different platforms besides my website,
+like <a href="https://dev.to/mkuehb/react-performance-quick-wins-7-easy-ways-to-improve-your-react-performance-part-2-4j3c" target="_blank">dev.to
+&#8599;</a> and medium, to reach more people.
+
+Not having set up correct canonical tags is a problem. If search engines look at
+pages with the same content, they can't find out which of the resources is the
+original one. This means my website could get a **penalty** for
+distributing **duplicate content**, although it’s my content!
+
+### How I fixed it:
+
+I set up canonical links on my website and double-checked them on every page. I
+used the plugin
+[gatsby-plugin-react-helmet-canonical-urls](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet-canonical-urls/)
+to do that. It’s a great plugin that makes it easy to set up canonical links.
+
+## Canonical points to redirect <a name="canonical-points-to-redirect"></a>
+
+I had a lot of canonical links that pointed to 301 redirects. This is a
+combination of the two problems I explained before. I had URLs that
+were **upperCase** in my code, like this
+one /today-i-learned/performance-and-useMemo/
+
+Once again the Netlify URL pretty print kicks in and tells the browser hey the
+actual URL is /today-i-learned/performance-and-usememo, so it’s not the same and
+we need a redirect! Oh no.
+
+The problem here is, that the canonical URL stays the same (with upperCase) and
+that’s bad for SEO because we get another unnecessary redirect.
+
+### How I fixed it:
+
+I made sure that all my URLs are lowercase. It’s a bit hard to get Netlify to
+acknowledge these changes so I had to delete the upperCase file, remove it from
+git and re-add it later with the lowercase URL.
+
+## 404 - broken links <a name="broken-links"></a>
+
+I’ve you’re blogging for some years, you may link to websites that don’t exist
+anymore, changed the URL, part of the URL, etc. I’ve had a lot of these issues.
+
+### How I fixed it:
+
+It used a tool to analyze all blog post links and then updated or removed them.
+I thought about writing a **CronJob** which clicks on all the links on a newly
+published blog post. But in the end, it was not worth the effort.
+
+## Missing meta tags (and other stuff in the head) <a name="missing-meta-tags"></a>
+
+The most important meta tags for me always were the **media-query** one,
+the **utf-8**, and the **description**.
+
+Of course, I knew that there were way more but I didn’t know which made a huge
+difference for SEO. For example, I didn’t set the open graph tags and Twitter
+card tags at all on my site.
+
+### How I fixed it:
+
+Once again I used a tool to analyze the head of my site and set all meta tags in
+my SEO component in Gatsby.
+
+## Conclusion <a name="conclusion"></a>
+
+There are a lot of easy mistakes one can make, without even knowing about them.
+Take your time to inspect your website in the **dev tools**, check out the head
+tag, check if all meta tags are there, and set them to the correct values.
+
+Use different tools to check your website. There are a lot of them out there.
+I’ll write a separate blog post soon on what kind of tools I recommend and use.
+
+Fixing **a11y mistakes** also means SEO. First, we should optimize our websites
+to the best for our users. Doing the best we can to make
+them **accessible** and **fast**. Google recognizes if we succeeded in doing so
+and rewards us with a better page rank.
+
+## Resources <a name="resources"></a>
+
+- [Joshua Hardwick - Duplicate content](https://ahrefs.com/blog/duplicate-content)
+- [Maxim Heckel - SEO mistakes I have made and how I fixed them](https://blog.maximeheckel.com/posts/seo-mistakes-i-have-made-and-how-i-fixed-them/)
+- [Joshua Hardwick - 301 redirects](https://ahrefs.com/blog/301-redirects/)
