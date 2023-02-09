@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 interface SEOProps {
   description?: string
   title?: string
-  ogImage?: string | StaticImageData
+  ogImage?: StaticImageData
   ogImageAlt?: string
   location?: string
 }
@@ -52,11 +52,15 @@ const SEO: React.FC<SEOProps> = ({
       />
       <meta
         name="og:url"
-        content={`${config.siteUrl}${url}`}
+        content={`${
+          isDefaultLocale
+            ? `${config.siteUrl}${url}`
+            : `${config.siteUrl}/${lng.locale}${url}`
+        }`}
       />
       <meta
         name="og:image"
-        content={`${config.siteUrl}${ogImage}`}
+        content={`${config.siteUrl}${ogImage?.src}`}
       />
       <meta
         name="og:imageAlt"
@@ -68,7 +72,7 @@ const SEO: React.FC<SEOProps> = ({
       />
       <meta
         name="twitter:image"
-        content={`${config.siteUrl}${ogImage}`}
+        content={`${config.siteUrl}${ogImage?.src}`}
       />
       <meta
         name="twitter:image:alt"
