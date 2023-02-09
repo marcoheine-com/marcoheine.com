@@ -11,7 +11,13 @@ import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { CallToAction } from 'components/call-to-action'
 import { WebProjects } from 'components/web-projects'
 import { Testimonials } from 'components/testimonials'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
+interface IndexPageProps {
+  blogPosts: BlogPost[]
+  tilData: TILPost[]
+}
 export interface BlogPost {
   slug: string
   frontmatter: {
@@ -39,11 +45,15 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-const IndexPage = ({ blogPosts, tilData, location }) => {
+const IndexPage: React.FC<NextPage & IndexPageProps> = ({
+  blogPosts,
+  tilData,
+}) => {
   const { t } = useTranslation()
 
   const latestBlogPosts = blogPosts.slice(0, 3)
   const latestTILPosts = tilData.slice(0, 3)
+  const location = useRouter()
 
   return (
     <Layout maxWidth="max-w-full">
@@ -52,7 +62,7 @@ const IndexPage = ({ blogPosts, tilData, location }) => {
         ogImage={MarcoHeineImg}
         ogImageAlt="a picture of me"
         description={t('meta.index-description')}
-        location={location}
+        location={location.asPath}
       />
 
       <section className="flex flex-col items-center">
@@ -67,6 +77,7 @@ const IndexPage = ({ blogPosts, tilData, location }) => {
               className="mb-10 duration-500 lg:mr-64"
               width={500}
               height={500}
+              priority
             />
             <h1 className="hover-target mb-12 bg-white text-primaryColorOne lg:absolute lg:right-0 lg:top-16 lg:w-[495px] lg:border-4 lg:border-t-0 lg:border-l-white lg:border-b-primaryColorTwo lg:border-r-primaryColorTwo lg:p-5">
               <div className="top-6 -left-7 hidden h-0 w-0 border-y-[30px] border-r-[30px] border-y-transparent border-r-white lg:absolute lg:block"></div>
