@@ -8,6 +8,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Button from 'components/Button'
 import { TagValues } from 'constants/tagvalues'
+import { TILCard } from '@/components/til-card'
 
 interface TILPostProps {
   tilPosts: TILPost[]
@@ -93,38 +94,14 @@ const Tags: React.FC<NextPage & TILPostProps> = ({ tilPosts, tag }) => {
           const { slug, frontmatter } = item
 
           return (
-            <Link
+            <TILCard
               key={slug}
-              href={`/${slug}`}
-              replace
-            >
-              <section className="rounded-3xl p-14 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customHover">
-                <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">
-                  TIL #{frontmatter.number}
-                </aside>
-                <h2>{frontmatter.title}</h2>
-
-                {frontmatter.tags && (
-                  <section className="mb-4 flex flex-wrap gap-3">
-                    {frontmatter.tags.map((tag) => (
-                      <span
-                        className="font-bold"
-                        key={tag}
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </section>
-                )}
-
-                <section>
-                  <p>{frontmatter.description}</p>
-                  <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
-                    Read more
-                  </span>
-                </section>
-              </section>
-            </Link>
+              title={frontmatter.title}
+              tags={frontmatter.tags}
+              slug={slug}
+              number={frontmatter.number}
+              description={frontmatter.description}
+            />
           )
         })}
       </section>

@@ -10,6 +10,7 @@ import { NextPage } from 'next'
 import MarcoHeineImg from '../../public/images/marco-heine.webp'
 import { useRouter } from 'next/router'
 import { TagValues } from 'constants/tagvalues'
+import { TILCard } from '@/components/til-card'
 
 interface TILPostProps {
   tilPosts: TILPost[]
@@ -120,38 +121,14 @@ const TIL: React.FC<NextPage & TILPostProps> = ({ tilPosts, allTags }) => {
           const { frontmatter } = item
 
           return (
-            <Link
-              key={item.slug}
-              href={`/${item.slug}`}
-            >
-              <section className="rounded-3xl p-14 text-primaryColorOne shadow-custom transition-all duration-100 ease-linear hover:translate-y-[-5px] hover:shadow-customHover">
-                <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">
-                  TIL #{frontmatter.number || tilPosts?.length - index}
-                </aside>
-                <h2>{frontmatter.title}</h2>
-
-                {frontmatter.tags && (
-                  <section className="mb-4 flex flex-wrap gap-3">
-                    {frontmatter.tags.map((tag) => (
-                      <span
-                        className="font-bold"
-                        key={tag}
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </section>
-                )}
-
-                <section>
-                  <p>{frontmatter.description}</p>
-
-                  <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
-                    Read more
-                  </span>
-                </section>
-              </section>
-            </Link>
+            <TILCard
+              key={index}
+              title={frontmatter.title}
+              tags={frontmatter.tags}
+              slug={item.slug}
+              number={frontmatter.number}
+              description={frontmatter.description}
+            />
           )
         })}
       </section>

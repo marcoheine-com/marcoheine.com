@@ -20,7 +20,7 @@ const CustomLink = (props) => {
     <a
       target={'_blank'}
       rel={'noopener noreferrer'}
-      className="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo"
+      className="outgoing-link-trigger break-all border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo"
       {...props}
     >
       {props.children} <span> &#8599;</span>

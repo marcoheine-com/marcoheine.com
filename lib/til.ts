@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 import fs from 'fs'
 import { join } from 'path'
 
-type TagName =
+export type TagName =
   | 'javascript'
   | 'react'
   | 'typescript'

@@ -4,7 +4,7 @@
         <title>Marco Heine | Blog</title>
         <link>https://marcoheine.com</link>
         <description>This is the blog of Marco Heine, where he shares his thoughts about software development and the life as a freelancer developer.</description>
-        <lastBuildDate>Wed, 08 Feb 2023 15:38:43 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Feb 2023 08:08:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -56,13 +56,13 @@
 }
 </code></pre>
 <p>Here&#x27;s another example on CodePen. If the container on the right is larger than 1200px, we make a grid out of the image and the text and position them next to each other.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
 <p>Why do we need container queries when most of the layout changes can be done by listening to the viewport width? The answer is <strong>context</strong>. Container Queries are such a perfect tool for components from whom we don&#x27;t know beforehand in which context they will be used.</p>
 <p>So we can define the appearance of our component based on the <strong>container width</strong>, and it adapts. No matter if this component is used in a header, a sidebar, or a modal, for example.</p>
 <p>Another addition to container queries is <strong>container query units</strong>. Container queries allow us to quickly implement responsive typography using container query units.</p>
-<p>I&#x27;ve already written about responsive typography using <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/clamp-css-function/">clamp()</a>.</p>
+<p>I&#x27;ve already written about responsive typography using <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/clamp-css-function">clamp()</a>.</p>
 <p>This is typically done by listening to viewport widths. However, with the addition of container query units, we can replace this now by listening to the container&#x27;s width, height, inline size, block size, or the smaller or larger value of these.</p>
-<p>Here&#x27;s the spec for all the new units: <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://drafts.csswg.org/css-contain-3/#container-lengths">https://drafts.csswg.org/css-contain-3/#container-lengths <span> ↗</span></a>. It has yet to get full browser support, but container queries can be used in totally new ways if this lands.</p>
+<p>Here&#x27;s the spec for all the new units: <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://drafts.csswg.org/css-contain-3/#container-lengths">https://drafts.csswg.org/css-contain-3/#container-lengths <span> ↗</span></a>. It has yet to get full browser support, but container queries can be used in totally new ways if this lands.</p>
 <h2><a name="focus-visible"></a> Focus-visible</h2>
 <p>If you&#x27;ve been a web developer for a few years, chances are that your Project Manager or your Customers asked you to remove the &quot;ugly&quot; outlines around buttons when focused.</p>
 <p>The following CSS achieves it:</p>
@@ -75,7 +75,7 @@
 <p>This means it detects input modalities that require visible focus. So, for example, mouse users won&#x27;t see them on click, but keyboard users will have them on tab.</p>
 <p>This is an excellent addition to CSS, as it removes them for mouse users, who won&#x27;t need it necessarily but keeps it for keyboard users, who heavily rely on it for accessibility reasons.</p>
 <p>Try it out yourself:</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
 <h2><a name="has"></a> :has()</h2>
 <p><code>:has()</code> is a new selector that, as the name says, gets applied styles if the argument passed in matches at least one element. There are endless possibilities for how to use this new selector. It opens up a lot of new ways to select an element and apply styles to it <strong>conditionally</strong>.</p>
 <p><code>:has()</code> is one of the four <strong>functional pseudo-classes</strong> along with <code>:is()</code>, <code>:where()</code>, and <code>:not()</code>, all of them can accept a selector list.</p>
@@ -144,9 +144,9 @@ that is required but not currently valid. */</span>
 <p>This means <code>:has()</code> is not solemnly a parent selector. It&#x27;s a <strong>relational selector</strong>! As I said at the beginning, this new functional pseudo-class brings endless possibilities. It&#x27;s awesome. I&#x27;m under the impression that I haven&#x27;t even started to grasp the scope of what&#x27;s possible now.</p>
 <h2><a name="subgrid"></a> Subgrid</h2>
 <p>Before <code>subgrid</code> existed, a grid inside another grid couldn&#x27;t be aligned along the tracks of the parent grid. Here&#x27;s a <strong>CodePen</strong> with a grid inside another grid:</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
 <p>Now with subgrid, you can tell the inner grid with <code>grid-template-columns: subgrid</code> that the columns should be aligned with the ones of the parent.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
 <p>Subgrids can be used without limitation downwards, so you can <strong>nest</strong> them endlessly as long as the parent has the grid property. This opens up many possibilities for defining grids; it&#x27;s a beautiful addition!</p>
 <h2><a name="accent-color"></a> Accent-Color</h2>
 <p>Styling form elements or adding the most minimalistic CSS changes were always a <strong>pain</strong>. You likely needed external libraries or packages to achieve that.</p>
@@ -154,7 +154,7 @@ that is required but not currently valid. */</span>
 <p>It allows you to set the <code>accent-color</code> of user-interface controls.</p>
 <p>It&#x27;s currently usable on <code>input type= &quot;checkbox&quot;</code>, <code>input type= &quot;radio&quot;</code>, <code>input type=&quot;range&quot;</code>, and <code>&lt;progress&gt;</code>.</p>
 <p>Here&#x27;s a <strong>CodePen</strong> to showcase its usage of it:</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GRBxoZQ">https://codepen.io/Mkuehb/pen/GRBxoZQ <span> ↗</span></a></p>
 <h2><a name="individual-transform-properties"></a> Individual Transform Properties</h2>
 <p>The <code>transform</code> property was one of my favorite additions to CSS back when it was introduced. I love to use it to create little animations and transitions.</p>
 <p>It lets you define one or more transform functions at once. Here&#x27;s an example:</p>
@@ -301,7 +301,7 @@ I will write a detailled blog post about these soon, so stay tuned!</p>
 <p>But then I thought it’s still interesting to reflect on a month like this, so here we are for Developer Diaries 08, the December 2022 edition!</p>
 <h2>👨🏻‍💻 Work</h2>
 <p>Work-wise, the month started well structured. I knew I wanted to do a little less this month, so I didn’t start any new projects. Instead, I worked 2-3 days a week for an agency from Stuttgart, where I helped with bug fixes and improving several features.</p>
-<p>Besides that, we planned on finishing the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://aerosolalliance.com/">Aerosol Alliance Website <span> ↗</span></a>, which I already talked about in the last episode of the Developer Diary. We made a lot of progress on this case over the previous weeks. We implemented many changes that made the site look more coherent.</p>
+<p>Besides that, we planned on finishing the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://aerosolalliance.com/">Aerosol Alliance Website <span> ↗</span></a>, which I already talked about in the last episode of the Developer Diary. We made a lot of progress on this case over the previous weeks. We implemented many changes that made the site look more coherent.</p>
 <p>As I already mentioned a few times, it’s a cooperation with my friends from <a href="https://studiovierkant.de/" target="_blank">Studio Vierkant ↗</a>. It’s so much fun to work with them on this together. We meet up in their office for a few hours or a day, and we work next to each other and quickly ship many improvements.</p>
 <p>I’m hoping for new opportunities in 2023 to start new projects together!</p>
 <p>Work-wise in December, the biggest thing that happened was the finish and release of the new website for the <a href="https://www.stuttgarter-kickers.de/" target="_blank">Stuttgarter Kickers ↗</a>, the second-biggest soccer club from Stuttgart.</p>
@@ -311,12 +311,12 @@ I will write a detailled blog post about these soon, so stay tuned!</p>
 <p>I made some progress on some blog posts, which lay deep down in my backlog for a while, but I didn’t finish one. On the one hand, this means not a lot of released posts in December 2022; on the other, it means I can kick-start 2023 with many cool new blog posts.</p>
 <p>Here’s the only blog post from December 2022:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/developer-diaries-07/">Web Developer Diary 07</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/developer-diaries-07">Web Developer Diary 07</a></li>
 </ul>
 <h2>🎓 TIL Posts of the month</h2>
 <p>Here are the Today-I-learned posts for December 2022:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/clamp-css-function/">Clamp CSS Function</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/clamp-css-function">Clamp CSS Function</a></li>
 </ul>
 <h2>🏋🏻‍♀️ Fitness</h2>
 <p>The month started normally; I did my almost daily Yoga/workout session in the morning and felt good and healthy. Then I got sick like nearly everyone. I haven’t been this sick since Covid in June. Thankfully it wasn’t Covid again, but nevertheless, it was one week of being totally knocked out.</p>
@@ -336,7 +336,7 @@ I will write a detailled blog post about these soon, so stay tuned!</p>
             <guid>https://marcoheine.com/blog/developer-diaries-07/</guid>
             <pubDate>Mon, 05 Dec 2022 23:00:00 GMT</pubDate>
             <description><![CDATA[Number 7 of my web developer diary series is about able to choose with whom I work and great teamwork]]></description>
-            <content:encoded><![CDATA[<p>November was a great month, I liked it a lot. It was about remembering my <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/about/#values">values</a>, being able to choose with whom I work and great teamwork.</p>
+            <content:encoded><![CDATA[<p>November was a great month, I liked it a lot. It was about remembering my <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/about#values">values</a>, being able to choose with whom I work and great teamwork.</p>
 <h2>👨🏻‍💻 Work</h2>
 <p>This month I once again noticed that it&#x27;s incredible that I can work with people who share the same <strong>work</strong> <strong>habits</strong> and <strong>principles</strong> as me. They deny a lot that doesn&#x27;t fit into these values we have in common.</p>
 <p>I can say no to work that contradicts my work ethic, which is a huge privilege, and I&#x27;m more than <strong>grateful</strong> for that.</p>
@@ -346,14 +346,14 @@ I will write a detailled blog post about these soon, so stay tuned!</p>
 <h2>📝Blog Posts of the month</h2>
 <p>I dedicated less time to writing this month. On the one hand, I missed it, and on the other hand, it felt good to use this time for other stuff. I&#x27;m not sure how to deal with it next month. We&#x27;ll see. Here are the blog posts for November 2022:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/whats-new-in-nextjs-13/">What&#x27;s new in Next.js 13</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-06/">Web Developer Diary #6</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/whats-new-in-nextjs-13">What&#x27;s new in Next.js 13</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-06">Web Developer Diary #6</a></li>
 </ul>
 <h2>🎓TIL Posts of the month</h2>
 <p>Here are the Today-I-learned posts for November 2022:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/tech-pays-in-europe/">Tech pays in Europe</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/never-use-px-for-font-size/">Never use px for font-size</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/tech-pays-in-europe">Tech pays in Europe</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/never-use-px-for-font-size">Never use px for font-size</a></li>
 </ul>
 <h2>🏋🏻‍♀️ Fitness</h2>
 <p>I can&#x27;t believe I&#x27;m saying this, but: I started running again! I quit it over ten years ago because my knees always hurt. I&#x27;m willing to give it another chance now. I started slow to protect my knees, but it felt amazing running on the beach in the Netherlands.</p>
@@ -537,18 +537,18 @@ my day for writing was a <strong>game-changer</strong>. This feels like the perf
 me to write.</p>
 <p>Here are the blog posts for October:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/workation/">Workation</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/fixing-my-seo-mistakes/">Fixing my SEO mistakes</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/learnings-from-my-last-job/">Learnings from my last job</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-05/">Web Developer Diary 05</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/workation">Workation</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/fixing-my-seo-mistakes">Fixing my SEO mistakes</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/learnings-from-my-last-job">Learnings from my last job</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-05">Web Developer Diary 05</a></li>
 </ul>
 <h2>TIL posts of the month</h2>
 <p>I’m trying to establish Wednesday as my today-I-learned day. Here are the
 today-I-learned posts of October:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/secure-javascript-url-validation/">Secure JavaScript URL validation</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/worlds-highest-website/">Worlds highest website</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/squoosh-app/">Squoosh App</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/secure-javascript-url-validation">Secure JavaScript URL validation</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/worlds-highest-website">Worlds highest website</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/squoosh-app">Squoosh App</a></li>
 </ul>
 <h2>Everything else than web dev</h2>
 <h3>🏋🏻‍♀️ Fitness</h3>
@@ -565,13 +565,13 @@ funny thing is, you can exactly spot when we traveled back from France.</p>
 to finish three books.</p>
 <ul>
 <li>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/23602561-the-cartel">The Cartel (The Power of the Dog #2)  <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/23602561-the-cartel">The Cartel (The Power of the Dog #2)  <span> ↗</span></a></p>
 </li>
 <li>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/61100819-freizeit">Freizeit <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/61100819-freizeit">Freizeit <span> ↗</span></a></p>
 </li>
 <li>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/59828197-man-vergisst-nicht-wie-man-schwimmt">Man vergisst nicht wie man schwimmt <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/59828197-man-vergisst-nicht-wie-man-schwimmt">Man vergisst nicht wie man schwimmt <span> ↗</span></a></p>
 </li>
 </ul>
 <h3>🕹Video Games</h3>
@@ -733,7 +733,7 @@ it, I&#x27;m super curious! Just write me an</p>
             <guid>https://marcoheine.com/blog/fixing-my-seo-mistakes/</guid>
             <pubDate>Thu, 20 Oct 2022 22:00:00 GMT</pubDate>
             <description><![CDATA[I had a lot of simple SEO mistakes on my own website that I didn't even know about. In this blog post I share how I fixed them.]]></description>
-            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@dadaben_?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Photo by Benjamin Dada on Unsplash <span> ↗</span></a></p>
+            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@dadaben_?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Photo by Benjamin Dada on Unsplash <span> ↗</span></a></p>
 <p><img src="/images/benjamin-dada-EDZTb2SQ6j0-unsplash.webp" alt="A person sitting on a desk searching on google on their MacBook"/></p>
 <p>The optimization of websites for search engines has always been a mystery to me.
 There seemed to be so many factors that get used to calculate how a page gets
@@ -801,7 +801,7 @@ distributing <strong>duplicate content</strong>, although it’s my content!</p
 <h3>How I fixed it:</h3>
 <p>I set up canonical links on my website and double-checked them on every page. I
 used the plugin
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet-canonical-urls/">gatsby-plugin-react-helmet-canonical-urls <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet-canonical-urls/">gatsby-plugin-react-helmet-canonical-urls <span> ↗</span></a>
 to do that. It’s a great plugin that makes it easy to set up canonical links.</p>
 <h2>Canonical points to redirect <a name="canonical-points-to-redirect"></a></h2>
 <p>I had a lot of canonical links that pointed to 301 redirects. This is a
@@ -845,9 +845,9 @@ them <strong>accessible</strong> and <strong>fast</strong>. Google recognizes
 and rewards us with a better page rank.</p>
 <h2>Resources <a name="resources"></a></h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://ahrefs.com/blog/duplicate-content">Joshua Hardwick - Duplicate content <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://blog.maximeheckel.com/posts/seo-mistakes-i-have-made-and-how-i-fixed-them/">Maxim Heckel - SEO mistakes I have made and how I fixed them <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://ahrefs.com/blog/301-redirects/">Joshua Hardwick - 301 redirects <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://ahrefs.com/blog/duplicate-content">Joshua Hardwick - Duplicate content <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://blog.maximeheckel.com/posts/seo-mistakes-i-have-made-and-how-i-fixed-them/">Maxim Heckel - SEO mistakes I have made and how I fixed them <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://ahrefs.com/blog/301-redirects/">Joshua Hardwick - 301 redirects <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -883,7 +883,7 @@ specifically applied for the Frontend Developer React position. I was
 immediately excited that I could keep my <strong>React focus</strong>, which I established in
 my previous jobs.</p>
 <p>Fun fact: I wrote a blog post for the sole purpose to get this job. It’s the one
-about <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/two-good-reasons-to-use-react/">two things I like about react</a>.
+about <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/two-good-reasons-to-use-react">two things I like about react</a>.
 Someone later told me, that having a blog and writing about React was a great
 plus when I applied and started at the company.</p>
 <p>So keep on blogging people! It can get you jobs, which is pretty cool!</p>
@@ -999,8 +999,8 @@ tools, it works!</p>
 <p>I wasn’t in the mood of writing a lot in September, so it’s just these two blog
 posts:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-04/">Web developer diary 04</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/typescript-tooling-in-prismic/">TypeScript Tooling in Prismic</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-04">Web developer diary 04</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/typescript-tooling-in-prismic">TypeScript Tooling in Prismic</a></li>
 </ul>
 <p>Nevertheless, I’m very happy especially about the TypeScript Tooling post,
 because writing about it made me realize again how much it improves my developer
@@ -1011,8 +1011,8 @@ out.</p>
 <h2>TIL posts of the month</h2>
 <p>Here are the Today-I-learned posts of the month:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/the-a11y-project/">The a11y project</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/web-vitals-element/">web-vitals-element</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/the-a11y-project">The a11y project</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/web-vitals-element">web-vitals-element</a></li>
 </ul>
 <h2>Everything else than web dev</h2>
 <h3>🏋🏻‍♀️Fitness</h3>
@@ -1058,7 +1058,7 @@ two weeks.</p>
             <guid>https://marcoheine.com/blog/typescript-tooling-in-prismic/</guid>
             <pubDate>Wed, 28 Sep 2022 22:00:00 GMT</pubDate>
             <description><![CDATA[Prismic launched some new features aroung TypeScript tooling. In this blog post I will take a look at what they are and how to use them.]]></description>
-            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@imattsmart?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Photo by iMattSmart on Unsplash <span> ↗</span></a></p>
+            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@imattsmart?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Photo by iMattSmart on Unsplash <span> ↗</span></a></p>
 <p><img src="/images/imattsmart-sm0Bkoj5bnA-unsplash.webp" alt="a table with some tools on it"/></p>
 <p>I researched a lot about Content Management Systems, before starting my
 freelance web developer career. I tried a few, disliked some and got stuck with
@@ -1136,7 +1136,7 @@ I still would have to do some additional work to run everything smoothly. I’m
 talking about typing content relationships. Because querying for linked
 documents is not automatically typed in Prismic. But Prismic also got us covered
 here. In the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/docs/technical-reference/prismicio-client#typing-content-relationships">docs <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/docs/technical-reference/prismicio-client#typing-content-relationships">docs <span> ↗</span></a>
 they share exactly how to solve this case. Great!</p>
 <h2><a name="conclusion"></a>Conclusion</h2>
 <p>Working with TypeScript in Prismic just got so much better with the release of
@@ -1146,9 +1146,9 @@ before, this improves my workflow a lot and I’m so glad about it!</p>
 choosing it as my main CMS.</p>
 <h2><a name="resources"></a>Resources</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/blog/release-week-improved-developer-tooling">Prismic release week improved developer tooling <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/prismicio/prismic-ts-codegen">Prismic ts codegen on GitHub <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/docs/technical-reference/prismic-ts-codegen">Prismic ts codegen docs <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/blog/release-week-improved-developer-tooling">Prismic release week improved developer tooling <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/prismicio/prismic-ts-codegen">Prismic ts codegen on GitHub <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://prismic.io/docs/technical-reference/prismic-ts-codegen">Prismic ts codegen docs <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -1178,17 +1178,17 @@ exciting ride.</p>
 <p>No other blog post published than the previous version of this series
 unfortunately.</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-03/">Web developer diary #3</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-03">Web developer diary #3</a></li>
 </ul>
 <p>Some great posts are almost done but need this half an hour additional
 fine-tuning before I’m happy with them.</p>
 <p>Couldn’t find the time for that but this means I’ll publish more posts in
 september! Besides that, one of my recent posts,
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/just-hit-publish/">just hit publish</a> got featured by two amazing people I
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/just-hit-publish">just hit publish</a> got featured by two amazing people I
 follow for a long time already.</p>
-<p>Jeremy featured it in his <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://adactio.com/links?start=20">link collection <span> ↗</span></a>
+<p>Jeremy featured it in his <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://adactio.com/links?start=20">link collection <span> ↗</span></a>
 and Stefan introduced it in his newsletter
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.stefanjudis.com/blog/web-weekly-74/">web weekly #74 <span> ↗</span></a> . That made me
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.stefanjudis.com/blog/web-weekly-74/">web weekly #74 <span> ↗</span></a> . That made me
 really happy. It’s awesome to hear that someone liked your writing.</p>
 <h2>TIL posts of the month</h2>
 <p>As I already said in the beginning of this pos, I learned some cool stuff this
@@ -1196,9 +1196,9 @@ month and documented it as today-I-learned posts. The theme setting without js
 is probably my favorite one. And I&#x27;ve already integrated the checklist of the
 a11y project into my developing workflow.</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/faster-page-loads-with-early-hints/">Faster page loads with early hints</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/setting-theme-without-javascript/">Setting a theme color without JavaScript</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/incomplete-list-of-css-mistakes/">Incomplete list of CSS mistakes</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/faster-page-loads-with-early-hints">Faster page loads with early hints</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/setting-theme-without-javascript">Setting a theme color without JavaScript</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/incomplete-list-of-css-mistakes">Incomplete list of CSS mistakes</a></li>
 </ul>
 <h2>Everything else than web dev</h2>
 <h3>🏋🏻‍♀️ Fitness &amp; health</h3>
@@ -1220,10 +1220,10 @@ is also a lot for me and I notice that more and more situations occure where I
 grab a book instead of my phone. And that’s all I ever wanted.</p>
 <p>This month I’ve read:</p>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/57558287-city-on-fire">City on fire - Don Winslow <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/57558287-city-on-fire">City on fire - Don Winslow <span> ↗</span></a></li>
 <li>[https://www.goodreads.com/book/show/18143977-all-the-light-we-cannot-see](All
 the light we cannot see - Anthony Doerr)</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/42046112-recursion">Recursion - Blake Crouch <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/42046112-recursion">Recursion - Blake Crouch <span> ↗</span></a></li>
 </ul>
 <p>All three of them are great books I can recommand. I think I’m getting better in
 choosing books I might enjoy. Especially the last one made my mind go crazy. I
@@ -1261,7 +1261,7 @@ meant for july: getting back into the game. I did a lot of what you may call
 marketing? But I’m not sure if it’s the right term.</p>
 <p>I produced a lot of content for my own website. Wrote blog posts, wrote
 today-I-learned posts. Re-organized some stuff on it, added some
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/work/#projects">recent projects</a> so people can see what I worked on so far.</p>
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/work#projects">recent projects</a> so people can see what I worked on so far.</p>
 <p>Besides that I tried to get into SEO for real for the first time. And man, you
 can get into some deep rabbit holes in this topic. I tried out the
 <a href="https://bloggingfordevs.com/" target="_blank">blogging for devs e-mail
@@ -1286,9 +1286,9 @@ manufacturers on this topic. It’s really exciting!</p>
 3 blog posts. And I’m very happy with everyone of them. I had a lot of fun
 writing them. Here are the blog posts of the month:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-02/">Web developer diary #2</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/the-mistakes-i-made-using-react/">The mistakes I made using react</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/just-hit-publish/">Just hit publish</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/web-developer-diary-02">Web developer diary #2</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/the-mistakes-i-made-using-react">The mistakes I made using react</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/just-hit-publish">Just hit publish</a></li>
 </ul>
 <h2>TIL posts of the month</h2>
 <p>The Today-I-learned collection grew aswell! It’s getting bigger and bigger every
@@ -1296,10 +1296,10 @@ month. It feels so cool to have this big selection of things I learned,
 documented so well for the future me. Here are the Today-I-learned posts of
 july:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/data-fetching-in-react-18/">Data fetching in react 18</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/efficiently-load-third-party-js/">Efficiently load third-party javascript</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/html-sanitizer-api/">HTML sanitizer api</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/array-sort-modifies-original-array/">Array Sort modifies the original array</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/data-fetching-in-react-18">Data fetching in react 18</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/efficiently-load-third-party-js">Efficiently load third-party javascript</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/html-sanitizer-api">HTML sanitizer api</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/array-sort-modifies-original-array">Array Sort modifies the original array</a></li>
 </ul>
 <h2>Everything else than web dev</h2>
 <p>Talking about everything else then web dev, I really liked this month. I had
@@ -1455,18 +1455,18 @@ it perfect and I will just hit publish.</p>]]></content:encoded>
 <p>In this blog post I’m gonna share all the mistakes I made, using React. Lately
 there is a lot of dicussions going on around using Reacts useEffect. See my
 Today-I-learned posts
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/missusing-use-effect/">missusing useEffect</a> and
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/data-fetching-in-react-18/">data fetching in React 18</a>.</p>
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/missusing-use-effect">missusing useEffect</a> and
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/data-fetching-in-react-18">data fetching in React 18</a>.</p>
 <p>The React team published a brand new documention on using React, which is
 fantastic. It’s still in beta but I could already refresh a lot of my knowledge.
 The best part of the documentation is the following section:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://beta.reactjs.org/learn/you-might-not-need-an-effect">you might not need an effect <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://beta.reactjs.org/learn/you-might-not-need-an-effect">you might not need an effect <span> ↗</span></a>
 .</p>
 <p>It’s a whole page on when to not use useEffect and how to use useEffect. It has
 so many great real-world examples. I noticed immediately that I use a lot of
 patterns which were not the best way to solve things.</p>
 <p>This made me realize I need to
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/Mkuehb/status/1542426932448567296">adjust my best practices for react <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/Mkuehb/status/1542426932448567296">adjust my best practices for react <span> ↗</span></a>
 . In this blog post I’m gonna share everything I thought I did right when using
 React. But noticed now, I can solve it in a better way, according to the new
 react docs.</p>
@@ -1639,7 +1639,7 @@ But the obvious improvement here is to lift state up.</p>
 }
 </code></pre>
 <p>The data gets fetched in the parent component and then passed down to the child
-component. As the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/thinking-in-react.html">React docs <span> ↗</span></a>
+component. As the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/thinking-in-react.html">React docs <span> ↗</span></a>
 put it: React is all about one-way data flow down the component hierarchy. Makes
 error tracing a lot easier. Even though there were some arguments for the child
 data fetching, it’s always better to lift it up.</p>
@@ -1662,7 +1662,7 @@ they took the time to write something so detailed and helpful. I’m glad I coul
 rethink some patterns which I thought were the best practices.</p>
 <p>Grab a cup of coffee (or your favorite beverage) and take your time to read
 through it:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://beta.reactjs.org/learn/you-might-not-need-an-effect">you might not need an effect <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://beta.reactjs.org/learn/you-might-not-need-an-effect">you might not need an effect <span> ↗</span></a>
 . It’s so worth it and I learned a lot.</p>]]></content:encoded>
         </item>
         <item>
@@ -1682,9 +1682,9 @@ of our wedding.</p>
 <p>As I already said, I figured I needed to block a lot of time for others things
 than work. That’s why we managed to launch one of the biggest projects I’ve
 worked on so far as a freelancer right away at the start of june.</p>
-<p>It’s the website <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://dieda.de">dieda.de <span> ↗</span></a> and I’m pretty happy with the
+<p>It’s the website <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://dieda.de">dieda.de <span> ↗</span></a> and I’m pretty happy with the
 result. It has a lot of interactive parts which were a lot of fun to develop. I
-worked on it together with my friends from <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.werk8.design/">Werk8 <span> ↗</span></a>.
+worked on it together with my friends from <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.werk8.design/">Werk8 <span> ↗</span></a>.
 It was our first project together and I think there will be a lot more to come.</p>
 <p>The push to production went pretty smooth. We prepared and planned a lot before
 hand so we knew that not a lot could go wrong. The only hickup was a little
@@ -1694,7 +1694,7 @@ definitely write a blog post soon about how I prepare for a website launch.</p>
 <p>The website runs, it’s pretty fast and the client is really happy. Success!</p>
 <p>Besides from this big launch I worked on some smaller projects, which were a lot
 less work, thanks to
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/website-starter-kit">my starter kit <span> ↗</span></a>. It was
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/website-starter-kit">my starter kit <span> ↗</span></a>. It was
 really worth the time I put into this project.</p>
 <p>Other than working on client projects I started to produce content again for my
 own website. I have a lot of great blog posts almost finished, I can’t wait to
@@ -1706,17 +1706,17 @@ it up.</p>
 of this series, which I enjoyed writing very much. It feels so good to look back
 and reflect on what happened and how it shapes the now.</p>
 <p>The second blog post was about my
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/website-starter-kit/">website-starter-kit</a>.</p>
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/website-starter-kit">website-starter-kit</a>.</p>
 <h3>TIL posts of the month</h3>
 <p>I managed to publish 3 Today-I-Learned posts this month, which I’m pretty happy
 about.</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/write-great-alt-text/">How to write great alt text</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/automatic-er-diagrams/">Automatic ER diagrams</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/missusing-use-effect/">Missusing useEffect</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/write-great-alt-text">How to write great alt text</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/automatic-er-diagrams">Automatic ER diagrams</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/missusing-use-effect">Missusing useEffect</a></li>
 </ul>
 <p>I got a lot more on my notion doc and my
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/">today-I-learned page</a> is turning out great. It has got the
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned">today-I-learned page</a> is turning out great. It has got the
 different tags you can filter for and the search functionality, which I use a
 lot.</p>
 <h3>Everything else than web dev</h3>
@@ -1745,9 +1745,9 @@ relax for the next two weeks and don’t do anything too heavy.</p>
 <h4>📚 Reading</h4>
 <p>I finished two books this month:</p>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/48715024-drau-en-gehen">Christian Sauer - Draußen gehen <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/48715024-drau-en-gehen">Christian Sauer - Draußen gehen <span> ↗</span></a>
 (only available in german I think)</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/28000.Postcards">Annie Proulx - Postcards <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/28000.Postcards">Annie Proulx - Postcards <span> ↗</span></a></li>
 </ul>
 <p>The first one was about the sane thing of walking outside. The author brings it
 into the context of creative techniques. He also explains why it’s beneficial to
@@ -1756,10 +1756,10 @@ when you’re stuck on a problem, go for a walk.</p>
 <p>The second one was Annie Proulx’s famous debut book. It’s just so different from
 everything I read and that’s what it makes so special for me.</p>
 <p>I also started a new book
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/50993.East_of_the_Mountains?ref=nav_sb_ss_1_16">David Guterson - Rast of the mountains <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/50993.East_of_the_Mountains?ref=nav_sb_ss_1_16">David Guterson - Rast of the mountains <span> ↗</span></a>.
 I’m really into it right now and like the story and where it’s going.</p>
 <p>The
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/challenges/11636?ref=nav_profile_rc">reading challenge <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/challenges/11636?ref=nav_profile_rc">reading challenge <span> ↗</span></a>
 stands on 9 books read out of 30, so a lot more to go. But I think I’m gonna
 make it.</p>
 <h4>🕹 Video Games</h4>
@@ -1771,7 +1771,7 @@ for now.</p>
 Odyssey!</p>
 <h4>🎙 Podcasts</h4>
 <p>I listened to the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://syntax.fm/show/454/wtf-is-the-edge-edge-compute-functions">Syntax episode about edge functions <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://syntax.fm/show/454/wtf-is-the-edge-edge-compute-functions">Syntax episode about edge functions <span> ↗</span></a>.
 I’ve heard so much about it and wanted to learn more on this topic. Wes and
 Scott talk about what this is all about, the upsides and downsides and what
 they’re used for. Can recommend!</p>
@@ -1812,7 +1812,7 @@ and what worked best for me so far. To reflect on my decisions and also gain
 insights from others and what works best for them.</p>
 <h2><a name="the-main-parts"></a> The main parts</h2>
 <p>So here it is, my
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/website-starter-kit">website starter kit <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/website-starter-kit">website starter kit <span> ↗</span></a>.</p>
 <p>It’s basically a setup of</p>
 <ul>
 <li>NextJS with TypeScript,</li>
@@ -1836,7 +1836,7 @@ feels really cool.</p>
 <p><strong>NextJS</strong> is just so easy and fun to use, the documentation is fantastic and
 all the sites I build with it are super fast, using the static generation
 approach. So this was a no-brainer.</p>
-<p>But I have to say, after playing a bit with <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://remix.run/">Remix <span> ↗</span></a> I’m
+<p>But I have to say, after playing a bit with <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://remix.run/">Remix <span> ↗</span></a> I’m
 hoping it will get more popular and get a Prismic integration one day.</p>
 <p>I can totally imagine switching NextJS for Remix, because it makes things even
 easier and more natural.</p>
@@ -1866,7 +1866,7 @@ anymore with basic linting done by eslint.</p>
 projects right now. I’m really curious when I’m going to change things here and
 how long I’m going to use this.</p>
 <p>What is your stack? What technologies are you using all the time together? I’m
-really curious to know! Send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> with
+really curious to know! Send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> with
 your thoughts on this.</p>]]></content:encoded>
         </item>
         <item>
@@ -1878,12 +1878,12 @@ your thoughts on this.</p>]]></content:encoded>
 <p>With this blog post, I’ll start a new series: the <strong>Web Developer Diary</strong>
 series!</p>
 <p>I saw this idea on Dave Ruperts
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://daverupert.com/2022/05/vibe-check-16/">blog <span> ↗</span></a>. He calls it vibe check
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://daverupert.com/2022/05/vibe-check-16/">blog <span> ↗</span></a>. He calls it vibe check
 and it’s a <strong>check-in</strong> at the end of every month, to <strong>reflect</strong> on things that
 happened during this month - work-whise and in private.</p>
 <p>I really like this format, because I do a monthly reflection on things anyway
 with my <em>“Ein guter Plan”</em> planner
-(<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://einguterplan.de/">https://einguterplan.de/ <span> ↗</span></a>) (sorry, only available in
+(<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://einguterplan.de/">https://einguterplan.de/ <span> ↗</span></a>) (sorry, only available in
 german!).</p>
 <p>So without any further ado, let’s start this <strong>Web Developer Diary series</strong> and
 see what happened in May 2022!</p>
@@ -1902,7 +1902,7 @@ Prismic for bigger projects in the future again.</p>
 <p>Besides all the static pages this project also included a lot of <strong>interactive</strong>
 parts, which made the development challenging and very exciting. That included
 the possiblity of filtering and sorting items, a pretty cool interactive map,
-and a powerful search based on <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.algolia.com/">algolia <span> ↗</span></a>. Implementing
+and a powerful search based on <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.algolia.com/">algolia <span> ↗</span></a>. Implementing
 a search with algolia was very intuitive and rewarding. It’s the first time I
 used it and I can highly recommand it.</p>
 <p>Besides this big project I also worked on some smaller projects, using the tech
@@ -1933,12 +1933,12 @@ blog posts regularly again!</p>
 <p>I did find the time to add some new Today-I-Learned posts this month, which
 makes me really happy.</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/headless-wordpress/">Headless wordpress</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/post-vs-put/">POST vs. PUT</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/confetti/">Confetti</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/most-common-accessibility-issues/">Most common accessibility issues</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/headless-wordpress">Headless wordpress</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/post-vs-put">POST vs. PUT</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/confetti">Confetti</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/most-common-accessibility-issues">Most common accessibility issues</a></li>
 </ul>
-<p>I also played around a bit with my <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/">Today-I-learned page</a>,
+<p>I also played around a bit with my <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned">Today-I-learned page</a>,
 added some nice animations and the coolest part: <strong>a search functionality</strong>!
 It’s basically just a client-side filter which checks several parts of the posts
 with <code>.includes()</code> but it works pretty well and I use it a lot!</p>
@@ -1965,23 +1965,23 @@ biking and riding fast and I&#x27;m having a lot of fun.</p>
 <h3>📚 Reading</h3>
 <p>I finished two books this month:</p>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/56920684-the-anomaly">The Anomaly <span> ↗</span></a> by
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/56920684-the-anomaly">The Anomaly <span> ↗</span></a> by
 Hervé le Tellier</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/54860573-once-there-were-wolves">Once there were wolves <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/54860573-once-there-were-wolves">Once there were wolves <span> ↗</span></a>
 by Charlotte McConaghy</li>
 </ul>
 <p>I liked them both a lot. The latter even made me shed a few tears.</p>
 <p>I also started a new book, it’s
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/28000.Postcards">Postcards <span> ↗</span></a> by Annie Proulx
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/book/show/28000.Postcards">Postcards <span> ↗</span></a> by Annie Proulx
 and I’m really excited about it. It’s the one book who made her win her first
 award. I loved Shipping news and Accordion Crimes and I’m really interested what
 this book will be like.</p>
 <p>I’m currently at 7 books read this year and my goal are 30. You can follow the
 progress of
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/user_challenges/31803693">my reading challenge <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.goodreads.com/user_challenges/31803693">my reading challenge <span> ↗</span></a>.</p>
 <h3>🕹 Video Games</h3>
 <p>I bought an Xbox Series S back in march only for one reason: I wanted to play
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://en.bandainamcoent.eu/elden-ring/elden-ring">Elden Ring <span> ↗</span></a>. And what can I
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://en.bandainamcoent.eu/elden-ring/elden-ring">Elden Ring <span> ↗</span></a>. And what can I
 say: I think this is the best game I’ve ever played. The open world is so
 enjoyable to explore, the boss fights are unique and a lot of fun and I did not
 have on minute where I regretted buying a new console for the sole purpose of
@@ -2014,7 +2014,7 @@ could happen to us developers in the current state of (web) development.</p>
 <h2><a name="what-is-it"></a> What is GitHub Copilot</h2>
 <p>GitHub Copilot was announced on June 29th 2021 as your <strong>AI pair programmer</strong>.
 You can read the introduction blog pos over here:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/">https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/ <span> ↗</span></a></p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/">https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/ <span> ↗</span></a></p>
 <p>It claims to <strong>help you write better code</strong>.</p>
 <blockquote>
 <p>GitHub Copilot draws context from the code you’re working on, suggesting whole
@@ -2046,7 +2046,7 @@ extension.</p>
 knew by the name of this function what logic I wanted to write inside of it.</p>
 <p>I created a new file, imported React and it suggested the skeleton of a whole
 functional component.</p>
-<p>I started to use the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://array.prototype.map">Array.prototype.map <span> ↗</span></a> function
+<p>I started to use the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://array.prototype.map">Array.prototype.map <span> ↗</span></a> function
 on an Array of data I got from a GraphQL query and it suggested to manipulate
 parts of the data and knew how to return it as semantic HTML.</p>
 <p>I&#x27;m still at the beginning of using the advantages of GitHub Copilot but I
@@ -2065,7 +2065,7 @@ understanding how <code>Array.prototype.reduce</code> works for the 317th time.<
 <p>I also can image that GitHub Copilot will make learning and working with a
 language you&#x27;re not that familiar with a way better experience.</p>
 <p>This are just my first impressions on it. You can checkout the documentation
-here: <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://copilot.github.com/">https://copilot.github.com/ <span> ↗</span></a></p>
+here: <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://copilot.github.com/">https://copilot.github.com/ <span> ↗</span></a></p>
 <p>It shows a lot of detailed examples and usecases.</p>
 <h2><a name="why-its-not-stealing-our-jobs"></a>Why it&#x27;s not stealing our developer jobs</h2>
 <p>So when this GitHub Copilot is doing all our work, is it stealing our jobs?</p>
@@ -2102,13 +2102,13 @@ about how we program. I&#x27;m very excited how this turns out.</p>]]></content:
             <link>https://marcoheine.com/blog/most-important-things-i-learned-from-my-former-colleagues-part-2/</link>
             <guid>https://marcoheine.com/blog/most-important-things-i-learned-from-my-former-colleagues-part-2/</guid>
             <pubDate>Fri, 07 May 2021 22:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@brookecagle">Photo by Brooke Cagle <span> ↗</span></a></p>
+            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@brookecagle">Photo by Brooke Cagle <span> ↗</span></a></p>
 <p><img src="/images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="three people sitting on a table laughing"/></p>
 <p>Clear communication, always ask questions, check what you really should care for
 (hint: it&#x27;s not the shiny tech stack) and always be nice. My colleagues taught
 me alot. Here&#x27;s part 2 of my learnings.</p>
 <p>This blog post is part 2 of a series. Make sure to check out
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/most-important-things-i-learned-from-my-former-colleagues-part-1/">part 1</a>
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/most-important-things-i-learned-from-my-former-colleagues-part-1">part 1</a>
 aswell.</p>
 <p><strong>What you can learn from this blog post:</strong></p>
 <hr class="my-10"/>
@@ -2197,7 +2197,7 @@ the one thing that does not harm anyone. <strong>Just be nice</strong>.</p>
             <link>https://marcoheine.com/blog/most-important-things-i-learned-from-my-former-colleagues-part-1/</link>
             <guid>https://marcoheine.com/blog/most-important-things-i-learned-from-my-former-colleagues-part-1/</guid>
             <pubDate>Sun, 07 Mar 2021 23:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@johnschno">Photo by John Schnobrich <span> ↗</span></a></p>
+            <content:encoded><![CDATA[<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://unsplash.com/@johnschno">Photo by John Schnobrich <span> ↗</span></a></p>
 <p><img src="/images/john-schnobrich-2FPjlAyMQTA-unsplash.jpg" alt="three people pointing on a laptop screen"/></p>
 <p>I call myself extremely lucky. I had and still have the opportunity to work
 together with some <strong>extraordinary human beings.</strong></p>
@@ -2260,7 +2260,7 @@ ideas, opinions but also acknowledges others and can admit when they are
 more from everyday. And became someone like them eventually.</p>
 <p>These are just a few facts and this description only <strong>scratches the surface</strong>.
 My good friend Dom wrote a
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://islovely.co/posts/how-to-go-from-junior-to-senior-developer">fantastic blog post <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://islovely.co/posts/how-to-go-from-junior-to-senior-developer">fantastic blog post <span> ↗</span></a>
 about this topic.</p>
 <p>I have one planned too on the senior subject, so make sure to check-in again in
 a few weeks!</p>
@@ -2337,7 +2337,7 @@ wikipeda has to say about go:</p>
 Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to
 C, but with memory safety, garbage collection, structural typing, and
 CSP-style concurrency. The language is often referred to as Golang because of
-its domain name, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://golang.org/">golang.org <span> ↗</span></a>, but the proper name is Go.</p>
+its domain name, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://golang.org/">golang.org <span> ↗</span></a>, but the proper name is Go.</p>
 </blockquote>
 <p>Ah that tells a bit more about it. Interesting! Now that we are behind the get
 to know each other phase, let&#x27;s see what <strong>topics</strong> I&#x27;ll cover in this blog
@@ -2641,12 +2641,12 @@ across the last weeks and months while learning and working with go. I hope you
 like it!</p>
 <p>Did you know everything already or did you learn something new? Do you have
 other great examples? Let me know!</p>
-<p>You can send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or message me on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>
+<p>You can send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or message me on
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>
 <h3>Resources:</h3>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gobyexample.com/">https://gobyexample.com/ <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://blog.golang.org/slices-intro">https://blog.golang.org/slices-intro <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gobyexample.com/">https://gobyexample.com/ <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://blog.golang.org/slices-intro">https://blog.golang.org/slices-intro <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -2657,14 +2657,14 @@ other great examples? Let me know!</p>
             <description><![CDATA[In part 2 of this series, we'll look at another four ways to improve your React performance.]]></description>
             <content:encoded><![CDATA[<p>In part 1 of this react performance quick-wins series, we already learned about the following:</p>
 <ul>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys">Always use a key when mapping and no index</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#fragments">Use React.Fragments instead of divs as parent element</a></li>
-<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1/#usestate">One useState hook instead of multiple for connected data</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1#keys">Always use a key when mapping and no index</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1#fragments">Use React.Fragments instead of divs as parent element</a></li>
+<li><a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1#usestate">One useState hook instead of multiple for connected data</a></li>
 </ul>
 <p>The second part of this series brings you another <strong>4 great quick-wins</strong> you can
 apply directly to your code and improve your performance</p>
 <p>This Post is Part 2 of a series.</p>
-<p>Part 1: <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1/">7 easy ways to improve your React performance - part 1</a></p>
+<p>Part 1: <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-1">7 easy ways to improve your React performance - part 1</a></p>
 <p><strong>What you can learn from Part 2 of this React performance quick wins series:</strong></p>
 <hr class="my-10"/>
 <ul>
@@ -2750,7 +2750,7 @@ is only rendered when it is truly needed and not loaded unnecessarily.</p>
 <p>This can easily be combined with React.Suspense for rendering some fallback
 content.</p>
 <p>I wrote a whole Today-I-learned post about this topic; check it out here:
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/react-suspense-lazy-loading/">Today I learned: React Suspense lazy-loading</a></p>
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/today-i-learned/react-suspense-lazy-loading">Today I learned: React Suspense lazy-loading</a></p>
 <p>That&#x27;s also a great way to improve your React performance without too much
 effort.</p>
 <h2><a name="virtualized-lists"></a>Virtualized lists</h2>
@@ -2769,8 +2769,8 @@ Brian Vaughn.</p>
 and tables anymore.</p>
 <p>So that&#x27;s it; these are my <strong>7 easy ways to improve your React performance</strong>.
 Did you already know all of them? Do you have any additional tips? Let me know!</p>
-<p>Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:@marcoheine.com">email <span> ↗</span></a> or message me on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>]]></content:encoded>
+<p>Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:@marcoheine.com">email <span> ↗</span></a> or message me on
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[🚀 React performance quick wins 🚀 - 7 easy ways to improve your React performance - part 1]]></title>
@@ -2779,7 +2779,7 @@ Did you already know all of them? Do you have any additional tips? Let me know!<
             <pubDate>Mon, 09 Nov 2020 23:00:00 GMT</pubDate>
             <description><![CDATA[In part 1 of this series, we'll look some easy way to improve your React performance.]]></description>
             <content:encoded><![CDATA[<p>At the beginning of the year I wrote a blog post about
-<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/react-performance-improvements/">React performance improvements</a>. It‘s
+<a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/react-performance-improvements">React performance improvements</a>. It‘s
 one of my favourite blog posts I ever wrote. It’s a great example of documenting
 everything while you learn it.</p>
 <p>It’s a very in depth analysis. It shows you how to <strong>test and measure</strong> the
@@ -2789,7 +2789,7 @@ your performance. Things you can change and adjust, without too much effort.</p>
 <p>So you can see it as an <strong>addition</strong> to my original react performance blog post.
 The first one builds the foundation. This one adds the cherry on top.</p>
 <p>This post is <strong>part 1</strong> of a <strong>series</strong>.</p>
-<p>Part 2: <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-2/">7 easy ways to improve your React performance - part 2</a></p>
+<p>Part 2: <a class="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo" href="/blog/7-easy-ways-to-improve-your-react-performance-part-2">7 easy ways to improve your React performance - part 2</a></p>
 <p><strong>What you can learn from this blog post:</strong></p>
 <hr class="my-10"/>
 <ul>
@@ -2840,7 +2840,7 @@ using any keys at all.</p>
 <p>If the order of items changes, the index changes as well so React has to update
 every item anyway.</p>
 <p>You can learn more about why keys are important in this
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/reconciliation.html#recursing-on-children">article about reconciliation <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/reconciliation.html#recursing-on-children">article about reconciliation <span> ↗</span></a>.</p>
 <p>So that&#x27;s it for quickwin number one: <strong>always use a key when mapping!</strong></p>
 <h3><a name="fragments"></a> Use React.Fragments instead of divs as JSX parent element</h3>
 <p>Next up: quickwin number two.</p>
@@ -2898,7 +2898,7 @@ in total.</p>
 a JSX parent element wrapper, we already get closer to that goal. And we can
 boost our performance!</p>
 <p>You can read more about why you should avoid too many DOM nodes in this article:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://web.dev/dom-size/">https://web.dev/dom-size/ <span> ↗</span></a></p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://web.dev/dom-size/">https://web.dev/dom-size/ <span> ↗</span></a></p>
 <section class="my-10 flex flex-col bg-[#edf6ff] px-10 pt-5 pb-2 md:ml-6"><h3>Hi Friend!</h3><p>If you enjoy my writings and learn something from them, you can consider to <strong>support me</strong>! One way of doing this is just as easy as <strong>buying me a Coffee!</strong></p><p>Thanks so much! This means a lot to me and is a great way to <strong>support my work</strong>.</p><a href="https://www.buymeacoffee.com/marcoheine" rel="noopener noreferrer" target="_blank" class="mb-4 inline-block self-center rounded-md bg-[#79d6b5] p-2 font-bold text-black hover:text-white"><span role="img" aria-label="coffee emoji">☕️</span> Buy me a coffee <span role="img" aria-label="coffee emoji">☕️</span> </a></section>
 <h3><a name="usestate"></a> One useState hook instead of multiple for connected data</h3>
 <p>Another performance quickwin you can achieve easy, is using one <code>useState</code> hook
@@ -3033,8 +3033,8 @@ right?</p>
 <p>That&#x27;s it for <strong>part 1</strong> of this <strong>React performance quickwins series</strong>! Hope
 you could already apply some of them and make your React app even faster.</p>
 <p>Let me know if these tips helped or you have other tips, you&#x27;d like to share.</p>
-<p>Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or message me on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>]]></content:encoded>
+<p>Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or message me on
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine_com">Twitter <span> ↗</span></a>.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[How to overcome imposter syndrome]]></title>
@@ -3090,7 +3090,7 @@ know their stuff pretty well.</p>
 <p>If anything of this above sounds familiar to you, let me tell you about the
 imposter syndrome.</p>
 <h3><a name="definition"></a> What is imposter syndrome?</h3>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://en.wikipedia.org/wiki/Impostor_syndrome">Wikipedia <span> ↗</span></a> gives a very good
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://en.wikipedia.org/wiki/Impostor_syndrome">Wikipedia <span> ↗</span></a> gives a very good
 definition of imposter syndrome:</p>
 <blockquote>
 <p><em>Impostor syndrome (also known as impostor phenomenon, impostorism, fraud
@@ -3140,7 +3140,7 @@ not only trapped inside a CS degree.</p>
 you&#x27;ve achieved in your past, all you&#x27;ve done. Even if you&#x27;re a beginner
 remember all the things you&#x27;ve learned so far, even the smallest.</p>
 <p>My incredibly talented wife draw this beautiful picture about this topic.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.instagram.com/p/CEwsVgKizRo/"><img src="/images/Untitled_Artwork.png" alt="Look how far you&#x27;ve come artwork"/> <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.instagram.com/p/CEwsVgKizRo/"><img src="/images/Untitled_Artwork.png" alt="Look how far you&#x27;ve come artwork"/> <span> ↗</span></a></p>
 <a href="https://www.instagram.com/p/CEwsVgKizRo/" rel="noopener noreferrer" target="_blank"><p>(@findingthelittlethings_)</p></a>
 <p>I take a look at it as often as I can because it&#x27;s always a <strong>good reminder</strong>.</p>
 <p><strong>You are not an imposter</strong> because you&#x27;ve got the job right? You convinced
@@ -3190,7 +3190,7 @@ view of what is really happening, don&#x27;t hesitate to ask your teammates and
 colleagues for feedback! They can give you valuable answers on how you&#x27;re really
 doing and where you can improve.</p>
 <h4><a name="experts"></a> Even the experts in our industry feel this way</h4>
-<p>When I came across <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://davidwalsh.name/impostor-syndrome">this blog post <span> ↗</span></a>
+<p>When I came across <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://davidwalsh.name/impostor-syndrome">this blog post <span> ↗</span></a>
 by David Walsh, I was astonished. He writes a lot of blog posts about the
 JavaScript ecosystems. He worked for Mozilla for over 8 years. Developers go to
 his blog to get help, read his tutorials and learn stuff. And even he feels this
@@ -3219,8 +3219,8 @@ and use it primarily when doing frontend development - it would really make me
 think.</p>
 <p>When I first started to work with React I didn&#x27;t have a real choice. I started
 working at a job where there was no question if we should use
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://angular.io/">Angular <span> ↗</span></a>, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://vuejs.org/">Vue <span> ↗</span></a> or
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://svelte.dev/">Svelte <span> ↗</span></a> or anything else.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://angular.io/">Angular <span> ↗</span></a>, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://vuejs.org/">Vue <span> ↗</span></a> or
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://svelte.dev/">Svelte <span> ↗</span></a> or anything else.</p>
 <p>No, it was already defined that React would be the weapon of choice and there
 was already written a lot of code in React. I was just thrown into this React
 hole and never had the chance to crawl back out. End of story.</p>
@@ -3231,7 +3231,7 @@ problem without React or with VanillaJS or even without any JavaScript at all!</
 <p>If you google &quot;Reasons to use React&quot; you get a lot clever points and different
 opinions. I even read about advantages of React I never heard about before. I
 really have to get into this
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/concurrent-mode-intro.html">Concurrent Mode stuff <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/concurrent-mode-intro.html">Concurrent Mode stuff <span> ↗</span></a>.</p>
 <p>Anyway, after this research my list of reasons grew bigger and bigger but I
 noticed despite all this points being true and reasonable arguments there was no
 real point where I could put my heart into.</p>
@@ -3248,7 +3248,7 @@ so <strong>fast</strong> and everything changes really <strong>quickly</strong>.
 <p>But if you take a closer look, you will notice that React is here since
 <strong>2013</strong>. That&#x27;s like <strong>VERY OLD</strong> in this web thingy. It&#x27;s the one JS framework
 with the most GitHub stars (146k in March, 2020) and is used by 3,3 million
-people, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/facebook/react">according to GitHub <span> ↗</span></a>.</p>
+people, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/facebook/react">according to GitHub <span> ↗</span></a>.</p>
 <p>To translate this: I don&#x27;t like React because it&#x27;s so popular in general or it
 is so &quot;old&quot;. I like it because of all the <strong>perks</strong> these two points bring with
 them.</p>
@@ -3256,7 +3256,7 @@ them.</p>
 an active and (in most cases) constructive discussion on Twitter about new
 features and problems where you can get help from and learn a lot.</p>
 <p>There are super great subreddits like
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/reactjs">/r/reactjs <span> ↗</span></a> where every news about React is
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/reactjs">/r/reactjs <span> ↗</span></a> where every news about React is
 being discussed, people present cool tools they built with React and if you need
 help, people will take a look at your problem and suggest solutions.</p>
 <p>There are so much great tutorials, blog articles, video courses and podcasts on
@@ -3265,7 +3265,7 @@ React which teach you everything about it.</p>
 bulletproof solutions available. People help each other whenever they can, which
 makes the journey to get better in React a lot of fun.</p>
 <p>And finally: React has one of the best
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/getting-started.html">Docs <span> ↗</span></a> I&#x27;ve ever used which gets
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/getting-started.html">Docs <span> ↗</span></a> I&#x27;ve ever used which gets
 better and better everyday.</p>
 <h3>Reason two: it&#x27;s just a view library</h3>
 <p>React is not a full framework. Instead it focuses on the <strong>view layer,</strong> on
@@ -3287,8 +3287,8 @@ React by default - like routing or other state management solutions. But in most
 cases you won&#x27;t need these and you&#x27;re good to go with what you get from the
 beginning.</p>
 <p>So that&#x27;s it, these are my two good reasons to use React. What are yours? Hit me
-up on <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine-com">Twitter <span> ↗</span></a> or send me an
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a>.</p>]]></content:encoded>
+up on <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/marcoheine-com">Twitter <span> ↗</span></a> or send me an
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a>.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[React Performance Improvements]]></title>
@@ -3349,7 +3349,7 @@ which can tell you why your app is slow and how to solve common problems.</p>
 <p><img src="/images/chrome-lighthouse-audit.jpeg" alt="a screenshot of the chrome lighthouse audit results"/></p>
 <h3><a name="webpagetest"></a> webpagetest</h3>
 <p>Another tool to verify the perfomance of your React application is
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://webpagetest.org">webpagetest.org <span> ↗</span></a>. After you enter a URL and start the
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://webpagetest.org">webpagetest.org <span> ↗</span></a>. After you enter a URL and start the
 test, it returns a test result and grades specific parts of your application. It
 is also pretty useful in finding problems and ways to improve the performance.</p>
 <h2><a name="the-biggest-problems"></a> The Biggest Problems</h2>
@@ -3384,7 +3384,7 @@ CSS, check if you can render them <strong>conditionally</strong> instead.</p>
 rendered, which means less JavaScript needs to be executed.</p>
 <p>This will especially be helpful, when you have a long list of items, render all
 of them, but show only the first 5 initially. Robin Wieruch has a
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.robinwieruch.de/conditional-rendering-react">great article <span> ↗</span></a> on
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.robinwieruch.de/conditional-rendering-react">great article <span> ↗</span></a> on
 conditional rendering in React.</p>
 <h3><a name="lazy-loading-images"></a> lazy-loading images</h3>
 <p>If you load twenty images initially, which are located at the bottom of your
@@ -3392,7 +3392,7 @@ page, meaning the user can&#x27;t see them at first glance, this is a lot of was
 time and potential.</p>
 <p>Instead you can detect when the user gets closer to the images and then render
 them. Because that&#x27;s the point where you actually need them. The npm package
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/react-lazyload">react-lazyload <span> ↗</span></a> makes this
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/react-lazyload">react-lazyload <span> ↗</span></a> makes this
 surpringsingly easy.</p>
 <p>This results in executing less JavaScript code but it also solves another very
 common problem: too many <strong>http requests</strong>.</p>
@@ -3420,13 +3420,13 @@ the Landingpage? No!</p>
 actually needed and split it up. That&#x27;s code-splitting.</p>
 <p>One of these clever tools is <strong>React.lazy</strong>. You can read and learn more about
 it in the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/code-splitting.html#reactlazy">React docs code splitting section <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/code-splitting.html#reactlazy">React docs code splitting section <span> ↗</span></a>.
 Please note that React.lazy is not available for server-side-rendering.
 Code-splitting in a server rendered app can be achieved with
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://loadable-components.com/docs/server-side-rendering/">Loadable Components <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://loadable-components.com/docs/server-side-rendering/">Loadable Components <span> ↗</span></a>.</p>
 <h3><a name="react-profiler"></a> React Profiler</h3>
 <p>The
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html">React Profiler <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html">React Profiler <span> ↗</span></a>
 is another useful tool to gain more insight about what your React app is doing
 and why. It is part of the React Browser Plugin and can be located in the
 DevTools.</p>
@@ -3442,13 +3442,13 @@ Performance Analyzer. It&#x27;s also located in the Chrome DevTools and lets you
 record the load performance of your app. This is the place where you analyze
 your loading time in to the deepest. It just has so many options.</p>
 <p>Take your time to read through the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference">documentation of this performance evaluation tool <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference">documentation of this performance evaluation tool <span> ↗</span></a>.</p>
 <p>It makes sense to spent more time to fully understand what this tool is capable
 of. It can totally help you boost your performance because it shows you
 everything that&#x27;s happening with your JavaScript.</p>
 <h3><a name="bundle-analyzer"></a> Bundle-Analyzer</h3>
 <p>The
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/webpack-bundle-analyzer">Webpack Bundle Analyzer <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/webpack-bundle-analyzer">Webpack Bundle Analyzer <span> ↗</span></a>
 is a npm package which &quot;visualizes the size of webpack output files with an
 interactive zoomable treemap&quot;. To use this package your application has to use
 webpack for the bundling of course.</p>
@@ -3467,13 +3467,13 @@ learn something here and if you know more ways to boost the performance let me
 know!</p>
 <h2><a name="sources"></a> Sources:</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/lighthouse">https://developers.google.com/web/tools/lighthouse <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive">https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.robinwieruch.de/conditional-rendering-react">https://www.robinwieruch.de/conditional-rendering-react <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/react-lazyload">https://www.npmjs.com/package/react-lazyload <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/code-splitting.html">https://reactjs.org/docs/code-splitting.html <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/">https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/ <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/optimizing-performance.html">https://reactjs.org/docs/optimizing-performance.html <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/lighthouse">https://developers.google.com/web/tools/lighthouse <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive">https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.robinwieruch.de/conditional-rendering-react">https://www.robinwieruch.de/conditional-rendering-react <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.npmjs.com/package/react-lazyload">https://www.npmjs.com/package/react-lazyload <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/code-splitting.html">https://reactjs.org/docs/code-splitting.html <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/">https://www.freecodecamp.org/news/taming-performance-in-todays-web-app-with-lighthouse-webpack-and-react-loadable-components-b2d3fa04e0ab/ <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/optimizing-performance.html">https://reactjs.org/docs/optimizing-performance.html <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -3481,7 +3481,7 @@ know!</p>
             <link>https://marcoheine.com/blog/reactjs-learning-journey/</link>
             <guid>https://marcoheine.com/blog/reactjs-learning-journey/</guid>
             <pubDate>Wed, 14 Aug 2019 22:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>In June of 2018 I started learning and working with <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/">React <span> ↗</span></a>. In this blog post I will share some things I learned in the beginning and came across or find worth noting.</p>
+            <content:encoded><![CDATA[<p>In June of 2018 I started learning and working with <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/">React <span> ↗</span></a>. In this blog post I will share some things I learned in the beginning and came across or find worth noting.</p>
 <p>I would be very happy if other beginners can learn something or find a place to start their React learning journey right here.</p>
 <p><strong>Please note:</strong> In web development a lot of things change really quickly, especially in the JavaScript and React scene. So it can be possible that some information in here is not that relevant anymore. But it was as of the time when my React learning journey started.</p>
 <hr class="my-10"/>
@@ -3558,7 +3558,7 @@ JSX elements are like JS expressions, they can be:</p>
 <h3>Sources &amp; Further Reading</h3>
 <p>React has one of the best documentations I have ever used. I regularly head over to there, to fresh up my knowledge. It is written very well and has a lot of useful examples in it.</p>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/getting-started.html">The official React Docs <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://reactjs.org/docs/getting-started.html">The official React Docs <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -3606,7 +3606,7 @@ learned about CSS Grid in the course.</p>
 <hr class="my-10"/>
 <h3><a name="setup"></a>General setup and basics of CSS Grid development</h3>
 <p>In the first few videos Wes talks about the <strong>tooling setup</strong> for the course. He
-uses <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://browsersync.io/">browsersync <span> ↗</span></a> for the local development which is
+uses <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://browsersync.io/">browsersync <span> ↗</span></a> for the local development which is
 an npm package, that automatically updates your browsers once you change the
 HTML, CSS, images or other project files.</p>
 <p>It is such a great tool I couldn&#x27;t work without and that is why browsersync has
@@ -3631,7 +3631,7 @@ and not explicitely by you.</p>
 more items, a new row is implicitly created by the browser. With
 <code>grid-auto-rows</code> and <code>grid-auto-columns</code> you can style any implicitely created
 row or column.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/rJoXxY">CodePen: CSS Grid - Implicit vs. Explicit Tracks <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/rJoXxY">CodePen: CSS Grid - Implicit vs. Explicit Tracks <span> ↗</span></a></p>
 <h3><a name="grid-auto-flow"></a> Grid-auto-flow</h3>
 <p>If you have two items, define two columns using
 <code>grid-template-columns: 200px 400px</code> and than add a third item, the browser will
@@ -3640,7 +3640,7 @@ implicit tracks.</p>
 <p>This means <code>grid-auto-flow</code> is set to row by default. If yout set
 <code>grid-auto-row</code> to <code>column</code> the third item will be put next to the already
 available items into a new column automatically.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wyNjJK">CodePen: CSS Grid - grid-auto-flow <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wyNjJK">CodePen: CSS Grid - grid-auto-flow <span> ↗</span></a></p>
 <h3><a name="sizing-tracks"></a> Sizing tracks</h3>
 <p>The <code>fr</code> unit represents the amount of space left after all elements are laid
 out.</p>
@@ -3651,7 +3651,7 @@ that is left.</p>
 helps with remembering the idea of the fr unit.</p>
 <p>It is also possible to use the auto keyword. Then an item will be sized
 according to the content it contains.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/ddaKbb">CodePen: CSS Grid - sizing tracks <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/ddaKbb">CodePen: CSS Grid - sizing tracks <span> ↗</span></a></p>
 <h3><a name="repeat-function"></a> Repeat function</h3>
 <p>Instead of writing:</p>
 <pre class="mb-12"><code class="hljs language-css"><span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
@@ -3659,7 +3659,7 @@ according to the content it contains.</p>
 <p>you can simply use the CSS Grid repeat function and write:</p>
 <pre class="mb-12"><code class="hljs language-css"><span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>fr);
 </code></pre>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/vdbVeX">CodePen: CSS Grid - repeat function <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/vdbVeX">CodePen: CSS Grid - repeat function <span> ↗</span></a></p>
 <h3><a name="sizing-grid-items"></a> Sizing Grid Items</h3>
 <p>By default grid items just flow one after another and as there is space for each
 one they will fit themselves into the grid as they can.</p>
@@ -3667,7 +3667,7 @@ one they will fit themselves into the grid as they can.</p>
 precisely. The instruction <code>grid-column: span 2</code> tells the browser to size the
 specific child element with the space and width of two columns. The same goes
 for <code>grid-row: span 2</code>.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/zWOYge">CodePen: CSS Grid - sizing grid items <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/zWOYge">CodePen: CSS Grid - sizing grid items <span> ↗</span></a></p>
 <h3><a name="placing-grid-items"></a> Placing Grid Items</h3>
 <p>There are also better ways to position grid items than just sizing them. With
 <code>grid-column-start</code> and <code>grid-column-end</code> you can define where a grid item
@@ -3678,10 +3678,10 @@ ends before the fifth.</p>
 over two columns with <code>grid-column: 1 / span 2</code>.</p>
 <p>If you want your grid item to start at the first column and span over the last,
 but you don&#x27;t know how many columns you have, just use <code>grid-column: 1 / -1</code>.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/BrByaZ">CodePen: CSS Grid - Placing Grid Items <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/BrByaZ">CodePen: CSS Grid - Placing Grid Items <span> ↗</span></a></p>
 <p>The second CodePen example below shows all the different ways to place grid
 items inside a grid container. Have a look into the CSS to check how it is done.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/oqvjOv">CodePen: CSS Grid - Spanning and Placing Cardio <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/oqvjOv">CodePen: CSS Grid - Spanning and Placing Cardio <span> ↗</span></a></p>
 <h3><a name="auto-fit-auto-fill"></a> auto-fit and auto-fill</h3>
 <p>With the <code>auto-fill</code> expression inside the <code>grid-template-columns</code> declaration
 you can tell the browser &quot;hmm I&#x27;m not sure how much columns I want just make
@@ -3696,7 +3696,7 @@ the grid when all available items are placed inside your grid.</p>
 <p>In the CodePen example below open the firefox dev tools, enable the grid view in
 the layout window and you will see the difference between <code>auto-fit</code> and
 <code>auto-fill</code>.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/BrayPm">CodePen: CSS Grid - auto-fill &amp; auto-fit <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/BrayPm">CodePen: CSS Grid - auto-fill &amp; auto-fit <span> ↗</span></a></p>
 <h3><a name="minmax"></a> Using minmax for responsive grids</h3>
 <p>With <code>minmax()</code> you can tell the browser to make the items in a column a minimum
 width of <code>150px</code> and a maximum width of <code>1fr</code> for example. So the items will
@@ -3706,7 +3706,7 @@ automatically adapt to the available space.</p>
 the browser window gets smaller, they will automatically jump into the next row.</p>
 <p>The CodePen example below also shows the difference between <code>auto-fit</code> and
 <code>auto-fill</code> in combination with <code>minmax()</code>.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/jzOPzg">CodePen: CSS Grid - Using minmax() for Responsive Layouts <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/jzOPzg">CodePen: CSS Grid - Using minmax() for Responsive Layouts <span> ↗</span></a></p>
 <h3><a name="template-areas"></a> Grid template areas</h3>
 <p>Grid Template areas come in handy for building a whole layout of a page. Say you
 want to have two sidebars left and right and a content place between. Below you
@@ -3718,7 +3718,7 @@ item with <code>grid-area</code> which part of the layout it sould be. That&#x27
 and easy full page layout.</p>
 <p>The firefox dev tools also offer the possibility to display your grid area names
 so you can quickly check, if your layout is displayed as you wish it to be.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxRjdW">CodePen: CSS Grid - Grid Template Areas <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxRjdW">CodePen: CSS Grid - Grid Template Areas <span> ↗</span></a></p>
 <h3><a name="naming-lines"></a> Naming lines in CSS Grid</h3>
 <p>By default you declare to span your grid items over the columns and rows by
 using the line names 1,2,3 and so on. CSS Grid offers also the possibility to
@@ -3741,7 +3741,7 @@ grid using the new line names.</p>
 <span class="hljs-attribute">grid-template-rows</span>:
   [content-top] <span class="hljs-built_in">repeat</span>(<span class="hljs-number">10</span>, auto) [content-bottom];
 </code></pre>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/mxdQQN">CodePen: CSS Grid - Naming Lines in CSS Grid <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/mxdQQN">CodePen: CSS Grid - Naming Lines in CSS Grid <span> ↗</span></a></p>
 <h3><a name="block-fitting"></a> Grid-auto-flow dense block fitting</h3>
 <p>Grid-auto-flow is by default set to row so every item, that does not fit in the
 same row will automatically be put into a new row below. This can be helpful but
@@ -3751,7 +3751,7 @@ six columns there will be a lot of empty space because the six column long item
 often can&#x27;t fit in the same row and is put into the next row via
 <code>grid-auto-flow: row</code> and the space left over is not filled with other items.</p>
 <p>In this cases the dense value comes to help.
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">MDN <span> ↗</span></a> describes
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">MDN <span> ↗</span></a> describes
 this value as following:</p>
 <p>Dense</p>
 <blockquote>
@@ -3762,7 +3762,7 @@ doing so would fill in holes left by larger items&quot;.</p>
 </blockquote>
 <p>Go ahead and turn the <code>grid-auto-flow: dense</code> instruction on and off in the
 CodePen example below to see the difference.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wmMKxY">CodePen: CSS Grid - grid-auto-flow block formatting <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wmMKxY">CodePen: CSS Grid - grid-auto-flow block formatting <span> ↗</span></a></p>
 <h3><a name="alignment-and-centering"></a> CSS Grid alignment + centering</h3>
 <p>Flexbox made centering items on a page really easy. CSS Grid also has its ways
 to center items without problems.</p>
@@ -3776,7 +3776,7 @@ second for the align-_ property.</p>
 and <code>align-content</code> to align them as one inside your grid container.</p>
 <p>Finally with <code>justify-self</code> and <code>align-self</code> you can overwrite the alignment
 settings on the container and specify them on a single grid item.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxoqOy">CodePen: CSS Grid - Alignment and Centering <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxoqOy">CodePen: CSS Grid - Alignment and Centering <span> ↗</span></a></p>
 <h3><a name="re-ordering"></a> Re-ordering Grid items</h3>
 <p>Imagine having a ten column wide grid with a logo on the left that spans over 2
 columns, a nav on the right that spans over 8 columns and a full width content
@@ -3790,7 +3790,7 @@ re-ordering.</p>
 screenreader will read it so it is kind of bad practice concerning accessibility
 if you use this on a bunch of paragraphs for example. But for a nav and a logo
 it does not matter that much.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxojJY">CodePen: CSS Grid - Re-ordering Grid items <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/GxojJY">CodePen: CSS Grid - Re-ordering Grid items <span> ↗</span></a></p>
 <h2>Real World Examples</h2>
 <h3><a name="album-layouts"></a> Nesting Grid with album layouts</h3>
 <p>In this example you can see several album info boxes consisting of an image and
@@ -3812,7 +3812,7 @@ alignment is also possible.</p>
 <span class="hljs-attribute">display</span>: grid;
 <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">150px</span> <span class="hljs-number">1</span>fr;
 </code></pre>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/jzqXVo">CodePen: CSS Grid - Nesting grid with album layouts <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/jzqXVo">CodePen: CSS Grid - Nesting grid with album layouts <span> ↗</span></a></p>
 <h3><a name="css-grid-image-gallery"></a> CSS Grid image gallery</h3>
 <p>The next example is about building an image gallery with CSS Grid. The basic
 grid for this consists of repeating columns and rows that are 100px wide and
@@ -3839,14 +3839,14 @@ out elements in two dimensions.</p>
 <p>In this example, Wes shows how things solved previously with flexbox can be done
 with CSS Grid and in what scenarios Flexbox is still the winner. You can find
 all the examples in the CodePen below.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wmoVjp">CodePen: CSS Grid - Flexbox vs. CSS Grid <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/wmoVjp">CodePen: CSS Grid - Flexbox vs. CSS Grid <span> ↗</span></a></p>
 <h3><a name="recreating-codepen"></a> Recreating CodePen</h3>
 <p>In this example you are recreating CodePen, the tool I have used to display all
 the examples before. CodePen is a development environment which allows you to
 write code in the browser and see the results immediately.</p>
 <p>This example is a good practice to learn to layout different sections of a page
 with CSS Grid. Basically it is all about grids inside other grids.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/MVmwpZ">CodePen: CSS Grid - Recreating CodePen <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/MVmwpZ">CodePen: CSS Grid - Recreating CodePen <span> ↗</span></a></p>
 <h3><a name="bootstrappy-grid"></a> Bootstrappy Grid with CSS variables</h3>
 <p>Bootstrap became very popular for implementing an easy way to use a responsive
 grid on a website. It implemented CSS classes for the orientation of your
@@ -3855,7 +3855,7 @@ span in your grid.</p>
 <p>So a div with the class of col-sm-4 would span over 4 columns on a viewport that
 is equal to or greater than 768px wide.</p>
 <p>In this example Wes shows how to achieve the Bootstrap principle with CSS Grid.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/RMVPdj">CodePen: CSS Grid - Bootstrappy Grid with CSS Variables <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/RMVPdj">CodePen: CSS Grid - Bootstrappy Grid with CSS Variables <span> ↗</span></a></p>
 <h3><a name="responsive-website"></a> Responsive Website</h3>
 <p>In this example Wes shows how to build a <strong>whole responsive</strong> website with <strong>CSS
 Grid</strong>. He devides the page into several sections and then uses almost every
@@ -3872,19 +3872,19 @@ indicates, that the button controls the element with the class of menu-list
 which is in this case the navigation.</p>
 <p>By changing the values of this attributes with JavaScript, you can toggle the
 menu easily.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/LdyMJa">CodePen: CSS Grid - Responsive Website <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/LdyMJa">CodePen: CSS Grid - Responsive Website <span> ↗</span></a></p>
 <h3><a name="blog-layout"></a> Full bleed blog layout</h3>
 <p>The last example is about building a blog layout with sections of different
 width and elements.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/eMWwQd">CodePen: CSS Grid - Full bleed blog layout <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/eMWwQd">CodePen: CSS Grid - Full bleed blog layout <span> ↗</span></a></p>
 <h3>Sources &amp; further reading</h3>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://cssgrid.io/">The CSS Grid course by Wes Bos <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">A complete guide for CSS Grid by Chris Coyier <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid Layout by the Mozilla Developer Network <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gridbyexample.com/">A collection of examples, videos and other information to learn CSS Grid by Rachel Andrew <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/">Auto-Sizing Columns in CSS Grid: &#x27;auto-fill&#x27; vs. &#x27;auto-fit&#x27; by Sara Soueidan <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag">Layout Land a YouTube Channel by Jen Simmons all about CSS Grid <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://cssgrid.io/">The CSS Grid course by Wes Bos <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">A complete guide for CSS Grid by Chris Coyier <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid Layout by the Mozilla Developer Network <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gridbyexample.com/">A collection of examples, videos and other information to learn CSS Grid by Rachel Andrew <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/">Auto-Sizing Columns in CSS Grid: &#x27;auto-fill&#x27; vs. &#x27;auto-fit&#x27; by Sara Soueidan <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag">Layout Land a YouTube Channel by Jen Simmons all about CSS Grid <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -3907,7 +3907,7 @@ width and elements.</p>
 </ol>
 <hr class="my-10"/>
 <h3><a name="doctype"></a> What does a DOCTYPE do?</h3>
-<p>The doctype makes sure the document gets parsed the same way by different browsers. It prevents the browser from switching into <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode">&quot;quirks-mode&quot; <span> ↗</span></a> when rendering a document.</p>
+<p>The doctype makes sure the document gets parsed the same way by different browsers. It prevents the browser from switching into <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode">&quot;quirks-mode&quot; <span> ↗</span></a> when rendering a document.</p>
 <h3><a name="lng"></a>How do you serve a page with content in multiple languages?</h3>
 <p>By using the lang attribute on the html element <code>lang=&quot;en&quot;</code>.</p>
 <h3><a name="multilingual"></a>What kind of things must you be wary of when design or developing for multilingual sites?</h3>
@@ -3944,15 +3944,15 @@ width and elements.</p>
 <p>The additional attribute sizes adds a set of media queries and tells the browser what image size to choose when certain conditions are true. The sizes attribute contains the media condition (max-width: 680px), a space, followed by the width of the slot the image will fill when the media condition is true.</p>
 <h3>Sources &amp; Further Reading</h3>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">Definition of the DOCTYPE in the HTML specification <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">The HTML lang attritube <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">The data- attribute <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">The building blocks of HTML5 <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies">Cookies vs. sessionStorage vs. localStorage <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">The Script element <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css">Render-blocking CSS <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Optimize CSS Delivery <span> ↗</span></a></li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">Definition of the DOCTYPE in the HTML specification <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">The HTML lang attritube <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">The data- attribute <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">The building blocks of HTML5 <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies">Cookies vs. sessionStorage vs. localStorage <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">The Script element <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css">Render-blocking CSS <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Optimize CSS Delivery <span> ↗</span></a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images <span> ↗</span></a></li>
 </ul>]]></content:encoded>
         </item>
         <item>
@@ -3960,8 +3960,8 @@ width and elements.</p>
             <link>https://marcoheine.com/blog/javascript30/</link>
             <guid>https://marcoheine.com/blog/javascript30/</guid>
             <pubDate>Sat, 04 Feb 2017 23:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I just started the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://javascript30.com/">JavaScript30 Challenge <span> ↗</span></a> by
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/wesbos">Wes Bos <span> ↗</span></a> where you get to code <strong>30 different
+            <content:encoded><![CDATA[<p>I just started the <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://javascript30.com/">JavaScript30 Challenge <span> ↗</span></a> by
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/wesbos">Wes Bos <span> ↗</span></a> where you get to code <strong>30 different
 projects</strong> and ideas with <strong>plain JavaScript</strong>.</p>
 <p>No frameworks - no compilers - no libraries - no boilerplates.</p>
 <p>The idea of JavaScript30 is either to code along as this is a video series or to
@@ -3971,12 +3971,12 @@ projects, want to learn ES6 and level up your JS skills in general. The perfect
 challenge for your daily dose of JavaScript.</p>
 <p>To learn to most from it, I coded along or tried to solve it at my own and put
 all of it on <strong>CodePen</strong>. You can check it out
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/collection/DapjRG">here <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/collection/DapjRG">here <span> ↗</span></a>.</p>
 <p>If you also like to take the JavaScript30 challenge there you go:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://javascript30.com/">https://javascript30.com/ <span> ↗</span></a></p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://javascript30.com/">https://javascript30.com/ <span> ↗</span></a></p>
 <p>It&#x27;s free so enjoy it, have fun and don&#x27;t forget to thank Wes Bos! You can also
 find a list of other peoples experiences and solutions on the GitHub repo:
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/wesbos/JavaScript30">https://github.com/wesbos/JavaScript30 <span> ↗</span></a></p>]]></content:encoded>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/wesbos/JavaScript30">https://github.com/wesbos/JavaScript30 <span> ↗</span></a></p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Frontend Bookmarks]]></title>
@@ -3991,7 +3991,7 @@ for example, or my favorite github projects. It will be more like the best
 link-list (for me personally) of every category. Also the list itself will not
 be in any ranking, I&#x27;ll just present them to you in a random order.</p>
 <p>You&#x27;ll also be able to find my Frontend Bookmarks on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/frontend-bookmarks">GitHub <span> ↗</span></a>, so please feel
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/frontend-bookmarks">GitHub <span> ↗</span></a>, so please feel
 free to make <strong>suggestions</strong> to this list with your own favorite bookmarks and
 links. One goal of this blog post will be to get my own list growing as I&#x27;m
 always looking forward to find new blogs or newsletters about Frontend
@@ -4012,7 +4012,7 @@ Bookmarks.</p>
 </ol>
 <hr class="my-10"/>
 <h3><a name="mdn"></a> Mozilla Developer Network</h3>
-<p>The <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network <span> ↗</span></a> is my
+<p>The <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network <span> ↗</span></a> is my
 number one visited website currently. It&#x27;s my central station. It&#x27;s not only the
 biggest and best up to date <strong>documentation</strong> about <strong>web technologies</strong>, it
 also offers awesome <strong>articles</strong> and <strong>guides</strong> to learn more about HTML, CSS,
@@ -4022,21 +4022,21 @@ about how certain JavaScript methods work and to find out what attributes belong
 to a specific HTML element.</p>
 <p>If I google a specific frontend problem I usually start with &quot;mdn ...&quot; because
 I&#x27;ve always found a solution there. Mozilla recently started the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/Learn">Learning web development <span> ↗</span></a> section
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/Learn">Learning web development <span> ↗</span></a> section
 which &quot;aims to provide complete beginners to web development with all they need
 to start coding simple websites&quot;.</p>
 <p>So if you get stuck anywhere, MDN always explains a solution, if you want to
 learn more about CSS Layout, HTML audio and video or anything similar, MDN is
 the place to go.</p>
 <p>My <strong>favorite article</strong> on <strong>MDN</strong> is
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">A re-introduction to JavaScript <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">A re-introduction to JavaScript <span> ↗</span></a>.
 If you&#x27;re new to JavaScript or want to re-learn or look up the core concepts, I
 highly recommend this article.</p>
 <h3><a name="caniuse"></a> CanIUse</h3>
 <p>Do your ask yourself daily &quot;Oh I want to use this new CSS property or this HTML
 element, but does it work already in Internet Explorer, Opera or in any Android
 Browser?&quot; If you&#x27;ve answered yes, I have a solution for you. The website
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://caniuse.com/">caniuse.com <span> ↗</span></a> does this job for you.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://caniuse.com/">caniuse.com <span> ↗</span></a> does this job for you.</p>
 <p>You just have to browse there, type in a property or element and CanIUse
 provides you up-to-date <strong>browser support tables</strong> for support of front-end web
 technologies on desktop and mobile web browsers.</p>
@@ -4046,11 +4046,11 @@ resources. So it&#x27;s not only showing you, which browser supports what, it is
 telling you, why one browser doesn&#x27;t support this specific CSS property yet.</p>
 <p>Great tool I don&#x27;t want to miss! There is also a CanIUse Node.js module which
 let&#x27;s you look up browser support from the command line.
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/davidwalshblog">David Walsh <span> ↗</span></a> wrote a small
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://davidwalsh.name/caniuse-command-line">blog post <span> ↗</span></a> about it.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/davidwalshblog">David Walsh <span> ↗</span></a> wrote a small
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://davidwalsh.name/caniuse-command-line">blog post <span> ↗</span></a> about it.</p>
 <h3><a name="pagespeed-insights"></a> PageSpeed Insights</h3>
 <p><strong>PageSpeedInsights</strong> is a great tool I already mentioned and explained in my
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://marcoheine.com/blog/website-performance-optimization/">Website Performance Optimization blog post <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://marcoheine.com/blog/website-performance-optimization/">Website Performance Optimization blog post <span> ↗</span></a>
 so I won&#x27;t talk that much about it here and just give a brief summary.</p>
 <p>You just enter the URL of the website you&#x27;d like to test and PageSpeedInsights
 loads the page on a small screen and on a big screen, analyzes <strong>what&#x27;s good and
@@ -4059,7 +4059,7 @@ do better.</p>
 <p>As I said I&#x27;ve explained this in depth in my blog post so I&#x27;d suggest you head
 over there if you&#x27;re interested in learning more about PageSpeedInsights.</p>
 <h3><a name="codepen"></a> CodePen</h3>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://codepen.io/">CodePen <span> ↗</span></a> quotes itself as a &quot;Playground for the front end
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://codepen.io/">CodePen <span> ↗</span></a> quotes itself as a &quot;Playground for the front end
 web&quot; and I think this describes it perfectly. In short, it&#x27;s a <strong>code editor in
 the browser</strong>. You can quickly write HTML, CSS and JavaScript there and
 immediately see the output.</p>
@@ -4074,11 +4074,11 @@ CSS, add popular JS libraries like jQuery or add external JS.</p>
 <p>Another great thing I love about CodePen is its <strong>collaborative thinking</strong>. You
 can share or work together on a &quot;Pen&quot; very easy, you can integrate a &quot;Pen&quot; into
 your website like I did on this
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://marcoheine.com/blog/new-css-layout/">blog post <span> ↗</span></a> and you can browse Pens
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://marcoheine.com/blog/new-css-layout/">blog post <span> ↗</span></a> and you can browse Pens
 of others to get inspired or learn something new. I love to browse on CodePen
 daily and see everyday the impressive and amazing work of other developers.</p>
 <h3><a name="github"></a> GitHub</h3>
-<p>I think I don&#x27;t have to write that much about <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/">GitHub <span> ↗</span></a>
+<p>I think I don&#x27;t have to write that much about <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/">GitHub <span> ↗</span></a>
 here, it&#x27;s a very well known service and I guess every developer used it once or
 at least heard of it. I think one of the best ways to learn to code is to look
 at and inspect other peoples code and that&#x27;s what I love about GitHub.</p>
@@ -4088,24 +4088,24 @@ software. The other great opportunity GitHub features is, of course, OSS.</p>
 <p>Everybody is encouraged to contribute to famous projects. I have to admit that I
 did not dare to contribute a PR so far, but it&#x27;s definitely a big thing on my to
 do list. I also really like the GitHub
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/explore">explore section <span> ↗</span></a> where you can find and browse new
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/explore">explore section <span> ↗</span></a> where you can find and browse new
 projects.</p>
 <h3><a name="css-tricks"></a> CSS-Tricks</h3>
-<p>I guess I know about <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/">CSS-Tricks <span> ↗</span></a> since I made my first
+<p>I guess I know about <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/">CSS-Tricks <span> ↗</span></a> since I made my first
 real steps in web development back when I did my bachelors degree. Originally
 its articles contained <strong>real CSS tricks</strong> but this changed so now it covers
 tricks for almost every section in web development! I really like CSS-Tricks for
 their <strong>great articles and tutorials</strong>. They are also the creators of
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://codepen.io/">CodePen <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://codepen.io/">CodePen <span> ↗</span></a>.</p>
 <p>One of my favorite articles on CSS-Tricks is
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/front-end-development-is-development/">Front End Development is Development <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/front-end-development-is-development/">Front End Development is Development <span> ↗</span></a>
 by Geoff Graham where he explains why some people argue that Front End
 Development should not be considered &quot;real development&quot; and why this is just
 wrong. It&#x27;s a great summary of all the aspects a Frontend Developer has to deal
 with and it clearly shows that we are &quot;real&quot; developers.</p>
 <p>Another article, which I think is really one of the best on CSS-Tricks, was
 recently published by Chris Coyier and is called
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/front-end-developer-aware/">A Front End Developer is Aware <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/front-end-developer-aware/">A Front End Developer is Aware <span> ↗</span></a>.
 It just starts off, where the other article stopped and explains the position of
 a Frontend Developer and why we have to be aware of everything.</p>
 <p>&quot;In a general sense, the front end developer is positioned in the middle of lots
@@ -4121,26 +4121,26 @@ everything else that makes a website tick.&quot;</p>
 much about CSS-Tricks.</p>
 <h3><a name="smashing-magazine"></a> Smashing Magazine</h3>
 <p>When I wanted to discover more web development resources,
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.smashingmagazine.com/">Smashing-Magazine <span> ↗</span></a> wasn&#x27;t really hard to
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.smashingmagazine.com/">Smashing-Magazine <span> ↗</span></a> wasn&#x27;t really hard to
 find. It&#x27;s one of the <strong>biggest</strong> and <strong>most important blogs</strong> about frontend
 development and in my opinion it&#x27;s a place where the best and most researched
 articles are published.</p>
 <p>Compared to other blogs its articles are not short posts or tutorials - they
 usually dig a lot <strong>deeper</strong> and explain further contexts. Next to their well
 researched articles Smashing Mag also publishes the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.smashingmagazine.com/printed-books/smashing-book-5/">Smashing Book <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.smashingmagazine.com/printed-books/smashing-book-5/">Smashing Book <span> ↗</span></a>.</p>
 <p>The latest published book, Smashing Book 5, is about &quot;Real-Life Responsive Web
 Design&quot; and I highly recommend it. It covers various topics concerning
 Responsive Web Design like Responsive Workflow, Design Patterns and Components,
 SVG, Flexbox, Testing and Debugging and many more.</p>
 <p>On top of that, Smashing Mag organizes a great series of <strong>conferences</strong>: the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://smashingconf.com/">Smashing Conference <span> ↗</span></a>. I wasn&#x27;t able to attend one so
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://smashingconf.com/">Smashing Conference <span> ↗</span></a>. I wasn&#x27;t able to attend one so
 far but it&#x27;s definitely on my to do list.</p>
 <h3><a name="reddit"></a> Reddit JavaScript &amp; Learn JavaScript</h3>
 <p>Of Course you have heard of <strong>reddit</strong>, the &quot;front page of the internet&quot;. I use
 a lot of subreddits and for that reason I really like the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/javascript/">JavaScript <span> ↗</span></a> and
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/LearnJavaScript">Learn JavaScript <span> ↗</span></a> subreddits.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/javascript/">JavaScript <span> ↗</span></a> and
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.reddit.com/r/LearnJavaScript">Learn JavaScript <span> ↗</span></a> subreddits.</p>
 <p>I try to check them out daily because you&#x27;ll always find interesting <strong>links,
 projects or tools</strong> there or learn something new. Additionally a lot of people
 present their projects there attached to some problems they would like to
@@ -4149,7 +4149,7 @@ figure out a solution.</p>
 <p>So the JavaScript and Learn JavaScript Reddit pages are great places to get your
 <strong>daily dose of JavaScript</strong>. If you&#x27;re interested in more JavaScript links,
 especially focused on learning I&#x27;d like to point you to my
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/javascript-learning-resources">JavaScript learning resources <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/javascript-learning-resources">JavaScript learning resources <span> ↗</span></a>
 GitHub repository at this point. I think it&#x27;s a great collection of resources
 I&#x27;ve used and am using right now to dig deeper into JavaScript.</p>
 <h3><a name="newsletter"></a> Newsletter</h3>
@@ -4160,10 +4160,10 @@ links of the week about any frontend development topic.</p>
 <p>Sometimes I already got across the most links but this doesn&#x27;t matter, mostly
 there is always something <strong>new to learn</strong> and <strong>discover</strong>. So far I&#x27;m
 regularly reading the following three newsletters:</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://javascriptweekly.com/">JavaScript Weekly <span> ↗</span></a> which is obviously all about
-JavaScript, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://html5weekly.com/">Frontend Focus <span> ↗</span></a>, formerly HTML5 weekly,
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://javascriptweekly.com/">JavaScript Weekly <span> ↗</span></a> which is obviously all about
+JavaScript, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://html5weekly.com/">Frontend Focus <span> ↗</span></a>, formerly HTML5 weekly,
 which is more like a web platform technology roundup and last but not least the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://wdrl.info/">Web Development Reading List <span> ↗</span></a>. This one is also published
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://wdrl.info/">Web Development Reading List <span> ↗</span></a>. This one is also published
 on the Smashing Magazine website.</p>
 <p>What I really like about this newsletter is, that&#x27;s it is seperated in different
 sections like concept &amp; design, tools &amp; workflows, privacy, javascript, css/sass
@@ -4175,7 +4175,7 @@ big list and I definitely want it to <strong>grow</strong>!</p>
 <p>So if you&#x27;ve got any link to a blog, tool, newsletter, project etc. concerning
 frontend development, I&#x27;d love to check it out and add it to my collection. Feel
 free to drop me an email or directly contribute on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/frontend-bookmarks">GitHub <span> ↗</span></a>.</p>]]></content:encoded>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/marcoheine-com/frontend-bookmarks">GitHub <span> ↗</span></a>.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[New CSS Layout with CSS Grid & Flexbox]]></title>
@@ -4220,30 +4220,30 @@ properties which allow it to arrange elements on a page such that they behave
 predictably when the page layout shrinks, grows or changes in another way due to
 different screen sizes or display devices.</p>
 <p>You can read more about the concept behind Flexbox on the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">MDN Documentation <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">MDN Documentation <span> ↗</span></a>.
 Sure it took its time until Flexbox got wide browser support but now it&#x27;s up to
 94% of global browser support. For comparison browser-radius only got 90% global
 support.</p>
 <p>To gain more attention for Flexbox, a lot of smart people made tools to help
 others learn the main concepts of Flexbox really fast. My favorite two are
-Flexbox <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://flexboxfroggy.com/">Froggy <span> ↗</span></a> and
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.flexboxdefense.com/">Flexbox Defense <span> ↗</span></a>. The first one lets you use
+Flexbox <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://flexboxfroggy.com/">Froggy <span> ↗</span></a> and
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.flexboxdefense.com/">Flexbox Defense <span> ↗</span></a>. The first one lets you use
 the different Flexbox properties to guide Frogs to their lilypads. The second
 one uses Flexbox to position Towers all over a game court and destroy the
 incoming enemies with the help of these towsers.</p>
 <p>If you haven&#x27;t tried them out yet, don&#x27;t hesitate to do it now! If you are not
 into Gamification there is also a
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://egghead.io/lessons/misc-flexbox-fundamentals">great video <span> ↗</span></a> by Joe
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://egghead.io/lessons/misc-flexbox-fundamentals">great video <span> ↗</span></a> by Joe
 Maddalone for egghead where he explains all Flexbox properties in ten minutes.</p>
 <p>I also tried to contribute to the Flexbox learning movement. I made a small
 Flexbox playground where you can see all the Flexbox properties in action. You
 can switch between the different properties and immediately see their impacts
 and changes on the page layout.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/KzrqBY">Flexbox Playground on CodePen <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/KzrqBY">Flexbox Playground on CodePen <span> ↗</span></a></p>
 <p>I won&#x27;t get into all the Flexbox properties in this blog post, there are other
 great resources which explain all about Flexbox very well, like the Complete
 Guide to Flexbox by Chris Coyier on
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks <span> ↗</span></a>. This
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks <span> ↗</span></a>. This
 guide explains every Flexbox property in depth and covers every single thing you
 need to know to work with Flexbox.</p>
 <h3><a name="flexbox-dont-use-it-for-everything"></a>Flexbox - don&#x27;t use it for everything</h3>
@@ -4254,9 +4254,9 @@ weaknesses. Therefore it&#x27;s kinda hard to use Flexbox to built complex websi
 layouts.</p>
 <p>Of course it&#x27;s possible and I&#x27;ve seen a lot of tutorials showing you how to
 build a mulitcolumn or a holy-grail layout with flexbox. But it&#x27;s not meant for
-that. <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/jaffathecake">Jake Archibald <span> ↗</span></a> explains why Flexbox
+that. <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/jaffathecake">Jake Archibald <span> ↗</span></a> explains why Flexbox
 shouldn&#x27;t be used for page layout in this
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/">blog post <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/">blog post <span> ↗</span></a>.
 The best use cases for Flexbox are laying out small interface components like
 form elements, the links in a menu, everything that&#x27;s in a single dimension, in
 a row or a column.</p>
@@ -4270,23 +4270,23 @@ of content, CSS Grid Layout is perfectly for overall page layout.</p>
 <p>&quot;CSS Grid Layout (aka &quot;Grid&quot;), is a two-dimensional grid-based layout system
 that aims to do nothing less than completely change the way we design grid-based
 user interfaces.&quot; says Chris House in this amazing
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">complete guide to grid <span> ↗</span></a>.</p>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">complete guide to grid <span> ↗</span></a>.</p>
 <p>The big problem: global browser support is now at
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://caniuse.com/#search=grid">8.1% <span> ↗</span></a>. It&#x27;s currently a
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.w3.org/TR/css-grid-1/">W3C Working Draft <span> ↗</span></a> and it&#x27;s only usable with
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://caniuse.com/#search=grid">8.1% <span> ↗</span></a>. It&#x27;s currently a
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://www.w3.org/TR/css-grid-1/">W3C Working Draft <span> ↗</span></a> and it&#x27;s only usable with
 the experimental flag enabled in google chrome. But it will be only a matter of
 time until CSS Grid will redefine the way we layout websites with CSS.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/EKrNMp">CSS Grid Layout on CodePen <span> ↗</span></a></p>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://codepen.io/Mkuehb/pen/EKrNMp">CSS Grid Layout on CodePen <span> ↗</span></a></p>
 <p>I won&#x27;t get any deeper into all the properties of the CSS Grid Layout. There are
 some awesome guides out there, which will explain anything you need to know like
 the one from CSS-Tricks I mentioned before.</p>
 <p>Another great person you will definitely come across when dealing with CSS Grid
 is
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/rachelandrew?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Rachel Andrew <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/rachelandrew?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Rachel Andrew <span> ↗</span></a>.
 She held some great talks about CSS Grid Layout and works hard to teach people
 more about this new technology everday and gain more support for it.</p>
 <p>She is also the author and owner of
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gridbyexample.com/">gridbyexample.com <span> ↗</span></a> where she explains everything
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://gridbyexample.com/">gridbyexample.com <span> ↗</span></a> where she explains everything
 that exists about CSS Grid Layout. It&#x27;s one big collection of links to articles,
 videos and code examples so if you&#x27;re willing to learn more about this topic,
 this is the right place to start.</p>
@@ -4301,21 +4301,21 @@ ready to be used in production so we can establish finally a CSS layout method
 which is absolutely meant for this job.</p>
 <h3>Sources &amp; Further Reading</h3>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">Complete Guide to CSS <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/snippets/css/complete-guide-grid/">Complete Guide to CSS <span> ↗</span></a>
 Grid via CSS-Tricks</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://gridbyexample.com/">Collection of usage examples for the CSS Grid Layout <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://gridbyexample.com/">Collection of usage examples for the CSS Grid Layout <span> ↗</span></a>
 via Rachel Andrew</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://rachelandrew.co.uk/archives/2016/03/25/making-sense-of-the-new-css-layout/">Making Sense of the New CSS Layout <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://rachelandrew.co.uk/archives/2016/03/25/making-sense-of-the-new-css-layout/">Making Sense of the New CSS Layout <span> ↗</span></a>
 via Rachel Andrew – Talk at Fluent Conf</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.thedotpost.com/2015/12/rachel-andrew-the-new-css-layout">The New CSS Layout <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.thedotpost.com/2015/12/rachel-andrew-the-new-css-layout">The New CSS Layout <span> ↗</span></a>
 via Rachel Andrew – Talk at dotCSS 2015</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://24ways.org/2015/grid-flexbox-box-alignment-our-new-system-for-layout/">Grid, Flexbox, Box Alignment: Our new System for Layout <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://24ways.org/2015/grid-flexbox-box-alignment-our-new-system-for-layout/">Grid, Flexbox, Box Alignment: Our new System for Layout <span> ↗</span></a>
 via Rachel Andrew</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.sitepoint.com/introduction-css-grid-layout-module/">An Introduction to the CSS Grid Layout Module <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.sitepoint.com/introduction-css-grid-layout-module/">An Introduction to the CSS Grid Layout Module <span> ↗</span></a>
 via Ahmad Ajmi</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://blogs.igalia.com/mrego/2016/02/01/deep-dive-into-grid-layout-placement/">Deep Dive into Grid Layout Placement <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://blogs.igalia.com/mrego/2016/02/01/deep-dive-into-grid-layout-placement/">Deep Dive into Grid Layout Placement <span> ↗</span></a>
 via Manuel Rego Casasnovas</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/">Should I use Grid or Flexbox? <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/">Should I use Grid or Flexbox? <span> ↗</span></a>
 via Rachel Andrew</li>
 </ul>]]></content:encoded>
         </item>
@@ -4351,7 +4351,7 @@ improve these aspects on every website I&#x27;m working on. But am I the only on
 used to this behaviour, not wanting to wait longer than a few seconds for a
 website to load?</p>
 <p>Luke Wroblewski gathered some
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.lukew.com/ff/entry.asp?1553">interesting facts <span> ↗</span></a> about this topic.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.lukew.com/ff/entry.asp?1553">interesting facts <span> ↗</span></a> about this topic.
 The most interesting fact in my opinion is, that:</p>
 <blockquote>
 <p><em>&quot;If a page load takes more than two seconds, 40% are likely to abandon that
@@ -4362,7 +4362,7 @@ site&quot;</em></p>
 impact user experience and conversions&quot;.</p>
 <p>A recent example shows that Website Performance/Speed can make a huge
 difference. After a &quot;reboot&quot;
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://digiday.com/publishers/gq-com-cut-page-load-time-80-percent/">GQ cut the webpage load time by 80% <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://digiday.com/publishers/gq-com-cut-page-load-time-80-percent/">GQ cut the webpage load time by 80% <span> ↗</span></a>.
 The reasons for very slow loading times in the first place where mainly a lot of
 calls to the server for ad tags, features and additionally the GQ website was
 published on multiple CMS.</p>
@@ -4375,7 +4375,7 @@ even more about these topics for myself.</p>
 <h3><a name="where-to-start"></a>Where to start</h3>
 <p>While I&#x27;m working on a project or if I want to test a website which I find
 interesting, the first thing I usually do is heading over to
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/pagespeed/insights/">Googles PageSpeed Insights <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/pagespeed/insights/">Googles PageSpeed Insights <span> ↗</span></a>.
 With this tool you can test your website twice for efficiency: on mobile and on
 desktop.</p>
 <p>PageSpeed Insights captures the time your website needs to load the content
@@ -4385,12 +4385,12 @@ tests your website on user experience and in the end you&#x27;ll get a rating be
 <p>But this tool isn&#x27;t leaving you out in the cold after giving you this rating. It
 gives also useful advice on how to achieve a better rating. It explicitely tells
 you, what you&#x27;re doing wrong and how you can change that.</p>
-<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/docs/insights/rules">The Page Speed Insights <span> ↗</span></a>
+<p><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/speed/docs/insights/rules">The Page Speed Insights <span> ↗</span></a>
 shows, which rules for better speed and which rules for better user experience
 must be satisfied. I think it&#x27;s a great tool which not only tests everything but
 also tells you how you can do better.</p>
 <p>Another tool I don&#x27;t want to miss for testing a websites performance is the
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/resource-loading">Chrome Dev Tools Network Panel <span> ↗</span></a>.
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/resource-loading">Chrome Dev Tools Network Panel <span> ↗</span></a>.
 It:</p>
 <blockquote>
 <p><em>&quot;records information about each network operation on a page, including
@@ -4420,7 +4420,7 @@ to achieve it. This means to delete all whitespaces and comments in the files,
 so minified files mostly look like all code is standing on one line.</p>
 <p>There are multiple online tools who are able to do that. But as I recently
 started using Gulp, it does the job for me. The Gulp Plugin
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/scniro/gulp-clean-css">clean-css <span> ↗</span></a> just needs the original
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/scniro/gulp-clean-css">clean-css <span> ↗</span></a> just needs the original
 folder of your CSS file and the final destination and all the minify stuff is
 done in the background.</p>
 <pre class="mb-12"><code class="hljs language-javascript">gulp.<span class="hljs-title function_">task</span>(<span class="hljs-string">&#x27;minify-css&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
@@ -4433,7 +4433,7 @@ done in the background.</p>
 <h3><a name="compress-images"></a>Compress Images</h3>
 <p>The same goes with compressing Images. Images take the most space on a websites
 weight so compressing them is usually a good idea. I also used a Gulp Plugin to
-solve this task, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/sindresorhus/gulp-imagemin">imagemin <span> ↗</span></a>, and
+solve this task, <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://github.com/sindresorhus/gulp-imagemin">imagemin <span> ↗</span></a>, and
 saved a lot of space.</p>
 <pre class="mb-12"><code class="hljs language-javascript">gulp.<span class="hljs-title function_">task</span>(<span class="hljs-string">&#x27;imagemin&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
   <span class="hljs-keyword">return</span> gulp
@@ -4470,9 +4470,9 @@ request.</p>
 includes to create one single image out of all your background images and leads
 to, you guessed it, just one HTTP request instead of many. Than you just
 position it so that only the preferred image is displayed and the rest is
-hidden. <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/KittyGiraudel">Kitty Giraudel <span> ↗</span></a> created a little
+hidden. <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://twitter.com/KittyGiraudel">Kitty Giraudel <span> ↗</span></a> created a little
 script called
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://dev.edenspiekermann.com/2016/02/10/introducing-spritesh/">spritesh <span> ↗</span></a>
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://dev.edenspiekermann.com/2016/02/10/introducing-spritesh/">spritesh <span> ↗</span></a>
 which takes all of your SVG files and creates one sprite automatically. Very
 helpful!</p>
 <h3><a name="additional-advice"></a>Additional Advice</h3>
@@ -4483,7 +4483,7 @@ executes it. So putting your script into the head will block the page rendering.
 The page will render completely and the script tag loads after the DOM is loaded
 so there is no half loaded website or something like this.</p>
 <p>There are also a few other solutions to this like the attributes
-<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/docs/Web/HTML/Element/script">async &amp; defer <span> ↗</span></a> but
+<a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://developer.mozilla.org/docs/Web/HTML/Element/script">async &amp; defer <span> ↗</span></a> but
 as they are not combatible with all browsers yet they won&#x27;t work correctly in
 every browser.</p>
 <p>Another useful tip is to enable Gzip. Gzip makes it possible to recude the size
@@ -4493,17 +4493,17 @@ will automatically compress your website with Gzip.</p>
 I&#x27;m just at the beginning of the topic and there are a lot more ways to improve
 performance so the learning never stops.</p>
 <p>If you have got more tips or advices I would really appreciate it, if you share
-them with me. Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or reach out
+them with me. Just send me an <a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="mailto:marco@marcoheine.com">email <span> ↗</span></a> or reach out
 to me on Twitter!</p>
 <h3><a name="sources/further-reading"></a>Sources &amp; Further Reading</h3>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://jonsuh.com/blog/need-for-speed-2/">Need for Speed 2: Improving Front-End Performance <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://jonsuh.com/blog/need-for-speed-2/">Need for Speed 2: Improving Front-End Performance <span> ↗</span></a>
 via Jonathan Suh</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://learn.shayhowe.com/advanced-html-css/performance-organization/">Performance &amp; Organization <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://learn.shayhowe.com/advanced-html-css/performance-organization/">Performance &amp; Organization <span> ↗</span></a>
 via Shay Howe</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.hanselman.com/blog/TheImportanceAndEaseOfMinifyingYourCSSAndJavaScriptAndOptimizingPNGsForYourBlogOrWebsite.aspx">The Imortance (and Ease) of Minifying your CSS and JavaScript <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="http://www.hanselman.com/blog/TheImportanceAndEaseOfMinifyingYourCSSAndJavaScriptAndOptimizingPNGsForYourBlogOrWebsite.aspx">The Imortance (and Ease) of Minifying your CSS and JavaScript <span> ↗</span></a>
 via Scott Hanselman</li>
-<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/performance-tools/">Performance Tools by Robin Rendle <span> ↗</span></a>
+<li><a target="_blank" rel="noopener noreferrer" class="outgoing-link-trigger text-ellipsis hover:border-b-4 hover:border-dotted hover:border-b-primaryColorTwo" href="https://css-tricks.com/performance-tools/">Performance Tools by Robin Rendle <span> ↗</span></a>
 via Robin Rendle</li>
 </ul>]]></content:encoded>
         </item>
