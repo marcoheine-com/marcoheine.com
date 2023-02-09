@@ -12,7 +12,6 @@ import { CallToAction } from 'components/call-to-action'
 import { WebProjects } from 'components/web-projects'
 import { Testimonials } from 'components/testimonials'
 import { NextPage } from 'next'
-import { useRouter } from 'next/router'
 
 interface IndexPageProps {
   blogPosts: BlogPost[]
@@ -53,7 +52,6 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
 
   const latestBlogPosts = blogPosts.slice(0, 3)
   const latestTILPosts = tilData.slice(0, 3)
-  const location = useRouter()
 
   return (
     <Layout maxWidth="max-w-full">
@@ -62,7 +60,6 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
         ogImage={MarcoHeineImg}
         ogImageAlt="a picture of me"
         description={t('meta.index-description')}
-        location={location.asPath}
       />
 
       <section className="flex flex-col items-center">
