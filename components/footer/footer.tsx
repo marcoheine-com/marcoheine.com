@@ -174,12 +174,12 @@ const Footer = () => {
         {t('footer.hosting')}
         <a
           className={`${LINK_BASIC_STYLES} outgoing-link-trigger`}
-          href="https://www.netlify.com/"
+          href="https://vercel.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
           {' '}
-          Netlify. <span> &#8599;</span>
+          Vercel. <span> &#8599;</span>
         </a>
       </p>
       <p>

@@ -95,7 +95,7 @@ export const Testimonials: React.FC = () => {
                 <Image
                   src={testimonial.image}
                   alt={`a picture of ${testimonial.author}`}
-                  className="h-16 w-16 rounded-full"
+                  className="w-16 rounded-full"
                 />
               ) : null}
               <span className="mb-0 flex flex-col gap-2 italic">

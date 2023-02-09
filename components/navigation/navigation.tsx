@@ -98,7 +98,7 @@ const Navigation = () => {
           </li>
           <li>
             <ul className="m-0 flex list-none gap-4">
-              <span className="m-0 hidden lg:block">|</span>
+              <li className="m-0 hidden lg:block">|</li>
               {locales?.map((lng) => {
                 return (
                   <li

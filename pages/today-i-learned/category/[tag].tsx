@@ -102,7 +102,7 @@ const Tags: React.FC<NextPage & TILPostProps> = ({ tilPosts, tag }) => {
                 <aside className="mb-3 inline-block rotate-3 border-[3px] border-dotted border-primaryColorOne bg-white py-2 px-4 font-bold text-primaryColorOne transition-all duration-100 ease-linear hover:rotate-0 hover:bg-primaryColorOne hover:text-white ">
                   TIL #{frontmatter.number}
                 </aside>
-                <h3>{frontmatter.title}</h3>
+                <h2>{frontmatter.title}</h2>
 
                 {frontmatter.tags && (
                   <section className="mb-4 flex flex-wrap gap-3">
