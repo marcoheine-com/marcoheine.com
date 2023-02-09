@@ -18,6 +18,9 @@ const nextConfig = {
   // Configure pageExtensions to include md and mdx
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   i18n,
+  images: {
+    domains: ['media.giphy.com'],
+  },
   async redirects() {
     return [
       {

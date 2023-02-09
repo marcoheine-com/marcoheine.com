@@ -118,8 +118,7 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
                     alt={project.imageAlt}
                     src={project.image}
                     className="rounded-lg shadow-custom transition-all hover:-translate-y-1 hover:shadow-customDark"
-                    width={600}
-                    height={400}
+                    sizes="(min-width: 768px) 100vw, (min-width: 1024px) 50vw, 100vw"
                   />
 
                   <article className="flex flex-col justify-center">

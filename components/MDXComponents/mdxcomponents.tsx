@@ -1,4 +1,5 @@
 import { CoffeeHint } from 'components/coffeehint'
+import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
 
@@ -33,4 +34,11 @@ export const mdxcomponents = {
   pre: ({ children }) => <pre className="mb-12">{children}</pre>,
   a: CustomLink,
   hr: () => <hr className="my-10" />,
+  Image: (props) => (
+    <Image
+      src={props.src}
+      alt={props.alt}
+      sizes="(max-width: 600px) 100vw, 600px"
+    />
+  ),
 }

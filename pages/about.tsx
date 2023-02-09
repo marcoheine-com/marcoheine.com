@@ -37,6 +37,7 @@ const About = () => {
               alt="a picture of Marco Heine"
               src={MarcoHeineImg}
               className="mb-10 max-w-[300px] sm:mb-20"
+              priority
             />
 
             <div>

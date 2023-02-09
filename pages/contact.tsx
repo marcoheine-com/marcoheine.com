@@ -31,7 +31,7 @@ const Contact = () => {
       <h1 className="mb-0 text-center">{t('contact.headline')}</h1>
 
       <section className="mx-auto mt-20 mb-0 max-w-2xl">
-        <h3>{t('contact.subline')}</h3>
+        <h2>{t('contact.subline')}</h2>
         <p>
           <Trans i18nKey={'contact.text-one'} />
           <Link href="/work/"> Work</Link>
