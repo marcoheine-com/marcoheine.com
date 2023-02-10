@@ -4,12 +4,15 @@ import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import { MDXProvider } from '@mdx-js/react'
 import { mdxcomponents } from 'components/MDXComponents'
+import PlausibleProvider from 'next-plausible'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MDXProvider components={mdxcomponents}>
-      <Component {...pageProps} />
-    </MDXProvider>
+    <PlausibleProvider domain="marcoheine.com">
+      <MDXProvider components={mdxcomponents}>
+        <Component {...pageProps} />
+      </MDXProvider>
+    </PlausibleProvider>
   )
 }
 
