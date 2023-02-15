@@ -43,6 +43,10 @@ const SEO: React.FC<SEOProps> = ({
         content={metaDescription}
       />
       <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+      />
+      <meta
         name="og:type"
         content="website"
       />
