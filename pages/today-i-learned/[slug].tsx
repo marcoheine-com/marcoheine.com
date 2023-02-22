@@ -9,6 +9,7 @@ import { getAllTILPosts, getTILPostBySlug, TILPost } from 'lib/til'
 import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { getMDX } from 'lib/getMDX'
+import { PostFooter } from '@/components/post-footer'
 
 interface TILPostProps {
   tilPost: TILPost
@@ -71,14 +72,8 @@ const TilPost: React.FC<NextPage & TILPostProps> = ({
         </section>
         <h2>{frontmatter.title}</h2>
         <MDXRemote {...tilPostMDX} />
-        <p>
-          <i>Greetings Marco</i>
-        </p>
-        <span className="mb-4 block text-base before:content-['←']">
-          <Link href="/today-i-learned/">
-            Go back to other today-i-learned posts
-          </Link>
-        </span>
+
+        <PostFooter postType="til" />
       </section>
     </Layout>
   )

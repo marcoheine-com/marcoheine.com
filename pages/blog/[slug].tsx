@@ -10,6 +10,7 @@ import { BlogPost } from '..'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useRouter } from 'next/router'
 import { getMDX } from 'lib/getMDX'
+import { PostFooter } from '@/components/post-footer'
 
 interface BlogPostProps {
   blogPost: BlogPost
@@ -103,29 +104,8 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
         </section>
 
         <MDXRemote {...blogPostMDX} />
-        <hr className="mt-12 mb-10" />
 
-        <p>
-          I hope you enjoyed this article and learned something new. If you have
-          any questions, feel free to reach out to me on{' '}
-          <a
-            href="https://twitter.com/marcoheine_com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter &#8599;
-          </a>{' '}
-          or via <a href="mailto:hello@marcoheine.com">email &#8599;</a>.
-        </p>
-        <p>
-          If you want to support me, you can buy me a coffee. I would be very
-          happy about it!
-        </p>
-        <CoffeeLink />
-        <p>I wish you a wonderful day! Marco</p>
-        <span className="mb-4 block text-base before:content-['←']">
-          <Link href="/blog/">Go back to other Blog Posts</Link>
-        </span>
+        <PostFooter postType="blog" />
       </section>
     </Layout>
   )

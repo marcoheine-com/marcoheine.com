@@ -83,7 +83,7 @@
     @apply mt-16;
   }
 
-  p + h3:not(:first-of-type) {
+  p + h3 {
     @apply mt-12;
   }
 }

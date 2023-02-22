@@ -1,56 +1,24 @@
-import { CoffeeHint } from 'components/coffeehint'
+import { CustomLink } from '@/components/customlink'
+import { CoffeeHint } from '@/components/coffeehint'
 import Image from 'next/image'
-import Link from 'next/link'
 
-const CustomLink = (props) => {
-  const isInternalLink =
-    props.href && (props.href.startsWith('/') || props.href.startsWith('#'))
-  if (isInternalLink) {
-    return (
-      <Link
-        href={props.href}
-        {...props}
-        className="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo"
-      >
-        {props.children}
-      </Link>
-    )
-  }
-  return (
-    <a
-      target={'_blank'}
-      rel={'noopener noreferrer'}
-      className="outgoing-link-trigger break-all border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo"
-      {...props}
-    >
-      {props.children} <span> &#8599;</span>
-    </a>
-  )
-}
-
-const CodePenComponent = ({ id }) => {
+const CodePenComponent = ({ id, title }) => {
   return (
     <div className="mb-12">
-      <p
-        // eslint-disable-next-line tailwindcss/no-custom-classname
-        className="codepen"
-        data-height="400"
-        data-default-tab="css,result"
-        data-slug-hash={id}
-        data-preview="true"
-        data-editable="true"
-        data-user="Mkuehb"
-        style={{
-          height: '300px',
-          boxSizing: 'border-box',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          border: '2px solid',
-          margin: '1em 0',
-          padding: '1em',
-        }}
-      />
+      <iframe
+        height="400"
+        style={{ width: '100%' }}
+        title={title}
+        src={`https://codepen.io/Mkuehb/embed/preview/${id}?default-tab=css%2Cresult&editable=true`}
+        loading="lazy"
+      ></iframe>
+      <span>
+        See the Pen{' '}
+        <CustomLink href={`https://codepen.io/Mkuehb/pen/${id}`}>
+          {title}
+        </CustomLink>{' '}
+        by Marco Heine on <a href="https://codepen.io">CodePen</a>.
+      </span>
     </div>
   )
 }
@@ -58,7 +26,7 @@ const CodePenComponent = ({ id }) => {
 export const mdxcomponents = {
   CoffeeHint: CoffeeHint,
   pre: ({ children }) => <pre className="mb-12">{children}</pre>,
-  a: CustomLink,
+  a: (props) => <CustomLink {...props}>{props.children}</CustomLink>,
   hr: () => <hr className="my-10" />,
   Image: (props) => (
     <Image

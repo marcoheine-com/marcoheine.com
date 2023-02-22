@@ -20,6 +20,8 @@ sure, I don't regress.
 [Lighthouse 10](https://developer.chrome.com/en/blog/lighthouse-10-0/) was
 released recently and includes some major new features.
 
+### TTI is being removed
+
 One of the most significant changes is that
 [TTI (Time To Interactive)](https://web.dev/tti/) is being **removed**
 completely. Its 10% score weight is shifting to
@@ -44,6 +46,8 @@ tend to correlate better to the Core Web Vitals.
 The shifted and increased score weight of CLS will **improve the performance the
 score of about 90% of all websites**.
 
+### Back/forward cache
+
 Besides the removal of TTI and the increased score weight of CLS, there are two
 completely new features in Lighthouse 10.
 
@@ -54,6 +58,8 @@ from the test page, go back to it to see if it's bfcache-able.
 state nearly instantly, improving the user experience dramatically. However, if
 the website prevents the browser from restoring a page from bfcache, the audit
 will be impacted negatively and list reasons for the failure.
+
+### Paste-preventing Inputs
 
 Another new audit is **paste-preventing-inputs**. It will check if users can
 paste into any input fields on the page. Before that, there was only a check for
