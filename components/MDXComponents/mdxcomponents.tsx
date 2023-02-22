@@ -1,7 +1,6 @@
 import { CoffeeHint } from 'components/coffeehint'
 import Image from 'next/image'
 import Link from 'next/link'
-import * as React from 'react'
 
 const CustomLink = (props) => {
   const isInternalLink =
@@ -29,6 +28,33 @@ const CustomLink = (props) => {
   )
 }
 
+const CodePenComponent = ({ id }) => {
+  return (
+    <div className="mb-12">
+      <p
+        // eslint-disable-next-line tailwindcss/no-custom-classname
+        className="codepen"
+        data-height="400"
+        data-default-tab="css,result"
+        data-slug-hash={id}
+        data-preview="true"
+        data-editable="true"
+        data-user="Mkuehb"
+        style={{
+          height: '300px',
+          boxSizing: 'border-box',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: '2px solid',
+          margin: '1em 0',
+          padding: '1em',
+        }}
+      />
+    </div>
+  )
+}
+
 export const mdxcomponents = {
   CoffeeHint: CoffeeHint,
   pre: ({ children }) => <pre className="mb-12">{children}</pre>,
@@ -41,4 +67,5 @@ export const mdxcomponents = {
       {...props}
     />
   ),
+  CodePen: CodePenComponent,
 }
