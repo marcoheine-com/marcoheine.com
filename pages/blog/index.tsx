@@ -111,32 +111,19 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
               key={`${title}-${index}`}
             >
               <article
-                className={`p-5 text-primaryColorOne transition-all hover:rounded-xl hover:shadow-custom md:grid md:grid-rows-[auto_auto_auto_auto_auto] md:gap-x-[50px] md:gap-y-5 ${
-                  frontmatter.featuredImage
-                    ? 'md: grid-cols-[1fr_1fr]'
-                    : 'grid-cols-[620px]'
-                }`}
+                className={`mb-4 p-5 text-primaryColorOne transition-all hover:rounded-xl hover:shadow-custom`}
               >
-                <h3 className="md:col-start-1 md:col-end-2 md:mb-0">{title}</h3>
-                {frontmatter.featuredImage && (
-                  <div className="md:col-span-2 md:row-start-1 md:row-end-[-1]">
-                    <Image
-                      alt={frontmatter.featuredImageAlt}
-                      src={frontmatter.featuredImage}
-                    />
-                  </div>
-                )}
+                <h3 className="mb-2">{title}</h3>
+
                 <time
-                  className="mb-0 text-base md:col-start-1 md:col-end-2"
+                  className="text-base"
                   dateTime={date}
                 >
                   Published on: {date}
                 </time>
 
-                <p className="mb-2 md:col-start-1 md:col-end-2">
-                  {description}
-                </p>
-                <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1 md:col-start-1 md:col-end-2 md:row-start-4 md:row-end-5">
+                <p className="mb-2">{description}</p>
+                <span className="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
                   Read article
                 </span>
               </article>

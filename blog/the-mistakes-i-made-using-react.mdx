@@ -1,6 +1,7 @@
 ---
 title: The mistakes I made using React
 date: 2022-07-14
+updated: 2023-02-24
 path: /the-mistakes-i-made-using-react
 featuredImage: /images/tai-bui-iPsOfXA79U4-unsplash.webp
 featuredImageAlt: 'a cat sitting on a laptop keyboard'
@@ -105,7 +106,7 @@ const MyProfile = ({ name, lastname, hobbies }) => {
 
 	useEffect(() => {
 		setContactDetails(getContactSortedByHobbiesAndName(name, lastname, hobbies)
-	}, [name, lastname, hobbies]
+	}, [name, lastname, hobbies])
 }
 ```
 
@@ -211,27 +212,20 @@ Don’t ❌:
 
 ```jsx
 const Header = () => {
-	const [data, setData] = useState(null)
+  const [data, setData] = useState(null)
 
-	return (
-		<SearchBar
-			onChange={setData}
-		/>
-	)
+  return <SearchBar onChange={setData} />
 }
 
 const Searchbar = ({ onChange }) => {
+  const data = fetchSearchResults()
 
-	const data = fetchSearchResults()
-
-	useEffect(() => {
-		if (data) {
-			onChange(data)
-		}
-
-	}, [onChange, data]
+  useEffect(() => {
+    if (data) {
+      onChange(data)
+    }
+  }, [onChange, data])
 }
-
 ```
 
 This pattern seems weird at first. But it helped me for several specific use
