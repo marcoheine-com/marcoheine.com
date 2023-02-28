@@ -3,15 +3,15 @@ title:
   🚀 React performance quick wins 🚀 - 7 easy ways to improve your React
   performance - part 2
 date: 2021-01-18
-updated: 2022-11-24
+updated: 2023-02-28
 path: /7-easy-ways-to-improve-your-react-performance-part-2
 description:
   In part 2 of this series, we'll look at another four ways to improve your
   React performance.
 ---
 
-In part 1 of this react performance quick-wins series, we already learned about the following:
-
+In part 1 of this react performance quick-wins series, we already learned about
+the following:
 
 - [Always use a key when mapping and no index](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#keys)
 - [Use React.Fragments instead of divs as parent element](/blog/7-easy-ways-to-improve-your-react-performance-part-1/#fragments)
@@ -22,8 +22,8 @@ apply directly to your code and improve your performance
 
 This Post is Part 2 of a series.
 
-Part 1: [7 easy ways to improve your React performance - part 1](/blog/7-easy-ways-to-improve-your-react-performance-part-1/)
-
+Part 1:
+[7 easy ways to improve your React performance - part 1](/blog/7-easy-ways-to-improve-your-react-performance-part-1/)
 
 **What you can learn from Part 2 of this React performance quick wins series:**
 
@@ -35,7 +35,6 @@ Part 1: [7 easy ways to improve your React performance - part 1](/blog/7-easy-wa
 - [Virtualized lists](#virtualized-lists)
 
 ---
-
 
 ## <a name='avoid-anonymous-funcs'></a>Avoid anonymous functions
 
@@ -61,20 +60,23 @@ Anonymous functions aren't assigned an identifier like const/let/var. This means
 they **are not persistent** whenever this functional component gets rendered
 again. So JavaScript has to **create them again and again,** on every rerender.
 
-This becomes a problem if you're rendering a lot of elements, like a lot of
-table cells, which all make use of an anonymous function.
+> **To be clear:** for most cases this isn't a real problem! The react docs
+> event state that
+> [it's okay to use anonymous functions in render methods](https://reactjs.org/docs/faq-functions.html#is-it-ok-to-use-arrow-functions-in-render-methods).
+> It becomes an actual problem if you're rendering a lot of elements, like
+> thousands of table cells, which all make use of an anonymous function.
 
-There is an easy way to solve this. You can change it to a **named
-function**.
+There is an easy way to solve this. You can change it to a **named function**
+and move it outside of the component.
 
 ```jsx
 import * as React from 'react'
 
-const MyComponent = () => {
-  const handleClick = () => {
-    console.log('Button clicked')
-  }
+const handleClick = () => {
+  console.log('Button clicked')
+}
 
+const MyComponent = () => {
   return <button onClick={handleClick}>Click me!</button>
 }
 
@@ -88,8 +90,8 @@ That's it for quick-win number 4: avoid anonymous functions!
 Here comes quick-win number 5. Something similar as described above can be
 applied to objects.
 
-If you define an object as an object literal and pass it in as props, this object
-will have to be recreated on every rerender.
+If you define an object as an object literal and pass it in as props, this
+object will have to be recreated on every rerender.
 
 ```jsx
 import * as React from 'react'
@@ -129,8 +131,8 @@ Performance quick-win, whoop whoop! 🚀
 
 ## <a name='lazy-suspense'></a>React.lazy and React.Suspense
 
-With `React.lazy`, you can "lazy load" your components. This means your component
-is only rendered when it is truly needed and not loaded unnecessarily.
+With `React.lazy`, you can "lazy load" your components. This means your
+component is only rendered when it is truly needed and not loaded unnecessarily.
 
 The less you need to load, the better your performance!
 
@@ -145,19 +147,19 @@ effort.
 
 ## <a name='virtualized-lists'></a>Virtualized lists
 
-If you've worked with long lists or tables with many rows in React, you
-know how much this can impact your performance. This is because you have to render a lot of
-content, usually many divs.
+If you've worked with long lists or tables with many rows in React, you know how
+much this can impact your performance. This is because you have to render a lot
+of content, usually many divs.
 
 We already learned that too many DOM nodes are not a good idea. Also updates and
 rerenders can be painful because they take just way too long.
 
-With virtualized lists, only the list items that are actually in
-the viewport are rendered. That's pretty cool. But how does this work? Don't worry; you won't
+With virtualized lists, only the list items that are actually in the viewport
+are rendered. That's pretty cool. But how does this work? Don't worry; you won't
 have to build this yourself. There are already excellent tools out there that do
 the job for you.
 
-Check out <a href="https://github.com/bvaughn/react-virtualized" target="_blank" rel="noopener noreferer">react-virtualized &#8599;</a> by
+Check out [react-virtualized](https://github.com/bvaughn/react-virtualized) by
 Brian Vaughn.
 
 It's pretty easy to use, and you don't need to worry about displaying long lists
