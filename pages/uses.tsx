@@ -1,3 +1,4 @@
+import { CustomLink } from '@/components/customlink'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 import Layout from '../components/layout'
@@ -19,23 +20,10 @@ const Uses = () => (
       <section className="mb-12">
         <p>
           Inspired by the massive{' '}
-          <a
-            href="https://uses.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            uses{' '}
-          </a>
-          collection initiated by{' '}
-          <a
-            href="https://twitter.com/wesbos"
-            target="_blank"
-            rel="nooper noreferrer"
-          >
-            @wesbos
-          </a>
-          , I decided to partizipate and share my own uses collection.
+          <CustomLink href="https://uses.tech/">uses</CustomLink> collection
+          initiated by{' '}
+          <CustomLink href="https://twitter.com/wesbos">Wes Bos</CustomLink>, I
+          decided to partizipate and share my own <i>uses</i> collection.
         </p>
 
         <p>
@@ -49,21 +37,20 @@ const Uses = () => (
         <ul>
           <li>
             <p>
-              My current <strong>editor</strong> is Visual Studio Code with the
-              Night Owl Theme. I use Menlo as my main <strong>font</strong>.
+              My current <strong>editor</strong> is Visual Studio Code with the{' '}
+              <CustomLink href="https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula">
+                Dracula Official Theme
+              </CustomLink>
+              . I use Menlo as my main <strong>font</strong>.
             </p>
           </li>
           <li>
             <p>
               I use zsh as my <strong>terminal</strong> with oh-my-zsh to manage
               the configuration. Currently I&apos;m using the{' '}
-              <a
-                href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <CustomLink href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#avit">
                 avit theme
-              </a>
+              </CustomLink>
               .
             </p>
           </li>
@@ -94,59 +81,58 @@ const Uses = () => (
           <li>
             <p>
               For <strong>Hosting</strong> and <strong>deployment</strong> I use{' '}
-              <a href="https://netlify.com">Netlify</a> and{' '}
-              <a href="https://vercel.com">Vercel</a>. They are both amazing
-              services that takes away so much configuration and just help me
-              ship my code as fast as possible.
+              <CustomLink href="https://netlify.com">Netlify</CustomLink> and{' '}
+              <CustomLink href="https://vercel.com">Vercel</CustomLink>. They
+              are both amazing services that takes away so much configuration
+              and just help me ship my code as fast as possible.
             </p>
           </li>
           <li>
             <p>
               For purchasing new <strong>domains</strong> I use{' '}
-              <a
-                href="namecheap.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Namecheap
-              </a>
-              .
+              <CustomLink href="https://namecheap.com">Namecheap</CustomLink>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For ally my <CustomLink href="/blog">blog</CustomLink> and{' '}
+              <CustomLink href="/today-i-learned"> today-i-learned</CustomLink>{' '}
+              post writings I use{' '}
+              <CustomLink href="https://notion.so">Notion</CustomLink>. We also
+              use it heavily for client projects. Kanban Boards, requirement
+              collections, meeting notes it all goes in there.
+            </p>
+          </li>
+          <li>
+            <p>
+              I use{' '}
+              <CustomLink href="https://plausible.io">Plausible</CustomLink> for
+              Analytics. It&apos;s a simple, open source, lightweight and
+              privacy-friendly alternative to Google Analytics.
             </p>
           </li>
         </ul>
       </section>
       <h2>Hardware</h2>
       <p>
-        Here is a{' '}
-        <a
-          href="https://twitter.com/marcoheine_com/status/1420799028757999623"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          photo of my desk setup
-        </a>
-        .
+        Here is an{' '}
+        <CustomLink href="https://twitter.com/marcoheine_com/status/1420799028757999623">
+          older photo of my desk setup
+        </CustomLink>
+        . It&apos;s not up to date but I haven&apos;t taken a new one yet.
       </p>
       <ul>
         <li>
           <p>
             At the end of 2020 and a lot of time in the home office, I deciced
-            it&apos;s time to upgrade to a <strong>standing desk</strong>. I
-            bought the{' '}
-            <a
-              href="https://www.fully.com/en-eu/jarvis-adjustable-height-desk-bamboo.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            that it&apos;s time to upgrade to a <strong>standing desk</strong>.
+            I bought the{' '}
+            <CustomLink href="https://www.fully.com/en-eu/jarvis-adjustable-height-desk-bamboo.html">
               Fully Jarvis Bamboo standing desk
-            </a>{' '}
-            and never looked back.
-          </p>
-        </li>
-        <li>
-          <p>
-            It offers so much customization, like storing the height of your
-            standing position. So it&apos;s an absolute recommendation!
+            </CustomLink>{' '}
+            and never looked back. It offers so much customization, like storing
+            the height of your standing position. So it&apos;s an absolute
+            recommendation!
           </p>
         </li>
         <li>
@@ -155,13 +141,10 @@ const Uses = () => (
             deciced to get a &quot;real&quot; <strong>chair</strong>. As
             I&apos;m using this chair almost everyday for 8 hours I decided to
             invest a little more and bought the{' '}
-            <a
-              href="https://www.steelcase.com/products/office-chairs/gesture/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Steelcase gesture.
-            </a>
+            <CustomLink href="https://www.steelcase.com/products/office-chairs/gesture/">
+              Steelcase gesture
+            </CustomLink>
+            .
           </p>
         </li>
         <li>
@@ -172,19 +155,22 @@ const Uses = () => (
         </li>
         <li>
           <p>
-            I use a Dell 4K 32&quot; monitor as my main <strong>monitor</strong>
-            . Currently I have the MacBook right in front of it and use the
-            keyboard of it.
+            I use the{' '}
+            <CustomLink href="https://www.amazon.de/dp/B08FRHFXWW?psc=1&ref=ppx_yo2ov_dt_b_product_details">
+              Dell S3121QD 4K 31.5&quot; monitor
+            </CustomLink>{' '}
+            as my main monitor.
           </p>
         </li>
         <li>
           <p>
-            I&apos;m thinking about getting a mechanical keyboard and a mouse so
-            I can set the MacBook to the right side of my monitor.
+            I have two keybords that I use in a kind of rotation. The first one
+            is the Apple Magic Keyboard without the numeric keypad. The second
+            one is the Keychron K2.
           </p>
-          <li>
-            <p>My current favourite mouse is the Logitech MX 3 Master.</p>
-          </li>
+        </li>
+        <li>
+          <p>My preferred mouse is the Logitech MX 3 Master.</p>
         </li>
       </ul>
     </section>
