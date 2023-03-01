@@ -25,13 +25,6 @@ export const PostFooter: React.FC<PostFooterProps> = ({ postType }) => {
       </p>
       <CoffeeLink />
       <p>I wish you a wonderful day! Marco</p>
-      <span className="mb-4 block text-base before:content-['←']">
-        {postType === 'blog' ? (
-          <Link href="/blog">Go back to other Blog Posts</Link>
-        ) : (
-          <Link href="/today-i-learned">Go back to other TIL Posts</Link>
-        )}
-      </span>
     </>
   )
 }

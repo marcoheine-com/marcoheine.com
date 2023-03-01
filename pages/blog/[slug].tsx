@@ -74,10 +74,6 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
       />
       <h1 className="mb-0 text-center">Blog</h1>
       <section className="mx-auto mt-20 mb-0">
-        <span className="mb-4 block text-base before:content-['←']">
-          <Link href="/blog/">Go back to other Blog Posts</Link>
-        </span>
-        <p></p>
         <h2>{title}</h2>
         <section className="mb-8 flex flex-col gap-4 rounded-lg bg-slate-50 p-3 text-base sm:flex-row sm:gap-16">
           <time

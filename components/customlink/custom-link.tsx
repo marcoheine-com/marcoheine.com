@@ -22,7 +22,7 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
     <a
       target={'_blank'}
       rel={'noopener noreferrer'}
-      className="outgoing-link-trigger break-all border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo"
+      className="outgoing-link-trigger border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo"
       {...props}
     >
       {props.children} <span> &#8599;</span>
