@@ -11,6 +11,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useRouter } from 'next/router'
 import { getMDX } from 'lib/getMDX'
 import { PostFooter } from '@/components/post-footer'
+import { CustomLink } from '@/components/customlink'
 
 interface BlogPostProps {
   blogPost: BlogPost
@@ -53,7 +54,7 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
   blogPostMDX,
 }) => {
   const location = useRouter()
-  const { frontmatter } = blogPost
+  const { frontmatter, slug } = blogPost
 
   const { title, date, updated, featuredImage, featuredImageAlt, description } =
     frontmatter
@@ -97,6 +98,11 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
               🔔 Last Updated: {updated}
             </time>
           )}
+          <CustomLink
+            href={`https://github.com/marcoheine-com/marcoheine.com/edit/main/blog/${slug}.mdx`}
+          >
+            Edit this Post
+          </CustomLink>
         </section>
 
         <MDXRemote {...blogPostMDX} />
