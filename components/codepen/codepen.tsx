@@ -20,14 +20,6 @@ export const CodePenComponent: React.FC<CodePenComponentProps> = ({
         src={`https://codepen.io/Mkuehb/embed/preview/${id}?default-tab=${defaultTab}&editable=true`}
         loading="lazy"
       ></iframe>
-      <span>
-        See the Pen{' '}
-        <CustomLink href={`https://codepen.io/Mkuehb/pen/${id}`}>
-          {title}
-        </CustomLink>{' '}
-        by Marco Heine on{' '}
-        <CustomLink href="https://codepen.io">CodePen </CustomLink>.
-      </span>
     </div>
   )
 }

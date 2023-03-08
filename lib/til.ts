@@ -26,6 +26,7 @@ export type TagName =
   | 'prisma'
   | 'nextjs'
   | 'tailwindcss'
+  | 'svg'
 export interface TILPost {
   slug: string
   frontmatter: {

@@ -21,4 +21,5 @@ export const TagValues = {
   ['ux']: 'UX',
   ['git']: 'Git',
   ['gatsby']: 'Gatsby',
+  ['svg']: 'SVG',
 }
