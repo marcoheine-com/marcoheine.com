@@ -10,6 +10,7 @@ import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { getMDX } from 'lib/getMDX'
 import { PostFooter } from '@/components/post-footer'
+import { PostHeader } from '@/components/post-header'
 
 interface TILPostProps {
   tilPost: TILPost
@@ -65,12 +66,13 @@ const TilPost: React.FC<NextPage & TILPostProps> = ({
       />
       <h1 className="mt-5 mb-0 text-center">Today I learned</h1>
       <section className="mx-auto mt-20 mb-0">
-        <section className="mb-8 rounded-lg bg-slate-50 p-3 text-base">
-          <time dateTime={frontmatter.date}>
-            🗓 Published on: {frontmatter.date}
-          </time>
-        </section>
         <h2>{frontmatter.title}</h2>
+        <PostHeader
+          date={frontmatter.date}
+          type="today-i-learned"
+          updated={frontmatter.updated}
+          slug={tilPost.slug}
+        />
         <MDXRemote {...tilPostMDX} />
 
         <PostFooter postType="til" />

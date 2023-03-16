@@ -1,6 +1,7 @@
 ---
 title: Missusing useEffect
 date: 2022-06-07
+updated: 2023-03-16
 path: /missusing-use-effect
 tags: ['react']
 number: 39
@@ -15,6 +16,15 @@ not a state setter either!
 This questions all my best practices I’ve applied over the last years since we
 got useEffect.
 
-David K. Piano held this amazing talk about our wrong understanding of useEffect
-and what the alternatives are:
-https://www.youtube.com/watch?v=Ck-e3hd3pKw&t=9274s So, good bye useEffect?
+David K. Piano held this amazing talk about
+[our wrong understanding of useEffect](https://www.youtube.com/watch?v=Ck-e3hd3pKw&)
+and what the alternatives are. So, good bye useEffect?
+
+His key takeaways were the following:
+
+- the default behaviour of `useEffect` is an infinite loop
+- `useEffect` is not for effects
+- `useEffect` is not a lifecycle hook
+- `useEffect` is not a state setter
+- `useEffect` should actually be called `useSynchronize`, because it's meant to
+  synchronize React with external systems

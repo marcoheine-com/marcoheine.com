@@ -61,6 +61,10 @@ export function getTILPostBySlug(slug: string) {
   const date = format(new Date(data.date), 'MMMM dd, yyyy')
   data.date = date
 
+  if (data.updated) {
+    data.updated = format(new Date(data.updated), 'MMMM dd, yyyy')
+  }
+
   return {
     slug: `${realSlug}`,
     frontmatter: { ...data },

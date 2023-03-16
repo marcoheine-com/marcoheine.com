@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import { getMDX } from 'lib/getMDX'
 import { PostFooter } from '@/components/post-footer'
 import { CustomLink } from '@/components/customlink'
+import { PostHeader } from '@/components/post-header'
 
 interface BlogPostProps {
   blogPost: BlogPost
@@ -74,37 +75,17 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
         location={location.asPath}
       />
       <h1 className="mb-0 text-center">Blog</h1>
+
       <section className="mx-auto mt-20 mb-0">
         <h2>{title}</h2>
-        <section className="mb-8 flex flex-col gap-4 rounded-lg bg-slate-50 p-3 text-base sm:flex-row sm:gap-16">
-          <time
-            dateTime={date}
-            className="mb-0"
-          >
-            🗓 {date}
-          </time>
-          <time
-            dateTime={timeToRead.toString()}
-            className="mb-0"
-          >
-            ⏱ {timeToRead} min read
-          </time>
 
-          {updated && (
-            <time
-              dateTime={date}
-              className="mb-0"
-            >
-              🔔 Last Updated: {updated}
-            </time>
-          )}
-          <CustomLink
-            href={`https://github.com/marcoheine-com/marcoheine.com/edit/main/blog/${slug}.mdx`}
-          >
-            Edit this Post
-          </CustomLink>
-        </section>
-
+        <PostHeader
+          date={date}
+          updated={updated}
+          timeToRead={timeToRead}
+          slug={slug}
+          type="blog"
+        />
         <MDXRemote {...blogPostMDX} />
 
         <PostFooter postType="blog" />
