@@ -22,7 +22,7 @@ export const Testimonials: React.FC = () => {
     {
       author: 'Christoph A. Kolb',
       company: 'Wahnsinn Design',
-      link: 'https://www.wahnsinn.design/',
+      link: 'https://wahnsinn.design/',
       image: ChristopImg,
       text: [
         {
