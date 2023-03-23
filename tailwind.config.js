@@ -16,6 +16,7 @@ module.exports = {
         linkHover: '#9D3215',
         text: '#3e3a3a',
         grey: '#737373',
+        yellowredgrey: '#faf6f5',
       },
       boxShadow: {
         custom: '2px 2px 12px #d9d9d9;',
