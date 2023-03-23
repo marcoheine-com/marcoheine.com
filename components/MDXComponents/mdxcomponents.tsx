@@ -15,5 +15,10 @@ export const mdxcomponents = {
       {...props}
     />
   ),
+  blockquote: ({ children }) => (
+    <blockquote className="mx-4 my-8 border-l-4 border-l-primaryColorTwo bg-yellowredgrey p-4">
+      {children}
+    </blockquote>
+  ),
   CodePen: CodePenComponent,
 }

@@ -71,8 +71,8 @@
     @apply mb-4;
   }
 
-  blockquote {
-    @apply mx-4 my-8 border-l-4 border-l-primaryColorTwo pl-4;
+  blockquote > p {
+    @apply mb-0;
   }
 
   p + h2:not(:first-of-type) {

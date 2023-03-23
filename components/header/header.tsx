@@ -1,6 +1,5 @@
 import { config } from 'config'
 import Link from 'next/link'
-import * as React from 'react'
 import Navigation from '../navigation'
 
 const Header = () => {

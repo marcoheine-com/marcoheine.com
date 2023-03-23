@@ -67,7 +67,7 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
     <Layout>
       <SEO
         title={`${
-          title.length > 60 ? `${title}` : `Marco Heine - Blog | ${title}`
+          title.length > 50 ? `${title}` : `Marco Heine - Blog | ${title}`
         }`}
         description={description}
         ogImage={featuredImage}
