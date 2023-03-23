@@ -67,6 +67,10 @@
     @apply mb-2 last:mb-0;
   }
 
+  li > ul {
+    @apply mt-2;
+  }
+
   hr {
     @apply mb-4;
   }
