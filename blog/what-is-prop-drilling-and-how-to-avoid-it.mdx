@@ -1,0 +1,346 @@
+---
+title: What is prop drilling and how to avoid it
+date: 2023-03-30
+path: /blog/what-is-prop-drilling-and-how-to-avoid-it
+description:
+  'Prop Drilling is a concept in React that is sometimes unavoidable but, in
+  most cases, should not be applied. In This article, I will discuss what it is
+  and how to avoid it.'
+---
+
+Prop Drilling is a concept in React that is sometimes unavoidable but, in most
+cases, should not be applied. In This article, I will discuss what it is and how
+to avoid it.
+
+---
+
+**Table of Contents**
+
+- [Props in React](#props-in-react)
+- [What is prop drilling](#what-is-prop-drilling)
+- [Context is not the solution](#context-is-not-the-solution)
+- [Composition](#composition)
+- [Sources and further reading](#sources-and-further-reading)
+
+---
+
+### Props in React <a id="props-in-react"></a>
+
+To understand the concept of Prop drilling, we first need to clarify **what
+props are** in React and how they are such a crucial aspect of
+Reacts **success** concerning unidirectional data flow.
+
+If you're already familiar with the concept of props in React,
+[skip to the next section](#what-is-prop-drilling) in this article. But you also
+might learn something new, like I did, although you've been working with React
+for a while.
+
+First and foremost, props are short for **Properties**. Props are used
+to **communicate** from one component to another. For example, a Parent
+Component can **pass information to children** by using the concept of props. To
+pass props, you have to add them to the JSX, just like you can do with HTML
+attributes.
+
+You can pass some **predefined props** to your child components, like
+`className`. You can also pass any props you want to your children. To read the
+props, you can either destructure the individual props inside your functions
+parenthesis or access the whole props object. Props are almost like function
+parameters.
+
+Here is a simple example of passing props down from a parent to a child
+component and reading it there:
+
+```JSX
+// Parent Component
+
+function ProductDetails() {
+  return (
+    <ProductHeader
+      className="parent-component"
+      productName="The best product ever"
+    />
+  );
+}
+
+// Child Component accessing the whole props object
+function ProductHeader(props) {
+  return (
+    <div className={props.className}>
+      <h1>{props.productName}</h1>
+    </div>
+  );
+}
+
+// Child Component destructuring the props object
+function ProductHeader({ className, productName }) {
+  return (
+    <div className={className}>
+      <h1>{productName}</h1>
+    </div>
+  );
+}
+```
+
+Not only can you pass values via props down to your children, but you can also
+send whole components through that informational pipeline. The parent component
+can access the nested component via the **children's prop** by nesting a
+component inside another component.
+
+That's called **passing JSX as children** and is a widespread concept when
+composing React apps. This gets important again when we talk about how to avoid
+prop drilling. Here's an example of it:
+
+```jsx
+function ProductDetails() {
+  return (
+    <ProductHeader>
+      <div>
+        <h1>The best product ever</h1>
+      </div>
+    </ProductHeader>
+  )
+}
+
+function ProductHeader({ children }) {
+  return <div>{children}</div>
+}
+```
+
+### What is prop drilling? <a id="what-is-prop-drilling"></a>
+
+Now that we understand props in React, let's talk about prop drilling and why it
+can become a problem.
+
+We talk about prop drilling when we **pass the same props several levels deep
+down the component tree**. Often these props get passed through components that
+**are not interested** in them but need to help pass them down to a certain
+point where they are required.
+
+Here's an example of that. Imagine you have a component tree like this:
+
+```jsx
+<App>
+  <Header />
+  <MainContent>
+    <ProductList>
+      <ProductCard>
+        <ProductDetailsModal>
+          <ProductDetails>
+            <ProductHeader />
+            <ProductDescription />
+            <ProductPrice />
+          </ProductDetails>
+        </ProductDetailsModal>
+      </ProductCard>
+    </ProductList>
+  </MainContent>
+  <Footer />
+</App>
+```
+
+On the root level, you fetch the data of the products from your API and pass it
+down to the components that need it.
+
+Imagine we want to display the name of product in the `ProductHeader` component.
+This means we need to pass the prop that withholds this information **all the
+way** through our component tree six levels down. On the way five components get
+this information, altough they **aren't even interested in it**.
+
+```jsx
+const productName = 'The best product ever'
+
+<App productName={productName}>
+  <Header />
+  <MainContent productName={productName}>
+    <ProductList productName={productName}>
+      <ProductCard productName={productName}>
+        <ProductDetailsModal productName={productName}>
+          <ProductDetails productName={productName}>
+            <ProductHeader productName={productName} />
+            <ProductDescription />
+            <ProductPrice />
+          </ProductDetails>
+        </ProductDetailsModal>
+      </ProductCard>
+    </ProductList>
+  </MainContent>
+  <Footer />
+</App>
+```
+
+Why is this a problem? This seems to be the recommended way to pass down
+information in React. For a few levels deep, making use of prop drilling is
+fine.
+
+But it gets **messy** if you apply this technique several levels down the
+component tree. First of all, passing props down so deeply involves **a lot of
+work**. And second, if you make one change to these props, you have to update
+these changes everywhere, which makes it **verbose and inconvenient**.
+
+Another big reason to avoid prop drilling is that **debugging is harder**.
+Imagine you notice that on the level where you do something with the data, you
+pass down so many levels, you get wrong values. So now you must trace the data
+through all the components and figure out where something went wrong.
+
+### Context is not the solution <a id="context-is-not-the-solution"></a>
+
+When React Context was introduced, many developers believed this was the perfect
+solution for a) **global state management** in React and b) **to avoid prop
+drilling**.
+
+Context lets a parent component **provide data to the entire tree below**.
+Here's an example of using context with the code from above:
+
+```jsx
+const ProductContext = React.createContext()
+
+function App() {
+  const productName = 'The best product ever'
+
+  return (
+    <ProductContext.Provider value={productName}>
+      <Header />
+      <MainContent />
+      <Footer />
+    </ProductContext.Provider>
+  )
+}
+
+function ProductHeader() {
+  const productName = React.useContext(ProductContext)
+
+  return <h1>{productName}</h1>
+}
+```
+
+First we have to create a context object with `React.createContext()`. Then we
+wrap our whole Application with a `Provider` component that provides the data we
+want to pass down to the entire tree below.
+
+At the point where we want to access the data, we use the `useContext` Hook to
+access the data. In this case it's `ProductHeader`, which, as we've seen in the
+example above, lies deeply nested inside the `MainContent` component.
+
+This looks perfect, right? No need to pass props down several levels deep and we
+can access it easily, where we actually need it.
+
+If you consider using context to avoid prop drilling, I must disappoint you.
+That's a bad idea. **Just because you must pass some props several levels deep
+doesn't mean you should put that information into context**.
+
+It's really easy to overuse this concept. So the official recommendation by the
+React docs is to use context only for specific use cases and not just to avoid
+prop drilling.
+
+One of these use cases is theming, for example. If you want to style your
+components differently, context is helpful to provide this information to the
+components that need it when a dark mode is applied, for example. You can check
+out the other recom use-cases for Context in the
+[official React docs](https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context).
+
+### Composition <a id="composition"></a>
+
+So, what else can we do if context is not the perfect solution to avoid prop
+dilling? The answer is **composition**. Composition in React means how you
+arrange your component tree. Dan Abramov, one of the core team members for
+React, even wrote a tweet that
+[being good at composing your React components is a top skill to learn in 2023 ](https://twitter.com/dan_abramov/status/1623771055943831553).
+
+Let's recap real quick. First, prop drilling in React can be verbose and
+inconvenient because debugging a prop passed down through many components can be
+hard to debug.
+
+And If you pass some data through many layers of intermediate components that
+don't use that data (and only pass it further down), this often means that you
+forgot to extract some components along the way.
+
+Extracting some components along the way is kind of a definition for composition
+in React. So you have to ask yourself: does it make sense that this component is
+nested down several levels deep and passes data along it's not interested in? Or
+can it be on a higher level up the component tree or part of another component
+so we can remove a whole level on the component tree?
+
+That's always the first step you have to make, when you notice that you have to
+pass props down several levels deep.
+
+Remember when we talked about passing JSX as children? This comes in handy when
+you thinkg about composition in React and want to avoid prop drilling. Here's
+our prop drilling example from above with a better composition:
+
+```jsx
+const productName = 'The best product ever'
+
+<App>
+  <Header />
+  <MainContent>
+    <ProductList productName={productName}>
+      <ProductCard>
+        <ProductDetailsModal>
+          <ProductDetails>
+            <ProductHeader />
+            <ProductDescription />
+            <ProductPrice />
+          </ProductDetails>
+        </ProductDetailsModal>
+      </ProductCard>
+    </ProductList>
+  </MainContent>
+  <Footer />
+</App>
+
+function ProductList ({ productName }) {
+  return (
+    <ProductCard>
+      <ProductDetailsModal>
+        <ProductDetails>
+          <ProductHeader>
+            <h1>{productName}</h1>
+          </ProductHeader>
+          <ProductDescription />
+          <ProductPrice />
+        </ProductDetails>
+      </ProductDetailsModal>
+    </ProductCard>
+  )
+}
+```
+
+In this example, composition in React is used to avoid prop drilling by passing
+down the necessary props to child components **without having to pass them down
+explicitly at each level**. The example demonstrates how to pass the
+`productName` prop from the top-level App component down to the ProductHeader
+component, which is nested several levels deep in the component hierarchy.
+
+To achieve this, the ProductList component accepts the productName prop and
+renders the ProductCard component with the necessary props. The ProductCard
+component then renders the ProductDetailsModal component with the necessary
+props, and so on until the ProductHeader component is rendered.
+
+They main idea here is, that **we have to pass the prop only into one
+component**, `ProductList`. This enables us to give the `ProductHeader` the
+`productName` prop way higher up the component tree. This way we can avoid
+passing the prop down several levels deep and prop drilling is no longer an
+issue.
+
+In conclusion, composition in React is a powerful technique that can help to
+avoid prop drilling, which is a common issue when passing props down several
+levels in the component tree.
+
+By passing JSX as props we can avoid prop drilling which leads to cleaner and
+more maintainable code. By using composition, we can create more modular and
+reusable components, which can be easier to reason about and maintain over time.
+Overall, composition is a key concept in React development that can lead to more
+efficient and effective development practices.
+
+### Sources & Further Reading <a id="sources-and-further-reading"></a>
+
+- [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+- [Tweet by Alex Sidorenko about prop drilling](https://twitter.com/asidorenko_/status/1623751929863016450)
+- [Using Composition in React to Avoid "Prop Drilling" by React Training](https://www.youtube.com/watch?v=3XaXKiXtNjw&feature=youtu.be)
+- [Passing JSX as children ](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+- [Prop drilling and component composition in React by Alex Sidorenko](https://alexsidorenko.com/blog/react-prop-drilling-composition/)
+
+```
+
+```
