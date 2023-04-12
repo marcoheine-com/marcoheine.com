@@ -1,17 +1,32 @@
 ---
 title: Clamp CSS function
-description: Today I learned about the clamp CSS function which enables fluid typography based on the viewport size without the need for media queries
+description:
+  Today I learned about the clamp CSS function which enables fluid typography
+  based on the viewport size without the need for media queries
 date: 2022-12-01
+updated: 2023-04-12
 path: /clamp-css-function
 tags: ['css']
 number: 56
 ---
 
-Today I learned about the clamp css function. A friend, with whom I'm currently working on a project, <a href="https://aerosolalliance.com" target="_blank">the aerosol alliance website &#8599;</a> told me about it and suggested using it for the project. 
+Today I learned about the **clamp css function**. A friend with whom I'm
+currently working on a project,
+[the aerosol alliance website](https://aerosolalliance.com) told me about it and
+suggested using it for the project.
 
-I've never heard about it or used it before and was happy to learn something new. The main idea behind using the CSS clamp function is that you don't have to define font-sizes for every project anymore. By using clamp you are handed and easier way to define fluid typography.
+I'd never heard about or used it before, and was happy to learn something new.
+The main idea behind using the CSS clamp function is that you no longer have to
+define font sizes for every project.
 
-The clamp function takes three values: a minimum value, a preferred value and a maximum value. The preferred value is the value that will be used if the viewport size is in between the minimum and maximum value. If the viewport size is smaller than the minimum value, the minimum value will be used. If the viewport size is larger than the maximum value, the maximum value will be used.
+Instead, using clamp gives you an easier way to define **fluid typography**.
+
+The clamp function takes three values: **a minimum value, a preferred value, and
+a maximum value**. The preferred value is the value that will be used if the
+viewport size is in between the minimum and maximum values.
+
+The minimum value will be used, if the viewport size is smaller than the minimum
+value. Same logic is applied for the the maximum value.
 
 The following example shows how to use the clamp function:
 
@@ -19,10 +34,12 @@ The following example shows how to use the clamp function:
 font-size: clamp(1rem, 2vw, 2rem);
 ```
 
-There is even a <a href="https://clamp.font-size.app/" target='_blank'>generator &#8599; </a> available, which we've used recently on the project mentioned above. 
+There is even a [generator](https://clamp.font-size.app/) available, which we've
+used recently on the project mentioned above.
 
-I'm really happy to have learned about this function and I'm looking forward to using it in the future.
-
+I'm really happy to have learned about this function, and I'm looking forward to
+using it in the future.
 
 Read more:
-* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" target="_blank">MDN Web Docs: clamp() &#8599;</a>
+
+- [MDN Web Docs: clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
