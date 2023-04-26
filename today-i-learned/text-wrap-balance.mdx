@@ -1,0 +1,65 @@
+---
+title: 'Text-wrap: balance'
+date: 2023-04-26
+path: /text-wrap-balance
+tags: ['css']
+number: 67
+description:
+  Text-wrap balance is a new way to specify with CSS how lines of text are
+  balanced.
+---
+
+If you're working on websites where the content is very flexible, where editors
+can add text, for example, via a CMS, you often don't know "the final size, font
+size or language of text".
+
+It's hard, especially for headlines, to make two lines consistent in the number
+of words per line.
+
+Often it looks weird when a headline breaks on a specific breakpoint and just
+one word gets wrapped in the following line.
+
+We always had to use techniques that felt more like hacks to enforce a more
+consistent wrap. Using `<br />` tags or `&nbsp;.` Counting the words with
+JavaScript and adding `<span>` tags around them.
+
+Very soon, we will have a new CSS property called `text-wrap: balance` that will
+help us with this.
+
+To use this CSS property, you will need to apply it like this:
+
+```css
+.my-headline {
+  max-width: 20rem;
+  text-wrap: balance;
+}
+```
+
+This will ensure that the text is balanced over two lines and that the number of
+words stays consistent. At the same time, it does not affect the element's width
+and will only affect the words within the element.
+
+Only using this property may not be enough because the text needs to wrap and
+therefore needs a max width.
+
+Here's a direct comparison of the same text with and without
+`text-wrap: balance`:
+![a screenshot showing two headlines, the first one does not wrap nicely, the second does.](/images/text-wrap-balance.webp)
+
+Both have set the same max-width but only the second one has the new property
+set. The first one has a weird break where it wraps only one word into the next
+line while the second one is balanced over two lines.
+
+Ahmad has a lot of great examples of where this new property could be useful:
+[CSS Text balancing with text-wrap:balance](https://ishadeed.com/article/css-text-wrap-balance/)
+
+[Adam Argyle argues](https://developer.chrome.com/blog/css-text-wrap-balance/)
+that balancing headlines is the primary use case for `text-wrap: balance.`
+
+It's currently only available in Chrome Canary and behind a flag. But it looks
+promising that we will be able to use this property soon in all major browsers.
+
+### Sources:
+
+- [CSS Text balancing with text-wrap:balance](https://ishadeed.com/article/css-text-wrap-balance/)
+- [CSS text-wrap: balance](https://developer.chrome.com/blog/css-text-wrap-balance/)
