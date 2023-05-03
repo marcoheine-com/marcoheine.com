@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 import Link from 'next/link'
-import { getAllTILPosts, getTILPostsByTag, Tag, TILPost } from 'lib/til'
+import { getAllTILPosts, getTILPostsByTag, TagName, TILPost } from 'lib/til'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ import { TILCard } from '@/components/til-card'
 
 interface TILPostProps {
   tilPosts: TILPost[]
-  tag: string
+  tag: TagName
 }
 
 export async function getStaticProps({ params, locale }) {
@@ -34,7 +34,7 @@ export async function getStaticPaths({ locales }) {
   const pathsWithLocales = tilPosts.reduce((acc, post) => {
     const { tags } = post.frontmatter
 
-    tags?.forEach((tag) => {
+    tags?.forEach((tag: TagName) => {
       locales.forEach((locale) => {
         acc.push({
           params: {

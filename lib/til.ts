@@ -27,6 +27,7 @@ export type TagName =
   | 'nextjs'
   | 'tailwindcss'
   | 'svg'
+  | 'serverless'
 export interface TILPost {
   slug: string
   frontmatter: {
@@ -72,7 +73,7 @@ export function getTILPostBySlug(slug: string) {
   }
 }
 
-export const getTILPostsByTag = (tag: string) => {
+export const getTILPostsByTag = (tag: TagName) => {
   const posts = getAllTILPosts({ withPrefix: true })
 
   return posts.filter((post) => {

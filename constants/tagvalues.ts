@@ -22,4 +22,5 @@ export const TagValues = {
   ['git']: 'Git',
   ['gatsby']: 'Gatsby',
   ['svg']: 'SVG',
+  ['serverless']: 'Serverless',
 }
