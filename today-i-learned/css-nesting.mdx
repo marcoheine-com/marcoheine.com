@@ -1,0 +1,109 @@
+---
+title: CSS Nesting
+date: 2023-05-10
+path: /css-nesting
+tags: ['css']
+number: 69
+description:
+  CSS Nesting is finally built into the language. No need for a preprocessor
+  anymore! In this post, I'll look at the spec and valid selectors.
+---
+
+If you've been working with SCSS, you know that **nesting** in CSS is possible
+by using this **extension** of the language.
+
+In SCSS, you could write something like this to style the children of a parent:
+
+```scss
+.parent {
+  color: red;
+
+  .child {
+    color: blue;
+  }
+}
+```
+
+To achieve the same thing in CSS, you would have to write something like this:
+
+```css
+.parent {
+  color: red;
+}
+
+.parent .child {
+  color: blue;
+}
+```
+
+This is not a big deal if you only have one child, but if you have multiple it
+can get **messy and very repetitive**.
+
+The W3C worked on a new module to finally **enable CSS nesting without the need
+of a preprocessor**.
+
+Their main reason for doing this was to increase the "modularity and
+maintainability of CSS stylesheets." Furthermore, they explain their motivation
+as follows:
+
+> The CSS for even moderately complicated web pages often includes lots of
+> duplication for the purpose of styling related content.
+
+Here's how you can nest CSS without the need for SCSS:
+
+```css
+.parent {
+  color: red;
+
+  .child {
+    color: blue;
+  }
+}
+```
+
+It's the same as in SCSS, so if you're used to that syntax, you don't have to
+re-learn a lot!
+
+It's also possible to use relative selectors when using nesting:
+
+```css
+.parent {
+  color: red;
+
+  &:hover {
+    color: blue;
+  }
+
+  + .sibling {
+    color: green;
+  }
+}
+```
+
+The only thing that's not valid is to use nesting selectors that start with an
+**identifier**:
+
+```css
+.parent {
+  color: red;
+
+  input {
+    color: blue;
+  }
+}
+```
+
+You can look at all the valid nestings in the
+[specification](https://www.w3.org/TR/css-nesting-1/#nesting-rules). They also
+provided an in-depth explanation of why there is a need for **restrictions** on
+nested rule selectors.
+
+I think that's a great addition to the language. If you want to try it out right
+away, you can test it in the latest releases of Chrome, Edge, and Safari. You
+can check out the browser support here:
+[Can I use - CSS nesting](https://caniuse.com/css-nesting).
+
+### Sources
+
+- [CSS Nesting Module](https://www.w3.org/TR/css-nesting-1/)
+- [CSS Nesting](https://developer.chrome.com/articles/css-nesting/)
