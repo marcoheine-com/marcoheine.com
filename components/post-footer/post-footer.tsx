@@ -1,6 +1,5 @@
 import CoffeeLink from '@/components/coffeehint/CoffeeLink'
 import { CustomLink } from '@/components/customlink'
-import Link from 'next/link'
 
 interface PostFooterProps {
   postType: 'blog' | 'til'

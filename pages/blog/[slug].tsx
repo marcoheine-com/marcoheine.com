@@ -1,8 +1,6 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
-import CoffeeLink from '../../components/coffeehint/CoffeeLink'
 import SEO from '../../components/seo'
-import Link from 'next/link'
 import { getAllPosts, getBlogPostBySlug } from '../../lib/blog'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextPage } from 'next'
@@ -11,7 +9,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useRouter } from 'next/router'
 import { getMDX } from 'lib/getMDX'
 import { PostFooter } from '@/components/post-footer'
-import { CustomLink } from '@/components/customlink'
 import { PostHeader } from '@/components/post-header'
 
 interface BlogPostProps {
