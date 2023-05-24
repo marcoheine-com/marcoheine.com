@@ -63,6 +63,13 @@
     @apply ml-6 mb-4 list-disc;
   }
 
+  ol {
+    @apply ml-6 mb-4 list-decimal;
+  }
+
+  ol li {
+    @apply mb-2 last:mb-0;
+  }
   ul li {
     @apply mb-2 last:mb-0;
   }
