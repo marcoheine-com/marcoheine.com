@@ -94,7 +94,8 @@
     @apply mt-16;
   }
 
-  p + h3 {
+  p + h3,
+  ul + h3 {
     @apply mt-12;
   }
 }
