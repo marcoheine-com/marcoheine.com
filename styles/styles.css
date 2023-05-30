@@ -78,6 +78,10 @@
     @apply mt-2;
   }
 
+  li > a {
+    @apply overflow-hidden text-clip;
+  }
+
   hr {
     @apply mb-4;
   }
