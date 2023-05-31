@@ -1,0 +1,68 @@
+---
+title: 'The popover API'
+date: 2023-05-31
+path: /the-popover-api
+tags: ['html', 'accessibility', 'ux']
+number: 71
+description:
+  'The popover API is a new HTML attribute that makes it easy to integrate
+  popovers into websites without the need for JavaScript.'
+---
+
+If you wanted to integrate a popover on a website before, you had to reach out
+to a **third-party package** in the past because they made it easy to customize
+things like positioning and enhancing functionality. This may soon be a tale of
+the past!
+
+[The popover API](https://hidde.blog/popover-semantics/) with the popover
+attribute was introduced recently and is available in Chromium 114. By using
+this new popover API, it will be **easier to integrate popovers into websites**.
+It brings all the needed functionality and satisfies all the **accessibility
+concerns**. And all of that without using any JavaScript.
+
+To make use of the new popover API, three basic things are required:
+
+- the popover attribute on the element containing the popover
+- an id on the element containing the popover
+- the element which opens the popover needs to have a popovertarget attribute
+  with the value of the popover’s id
+
+```html
+<button popovertarget="popover">Open popover</button>
+
+<div
+  popover
+  id="popover"
+>
+  <p>Popover content</p>
+</div>
+```
+
+Implementing such a popover is **accessible by default** because the popover and
+its trigger are **connected semantically**. Furthermore, closing the popover
+with the ESC key is built-in, making it easy for keyboard users to dismiss it.
+
+In addition to that, the new popover has a **light-dismiss functionality**. If
+you click anywhere outside the popover, it will close and return focus. If you
+open the popover, the next keyboard tab will stop inside the popover, so **focus
+management is handled by default**.
+
+Another great advantage of it is that the popover will always appear on a
+separate level above the rest of the page, so there is **no need for manual
+z-index handling**.
+
+That’s such a great addition, I can’t wait until it’s stable in all modern
+browsers and we can use it! It’s a big step into easier and faster ways to build
+websites and improve accessibility by default.
+
+It’s important to note that the new popover attribute **will only add behavior,
+not semantics**. Popovers have no default role, and you’re supposed to add your
+own semantics to it! Hidde de Vries wrote an
+[excellent post about different semantics](https://hidde.blog/popover-semantics/)
+that could make sense for popover-behaved elements. He takes a closer look at
+menus, dialogs, and listboxes.
+
+### Sources
+
+- [Introducing the popover API by Una Kravets](https://developer.chrome.com/blog/introducing-popover-api/)
+- [Popover semantics by Hidde de Vries](https://hidde.blog/popover-semantics/)
