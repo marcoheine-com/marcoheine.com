@@ -1,25 +1,24 @@
+import { CustomLink } from '@/components/customlink'
+import Link from 'next/link'
+
 interface CodePenComponentProps {
+  className?: string
   id: string
-  height?: number
   title: string
-  defaultTab?: string
 }
 
 export const CodePenComponent: React.FC<CodePenComponentProps> = ({
+  className,
   id,
-  height = 400,
   title,
-  defaultTab = 'css%2Cresult',
 }) => {
   return (
-    <div className="mb-12">
-      <iframe
-        height={height}
-        style={{ width: '100%' }}
-        title={title}
-        src={`https://codepen.io/Mkuehb/embed/preview/${id}?default-tab=${defaultTab}&editable=true`}
-        loading="lazy"
-      ></iframe>
-    </div>
+    // Re-using Custom Link here, because I removed the CodePen embed and did not want to change the MDX files.
+    <CustomLink
+      href={`https://codepen.io/Mkuehb/pen//${id}`}
+      isCodePen
+    >
+      CodePen - {title}
+    </CustomLink>
   )
 }

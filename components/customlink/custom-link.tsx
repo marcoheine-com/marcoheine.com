@@ -1,7 +1,8 @@
 import Link from 'next/link'
 interface CustomLinkProps {
-  href: string
   children: React.ReactNode
+  href: string
+  isCodePen?: boolean
 }
 
 export const CustomLink: React.FC<CustomLinkProps> = (props) => {
@@ -12,7 +13,7 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       <Link
         href={props.href}
         {...props}
-        className="hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo"
+        className={`hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo`}
       >
         {props.children}
       </Link>
@@ -22,7 +23,9 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
     <a
       target={'_blank'}
       rel={'noopener noreferrer'}
-      className="outgoing-link-trigger border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo"
+      className={`outgoing-link-trigger border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo ${
+        props.isCodePen ? 'mb-4 inline-block' : ''
+      }`}
       {...props}
     >
       {props.children} <span> &#8599;</span>
