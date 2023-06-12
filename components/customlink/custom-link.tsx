@@ -19,16 +19,17 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       </Link>
     )
   }
+  const { isCodePen, children, ...rest } = props
   return (
     <a
       target={'_blank'}
       rel={'noopener noreferrer'}
       className={`outgoing-link-trigger border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo ${
-        props.isCodePen ? 'mb-4 inline-block' : ''
+        isCodePen ? 'mb-4 inline-block' : ''
       }`}
-      {...props}
+      {...rest}
     >
-      {props.children} <span> &#8599;</span>
+      {children} <span> &#8599;</span>
     </a>
   )
 }

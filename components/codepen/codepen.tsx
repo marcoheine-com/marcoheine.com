@@ -1,5 +1,4 @@
 import { CustomLink } from '@/components/customlink'
-import Link from 'next/link'
 
 interface CodePenComponentProps {
   className?: string
@@ -8,7 +7,6 @@ interface CodePenComponentProps {
 }
 
 export const CodePenComponent: React.FC<CodePenComponentProps> = ({
-  className,
   id,
   title,
 }) => {
