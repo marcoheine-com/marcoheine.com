@@ -15,16 +15,16 @@
   },
 
   "footer": {
-    "top": "Zurück zum Anfang der Seite?",
+    "top": "Zum Anfang der Seite",
     "hosting": "Diese Seite ist gehosted auf und wird deployed mit ",
-    "code": "Der source code ist gehosted auf "
+    "code": "Der Source Code ist verfügbar auf "
   },
 
   "work": {
     "headline-one": "Was Ich mache",
     "what-i-do": {
       "one": "Ich bin ein Front-end Developer, der leidenschaftlich gerne Websites entwickelt.",
-      "two": "Ich habe mehr als <strong>6 Jahre</strong> Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Software-Entwicklungs Unternehmen gerarbeitet habe.",
+      "two": "Ich habe mehr als <strong>7 Jahre</strong> Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Software-Entwicklungs Unternehmen gerarbeitet habe.",
       "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann.Meine oberste Priorität ist immer, eine sehr gute und klare Kommunikation zu ermöglichen.",
       "four": "Ich habe immer noch große Freude an der Web-Entwicklung und den relevanten Technologien. Jeden Tag etwas Neues zu lernen, ist das, was es für mich so besonders macht.",
       "five": "Ich strebe nach <strong>high quality code</strong> und digitalen Produkten, die man gerne nutzt. Mein Fokus liegt auf <strong>barrierefreien</strong> und <strong>schnellen</strong> Websites."
@@ -133,5 +133,8 @@
   "web-projects": {
     "headline": "Web Projekte",
     "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen. Hier ist eine kleine Auswahl vergangener Projekte:"
+  },
+  "legal": {
+    "headline": "Impressum"
   }
 }

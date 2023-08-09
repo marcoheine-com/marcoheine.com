@@ -105,9 +105,7 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
       >
         <section className="mx-auto flex max-w-5xl flex-col items-center">
           <h2 className="text-center">{t('web-projects.headline')}</h2>
-          <p className="mx-auto mb-10 max-w-2xl text-center">
-            {t('web-projects.text')}
-          </p>
+          <p className="mx-auto mb-10 max-w-2xl">{t('web-projects.text')}</p>
           <section
             className={`grid gap-y-24 md:grid-cols-1 ${showAll ? 'mb-8' : ''}`}
           >

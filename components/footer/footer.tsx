@@ -3,8 +3,6 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 
 const LI_STYLES_BASIC = 'inline border-b-0 pr-5'
-const SVG_BASIC_STYLES =
-  'transition-all ease-linear duration-200 fill-current text-white hover:text-primaryColorOne'
 const LINK_BASIC_STYLES =
   'py-0 px-[1px] text-white hover:border-b-4 hover:text-white hover:border-b-white hover:border-dotted'
 
@@ -25,7 +23,7 @@ const Footer = () => {
           <li className={LI_STYLES_BASIC}>
             <a href="mailto:hello@marcoheine.com">
               <svg
-                className={SVG_BASIC_STYLES}
+                className="transition-all hover:translate-y-[-2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -46,6 +44,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <svg
+                className="transition-all hover:translate-y-[-2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -67,6 +66,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <svg
+                className="transition-all hover:translate-y-[-2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -96,6 +96,7 @@ const Footer = () => {
               title="Link to linkedin profile of Marco Heine"
             >
               <svg
+                className="transition-all hover:translate-y-[-2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -116,6 +117,7 @@ const Footer = () => {
               title="Link to RSS Blog Feed of Marco Heine"
             >
               <svg
+                className="transition-all hover:translate-y-[-2px]"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 455.731 455.731"
@@ -197,7 +199,7 @@ const Footer = () => {
       <p>
         © {year} Marco Heine. Made in Germany with
         <svg
-          className="w-[18px] animate-move fill-white p-[3px]"
+          className="ml-1 w-[18px] animate-move fill-white p-[3px]"
           viewBox="0 0 32 29.6"
         >
           <path
@@ -205,6 +207,8 @@ const Footer = () => {
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
           />
         </svg>
+      </p>
+      <p>
         <Link
           className={LINK_BASIC_STYLES}
           href="/legal-notice/"
