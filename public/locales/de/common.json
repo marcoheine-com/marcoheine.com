@@ -2,8 +2,8 @@
   "home": {
     "intro": "Ich bin Marco - Freelance Web Developer aus Stuttgart.",
     "welcome": "Hi und willkommen!",
-    "welcome-one": "Ich helfe Menschen ",
-    "welcome-two": "schnelle, barrierefreie und schöne Websites zu bekommen.",
+    "welcome-one": "Ich verhelfe Menschen zu ",
+    "welcome-two": "schnellen, barrierefreien und schönen Websites.",
     "welcome-three": " Hast Du ein interessantes Projekt oder eine Idee und brauchst Unterstützung?",
     "welcome-four": "Auf meiner 'Work' Seite beschreibe ich meine Leistungen und wie ich arbeite.",
     "work": "Mehr erfahren",
@@ -66,7 +66,7 @@
     "text-one": "Ich bin Marco und ich bin <strong>Web Entwickler.</strong>",
     "text-two": "Ich bin sehr gut darin, <strong>schnelle</strong> und <strong>barrierfreie</strong> Websites und Web-Apps für jedes Gerät und jeden Browser zu entwickeln.",
     "text-three": "Ich habe meine Begeisterung für das Web und seine Technologien bereits mit 14 gefunden, als ich meine erste eigene Website entwickelt habe. Ich habe mir dabei HTML und CSS selbst beigebracht und gemerkt, wieviel Spaß es macht etwas Digitales zu erschaffen.",
-    "text-four": "Während ich meines Studiums mehr über die Grundlagen der Informatik gelernt habe, wurde meine Begeisterung erneut geweckt und ich habe alles über HTML, CSS, JavaScript und die Front-end Entwicklung aufgesaugt.",
+    "text-four": "Während ich im Rahmen meines Studiums mehr über die Grundlagen der Informatik gelernt habe, wurde meine Begeisterung erneut geweckt und ich habe alles über HTML, CSS, JavaScript und die Front-end Entwicklung aufgesaugt.",
     "subline-one": "Alles andere, wichtige",
     "text-five": "In meiner Freizeit mache ich gerne Sport, wie z.B. Bodyweightfitness und Yoga.",
     "text-six": "Ich lese sehr gerne, meistens zwei Bücher gleichzeitig. Was ich gerade lese oder als nächstes lesen möchte, findet sich auf meinem",
@@ -120,7 +120,9 @@
       "text": {
         "a": "Marco ist ein großartiger Entwickler und ein großartiger Typ. In einer Phase großer Unsicherheit kam er an Bord, übernahm Verantwortung und sorgte für einen reibungslosen Übergang. Das hätte nicht besser laufen können. Wir werden ihn auf jeden Fall in unserem Netzwerk behalten, und Sie sollten es auch tun."
       }
-    }
+    },
+    "readMore": "Mehr lesen",
+    "readLess": "Weniger"
   },
   "meta": {
     "index-description": "Hi! Ich bin Marco, Freelance Web Developer aus Stuttgart. Ich helfe Menschen dabei, schnelle, barrierefreie und moderne Websites zu bekommen.",

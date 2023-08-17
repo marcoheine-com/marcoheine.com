@@ -71,7 +71,7 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
             <Image
               alt="a picture of Marco Heine"
               src={MarcoHeineImg}
-              className="mb-10 duration-500 lg:mr-64"
+              className="mb-10 rounded-xl duration-500 lg:mr-64"
               width={500}
               height={500}
               priority

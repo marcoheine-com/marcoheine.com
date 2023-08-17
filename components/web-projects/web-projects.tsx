@@ -100,7 +100,7 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
   return (
     <>
       <section
-        className="mb-32 w-full bg-slate-50 p-5 md:p-20"
+        className="mb-32 w-full p-5 md:p-20"
         id="projects"
       >
         <section className="mx-auto flex max-w-5xl flex-col items-center">
@@ -109,13 +109,15 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
           <section
             className={`grid gap-y-24 md:grid-cols-1 ${showAll ? 'mb-8' : ''}`}
           >
-            {projectsToShow.map((project) => (
+            {projectsToShow.map((project, index) => (
               <React.Fragment key={project.title}>
                 <section className="grid gap-y-8 gap-x-12 md:grid-cols-2 md:gap-y-16">
                   <Image
                     alt={project.imageAlt}
                     src={project.image}
-                    className="rounded-lg shadow-custom transition-all hover:-translate-y-1 hover:shadow-customDark"
+                    className={`${
+                      index % 2 === 1 ? 'order-2' : ''
+                    } rounded-lg shadow-custom transition-all hover:-translate-y-1 hover:shadow-customDark`}
                     sizes="(min-width: 768px) 100vw, (min-width: 1024px) 50vw, 100vw"
                   />
 

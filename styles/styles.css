@@ -113,7 +113,7 @@
   }
 
   .hover-trigger:hover > img {
-    @apply lg:-rotate-2 lg:scale-95 lg:rounded-xl lg:shadow-customDark;
+    @apply lg:-rotate-2 lg:scale-95 lg:shadow-customDark;
   }
 
   .hover-trigger:hover .hover-target {

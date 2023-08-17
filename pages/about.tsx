@@ -36,7 +36,7 @@ const About = () => {
             <Image
               alt="a picture of Marco Heine"
               src={MarcoHeineImg}
-              className="mb-10 max-w-[300px] sm:mb-20"
+              className="mb-10 max-w-[300px] rounded-xl sm:mb-20"
               priority
             />
 
