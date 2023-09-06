@@ -28,6 +28,8 @@ export type TagName =
   | 'tailwindcss'
   | 'svg'
   | 'serverless'
+  | 'dom'
+  | 'astro'
 export interface TILPost {
   slug: string
   frontmatter: {

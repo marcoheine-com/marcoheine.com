@@ -23,4 +23,6 @@ export const TagValues = {
   ['gatsby']: 'Gatsby',
   ['svg']: 'SVG',
   ['serverless']: 'Serverless',
+  ['dom']: 'DOM',
+  ['astro']: 'Astro',
 }

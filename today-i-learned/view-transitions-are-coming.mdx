@@ -1,0 +1,81 @@
+---
+title: 'View Transitions are coming (Astro 3.0)'
+date: 2023-09-06
+path: /view-transitions-are-coming
+tags: ['dom', 'javascript', 'astro']
+number: 75
+description:
+  'View Transitions will soon be available in all major browsers and Astro is
+  the first framework to support them.'
+---
+
+You may have already heard that a new
+[View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)
+has been developed and will soon be available in all major browsers.
+
+View Transitions help the user to stay in **context** when switching between
+pages or states. For example, the user might click a link to another page, and
+some elements might be animated to make the transition smoother and make it feel
+less like a hard switch between the two pages.
+
+It’s what makes most native apps **superior** in that case and looking so cool
+and smooth. SwiftUI has had this kind of technology for years.
+
+I have planned a whole blog post about the new View Transitions API as an
+in-depth tutorial, but I will wait until every major browser supports them
+(looking at you, Firefox), and we can use it in production.
+
+Nevertheless, I’d like to discuss them briefly because
+[Astro released a new major version (3.0)](https://astro.build/blog/astro-3)
+last week. Part of this new release is enabling developers to use view
+transitions inside Astro. That makes them the **first web framework to support
+the View Transitions API**.
+
+They offer these four different ways:
+
+- **Morph** persistent elements from one page to another
+- **Fade** content on and off the page for a less jarring navigation effect
+- **Slide** content on and off the page for a bit more personality
+- **Persist** common UI across pages, with or without a refresh
+
+It’s straightforward to implement and use. You just have to import and add the
+view transitions routing component on the page you want to use them.
+
+```jsx
+---
+import { ViewTransitions } from 'astro/dist/components/view-transitions.js'
+---
+
+<h1>My Page</h1>
+<ViewTransitions />
+<div transition:name="fade">
+  <p>Some content</p>
+</div>
+```
+
+Astro will **automatically** create default page animations based on the
+similarities between the old and the new pages. That’s all!
+
+You can also identify the corresponding view transition element yourself. For
+example, I wanted a view transition on the image in a blog post overview page
+and on the image on the individual blog post.
+
+So first, you view the list of blog posts, and when clicking on a specific blog
+post, a view transition should happen on that image.
+
+To achieve that, you only need to add the same `transition:name` value on both
+image elements. It’s like magic!
+
+If you want to see view transitions live in Astro, check out the
+[Spotify clone built by Igor](https://github.com/igorm84/spotify-astro-transitions).
+You have to make sure to use Chrome for that.
+
+I’m curious how we’ll take advantage of this new possibility and if it will
+change how it feels to browse the web.
+
+## Sources
+
+- [Astro 3](https://astro.build/blog/astro-3)
+- [View Transitions](https://docs.astro.build/en/guides/view-transitions/)
+- [Can I use view transitions](https://caniuse.com/?search=view%20transitions)
+- [Spotify Astro Transitions on GitHub](https://github.com/igorm84/spotify-astro-transitions)
