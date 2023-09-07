@@ -3,7 +3,6 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getAllPosts } from '../../lib/blog'
 import { NextPage } from 'next'
@@ -114,7 +113,6 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
                 className={`mb-4 p-5 text-primaryColorOne transition-all hover:rounded-xl hover:shadow-custom`}
               >
                 <h3 className="mb-2">{title}</h3>
-
                 <time
                   className="text-base"
                   dateTime={date}
