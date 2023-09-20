@@ -25,4 +25,5 @@ export const TagValues = {
   ['serverless']: 'Serverless',
   ['dom']: 'DOM',
   ['astro']: 'Astro',
+  ['sustainability']: 'Sustainability',
 }

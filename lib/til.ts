@@ -30,6 +30,7 @@ export type TagName =
   | 'serverless'
   | 'dom'
   | 'astro'
+  | 'sustainability'
 export interface TILPost {
   slug: string
   frontmatter: {
