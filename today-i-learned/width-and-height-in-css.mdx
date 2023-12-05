@@ -1,0 +1,33 @@
+---
+title: 'Width and Height in CSS'
+date: 2023-12-05
+path: /width-and-height-in-css
+tags: ['css']
+number: 79
+description:
+  'Width and height in CSS are easy to use but height if often misunderstood.'
+---
+
+There is a **fundamental difference** in how `width` and `height` work in CSS. I
+recently stumbled over this blog post
+[Width and Heigh in CSS](https://blog.jim-nielsen.com/2023/width-and-height-in-css/)
+by Jim Nielsen in which he talks about the topic. He cites, that he got a great
+explanation from Josh in his video
+[Secret mechanisms of CSS](https://www.youtube.com/watch?v=Xt1Cw4qM3Ec).
+
+To determine the `width` of an element, the browser **looks up** the DOM tree
+and to determine the height of an element, the browser **looks down** the DOM
+tree.
+
+What does that mean?
+
+If you set an element to `width: 100%` it will take the width of its parent. So
+it's easy to tell an element to take the full width of the page for example.
+
+But height does not work the same way. A lot of developers don't understand that
+setting an element to `height: 100%` will not make it take the full height of
+its parent. It will take the height of its content. So if you have a `div` with
+a `p` inside, the `div` will only be as high as the `p` is.
+
+To be honest, I sometimes still use `height: 100%` and then wonder why it's not
+working. But now I know why and I hope you do too.
