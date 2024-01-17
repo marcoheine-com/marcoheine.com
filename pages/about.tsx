@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 import MarcoHeineImg from 'public/images/marco-heine.webp'
+import { CustomLink } from '@/components/customlink'
 
 export const getStaticProps = async ({ locale }) => {
   return {
@@ -44,7 +45,7 @@ const About = () => {
               <p>
                 Hi!{' '}
                 <span
-                  className="inline-block rotate-[-20deg] animate-wave transition-transform"
+                  className="mb-0 inline-block rotate-[-20deg] animate-wave transition-transform"
                   role="img"
                   aria-label="waving hand emoji"
                 >
@@ -82,18 +83,14 @@ const About = () => {
           <p>{t('about.text-five')}</p>
           <p>
             {t('about.text-six')}
-            <a
-              href="https://www.goodreads.com/user/show/145214426-marco-heine"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <CustomLink href="https://www.goodreads.com/user/show/145214426-marco-heine">
               {t('about.text-seven')}
-            </a>
+            </CustomLink>
             .
           </p>
           <p>{t('about.text-eight')}</p>
           <p>
-            {t('about.text-nine')} <Link href="/blog/">blog</Link>{' '}
+            {t('about.text-nine')} <CustomLink href="/blog/">blog</CustomLink>{' '}
           </p>
         </div>
         {/* <aboutUI.Container>

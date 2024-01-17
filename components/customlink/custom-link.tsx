@@ -13,7 +13,7 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       <Link
         href={props.href}
         {...props}
-        className={`hover:border-b-2 hover:border-dotted hover:border-b-primaryColorTwo`}
+        className={`border-b-2 border-dotted border-b-primaryColorTwo hover:border-solid`}
       >
         {props.children}
       </Link>
@@ -22,14 +22,16 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
   const { isCodePen, children, ...rest } = props
   return (
     <a
-      target={'_blank'}
       rel={'noopener noreferrer'}
-      className={`outgoing-link-trigger border-b-4 border-b-transparent hover:border-dotted hover:border-b-primaryColorTwo ${
+      className={`outgoing-link-trigger border-b-2 border-dotted border-b-primaryColorTwo hover:border-solid ${
         isCodePen ? 'mb-4 inline-block' : ''
       }`}
       {...rest}
     >
-      {children} <span> &#8599;</span>
+      {children} <span aria-hidden> &#8599;</span>{' '}
+      <span className="absolute top-auto h-[1px] w-[1px] overflow-hidden whitespace-nowrap">
+        Opens in new tab
+      </span>
     </a>
   )
 }

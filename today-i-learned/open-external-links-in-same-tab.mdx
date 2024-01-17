@@ -1,0 +1,64 @@
+---
+title: 'Why external links should always open in the same tab'
+date: 2023-12-05
+path: /open-external-links-in-same-tab
+tags: ['accessibility']
+number: 80
+description:
+  'Today I learned that external links should always open in the same tab.'
+---
+
+If you're like me you'll always set links to external pages to **open in a new
+tab**. It's my personal preference and I always thought that this is the best
+practice because **you don't want to lose the user to the external website**.
+
+After reading Whitney Lewis article on
+[How to make external links accessible](https://blog.pope.tech/2024/01/02/how-to-make-external-links-accessible/)
+I gathered new information and learned that it's best to **always open external
+links in the same tab**.
+
+Whitney argues that it's not necessary to open external links in a new tab by
+default because **users always have this choice**. If they want to open a link
+in a new tab they can do so by right-clicking on the link and selecting "Open in
+new tab". If we open external links in a new tab by default we **take away** the
+users choice.
+
+The W3C also recommends to open external links in the same tab in their document
+[Opening new windows and tabs form a link only when necessary](https://www.w3.org/TR/WCAG20-TECHS/G200.html).
+
+> In general, it is better not to open new windows and tabs since they can be
+> disorienting for people, especially people who have difficulty perceiving
+> visual content.
+
+If we go back to my initial argument that we don't want to lose the user to the
+external website, Whitney also argues that this is not a valid point:
+
+_"If your user wants to leave the webpage, they will, and trying to keep them
+there can feel like a ploy. On the other hand, if they want to stay on your
+website, they will. Users can choose to open the link in a new tab."_
+
+### When to use `target="_blank"`
+
+But there are also some valid reasons to open external links in a new tab.
+
+- If you fill out a form and you click on a link to an external website you
+  don't want to lose the form data
+- If you are on a secure website and it links to an external website that is not
+  secure, for examaple if you are logged in to your bank account you possibly
+  want to keep the login active
+- If you need the information from both websites at the same time, for example
+  if you are comparing two products
+
+If you want to open a link in a new tab it's advised to add a **warning** that
+it does so, Whitney states. This can be a simple text like "Opens in a new tab"
+or an icon like an arrow pointing to the right.
+
+If you choose the use an icon, you have to make sure to make it accessible to
+non-visual users. Whitney shares a a great resource for this:
+[A beginner’s guide to link accessibility](https://blog.pope.tech/2023/01/01/link-accessibility/)
+
+### Sources
+
+- [How to make external links accessible](https://blog.pope.tech/2024/01/02/how-to-make-external-links-accessible/)
+- [Opening new windows and tabs form a link only when necessary](https://www.w3.org/TR/WCAG20-TECHS/G200.html)
+- [Opening Links in New Browser Windows and Tabs](https://www.nngroup.com/articles/new-browser-windows-and-tabs/)
