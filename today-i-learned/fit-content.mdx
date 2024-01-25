@@ -1,0 +1,45 @@
+---
+title: 'fit-content'
+date: 2024-01-25
+path: /fit-content
+tags: ['css']
+number: 81
+description:
+  'They property fit-content is super useful if you want to shrink wrap an
+  element to its contents.'
+---
+
+If you want to restrict the width of an element to it's content, you may have
+used `display: inline-block` or `display: inline-flex`.
+
+By using this, the element will shrink wrap to the content inside of it.
+
+```css
+.container {
+  display: inline-block;
+}
+```
+
+This is a valid solution to achieve this requirement. But there is a better way
+to do this. Introducing: `width: fit-content`. The great thing about
+`width: fit-content` is, that it leaves the `display` property available.
+
+```css
+.container {
+  width: fit-content;
+}
+```
+
+So it's not changing the position of the element in the layout, but it's just a
+way to restrict the width of the element to it's content. Here is a **Codepen**,
+where you can see the usage of it and it's effect:
+
+<CodePen
+  id="gOEGeJp"
+  title="fit-content"
+/>
+
+### Sources
+
+- [MDN: fit-content](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content)
+- [12 Mondern CSS One-Line Upgrades](https://moderncss.dev/12-modern-css-one-line-upgrades/#width-fit-content)
