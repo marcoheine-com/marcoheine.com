@@ -1,8 +1,9 @@
 import Link from 'next/link'
 interface CustomLinkProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   href: string
   isCodePen?: boolean
+  className?: string
 }
 
 export const CustomLink: React.FC<CustomLinkProps> = (props) => {
@@ -13,7 +14,7 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       <Link
         href={props.href}
         {...props}
-        className={`border-b-2 border-dotted border-b-primaryColorTwo hover:border-solid`}
+        className={`border-b-2 border-dotted border-b-primaryColorTwo hover:border-solid ${props.className}`}
       >
         {props.children}
       </Link>

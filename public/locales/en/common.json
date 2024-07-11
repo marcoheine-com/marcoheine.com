@@ -1,13 +1,14 @@
 {
   "home": {
-    "intro": "I'm Marco - a Freelance Web Developer and I make websites.",
+    "intro": "I'm Marco - a Freelance Web Developer and I make great websites.",
     "welcome": "Hi, and welcome!",
     "welcome-one": "I love to help people to get ",
     "welcome-two": "fast, accessible and great looking websites.",
     "welcome-three": " Have an interesting project or idea?",
-    "welcome-four": "Have a look at my skills and how I work and let’s see how I can help you!",
+    "welcome-four": "Have a look at my <0>skills</0> and how I work and let’s see how I can help you!",
     "work": "Work with me",
     "cooperation": "In cooperation with:",
+    "client": "Client:",
     "blog-posts": "Latest blog posts",
     "til-posts": "Latest TIL posts",
     "all-blog-posts": "All blog posts",
@@ -24,7 +25,8 @@
     "headline-one": "What I do",
     "what-i-do": {
       "one": "I’m a Front-end Developer who <strong>loves</strong> to make websites!",
-      "two": " I have more than <strong>seven years</strong> of experience and worked on numerous projects, at web agencies, in product development, and at software development companies.",
+      "two-a": " I have more than ",
+      "two-b": " of experience and worked on numerous projects, at web agencies, in product development, and at software development companies.",
       "three": " With a keen eye for <strong>UX Design</strong>, I understand user needs and problems and know how to solve them. Enabling clear and good communication is always my priority.",
       "four": "I still love the web and its technologies, and learning something new every day is what makes it so much fun for me.",
       "five": "I strive for <strong>high-quality code</strong> and lovable digital products. My focus is on <strong>acessibility</strong>, <strong>Responsiveness</strong>, and <strong>high-speed</strong> websites."
@@ -134,9 +136,17 @@
   },
   "web-projects": {
     "headline": "Web projects",
-    "text": "I had the chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web development skills. Below you can find a selection of some recent projects I've worked on."
+    "text": "I had the chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web development skills.",
+    "text-two": "Below you can find a selection of some recent projects I've worked on.",
+    "dhlbrandhub": {
+      "description": "I helped the team at Strichpunkt Design to further develop the DHL Brandhub. The DHL Brandhub is a platform for DHL employees and partners to get all the information and assets they need to create DHL branded content."
+    },
+    "abaufdiewiese": {
+      "description": "Abaufdiewiese is a small business which sells picnics on local meadows. With their new website, they're able to reach more customers and provide them with a great experience."
+    }
   },
   "legal": {
     "headline": "Legal Notice"
-  }
+  },
+  "years": "years"
 }

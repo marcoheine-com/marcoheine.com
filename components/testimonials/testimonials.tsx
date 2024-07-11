@@ -79,7 +79,7 @@ export const Testimonials: React.FC = () => {
     <article className="mb-20 max-w-7xl">
       <h2
         id="testimonials"
-        className="mb-12 text-center text-primaryColorTwo"
+        className="mb-12 text-center"
       >
         {t('work.headline-three')}
       </h2>

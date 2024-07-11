@@ -5,9 +5,10 @@
     "welcome-one": "Ich verhelfe Menschen zu ",
     "welcome-two": "schnellen, barrierefreien und schönen Websites.",
     "welcome-three": " Hast Du ein interessantes Projekt oder eine Idee und brauchst Unterstützung?",
-    "welcome-four": "Auf meiner 'Work' Seite beschreibe ich meine Leistungen und wie ich arbeite.",
+    "welcome-four": "Auf meiner <0>Work</0> Seite beschreibe ich meine Leistungen und wie ich arbeite.",
     "work": "Mehr erfahren",
     "cooperation": "In Kooperation mit:",
+    "client": "Kunde",
     "blog-posts": "Neueste Blog Posts",
     "til-posts": "Neueste Today-I-learned Posts",
     "all-blog-posts": "Alle Blog Posts",
@@ -24,8 +25,9 @@
     "headline-one": "Was Ich mache",
     "what-i-do": {
       "one": "Ich bin ein Front-end Developer, der leidenschaftlich gerne Websites entwickelt.",
-      "two": "Ich habe mehr als <strong>7 Jahre</strong> Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Software-Entwicklungs Unternehmen gerarbeitet habe.",
-      "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann.Meine oberste Priorität ist immer, eine sehr gute und klare Kommunikation zu ermöglichen.",
+      "two-a": "Ich habe mehr als ",
+      "two-b": " Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Softwareentwicklungs-Unternehmen gerarbeitet habe.",
+      "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann. Meine oberste Priorität ist immer, eine sehr gute und klare Kommunikation zu ermöglichen.",
       "four": "Ich habe immer noch große Freude an der Web-Entwicklung und den relevanten Technologien. Jeden Tag etwas Neues zu lernen, ist das, was es für mich so besonders macht.",
       "five": "Ich strebe nach <strong>high quality code</strong> und digitalen Produkten, die man gerne nutzt. Mein Fokus liegt auf <strong>barrierefreien</strong> und <strong>schnellen</strong> Websites."
     },
@@ -134,9 +136,14 @@
   },
   "web-projects": {
     "headline": "Web Projekte",
-    "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen. Hier ist eine kleine Auswahl vergangener Projekte:"
+    "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen.",
+    "text-two": "Hier ist eine kleine Auswahl vergangener Projekte:",
+    "dhlbrandhub": {
+      "description": "I helped the team at "
+    }
   },
   "legal": {
     "headline": "Impressum"
-  }
+  },
+  "years": "Jahre"
 }

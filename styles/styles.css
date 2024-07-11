@@ -129,7 +129,7 @@
   }
 
   .outgoing-link-trigger > span {
-    @apply mb-0 inline-block transition-all duration-200;
+    @apply mb-0 inline-block transition-all duration-300;
   }
 
   .outgoing-link-trigger:hover > span {
