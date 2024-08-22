@@ -4,7 +4,7 @@ import SEO from '../../components/seo'
 import { getAllPosts, getBlogPostBySlug } from '../../lib/blog'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { NextPage } from 'next'
-import { BlogPost } from '..'
+import { IBlogPost } from '..'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useRouter } from 'next/router'
 import { getMDX } from 'lib/getMDX'
@@ -12,7 +12,7 @@ import { PostFooter } from '@/components/post-footer'
 import { PostHeader } from '@/components/post-header'
 
 interface BlogPostProps {
-  blogPost: BlogPost
+  blogPost: IBlogPost
   blogPostMDX: MDXRemoteSerializeResult
 }
 
@@ -85,7 +85,7 @@ const BlogPost: React.FC<NextPage & BlogPostProps> = ({
         />
         <MDXRemote {...blogPostMDX} />
 
-        <PostFooter postType="blog" />
+        <PostFooter />
       </section>
     </Layout>
   )

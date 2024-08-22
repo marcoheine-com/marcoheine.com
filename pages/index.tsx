@@ -15,10 +15,10 @@ import { NextPage } from 'next'
 import { CustomLink } from '@/components/customlink'
 
 interface IndexPageProps {
-  blogPosts: BlogPost[]
+  blogPosts: IBlogPost[]
   tilData: TILPost[]
 }
-export interface BlogPost {
+export interface IBlogPost {
   slug: string
   frontmatter: {
     title: string
@@ -119,7 +119,7 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
           <section className="mb-16 grid">
             <h2>{t('home.blog-posts')}</h2>
             <>
-              {latestBlogPosts.map((post: BlogPost) => (
+              {latestBlogPosts.map((post: IBlogPost) => (
                 <article
                   key={post.frontmatter.title}
                   className={`relative ${

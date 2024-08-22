@@ -60,11 +60,10 @@ const Work = () => {
           </article>
           <article className="max-w-2xl">
             <h2 className="mb-4">{t('work.headline-two')}</h2>
-            <section
-              className="mb-10"
-              id="web-development"
-            >
-              <h3>🛠 {t('work.subline-one')}</h3>
+            <section className="mb-10">
+              <a href="#web-development">
+                <h3>🛠 {t('work.subline-one')}</h3>
+              </a>
               <p>{t('work.text-one')}</p>
               <ul className="ml-8 mb-4 flex list-disc flex-col gap-2">
                 <li>
@@ -139,7 +138,9 @@ const Work = () => {
               className="mb-10"
               id="seo"
             >
-              <h3>🔎 SEO</h3>
+              <a href="#seo">
+                <h3>🔎 SEO</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.seo-one'} />
               </p>
@@ -153,7 +154,9 @@ const Work = () => {
               </p>
             </section>
             <section className="mb-10">
-              <h3>🎨 {t('work.subline-two')}</h3>
+              <a href="#web-design">
+                <h3>🎨 {t('work.subline-two')}</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.web-design-one'} />
               </p>
@@ -162,7 +165,9 @@ const Work = () => {
               </p>
             </section>
             <section>
-              <h3>📄 Technical Writing</h3>
+              <a href="#technical-writing">
+                <h3>📄 Technical Writing</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.technical-writing-one'} />
               </p>

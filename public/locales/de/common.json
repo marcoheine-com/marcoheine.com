@@ -92,8 +92,7 @@
     "text-one": "Wenn Du Interesse daran hast, mit mir zu arbeiten, freue ich mich über eine kurze Mail dazu. Mehr Informationen, wie ich arbeite oder wie ich dir helfen kann, findest Du auf meiner work Seite:",
     "text-two": "Wenn Du Fragen oder Anregungen zu einem meiner blog posts oder today-I-learned posts hast, freue ich mich über eine kurze Mail dazu.",
     "text-three": "Per Mail unter ",
-    "text-four": "Ich bin außerdem auch auf Twitter unterwegs: ",
-    "text-five": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
+    "text-four": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
   },
   "testimonials": {
     "one": {
@@ -139,7 +138,16 @@
     "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen.",
     "text-two": "Hier ist eine kleine Auswahl vergangener Projekte:",
     "dhlbrandhub": {
-      "description": "I helped the team at "
+      "description": "In Zusammenarbeit mit der Agentur Strichpunkt Design habe ich an der Weiterentwicklung des DHL Brandhubs gearbeitet. Der DHL Brandhub ist eine Plattform, auf der DHL Mitarbeiter:innen und Partner:innen alle Informationen und Assets finden, die sie für ihre tägliche Arbeit benötigen."
+    },
+    "stuttgarterkickers": {
+      "description": "The Stuttgarter Kickers are a football club from Stuttgart, Germany. I was part of the team that relaunched their website in 2023."
+    },
+    "abaufdiewiese": {
+      "description": "Abaufdiewiese is a small business which sells picnics on local meadows. With their new website, they're able to reach more customers and provide them with a great experience."
+    },
+    "dieda": {
+      "description": ""
     }
   },
   "legal": {

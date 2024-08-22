@@ -102,6 +102,11 @@
   ul + h3 {
     @apply mt-12;
   }
+
+  b,
+  strong {
+    @apply font-[Lato-Bold];
+  }
 }
 
 @layer utilities {

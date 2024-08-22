@@ -51,6 +51,34 @@ const projects: Project[] = [
     imageAlt: 'screenshot of the dpdhl-brands website website',
   },
   {
+    title: 'Stuttgarter Kickers',
+    partners: [
+      {
+        partnerName: 'Werk8',
+        partnerLink: 'https://www.werk8.design/',
+      },
+    ],
+    description: 'web-projects.stuttgarterkickers.description',
+    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
+    linkLabel: 'stuttgarter-kickers.de',
+    link: 'https://www.stuttgarter-kickers.de',
+    image: StuttgarterKickersWebsite,
+    imageAlt: 'screenshot of stuttgarter kickers website',
+  },
+  {
+    title: 'Dieda',
+    description: 'Website Relaunch, technische Umsetzung, CMS Integration',
+    partners: [
+      { partnerName: 'Werk8', partnerLink: 'https://www.werk8.design/' },
+    ],
+    tools:
+      'React, Typescript, Next.js, TailwindCSS, Vercel, Algolia, Prismic, FormSpree',
+    linkLabel: 'dieda.de',
+    link: 'https://www.dieda.de',
+    image: DiedaWebsite,
+    imageAlt: 'screenshot of dieda website',
+  },
+  {
     title: 'Ab auf die Wiese',
     clients: [
       {
@@ -79,33 +107,6 @@ const projects: Project[] = [
     link: 'https://www.coach-collective.de',
     image: CoachCollectiveWebsite,
     imageAlt: 'screenshot of the dpdhl-brands website website',
-  },
-  {
-    title: 'Stuttgarter Kickers',
-    partners: [
-      {
-        partnerName: 'Werk8',
-        partnerLink: 'https://www.werk8.design/',
-      },
-    ],
-    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
-    linkLabel: 'stuttgarter-kickers.de',
-    link: 'https://www.stuttgarter-kickers.de',
-    image: StuttgarterKickersWebsite,
-    imageAlt: 'screenshot of stuttgarter kickers website',
-  },
-  {
-    title: 'Dieda',
-    description: 'Website Relaunch, technische Umsetzung, CMS Integration',
-    partners: [
-      { partnerName: 'Werk8', partnerLink: 'https://www.werk8.design/' },
-    ],
-    tools:
-      'React, Typescript, Next.js, TailwindCSS, Vercel, Algolia, Prismic, FormSpree',
-    linkLabel: 'dieda.de',
-    link: 'https://www.dieda.de',
-    image: DiedaWebsite,
-    imageAlt: 'screenshot of dieda website',
   },
   {
     title: 'Aerosol Alliance',
@@ -161,7 +162,7 @@ interface Props {
 }
 
 export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
-  const projectsToShow = showAll ? projects : projects.slice(0, 4)
+  const projectsToShow = showAll ? projects : projects.slice(0, 3)
   const { t } = useTranslation()
 
   return (
@@ -175,14 +176,14 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
           <p className="mx-auto mb-10 max-w-2xl">{t('web-projects.text')}</p>
           <p className="mb-20 max-w-2xl">{t('web-projects.text-two')}</p>
           <section
-            className={`grid gap-y-24 md:grid-cols-1 ${showAll ? 'mb-8' : ''}`}
+            className={`grid gap-y-32 md:grid-cols-1 ${showAll ? 'mb-8' : ''}`}
           >
             {projectsToShow.map((project, index) => (
               <React.Fragment key={project.title}>
                 <section className="grid gap-y-8 gap-x-12 bg-gradient-to-l md:grid-cols-2 md:gap-y-16">
                   <a
                     href={project.link}
-                    className={`${index % 2 === 1 ? 'order-2' : ''}`}
+                    className={`${index % 2 === 1 ? 'md:order-2' : ''}`}
                   >
                     <Image
                       alt={project.imageAlt}

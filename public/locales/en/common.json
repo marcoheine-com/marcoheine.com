@@ -92,8 +92,7 @@
     "text-one": "If you're interested in <strong>working with me</strong>, head over to my work page. There you will find all the information about how I work and how I can help you: ",
     "text-two": " If you have a question about one of my blog posts or one of my today-I-learned posts feel free to send me an email.",
     "text-three": "You can reach out to me via email at ",
-    "text-four": "You can also find me on Twitter at ",
-    "text-five": " A few samples of my work as well as the source code of this website are available on "
+    "text-four": " A few samples of my work as well as the source code of this website are available on "
   },
   "testimonials": {
     "one": {
@@ -141,8 +140,14 @@
     "dhlbrandhub": {
       "description": "I helped the team at Strichpunkt Design to further develop the DHL Brandhub. The DHL Brandhub is a platform for DHL employees and partners to get all the information and assets they need to create DHL branded content."
     },
+    "stuttgarterkickers": {
+      "description": "The Stuttgarter Kickers are a football club from Stuttgart, Germany. I helped them to improve their website and make it more accessible and user-friendly."
+    },
     "abaufdiewiese": {
       "description": "Abaufdiewiese is a small business which sells picnics on local meadows. With their new website, they're able to reach more customers and provide them with a great experience."
+    },
+    "dieda": {
+      "description": "Dieda is a small business which sells handmade soaps and other cosmetic products. I helped them to create a new website and online shop to reach more customers."
     }
   },
   "legal": {
