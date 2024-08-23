@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from 'components/layout'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
 import SEO from 'components/seo'
@@ -12,12 +12,13 @@ import { CallToAction } from 'components/call-to-action'
 import { WebProjects } from 'components/web-projects'
 import { Testimonials } from 'components/testimonials'
 import { NextPage } from 'next'
+import { CustomLink } from '@/components/customlink'
 
 interface IndexPageProps {
-  blogPosts: BlogPost[]
+  blogPosts: IBlogPost[]
   tilData: TILPost[]
 }
-export interface BlogPost {
+export interface IBlogPost {
   slug: string
   frontmatter: {
     title: string
@@ -69,27 +70,38 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
             className="hover-trigger"
           >
             <Image
-              alt="a picture of Marco Heine"
+              alt="A picture of Marco Heine"
               src={MarcoHeineImg}
-              className="mb-10 rounded-xl duration-500 lg:mr-64"
+              className="mb-10 rounded-xl duration-300 lg:mr-64"
               width={500}
               height={500}
               priority
             />
-            <h1 className="hover-target mb-12 bg-white text-primaryColorOne lg:absolute lg:right-0 lg:top-16 lg:w-[495px] lg:border-4 lg:border-t-0 lg:border-l-white lg:border-b-primaryColorTwo lg:border-r-primaryColorTwo lg:p-5">
+            <h1 className="hover-target mb-12 bg-white text-primaryColorOne lg:absolute lg:right-0 lg:top-16 lg:w-[495px] lg:rounded-md lg:border-4 lg:border-t-0 lg:border-l-white lg:border-b-primaryColorTwo lg:border-r-primaryColorTwo lg:p-5">
               <div className="top-6 -left-7 hidden h-0 w-0 border-y-[30px] border-r-[30px] border-y-transparent border-r-white lg:absolute lg:block"></div>
               {t('home.intro')}
             </h1>
           </Link>
 
           <div className="max-w-lg self-center">
-            <h2 className="text-primaryColorTwo">{t('home.welcome')}</h2>
+            <h2>{t('home.welcome')}</h2>
             <p>
               {t('home.welcome-one')}
               <strong>{t('home.welcome-two')}</strong>
               {t('home.welcome-three')}
             </p>
-            <p>{t('home.welcome-four')}</p>
+            <p>
+              <Trans
+                i18nKey="home.welcome-four"
+                t={t}
+                components={[
+                  <CustomLink
+                    key={'work-link'}
+                    href={'/work/'}
+                  />,
+                ]}
+              />
+            </p>
             <CallToAction
               href="/work/"
               isInternalLink
@@ -107,51 +119,45 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
           <section className="mb-16 grid">
             <h2>{t('home.blog-posts')}</h2>
             <>
-              {latestBlogPosts.map((post: BlogPost) => (
-                <Link
+              {latestBlogPosts.map((post: IBlogPost) => (
+                <article
                   key={post.frontmatter.title}
-                  href={`/${post.slug}`}
+                  className={`relative ${
+                    post.frontmatter.featuredImage
+                      ? 'grid gap-5 md:grid-cols-[350px_1fr]'
+                      : ''
+                  } mb-10 p-5`}
                 >
-                  <article
-                    className={`relative grid ${
-                      post.frontmatter.featuredImage
-                        ? 'md:grid-cols-[350px_1fr]'
-                        : 'md:grid-cols-[620px]'
-                    } mb-10 gap-5 p-5 transition-all hover:rounded-xl hover:shadow-custom`}
-                  >
-                    {post.frontmatter.featuredImage && (
-                      <Image
-                        alt={post.frontmatter.featuredImageAlt}
-                        src={post.frontmatter.featuredImage}
-                        sizes="100vw"
-                        height="700"
-                        width="700"
-                      />
-                    )}
-                    <section>
-                      <h3 className="text-primaryColorOne">
-                        {post.frontmatter.title}
-                      </h3>
-                      <time className="text-[16px] text-grey md:col-start-1 md:col-end-2">
-                        Published on: {post.frontmatter.date}
-                      </time>
-                      <p className="text-primaryColorOne">
-                        {post.frontmatter.description}
-                      </p>
-                      <span className="mt-auto self-start text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
-                        Read article
-                      </span>
-                    </section>
-                  </article>
-                </Link>
+                  {post.frontmatter.featuredImage && (
+                    <Image
+                      alt={post.frontmatter.featuredImageAlt}
+                      src={post.frontmatter.featuredImage}
+                      sizes="100vw"
+                      height="700"
+                      width="700"
+                    />
+                  )}
+
+                  <h3 className="text-primaryColorOne">
+                    {post.frontmatter.title}
+                  </h3>
+                  <time className="text-[16px] text-grey md:col-start-1 md:col-end-2">
+                    Published on: {post.frontmatter.date}
+                  </time>
+                  <p className="text-primaryColorOne">
+                    {post.frontmatter.description}
+                  </p>
+
+                  <CustomLink href={`/${post.slug}`}>Read article</CustomLink>
+                </article>
               ))}
             </>
-            <Link
+            <CustomLink
               href="/blog/"
-              className="mx-auto py-3"
+              className="mx-auto"
             >
               → {t('home.all-blog-posts')}
-            </Link>
+            </CustomLink>
           </section>
 
           <section>

@@ -102,6 +102,11 @@
   ul + h3 {
     @apply mt-12;
   }
+
+  b,
+  strong {
+    @apply font-[Lato-Bold];
+  }
 }
 
 @layer utilities {
@@ -129,7 +134,7 @@
   }
 
   .outgoing-link-trigger > span {
-    @apply mb-0 inline-block transition-all duration-200;
+    @apply mb-0 inline-block transition-all duration-300;
   }
 
   .outgoing-link-trigger:hover > span {

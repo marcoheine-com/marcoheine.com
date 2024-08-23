@@ -74,7 +74,7 @@ const TilPost: React.FC<NextPage & TILPostProps> = ({
         />
         <MDXRemote {...tilPostMDX} />
 
-        <PostFooter postType="til" />
+        <PostFooter />
       </section>
     </Layout>
   )

@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import { WebProjects } from '../components/web-projects'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
+import { CustomLink } from '@/components/customlink'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -17,6 +18,8 @@ export const getStaticProps = async ({ locale }) => ({
 const Work = () => {
   const { t } = useTranslation()
   const location = useRouter()
+
+  const yearsOfExperience = new Date().getFullYear() - 2016
 
   return (
     <Layout maxWidth="max-w-[1920px]">
@@ -31,14 +34,16 @@ const Work = () => {
         <PageHeader title="Work with me" />
         <section className="flex w-full flex-col items-center gap-24">
           <article className="max-w-2xl">
-            <h2 className="mb-12 text-primaryColorTwo">
-              {t('work.headline-one')}
-            </h2>
+            <h2 className="mb-4">{t('work.headline-one')}</h2>
             <p>
               <Trans i18nKey={'work.what-i-do.one'} />
             </p>
             <p>
-              <Trans i18nKey={'work.what-i-do.two'} />
+              <Trans i18nKey={'work.what-i-do.two-a'} />
+              <strong>
+                {yearsOfExperience} {t('years')}
+              </strong>
+              <Trans i18nKey={'work.what-i-do.two-b'} />
             </p>
             <p>
               <Trans i18nKey={'work.what-i-do.three'} />
@@ -54,14 +59,11 @@ const Work = () => {
             </CallToAction>
           </article>
           <article className="max-w-2xl">
-            <h2 className="mb-12 text-primaryColorTwo">
-              {t('work.headline-two')}
-            </h2>
-            <section
-              className="mb-10"
-              id="web-development"
-            >
-              <h3>🛠 {t('work.subline-one')}</h3>
+            <h2 className="mb-4">{t('work.headline-two')}</h2>
+            <section className="mb-10">
+              <a href="#web-development">
+                <h3>🛠 {t('work.subline-one')}</h3>
+              </a>
               <p>{t('work.text-one')}</p>
               <ul className="ml-8 mb-4 flex list-disc flex-col gap-2">
                 <li>
@@ -89,81 +91,46 @@ const Work = () => {
               <h4>{t('work.tech-stack')}</h4>
               <p>
                 {t('work.tech-stack-text-one')}
-                <a
-                  href="https://jamstack.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <CustomLink href="https://jamstack.org/">
                   Jamstack
-                </a>
-                . {t('work.tech-stack-text-two')}
+                </CustomLink>. {t('work.tech-stack-text-two')}
               </p>
               <ul className="flex list-none flex-wrap gap-x-4 gap-y-2 text-xl">
                 <li className="mb-0">HTML & CSS</li>
                 <li>JavaScript</li>
                 <li className="mb-0">TypeScript</li>
                 <li className="mb-0">
-                  <a
-                    href="https://reactjs.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    React
-                  </a>
+                  <CustomLink href="https://reactjs.org/">React</CustomLink>
+                </li>
+                <li>
+                  <CustomLink href="https://vuejs.org/">Vue</CustomLink>
                 </li>
                 <li className="mb-0">
-                  <a
-                    href="https://www.gatsbyjs.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <CustomLink href="https://nextjs.org/">NextJS</CustomLink>
+                </li>
+                <li className="mb-0">
+                  <CustomLink href="https://www.gatsbyjs.com/">
                     Gatsby
-                  </a>
+                  </CustomLink>
                 </li>
                 <li className="mb-0">
-                  <a
-                    href="https://nextjs.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    NextJS
-                  </a>
-                </li>
-                <li className="mb-0">
-                  <a
-                    href="https://tailwindcss.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <CustomLink href="https://tailwindcss.com/">
                     TailwindCSS
-                  </a>
+                  </CustomLink>
                 </li>
                 <li className="mb-0">
-                  <a
-                    href="https://prismic.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Headless CMS (Prismic)
-                  </a>
+                  <CustomLink href="https://prismic.io/">Prismic</CustomLink>
                 </li>
                 <li className="mb-0">
-                  <a
-                    href="https://www.netlify.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <CustomLink href="https://sanity.io/">Sanity</CustomLink>
+                </li>
+                <li className="mb-0">
+                  <CustomLink href="https://www.netlify.com/">
                     Netlify
-                  </a>
+                  </CustomLink>
                 </li>
                 <li className="mb-0">
-                  <a
-                    href="https://vercel.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Vercel
-                  </a>
+                  <CustomLink href="https://vercel.com/">Vercel</CustomLink>
                 </li>
               </ul>
             </section>
@@ -171,7 +138,9 @@ const Work = () => {
               className="mb-10"
               id="seo"
             >
-              <h3>🔎 SEO</h3>
+              <a href="#seo">
+                <h3>🔎 SEO</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.seo-one'} />
               </p>
@@ -185,7 +154,9 @@ const Work = () => {
               </p>
             </section>
             <section className="mb-10">
-              <h3>🎨 {t('work.subline-two')}</h3>
+              <a href="#web-design">
+                <h3>🎨 {t('work.subline-two')}</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.web-design-one'} />
               </p>
@@ -194,7 +165,9 @@ const Work = () => {
               </p>
             </section>
             <section>
-              <h3>📄 Technical Writing</h3>
+              <a href="#technical-writing">
+                <h3>📄 Technical Writing</h3>
+              </a>
               <p>
                 <Trans i18nKey={'work.technical-writing-one'} />
               </p>

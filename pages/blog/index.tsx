@@ -6,13 +6,14 @@ import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getAllPosts } from '../../lib/blog'
 import { NextPage } from 'next'
-import { BlogPost } from '..'
+import { IBlogPost } from '..'
 import MarcoHeineImg from '../../public/images/marco-heine.webp'
 import { useRouter } from 'next/router'
 import { generateRSSFeed } from 'lib/generateRSSfeed'
+import { CustomLink } from '@/components/customlink'
 
 interface BlogPostProps {
-  blogPosts: BlogPost[]
+  blogPosts: IBlogPost[]
   location: Location
 }
 
@@ -38,10 +39,10 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
   const newestPosts = blogPosts.slice(0, 3)
   const olderPosts = blogPosts.slice(3)
 
-  const groupByYear = (olderPosts: BlogPost[]) => {
+  const groupByYear = (olderPosts: IBlogPost[]) => {
     let grouped = {}
 
-    olderPosts.map((post: BlogPost) => {
+    olderPosts.map((post: IBlogPost) => {
       const { date } = post.frontmatter
       const year = date.split(', ')[1]
       const dateString = `${year}`
@@ -61,27 +62,27 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
       .reverse()
       .map(([key, value]: [key: string, value: any], index: number) => (
         <section
-          className="mb-12"
+          className="mb-12 grid gap-4"
           key={`${key}_${index}`}
         >
           <h3>{key}</h3>
-          {value.map((post: BlogPost) => (
-            <Link
+          {value.map((post: IBlogPost) => (
+            <article
+              className="flex flex-col md:flex-row md:gap-8"
               key={post.frontmatter.title}
-              href={`/${post.slug}`}
             >
-              <article className="flex flex-col md:flex-row md:gap-8">
-                <time
-                  className="mb-2 inline-block text-base text-grey sm:min-w-[160px] md:mb-0"
-                  dateTime={post.frontmatter.date}
-                >
-                  {post.frontmatter.date}
-                </time>
-                <h4 className="inline-block border-b-2 border-b-transparent text-primaryColorOne hover:border-b-primaryColorTwo">
+              <time
+                className="mb-2 inline-block text-base text-grey sm:min-w-[160px] md:mb-0"
+                dateTime={post.frontmatter.date}
+              >
+                {post.frontmatter.date}
+              </time>
+              <CustomLink href={`/${post.slug}`}>
+                <h4 className="mb-0 inline-block text-primaryColorOne">
                   {post.frontmatter.title}
                 </h4>
-              </article>
-            </Link>
+              </CustomLink>
+            </article>
           ))}
         </section>
       ))
@@ -99,7 +100,7 @@ const Blog: React.FC<NextPage & BlogPostProps> = ({ blogPosts }) => {
 
       <section className="mx-auto w-full max-w-3xl">
         <h2 className={HEADLINE2_STYLES}>{t('home.blog-posts')}</h2>
-        {newestPosts.map((post: BlogPost, index: number) => {
+        {newestPosts.map((post: IBlogPost, index: number) => {
           post
           const { slug, frontmatter } = post
           const { date, title, description } = frontmatter

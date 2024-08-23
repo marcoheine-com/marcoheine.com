@@ -5,9 +5,10 @@
     "welcome-one": "Ich verhelfe Menschen zu ",
     "welcome-two": "schnellen, barrierefreien und schönen Websites.",
     "welcome-three": " Hast Du ein interessantes Projekt oder eine Idee und brauchst Unterstützung?",
-    "welcome-four": "Auf meiner 'Work' Seite beschreibe ich meine Leistungen und wie ich arbeite.",
+    "welcome-four": "Auf meiner <0>Work</0> Seite beschreibe ich meine Leistungen und wie ich arbeite.",
     "work": "Mehr erfahren",
     "cooperation": "In Kooperation mit:",
+    "client": "Kunde",
     "blog-posts": "Neueste Blog Posts",
     "til-posts": "Neueste Today-I-learned Posts",
     "all-blog-posts": "Alle Blog Posts",
@@ -24,8 +25,9 @@
     "headline-one": "Was Ich mache",
     "what-i-do": {
       "one": "Ich bin ein Front-end Developer, der leidenschaftlich gerne Websites entwickelt.",
-      "two": "Ich habe mehr als <strong>7 Jahre</strong> Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Software-Entwicklungs Unternehmen gerarbeitet habe.",
-      "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann.Meine oberste Priorität ist immer, eine sehr gute und klare Kommunikation zu ermöglichen.",
+      "two-a": "Ich habe mehr als ",
+      "two-b": " Erfahrung, in denen ich bereits an zahlreichen Projekten, in Web-Agenturen, in der Produktentwicklung und in Softwareentwicklungs-Unternehmen gerarbeitet habe.",
+      "three": "Mit einem guten Auge für <strong>UX-Design</strong> verstehe ich Probleme von Nutzer:Innen und weiß, wie ich diese lösen kann. Meine oberste Priorität ist immer, eine sehr gute und klare Kommunikation zu ermöglichen.",
       "four": "Ich habe immer noch große Freude an der Web-Entwicklung und den relevanten Technologien. Jeden Tag etwas Neues zu lernen, ist das, was es für mich so besonders macht.",
       "five": "Ich strebe nach <strong>high quality code</strong> und digitalen Produkten, die man gerne nutzt. Mein Fokus liegt auf <strong>barrierefreien</strong> und <strong>schnellen</strong> Websites."
     },
@@ -90,8 +92,7 @@
     "text-one": "Wenn Du Interesse daran hast, mit mir zu arbeiten, freue ich mich über eine kurze Mail dazu. Mehr Informationen, wie ich arbeite oder wie ich dir helfen kann, findest Du auf meiner work Seite:",
     "text-two": "Wenn Du Fragen oder Anregungen zu einem meiner blog posts oder today-I-learned posts hast, freue ich mich über eine kurze Mail dazu.",
     "text-three": "Per Mail unter ",
-    "text-four": "Ich bin außerdem auch auf Twitter unterwegs: ",
-    "text-five": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
+    "text-four": "Vieles meiner Arbeit ist öffentlich auf Github verfügbar: "
   },
   "testimonials": {
     "one": {
@@ -134,9 +135,26 @@
   },
   "web-projects": {
     "headline": "Web Projekte",
-    "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen. Hier ist eine kleine Auswahl vergangener Projekte:"
+    "text": "Ich konnte bereits vielen verschiedenen Menschen mit der Umsetzung einer modernen Website dabei helfen, ihre Ziele zu erreichen und ihre Kund:innen happy zu machen.",
+    "text-two": "Hier ist eine kleine Auswahl vergangener Projekte:",
+    "dhlbrandhub": {
+      "description": "In Zusammenarbeit mit der Agentur Strichpunkt Design habe ich an der Weiterentwicklung des DHL Brandhubs gearbeitet. Der DHL Brandhub ist eine Plattform, auf der DHL Mitarbeiter:innen und Partner:innen alle Informationen und Assets finden, die sie für ihre tägliche Arbeit benötigen."
+    },
+    "stuttgarterkickers": {
+      "description": "Für die neue Stuttgarter Kickers Website war ich mitverantwortlich für die Entwicklung und Umsetzung."
+    },
+    "abaufdiewiese": {
+      "description": "Abaufdiewiese ist das Herzensprojekt von Katharina Jäger, die Picknicks auf den Obstwiesen rund um Lenningen anbietet. Mit ihrer neuen Website hat sie die Möglichkeit, ihre Angebote und Events zu präsentieren und direkt buchbar zu machen."
+    },
+    "dieda": {
+      "description": "Dieda ist ein Experte für die Herstellung von Geländern und Handläufen. Ich habe für sie die neue Website entwickelt, die sich auf Leistung konzentriert, um ihren Kunden zu helfen, das richtige Produkt zu finden. <0>Der Geländerplaner</0> und der <1>Product Finder</1> sind zwei wichtige Schlüsselelemente dafür."
+    },
+    "aerosolalliance": {
+      "description": "Die Aerosol Alliance ist eine gemeinnützige Organisation, deren Hauptziel es ist, die negativen Auswirkungen von Sprühfarben und -dosen zu verringern. Durch die neue Website können sie mehr Menschen erreichen und ihnen die benötigten Informationen zur Verfügung stellen."
+    }
   },
   "legal": {
     "headline": "Impressum"
-  }
+  },
+  "years": "Jahre"
 }

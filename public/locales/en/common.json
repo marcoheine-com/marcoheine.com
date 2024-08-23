@@ -1,13 +1,14 @@
 {
   "home": {
-    "intro": "I'm Marco - a Freelance Web Developer and I make websites.",
+    "intro": "I'm Marco - a Freelance Web Developer and I make great websites.",
     "welcome": "Hi, and welcome!",
     "welcome-one": "I love to help people to get ",
     "welcome-two": "fast, accessible and great looking websites.",
     "welcome-three": " Have an interesting project or idea?",
-    "welcome-four": "Have a look at my skills and how I work and let’s see how I can help you!",
+    "welcome-four": "Have a look at my <0>skills</0> and how I work and let’s see how I can help you!",
     "work": "Work with me",
     "cooperation": "In cooperation with:",
+    "client": "Client:",
     "blog-posts": "Latest blog posts",
     "til-posts": "Latest TIL posts",
     "all-blog-posts": "All blog posts",
@@ -24,7 +25,8 @@
     "headline-one": "What I do",
     "what-i-do": {
       "one": "I’m a Front-end Developer who <strong>loves</strong> to make websites!",
-      "two": " I have more than <strong>seven years</strong> of experience and worked on numerous projects, at web agencies, in product development, and at software development companies.",
+      "two-a": " I have more than ",
+      "two-b": " of experience and worked on numerous projects, at web agencies, in product development, and at software development companies.",
       "three": " With a keen eye for <strong>UX Design</strong>, I understand user needs and problems and know how to solve them. Enabling clear and good communication is always my priority.",
       "four": "I still love the web and its technologies, and learning something new every day is what makes it so much fun for me.",
       "five": "I strive for <strong>high-quality code</strong> and lovable digital products. My focus is on <strong>acessibility</strong>, <strong>Responsiveness</strong>, and <strong>high-speed</strong> websites."
@@ -90,8 +92,7 @@
     "text-one": "If you're interested in <strong>working with me</strong>, head over to my work page. There you will find all the information about how I work and how I can help you: ",
     "text-two": " If you have a question about one of my blog posts or one of my today-I-learned posts feel free to send me an email.",
     "text-three": "You can reach out to me via email at ",
-    "text-four": "You can also find me on Twitter at ",
-    "text-five": " A few samples of my work as well as the source code of this website are available on "
+    "text-four": " A few samples of my work as well as the source code of this website are available on "
   },
   "testimonials": {
     "one": {
@@ -134,9 +135,26 @@
   },
   "web-projects": {
     "headline": "Web projects",
-    "text": "I had the chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web development skills. Below you can find a selection of some recent projects I've worked on."
+    "text": "I had the chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web development skills.",
+    "text-two": "Below you can find a selection of some recent projects I've worked on.",
+    "dhlbrandhub": {
+      "description": "I helped the team at Strichpunkt Design to further develop the DHL Brandhub. The DHL Brandhub is a platform for DHL employees and partners to get all the information and assets they need to create DHL branded content."
+    },
+    "stuttgarterkickers": {
+      "description": "The Stuttgarter Kickers are a football club from Stuttgart, Germany. I helped them to improve their website and make it more accessible and user-friendly."
+    },
+    "abaufdiewiese": {
+      "description": "Abaufdiewiese is a small business which sells picnics on local meadows. With their new website, they're able to reach more customers and provide them with a great experience."
+    },
+    "dieda": {
+      "description": "Dieda is an expert in manufacturing railings and handrails. I developed the brand new website for them, which focuses on performance to help their customers find the right product. <0>The railing planer</0> and the <1>Product Finder</1> are two main key elements for that."
+    },
+    "aerosolalliance": {
+      "description": "The Aerosol Alliance is a non-profit with the main goal: to reduce the negative impact of spray paint and cans. By developing a new website for them, they're able to reach more people and provide them with the information they need."
+    }
   },
   "legal": {
     "headline": "Legal Notice"
-  }
+  },
+  "years": "years"
 }
