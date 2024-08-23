@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu anim qui aliquip qui non tempor irure dolore nostrud in tempor aliqua proident nulla commodo. Tempor fugiat reprehenderit culpa irure officia dolor officia nisi eu officia mollit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

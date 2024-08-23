@@ -1,0 +1,50 @@
+{
+  "format": "custom",
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Link",
+        "config": {
+          "label": "Logo",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation",
+          "repeat": true,
+          "fields": {
+            "navigationitem": {
+              "type": "Link",
+              "config": {
+                "label": "Navigationitem",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "navigationlabel": {
+              "type": "Text",
+              "config": {
+                "label": "Navigationlabel",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

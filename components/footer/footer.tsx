@@ -175,7 +175,7 @@ const Footer = () => {
         .
       </p>
       <p>
-        © {year} Marco Heine. Made in Germany with
+        © 2015 - {year} Marco Heine. Made in Germany with
         <svg
           className="ml-1 w-[18px] animate-move fill-white p-[3px]"
           viewBox="0 0 32 29.6"
