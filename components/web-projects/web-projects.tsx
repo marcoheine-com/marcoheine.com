@@ -86,7 +86,7 @@ const projects: Project[] = [
         clientLink: 'https://kjphotography.de',
       },
     ],
-    description: 'Technische Umsetzung',
+    description: 'web-projects.abaufdiewiese.description',
     tools: 'Remix, Shopify, React, Typescript, TailwindCSS, Sanity',
     linkLabel: 'abaufdiewiese.de',
     link: 'https://abaufdiewiese.de',
@@ -94,23 +94,7 @@ const projects: Project[] = [
     imageAlt: 'screenshot of the dpdhl-brands website website',
   },
   {
-    title: 'Coach Collective',
-    partners: [
-      {
-        partnerName: 'Werk8',
-        partnerLink: 'https://www.werk8.design/',
-      },
-    ],
-    description: 'Technische Umsetzung',
-    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
-    linkLabel: 'coach-collective.de',
-    link: 'https://www.coach-collective.de',
-    image: CoachCollectiveWebsite,
-    imageAlt: 'screenshot of the dpdhl-brands website website',
-  },
-  {
     title: 'Aerosol Alliance',
-    description: 'Technische Umsetzung',
     partners: [
       {
         partnerName: 'Studio Vierkant',
@@ -124,8 +108,21 @@ const projects: Project[] = [
     imageAlt: 'screenshot of aerosol alliance website',
   },
   {
+    title: 'Coach Collective',
+    partners: [
+      {
+        partnerName: 'Werk8',
+        partnerLink: 'https://www.werk8.design/',
+      },
+    ],
+    tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
+    linkLabel: 'coach-collective.de',
+    link: 'https://www.coach-collective.de',
+    image: CoachCollectiveWebsite,
+    imageAlt: 'screenshot of the dpdhl-brands website website',
+  },
+  {
     title: 'Andersontour',
-    description: 'Technische Umsetzung und Integration in CMS',
     tools: 'React, Typescript, Next.js, TailwindCSS, Vercel, Prismic',
     linkLabel: 'andersontour.de',
     link: 'https://www.andersontour.de',
@@ -134,7 +131,6 @@ const projects: Project[] = [
   },
   {
     title: 'finding the little things illustrations',
-    description: 'Technische Umsetzung',
     tools: 'React, Typescript, Gatsby, TailwindCSS, Netlify, Prismic',
     linkLabel: 'lauraheine.com',
     link: 'https://lauraheine.com',
