@@ -67,7 +67,7 @@ const projects: Project[] = [
   },
   {
     title: 'Dieda',
-    description: 'Website Relaunch, technische Umsetzung, CMS Integration',
+    description: 'web-projects.dieda.description',
     partners: [
       { partnerName: 'Werk8', partnerLink: 'https://www.werk8.design/' },
     ],
@@ -197,7 +197,19 @@ export const WebProjects: React.FC<Props> = ({ showAll = false }) => {
                     <h3 className="text-primaryColorOne">{project.title}</h3>
                     {project.description ? (
                       <p className="mb-4">
-                        <Trans i18nKey={`${project.description}`} />
+                        <Trans
+                          i18nKey={`${project.description}`}
+                          components={[
+                            <CustomLink
+                              key={project.description}
+                              href="https://www.dieda.de/aufmassblatt"
+                            />,
+                            <CustomLink
+                              key={project.description}
+                              href="https://www.dieda.de/produkt-filter/gelaender"
+                            />,
+                          ]}
+                        />
                       </p>
                     ) : null}
 
