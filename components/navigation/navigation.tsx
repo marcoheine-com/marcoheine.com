@@ -1,18 +1,42 @@
 import Link from 'next/link'
 import * as React from 'react'
 import { useRouter } from 'next/router'
+import {
+  HeaderDocument,
+  HeaderDocumentDataNavigationItem,
+} from '@/prismicio-types'
+import { Language } from '@prismicio/client'
+import { PrismicNextLink } from '@prismicio/next'
 
 const NAV_SPAN_BASIC_STYLES =
   'absolute left-0 h-[3px] w-full rotate-0 bg-primaryColorTwo opacity-100 outline-0 transition-all ease-in-out origin-[left_center]'
 
-const LI_BASIC_STYLES = 'uppercase text-[22px] lg:normal-case lg:mb-0'
+const LI_BASIC_STYLES = 'text-[22px] lg:mb-0'
 
 const NAV_LINK_BASIC_STYLES =
   'text-primaryColorOne block py-2 px-4 hover:bg-primaryColorTwo hover:text-white'
-const Navigation = () => {
+
+const Navigation = ({
+  header,
+  locales,
+}: {
+  header: HeaderDocument
+  locales: Language[]
+}) => {
   const [isToggled, setIsToggled] = React.useState(false)
   const handleOnClick = () => setIsToggled(!isToggled)
-  const { locale, locales, asPath } = useRouter()
+  const currentLocale = useRouter()
+
+  const getLangLabel = (lang: string) => {
+    switch (lang) {
+      case 'en-us':
+        return 'en'
+      case 'de-de':
+        return 'de'
+      default:
+        return 'de'
+    }
+  }
 
   return (
     <>
@@ -46,76 +70,43 @@ const Navigation = () => {
         } lg:max-h-full lg:opacity-100`}
       >
         <ul className="ml-0 flex list-none flex-col items-center pb-10 lg:mb-0 lg:flex-row lg:pb-0">
-          <li
-            className={`${LI_BASIC_STYLES} ${isToggled && 'w-full lg:w-auto'}`}
-          >
-            <Link
-              className={NAV_LINK_BASIC_STYLES}
-              href="/work/"
-            >
-              Work
-            </Link>
-          </li>
-          <li
-            className={`${LI_BASIC_STYLES} ${isToggled && 'w-full lg:w-auto'}`}
-          >
-            <Link
-              className={NAV_LINK_BASIC_STYLES}
-              href="/blog/"
-            >
-              Blog
-            </Link>
-          </li>
-          <li
-            className={`${LI_BASIC_STYLES} ${isToggled && 'w-full lg:w-auto'}`}
-          >
-            <Link
-              className={NAV_LINK_BASIC_STYLES}
-              href="/today-i-learned/"
-            >
-              Today I learned
-            </Link>
-          </li>
-          <li
-            className={`${LI_BASIC_STYLES} ${isToggled && 'w-full lg:w-auto'}`}
-          >
-            <Link
-              className={NAV_LINK_BASIC_STYLES}
-              href="/about/"
-            >
-              About
-            </Link>
-          </li>
-          <li
-            className={`${LI_BASIC_STYLES} ${isToggled && 'w-full lg:w-auto'}`}
-          >
-            <Link
-              className={NAV_LINK_BASIC_STYLES}
-              href="/contact/"
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <ul className="m-0 flex list-none gap-4">
-              <li className="m-0 hidden lg:block">|</li>
-              {locales?.map((lng) => {
-                return (
+          {header.data.navigation.map(
+            (item: HeaderDocumentDataNavigationItem) => (
+              <li
+                key={item.navigationlabel}
+                className={`${LI_BASIC_STYLES} ${
+                  isToggled ? 'w-full lg:w-auto' : ''
+                }`}
+              >
+                <Link
+                  className={NAV_LINK_BASIC_STYLES}
+                  href={item.navigationitem.url}
+                >
+                  {item.navigationlabel}
+                </Link>
+              </li>
+            )
+          )}
+          <li className="lg:ml-8">
+            <ul className="m-0 flex list-none gap-2">
+              {locales
+                ?.sort((a, b) => (a.id > b.id ? 1 : -1))
+                ?.map((locale: any) => (
                   <li
-                    key={lng}
-                    className={`${
-                      lng === locale ? 'font-bold' : 'font-normal'
-                    } lang-link m-0`}
+                    key={locale.id}
+                    className={`${LI_BASIC_STYLES} ${
+                      currentLocale.locale === locale.lang ? 'font-bold' : ''
+                    }`}
                   >
-                    <Link
-                      href={asPath}
-                      locale={lng}
+                    <PrismicNextLink
+                      href={locale.url}
+                      locale={locale.lang}
+                      className={`flex items-center justify-between py-3 text-primaryColorOne hover:text-primaryColorOne`}
                     >
-                      {lng}
-                    </Link>
+                      {getLangLabel(locale.lang)}
+                    </PrismicNextLink>
                   </li>
-                )
-              })}
+                ))}
             </ul>
           </li>
         </ul>
