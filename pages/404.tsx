@@ -1,19 +1,38 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { createClient } from '@/prismicio'
+import { getCustomTypes } from '@/lib/getCustomTypes'
+import { FooterDocument, HeaderDocument } from '@/prismicio-types'
+import { getLocales } from '@/types/getLocales'
+import { Language } from '@prismicio/client'
 
-export const getStaticProps = async ({ locale }) => {
+export async function getStaticProps({ previewData, locale }) {
+  const client = createClient({ previewData })
+  const { header, footer } = await getCustomTypes(client, locale)
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      header,
     },
   }
 }
 
-const NotFoundPage = () => {
+const NotFoundPage = ({
+  header,
+  locales,
+  footer,
+}: {
+  header: HeaderDocument
+  footer: FooterDocument
+  locales: Language[]
+}) => {
   return (
-    <Layout>
+    <Layout
+      header={header}
+      locales={locales}
+      footer={footer}
+    >
       <SEO title="404: Not found" />
       <section className="mx-auto mt-20 mb-0">
         <h1>Oh no!</h1>

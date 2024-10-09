@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from 'components/layout'
 import { Trans, useTranslation } from 'next-i18next'
 import Link from 'next/link'
@@ -11,13 +10,14 @@ import MarcoHeineImg from 'public/images/marco-heine.webp'
 import { CallToAction } from 'components/call-to-action'
 import { WebProjects } from 'components/web-projects'
 import { Testimonials } from 'components/testimonials'
-import { NextPage } from 'next'
 import { CustomLink } from '@/components/customlink'
-
-interface IndexPageProps {
-  blogPosts: IBlogPost[]
-  tilData: TILPost[]
-}
+import { createClient } from '@/prismicio'
+import { HomepageDocument } from '@/prismicio-types'
+import { BasicPageProps } from '@/types/basicpageprops'
+import { getLocales } from '@/types/getLocales'
+import { getCustomTypes } from '@/lib/getCustomTypes'
+import { SliceZone } from '@prismicio/react'
+import { components } from '@/slices'
 export interface IBlogPost {
   slug: string
   frontmatter: {
@@ -32,22 +32,49 @@ export interface IBlogPost {
   content: string
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ previewData, locale }) {
+  const client = createClient({ previewData })
   const blogPosts = getAllPosts({ withPrefix: true })
   const tilData = getAllTILPosts({ withPrefix: true })
 
+  let page: HomepageDocument | null = null
+
+  try {
+    page = await client.getByUID('homepage', 'homepage', {
+      lang: locale,
+    })
+  } catch (error) {
+    console.error(error)
+  }
+
+  const locales = await getLocales(page, client)
+  const { header, footer } = await getCustomTypes(client, locale)
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
       blogPosts: JSON.parse(JSON.stringify(blogPosts)),
       tilData,
+      page,
+      locales,
+      header,
+      footer,
     },
   }
 }
 
-const IndexPage: React.FC<NextPage & IndexPageProps> = ({
+interface Homepage extends BasicPageProps {
+  page: HomepageDocument
+  blogPosts: IBlogPost[]
+  tilData: TILPost[]
+}
+
+const IndexPage: React.FC<Homepage> = ({
+  page,
   blogPosts,
   tilData,
+  locales,
+  header,
+  footer,
 }) => {
   const { t } = useTranslation()
 
@@ -55,63 +82,24 @@ const IndexPage: React.FC<NextPage & IndexPageProps> = ({
   const latestTILPosts = tilData.slice(0, 3)
 
   return (
-    <Layout maxWidth="max-w-full">
+    <Layout
+      maxWidth="max-w-full"
+      header={header}
+      footer={footer}
+      locales={locales}
+    >
       <SEO
-        title="Home | Marco Heine - Freelance Web Developer"
-        ogImage={MarcoHeineImg}
-        ogImageAlt="a picture of me"
-        description={t('meta.index-description')}
+        title={page.data.meta_title}
+        ogImage={page.data.meta_image.url}
+        ogImageAlt={page.data.meta_image.alt}
+        description={page.data.meta_description}
       />
 
       <section className="flex flex-col items-center">
-        <div className="relative mb-32 flex max-w-lg flex-col items-start lg:mt-20 lg:max-w-3xl">
-          <Link
-            href="/work/"
-            className="hover-trigger"
-          >
-            <Image
-              alt="A picture of Marco Heine"
-              src={MarcoHeineImg}
-              className="mb-10 rounded-xl duration-300 lg:mr-64"
-              width={500}
-              height={500}
-              priority
-            />
-            <h1 className="hover-target mb-12 bg-white text-primaryColorOne lg:absolute lg:right-0 lg:top-16 lg:w-[495px] lg:rounded-md lg:border-4 lg:border-t-0 lg:border-l-white lg:border-b-primaryColorTwo lg:border-r-primaryColorTwo lg:p-5">
-              <div className="top-6 -left-7 hidden h-0 w-0 border-y-[30px] border-r-[30px] border-y-transparent border-r-white lg:absolute lg:block"></div>
-              {t('home.intro')}
-            </h1>
-          </Link>
-
-          <div className="max-w-lg self-center">
-            <h2>{t('home.welcome')}</h2>
-            <p>
-              {t('home.welcome-one')}
-              <strong>{t('home.welcome-two')}</strong>
-              {t('home.welcome-three')}
-            </p>
-            <p>
-              <Trans
-                i18nKey="home.welcome-four"
-                t={t}
-                components={[
-                  <CustomLink
-                    key={'work-link'}
-                    href={'/work/'}
-                  />,
-                ]}
-              />
-            </p>
-            <CallToAction
-              href="/work/"
-              isInternalLink
-            >
-              {t('home.work')}
-            </CallToAction>
-          </div>
-        </div>
-
-        <WebProjects />
+        <SliceZone
+          slices={page.data.slices}
+          components={components}
+        />
 
         <Testimonials />
 

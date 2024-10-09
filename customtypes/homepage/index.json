@@ -17,7 +17,20 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "indexstage": {
+              "type": "SharedSlice"
+            },
+            "richtext": {
+              "type": "SharedSlice"
+            },
+            "projects": {
+              "type": "SharedSlice"
+            },
+            "pageheader": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

@@ -130,7 +130,100 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >
 
-interface FooterDocumentData {}
+/**
+ * Content for Blogcategory documents
+ */
+interface BlogcategoryDocumentData {
+  /**
+   * Title field in *Blogcategory*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcategory.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+}
+
+/**
+ * Blogcategory document from Prismic
+ *
+ * - **API ID**: `blogcategory`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogcategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogcategoryDocumentData>,
+    'blogcategory',
+    Lang
+  >
+
+/**
+ * Item in *Footer → Navigation*
+ */
+export interface FooterDocumentDataNavigationItem {
+  /**
+   * Link field in *Footer → Navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+
+  /**
+   * Icon field in *Footer → Navigation*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<'Mail' | 'GitHub' | 'LinkedIn' | 'RSS'>
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * linktotop field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.linktotop
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  linktotop: prismic.KeyTextField
+
+  /**
+   * Navigation field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  navigation: prismic.GroupField<Simplify<FooterDocumentDataNavigationItem>>
+
+  /**
+   * Content field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField
+}
 
 /**
  * Footer document from Prismic
@@ -208,7 +301,11 @@ interface HeaderDocumentData {
 export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
 
-type HomepageDocumentDataSlicesSlice = never
+type HomepageDocumentDataSlicesSlice =
+  | IndexstageSlice
+  | RichtextSlice
+  | ProjectsSlice
+  | PageheaderSlice
 
 /**
  * Content for Homepage documents
@@ -273,7 +370,10 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >
 
-type PageDocumentDataSlicesSlice = RichtextSlice
+type PageDocumentDataSlicesSlice =
+  | ProjectsSlice
+  | PageheaderSlice
+  | RichtextSlice
 
 /**
  * Content for Page documents
@@ -337,10 +437,263 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogDocument
   | BlogPostDocument
+  | BlogcategoryDocument
   | FooterDocument
   | HeaderDocument
   | HomepageDocument
   | PageDocument
+
+/**
+ * Primary content in *Indexstage → Default → Primary*
+ */
+export interface IndexstageSliceDefaultPrimary {
+  /**
+   * Image field in *Indexstage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: indexstage.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Headline field in *Indexstage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: indexstage.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField
+
+  /**
+   * Text field in *Indexstage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: indexstage.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+
+  /**
+   * Link field in *Indexstage → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: indexstage.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+
+  /**
+   * Linklabel field in *Indexstage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: indexstage.default.primary.linklabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  linklabel: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Indexstage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndexstageSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<IndexstageSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Indexstage*
+ */
+type IndexstageSliceVariation = IndexstageSliceDefault
+
+/**
+ * Indexstage Shared Slice
+ *
+ * - **API ID**: `indexstage`
+ * - **Description**: Indexstage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IndexstageSlice = prismic.SharedSlice<
+  'indexstage',
+  IndexstageSliceVariation
+>
+
+/**
+ * Primary content in *Pageheader → Default → Primary*
+ */
+export interface PageheaderSliceDefaultPrimary {
+  /**
+   * Headline field in *Pageheader → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pageheader.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.TitleField
+}
+
+/**
+ * Default variation for Pageheader Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageheaderSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<PageheaderSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Pageheader*
+ */
+type PageheaderSliceVariation = PageheaderSliceDefault
+
+/**
+ * Pageheader Shared Slice
+ *
+ * - **API ID**: `pageheader`
+ * - **Description**: Pageheader
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageheaderSlice = prismic.SharedSlice<
+  'pageheader',
+  PageheaderSliceVariation
+>
+
+/**
+ * Item in *Projects → Default → Primary → Projects*
+ */
+export interface ProjectsSliceDefaultPrimaryProjectsItem {
+  /**
+   * Image field in *Projects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Content field in *Projects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField
+
+  /**
+   * Link field in *Projects → Default → Primary → Projects*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+}
+
+/**
+ * Primary content in *Projects → Default → Primary*
+ */
+export interface ProjectsSliceDefaultPrimary {
+  /**
+   * Anchor field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.anchor
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  anchor: prismic.KeyTextField
+
+  /**
+   * Intro field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.intro
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  intro: prismic.RichTextField
+
+  /**
+   * Projects field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projects: prismic.GroupField<
+    Simplify<ProjectsSliceDefaultPrimaryProjectsItem>
+  >
+
+  /**
+   * Cta field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta: prismic.LinkField
+
+  /**
+   * Cta Label field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ProjectsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  'projects',
+  ProjectsSliceVariation
+>
 
 /**
  * Primary content in *Richtext → Default → Primary*
@@ -403,8 +756,11 @@ declare module '@prismicio/client' {
       BlogPostDocument,
       BlogPostDocumentData,
       BlogPostDocumentDataSlicesSlice,
+      BlogcategoryDocument,
+      BlogcategoryDocumentData,
       FooterDocument,
       FooterDocumentData,
+      FooterDocumentDataNavigationItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataNavigationItem,
@@ -415,6 +771,19 @@ declare module '@prismicio/client' {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      IndexstageSlice,
+      IndexstageSliceDefaultPrimary,
+      IndexstageSliceVariation,
+      IndexstageSliceDefault,
+      PageheaderSlice,
+      PageheaderSliceDefaultPrimary,
+      PageheaderSliceVariation,
+      PageheaderSliceDefault,
+      ProjectsSlice,
+      ProjectsSliceDefaultPrimaryProjectsItem,
+      ProjectsSliceDefaultPrimary,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
       RichtextSlice,
       RichtextSliceDefaultPrimary,
       RichtextSliceVariation,

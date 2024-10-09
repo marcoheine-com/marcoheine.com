@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "projects": {
+              "type": "SharedSlice"
+            },
+            "pageheader": {
+              "type": "SharedSlice"
+            },
             "richtext": {
               "type": "SharedSlice"
             }

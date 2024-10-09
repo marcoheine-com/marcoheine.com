@@ -15,7 +15,6 @@ export const repositoryName =
  */
 
 const routes: prismic.ClientConfig['routes'] = [
-  // Examples:
   {
     type: 'homepage',
     path: '/:lang?',
@@ -26,10 +25,7 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'blog',
-    path: '/:lang?/blog/:category?',
-    resolvers: {
-      category: 'category',
-    },
+    path: '/:lang?/blog/',
   },
   {
     type: 'blog_post',

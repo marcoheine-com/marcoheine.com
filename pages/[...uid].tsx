@@ -1,63 +1,107 @@
-import * as React from 'react'
-import { Trans, useTranslation } from 'next-i18next'
-import { CallToAction } from '../components/call-to-action'
-import Layout from '../components/layout'
-import PageHeader from '../components/pageheader'
-import SEO from '../components/seo'
-import { WebProjects } from '../components/web-projects'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { createClient } from '@/prismicio'
+import { GetStaticPropsContext } from 'next'
+import * as prismic from '@prismicio/client'
+import { BasicPageProps } from '@/types/basicpageprops'
+import Error from 'next/error'
+import { getCustomTypes } from '@/lib/getCustomTypes'
+import { SliceZone } from '@prismicio/react'
+import { components } from '@/slices'
+import Layout from '@/components/layout'
+import { PageDocument } from '@/prismicio-types'
+import { getLocales } from '@/types/getLocales'
+import { Trans, useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import SEO from '@/components/seo'
+import PageHeader from '@/components/pageheader'
+import { CallToAction } from '@/components/call-to-action'
 import { CustomLink } from '@/components/customlink'
+import { WebProjects } from '@/components/web-projects'
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-})
+type PageParams = { uid: string }
 
-const Work = () => {
+export async function getStaticProps({
+  params,
+  previewData,
+  locale,
+}: GetStaticPropsContext<PageParams>) {
+  const client = createClient({ previewData })
+
+  let page: PageDocument | null = null
+  let errorCode = null
+
+  try {
+    const uid = params?.uid[params?.uid.length - 1]
+
+    page = await client.getByUID('page', uid || '', {
+      lang: locale,
+    })
+  } catch (error) {
+    if (!(error as any).response) {
+      errorCode = '404'
+    }
+  }
+
+  const { header, footer } = await getCustomTypes(client, locale)
+  const locales = await getLocales(page, client)
+
+  return {
+    props: { page, header, footer, locales, errorCode },
+  }
+}
+
+export async function getStaticPaths() {
+  const client = createClient()
+
+  const pages = await client.getAllByType('page', { lang: '*' })
+
+  return {
+    paths: pages.map((page) => prismic.asLink(page)),
+    fallback: true,
+  }
+}
+
+interface ContentPageProps extends BasicPageProps {
+  page: PageDocument
+}
+
+export default function Contentpage({
+  page,
+  header,
+  footer,
+  locales,
+  errorCode,
+}: ContentPageProps) {
   const { t } = useTranslation()
   const location = useRouter()
+
+  if (errorCode) {
+    return <Error statusCode={404} />
+  }
 
   const yearsOfExperience = new Date().getFullYear() - 2016
 
   return (
-    <Layout maxWidth="max-w-[1920px]">
+    <Layout
+      maxWidth="max-w-[1920px]"
+      locales={locales}
+      header={header}
+      footer={footer}
+    >
       <SEO
-        title="Work with me | Marco Heine - Freelance Web Developer"
-        ogImage={'/images/marco-heine.webp'}
-        ogImageAlt="a picture of Marco Heine"
-        description={t('meta.work-description')}
+        title={page.data.meta_title}
+        ogImage={page.data.meta_image.url}
+        ogImageAlt={page.data.meta_image.alt}
+        description={page.data.meta_description}
         location={location.asPath}
+      />
+
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
       />
       <section className="flex w-full flex-col items-center">
         <PageHeader title="Work with me" />
         <section className="flex w-full flex-col items-center gap-24">
-          <article className="max-w-2xl">
-            <h2 className="mb-4">{t('work.headline-one')}</h2>
-            <p>
-              <Trans i18nKey={'work.what-i-do.one'} />
-            </p>
-            <p>
-              <Trans i18nKey={'work.what-i-do.two-a'} />
-              <strong>
-                {yearsOfExperience} {t('years')}
-              </strong>
-              <Trans i18nKey={'work.what-i-do.two-b'} />
-            </p>
-            <p>
-              <Trans i18nKey={'work.what-i-do.three'} />
-            </p>
-            <p>
-              <Trans i18nKey={'work.what-i-do.four'} />
-            </p>
-            <p>
-              <Trans i18nKey={'work.what-i-do.five'} />
-            </p>
-            <CallToAction href="mailto:hello@marcoheine.com">
-              {t('work.call-to-action')}
-            </CallToAction>
-          </article>
           <article className="max-w-2xl">
             <h2 className="mb-4">{t('work.headline-two')}</h2>
             <section className="mb-10">
@@ -186,5 +230,3 @@ const Work = () => {
     </Layout>
   )
 }
-
-export default Work

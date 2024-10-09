@@ -1,8 +1,16 @@
 import { config } from 'config'
 import Link from 'next/link'
 import Navigation from '../navigation'
+import { HeaderDocument } from '@/prismicio-types'
+import { Language } from '@prismicio/client'
 
-const Header = () => {
+const Header = ({
+  header,
+  locales,
+}: {
+  header: HeaderDocument
+  locales: Language[]
+}) => {
   return (
     <header className="transition-all duration-200 ease-in-out hover:shadow-header">
       <div className="mx-auto flex max-w-4xl flex-col items-start justify-between px-5 lg:flex-row lg:items-center">
@@ -16,7 +24,10 @@ const Header = () => {
           </Link>
         </span>
 
-        <Navigation />
+        <Navigation
+          header={header}
+          locales={locales}
+        />
       </div>
     </header>
   )
