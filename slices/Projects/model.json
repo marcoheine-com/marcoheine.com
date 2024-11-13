@@ -76,6 +76,18 @@
             "label": "Cta Label",
             "placeholder": ""
           }
+        },
+        "ctaStyle": {
+          "type": "Select",
+          "config": {
+            "label": "Cta Style",
+            "placeholder": "",
+            "options": [
+              "Inline Link",
+              "Button"
+            ],
+            "default_value": "Inline Link"
+          }
         }
       },
       "items": {}

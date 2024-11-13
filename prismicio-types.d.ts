@@ -663,6 +663,17 @@ export interface ProjectsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   cta_label: prismic.KeyTextField
+
+  /**
+   * Cta Style field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Inline Link
+   * - **API ID Path**: projects.default.primary.ctaStyle
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  ctaStyle: prismic.SelectField<'Inline Link' | 'Button', 'filled'>
 }
 
 /**

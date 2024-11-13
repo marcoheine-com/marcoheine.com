@@ -90,6 +90,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "ability",
 				"type": "Text"
+			},
+			"ctaStyle": {
+				"__TYPE__": "FieldContent",
+				"value": "Inline Link",
+				"type": "Select"
 			}
 		},
 		"items": []

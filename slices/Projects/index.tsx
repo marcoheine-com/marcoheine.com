@@ -1,3 +1,4 @@
+import { CallToAction } from '@/components/call-to-action'
 import { CustomLink } from '@/components/customlink'
 import { RichTextSerializer } from '@/components/richtext-serializer'
 import { ProjectsSliceDefaultPrimaryProjectsItem } from '@/prismicio-types'
@@ -11,8 +12,40 @@ import * as React from 'react'
 export type ProjectsProps = SliceComponentProps<Content.ProjectsSlice>
 
 const Projects = ({ slice }: ProjectsProps): JSX.Element => {
+  const renderCta = () => {
+    if (!slice.primary.cta) {
+      return null
+    }
+
+    if (slice.primary.ctaStyle === 'Button') {
+      return (
+        <CallToAction
+          href={
+            filledLinkTypeGuard(slice.primary.cta) ? slice.primary.cta.url : '/'
+          }
+        >
+          {slice.primary.cta_label}
+        </CallToAction>
+      )
+    }
+
+    return (
+      <CustomLink
+        href={
+          filledLinkTypeGuard(slice.primary.cta) ? slice.primary.cta.url : '/'
+        }
+        className="mx-auto"
+      >
+        → {slice.primary.cta_label}
+      </CustomLink>
+    )
+  }
+
   return (
-    <section className="mx-auto mb-32 flex max-w-5xl flex-col items-center">
+    <section
+      className="mx-auto mt-8 flex max-w-5xl flex-col items-center lg:mt-32"
+      id={slice.primary.anchor}
+    >
       <PrismicRichText
         field={slice.primary.intro}
         components={{
@@ -55,16 +88,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
         )}
       </section>
 
-      {slice.primary.cta ? (
-        <CustomLink
-          href={
-            filledLinkTypeGuard(slice.primary.cta) ? slice.primary.cta.url : '/'
-          }
-          className="mx-auto"
-        >
-          → {slice.primary.cta_label}
-        </CustomLink>
-      ) : null}
+      {renderCta()}
     </section>
   )
 }
