@@ -13,7 +13,7 @@ const Indexstage = ({ slice }: IndexstageProps): JSX.Element => {
     ? slice.primary.link.url
     : null
   return (
-    <div className="relative mb-32 flex max-w-lg flex-col items-start lg:mt-20 lg:max-w-3xl">
+    <div className="relative flex max-w-lg flex-col items-start lg:mt-20 lg:max-w-3xl">
       <Link
         href="/work/"
         className="hover-trigger"

@@ -17,7 +17,14 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "allblogposts": {
+              "type": "SharedSlice"
+            },
+            "latestblogposts": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

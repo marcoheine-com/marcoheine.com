@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "textmedia": {
+              "type": "SharedSlice"
+            },
+            "cta": {
+              "type": "SharedSlice"
+            },
             "projects": {
               "type": "SharedSlice"
             },

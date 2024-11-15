@@ -1,14 +1,11 @@
 import * as React from 'react'
 import Layout from 'components/layout'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
 import SEO from 'components/seo'
 import { getAllPosts } from 'lib/blog'
 import { getAllTILPosts, TILPost } from 'lib/til'
-import MarcoHeineImg from 'public/images/marco-heine.webp'
-import { CallToAction } from 'components/call-to-action'
-import { WebProjects } from 'components/web-projects'
 import { Testimonials } from 'components/testimonials'
 import { CustomLink } from '@/components/customlink'
 import { createClient } from '@/prismicio'
@@ -100,8 +97,6 @@ const IndexPage: React.FC<Homepage> = ({
           slices={page.data.slices}
           components={components}
         />
-
-        <Testimonials />
 
         <section className="w-full max-w-4xl">
           <section className="mb-16 grid">

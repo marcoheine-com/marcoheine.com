@@ -3,8 +3,13 @@
 import dynamic from 'next/dynamic'
 
 export const components = {
+  allblogposts: dynamic(() => import('./Allblogposts')),
+  cta: dynamic(() => import('./Cta')),
   indexstage: dynamic(() => import('./Indexstage')),
+  latestblogposts: dynamic(() => import('./Latestblogposts')),
   pageheader: dynamic(() => import('./Pageheader')),
   projects: dynamic(() => import('./Projects')),
   richtext: dynamic(() => import('./Richtext')),
+  testimonials: dynamic(() => import('./Testimonials')),
+  textmedia: dynamic(() => import('./Textmedia')),
 }

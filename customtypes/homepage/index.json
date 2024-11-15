@@ -18,6 +18,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "latestblogposts": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "cta": {
+              "type": "SharedSlice"
+            },
             "indexstage": {
               "type": "SharedSlice"
             },

@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type BlogDocumentDataSlicesSlice = never
+type BlogDocumentDataSlicesSlice = AllblogpostsSlice | LatestblogpostsSlice
 
 /**
  * Content for Blog documents
@@ -302,6 +302,9 @@ export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, 'header', Lang>
 
 type HomepageDocumentDataSlicesSlice =
+  | LatestblogpostsSlice
+  | TestimonialsSlice
+  | CtaSlice
   | IndexstageSlice
   | RichtextSlice
   | ProjectsSlice
@@ -371,6 +374,8 @@ export type HomepageDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | TextmediaSlice
+  | CtaSlice
   | ProjectsSlice
   | PageheaderSlice
   | RichtextSlice
@@ -442,6 +447,88 @@ export type AllDocumentTypes =
   | HeaderDocument
   | HomepageDocument
   | PageDocument
+
+/**
+ * Default variation for Allblogposts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllblogpostsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  never
+>
+
+/**
+ * Slice variation for *Allblogposts*
+ */
+type AllblogpostsSliceVariation = AllblogpostsSliceDefault
+
+/**
+ * Allblogposts Shared Slice
+ *
+ * - **API ID**: `allblogposts`
+ * - **Description**: Allblogposts
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllblogpostsSlice = prismic.SharedSlice<
+  'allblogposts',
+  AllblogpostsSliceVariation
+>
+
+/**
+ * Primary content in *Cta → Default → Primary*
+ */
+export interface CtaSliceDefaultPrimary {
+  /**
+   * Label field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField
+
+  /**
+   * Link field in *Cta → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+}
+
+/**
+ * Default variation for Cta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<CtaSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Cta*
+ */
+type CtaSliceVariation = CtaSliceDefault
+
+/**
+ * Cta Shared Slice
+ *
+ * - **API ID**: `cta`
+ * - **Description**: Cta
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CtaSlice = prismic.SharedSlice<'cta', CtaSliceVariation>
 
 /**
  * Primary content in *Indexstage → Default → Primary*
@@ -526,6 +613,36 @@ type IndexstageSliceVariation = IndexstageSliceDefault
 export type IndexstageSlice = prismic.SharedSlice<
   'indexstage',
   IndexstageSliceVariation
+>
+
+/**
+ * Default variation for Latestblogposts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestblogpostsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  never
+>
+
+/**
+ * Slice variation for *Latestblogposts*
+ */
+type LatestblogpostsSliceVariation = LatestblogpostsSliceDefault
+
+/**
+ * Latestblogposts Shared Slice
+ *
+ * - **API ID**: `latestblogposts`
+ * - **Description**: Latestblogposts
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestblogpostsSlice = prismic.SharedSlice<
+  'latestblogposts',
+  LatestblogpostsSliceVariation
 >
 
 /**
@@ -751,6 +868,171 @@ export type RichtextSlice = prismic.SharedSlice<
   RichtextSliceVariation
 >
 
+/**
+ * Item in *Testimonials → Default → Primary → Item*
+ */
+export interface TestimonialsSliceDefaultPrimaryItemItem {
+  /**
+   * Text field in *Testimonials → Default → Primary → Item*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+
+  /**
+   * Name field in *Testimonials → Default → Primary → Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField
+
+  /**
+   * Link field in *Testimonials → Default → Primary → Item*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
+
+  /**
+   * Linklabel field in *Testimonials → Default → Primary → Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[].linklabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  linklabel: prismic.KeyTextField
+
+  /**
+   * Image field in *Testimonials → Default → Primary → Item*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+}
+
+/**
+ * Primary content in *Testimonials → Default → Primary*
+ */
+export interface TestimonialsSliceDefaultPrimary {
+  /**
+   * Title field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Item field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  item: prismic.GroupField<Simplify<TestimonialsSliceDefaultPrimaryItemItem>>
+}
+
+/**
+ * Default variation for Testimonials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<TestimonialsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Testimonials*
+ */
+type TestimonialsSliceVariation = TestimonialsSliceDefault
+
+/**
+ * Testimonials Shared Slice
+ *
+ * - **API ID**: `testimonials`
+ * - **Description**: Testimonials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSlice = prismic.SharedSlice<
+  'testimonials',
+  TestimonialsSliceVariation
+>
+
+/**
+ * Primary content in *Textmedia → Default → Primary*
+ */
+export interface TextmediaSliceDefaultPrimary {
+  /**
+   * Image field in *Textmedia → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: textmedia.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Text field in *Textmedia → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: textmedia.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+}
+
+/**
+ * Default variation for Textmedia Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextmediaSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<TextmediaSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Textmedia*
+ */
+type TextmediaSliceVariation = TextmediaSliceDefault
+
+/**
+ * Textmedia Shared Slice
+ *
+ * - **API ID**: `textmedia`
+ * - **Description**: Textmedia
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextmediaSlice = prismic.SharedSlice<
+  'textmedia',
+  TextmediaSliceVariation
+>
+
 declare module '@prismicio/client' {
   interface CreateClient {
     (
@@ -782,10 +1064,20 @@ declare module '@prismicio/client' {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AllblogpostsSlice,
+      AllblogpostsSliceVariation,
+      AllblogpostsSliceDefault,
+      CtaSlice,
+      CtaSliceDefaultPrimary,
+      CtaSliceVariation,
+      CtaSliceDefault,
       IndexstageSlice,
       IndexstageSliceDefaultPrimary,
       IndexstageSliceVariation,
       IndexstageSliceDefault,
+      LatestblogpostsSlice,
+      LatestblogpostsSliceVariation,
+      LatestblogpostsSliceDefault,
       PageheaderSlice,
       PageheaderSliceDefaultPrimary,
       PageheaderSliceVariation,
@@ -799,6 +1091,15 @@ declare module '@prismicio/client' {
       RichtextSliceDefaultPrimary,
       RichtextSliceVariation,
       RichtextSliceDefault,
+      TestimonialsSlice,
+      TestimonialsSliceDefaultPrimaryItemItem,
+      TestimonialsSliceDefaultPrimary,
+      TestimonialsSliceVariation,
+      TestimonialsSliceDefault,
+      TextmediaSlice,
+      TextmediaSliceDefaultPrimary,
+      TextmediaSliceVariation,
+      TextmediaSliceDefault,
     }
   }
 }
