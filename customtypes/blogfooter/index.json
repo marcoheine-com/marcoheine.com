@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "blogfooter",
+  "label": "Blogfooter",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "cta": {
+              "type": "SharedSlice"
+            },
+            "richtext": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

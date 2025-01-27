@@ -4,7 +4,10 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type BlogDocumentDataSlicesSlice = AllblogpostsSlice | LatestblogpostsSlice
+type BlogDocumentDataSlicesSlice =
+  | PageheaderSlice
+  | AllblogpostsSlice
+  | LatestblogpostsSlice
 
 /**
  * Content for Blog documents
@@ -65,12 +68,60 @@ interface BlogDocumentData {
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, 'blog', Lang>
 
-type BlogPostDocumentDataSlicesSlice = RichtextSlice
+/**
+ * Item in *Blog Post → Tags*
+ */
+export interface BlogPostDocumentDataTagsItem {
+  /**
+   * Tag field in *Blog Post → Tags*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.tags[].tag
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tag: prismic.ContentRelationshipField<'blogcategory'>
+}
+
+type BlogPostDocumentDataSlicesSlice = ImageSlice | RichtextSlice
 
 /**
  * Content for Blog Post documents
  */
 interface BlogPostDocumentData {
+  /**
+   * Tags field in *Blog Post*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.tags[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tags: prismic.GroupField<Simplify<BlogPostDocumentDataTagsItem>>
+
+  /**
+   * Date field in *Blog Post*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField
+
+  /**
+   * Last Updated field in *Blog Post*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.lastUpdated
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  lastUpdated: prismic.DateField
+
   /**
    * Slice Zone field in *Blog Post*
    *
@@ -159,6 +210,40 @@ export type BlogcategoryDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<BlogcategoryDocumentData>,
     'blogcategory',
+    Lang
+  >
+
+type BlogfooterDocumentDataSlicesSlice = CtaSlice | RichtextSlice
+
+/**
+ * Content for Blogfooter documents
+ */
+interface BlogfooterDocumentData {
+  /**
+   * Slice Zone field in *Blogfooter*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogfooter.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogfooterDocumentDataSlicesSlice>
+}
+
+/**
+ * Blogfooter document from Prismic
+ *
+ * - **API ID**: `blogfooter`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogfooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BlogfooterDocumentData>,
+    'blogfooter',
     Lang
   >
 
@@ -443,6 +528,7 @@ export type AllDocumentTypes =
   | BlogDocument
   | BlogPostDocument
   | BlogcategoryDocument
+  | BlogfooterDocument
   | FooterDocument
   | HeaderDocument
   | HomepageDocument
@@ -531,6 +617,58 @@ type CtaSliceVariation = CtaSliceDefault
 export type CtaSlice = prismic.SharedSlice<'cta', CtaSliceVariation>
 
 /**
+ * Primary content in *Image → Default → Primary*
+ */
+export interface ImageSliceDefaultPrimary {
+  /**
+   * Image field in *Image → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Caption field in *Image → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  caption: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ImageSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Image*
+ */
+type ImageSliceVariation = ImageSliceDefault
+
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: Image
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSlice = prismic.SharedSlice<'image', ImageSliceVariation>
+
+/**
  * Primary content in *Indexstage → Default → Primary*
  */
 export interface IndexstageSliceDefaultPrimary {
@@ -616,6 +754,21 @@ export type IndexstageSlice = prismic.SharedSlice<
 >
 
 /**
+ * Primary content in *Latestblogposts → Default → Primary*
+ */
+export interface LatestblogpostsSliceDefaultPrimary {
+  /**
+   * Title field in *Latestblogposts → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latestblogposts.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+}
+
+/**
  * Default variation for Latestblogposts Slice
  *
  * - **API ID**: `default`
@@ -624,7 +777,7 @@ export type IndexstageSlice = prismic.SharedSlice<
  */
 export type LatestblogpostsSliceDefault = prismic.SharedSliceVariation<
   'default',
-  Record<string, never>,
+  Simplify<LatestblogpostsSliceDefaultPrimary>,
   never
 >
 
@@ -1048,9 +1201,13 @@ declare module '@prismicio/client' {
       BlogDocumentDataSlicesSlice,
       BlogPostDocument,
       BlogPostDocumentData,
+      BlogPostDocumentDataTagsItem,
       BlogPostDocumentDataSlicesSlice,
       BlogcategoryDocument,
       BlogcategoryDocumentData,
+      BlogfooterDocument,
+      BlogfooterDocumentData,
+      BlogfooterDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataNavigationItem,
@@ -1071,11 +1228,16 @@ declare module '@prismicio/client' {
       CtaSliceDefaultPrimary,
       CtaSliceVariation,
       CtaSliceDefault,
+      ImageSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceVariation,
+      ImageSliceDefault,
       IndexstageSlice,
       IndexstageSliceDefaultPrimary,
       IndexstageSliceVariation,
       IndexstageSliceDefault,
       LatestblogpostsSlice,
+      LatestblogpostsSliceDefaultPrimary,
       LatestblogpostsSliceVariation,
       LatestblogpostsSliceDefault,
       PageheaderSlice,

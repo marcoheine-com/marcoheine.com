@@ -52,7 +52,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
           paragraph: ({ children }) => <p className="max-w-3xl">{children}</p>,
         }}
       />
-      <section className={`my-8 grid gap-y-8 md:grid-cols-1`}>
+      <section className={`my-8 grid gap-y-16 md:grid-cols-1`}>
         {slice.primary.projects.map(
           (project: ProjectsSliceDefaultPrimaryProjectsItem, index: number) => {
             const filledLink = filledLinkTypeGuard(project.link)

@@ -1,8 +1,8 @@
 {
-  "id": "latestblogposts",
+  "id": "image",
   "type": "SharedSlice",
-  "name": "Latestblogposts",
-  "description": "Latestblogposts",
+  "name": "Image",
+  "description": "Image",
   "variations": [
     {
       "id": "default",
@@ -12,10 +12,18 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "caption": {
           "type": "Text",
           "config": {
-            "label": "Title",
+            "label": "Caption",
             "placeholder": ""
           }
         }

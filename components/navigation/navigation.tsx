@@ -70,7 +70,7 @@ const Navigation = ({
         } lg:max-h-full lg:opacity-100`}
       >
         <ul className="ml-0 flex list-none flex-col items-center pb-10 lg:mb-0 lg:flex-row lg:pb-0">
-          {header.data.navigation.map(
+          {header?.data?.navigation.map(
             (item: HeaderDocumentDataNavigationItem) => (
               <li
                 key={item.navigationlabel}

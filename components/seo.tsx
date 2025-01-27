@@ -82,34 +82,6 @@ const SEO: React.FC<SEOProps> = ({
         name="og:imageAlt"
         content={ogImageAlt || 'picture of Marco Heine'}
       />
-      <meta
-        name="twitter:card"
-        content={`${isBlogPost ? 'summary_large_image' : 'summary'}`}
-      />
-      <meta
-        name="twitter:image"
-        content={`${
-          ogImage
-            ? `${config.siteUrl}${validOgImage}`
-            : `${config.siteUrl}/images/marco-heine.webp`
-        }`}
-      />
-      <meta
-        name="twitter:image:alt"
-        content={ogImageAlt}
-      />
-      <meta
-        name="twitter:creator"
-        content={config.author}
-      />
-      <meta
-        name="twitter:title"
-        content={title}
-      />
-      <meta
-        name="twitter:description"
-        content={metaDescription}
-      />
       <link
         rel="canonical"
         href={`${

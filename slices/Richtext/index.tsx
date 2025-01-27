@@ -6,7 +6,7 @@ export type RichtextProps = SliceComponentProps<Content.RichtextSlice>
 
 const Richtext = ({ slice }: RichtextProps): JSX.Element => {
   return (
-    <section className="mx-auto mt-8 max-w-2xl lg:mt-32">
+    <section className="mt-8 max-w-4xl lg:mt-16">
       <PrismicRichText
         field={slice.primary.richtext}
         components={RichTextSerializer}

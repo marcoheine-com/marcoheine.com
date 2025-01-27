@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Lato-Regular';
+  font-family: Lato-Regular;
   font-display: swap;
   src: url('../fonts/Lato-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Lato-Bold';
+  font-family: Lato-Bold;
   font-display: swap;
   src: url('../fonts/Lato-Bold.ttf');
 }
 
 @font-face {
-  font-family: 'Merriweather';
+  font-family: Merriweather;
   font-display: swap;
   src: url('../fonts/Merriweather-Regular.ttf');
 }
@@ -23,38 +23,47 @@
 /* New overrides 2022 */
 @layer base {
   body {
-    font-family: 'Lato-Regular', sans-serif;
+    color: rgb(36 34 34);
+    font-family: Lato-Regular, sans-serif;
     font-size: 20px;
-    color: rgb(36, 34, 34);
   }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: 'Merriweather', serif;
+    font-family: Merriweather, serif;
+
     @apply mb-4 text-black;
   }
+
   h1 {
     @apply text-4xl;
   }
+
   h2 {
     @apply text-3xl;
   }
+
   h3 {
     @apply text-2xl;
   }
+
   h4 {
     @apply text-xl;
   }
+
   p,
   span {
     @apply mb-4 text-xl;
   }
+
   svg {
     @apply inline-block;
   }
+
   a {
     @apply text-primaryColorTwo hover:text-linkHover;
   }
@@ -70,6 +79,7 @@
   ol li {
     @apply mb-2 last:mb-0;
   }
+
   ul li {
     @apply mb-2 last:mb-0;
   }
@@ -111,8 +121,9 @@
 
 @layer utilities {
   .font-serif {
-    font-family: 'Merriweather', serif;
+    font-family: Merriweather, serif;
   }
+
   .hover-target {
     @apply transition-all duration-300;
   }
@@ -130,7 +141,7 @@
   }
 
   .font-merriweather {
-    font-family: 'Merriweather', serif;
+    font-family: Merriweather, serif;
   }
 
   .outgoing-link-trigger > span {

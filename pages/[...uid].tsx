@@ -80,15 +80,15 @@ export default function Contentpage({
       footer={footer}
     >
       <SEO
-        title={page.data.meta_title}
-        ogImage={page.data.meta_image.url}
-        ogImageAlt={page.data.meta_image.alt}
-        description={page.data.meta_description}
+        title={page?.data.meta_title}
+        ogImage={page?.data.meta_image.url}
+        ogImageAlt={page?.data.meta_image.alt}
+        description={page?.data.meta_description}
         location={location.asPath}
       />
 
       <SliceZone
-        slices={page.data.slices}
+        slices={page?.data.slices}
         components={components}
       />
     </Layout>

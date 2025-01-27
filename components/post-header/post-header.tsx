@@ -1,48 +1,57 @@
-import { CustomLink } from '@/components/customlink'
+import { BlogcategoryDocument } from '@/prismicio-types'
+import { CustomLink } from '../customlink'
 
 export const PostHeader = ({
   date,
   updated,
-  timeToRead,
-  slug,
-  type,
+  categories,
 }: {
   date: string
   updated?: string
-  timeToRead?: number
-  slug: string
-  type: 'blog' | 'today-i-learned'
+  categories: any[]
 }) => {
+  const germanDate = new Date(date).toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+  const germanUpdated = new Date(updated).toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
-    <section className="mb-8 flex flex-col gap-4 pt-4 text-base sm:flex-row sm:gap-16">
+    <section className="mt-4 flex flex-col gap-4 self-start text-base sm:flex-row sm:gap-16">
       <time
-        dateTime={date}
+        dateTime={germanDate}
         className="mb-0"
       >
-        🗓 {date}
+        🗓 {germanDate}
       </time>
-      {timeToRead && (
-        <time
-          dateTime={timeToRead.toString()}
-          className="mb-0"
-        >
-          ⏱ {timeToRead} min read
-        </time>
-      )}
 
       {updated && (
         <time
-          dateTime={date}
+          dateTime={germanUpdated}
           className="mb-0"
         >
-          🔔 Last Updated: {updated}
+          🔔 Last Updated: {germanUpdated}
         </time>
       )}
-      <CustomLink
-        href={`https://github.com/marcoheine-com/marcoheine.com/edit/main/${type}/${slug}.mdx`}
-      >
-        Edit this Post
-      </CustomLink>
+
+      {categories?.length > 0 && (
+        <div className="flex gap-2">
+          {categories?.map((category) => (
+            <CustomLink
+              href={`/blog/category/${category.tag.uid}`}
+              key={category.tag.id}
+            >
+              {category.tag.data.title}
+            </CustomLink>
+          ))}
+        </div>
+      )}
     </section>
   )
 }

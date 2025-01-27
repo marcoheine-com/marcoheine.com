@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Layout from '@/components/layout'
+import SEO from '@/components/seo'
 import { useRouter } from 'next/router'
 import { generateRSSFeed } from 'lib/generateRSSfeed'
 import { CustomLink } from '@/components/customlink'
@@ -15,6 +15,7 @@ import {
 import { BasicPageProps } from '@/types/basicpageprops'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
+import * as prismic from '@prismicio/client'
 
 export async function getStaticProps({ params, previewData, locale }) {
   let page: BlogDocument | null = null
@@ -36,9 +37,18 @@ export async function getStaticProps({ params, previewData, locale }) {
 
   const { header, footer } = await getCustomTypes(client, locale)
   const locales = await getLocales(page, client)
-  const blogPosts = await client.getAllByType('blog_post', { lang: '*' })
   const blogCategories = await client.getAllByType('blogcategory', {
     lang: '*',
+  })
+
+  const currentBlogCategory = blogCategories.find(
+    (category) => category.uid === params.uid
+  ).id
+  const blogPosts = await client.getAllByType('blog_post', {
+    lang: '*',
+    filters: [
+      prismic.filter.any('my.blog_post.tags.tag', [currentBlogCategory]),
+    ],
   })
 
   return {
@@ -51,6 +61,19 @@ export async function getStaticProps({ params, previewData, locale }) {
       blogPosts,
       blogCategories,
     },
+  }
+}
+
+export async function getStaticPaths() {
+  const client = createClient()
+
+  const pages = await client.getAllByType('blogcategory', {
+    lang: '*',
+  })
+
+  return {
+    paths: pages.map((page) => prismic.asLink(page)),
+    fallback: false,
   }
 }
 
@@ -70,10 +93,7 @@ export default function Blog({
 }: BlogProps) {
   const location = useRouter()
 
-  const latestPosts = blogPosts.slice(0, 3)
-  const allOtherPosts = blogPosts.slice(3)
-
-  const blogPostByYear = allOtherPosts.reduce((acc, post) => {
+  const blogPostByYear = blogPosts?.reduce((acc, post) => {
     const year = new Date(post.data.date).getFullYear()
     if (!acc[year]) {
       acc[year] = []
@@ -104,7 +124,7 @@ export default function Blog({
       <section className="mx-auto w-full max-w-3xl">
         {blogCategories.length > 0 ? (
           <Fragment>
-            <ul className="m-0 list-none">
+            <ul className="m-0 flex list-none gap-4">
               {blogCategories.map((category) => (
                 <li key={category.uid}>
                   <CustomLink href={`/blog/category/${category.uid}`}>
@@ -115,32 +135,21 @@ export default function Blog({
             </ul>
           </Fragment>
         ) : null}
-        {
-          <Fragment>
-            <h2>Latest Posts</h2>
-            <ul className="m-0 list-none">
-              {latestPosts.map((post) => (
-                <li key={post.uid}>
-                  <CustomLink href={post.url}>
-                    {post.data.meta_title}
-                  </CustomLink>
-                </li>
-              ))}
-            </ul>
-          </Fragment>
-        }
-        {Object.keys(blogPostByYear).map((year) => (
-          <div key={year}>
-            <h2>{year}</h2>
-            <ul>
-              {blogPostByYear[year].map((post) => (
-                <li key={post.uid}>
-                  <CustomLink href={post.url}>{post.data.title}</CustomLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {blogPostByYear &&
+          Object.keys(blogPostByYear).map((year) => (
+            <div key={year}>
+              <h2>{year}</h2>
+              <ul className="m-0 list-none">
+                {blogPostByYear[year].map((post) => (
+                  <li key={post.uid}>
+                    <CustomLink href={post.url}>
+                      {post.data.meta_title}
+                    </CustomLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
       </section>
     </Layout>
   )

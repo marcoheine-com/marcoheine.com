@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "pageheader": {
+              "type": "SharedSlice"
+            },
             "allblogposts": {
               "type": "SharedSlice"
             },
