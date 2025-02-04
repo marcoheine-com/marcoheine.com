@@ -4,7 +4,6 @@ import SEO from '../components/seo'
 import { createClient } from '@/prismicio'
 import { getCustomTypes } from '@/lib/getCustomTypes'
 import { FooterDocument, HeaderDocument } from '@/prismicio-types'
-import { getLocales } from '@/types/getLocales'
 import { Language } from '@prismicio/client'
 
 export async function getStaticProps({ previewData, locale }) {

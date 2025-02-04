@@ -1,4 +1,3 @@
-import CoffeeLink from '@/components/coffeehint/CoffeeLink'
 import { CustomLink } from '@/components/customlink'
 import { CallToAction } from '../call-to-action'
 

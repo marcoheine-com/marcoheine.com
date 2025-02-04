@@ -16,6 +16,8 @@ import { BasicPageProps } from '@/types/basicpageprops'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
 import * as prismic from '@prismicio/client'
+import NotFoundPage from '@/pages/404'
+import { Tags } from '@/components/Tags'
 
 export async function getStaticProps({ params, previewData, locale }) {
   let page: BlogDocument | null = null
@@ -90,8 +92,19 @@ export default function Blog({
   page,
   blogPosts,
   blogCategories,
+  errorCode,
 }: BlogProps) {
   const location = useRouter()
+
+  if (errorCode) {
+    return (
+      <NotFoundPage
+        header={header}
+        footer={footer}
+        locales={locales}
+      />
+    )
+  }
 
   const blogPostByYear = blogPosts?.reduce((acc, post) => {
     const year = new Date(post.data.date).getFullYear()
@@ -122,23 +135,11 @@ export default function Blog({
       />
 
       <section className="mx-auto w-full max-w-3xl">
-        {blogCategories.length > 0 ? (
-          <Fragment>
-            <ul className="m-0 flex list-none gap-4">
-              {blogCategories.map((category) => (
-                <li key={category.uid}>
-                  <CustomLink href={`/blog/category/${category.uid}`}>
-                    {category.data.title}
-                  </CustomLink>
-                </li>
-              ))}
-            </ul>
-          </Fragment>
-        ) : null}
+        <Tags tags={blogCategories} />
         {blogPostByYear &&
           Object.keys(blogPostByYear).map((year) => (
             <div key={year}>
-              <h2>{year}</h2>
+              <h2 className="mt-4">{year}</h2>
               <ul className="m-0 list-none">
                 {blogPostByYear[year].map((post) => (
                   <li key={post.uid}>

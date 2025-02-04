@@ -2,7 +2,6 @@ import { createClient } from '@/prismicio'
 import { GetStaticPropsContext } from 'next'
 import * as prismic from '@prismicio/client'
 import { BasicPageProps } from '@/types/basicpageprops'
-import Error from 'next/error'
 import { getCustomTypes } from '@/lib/getCustomTypes'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
@@ -11,6 +10,7 @@ import { PageDocument } from '@/prismicio-types'
 import { getLocales } from '@/types/getLocales'
 import { useRouter } from 'next/router'
 import SEO from '@/components/seo'
+import NotFoundPage from './404'
 
 type PageParams = { uid: string }
 
@@ -69,7 +69,13 @@ export default function Contentpage({
   const location = useRouter()
 
   if (errorCode) {
-    return <Error statusCode={404} />
+    return (
+      <NotFoundPage
+        locales={locales}
+        header={header}
+        footer={footer}
+      />
+    )
   }
 
   return (

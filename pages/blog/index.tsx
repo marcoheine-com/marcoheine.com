@@ -15,6 +15,8 @@ import {
 import { BasicPageProps } from '@/types/basicpageprops'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
+import NotFoundPage from '../404'
+import { Tags } from '@/components/Tags'
 
 export async function getStaticProps({ params, previewData, locale }) {
   let page: BlogDocument | null = null
@@ -67,8 +69,19 @@ export default function Blog({
   page,
   blogPosts,
   blogCategories,
+  errorCode,
 }: BlogProps) {
   const location = useRouter()
+
+  if (errorCode) {
+    return (
+      <NotFoundPage
+        header={header}
+        footer={footer}
+        locales={locales}
+      />
+    )
+  }
 
   const latestPosts = blogPosts.slice(0, 3)
   const allOtherPosts = blogPosts.slice(3)
@@ -102,33 +115,16 @@ export default function Blog({
       />
 
       <section className="mx-auto w-full max-w-3xl">
-        {blogCategories.length > 0 ? (
-          <Fragment>
-            <ul className="m-0 list-none">
-              {blogCategories.map((category) => (
-                <li key={category.uid}>
-                  <CustomLink href={`/blog/category/${category.uid}`}>
-                    {category.data.title}
-                  </CustomLink>
-                </li>
-              ))}
-            </ul>
-          </Fragment>
-        ) : null}
-        {
-          <Fragment>
-            <h2>Latest Posts</h2>
-            <ul className="m-0 list-none">
-              {latestPosts.map((post) => (
-                <li key={post.uid}>
-                  <CustomLink href={post.url}>
-                    {post.data.meta_title}
-                  </CustomLink>
-                </li>
-              ))}
-            </ul>
-          </Fragment>
-        }
+        <Tags tags={blogCategories} />
+        <h2 className="mt-5">Latest Posts</h2>
+        <ul className="m-0 list-none">
+          {latestPosts.map((post) => (
+            <li key={post.uid}>
+              <CustomLink href={post.url}>{post.data.meta_title}</CustomLink>
+            </li>
+          ))}
+        </ul>
+
         {Object.keys(blogPostByYear).map((year) => (
           <div key={year}>
             <h2>{year}</h2>

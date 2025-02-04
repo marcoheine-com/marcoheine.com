@@ -13,6 +13,7 @@ import { getLocales } from '@/types/getLocales'
 import { BasicPageProps } from '@/types/basicpageprops'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
+import NotFoundPage from '../404'
 
 type PageParams = { uid: string }
 export async function getStaticProps({
@@ -60,8 +61,25 @@ interface BlogPostDocumentProps extends BasicPageProps {
   page: BlogPostDocument
 }
 
-const BlogPost = ({ page, header, footer, locales }: BlogPostDocumentProps) => {
+const BlogPost = ({
+  page,
+  header,
+  footer,
+  locales,
+  errorCode,
+}: BlogPostDocumentProps) => {
   const location = useRouter()
+
+  if (errorCode) {
+    return (
+      <NotFoundPage
+        header={header}
+        footer={footer}
+        locales={locales}
+      />
+    )
+  }
+
   const { meta_description, meta_image, meta_title, date, lastUpdated } =
     page?.data
 
@@ -84,7 +102,7 @@ const BlogPost = ({ page, header, footer, locales }: BlogPostDocumentProps) => {
       />
       <h1 className="mb-0 text-center">Blog</h1>
 
-      <h2 className="mt-8 mb-0 self-start md:mt-16">{meta_title}</h2>
+      <h2 className="mt-8 mb-0 self-start md:mt-12">{meta_title}</h2>
 
       <PostHeader
         date={date}

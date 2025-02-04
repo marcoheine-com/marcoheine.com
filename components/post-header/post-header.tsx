@@ -42,14 +42,17 @@ export const PostHeader = ({
 
       {categories?.length > 0 && (
         <div className="flex gap-2">
-          {categories?.map((category) => (
-            <CustomLink
-              href={`/blog/category/${category.tag.uid}`}
-              key={category.tag.id}
-            >
-              {category.tag.data.title}
-            </CustomLink>
-          ))}
+          {categories?.map(
+            (category) =>
+              category?.tag?.data && (
+                <CustomLink
+                  href={`/blog/category/${category.tag.uid}`}
+                  key={category.tag.id}
+                >
+                  {category.tag.data.title}
+                </CustomLink>
+              )
+          )}
         </div>
       )}
     </section>
