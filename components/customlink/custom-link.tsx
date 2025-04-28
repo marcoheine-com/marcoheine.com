@@ -30,9 +30,6 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       {...rest}
     >
       {children} <span aria-hidden> &#8599;</span>{' '}
-      <span className="absolute top-auto h-[1px] w-[1px] overflow-hidden whitespace-nowrap">
-        Opens in new tab
-      </span>
     </a>
   )
 }
