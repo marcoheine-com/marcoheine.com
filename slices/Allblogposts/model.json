@@ -1,0 +1,16 @@
+{
+  "id": "allblogposts",
+  "type": "SharedSlice",
+  "name": "Allblogposts",
+  "description": "Allblogposts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
