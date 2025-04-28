@@ -41,18 +41,23 @@ export const PostHeader = ({
       )}
 
       {categories?.length > 0 && (
-        <div className="flex gap-2">
-          {categories?.map(
-            (category) =>
-              category?.tag?.data && (
-                <CustomLink
-                  href={`/blog/category/${category.tag.uid}`}
-                  key={category.tag.id}
-                >
-                  {category.tag.data.title}
-                </CustomLink>
-              )
-          )}
+        <div className="flex items-start gap-2">
+          <span className="mb-0 text-base">
+            {categories.length > 1 ? 'Tags:' : 'Tag:'}
+          </span>
+          <div className="flex gap-2">
+            {categories?.map(
+              (category) =>
+                category?.tag?.data && (
+                  <CustomLink
+                    href={`/blog/category/${category.tag.uid}`}
+                    key={category.tag.id}
+                  >
+                    {category.tag.data.title}
+                  </CustomLink>
+                )
+            )}
+          </div>
         </div>
       )}
     </section>

@@ -65,7 +65,7 @@
   }
 
   a {
-    @apply text-primaryColorTwo hover:text-linkHover;
+    @apply text-primaryColorTwo hover:text-linkHover focus-visible:border-none focus-visible:outline-dashed focus-visible:outline-offset-1 focus-visible:outline-primaryColorTwo;
   }
 
   ul {
@@ -108,6 +108,7 @@
     @apply mt-16;
   }
 
+  pre + h3,
   p + h3,
   ul + h3 {
     @apply mt-12;

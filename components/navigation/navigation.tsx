@@ -7,6 +7,7 @@ import {
 } from '@/prismicio-types'
 import { Language } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
+import { filledLinkTypeGuard } from '@/types/isFilledLink'
 
 const NAV_SPAN_BASIC_STYLES =
   'absolute left-0 h-[3px] w-full rotate-0 bg-primaryColorTwo opacity-100 outline-0 transition-all ease-in-out origin-[left_center]'
@@ -71,21 +72,26 @@ const Navigation = ({
       >
         <ul className="ml-0 flex list-none flex-col items-center pb-10 lg:mb-0 lg:flex-row lg:pb-0">
           {header?.data?.navigation.map(
-            (item: HeaderDocumentDataNavigationItem) => (
-              <li
-                key={item.navigationlabel}
-                className={`${LI_BASIC_STYLES} ${
-                  isToggled ? 'w-full lg:w-auto' : ''
-                }`}
-              >
-                <Link
-                  className={NAV_LINK_BASIC_STYLES}
-                  href={item.navigationitem.url}
+            (item: HeaderDocumentDataNavigationItem) => {
+              const filledLink = filledLinkTypeGuard(item.navigationitem)
+                ? item.navigationitem
+                : null
+              return (
+                <li
+                  key={item.navigationlabel}
+                  className={`${LI_BASIC_STYLES} ${
+                    isToggled ? 'w-full lg:w-auto' : ''
+                  }`}
                 >
-                  {item.navigationlabel}
-                </Link>
-              </li>
-            )
+                  <Link
+                    className={NAV_LINK_BASIC_STYLES}
+                    href={filledLink?.url}
+                  >
+                    {item.navigationlabel}
+                  </Link>
+                </li>
+              )
+            }
           )}
           <li className="lg:ml-8">
             <ul className="m-0 flex list-none gap-2">

@@ -4,38 +4,36 @@ interface CustomLinkProps {
   href: string
   isCodePen?: boolean
   className?: string
-  color?: 'white' | 'red'
+  isActive?: boolean
 }
 
 export const CustomLink: React.FC<CustomLinkProps> = (props) => {
-  const color =
-    props.color === 'white'
-      ? 'border-b-white text-white hover:text-white'
-      : 'border-b-primaryColorTwo'
-  const isInternalLink =
-    props.href && (props.href.startsWith('/') || props.href.startsWith('#'))
+  const { isCodePen, children, className, isActive, href } = props
+
+  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
 
   if (isInternalLink) {
     return (
       <Link
-        href={props.href}
-        {...props}
-        className={`border-b-2 border-dotted ${color} hover:border-solid ${props.className}`}
+        href={href}
+        className={`${
+          isActive
+            ? 'border-b-2 border-solid border-primaryColorTwo'
+            : 'border-b-2 border-dotted'
+        } border-b-primaryColorTwo hover:border-solid ${className}`}
       >
         {props.children}
       </Link>
     )
   }
 
-  const { isCodePen, children, className, ...rest } = props
-
   return (
     <a
       rel={'noopener noreferrer'}
-      className={`outgoing-link-trigger border-b-2 border-dotted ${color} hover:border-solid ${
+      className={`outgoing-link-trigger border-b-2 border-dotted border-b-primaryColorTwo hover:border-solid ${
         isCodePen ? 'mb-4 inline-block' : ''
       } ${className}`}
-      {...rest}
+      href={href}
     >
       {children} <span aria-hidden> &#8599;</span>
     </a>

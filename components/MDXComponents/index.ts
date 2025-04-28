@@ -1,1 +1,0 @@
-export { mdxcomponents } from './mdxcomponents'

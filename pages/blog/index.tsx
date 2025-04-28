@@ -7,18 +7,16 @@ import { CustomLink } from '@/components/customlink'
 import { createClient } from '@/prismicio'
 import { getCustomTypes } from '@/lib/getCustomTypes'
 import { getLocales } from '@/types/getLocales'
-import {
-  BlogcategoryDocument,
-  BlogDocument,
-  BlogPostDocument,
-} from '@/prismicio-types'
+import { BlogcategoryDocument, BlogDocument } from '@/prismicio-types'
 import { BasicPageProps } from '@/types/basicpageprops'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
 import NotFoundPage from '../404'
-import { Tags } from '@/components/Tags'
+import { Tags } from '@/components/tags'
+import { getTagsWithCount } from '@/lib/getTagsWithCount'
+import { BlogPostWithCategories } from '@/types/blogPostWithCategories'
 
-export async function getStaticProps({ params, previewData, locale }) {
+export async function getStaticProps({ previewData, locale }) {
   let page: BlogDocument | null = null
   let errorCode = null
 
@@ -38,10 +36,20 @@ export async function getStaticProps({ params, previewData, locale }) {
 
   const { header, footer } = await getCustomTypes(client, locale)
   const locales = await getLocales(page, client)
-  const blogPosts = await client.getAllByType('blog_post', { lang: '*' })
+  const blogPosts = await client.getAllByType<BlogPostWithCategories>(
+    'blog_post',
+    {
+      lang: '*',
+      orderings: {
+        field: 'my.blog_post.date',
+        direction: 'desc',
+      },
+    }
+  )
   const blogCategories = await client.getAllByType('blogcategory', {
     lang: '*',
   })
+  const blogCategoriesWithCount = getTagsWithCount(blogCategories, blogPosts)
 
   return {
     props: {
@@ -51,15 +59,19 @@ export async function getStaticProps({ params, previewData, locale }) {
       locales,
       errorCode,
       blogPosts,
-      blogCategories,
+      blogCategoriesWithCount,
     },
   }
 }
 
+export interface BlogCategoryWithCount extends BlogcategoryDocument {
+  count: number
+}
+
 interface BlogProps extends BasicPageProps {
   page: BlogDocument
-  blogPosts: BlogPostDocument[]
-  blogCategories: BlogcategoryDocument[]
+  blogPosts: BlogPostWithCategories[]
+  blogCategoriesWithCount: BlogCategoryWithCount[]
 }
 
 export default function Blog({
@@ -68,7 +80,7 @@ export default function Blog({
   locales,
   page,
   blogPosts,
-  blogCategories,
+  blogCategoriesWithCount,
   errorCode,
 }: BlogProps) {
   const location = useRouter()
@@ -115,8 +127,8 @@ export default function Blog({
       />
 
       <section className="mx-auto w-full max-w-3xl">
-        <Tags tags={blogCategories} />
-        <h2 className="mt-5">Latest Posts</h2>
+        <Tags tags={blogCategoriesWithCount} />
+        <h2 className="mt-6">Latest Posts</h2>
         <ul className="m-0 list-none">
           {latestPosts.map((post) => (
             <li key={post.uid}>
@@ -125,18 +137,22 @@ export default function Blog({
           ))}
         </ul>
 
-        {Object.keys(blogPostByYear).map((year) => (
-          <div key={year}>
-            <h2>{year}</h2>
-            <ul>
-              {blogPostByYear[year].map((post) => (
-                <li key={post.uid}>
-                  <CustomLink href={post.url}>{post.data.title}</CustomLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {Object.keys(blogPostByYear)
+          .reverse()
+          .map((year) => (
+            <div key={year}>
+              <h2 className="mt-6">{year}</h2>
+              <ul className="m-0 list-none">
+                {blogPostByYear[year].map((post) => (
+                  <li key={post.uid}>
+                    <CustomLink href={post.url}>
+                      {post.data.meta_title}
+                    </CustomLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
       </section>
     </Layout>
   )

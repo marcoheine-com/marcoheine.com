@@ -1,5 +1,5 @@
 // generate rss feed with the feed package
-import { mdxcomponents } from 'components/MDXComponents'
+
 import { config } from 'config'
 import { format } from 'date-fns'
 import { Feed } from 'feed'
@@ -12,12 +12,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 const getBlogPostMDX = async (content: string) => {
   const blogPostMDX = await getMDX(content)
 
-  const markup = renderToStaticMarkup(
-    <MDXRemote
-      {...blogPostMDX}
-      components={mdxcomponents}
-    />
-  )
+  const markup = renderToStaticMarkup(<MDXRemote {...blogPostMDX} />)
 
   return markup
 }

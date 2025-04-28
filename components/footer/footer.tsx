@@ -11,13 +11,11 @@ import { CustomLink } from '../customlink'
 const LI_STYLES_BASIC = 'inline border-b-0 pr-5'
 
 const Footer = ({ footer }: { footer: FooterDocument }) => {
-  const year = new Date().getFullYear()
-
   return (
-    <footer className="footer bg-primaryColorTwo py-8 text-center text-[14px] text-white">
+    <footer className="bg-primaryColorTwo py-8 text-center text-[14px] text-white">
       <a
         href="#"
-        className="mb-8 text-white hover:border-b-2 hover:border-dotted hover:border-b-white hover:text-white"
+        className="mb-8 text-white hover:border-b-2 hover:border-dotted hover:border-b-white hover:text-white focus-visible:outline-white"
       >
         {footer?.data.linktotop}
       </a>
@@ -30,7 +28,10 @@ const Footer = ({ footer }: { footer: FooterDocument }) => {
                   key={index}
                   className={LI_STYLES_BASIC}
                 >
-                  <PrismicNextLink field={item.link}>
+                  <PrismicNextLink
+                    field={item.link}
+                    className="focus-visible:p-2 focus-visible:outline-white"
+                  >
                     {getIcon(item.icon)}
                   </PrismicNextLink>
                 </li>
@@ -46,8 +47,7 @@ const Footer = ({ footer }: { footer: FooterDocument }) => {
           hyperlink: ({ children, node }) => {
             return (
               <CustomLink
-                className="text-white"
-                color="white"
+                className="text-white focus-visible:outline-white"
                 href={node.data.url}
               >
                 {children}
