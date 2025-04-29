@@ -29,7 +29,7 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
       }`}
       {...rest}
     >
-      {children} <span aria-hidden> &#8599;</span>{' '}
+      {children}
     </a>
   )
 }
