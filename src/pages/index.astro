@@ -1,0 +1,87 @@
+---
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import CallToAction from '@components/CallToAction.astro'
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import CustomLink from '@components/CustomLink.astro'
+
+const allBlogPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+const latestBlogPosts = allBlogPosts.slice(0, 3)
+---
+
+<Layout>
+  <div class="stage stage--container">
+    <Image
+      alt="A picture of Marco Heine"
+      src={MarcoHeineImg}
+      width={500}
+      height={500}
+      priority
+    />
+
+    <h1>Hi, I'm Marco.</h1>
+    <p>
+      I love to help people to get
+      <strong>fast, accessible and great looking websites.</strong>
+      Have an interesting project or idea?
+    </p>
+    <p>
+      Have a look at my <a href="/work">skills</a> and how I work and let’s see how
+      I can help you!
+    </p>
+    <CallToAction
+      href="/work/"
+      isInternalLink
+    >
+      Work with me
+    </CallToAction>
+  </div>
+
+  <div class="posts posts--container">
+    <h2>Recent blog posts</h2>
+    <ul class="posts__list">
+      {
+        latestBlogPosts.map((post) => (
+          <li>
+            <article class="posts__post">
+              <a href={`/blog/${post.id}`}>
+                <h3>{post.data.title}</h3>
+              </a>
+              <time class="text-grey">
+                Published on:{' '}
+                {new Date(post.data.date).toLocaleDateString('de')}
+              </time>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      href="/blog/"
+      class="posts__link"
+      >All blog posts
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .posts__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .posts__post {
+    margin: 0;
+  }
+
+  .posts__link {
+    display: inline-block;
+    margin-top: 16px;
+  }
+</style>

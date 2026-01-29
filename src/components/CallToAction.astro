@@ -1,0 +1,28 @@
+---
+const { href } = Astro.props
+---
+
+<a
+  href={href}
+  class="cta"
+>
+  <slot />
+</a>
+
+<style>
+  .cta {
+    display: inline-block;
+    background-color: var(--primaryColorTwo);
+    color: white;
+    padding: 12px 16px;
+    margin-top: var(--cta-margin-top, 16px);
+    transition: outline 0.1s;
+
+    &:focus-visible,
+    &:hover {
+      outline: 4px solid var(--primaryColorTwo);
+      outline-offset: 4px;
+      text-decoration: none;
+    }
+  }
+</style>

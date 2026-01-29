@@ -1,0 +1,15 @@
+---
+interface Props {
+  maxWidth?: string
+}
+
+const { maxWidth = '960px ' } = Astro.props
+---
+
+<main
+  class={`mx-auto w-full grow px-5 pt-16 pb-40 ${
+    maxWidth ? maxWidth : 'max-w-4xl'
+  }`}
+>
+  <slot />
+</main>

@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets'
+
+const { testimonial } = Astro.props
+
+const MAX_LENGTH = 250
+const fullText = testimonial.text
+  .map((t: { content: string }) => t.content)
+  .join(' ')
+
+const isLongText = fullText.length > MAX_LENGTH
+
+const trimmedText = isLongText
+  ? fullText.slice(0, MAX_LENGTH).slice(0, fullText.lastIndexOf(' ')) + ' ...'
+  : fullText
+---
+
+<article>
+  <p id="testimonial-text">
+    {trimmedText}
+  </p>
+
+  {
+    isLongText && (
+      <button
+        id="read-more"
+        class="mb-2 text-primaryColorTwo flex items-center gap-2"
+        aria-expanded="false"
+      >
+        <span id="read-more-label">Read more</span>
+        <span
+          id="read-more-arrow"
+          class="rotate-90 transition-transform duration-300 ease-in-out"
+        >
+          &#8594;
+        </span>
+      </button>
+    )
+  }
+
+  <div class="flex items-center gap-4">
+    {
+      testimonial.image && (
+        <Image
+          src={testimonial.image}
+          alt={`a picture of ${testimonial.author}`}
+          class="w-16 rounded-full"
+        />
+      )
+    }
+
+    <span class="mb-0 flex flex-col gap-2 italic">
+      {testimonial.author}
+      <a
+        href={testimonial.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {testimonial.company}
+      </a>
+    </span>
+  </div>
+</article>
+
+<script>
+  const fullText = `{{fullText}}`
+  const trimmedText = `{{trimmedText}}`
+
+  const textEl = document.getElementById('testimonial-text')
+  const button = document.getElementById('read-more')
+  const label = document.getElementById('read-more-label')
+  const arrow = document.getElementById('read-more-arrow')
+
+  let expanded = false
+
+  button?.addEventListener('click', () => {
+    if (!textEl || !button || !label || !arrow) return
+
+    expanded = !expanded
+
+    textEl.textContent = expanded ? fullText : trimmedText
+    label.textContent = expanded ? 'Read less' : 'Read more'
+    arrow.classList.toggle('rotate-[-90deg]', expanded)
+    arrow.classList.toggle('rotate-90', !expanded)
+    button.setAttribute('aria-expanded', String(expanded))
+  })
+</script>

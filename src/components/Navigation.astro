@@ -1,0 +1,55 @@
+---
+import '../styles/global.css'
+---
+
+<nav>
+  <ul class="nav__list">
+    <li class="nav__list-item">
+      <a
+        class="nav-item-link"
+        href="/work"
+        >Work</a
+      >
+    </li>
+    <li class="nav__list-item">
+      <a
+        class="nav-item-link"
+        href="/blog"
+        >Blog</a
+      >
+    </li>
+    <li class="nav__list-item">
+      <a
+        class="nav-item-link"
+        href="/about"
+        >About</a
+      >
+    </li>
+    <li class="nav__list-item">
+      <a
+        class="nav-item-link"
+        href="/contact"
+        >Contact</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .nav__list {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-item-link {
+    display: block;
+    padding: 8px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+</style>

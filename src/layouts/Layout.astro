@@ -1,0 +1,94 @@
+---
+import '../styles/global.css'
+import Footer from '@components/Footer.astro'
+import Header from '@components/Header.astro'
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import '../styles/global.css'
+import { config } from '../config'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Home | Marco Heine - Web Developer',
+  description = "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites.",
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <meta
+      name="og:type"
+      content="website"
+    />
+    <meta
+      name="og:title"
+      content={title}
+    />
+    <meta
+      name="og:description"
+      content={description}
+    />
+    <meta
+      name="og:site_name"
+      content={config.title}
+    />
+    <meta
+      name="og:url"
+      content={canonicalURL}
+    />
+    <meta
+      name="og:image"
+      content={`${config.siteUrl}/images/marco-heine.webp`}
+    />
+    <meta
+      name="og:imageAlt"
+      content={'Marco Heine'}
+    />
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+    <link
+      rel="icon"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${config.title} RSS Feed`}
+      href="/rss.xml"
+    />
+  </head>
+
+  <body>
+    <Header />
+    <main><slot /></main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .ruler {
+    border-top: 6px solid var(--primaryColorTwo);
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    margin-bottom: 0;
+  }
+</style>

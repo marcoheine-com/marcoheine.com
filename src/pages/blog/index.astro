@@ -1,0 +1,74 @@
+---
+
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import CustomLink from '@components/CustomLink.astro'
+
+const HEADLINE2_STYLES =
+  'mb-16 inline-block border-b-[6px] border-b-primaryColorTwo'
+  
+  const blogPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+  const newestPosts = blogPosts.slice(0, 3)
+  const olderPosts = blogPosts.slice(3)
+
+---
+<Layout>
+  <h1 class="mb-20 text-center">Blog</h1>
+
+  <section class="mx-auto w-full max-w-3xl">
+    <h2 class={HEADLINE2_STYLES}>Latest blog posts</h2>
+    {newestPosts.map((post) => {
+      const { date, title, description } = post.data
+
+      const pubDate = new Date(date).toLocaleDateString('de')
+
+      return (
+        <a
+          href={`${post.id}`}
+        >
+          <article
+            class={`mb-4 p-5 text-primaryColorOne transition-all hover:rounded-xl hover:shadow-custom`}
+          >
+            <h3 class="mb-2">{title}</h3>
+            <time
+              class="text-base"
+              datetime={pubDate}
+            >
+              Published on: {pubDate}
+            </time>
+
+            <p class="mb-2">{description}</p>
+            <span class="text-primaryColorTwo before:mr-1 before:text-primaryColorOne before:transition-[margin] before:duration-200 before:ease-linear before:content-['→'] hover:text-linkHover hover:before:mr-0 hover:before:ml-1">
+              Read article
+            </span>
+          </article>
+        </a>
+      )
+    })}
+
+    <h2 class={`${HEADLINE2_STYLES} mt-16`}>
+      Other blog posts:
+    </h2>
+    {olderPosts
+      .map(post => (
+            <article
+              class="flex flex-col md:flex-row md:gap-8"
+            >
+              <time
+                class="mb-2 inline-block text-base text-grey sm:min-w-[160px] md:mb-0"
+                datetime={new Date(post.data.date).toLocaleDateString('de')}
+              >
+                {new Date(post.data.date).toLocaleDateString('de')}
+              </time>
+              <CustomLink href={`/blog/${post.id}`}>
+                <h4 class="mb-0 inline-block text-primaryColorOne">
+                  {post.data.title}
+                </h4>
+              </CustomLink>
+            </article>
+          ))}
+  </section>
+</Layout>

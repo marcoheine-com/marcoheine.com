@@ -1,24 +1,7 @@
 {
   "home": {
-    "intro": "I'm Marco - a Freelance Web Developer and I make great websites.",
-    "welcome": "Hi, and welcome!",
-    "welcome-one": "I love to help people to get ",
-    "welcome-two": "fast, accessible and great looking websites.",
-    "welcome-three": " Have an interesting project or idea?",
-    "welcome-four": "Have a look at my <0>skills</0> and how I work and let’s see how I can help you!",
-    "work": "Work with me",
-    "cooperation": "In cooperation with:",
-    "client": "Client:",
-    "blog-posts": "Latest blog posts",
     "til-posts": "Latest TIL posts",
-    "all-blog-posts": "All blog posts",
     "all-projects": "More projects"
-  },
-
-  "footer": {
-    "top": "Go back to top of the page?",
-    "hosting": "This site is hosted on and deployed with ",
-    "code": "The source code is hosted on "
   },
 
   "work": {
@@ -55,7 +38,6 @@
     "technical-writing-one": "I love to <strong>write</strong>. From documenation, to blog posts to newsletters. Do you need to update the technical documenation of your product? Are you looking for a blog post, exploring your new technology?",
     "technical-writing-two": " I am someone who learns better by reading so I know exactly how to <strong>structure</strong> the information and write about your tool to teach your users the most.",
     "technical-writing-cta": "Learn more",
-    "headline-three": "What others are saying about me",
     "call-to-action-2": "Like what you see?"
   },
 
@@ -95,35 +77,8 @@
     "text-four": " A few samples of my work as well as the source code of this website are available on "
   },
   "testimonials": {
-    "one": {
-      "text": {
-        "a": "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't she about asking others for help.",
-        "b": "Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.",
-        "c": "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice"
-      }
-    },
-    "two": {
-      "text": {
-        "a": "Working with Marco is a pleasure. Besides developing on a very high level he also contributes a lot to the planning phase of every project."
-      }
-    },
-    "three": {
-      "text": {
-        "a": "I really enjoyed working with Marco because he listens and his profound knowledge in web technologies and his understanding of User Experience make him a great partner for developing sustainable, user friendly software. I find it very inspiring that he likes to learn and share his knowledge. To this day I enjoy reading his blog posts."
-      }
-    },
-    "four": {
-      "text": {
-        "a": "Marco is an expert in front- and backend development (Jamstack, Next.js, Headless CMS, Tailwind CSS etc.). He is an integral part of our freelance network. We have already realized some digital projects with Marco."
-      }
-    },
-    "christoph": {
-      "text": {
-        "a": "Marco is a great developer and a great guy. In a phase of big uncertainty he came onboard, took responsibility and smoothed out a complicated transition. That couldn’t have worked out better. We’ll definitely keep him in our network, and so should you."
-      }
-    },
-    "readMore": "Read more",
-    "readLess": "Read less"
+    "readMore": "",
+    "readLess": ""
   },
   "meta": {
     "index-description": "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites.",
@@ -134,9 +89,6 @@
     "contact-description": "If you're interested in working with me, feel free to reach out via mail or on twitter."
   },
   "web-projects": {
-    "headline": "Web projects",
-    "text": "I had the chance to help a lot of different clients to achieve their goals and make their customers happy by providing them with a modern website and supporting them with my web development skills.",
-    "text-two": "Below you can find a selection of some recent projects I've worked on.",
     "dhlbrandhub": {
       "description": "I helped the team at Strichpunkt Design to further develop the DHL Brandhub. The DHL Brandhub is a platform for DHL employees and partners to get all the information and assets they need to create DHL branded content."
     },

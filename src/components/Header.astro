@@ -1,0 +1,28 @@
+---
+import { config } from '../config'
+import Navigation from './Navigation.astro'
+import '../styles/global.css'
+---
+
+<header class="header">
+  <div
+    class="mx-auto flex max-w-4xl flex-col items-start justify-between p-5 lg:flex-row lg:items-center"
+  >
+    <span class="font-merriweather mb-0 inline-block text-[28px]">
+      <a
+        href="/"
+        class="text-primaryColorOne no-underline hover:border-b-0 logo"
+      >
+        {config.author}
+      </a>
+    </span>
+
+    <Navigation />
+  </div>
+</header>
+
+<style>
+  .logo {
+    color: var(--primaryColorOne);
+  }
+</style>
