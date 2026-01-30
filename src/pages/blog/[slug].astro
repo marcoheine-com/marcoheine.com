@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import CallToAction from '@components/CallToAction.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+>
+  <div class="blogpost blogpost--container">
+    <h1>{post.data.title}</h1>
+
+    <p class="blogpost__info">
+      <time
+        datetime={new Date(post.data.date).toLocaleDateString('de')}
+        class="mb-0"
+      >
+        🗓 {new Date(post.data.date).toLocaleDateString('de')}
+      </time>
+      {
+        post.data.updated && (
+          <time
+            datetime={new Date(post.data.updated).toLocaleDateString('de')}
+            class="mb-0"
+          >
+            🔔 Last Updated:{' '}
+            {new Date(post.data.updated).toLocaleDateString('de')}
+          </time>
+        )
+      }
+      <a
+        href={`https://github.com/marcoheine-com/marcoheine.com/edit/main/blog/${post.id}.mdx`}
+      >
+        Edit this Post
+      </a>
+    </p>
+    <Content />
+
+    <hr class="mt-12 mb-6" />
+
+    <p>
+      I hope you enjoyed this post and learned something new. If you have any
+      questions, feel free to reach out to me via{' '}
+      <a href="mailto:hello@marcoheine.com">Email</a>.
+    </p>
+    <p>
+      If you want to support me, you can buy me a coffee. I would be very happy
+      about it!
+    </p>
+    <CallToAction href="https://www.buymeacoffee.com/marcoheine">
+      Buy me a coffee
+    </CallToAction>
+    <p>I wish you a wonderful day! Marco</p>
+  </div>
+</Layout>
+
+<style>
+  .blogpost__info {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 16px;
+    font-size: var(--font-size-small);
+  }
+</style>

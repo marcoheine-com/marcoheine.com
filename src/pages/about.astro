@@ -1,0 +1,98 @@
+---
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+---
+
+<Layout
+  title="About | Marco Heine - Freelance Web Developer"
+  description="Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites."
+>
+  <div class="about about--container">
+    <h1>About</h1>
+
+    <Image
+      alt="a picture of Marco Heine"
+      src={MarcoHeineImg}
+      priority
+    />
+
+    <p>
+      Hi! My name is Marco and I'm a <strong>Web Developer.</strong>
+    </p>
+    <p>
+      I like to build <strong>responsive</strong>, <strong>accessible</strong>, <strong
+        >fast</strong
+      > websites and web experiences for every device and every browser.
+    </p>
+    <p>
+      I found my love for the web and its technologies at the age of 14 when I
+      built my first website. I taught myself a lot about HTML and CSS and loved
+      to be able to craft something digital.
+    </p>
+    <p>
+      During my university education and getting into computer science basics, I
+      got hooked again and learned all about HTML, CSS, JavaScript, and
+      Front-end Development.
+    </p>
+  </div>
+  <div
+    class="about about--container"
+    id="values"
+  >
+    <h2>My values and principles</h2>
+    <ul>
+      <li>Honesty - It's the basis of every good relationship.</li>
+      <li>
+        Humor - I joke a lot and like to have fun; this is part of who I am and
+        also how I work.
+      </li>
+      <li>
+        Learn - learning new things is some of the most precious things in life
+        to me and what motivates me to keep going.
+      </li>
+      <li>
+        Sustainability - I try to live a sustainable life, and I also apply this
+        to my work. Developing solutions with sustainability in mind is always
+        my preferred way, compared to quick and dirty solutions.
+      </li>
+      <li>
+        Empathy - I'm a very empathic person. I'm good at understanding other
+        people and bringing that into my work.
+      </li>
+      <li>
+        Patience - In a world where everything runs faster every day, where
+        deadlines have deadlines, it's good to take a step back, give it some
+        more time and show patience.
+      </li>
+      <li>
+        Self-determination - I know what I need to do my best work. Part of that
+        is a lot of freedom and flexibility.
+      </li>
+    </ul>
+  </div>
+
+  <div class="about about--container">
+    <h2>Everything else</h2>
+    <p>
+      In my spare time, I like to do sports like bodyweight fitness and yoga.
+    </p>
+    <p>
+      I try to read a lot, mostly one fictional and one non-fictional book at
+      the same time. Check out my
+      <a href="https://www.goodreads.com/user/show/145214426-marco-heine">
+        Goodreads profile
+      </a>
+      .
+    </p>
+    <p>
+      Playing video games is something I like to do as well; most of the time,
+      it's on my Nintendo Switch.
+    </p>
+    <p>
+      I also love to write. From blog posts to short stories, sometimes even
+      poems, or just simple notes. I'm not really good at it, but I enjoy it a
+      lot. Head over to my <a href="/blog/">blog</a>{' '} to see the latest posts.
+    </p>
+  </div>
+</Layout>

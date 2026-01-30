@@ -4,68 +4,22 @@
     "all-projects": "More projects"
   },
 
-  "work": {
-    "headline-one": "What I do",
-    "what-i-do": {
-      "one": "I’m a Front-end Developer who <strong>loves</strong> to make websites!",
-      "two-a": " I have more than ",
-      "two-b": " of experience and worked on numerous projects, at web agencies, in product development, and at software development companies.",
-      "three": " With a keen eye for <strong>UX Design</strong>, I understand user needs and problems and know how to solve them. Enabling clear and good communication is always my priority.",
-      "four": "I still love the web and its technologies, and learning something new every day is what makes it so much fun for me.",
-      "five": "I strive for <strong>high-quality code</strong> and lovable digital products. My focus is on <strong>acessibility</strong>, <strong>Responsiveness</strong>, and <strong>high-speed</strong> websites."
-    },
-    "call-to-action": "Work with me",
-    "headline-two": "Services",
-    "subline-one": "Web Development",
-    "text-one": "I am able to develop:",
-    "service-one": "Landing Pages",
-    "service-two": "Blogs",
-    "service-three": "Websites with multiple subpages and headless CMS integration (Prismic)",
-    "service-four": "Multilanguage Websites",
-    "service-five": "E-Commerce websites and online shops (with Shopify)",
-    "service-six": "More complex full-stack web applications with database integration",
-    "text-two": "I can help you with your existing website by implementing changes and improvements to get a better User Experience, more Speed, Responsiveness and improved Accessibility.",
-    "tech-stack": "Tech Stack",
-    "tech-stack-text-one": "Currently I’m the most comfortable when working with the so called ",
-    "tech-stack-text-two": "I’m an expert in the following technologies, frameworks and platforms:",
-    "seo-one": "I can help you optimize your website to make it easier for people to find you in search engines. The first step to achieve this, is an extensive analysis of your website.",
-    "seo-two": "This often shows several aspects that can be improved. Mostly from a technical perspective, but also from a user perspective, like bad UX and accessibility issues.",
-    "seo-three": "Another step is the analysis and optimization of your content. I am experienced in researching your target group, finding the best keywords and improving your content in a way your users will benefit and therefore your content gets better ranked in search engines.",
-    "subline-two": "Web Design",
-    "web-design-one": "With a keen eye for <strong>UX Design</strong> I am able to create clickable prototypes or a full design for your website.",
-    "web-design-two": "  Either based on your existing Corporate Design and Identity or starting from scratch by choosing fonts, colors and design elements matching your business and brand.",
-    "subline-three": "Technical Writing",
-    "technical-writing-one": "I love to <strong>write</strong>. From documenation, to blog posts to newsletters. Do you need to update the technical documenation of your product? Are you looking for a blog post, exploring your new technology?",
-    "technical-writing-two": " I am someone who learns better by reading so I know exactly how to <strong>structure</strong> the information and write about your tool to teach your users the most.",
-    "technical-writing-cta": "Learn more",
-    "call-to-action-2": "Like what you see?"
-  },
-
   "blog": {
     "headline-two": "Other blog posts:"
   },
 
   "about": {
-    "headline": "About",
-    "text-one": "My name is Marco and I'm a <strong>Web Developer.</strong>",
-    "text-two": "I like to build <strong>responsive</strong>, <strong>accessible</strong>, <strong>fast</strong> websites and web experiences for every device and every browser.",
-    "text-three": "I found my love for the web and its technologies at the age of 14 when I built my first website. I taught myself a lot about HTML and CSS and loved to be able to craft something digital.",
-    "text-four": "During my university education and getting into computer science basics, I got hooked again and learned all about HTML, CSS, JavaScript, and Front-end Development.",
-    "subline-one": "Everything else",
-    "text-five": "In my spare time, I like to do sports like bodyweight fitness and yoga.",
-    "text-six": "I try to read a lot, mostly one fictional and one non-fictional book at the same time. Check out my",
-    "text-seven": " Goodreads profile",
-    "text-eight": "Playing video games is something I like to do as well; most of the time, it's on my Nintendo Switch.",
-    "text-nine": " I also love to write. From blog posts to short stories, sometimes even poems, or just simple notes. I'm not really good at it, but I enjoy it a lot. Head over to my Blog to see the latest posts:",
+    "text-eight": "",
+    "text-nine": " ",
     "subline-two": "Former Education",
-    "subline-three": "My values and principles",
-    "value-one": "Honesty - It's the basis of every good relationship.",
-    "value-two": "Humor - I joke a lot and like to have fun; this is part of who I am and also how I work.",
-    "value-three": "Learn - learning new things is some of the most precious things in life to me and what motivates me to keep going.",
-    "value-four": "Sustainability - I try to live a sustainable life, and I also apply this to my work. Developing solutions with sustainability in mind is always my preferred way, compared to quick and dirty solutions.",
-    "value-five": "Empathy - I'm a very empathic person. I'm good at understanding other people and bringing that into my work.",
-    "value-six": "Patience - In a world where everything runs faster every day, where deadlines have deadlines, it's good to take a step back, give it some more time and show patience.",
-    "value-seven": "Self-determination - I know what I need to do my best work. Part of that is a lot of freedom and flexibility."
+    "subline-three": "",
+    "value-one": "",
+    "value-two": "",
+    "value-three": "",
+    "value-four": "",
+    "value-five": "",
+    "value-six": "",
+    "value-seven": ""
   },
 
   "contact": {
@@ -82,8 +36,6 @@
   },
   "meta": {
     "index-description": "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites.",
-    "about-description": "Hi! My name is Marco and I'm a Freelance Web Developer from Stuttgart, Germany. I like to build responsive, accessible and fast websites.",
-    "work-description": "I work as a freelance web developer and can help you to get a fast, accessible and modern website or web application.",
     "blog-description": "I love to learn and write about it. On this page you can find all the blog posts I've written about web development and my life as a developer",
     "til-description": "This Today-I-learned page is a huge collection of small code snippets, links or other interesting things I learned about web development.",
     "contact-description": "If you're interested in working with me, feel free to reach out via mail or on twitter."

@@ -19,6 +19,9 @@
 }
 
 :root {
+  --font-size-small: 14px;
+  --font-size-base: 16px;
+
   /* Colors */
   --primaryColorOne: #111;
   --primaryColorTwo: rgb(7, 96, 42);
@@ -57,6 +60,14 @@ a {
   margin: 48px auto 0;
   padding: 0px 16px;
   max-width: 700px;
+
+  > * + :is(h2, h3, h4, h5, h6) {
+    margin-block-start: 40px;
+  }
+
+  > :where(:not(:last-child)) {
+    margin-block-end: 20px;
+  }
 }
 
 html {
