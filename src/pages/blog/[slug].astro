@@ -47,6 +47,15 @@ const { Content } = await render(post)
         Edit this Post
       </a>
     </p>
+    {
+      post.data.tags && post.data.tags.length > 0 ? (
+        <p class="blogpost__tags">
+          {post.data.tags.map((tag) => (
+            <span class="blogpost__tag">#{tag}</span>
+          ))}
+        </p>
+      ) : null
+    }
     <Content />
 
     <hr class="mt-12 mb-6" />
@@ -54,7 +63,7 @@ const { Content } = await render(post)
     <p>
       I hope you enjoyed this post and learned something new. If you have any
       questions, feel free to reach out to me via{' '}
-      <a href="mailto:hello@marcoheine.com">Email</a>.
+      <a href="mailto:hello@marcoheine.com">mail</a>.
     </p>
     <p>
       If you want to support me, you can buy me a coffee. I would be very happy
@@ -73,6 +82,16 @@ const { Content } = await render(post)
     flex-direction: row;
     gap: 16px;
     margin-top: 16px;
+    font-size: var(--font-size-small);
+  }
+
+  .blogpost__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blogpost__tag {
     font-size: var(--font-size-small);
   }
 </style>

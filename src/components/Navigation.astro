@@ -2,7 +2,7 @@
 import '../styles/global.css'
 ---
 
-<nav>
+<nav class="nav">
   <ul class="nav__list">
     <li class="nav__list-item">
       <a
@@ -44,12 +44,19 @@ import '../styles/global.css'
 </nav>
 
 <style>
+  .nav {
+    font-size: 20px;
+    @media (min-width: 640px) {
+      justify-self: end;
+    }
+  }
   .nav__list {
     list-style: none;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    padding: 0;
   }
 
   .nav__link {

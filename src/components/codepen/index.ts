@@ -1,1 +1,0 @@
-export { CodePenComponent } from './codepen'

@@ -5,24 +5,32 @@ import '../styles/global.css'
 ---
 
 <header class="header">
-  <div
-    class="mx-auto flex max-w-4xl flex-col items-start justify-between p-5 lg:flex-row lg:items-center"
-  >
-    <span class="font-merriweather mb-0 inline-block text-[28px]">
-      <a
-        href="/"
-        class="text-primaryColorOne no-underline hover:border-b-0 logo"
-      >
-        {config.author}
-      </a>
-    </span>
+  <div class="header__container">
+    <a
+      href="/"
+      class="logo"
+    >
+      {config.author}
+    </a>
 
     <Navigation />
   </div>
 </header>
 
 <style>
+  .header__container {
+    margin: 0 auto;
+    display: grid;
+    max-width: 960px;
+    padding: 16px;
+    align-items: center;
+    @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
   .logo {
+    font-size: 20px;
+    display: inline-block;
     color: var(--primaryColorOne);
   }
 </style>

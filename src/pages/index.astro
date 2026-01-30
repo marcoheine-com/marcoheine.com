@@ -23,13 +23,10 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
 
     <h1>Hi, I'm Marco.</h1>
     <p>
-      I love to help people to get
-      <strong>fast, accessible and great looking websites.</strong>
-      Have an interesting project or idea?
-    </p>
-    <p>
-      Have a look at my <a href="/work">skills</a> and how I work and let’s see how
-      I can help you!
+      I love to help people to get fast, accessible and great looking websites.
+      Have an interesting project or idea? Have a look at my <a href="/work"
+        >skills</a
+      > and how I work and let’s see how I can help you!
     </p>
     <CallToAction
       href="/work/"
@@ -45,7 +42,7 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
       {
         latestBlogPosts.map((post) => (
           <li>
-            <article class="posts__post">
+            <article>
               <a href={`/blog/${post.id}`}>
                 <h3>{post.data.title}</h3>
               </a>
@@ -53,6 +50,7 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
                 Published on:{' '}
                 {new Date(post.data.date).toLocaleDateString('de')}
               </time>
+              <p>{post.data.description}</p>
             </article>
           </li>
         ))
@@ -73,10 +71,7 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
     flex-direction: column;
     gap: 16px;
     margin: 0;
-  }
-
-  .posts__post {
-    margin: 0;
+    padding: 0;
   }
 
   .posts__post-time {

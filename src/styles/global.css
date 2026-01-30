@@ -1,5 +1,3 @@
-@import 'tailwindcss';
-
 @font-face {
   font-family: 'Lato-Regular';
   font-display: swap;
@@ -22,6 +20,27 @@
   --font-size-small: 14px;
   --font-size-base: 16px;
 
+  /* Font-sizes */
+  --text-h1: 32px;
+  --text-h2: 28px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+  --text-h5: 16px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-tiny: 12px;
+
+  @media (min-width: 640px) {
+    --text-h1: clamp(2rem, 1.5rem + 1.25vw, 2.75rem);
+    --text-h2: clamp(1.75rem, 1.25rem + 1.25vw, 2.5rem);
+    --text-h3: clamp(1.5rem, 1.1667rem + 0.8333vw, 2rem);
+    --text-h4: clamp(1.25rem, 1.0833rem + 0.4167vw, 1.5rem);
+    --text-h5: clamp(1rem, 0.8333rem + 0.4167vw, 1.25rem);
+    --text-body: clamp(1rem, 0.9167rem + 0.2083vw, 1.125rem);
+    --text-small: clamp(0.875rem, 0.7917rem + 0.2083vw, 1rem);
+    --text-tiny: clamp(0.75rem, 0.6667rem + 0.2083vw, 0.875rem);
+  }
+
   /* Colors */
   --primaryColorOne: #111;
   --primaryColorTwo: rgb(7, 96, 42);
@@ -37,17 +56,67 @@
   --shadow-customDark: 10px 10px 12px #d9d9d9;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+*:focus-visible {
+  outline: 3px solid;
+  outline-color: inherit;
+  outline-offset: 2px;
+}
+
 html {
   block-size: 100%;
 }
 
 body {
+  color: var(--primaryColorOne);
   display: flex;
   flex-direction: column;
   min-block-size: 100%;
+  font-size: var(--text-body);
+  font-family: 'Lato-Regular', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+  margin-top: var(--headline-margin-top, 16px);
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+h4 {
+  font-size: var(--text-h4);
+}
+
+p {
+  margin: 0;
 }
 
 a {
+  color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -60,10 +129,13 @@ a {
   }
 }
 
-*:focus-visible {
-  outline: 3px solid;
-  outline-color: inherit;
-  outline-offset: 2px;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  font-style: italic;
 }
 
 [class*='--container'] {
@@ -75,136 +147,7 @@ a {
     margin-block-start: 40px;
   }
 
-  > :where(:not(:last-child)) {
-    margin-block-end: 20px;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Merriweather', serif;
-  margin-top: var(--headline-margin-top, 16px);
-}
-
-/* New overrides 2022 */
-@layer base {
-  body {
-    font-family: 'Lato-Regular', sans-serif;
-    font-size: 20px;
-    color: rgb(36, 34, 34);
-  }
-
-  h1 {
-    @apply text-4xl;
-  }
-  h2 {
-    @apply text-3xl;
-  }
-  h3 {
-    @apply text-2xl;
-  }
-  h4 {
-    @apply text-xl;
-  }
-  p,
-  span {
-    @apply mb-4 text-xl;
-  }
-  svg {
-    @apply inline-block;
-  }
-
-  ul {
-    @apply ml-6 mb-4 list-disc;
-  }
-
-  ol {
-    @apply ml-6 mb-4 list-decimal;
-  }
-
-  ol li {
-    @apply mb-2 last:mb-0;
-  }
-  ul li {
-    @apply mb-2 last:mb-0;
-  }
-
-  li > ul {
-    @apply mt-2;
-  }
-
-  li > a {
-    @apply overflow-hidden text-clip;
-  }
-
-  hr {
-    @apply mb-4;
-  }
-
-  blockquote > p {
-    @apply mb-0;
-  }
-
-  p + h2:not(:first-of-type) {
-    @apply mt-16;
-  }
-
-  ul + h2:not(:first-of-type) {
-    @apply mt-16;
-  }
-
-  p + h3,
-  ul + h3 {
-    @apply mt-12;
-  }
-
-  b,
-  strong {
-    @apply font-[Lato-Bold];
-  }
-}
-
-@layer utilities {
-  .font-serif {
-    font-family: 'Merriweather', serif;
-  }
-  .hover-target {
-    @apply transition-all duration-300;
-  }
-
-  .hover-trigger:hover > img {
-    @apply lg:-rotate-2 lg:scale-95;
-
-    @media (min-width: 1086px) {
-      box-shadow: var(--shadow-customDark);
-    }
-  }
-
-  .hover-trigger:hover .hover-target {
-    @apply right-4 top-40;
-  }
-
-  .lang-link a {
-    color: var(--primaryColorOne);
-
-    hover {
-      color: var(--linkHover);
-    }
-  }
-
-  .font-merriweather {
-    font-family: 'Merriweather', serif;
-  }
-
-  .outgoing-link-trigger > span {
-    @apply mb-0 inline-block transition-all duration-300;
-  }
-
-  .outgoing-link-trigger:hover > span {
-    @apply -translate-y-1 translate-x-1 transform;
+  > :where(:not(:first-child)) {
+    margin-block-start: 20px;
   }
 }

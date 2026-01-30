@@ -43,7 +43,7 @@ const olderPosts = blogPosts.slice(3)
     </ul>
 
     <h2>Other blog posts:</h2>
-    <ul class="blog__list">
+    <ul class="blog__list blog__list--all">
       {
         olderPosts.map((post) => {
           const date = getDate(post.data.date)
@@ -72,8 +72,13 @@ const olderPosts = blogPosts.slice(3)
   .blog__list {
     list-style: none;
     margin: 0;
+    padding: 0;
     display: grid;
     gap: 16px;
+  }
+
+  .blog__list--all {
+    margin-top: 16px;
   }
 
   .post {

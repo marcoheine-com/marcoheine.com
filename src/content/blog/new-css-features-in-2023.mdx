@@ -72,14 +72,9 @@ of main when the width of the container is greater or equal to 600px;
 }
 ```
 
-Here's another example on CodePen. If the container on the right is larger than
+Here's another example on CodePen: <a href="https://codepen.io/Mkuehb/pen/GRBxoZQ">Container Queries</a>. If the container on the right is larger than
 1200px, we make a grid out of the image and the text and position them next to
 each other.
-
-<CodePen
-  id="GRBxoZQ"
-  title="Container Queries"
-/>
 
 Why do we need container queries when most of the layout changes can be done by
 listening to the viewport width? The answer is **context**. Container Queries
@@ -136,12 +131,7 @@ This is an excellent addition to CSS, as it removes them for mouse users, who
 won't need it necessarily but keeps it for keyboard users, who heavily rely on
 it for accessibility reasons.
 
-Try it out yourself:
-
-<CodePen
-  id="bGjvEbj"
-  title="Focus-visible"
-/>
+Try it out yourself: <a href="https://codepen.io/Mkuehb/pen/bGjvEbj">Focus-visible</a>.
 
 ## <a name="has"></a> :has()
 
@@ -241,21 +231,13 @@ even started to grasp the scope of what's possible now.
 
 Before `subgrid` existed, a grid inside another grid couldn't be aligned along
 the tracks of the parent grid. Here's a **CodePen** with a grid inside another
-grid:
-
-<CodePen
-  id="JjBvpPN"
-  title="Nested Grid without subgrid"
-/>
+grid: <a href="https://codepen.io/Mkuehb/pen/JjBvpPN">Nested Grid without subgrid</a>.
 
 Now with subgrid, you can tell the inner grid with
 `grid-template-columns: subgrid` that the columns should be aligned with the
 ones of the parent.
 
-<CodePen
-  id="ZEjoryp"
-  title="Nested Grid using subgrid"
-/>
+<a href="https://codepen.io/Mkuehb/pen/ZEjoryp">Nested Grid using subgrid</a>.
 
 Subgrids can be used without limitation downwards, so you can **nest** them
 endlessly as long as the parent has the grid property. This opens up many
@@ -274,12 +256,7 @@ It allows you to set the `accent-color` of user-interface controls.
 It's currently usable on `input type= "checkbox"`, `input type= "radio"`,
 `input type="range"`, and `<progress>`.
 
-Here's a **CodePen** to showcase its usage of it:
-
-<CodePen
-  id="oNMEoqx"
-  title="Accent-Color"
-/>
+Here's a **CodePen** to showcase its usage of it: <a href="https://codepen.io/Mkuehb/pen/oNMEoqx">Accent-Color</a>.
 
 ## <a name="individual-transform-properties"></a> Individual Transform Properties
 
@@ -297,8 +274,6 @@ It lets you define one or more transform functions at once. Here's an example:
 What happens here is that on `hover`, our DOM element with the class of
 `.caption` will rotate by 10 degrees clockwise, will scale up to 1.2 of its
 size, and will move 20px horizontally to the left.
-
-<CoffeeHint />
 
 There's one **problem** with it. If you want to change just one of the transform
 properties later on, like in a media or container query, you must write the
