@@ -37,6 +37,16 @@
   --shadow-customDark: 10px 10px 12px #d9d9d9;
 }
 
+html {
+  block-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+}
+
 a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -68,14 +78,6 @@ a {
   > :where(:not(:last-child)) {
     margin-block-end: 20px;
   }
-}
-
-html {
-  block-size: 100%;
-}
-
-body {
-  min-block-size: 100%;
 }
 
 h1,

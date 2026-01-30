@@ -78,17 +78,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
   <body>
     <Header />
-    <main><slot /></main>
+    <main class="main"><slot /></main>
     <Footer />
   </body>
 </html>
 
 <style>
-  .ruler {
-    border-top: 6px solid var(--primaryColorTwo);
-    z-index: 2;
-    position: sticky;
-    top: 0;
-    margin-bottom: 0;
+  .main {
+    flex: 1;
   }
 </style>
