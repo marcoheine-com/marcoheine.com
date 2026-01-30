@@ -55,8 +55,8 @@ a {
   transition: text-underline-offset 0.2s;
 
   &:hover {
-    text-decoration: underline wavy;
-    text-underline-offset: 4px;
+    color: var(--primaryColorTwo);
+    text-decoration-color: var(--primaryColorTwo);
   }
 }
 

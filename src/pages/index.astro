@@ -49,7 +49,7 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
               <a href={`/blog/${post.id}`}>
                 <h3>{post.data.title}</h3>
               </a>
-              <time class="text-grey">
+              <time class="posts__post-time">
                 Published on:{' '}
                 {new Date(post.data.date).toLocaleDateString('de')}
               </time>
@@ -77,6 +77,10 @@ const latestBlogPosts = allBlogPosts.slice(0, 3)
 
   .posts__post {
     margin: 0;
+  }
+
+  .posts__post-time {
+    font-size: var(--font-size-small);
   }
 
   .posts__link {
