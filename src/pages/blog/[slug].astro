@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import { render } from 'astro:content'
 import CallToAction from '@components/CallToAction.astro'
+import formatGermanDate from '../../lib/formatGermanDate'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -25,19 +26,18 @@ const { Content } = await render(post)
 
     <p class="blogpost__info">
       <time
-        datetime={new Date(post.data.date).toLocaleDateString('de')}
+        datetime={formatGermanDate(post.data.date)}
         class="mb-0"
       >
-        🗓 {new Date(post.data.date).toLocaleDateString('de')}
+        🗓 {formatGermanDate(post.data.date)}
       </time>
       {
         post.data.updated && (
           <time
-            datetime={new Date(post.data.updated).toLocaleDateString('de')}
+            datetime={formatGermanDate(post.data.updated)}
             class="mb-0"
           >
-            🔔 Last Updated:{' '}
-            {new Date(post.data.updated).toLocaleDateString('de')}
+            🔔 Last Updated: {formatGermanDate(post.data.updated)}
           </time>
         )
       }

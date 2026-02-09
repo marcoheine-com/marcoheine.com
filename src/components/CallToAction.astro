@@ -18,11 +18,12 @@ const { href } = Astro.props
     margin-top: var(--cta-margin-top, 16px);
     transition: outline 0.1s;
 
-    &:focus-visible,
-    &:hover {
-      outline: 4px solid var(--primaryColorTwo);
+    &:focus-visible {
       outline-offset: 4px;
-      text-decoration: none;
+      outline: 4px solid var(--primaryColorTwo);
+    }
+    &:hover {
+      background-color: var(--primaryColorOne);
     }
   }
 </style>

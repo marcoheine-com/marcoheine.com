@@ -66,7 +66,7 @@
 *:focus-visible {
   outline: 3px solid;
   outline-color: inherit;
-  outline-offset: 2px;
+  outline-offset: var(--outline-offset, 2px);
 }
 
 html {
@@ -93,6 +93,7 @@ h6 {
   font-family: 'Merriweather', serif;
   margin-top: var(--headline-margin-top, 16px);
   margin-bottom: 0;
+  line-height: 1.2;
 }
 
 h1 {
@@ -108,7 +109,7 @@ h3 {
 }
 
 h4 {
-  font-size: var(--text-h4);
+  font-size: var(--text-h5);
 }
 
 p {
