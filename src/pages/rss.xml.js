@@ -1,6 +1,5 @@
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
-import formatGermanDate from '../lib/formatGermanDate'
 
 export async function GET(context) {
   const blog = (await getCollection('blog')).sort(
@@ -13,7 +12,7 @@ export async function GET(context) {
     site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,
-      pubDate: formatGermanDate(post.data.date),
+      pubDate: post.data.date,
       description: post.data.description,
       link: `/blog/${post.id}/`,
     })),
