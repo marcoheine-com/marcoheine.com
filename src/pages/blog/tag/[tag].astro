@@ -27,7 +27,7 @@ const posts = (
 ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
-<Layout>
+<Layout title={`Blog | tag: ${tag}`}>
   <div class="blog blog--container">
     <h1>Blog</h1>
     <Tags activeTag={tag} />
