@@ -1,0 +1,72 @@
+---
+title: 'Hightlight text on scroll'
+date: 2024-02-01
+tags: ['css']
+description:
+  'Chris Coyier shared a technqiue to highlight text on scroll using the
+  upcoming scroll-driven animations.'
+---
+
+Scroll-driven animations are a new technqiue coming to CSS that I'm the most
+excited about in years. It allows you to animate elements based on the scroll
+position of the page.
+
+The best thing about this is, that it's a new set of APIs that work with the
+existing Web Animations API and CSS Animations API.
+
+Most features of it are only available in Chrome so far but I'm sure other
+browsers will follow soon.
+
+I'm collecting all the resources I can find about scroll-driven animations and
+plan to share a huge blog post about it on how to use them as soon as we have
+major browser support.
+
+In a recent blog post, Chris Coyier shares a
+[great way to make use of this new technqiue to highlight text on scroll](https://frontendmasters.com/blog/highlight-text-when-a-user-scrolls-down-to-that-piece-of-text/).
+
+He uses the `mark` element to highlight text and then animates the
+`background-size ` of it.
+
+```html
+<p>
+  <mark class="scroll-highlight">Scroll-driven animations</mark> are a new
+  technqiue coming to CSS that I'm the most excited about in years. It allows
+  you to animate elements based on the scroll position of the page.
+</p>
+```
+
+```css
+mark.scroll-highlight {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: linear-gradient(purple, purple);
+
+  @supports (animation-timeline: view()) {
+    animation: mark-it linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-iteration-count: 1;
+    animation-range: contain 0% contain 25%;
+  }
+}
+
+@keyframes mark-it {
+  0% {
+    background-size: 0 100%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+```
+
+With this CSS he animates the `background-size` of the `mark` element from 0%
+100% to 100% 100% when it's in the viewport. The `animation-range` property is
+responsible for that and _starts the animation as soon as the element is fully
+in the viewport and finishes it when it's 25% of the way up the currently
+viewport_.
+
+Here is a Demo of it on CodePen: <a href="https://codepen.io/Mkuehb/pen/mdoMQay">Scroll Timeline mark Element</a>.
+
+This looks awesome and I can't wait to use it on my own site!

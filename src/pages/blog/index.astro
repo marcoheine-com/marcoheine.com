@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import getDate from '../../lib/formatGermanDate'
+import Tags from '@components/Tags.astro'
+
+const blogPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+const newestPosts = blogPosts.slice(0, 3)
+const olderPosts = blogPosts.slice(3)
+---
+
+<Layout
+  title="Blog | Marco Heine"
+  description="Welcome to the blog! I learn through writing, so everything I learn I write down."
+>
+  <div class="blog blog--container">
+    <h1>Blog</h1>
+
+    <Tags />
+    <h2>Latest blog posts</h2>
+    <ul class="blog__list">
+      {
+        newestPosts.map((post) => {
+          const { date, title, description } = post.data
+
+          const pubDate = getDate(date)
+
+          return (
+            <li>
+              <article>
+                <a href={`/blog/${post.id}`}>
+                  <h3>{title}</h3>
+                </a>
+                <time
+                  class="post__time"
+                  datetime={pubDate}
+                >
+                  {pubDate}
+                </time>
+                <p>{description}</p>
+              </article>
+            </li>
+          )
+        })
+      }
+    </ul>
+
+    <h2>Other blog posts:</h2>
+    <ul class="blog__list blog__list--all">
+      {
+        olderPosts.map((post) => {
+          const date = getDate(post.data.date)
+          return (
+            <li>
+              <article class="post">
+                <time
+                  class="post__time"
+                  datetime={date}
+                >
+                  {date}
+                </time>
+                <a href={`/blog/${post.id}`}>
+                  <h4>{post.data.title}</h4>
+                </a>
+              </article>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  .blog__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+  .blog__list--all {
+    margin-top: 16px;
+  }
+
+  .post {
+    --headline-margin-top: 0;
+
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .post__time {
+    font-size: var(--font-size-small);
+  }
+</style>

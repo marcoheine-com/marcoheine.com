@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://marcoheine.com
+
+# Sitemaps
+Sitemap: https://marcoheine.com/sitemap.xml

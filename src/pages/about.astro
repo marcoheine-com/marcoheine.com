@@ -1,0 +1,47 @@
+---
+import CallToAction from '@components/CallToAction.astro'
+import MarcoHeineImg from '../../public/images/marco-heine.webp'
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+
+const yearsOfExperience = new Date().getFullYear() - 2016
+---
+
+<Layout
+  title="About | Marco Heine"
+  description="Learn more about me, my work and what I like."
+>
+  <div class="about about--container">
+    <h1>About</h1>
+
+    <Image
+      alt="a picture of Marco Heine"
+      src={MarcoHeineImg}
+      priority
+    />
+
+    <p>
+      Hi! I'm Marco Heine, a Web Developer who loves to build responsive,
+      accessible, fast websites and web experiences for every device and every
+      browser. I have more than
+      <strong>
+        {yearsOfExperience} years
+      </strong>
+      of experience and worked on numerous projects, at web agencies, in product development
+      and at software development and consulting companies.
+    </p>
+    <p>
+      With a keen eye for <strong>UX Design</strong>, I understand user needs
+      and problems and know how to solve them. Enabling clear and good
+      communication is always my priority.
+    </p>
+    <p>
+      I found my love for the web and its technologies at the age of 14 when I
+      built my first website and I still love it. Learning something new every
+      day is what makes it so much fun for me.
+    </p>
+    <CallToAction href="mailto:hello@marcoheine.com">
+      Work with me
+    </CallToAction>
+  </div>
+</Layout>

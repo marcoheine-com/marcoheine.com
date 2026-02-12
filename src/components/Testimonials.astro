@@ -1,0 +1,102 @@
+---
+import DomImg from '../../public/images/dom.jpg'
+import ThomasFischerImg from '../../public/images/thomas-fischer.1024x1024(1).jpg'
+import ChristopImg from '../../public/images/christop-a-kolb.png'
+import Testimonial from './Testimonial.astro'
+
+export interface Testimonial {
+  author: string
+  company: string
+  link: string
+  image?: ImageMetadata
+  text: {
+    content: string
+  }[]
+}
+
+const testimonials: Testimonial[] = [
+  {
+    author: 'Christoph A. Kolb',
+    company: 'Wahnsinn Design',
+    link: 'https://wahnsinn.design/',
+    image: ChristopImg,
+    text: [
+      {
+        content:
+          'Marco is a great developer and a great guy. In a phase of big uncertainty he came onboard, took responsibility and smoothed out a complicated transition. That couldn’t have worked out better. We’ll definitely keep him in our network, and so should you.',
+      },
+    ],
+  },
+  {
+    text: [
+      {
+        content:
+          "During the year I worked with Marco, I have not only grown very fond of him, but I have also come to appreciate and admire his motivation. He is driven by the desire to improve both the teams he works with and the products he works on. He strives to find the best possible solution to a given problem while also knowing when to be pragmatic and move on. He does not get stuck on issues, and he isn't she about asking others for help.",
+      },
+
+      {
+        content:
+          'Marco is approachable, knowledgeable, and pragmatic. He is constantly working on his own skill set, eager to solve more and greater challenges.',
+      },
+      {
+        content:
+          "I hope to be able to work with Marco again. If you're looking for support with your project, Marco is an excellent choice",
+      },
+    ],
+    author: 'Dom Habersack',
+    company: 'fn teach GmbH',
+    link: 'https://domhabersack.com/',
+    image: DomImg,
+  },
+  {
+    text: [
+      {
+        content:
+          'Working with Marco is a pleasure. Besides developing on a very high level he also contributes a lot to the planning phase of every project.',
+      },
+    ],
+    author: 'Thomas Fischer',
+    company: 'tts GmbH',
+    link: 'https://www.tt-s.com/en/company',
+    image: ThomasFischerImg,
+  },
+  {
+    text: [
+      {
+        content:
+          'I really enjoyed working with Marco because he listens and his profound knowledge in web technologies and his understanding of User Experience make him a great partner for developing sustainable, user friendly software. I find it very inspiring that he likes to learn and share his knowledge. To this day I enjoy reading his blog posts.',
+      },
+    ],
+    author: 'Natali Bopp',
+    company: 'SprintEins',
+    link: 'https://www.sprinteins.com/',
+  },
+  {
+    text: [
+      {
+        content:
+          'Marco is an expert in front- and backend development (Jamstack, Next.js, Headless CMS, Tailwind CSS etc.). He is an integral part of our freelance network. We have already realized some digital projects with Marco.',
+      },
+    ],
+    author: 'Tobi Saussele',
+    company: 'Werk8',
+    link: 'https://www.werk8.design/',
+  },
+]
+---
+
+<article class="mb-20 max-w-7xl">
+  <h2
+    id="testimonials"
+    class="mb-12 text-center"
+  >
+    What others are saying about me
+  </h2>
+  <section class="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
+    {
+      testimonials?.map((testimonial) => (
+        <Testimonial testimonial={testimonial} />
+      ))
+    }
+  </section>
+</article>

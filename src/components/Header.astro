@@ -1,0 +1,36 @@
+---
+import { config } from '../config'
+import Navigation from './Navigation.astro'
+import '../styles/global.css'
+---
+
+<header class="header">
+  <div class="header__container">
+    <a
+      href="/"
+      class="logo"
+    >
+      {config.author}
+    </a>
+
+    <Navigation />
+  </div>
+</header>
+
+<style>
+  .header__container {
+    margin: 0 auto;
+    display: grid;
+    max-width: 960px;
+    padding: 16px;
+    align-items: center;
+    @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .logo {
+    font-size: 20px;
+    display: inline-block;
+    color: var(--primaryColorOne);
+  }
+</style>

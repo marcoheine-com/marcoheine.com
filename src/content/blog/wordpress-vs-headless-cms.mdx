@@ -1,0 +1,255 @@
+---
+title: WordPress vs. headless CMS
+date: 2023-02-23
+updated: 2023-05-31
+description:
+  In this blog post, I will take a closer look at headless CMS and share the
+  advantages over a traditional monolith CMS like Wordpress.
+tags: ['cms']
+---
+
+If you have been working on the web over the last few years, you have heard the
+term **headless CMS**. In this blog post, I will take a closer look at headless
+CMSes, share the advantages over a traditional monolith CMS like **Wordpress**,
+and clarify why WordPress is still so popular.
+
+---
+
+**Table of Contents:**
+
+- [What is a headless CMS?](#what-is-a-headless-cms)
+- [Why WordPress powers over 45% of the Internet](#why-wordpress-powers-over-45-of-the-internet)
+- [Disadvantages of WordPress](#disadvantages-of-wordpress)
+- [Reasons to go with a headless CMS](#reasons-to-go-with-a-headless-cms)
+- [My favorite headless CMS](#my-favorite-headless-cms)
+- [Conclusion](#conclusion)
+- [Sources](#sources)
+
+---
+
+## What is a headless CMS? <a name="what-is-a-headless-cms"></a>
+
+A headless CMS is a Content Management System that only acts as a **backend
+service**. It’s accessible via an API and is missing the viewable part for the
+users, hence the term headless.
+
+A headless CMS is a place that **only holds the Content**, nothing else. To make
+this Content available to your users, you must fetch it and build your own
+“head,” your Frontend.
+
+Traditionally, a CMS has always been both; Frontend and Backend. However, the
+shift from traditional CMS to headless CMS emerged due to new requirements that
+started to develop.
+
+Content needs to be distributed not only in one place, one single website but on
+**multiple platforms**, like mobile apps and third-party platforms.
+
+That’s how the idea transformed: the Content should be **detached** from the
+Platform where you view it. In addition to these changing requirements, a lot of
+new technology developed. People wanted to be free and more flexible in their
+choice of technology and not only use Server-Side Rendering with PHP because
+that’s what WordPress uses.
+
+Frameworks like Gatsby, Next.js or Remix showed substantial performance
+improvements, and People wanted to use these new approaches. So the detaching of
+the Content from the view, the detaching of the Backend from the Frontend, by
+using a headless CMS enabled Developers to explore new ways.
+
+## Why Wordpress powers over 45% of the Internet <a name="why-wordpress-powers-over-45-of-the-internet"></a>
+
+So when headless CMS is the new shiny and big thing, why is WordPress still
+powering over 45% of the Internet?
+
+Yes, you’ve read right; that number is accurate.
+[In 2023 WordPress is used by over 45% of all websites](https://trends.builtwith.com/cms/traffic/Entire-Internet),
+which translates to nearly 39 million websites. That’s a market share of 63% of
+all the CMS.
+
+WordPress picked the right place and time to shine when it was released. It
+started as a blogging platform back in 2003. It was and is still completely
+**free**. It’s open source and offers a crazy amount of plugins to enhance your
+website with features.
+
+You can get very far initially, without any coding experience, when using
+WordPress to build a new Website. If you’re a small business and don’t have the
+resources or the money to hire a developer or an agency, **it was and still is a
+great option to get a website fast**.
+
+You choose a theme and hosting service and start publishing your content. Due to
+its age and popularity, it has a big community where you can find help and
+support if you’re stuck.
+
+So WordPress is still a great option if you need a website and want to use a
+CMS, right? Why bother with headless CMS if WordPress gives you all you need?
+
+Great question. Let me explain this in-depth in the next section. As I said
+before, with limited resources, needs, and requirements, WordPress is a **good
+choice**. But unfortunately, it has a lot of **disadvantages** that can grow on
+you.
+
+## Disadvantages of Wordpress <a name="disadvantages-of-wordpress"></a>
+
+WordPress might offer a fast way to publish your content initially. But
+generally, it has **long and slow build times** when you release something new.
+This is because you have to publish the latest content, and your whole website
+must be built and published again.
+
+I've already discussed the Plugin ecosystem to enhance your Websites features.
+It might be a good idea at first. But it can also lead to a lot of
+disadvantages. If you use a ton of third-party plugins, chances are that these
+**slow down the performance** of your website dramatically.
+
+Another factor you have to consider is that using plugins always leads to
+third-party **dependencies**. You have to check and regularly update them to
+newer versions. Otherwise, you risk **security issues**. Even if you have a
+basic website and use a free theme, you have to keep this theme up-to-date.
+
+So bad performance, unfortunately, is a thing when using WordPress. Of course,
+I'm not saying this is true for all WordPress sites. But you must care a lot to
+prevent falling into this trap. You have to pick your plugins carefully. You
+must choose your hosting service wisely. In general, **I find it harder to make
+a WordPress website fast**.
+
+Security issues are another big thing. If you're using WordPress, you must host
+your content and code together. Your content is technically directly accessible
+through your Frontend, meaning if you don't take the right actions, your
+Database can be accessed through the browser.
+
+I've heard from many people who got **hacked**, and their content was deleted
+that way. So you have to be aware of these things, make sure your website is
+safe, your Database secured, and your Plugins updated—a lot of extra steps to
+take, to use WordPress.
+
+Finally, how content is distributed changed significantly in the last ten years.
+Content is not only bound to a website and shared there. But **WordPress is tied
+to your content**; if you're using WordPress, your content is tailored for it.
+
+## Reasons to go with a headless CMS <a name="reasons-to-go-with-a-headless-cms"></a>
+
+Now we've learned about the disadvantages of WordPress. What about headless CMS?
+Do they share them, or can they overcome them? Let's have a look.
+
+As I already discussed, headless CMS is a different approach. You have a **clear
+separation between your Content and your Code**. Your Frontend is decoupled from
+your Backend. Your Content is stored in the CMS and accessible via an API. This
+is one of the best reasons to choose a headless CMS.
+
+This clear separation brings the biggest benefit. Having one place for your
+Content, decoupled from an actual website, enables you to **distribute your
+Content on multiple platforms**. The old approach via WordPress meant that your
+Content was tailored for your WordPress website, structured in web pages, and
+not flexible.
+
+With the headless approach, you treat your Content more like the data and care
+about the **meaning less about the presentation**. You focus on the Content,
+which then can be distributed on a website, a mobile app, an in-store digital
+signage, wherever possible.
+
+The actual head, the presentational layer, can be built with a developer's
+preference. This can be with a SPA, a framework like
+[Next.js](https://nextjs.org/) or [Remix](https://remix.run/), or a simple,
+plain, and static HTML site. You are not bound to the server-side-rendering
+technique with PHP, which WordPress uses.
+
+This can lead to a way better experience concerning **performance**. It offers
+more flexibility. If you decide to swap the presentational layer, no hurdle
+stops you from doing so, as you are detached from your Backend. The only
+connection is via an API Call.
+
+This also leads to the final reason to go with a headless CMS. It's **way more
+secure than WordPress**. The Backend is separated from the Frontend. There is no
+direct unrestricted access through the browser. So to make a POST or DELETE
+Request from your website to your headless CMS is way harder.
+
+## My favorite headless CMS <a name="my-favorite-headless-cms"></a>
+
+So there are many reasons to go with a headless CMS nowadays instead of using
+traditional Monolith CMS like WordPress. My favorite headless CMS currently is
+[Prismic](https://prismic.io/). I’ve done all my client projects with it over
+the last two years, and all my clients are happy about it.
+
+I’ve tried others, of course, and compared. I was a long-term fan of
+[Contentful](https://www.contentful.com/), for example, until their pricing
+became a little too expensive for smaller client websites. So, for now, I’ve
+settled on Prismic. But I’m always looking out for better options and comparing
+other solutions.
+
+### Prismic
+
+I like Prismic a lot because their Content Editing experience is so
+**user-friendl**y. In addition, they follow this approach of
+[custom types and Slices](https://prismic.io/docs/content-modeling) to model
+your Content, which I like a lot. With custom types, you can build your
+documents as needed, while slices can be added as a **dynamic content section**
+on your documents.
+
+The **developer experience** is excellent, especially with the
+[automated Type generation](/blog/typescript-tooling-in-prismic), which was
+added recently.
+
+You have **unlimited languages**, a **preview mode** where content editors can
+preview their changes before publishing, and they can even **schedule** when it
+should be published. The publication of new Content is also fast. You hit
+publish and get the new Content via API.
+
+If you’re working with multiple people, the **history** functionality is handy.
+You can see what others changed, deleted, or updated and even jump to later
+versions of your Content.
+
+You get unlimited storage and built-in image optimization if you want to share
+many **images or other assets**.
+
+What I dislike about Prismic and think there is room for improvement is the
+organization of these assets. You cannot add **tags**, order them in
+**folders**, or similar things. I had multiple clients lacking this feature, and
+I hope it will make it into Prismic soon. Unfortunately, it’s a
+[pending feature request](https://prismic.io/docs/content-modeling) that hasn’t
+yet arrived on the roadmap.
+
+Another thing where I’m not sure what to think about is that **Prismic tries to
+be both: a place for your Content and a page builder**. I know I praised the
+possibility of how Prismic enables you to model your Content with Custom Types
+and Slices. But if I think about it again, this seems to **contradict** the
+headless CMS approach. Where Content is just structured data, and you only care
+about the meaning of it, less about the presentation.
+
+What I’ve struggled with the most while using Prismic is the API documentation,
+especially when I need to **query relational data**. I’m not sure where my
+problem was, but I had a hard time doing that, even after seeking support from
+the community.
+
+### Sanity
+
+Next to Prismic, I'm checking out [Sanity.io](http://sanity.io/) at the moment.
+They offer all of the features that Prismic has as well. But they have a **more
+generous free plan**. In addition, you get more user accounts, while in Prismic,
+you must pay for more than one user.
+
+I also like their approach of treating content as plain data where you don't
+care about the presentation of it, but you care about the meaning. My first
+steps of using [Sanity.io](http://sanity.io/) gave me the impression that it's
+more customizable. I'll need a bigger project to get a complete image, but I am
+eager to test it.
+
+## Conclusion <a name="conclusion"></a>
+
+So that's it. These are the reasons why I like using a headless CMS, which ones
+I'm currently digging, and why WordPress projects don't tempt me.
+
+If you're still on the fence about whether to go with a headless CMS or a
+traditional CMS like WordPress, it's worth considering the advantages and
+disadvantages of both approaches.
+
+While WordPress is still the go-to choice for many businesses due to its ease of
+use and large community, a headless CMS offers much more flexibility and can
+help you distribute your content across multiple platforms. Additionally,
+headless CMSes tend to be more secure and provide better performance.
+
+## Sources <a name="sources"></a>
+
+- [What is Headless WordPress?](https://www.gatsbyjs.com/docs/glossary/headless-wordpress/)
+- [Headless CMS Explained by Knut Melvær](https://www.sanity.io/headless-cms)
+- [What Is Headless WordPress—And Should You Use It? by Charlotte Dillon](https://www.netlify.com/blog/what-is-headless-wordpress/)
+- [Headless CMS vs. Traditional CMS by Joe Holmes](https://www.sanity.io/headless-cms/headless-vs-traditional-cms)
+- [CMS Usage Distribution on the Entire Internet](https://trends.builtwith.com/cms/traffic/Entire-Internet)
+- [Usage statistics of content management systems](https://w3techs.com/technologies/overview/content_management)

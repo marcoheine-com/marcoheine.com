@@ -1,0 +1,133 @@
+---
+title: 'Vercel Storage'
+date: 2023-05-03
+path: /vercel-storage
+description:
+  Vercel recently introduced storage. A suite of serverless storage solutions
+  like KV, Postgres and Blob.
+tags: ['database']
+---
+
+On May the first, Vercel announced a new product: **storage on Vercel**. Once
+again the web community is **divided** into two big camps.
+
+The first one **loves** this new product and can't wait to use it and ship their
+products with it. The second one has a lot of **criticism** to share.
+
+In this post, I'll share the thoughts of both camps, but first, let's have a
+look what they announced.
+
+### Vercel serverless storage solutions
+
+Vercel storage is a suite of **serverless storage solutions**. The first one is
+**Vercel KV**, a durable Redis database. The second is **Vercel Postgres**.
+Vercel partnered with Neon here to introduce a serverless Postgres database.
+
+And the third one is **Vercel blob**, which is file storage on the edge. So a
+direct replacement for services like S3, which developers have used heavily for
+use cases where you wanted to upload any kind of unstructured data.
+
+What makes the release of this new product of storage on Vercel so interesting
+is that all of these three storage solutions run **serverless**. So you don't
+need an actual backend and an API layer to communicate to your database.
+
+With the new `app` directory in Next.js, which makes use of React Server
+Components, things get even crazier. By leveraging React Server Components, you
+can even **directly communicate with your database from your components**.
+
+Here's the example, Vercel shared to showcase their serverless postgres:
+
+```jsx
+import { sql } from 'vercel-postgres'
+import { redirect } from 'next/navigation'
+
+async function create(formData: FormData) {
+  'use server'
+
+  const { rows } = await sql`
+    INSERT INTO products (name)
+    VALUES ($formData.get('name')})
+  `
+  redirect(`/products/${rows[0].slug}`)
+}
+
+export default function Page() {
+  return (
+    <form onSubmit={create}>
+      <input
+        type="text"
+        name="name"
+      />
+      <button type="submit">Create</button>
+    </form>
+  )
+}
+```
+
+Let's have a look at what happens here.
+
+- We have a `Page` component, which renders a form.
+- When the form is submitted, the `create` function is called.
+- The `create` function is declared as a server function by using `use server`.
+  This ensures the function is only executed on the server and can't be imported
+  from client components.
+- Inside the `create` function, we use the `sql` tag from vercel-postgres to
+  insert a new product into our database.
+- And then, we redirect the user to the newly created product page.
+
+A lot of people pointed out that this might be prone to **SQL injection**. But
+it's not a regular template string getting inserted into the DB. Instead it's a
+tagged template call, and the `sql` function does very likely sanitize the
+input.
+
+### Why people love serverless
+
+Many people are really excited about this. The **developer experience** to build
+a website that makes use of a database to store data where the frontend can
+query and mutate the data directly has never been easier, in my opinion.
+
+With serverless being a hot topic for years now, and the discussion if this is
+the way to go vs. persisting on a separate backend, the release of Vercel
+storage is another step towards the serverless future.
+
+### Many Developers still love their backend
+
+Next to the excited crowd are a lot of people who raise some **serious
+concerns**. The first one, and probably the biggest one, is that Vercel storage
+is just a **wrapper** around other services where you **pay a lot** to have a
+better DX.
+
+[Ottomated](https://twitter.com/Ottomated_) made a
+[comparison table](https://service-markup.vercel.app/) around the costs of
+Vercel storage vs. using other services. Also it's the number one topic, people
+talk about on [Hacker News](https://news.ycombinator.com/item?id=35774730).
+
+Next to that, a lot of people are concerned about having to pay very high bills
+suddenly due to unexpected traffic spikes.
+
+Lee Robinson did a great job of clarifying these two big critical points
+[in this tweet](https://twitter.com/leeerob/status/1653636931291602953). He
+talks about how Vercel can be more transparent about the usage controls and the
+pricing.
+
+The key takeway is that it's hard to find a **good balance** between a hobby
+project not wanting to pay a sudden huge bill vs. a business not wanting there
+website goes offline because they've exceeded its limits.
+
+Another negative point I often hear is that Vercel is driving us away from open
+source and getting more into vendor lock-in. Guillermo Rauch, the CEO of Vercel,
+[argues against it](https://twitter.com/rauchg/status/1653523458616340483), by
+saying that "everything about the platform remains composable".
+
+He points out that "serverless databases are cool, but most of the world's
+backend and data already exists and are not moving anytime soon."
+
+I find it really interesting to follow these developments around serverless and
+I'm curious to see how this will evolve in the future. I will definitely try out
+Vercel storage soon, but also keep an eye on the critical points.
+
+### Sources:
+
+- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
+- [Storage on Vercel](https://news.ycombinator.com/item?id=35774730)
+- [Documentation of the makrup percentage of versel services](https://service-markup.vercel.app/)

@@ -1,0 +1,44 @@
+---
+title: CSS Scroll Snap
+date: 2023-03-16
+tags: ['css']
+description:
+  Today I learned about how you create a scroll snap effect in CSS with the
+  scroll snap properties.
+---
+
+I never was a big fan of Sliders and Carousels. Also, creating them as a
+front-end developer was always a pain. So whenever possible, I suggested using
+**horizontal scrolling** as an alternative.
+
+Combining it with the `CSS scroll-snap properties` allows us to create **smooth
+and precise scrolling experiences**, which is super cool.
+
+To get started, you have to look at the two properties, and how they play
+together to make these scrolling experiences.
+
+The first property is
+[scroll-snap-type](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type).
+It defines the type of scrolling behavior for the scroll container. It can be
+set to `x, y, or both`. The default value is `none`.
+
+for example if you set it to `x`, the scroll container will snap to snap
+positions on its horizontal axis only.
+
+The second property is
+[scroll-snap-align](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-align).
+It defines the alignment of the snap position relative to the scroll container.
+It can be set to `start, center, or end`.
+
+If you set it to `start` for example, the snap position will be aligned to the
+left of the scroll container. So every item you scroll by snaps until its left
+edge is aligned with the left edge of the scroll container.
+
+So far, the theory. Now let's look at some examples to showcase the different
+possibilities for creating these scrolling experiences.
+
+Here is a CodePen with examples of the different scroll snap types and
+alignments: <a href="https://codepen.io/Mkuehb/pen/WNgWjaM">CSS Scroll Snap</a>.
+
+It's awesome see that we are able to create these scrolling experiences with CSS
+only and without any JavaScript.

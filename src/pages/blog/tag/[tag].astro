@@ -1,0 +1,89 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import getDate from '../../../lib/formatGermanDate'
+import Tags from '@components/Tags.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+
+  const tags = new Set()
+
+  posts.forEach((post) => {
+    post.data.tags?.forEach((tag) => {
+      tags.add(tag)
+    })
+  })
+
+  return Array.from(tags).map((tag) => ({
+    params: { tag },
+  }))
+}
+
+const tag = Astro.params.tag as string
+
+const posts = (
+  await getCollection('blog', ({ data }) => data.tags?.includes(tag))
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+---
+
+<Layout title={`Blog | tag: ${tag}`}>
+  <div class="blog blog--container">
+    <h1>Blog</h1>
+    <Tags activeTag={tag} />
+    <h2>#{tag}</h2>
+    <ul class="blog__list">
+      {
+        posts.map((post) => {
+          const { date, title, description } = post.data
+
+          const pubDate = getDate(date)
+
+          return (
+            <li>
+              <article>
+                <a href={`/blog/${post.id}`}>
+                  <h3>{title}</h3>
+                </a>
+                <time
+                  class="post__time"
+                  datetime={pubDate}
+                >
+                  {pubDate}
+                </time>
+                <p>{description}</p>
+              </article>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+
+  <style>
+    .blog__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .blog__list--all {
+      margin-top: 16px;
+    }
+
+    .post {
+      --headline-margin-top: 0;
+
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .post__time {
+      font-size: var(--font-size-small);
+    }
+  </style>
+</Layout>

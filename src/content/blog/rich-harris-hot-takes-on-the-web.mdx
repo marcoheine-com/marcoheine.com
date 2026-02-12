@@ -1,0 +1,113 @@
+---
+title: 'Rich Harris: Hot takes on the web'
+date: 2023-05-08
+updated: 2023-05-11
+description:
+  This blog post summarizes my thoughts on Rich Harris talk about the current
+  state of web development and his opinions on frameworks, the web and the edge.
+tags: ['frontend']
+---
+
+If you watch one talk about the current state of web development, I recommend
+the talk by
+[Rich Harris: Frameworks, the Web, and the Edge](https://www.youtube.com/watch?v=uXCipjbcQfM).
+It made me nod my head so many times I stopped counting.
+
+It's so refreshing to listen to his humble opinions because they are
+**detached** from the ever-ongoing discussions around the best technologies of
+the web and focus more on a higher goal.
+
+I wrote down my thoughts on some of his ideas to come back later to them every
+now and then and **remind me why we are doing this**.
+
+I want to state that I don't agree with everything Rich says in his talk.
+However, I think that's pretty normal if you listen to someone's opinions.
+
+### Your Framework is fine.
+
+> The web doesn't suck because of JavaScript. The web sucks because of
+> capitalism.
+
+Rich points out that **websites aren't bad because of JavaScript** in this first
+section of his talk. They are bad because of how data and algorithms have shaped
+our society.
+
+Recipe pages aren't clustered with Modals, Cookie Banners, or meaningless SEO
+texts because of JavaScript. They are built like that because, sadly, that's
+**how they make most of the money**.
+
+> You shouldn't switch away from whatever makes you productive at shipping
+> software.
+
+These things also happen when you use any tech stack besides JavaScript because
+they are detached from technology. So it doesn't make sense to jump on the wagon
+every time a new framework comes up that claims to be a few milliseconds faster
+and ships 10kb less JavaScript if you're intention stays the same: making the
+most money, tracking your users, and neglecting user experience on purpose for
+that case.
+
+### 0kb of JS is not the goal
+
+> The goal is to satisfy the user's needs, not to ship 0kb of JS.
+
+We need to remind ourselves why we use the technology we use. The goal is not to
+ship with 0kb of JS. The goal is to **give users what they want** in your
+website or app.
+
+If this means a lot of JavaScript is necessary to deliver the best user
+experience, then that's how it is. A lighthouse score of 100 doesn't mean
+anything if your users can't solve the task they want to accomplish.
+
+### Most sites should work without JavaScript
+
+> We need to ensure our tools keep working when unexpected things happen.
+
+A thing we as developers do way too rarely is disabling JavaScript on a website
+you've just built. So when I listened to Rich talk about this topic, I paused
+and opened all the websites I recently built, disabled JavaScript, and tried to
+move around them.
+
+It's astonishing to me that this is not our highest priority. Progressive
+Enhancements should be enforced way more, and the most crucial user needs should
+be enabled to be accomplished without having to rely on JavaScript.
+
+### MPAs are dead
+
+Rich compares MPAs to SPAs here and explains why MPAs were on the rise, and SPAs
+got a bad reputation.
+
+Many of the reasons MPAs were better than SPAs (more accessible, faster, less
+buggy, less JS) do not exist anymore because SPA frameworks like Next.js and
+Svelte improved a lot and picked up.
+
+The key argument against MPAs: **missing UI persistence**. MPA means when you
+click a link, your browser does a full page reload.
+
+UI persistence is only possible with client-side routing, which is only
+available in SPAs. And UI persistence is a significant factor for a good user
+experience.
+
+### None of this matters
+
+> I don't think AI will take our jobs soon, but I do think there's a
+> better-than-even chance that it will change them beyond all recognition.
+
+Rich points out that **the way we do our job will possibly change a lot in the
+future due to the development of AI**. He's under the impression that it will
+change in a way that code preferences will not play a role anymore in our
+day-to-day job.
+
+So we can have discussions and share ideas and inspiration around it, but in the
+future, it might not be something we still need to consider.
+
+I think that's an interesting point which I can support. It feels kind of
+calming to me because it will mean we'll have the freedom to **focus on other
+things but code preferences**.
+
+And if you follow web development on social media, people love to discuss and
+argue about code preferences. So if they can ditch that and focus on building
+and shipping, it might be a good thing.
+
+### Sources
+
+- [Rich Harris Talk on YouTube ](https://www.youtube.com/watch?v=uXCipjbcQfM)
