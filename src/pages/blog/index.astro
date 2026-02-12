@@ -2,11 +2,11 @@
 import Layout from '../../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import getDate from '../../lib/formatGermanDate'
+import Tags from '@components/Tags.astro'
 
 const blogPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 )
-
 const newestPosts = blogPosts.slice(0, 3)
 const olderPosts = blogPosts.slice(3)
 ---
@@ -14,6 +14,8 @@ const olderPosts = blogPosts.slice(3)
 <Layout>
   <div class="blog blog--container">
     <h1>Blog</h1>
+
+    <Tags />
     <h2>Latest blog posts</h2>
     <ul class="blog__list">
       {

@@ -11,33 +11,6 @@ const year = new Date().getFullYear()
     >
       &uarr; Go back to top of the page? &uarr;
     </a>
-    <div>
-      <p>
-        This site is hosted on and deployed with
-        <a
-          href="https://vercel.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {' '}
-          Vercel. <span> &#8599;</span>
-        </a>
-        The source code is hosted on
-        <a
-          href="https://github.com/marcoheine-com/marcoheine.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub <span> &#8599;</span>
-        </a>
-      </p>
-      <p>
-        © {year} Marco Heine.
-      </p>
-      <p>
-        <a href="/legal-notice/"> Legal notice </a>
-      </p>
-    </div>
     <nav class="footer__socials">
       <ul class="footer__socials-list">
         <li>
@@ -166,6 +139,21 @@ const year = new Date().getFullYear()
         </li>
       </ul>
     </nav>
+    <div class="footer__text">
+      <p>
+        This site is hosted on
+        <a href="https://hetzner.com/">Hetzner</a> and deployed with
+        <a href="https://coolify.io">Coolify</a>. The source code is hosted on
+        <a href="https://github.com/marcoheine-com/marcoheine.com">GitHub</a>.
+      </p>
+      <p>
+        © {year} Marco Heine.
+      </p>
+      <p class="footer__text-links">
+        <a href="/legal-notice/"> Legal notice </a>
+        <a href="/uses"> Uses</a>
+      </p>
+    </div>
   </div>
 </footer>
 
@@ -180,8 +168,8 @@ const year = new Date().getFullYear()
     display: grid;
     padding: 16px;
     margin: 0 auto;
-    max-width: 1600px;
-    gap: 8px;
+    max-width: 960px;
+    gap: 24px;
     a {
       text-decoration-color: var(--white);
 
@@ -198,26 +186,36 @@ const year = new Date().getFullYear()
   }
 
   .footer__backtotop {
+    justify-self: center;
     @media (min-width: 640px) {
       grid-column: 1 / 3;
-      justify-self: center;
-    }
-  }
-
-  .footer__socials {
-    @media (min-width: 640px) {
-      justify-self: end;
     }
   }
 
   .footer__socials-list {
     list-style: none;
     margin: 0;
+    padding: 0;
     display: flex;
     gap: 8px;
 
     @media (min-width: 640px) {
       gap: 16px;
+    }
+  }
+
+  .footer__text {
+    @media (min-width: 640px) {
+      justify-self: end;
+      text-align: end;
+    }
+  }
+
+  .footer__text-links {
+    display: flex;
+    gap: 8px;
+    @media (min-width: 640px) {
+      justify-content: flex-end;
     }
   }
 </style>

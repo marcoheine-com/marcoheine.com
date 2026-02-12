@@ -51,7 +51,7 @@ const { Content } = await render(post)
       post.data.tags && post.data.tags.length > 0 ? (
         <p class="blogpost__tags">
           {post.data.tags.map((tag) => (
-            <span class="blogpost__tag">#{tag}</span>
+            <a href={`/blog/tag/${tag}`}>#{tag}</a>
           ))}
         </p>
       ) : null
@@ -89,9 +89,5 @@ const { Content } = await render(post)
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-  }
-
-  .blogpost__tag {
-    font-size: var(--font-size-small);
   }
 </style>
