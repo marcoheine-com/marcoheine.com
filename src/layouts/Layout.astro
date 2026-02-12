@@ -72,7 +72,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
       rel="alternate"
       type="application/rss+xml"
       title={`${config.title} RSS Feed`}
-      href="/rss.xml"
+      href={new URL('rss.xml', Astro.site)}
     />
   </head>
 
