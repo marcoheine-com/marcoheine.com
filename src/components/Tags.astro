@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
+import CallToAction from './CallToAction.astro'
 
 interface Props {
   activeTag?: string
@@ -30,19 +31,20 @@ const tags = Array.from(tagMap, ([name, count]) => ({
     tags.map((tag) => (
       <li>
         {tag.name === activeTag ? (
-          <a
+          <CallToAction
             href="/blog"
-            class="tags__tag tags__active"
+            size="small"
+            active
           >
             x {tag.name} ({tag.count})
-          </a>
+          </CallToAction>
         ) : (
-          <a
+          <CallToAction
             href={`/blog/tag/${tag.name}`}
-            class="tags__tag"
+            size="small"
           >
             {tag.name} ({tag.count})
-          </a>
+          </CallToAction>
         )}
       </li>
     ))
@@ -51,21 +53,12 @@ const tags = Array.from(tagMap, ([name, count]) => ({
 
 <style>
   .tags {
+    --cta-margin-top: 0;
     list-style: none;
     margin: 16px 0 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tags__tag {
-    --outline-color: var(--primaryColorTwo);
-  }
-
-  .tags__active {
-    background-color: var(--primaryColorTwo);
-    color: var(--white);
-    padding: 4px 6px;
+    gap: 12px;
   }
 </style>
