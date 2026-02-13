@@ -122,7 +122,9 @@ a {
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
   text-decoration-color: var(--primaryColorTwo);
-  transition: text-underline-offset 0.2s;
+  transition:
+    text-underline-offset 0.2s,
+    color 0.1s;
 
   &:hover {
     color: var(--primaryColorTwo);
