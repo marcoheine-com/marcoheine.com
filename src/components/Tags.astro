@@ -26,33 +26,66 @@ const tags = Array.from(tagMap, ([name, count]) => ({
 })).sort((a, b) => b.count - a.count)
 ---
 
-<ul class="tags">
-  {
-    tags.map((tag) => (
-      <li>
-        {tag.name === activeTag ? (
-          <CallToAction
-            href="/blog"
-            size="small"
-            active
-          >
-            x {tag.name} ({tag.count})
-          </CallToAction>
-        ) : (
-          <CallToAction
-            href={`/blog/tag/${tag.name}`}
-            size="small"
-          >
-            {tag.name} ({tag.count})
-          </CallToAction>
-        )}
-      </li>
-    ))
-  }
-</ul>
+<aside class="tags">
+  <details
+    class="tags__details"
+    open
+  >
+    <summary>Tags:</summary>
+
+    <ul class="tags__list">
+      {
+        tags.map((tag) => (
+          <li>
+            {tag.name === activeTag ? (
+              <CallToAction
+                href="/blog"
+                size="small"
+                active
+              >
+                x {tag.name} ({tag.count})
+              </CallToAction>
+            ) : (
+              <CallToAction
+                href={`/blog/tag/${tag.name}`}
+                size="small"
+              >
+                {tag.name} ({tag.count})
+              </CallToAction>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</aside>
 
 <style>
   .tags {
+    @media (min-width: 1400px) {
+      margin: 0;
+      position: sticky;
+      top: 40px;
+    }
+  }
+
+  .tags__details {
+    cursor: pointer;
+
+    @media (min-width: 1400px) {
+      margin-left: 40px;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 300px;
+    }
+
+    @media (min-width: 1600px) {
+      width: 400px;
+    }
+  }
+
+  .tags__list {
     --cta-margin-top: 0;
     list-style: none;
     margin: 16px 0 0;
