@@ -51,7 +51,12 @@ const { Content } = await render(post)
       post.data.tags && post.data.tags.length > 0 ? (
         <p class="blogpost__tags">
           {post.data.tags.map((tag) => (
-            <a href={`/blog/tag/${tag}`}>#{tag}</a>
+            <CallToAction
+              size="small"
+              href={`/blog/tag/${tag}`}
+            >
+              #{tag}
+            </CallToAction>
           ))}
         </p>
       ) : null

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
+import CallToAction from './CallToAction.astro'
 
 interface Props {
   activeTag?: string
@@ -25,47 +26,73 @@ const tags = Array.from(tagMap, ([name, count]) => ({
 })).sort((a, b) => b.count - a.count)
 ---
 
-<ul class="tags">
-  {
-    tags.map((tag) => (
-      <li>
-        {tag.name === activeTag ? (
-          <a
-            href="/blog"
-            class="tags__tag tags__active"
-          >
-            x {tag.name} ({tag.count})
-          </a>
-        ) : (
-          <a
-            href={`/blog/tag/${tag.name}`}
-            class="tags__tag"
-          >
-            {tag.name} ({tag.count})
-          </a>
-        )}
-      </li>
-    ))
-  }
-</ul>
+<aside class="tags">
+  <details
+    class="tags__details"
+    open
+  >
+    <summary>Tags:</summary>
+
+    <ul class="tags__list">
+      {
+        tags.map((tag) => (
+          <li>
+            {tag.name === activeTag ? (
+              <CallToAction
+                href="/blog"
+                size="small"
+                active
+              >
+                x {tag.name} ({tag.count})
+              </CallToAction>
+            ) : (
+              <CallToAction
+                href={`/blog/tag/${tag.name}`}
+                size="small"
+              >
+                {tag.name} ({tag.count})
+              </CallToAction>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</aside>
 
 <style>
   .tags {
+    @media (min-width: 1400px) {
+      margin: 0;
+      position: sticky;
+      top: 40px;
+    }
+  }
+
+  .tags__details {
+    cursor: pointer;
+
+    @media (min-width: 1400px) {
+      margin-left: 40px;
+      position: absolute;
+
+      left: 100%;
+      top: 0;
+      width: 300px;
+    }
+
+    @media (min-width: 1600px) {
+      width: 400px;
+    }
+  }
+
+  .tags__list {
+    --cta-margin-top: 0;
     list-style: none;
     margin: 16px 0 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tags__tag {
-    --outline-color: var(--primaryColorTwo);
-  }
-
-  .tags__active {
-    background-color: var(--primaryColorTwo);
-    color: var(--white);
-    padding: 4px 6px;
+    gap: 12px;
   }
 </style>
