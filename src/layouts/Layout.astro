@@ -2,8 +2,6 @@
 import '../styles/global.css'
 import Footer from '@components/Footer.astro'
 import Header from '@components/Header.astro'
-import MarcoHeineImg from '../../public/images/marco-heine.webp'
-import '../styles/global.css'
 import { config } from '../config'
 
 interface Props {
@@ -74,6 +72,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
       title={`${config.title} RSS Feed`}
       href={new URL('rss.xml', Astro.site)}
     />
+    <script
+      defer
+      data-domain="marcoheine.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
   </head>
 
   <body>
